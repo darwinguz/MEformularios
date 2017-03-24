@@ -1,5 +1,5 @@
 package com.capa.presentacion;
 
-public class F1 {
+public class Formulario1 {
 
 }
