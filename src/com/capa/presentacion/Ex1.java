@@ -1,27 +1,29 @@
 package com.capa.presentacion;
 
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.GridLayout;
 
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
 
 import com.capa.util.Utilitarios;
-import javax.swing.JButton;
-import javax.swing.JTabbedPane;
-import java.awt.GridLayout;
-import java.awt.GridBagLayout;
-import javax.swing.border.TitledBorder;
-import java.awt.Font;
-import javax.swing.UIManager;
-import java.awt.Color;
 
 public class Ex1 extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2991536081432510517L;
 	private JPanel contentPane;
 	private JTextField txtAmie;
 	private JTextField txtCircuito;
@@ -30,177 +32,177 @@ public class Ex1 extends JFrame {
 	private JTextField txtSector;
 	private JTextField txtProyecto;
 	private JTextField txtParroquia;
-	private JTextField txtCantidad00;
-	private JTextField txtCantidad01;
-	private JTextField txtCantidad10;
-	private JTextField txtCantidad11;
-	private JTextField txtCantidad20;
-	private JTextField txtCantidad21;
-	private JTextField txtCantidad30;
-	private JTextField txtCantidad31;
-	private JTextField txtCantidad40;
-	private JTextField txtCantidad41;
-	private JTextField txtCantidad50;
-	private JTextField txtCantidad51;
-	private JTextField txtCantidad60;
-	private JTextField txtCantidad61;
-	private JTextField txtCantidad70;
-	private JTextField txtCantidad71;
-	private JTextField txtCantidad80;
-	private JTextField txtCantidad81;
-	private JTextField textField_18;
-	private JTextField textField_19;
-	private JTextField textField_20;
-	private JTextField textField_21;
-	private JTextField textField_22;
-	private JTextField textField_23;
-	private JTextField textField_24;
-	private JTextField textField_25;
-	private JTextField textField_26;
-	private JLabel lblNewLabel;
-	private JLabel lblObservacin;
-	private JPanel panel;
-	private JPanel panel_2;
-	private JLabel label;
-	private JLabel label_1;
-	private JLabel label_2;
-	private JLabel label_3;
-	private JLabel label_4;
-	private JLabel label_5;
-	private JLabel label_9;
-	private JPanel panel_3;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JPanel panel_4;
-	private JTextField textField_27;
-	private JTextField textField_28;
-	private JTextField textField_29;
-	private JTextField textField_30;
-	private JTextField textField_31;
-	private JTextField textField_32;
-	private JLabel label_10;
-	private JLabel label_11;
-	private JPanel panel_5;
-	private JPanel panel_6;
-	private JLabel label_6;
-	private JLabel label_7;
-	private JLabel label_8;
-	private JLabel label_12;
-	private JLabel label_13;
-	private JLabel label_14;
-	private JLabel label_15;
-	private JLabel label_18;
-	private JPanel panel_7;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
-	private JTextField textField_33;
-	private JTextField textField_34;
-	private JTextField textField_35;
-	private JTextField textField_36;
-	private JTextField textField_37;
-	private JTextField textField_38;
-	private JTextField textField_39;
-	private JTextField textField_40;
-	private JPanel panel_8;
-	private JTextField textField_45;
-	private JTextField textField_46;
-	private JTextField textField_47;
-	private JTextField textField_48;
-	private JTextField textField_49;
-	private JTextField textField_50;
-	private JTextField textField_51;
-	private JLabel label_19;
-	private JLabel label_20;
-	private JPanel panel_9;
-	private JPanel panel_10;
-	private JLabel label_21;
-	private JLabel label_22;
-	private JLabel label_23;
-	private JLabel label_24;
-	private JLabel label_25;
-	private JLabel label_27;
-	private JPanel panel_11;
-	private JTextField textField_54;
-	private JTextField textField_55;
-	private JTextField textField_56;
-	private JTextField textField_57;
-	private JTextField textField_58;
-	private JTextField textField_59;
-	private JTextField textField_60;
-	private JTextField textField_61;
-	private JTextField textField_62;
-	private JTextField textField_63;
-	private JPanel panel_12;
-	private JTextField textField_66;
-	private JTextField textField_67;
-	private JTextField textField_68;
-	private JTextField textField_69;
-	private JTextField textField_70;
-	private JLabel label_28;
-	private JLabel label_29;
-	private JPanel panel_13;
-	private JPanel panel_14;
-	private JLabel label_16;
-	private JLabel label_17;
-	private JLabel label_26;
-	private JLabel label_32;
-	private JPanel panel_15;
-	private JTextField textField_41;
-	private JTextField textField_42;
-	private JTextField textField_43;
-	private JTextField textField_44;
-	private JTextField textField_52;
-	private JTextField textField_53;
-	private JPanel panel_16;
-	private JTextField textField_73;
-	private JTextField textField_74;
-	private JTextField textField_75;
-	private JLabel label_33;
-	private JLabel label_34;
-	private JPanel panel_17;
-	private JPanel panel_18;
-	private JLabel label_30;
-	private JLabel label_36;
-	private JPanel panel_19;
-	private JTextField textField_64;
-	private JTextField textField_65;
-	private JPanel panel_20;
-	private JTextField textField_78;
-	private JLabel label_37;
-	private JLabel label_38;
+	private JTextField txtTECantidad00;
+	private JTextField txtTECantidad01;
+	private JTextField txtTECantidad10;
+	private JTextField txtTECantidad11;
+	private JTextField txtTECantidad20;
+	private JTextField txtTECantidad21;
+	private JTextField txtTECantidad30;
+	private JTextField txtTECantidad31;
+	private JTextField txtTECantidad40;
+	private JTextField txtTECantidad41;
+	private JTextField txtTECantidad50;
+	private JTextField txtTECantidad51;
+	private JTextField txtTECantidad60;
+	private JTextField txtTECantidad61;
+	private JTextField txtTECantidad70;
+	private JTextField txtTECantidad71;
+	private JTextField txtTECantidad80;
+	private JTextField txtTECantidad81;
+	private JTextField txtTEObsRef1;
+	private JTextField txtTEObsRef0;
+	private JTextField txtTEObsRef2;
+	private JTextField txtTEObsRef3;
+	private JTextField txtTEObsRef4;
+	private JTextField txtTEObsRef5;
+	private JTextField txtTEObsRef6;
+	private JTextField txtTEObsRef7;
+	private JTextField txtTEObsRef8;
+	private JLabel lblTECantidad;
+	private JLabel lblTEObsRef;
+	private JPanel pnlED;
+	private JPanel pnlEDEtiquetas;
+	private JLabel lblDadosCimentacionBXB;
+	private JLabel lblReflectoresLed;
+	private JLabel lblPostes6mts;
+	private JLabel lblEDCajasConexion;
+	private JLabel lblEDKitCableadoElectrico;
+	private JLabel lblEDTuberaPvc;
+	private JLabel lblEDKitEsparcimD;
+	private JPanel pnlEDCantidad;
+	private JTextField txtEDCantidad00;
+	private JTextField txtEDCantidad01;
+	private JTextField txtEDCantidad10;
+	private JTextField txtEDCantidad11;
+	private JTextField txtEDCantidad20;
+	private JTextField txtEDCantidad21;
+	private JTextField txtEDCantidad30;
+	private JTextField txtEDCantidad31;
+	private JTextField txtEDCantidad40;
+	private JTextField txtEDCantidad41;
+	private JTextField txtEDCantidad50;
+	private JTextField txtEDCantidad51;
+	private JPanel pnlEDObsRef;
+	private JTextField txtEDObsRef0;
+	private JTextField txtEDObsRef1;
+	private JTextField txtEDObsRef2;
+	private JTextField txtEDObsRef3;
+	private JTextField txtEDObsRef4;
+	private JTextField txtEDObsRef5;
+	private JLabel lblEDCantidad;
+	private JLabel lblEDObsRef;
+	private JPanel pnlAE;
+	private JPanel pnlAEEtiquetas;
+	private JLabel lblDadosCimentacionAXA;
+	private JLabel lblLuminariasLed;
+	private JLabel lblPostesSimples;
+	private JLabel lblPostesDobles;
+	private JLabel lblAECajasConexion;
+	private JLabel lblAEKitCableadoElectrico;
+	private JLabel lblAETuberaPvc;
+	private JLabel lblAEKitAlumbradoExterior;
+	private JPanel pnlAECantidad;
+	private JTextField txtAECantidad00;
+	private JTextField txtAECantidad01;
+	private JTextField txtAECantidad10;
+	private JTextField txtAECantidad11;
+	private JTextField txtAECantidad20;
+	private JTextField txtAECantidad21;
+	private JTextField txtAECantidad30;
+	private JTextField txtAECantidad31;
+	private JTextField txtAECantidad40;
+	private JTextField txtAECantidad41;
+	private JTextField txtAECantidad50;
+	private JTextField txtAECantidad51;
+	private JTextField txtAECantidad60;
+	private JTextField txtAECantidad61;
+	private JPanel pnlAEObsRef;
+	private JTextField txtAEObsRef0;
+	private JTextField txtAEObsRef1;
+	private JTextField txtAEObsRef2;
+	private JTextField txtAEObsRef3;
+	private JTextField txtAEObsRef4;
+	private JTextField txtAEObsRef5;
+	private JTextField txtAEObsRef6;
+	private JLabel lblAECantidad;
+	private JLabel lblAEObsRef;
+	private JPanel pnlT;
+	private JPanel pnlTEtiquetas;
+	private JLabel lblTKitCableadoTR;
+	private JLabel lblTuberiaPvc;
+	private JLabel lblTransformadorKva;
+	private JLabel lblCimentacinTransf;
+	private JLabel lblCajasDeConexion;
+	private JLabel lblTKitTransformador;
+	private JPanel pnlTCantidad;
+	private JTextField txtTCantidad00;
+	private JTextField txtTCantidad01;
+	private JTextField txtTCantidad10;
+	private JTextField txtTCantidad11;
+	private JTextField txtTCantidad20;
+	private JTextField txtTCantidad21;
+	private JTextField txtTCantidad30;
+	private JTextField txtTCantidad31;
+	private JTextField txtTCantidad40;
+	private JTextField txtTCantidad41;
+	private JPanel pnlTObsRef;
+	private JTextField txtTObsRef0;
+	private JTextField txtTObsRef1;
+	private JTextField txtTObsRef2;
+	private JTextField txtTObsRef3;
+	private JTextField txtTObsRef4;
+	private JLabel lblTCantidad;
+	private JLabel lblTObsRef;
+	private JPanel pnlBA;
+	private JPanel pnlBAEtiquetas;
+	private JLabel lblKitCableadoBA;
+	private JLabel lblBATuberaPvc;
+	private JLabel lblBACajasConexion;
+	private JLabel lblKitBombaA;
+	private JPanel pnlBACantidad;
+	private JTextField txtBACantidad00;
+	private JTextField txtBACantidad01;
+	private JTextField txtBACantidad10;
+	private JTextField txtBACantidad11;
+	private JTextField txtBACantidad20;
+	private JTextField txtBACantidad21;
+	private JPanel pnlBAObsRef;
+	private JTextField txtBAObsRef0;
+	private JTextField txtBAObsRef1;
+	private JTextField txtBAObsRef2;
+	private JLabel lblBACantidad;
+	private JLabel lblBAObsRef;
+	private JPanel pnlSMT;
+	private JPanel pnlSMTEtiquetas;
+	private JLabel lblKitCableadoMT;
+	private JLabel lblSistemaMallaT;
+	private JPanel pnlSMTCantidad;
+	private JTextField txtSMTCantidad00;
+	private JTextField txtSMTCantidad01;
+	private JPanel pnlSMTObsRef;
+	private JTextField txtSMTObsRef0;
+	private JLabel lblSMTCantidad;
+	private JLabel lblSMTObsRef;
 	private JPanel panel_21;
 	private JPanel panel_23;
-	private JTextField textField_77;
-	private JTextField textField_79;
-	private JTextField textField_80;
-	private JTextField textField_82;
+	private JTextField txtObsGenDer;
+	private JTextField txtResponsableContratista;
+	private JTextField txtCargoDer;
+	private JTextField txtFecha;
 	private JPanel panel_22;
-	private JTextField textField_71;
-	private JTextField textField_72;
-	private JTextField textField_76;
+	private JTextField txtObsGenIzq;
+	private JTextField txtResponsableMineduc;
+	private JTextField txtCargoIzq;
 	private JPanel panel_24;
-	private JLabel label_31;
-	private JLabel label_35;
-	private JLabel label_39;
+	private JLabel lblObsGenIzq;
+	private JLabel lblResponsableMineduc;
+	private JLabel lblCargoIzq;
 	private JPanel panel_25;
-	private JLabel label_40;
-	private JLabel label_41;
-	private JLabel label_42;
-	private JLabel label_43;
+	private JLabel lblObsGenDer;
+	private JLabel lblResponsableContratista;
+	private JLabel lblCargoDer;
+	private JLabel lblFecha;
 
 	/**
 	 * Launch the application.
@@ -239,860 +241,861 @@ public class Ex1 extends JFrame {
 		lblLogoMinEdu.setIcon(Utilitarios.getImagenIcon("logoMinEdu.png", 160, 80, 100));
 		lblLogoMinEdu.setBounds(0, 11, 160, 81);
 		pnlSuperior.add(lblLogoMinEdu);
-		
+
 		txtAmie = new JTextField();
 		txtAmie.setBounds(391, 24, 86, 20);
 		pnlSuperior.add(txtAmie);
 		txtAmie.setColumns(10);
-		
+
 		JComboBox cmbDistrito = new JComboBox();
 		cmbDistrito.setBounds(512, 24, 160, 20);
 		pnlSuperior.add(cmbDistrito);
-		
+
 		JComboBox cmbZona = new JComboBox();
 		cmbZona.setBounds(160, 72, 50, 20);
 		pnlSuperior.add(cmbZona);
-		
+
 		JComboBox cmbProvincia = new JComboBox();
 		cmbProvincia.setBounds(234, 72, 125, 20);
 		pnlSuperior.add(cmbProvincia);
-		
+
 		JComboBox cmbCanton = new JComboBox();
 		cmbCanton.setBounds(391, 72, 125, 20);
 		pnlSuperior.add(cmbCanton);
-		
+
 		txtCircuito = new JTextField();
 		txtCircuito.setBounds(717, 24, 86, 20);
 		pnlSuperior.add(txtCircuito);
 		txtCircuito.setColumns(10);
-		
+
 		txtFechaEntrega = new JTextField();
 		txtFechaEntrega.setColumns(10);
 		txtFechaEntrega.setBounds(813, 24, 86, 20);
 		pnlSuperior.add(txtFechaEntrega);
-		
+
 		txtFechaInicioTrabajo = new JTextField();
 		txtFechaInicioTrabajo.setColumns(10);
 		txtFechaInicioTrabajo.setBounds(912, 24, 86, 20);
 		pnlSuperior.add(txtFechaInicioTrabajo);
-		
+
 		txtSector = new JTextField();
 		txtSector.setColumns(10);
 		txtSector.setBounds(705, 72, 208, 20);
 		pnlSuperior.add(txtSector);
-		
+
 		JLabel lblProyecto = new JLabel("Proyecto");
 		lblProyecto.setBounds(164, 11, 57, 14);
 		pnlSuperior.add(lblProyecto);
-		
+
 		JLabel lblZona = new JLabel("Zona");
 		lblZona.setBounds(160, 55, 40, 14);
 		pnlSuperior.add(lblZona);
-		
+
 		JLabel lblProvincia = new JLabel("Provincia");
 		lblProvincia.setBounds(234, 55, 57, 14);
 		pnlSuperior.add(lblProvincia);
-		
+
 		JLabel lblCanton = new JLabel("Cant\u00F3n");
 		lblCanton.setBounds(391, 55, 40, 14);
 		pnlSuperior.add(lblCanton);
-		
+
 		JLabel lblParroquia = new JLabel("Parroquia");
 		lblParroquia.setBounds(545, 55, 57, 14);
 		pnlSuperior.add(lblParroquia);
-		
+
 		JLabel lblSector = new JLabel("Sector");
 		lblSector.setBounds(705, 55, 57, 14);
 		pnlSuperior.add(lblSector);
-		
+
 		JLabel lblAmie = new JLabel("AMIE");
 		lblAmie.setBounds(391, 11, 40, 14);
 		pnlSuperior.add(lblAmie);
-		
+
 		JLabel lblDistrito = new JLabel("Distrito");
 		lblDistrito.setBounds(512, 11, 64, 14);
 		pnlSuperior.add(lblDistrito);
-		
+
 		JLabel lblCircuito = new JLabel("Circuito");
 		lblCircuito.setBounds(717, 11, 57, 14);
 		pnlSuperior.add(lblCircuito);
-		
+
 		JLabel lblFechaEntrega = new JLabel("Fecha Entrega");
 		lblFechaEntrega.setBounds(813, 11, 84, 14);
 		pnlSuperior.add(lblFechaEntrega);
-		
+
 		JLabel lblFechaInicioTrabajo = new JLabel("Fecha Inicio Trabajo");
 		lblFechaInicioTrabajo.setBounds(911, 11, 114, 14);
 		pnlSuperior.add(lblFechaInicioTrabajo);
-		
+
 		JButton btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setBounds(938, 60, 98, 32);
 		pnlSuperior.add(btnRegistrar);
-		
+
 		txtProyecto = new JTextField();
 		txtProyecto.setBounds(160, 24, 199, 20);
 		pnlSuperior.add(txtProyecto);
 		txtProyecto.setColumns(10);
-		
+
 		txtParroquia = new JTextField();
 		txtParroquia.setColumns(10);
 		txtParroquia.setBounds(545, 72, 114, 20);
 		pnlSuperior.add(txtParroquia);
-		
+
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 484);
 		contentPane.add(tabbedPane);
-		
+
 		JPanel pnlPestaña1 = new JPanel();
 		tabbedPane.addTab("1.-EX-KIT ELÉCTRICA EXTERNA", null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
-		
-		JPanel pnlKitTableros = new JPanel();
-		pnlKitTableros.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlKitTableros.setBounds(10, 11, 414, 237);
-		pnlPestaña1.add(pnlKitTableros);
-		pnlKitTableros.setLayout(null);
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(3, 17, 199, 217);
-		pnlKitTableros.add(panel_1);
-		panel_1.setLayout(new GridLayout(9, 0, 0, 0));
-		
+
+		JPanel pnlTE = new JPanel();
+		pnlTE.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		pnlTE.setBounds(10, 11, 414, 237);
+		pnlPestaña1.add(pnlTE);
+		pnlTE.setLayout(null);
+
+		JPanel pnlTEEtiquetas = new JPanel();
+		pnlTEEtiquetas.setBounds(3, 17, 199, 217);
+		pnlTE.add(pnlTEEtiquetas);
+		pnlTEEtiquetas.setLayout(new GridLayout(9, 0, 0, 0));
+
 		JLabel lblTableroElectricoA = new JLabel("Tablero El\u00E9ctrico Tipo A");
-		panel_1.add(lblTableroElectricoA);
-		
+		pnlTEEtiquetas.add(lblTableroElectricoA);
+
 		JLabel lblTableroElectricoB = new JLabel("Tablero El\u00E9ctrico Tipo B");
-		panel_1.add(lblTableroElectricoB);
-		
+		pnlTEEtiquetas.add(lblTableroElectricoB);
+
 		JLabel lblTableroElectricoC = new JLabel("Tablero El\u00E9ctrico Tipo C");
-		panel_1.add(lblTableroElectricoC);
-		
+		pnlTEEtiquetas.add(lblTableroElectricoC);
+
 		JLabel lblTableroElectricoD = new JLabel("Tablero El\u00E9ctrico Tipo D");
-		panel_1.add(lblTableroElectricoD);
-		
+		pnlTEEtiquetas.add(lblTableroElectricoD);
+
 		JLabel lblTableroElectricoE = new JLabel("Tablero El\u00E9ctrico Tipo E");
-		panel_1.add(lblTableroElectricoE);
-		
+		pnlTEEtiquetas.add(lblTableroElectricoE);
+
 		JLabel lblTableroElectricoF = new JLabel("Tablero El\u00E9ctrico Tipo F");
-		panel_1.add(lblTableroElectricoF);
-		
-		JLabel lblKitCableadoElctrico = new JLabel("Kit Cableado El\u00E9ctrico TE");
-		panel_1.add(lblKitCableadoElctrico);
-		
+		pnlTEEtiquetas.add(lblTableroElectricoF);
+
+		JLabel lblTEKitCableadoElectrico = new JLabel("Kit Cableado El\u00E9ctrico TE");
+		pnlTEEtiquetas.add(lblTEKitCableadoElectrico);
+
 		JLabel lblTuberia = new JLabel("Tuber\u00EDa PVC 2\u00B4para cableado l=6m");
-		panel_1.add(lblTuberia);
-		
+		pnlTEEtiquetas.add(lblTuberia);
+
 		JLabel lblCajas = new JLabel("Cajas de Conexi\u00F3n  .60x.60 mt");
-		panel_1.add(lblCajas);
-		
-		JLabel lblKitTablerosElectr = new JLabel("KIT DE TABLEROS EL\u00C9CTRICOS");
-		lblKitTablerosElectr.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblKitTablerosElectr.setBounds(3, 1, 176, 14);
-		pnlKitTableros.add(lblKitTablerosElectr);
-		
-		JPanel pnlCantidad = new JPanel();
-		pnlCantidad.setBounds(210, 17, 55, 217);
-		pnlKitTableros.add(pnlCantidad);
-		pnlCantidad.setLayout(new GridLayout(9, 2, 0, 0));
-		
-		txtCantidad00 = new JTextField();
-		pnlCantidad.add(txtCantidad00);
-		txtCantidad00.setColumns(10);
-		
-		txtCantidad01 = new JTextField();
-		txtCantidad01.setColumns(10);
-		pnlCantidad.add(txtCantidad01);
-		
-		txtCantidad10 = new JTextField();
-		txtCantidad10.setColumns(10);
-		pnlCantidad.add(txtCantidad10);
-		
-		txtCantidad11 = new JTextField();
-		txtCantidad11.setColumns(10);
-		pnlCantidad.add(txtCantidad11);
-		
-		txtCantidad20 = new JTextField();
-		txtCantidad20.setColumns(10);
-		pnlCantidad.add(txtCantidad20);
-		
-		txtCantidad21 = new JTextField();
-		txtCantidad21.setColumns(10);
-		pnlCantidad.add(txtCantidad21);
-		
-		txtCantidad30 = new JTextField();
-		txtCantidad30.setColumns(10);
-		pnlCantidad.add(txtCantidad30);
-		
-		txtCantidad31 = new JTextField();
-		txtCantidad31.setColumns(10);
-		pnlCantidad.add(txtCantidad31);
-		
-		txtCantidad40 = new JTextField();
-		txtCantidad40.setColumns(10);
-		pnlCantidad.add(txtCantidad40);
-		
-		txtCantidad41 = new JTextField();
-		txtCantidad41.setColumns(10);
-		pnlCantidad.add(txtCantidad41);
-		
-		txtCantidad50 = new JTextField();
-		txtCantidad50.setColumns(10);
-		pnlCantidad.add(txtCantidad50);
-		
-		txtCantidad51 = new JTextField();
-		txtCantidad51.setColumns(10);
-		pnlCantidad.add(txtCantidad51);
-		
-		txtCantidad60 = new JTextField();
-		txtCantidad60.setColumns(10);
-		pnlCantidad.add(txtCantidad60);
-		
-		txtCantidad61 = new JTextField();
-		txtCantidad61.setColumns(10);
-		pnlCantidad.add(txtCantidad61);
-		
-		txtCantidad70 = new JTextField();
-		txtCantidad70.setColumns(10);
-		pnlCantidad.add(txtCantidad70);
-		
-		txtCantidad71 = new JTextField();
-		txtCantidad71.setColumns(10);
-		pnlCantidad.add(txtCantidad71);
-		
-		txtCantidad80 = new JTextField();
-		txtCantidad80.setColumns(10);
-		pnlCantidad.add(txtCantidad80);
-		
-		txtCantidad81 = new JTextField();
-		txtCantidad81.setColumns(10);
-		pnlCantidad.add(txtCantidad81);
-		
-		JPanel pnlObsRef = new JPanel();
-		pnlObsRef.setBounds(267, 17, 143, 217);
-		pnlKitTableros.add(pnlObsRef);
-		pnlObsRef.setLayout(new GridLayout(9, 0, 0, 0));
-		
-		textField_19 = new JTextField();
-		pnlObsRef.add(textField_19);
-		textField_19.setColumns(10);
-		
-		textField_18 = new JTextField();
-		pnlObsRef.add(textField_18);
-		textField_18.setColumns(10);
-		
-		textField_20 = new JTextField();
-		textField_20.setColumns(10);
-		pnlObsRef.add(textField_20);
-		
-		textField_21 = new JTextField();
-		textField_21.setColumns(10);
-		pnlObsRef.add(textField_21);
-		
-		textField_22 = new JTextField();
-		textField_22.setColumns(10);
-		pnlObsRef.add(textField_22);
-		
-		textField_23 = new JTextField();
-		textField_23.setColumns(10);
-		pnlObsRef.add(textField_23);
-		
-		textField_24 = new JTextField();
-		textField_24.setColumns(10);
-		pnlObsRef.add(textField_24);
-		
-		textField_25 = new JTextField();
-		textField_25.setColumns(10);
-		pnlObsRef.add(textField_25);
-		
-		textField_26 = new JTextField();
-		textField_26.setColumns(10);
-		pnlObsRef.add(textField_26);
-		
-		lblNewLabel = new JLabel("Cantidad");
-		lblNewLabel.setBounds(210, 1, 55, 14);
-		pnlKitTableros.add(lblNewLabel);
-		
-		lblObservacin = new JLabel("Observaci\u00F3n/Referencia");
-		lblObservacin.setBounds(267, 1, 143, 14);
-		pnlKitTableros.add(lblObservacin);
-		
-		panel = new JPanel();
-		panel.setLayout(null);
-		panel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel.setBounds(10, 282, 414, 163);
-		pnlPestaña1.add(panel);
-		
-		panel_2 = new JPanel();
-		panel_2.setBounds(3, 17, 199, 144);
-		panel.add(panel_2);
-		panel_2.setLayout(new GridLayout(6, 0, 0, 0));
-		
-		label = new JLabel("Tablero El\u00E9ctrico Tipo A");
-		panel_2.add(label);
-		
-		label_1 = new JLabel("Tablero El\u00E9ctrico Tipo B");
-		panel_2.add(label_1);
-		
-		label_2 = new JLabel("Tablero El\u00E9ctrico Tipo C");
-		panel_2.add(label_2);
-		
-		label_3 = new JLabel("Tablero El\u00E9ctrico Tipo D");
-		panel_2.add(label_3);
-		
-		label_4 = new JLabel("Tablero El\u00E9ctrico Tipo E");
-		panel_2.add(label_4);
-		
-		label_5 = new JLabel("Tablero El\u00E9ctrico Tipo F");
-		panel_2.add(label_5);
-		
-		label_9 = new JLabel("KIT DE TABLEROS EL\u00C9CTRICOS");
-		label_9.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_9.setBounds(3, 1, 176, 14);
-		panel.add(label_9);
-		
-		panel_3 = new JPanel();
-		panel_3.setBounds(210, 17, 55, 144);
-		panel.add(panel_3);
-		panel_3.setLayout(new GridLayout(6, 2, 0, 0));
-		
-		textField = new JTextField();
-		textField.setColumns(10);
-		panel_3.add(textField);
-		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		panel_3.add(textField_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		panel_3.add(textField_2);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		panel_3.add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		panel_3.add(textField_4);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		panel_3.add(textField_5);
-		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		panel_3.add(textField_6);
-		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		panel_3.add(textField_7);
-		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		panel_3.add(textField_8);
-		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		panel_3.add(textField_9);
-		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		panel_3.add(textField_10);
-		
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		panel_3.add(textField_11);
-		
-		panel_4 = new JPanel();
-		panel_4.setBounds(267, 17, 143, 144);
-		panel.add(panel_4);
-		panel_4.setLayout(new GridLayout(6, 0, 0, 0));
-		
-		textField_27 = new JTextField();
-		textField_27.setColumns(10);
-		panel_4.add(textField_27);
-		
-		textField_28 = new JTextField();
-		textField_28.setColumns(10);
-		panel_4.add(textField_28);
-		
-		textField_29 = new JTextField();
-		textField_29.setColumns(10);
-		panel_4.add(textField_29);
-		
-		textField_30 = new JTextField();
-		textField_30.setColumns(10);
-		panel_4.add(textField_30);
-		
-		textField_31 = new JTextField();
-		textField_31.setColumns(10);
-		panel_4.add(textField_31);
-		
-		textField_32 = new JTextField();
-		textField_32.setColumns(10);
-		panel_4.add(textField_32);
-		
-		label_10 = new JLabel("Cantidad");
-		label_10.setBounds(210, 1, 55, 14);
-		panel.add(label_10);
-		
-		label_11 = new JLabel("Observaci\u00F3n/Referencia");
-		label_11.setBounds(267, 1, 143, 14);
-		panel.add(label_11);
-		
-		panel_5 = new JPanel();
-		panel_5.setLayout(null);
-		panel_5.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_5.setBounds(434, 11, 414, 190);
-		pnlPestaña1.add(panel_5);
-		
-		panel_6 = new JPanel();
-		panel_6.setBounds(3, 17, 199, 169);
-		panel_5.add(panel_6);
-		panel_6.setLayout(new GridLayout(7, 0, 0, 0));
-		
-		label_6 = new JLabel("Tablero El\u00E9ctrico Tipo A");
-		panel_6.add(label_6);
-		
-		label_7 = new JLabel("Tablero El\u00E9ctrico Tipo B");
-		panel_6.add(label_7);
-		
-		label_8 = new JLabel("Tablero El\u00E9ctrico Tipo C");
-		panel_6.add(label_8);
-		
-		label_12 = new JLabel("Tablero El\u00E9ctrico Tipo D");
-		panel_6.add(label_12);
-		
-		label_13 = new JLabel("Tablero El\u00E9ctrico Tipo E");
-		panel_6.add(label_13);
-		
-		label_14 = new JLabel("Tablero El\u00E9ctrico Tipo F");
-		panel_6.add(label_14);
-		
-		label_15 = new JLabel("Kit Cableado El\u00E9ctrico TE");
-		panel_6.add(label_15);
-		
-		label_18 = new JLabel("KIT DE TABLEROS EL\u00C9CTRICOS");
-		label_18.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_18.setBounds(3, 1, 176, 14);
-		panel_5.add(label_18);
-		
-		panel_7 = new JPanel();
-		panel_7.setBounds(210, 17, 55, 169);
-		panel_5.add(panel_7);
-		panel_7.setLayout(new GridLayout(7, 2, 0, 0));
-		
-		textField_12 = new JTextField();
-		textField_12.setColumns(10);
-		panel_7.add(textField_12);
-		
-		textField_13 = new JTextField();
-		textField_13.setColumns(10);
-		panel_7.add(textField_13);
-		
-		textField_14 = new JTextField();
-		textField_14.setColumns(10);
-		panel_7.add(textField_14);
-		
-		textField_15 = new JTextField();
-		textField_15.setColumns(10);
-		panel_7.add(textField_15);
-		
-		textField_16 = new JTextField();
-		textField_16.setColumns(10);
-		panel_7.add(textField_16);
-		
-		textField_17 = new JTextField();
-		textField_17.setColumns(10);
-		panel_7.add(textField_17);
-		
-		textField_33 = new JTextField();
-		textField_33.setColumns(10);
-		panel_7.add(textField_33);
-		
-		textField_34 = new JTextField();
-		textField_34.setColumns(10);
-		panel_7.add(textField_34);
-		
-		textField_35 = new JTextField();
-		textField_35.setColumns(10);
-		panel_7.add(textField_35);
-		
-		textField_36 = new JTextField();
-		textField_36.setColumns(10);
-		panel_7.add(textField_36);
-		
-		textField_37 = new JTextField();
-		textField_37.setColumns(10);
-		panel_7.add(textField_37);
-		
-		textField_38 = new JTextField();
-		textField_38.setColumns(10);
-		panel_7.add(textField_38);
-		
-		textField_39 = new JTextField();
-		textField_39.setColumns(10);
-		panel_7.add(textField_39);
-		
-		textField_40 = new JTextField();
-		textField_40.setColumns(10);
-		panel_7.add(textField_40);
-		
-		panel_8 = new JPanel();
-		panel_8.setBounds(267, 17, 143, 169);
-		panel_5.add(panel_8);
-		panel_8.setLayout(new GridLayout(7, 0, 0, 0));
-		
-		textField_45 = new JTextField();
-		textField_45.setColumns(10);
-		panel_8.add(textField_45);
-		
-		textField_46 = new JTextField();
-		textField_46.setColumns(10);
-		panel_8.add(textField_46);
-		
-		textField_47 = new JTextField();
-		textField_47.setColumns(10);
-		panel_8.add(textField_47);
-		
-		textField_48 = new JTextField();
-		textField_48.setColumns(10);
-		panel_8.add(textField_48);
-		
-		textField_49 = new JTextField();
-		textField_49.setColumns(10);
-		panel_8.add(textField_49);
-		
-		textField_50 = new JTextField();
-		textField_50.setColumns(10);
-		panel_8.add(textField_50);
-		
-		textField_51 = new JTextField();
-		textField_51.setColumns(10);
-		panel_8.add(textField_51);
-		
-		label_19 = new JLabel("Cantidad");
-		label_19.setBounds(210, 1, 55, 14);
-		panel_5.add(label_19);
-		
-		label_20 = new JLabel("Observaci\u00F3n/Referencia");
-		label_20.setBounds(267, 1, 143, 14);
-		panel_5.add(label_20);
-		
-		panel_9 = new JPanel();
-		panel_9.setLayout(null);
-		panel_9.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_9.setBounds(858, 11, 414, 141);
-		pnlPestaña1.add(panel_9);
-		
-		panel_10 = new JPanel();
-		panel_10.setBounds(3, 17, 199, 120);
-		panel_9.add(panel_10);
-		panel_10.setLayout(new GridLayout(5, 0, 0, 0));
-		
-		label_21 = new JLabel("Tablero El\u00E9ctrico Tipo A");
-		panel_10.add(label_21);
-		
-		label_22 = new JLabel("Tablero El\u00E9ctrico Tipo B");
-		panel_10.add(label_22);
-		
-		label_23 = new JLabel("Tablero El\u00E9ctrico Tipo C");
-		panel_10.add(label_23);
-		
-		label_24 = new JLabel("Tablero El\u00E9ctrico Tipo D");
-		panel_10.add(label_24);
-		
-		label_25 = new JLabel("Tablero El\u00E9ctrico Tipo E");
-		panel_10.add(label_25);
-		
-		label_27 = new JLabel("KIT DE TABLEROS EL\u00C9CTRICOS");
-		label_27.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_27.setBounds(3, 1, 176, 14);
-		panel_9.add(label_27);
-		
-		panel_11 = new JPanel();
-		panel_11.setBounds(210, 17, 55, 120);
-		panel_9.add(panel_11);
-		panel_11.setLayout(new GridLayout(5, 2, 0, 0));
-		
-		textField_54 = new JTextField();
-		textField_54.setColumns(10);
-		panel_11.add(textField_54);
-		
-		textField_55 = new JTextField();
-		textField_55.setColumns(10);
-		panel_11.add(textField_55);
-		
-		textField_56 = new JTextField();
-		textField_56.setColumns(10);
-		panel_11.add(textField_56);
-		
-		textField_57 = new JTextField();
-		textField_57.setColumns(10);
-		panel_11.add(textField_57);
-		
-		textField_58 = new JTextField();
-		textField_58.setColumns(10);
-		panel_11.add(textField_58);
-		
-		textField_59 = new JTextField();
-		textField_59.setColumns(10);
-		panel_11.add(textField_59);
-		
-		textField_60 = new JTextField();
-		textField_60.setColumns(10);
-		panel_11.add(textField_60);
-		
-		textField_61 = new JTextField();
-		textField_61.setColumns(10);
-		panel_11.add(textField_61);
-		
-		textField_62 = new JTextField();
-		textField_62.setColumns(10);
-		panel_11.add(textField_62);
-		
-		textField_63 = new JTextField();
-		textField_63.setColumns(10);
-		panel_11.add(textField_63);
-		
-		panel_12 = new JPanel();
-		panel_12.setBounds(267, 17, 143, 120);
-		panel_9.add(panel_12);
-		panel_12.setLayout(new GridLayout(5, 0, 0, 0));
-		
-		textField_66 = new JTextField();
-		textField_66.setColumns(10);
-		panel_12.add(textField_66);
-		
-		textField_67 = new JTextField();
-		textField_67.setColumns(10);
-		panel_12.add(textField_67);
-		
-		textField_68 = new JTextField();
-		textField_68.setColumns(10);
-		panel_12.add(textField_68);
-		
-		textField_69 = new JTextField();
-		textField_69.setColumns(10);
-		panel_12.add(textField_69);
-		
-		textField_70 = new JTextField();
-		textField_70.setColumns(10);
-		panel_12.add(textField_70);
-		
-		label_28 = new JLabel("Cantidad");
-		label_28.setBounds(210, 1, 55, 14);
-		panel_9.add(label_28);
-		
-		label_29 = new JLabel("Observaci\u00F3n/Referencia");
-		label_29.setBounds(267, 1, 143, 14);
-		panel_9.add(label_29);
-		
-		panel_13 = new JPanel();
-		panel_13.setLayout(null);
-		panel_13.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_13.setBounds(434, 212, 414, 95);
-		pnlPestaña1.add(panel_13);
-		
-		panel_14 = new JPanel();
-		panel_14.setBounds(3, 17, 199, 73);
-		panel_13.add(panel_14);
-		panel_14.setLayout(new GridLayout(3, 0, 0, 0));
-		
-		label_16 = new JLabel("Tablero El\u00E9ctrico Tipo A");
-		panel_14.add(label_16);
-		
-		label_17 = new JLabel("Tablero El\u00E9ctrico Tipo B");
-		panel_14.add(label_17);
-		
-		label_26 = new JLabel("Tablero El\u00E9ctrico Tipo C");
-		panel_14.add(label_26);
-		
-		label_32 = new JLabel("KIT DE TABLEROS EL\u00C9CTRICOS");
-		label_32.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_32.setBounds(3, 1, 176, 14);
-		panel_13.add(label_32);
-		
-		panel_15 = new JPanel();
-		panel_15.setBounds(210, 17, 55, 73);
-		panel_13.add(panel_15);
-		panel_15.setLayout(new GridLayout(3, 2, 0, 0));
-		
-		textField_41 = new JTextField();
-		textField_41.setColumns(10);
-		panel_15.add(textField_41);
-		
-		textField_42 = new JTextField();
-		textField_42.setColumns(10);
-		panel_15.add(textField_42);
-		
-		textField_43 = new JTextField();
-		textField_43.setColumns(10);
-		panel_15.add(textField_43);
-		
-		textField_44 = new JTextField();
-		textField_44.setColumns(10);
-		panel_15.add(textField_44);
-		
-		textField_52 = new JTextField();
-		textField_52.setColumns(10);
-		panel_15.add(textField_52);
-		
-		textField_53 = new JTextField();
-		textField_53.setColumns(10);
-		panel_15.add(textField_53);
-		
-		panel_16 = new JPanel();
-		panel_16.setBounds(267, 17, 143, 73);
-		panel_13.add(panel_16);
-		panel_16.setLayout(new GridLayout(3, 0, 0, 0));
-		
-		textField_73 = new JTextField();
-		textField_73.setColumns(10);
-		panel_16.add(textField_73);
-		
-		textField_74 = new JTextField();
-		textField_74.setColumns(10);
-		panel_16.add(textField_74);
-		
-		textField_75 = new JTextField();
-		textField_75.setColumns(10);
-		panel_16.add(textField_75);
-		
-		label_33 = new JLabel("Cantidad");
-		label_33.setBounds(210, 1, 55, 14);
-		panel_13.add(label_33);
-		
-		label_34 = new JLabel("Observaci\u00F3n/Referencia");
-		label_34.setBounds(267, 1, 143, 14);
-		panel_13.add(label_34);
-		
-		panel_17 = new JPanel();
-		panel_17.setLayout(null);
-		panel_17.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_17.setBounds(858, 154, 414, 47);
-		pnlPestaña1.add(panel_17);
-		
-		panel_18 = new JPanel();
-		panel_18.setBounds(3, 17, 199, 25);
-		panel_17.add(panel_18);
-		panel_18.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		label_30 = new JLabel("Tablero El\u00E9ctrico Tipo A");
-		panel_18.add(label_30);
-		
-		label_36 = new JLabel("KIT DE TABLEROS EL\u00C9CTRICOS");
-		label_36.setFont(new Font("Tahoma", Font.BOLD, 11));
-		label_36.setBounds(3, 1, 176, 14);
-		panel_17.add(label_36);
-		
-		panel_19 = new JPanel();
-		panel_19.setBounds(210, 17, 55, 25);
-		panel_17.add(panel_19);
-		panel_19.setLayout(new GridLayout(1, 1, 0, 0));
-		
-		textField_64 = new JTextField();
-		textField_64.setColumns(10);
-		panel_19.add(textField_64);
-		
-		textField_65 = new JTextField();
-		textField_65.setColumns(10);
-		panel_19.add(textField_65);
-		
-		panel_20 = new JPanel();
-		panel_20.setBounds(267, 17, 143, 25);
-		panel_17.add(panel_20);
-		panel_20.setLayout(new GridLayout(1, 0, 0, 0));
-		
-		textField_78 = new JTextField();
-		textField_78.setColumns(10);
-		panel_20.add(textField_78);
-		
-		label_37 = new JLabel("Cantidad");
-		label_37.setBounds(210, 1, 55, 14);
-		panel_17.add(label_37);
-		
-		label_38 = new JLabel("Observaci\u00F3n/Referencia");
-		label_38.setBounds(267, 1, 143, 14);
-		panel_17.add(label_38);
-		
+		pnlTEEtiquetas.add(lblCajas);
+
+		JLabel lblTEKitTablerosE = new JLabel("KIT DE TABLEROS EL\u00C9CTRICOS");
+		lblTEKitTablerosE.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblTEKitTablerosE.setBounds(3, 1, 176, 14);
+		pnlTE.add(lblTEKitTablerosE);
+
+		JPanel pnlTECantidad = new JPanel();
+		pnlTECantidad.setBounds(210, 17, 55, 217);
+		pnlTE.add(pnlTECantidad);
+		pnlTECantidad.setLayout(new GridLayout(9, 2, 0, 0));
+
+		txtTECantidad00 = new JTextField();
+		pnlTECantidad.add(txtTECantidad00);
+		txtTECantidad00.setColumns(10);
+
+		txtTECantidad01 = new JTextField();
+		txtTECantidad01.setColumns(10);
+		pnlTECantidad.add(txtTECantidad01);
+
+		txtTECantidad10 = new JTextField();
+		txtTECantidad10.setColumns(10);
+		pnlTECantidad.add(txtTECantidad10);
+
+		txtTECantidad11 = new JTextField();
+		txtTECantidad11.setColumns(10);
+		pnlTECantidad.add(txtTECantidad11);
+
+		txtTECantidad20 = new JTextField();
+		txtTECantidad20.setColumns(10);
+		pnlTECantidad.add(txtTECantidad20);
+
+		txtTECantidad21 = new JTextField();
+		txtTECantidad21.setColumns(10);
+		pnlTECantidad.add(txtTECantidad21);
+
+		txtTECantidad30 = new JTextField();
+		txtTECantidad30.setColumns(10);
+		pnlTECantidad.add(txtTECantidad30);
+
+		txtTECantidad31 = new JTextField();
+		txtTECantidad31.setColumns(10);
+		pnlTECantidad.add(txtTECantidad31);
+
+		txtTECantidad40 = new JTextField();
+		txtTECantidad40.setColumns(10);
+		pnlTECantidad.add(txtTECantidad40);
+
+		txtTECantidad41 = new JTextField();
+		txtTECantidad41.setColumns(10);
+		pnlTECantidad.add(txtTECantidad41);
+
+		txtTECantidad50 = new JTextField();
+		txtTECantidad50.setColumns(10);
+		pnlTECantidad.add(txtTECantidad50);
+
+		txtTECantidad51 = new JTextField();
+		txtTECantidad51.setColumns(10);
+		pnlTECantidad.add(txtTECantidad51);
+
+		txtTECantidad60 = new JTextField();
+		txtTECantidad60.setColumns(10);
+		pnlTECantidad.add(txtTECantidad60);
+
+		txtTECantidad61 = new JTextField();
+		txtTECantidad61.setColumns(10);
+		pnlTECantidad.add(txtTECantidad61);
+
+		txtTECantidad70 = new JTextField();
+		txtTECantidad70.setColumns(10);
+		pnlTECantidad.add(txtTECantidad70);
+
+		txtTECantidad71 = new JTextField();
+		txtTECantidad71.setColumns(10);
+		pnlTECantidad.add(txtTECantidad71);
+
+		txtTECantidad80 = new JTextField();
+		txtTECantidad80.setColumns(10);
+		pnlTECantidad.add(txtTECantidad80);
+
+		txtTECantidad81 = new JTextField();
+		txtTECantidad81.setColumns(10);
+		pnlTECantidad.add(txtTECantidad81);
+
+		JPanel pnlTEObsRef = new JPanel();
+		pnlTEObsRef.setBounds(267, 17, 143, 217);
+		pnlTE.add(pnlTEObsRef);
+		pnlTEObsRef.setLayout(new GridLayout(9, 0, 0, 0));
+
+		txtTEObsRef0 = new JTextField();
+		pnlTEObsRef.add(txtTEObsRef0);
+		txtTEObsRef0.setColumns(10);
+
+		txtTEObsRef1 = new JTextField();
+		pnlTEObsRef.add(txtTEObsRef1);
+		txtTEObsRef1.setColumns(10);
+
+		txtTEObsRef2 = new JTextField();
+		txtTEObsRef2.setColumns(10);
+		pnlTEObsRef.add(txtTEObsRef2);
+
+		txtTEObsRef3 = new JTextField();
+		txtTEObsRef3.setColumns(10);
+		pnlTEObsRef.add(txtTEObsRef3);
+
+		txtTEObsRef4 = new JTextField();
+		txtTEObsRef4.setColumns(10);
+		pnlTEObsRef.add(txtTEObsRef4);
+
+		txtTEObsRef5 = new JTextField();
+		txtTEObsRef5.setColumns(10);
+		pnlTEObsRef.add(txtTEObsRef5);
+
+		txtTEObsRef6 = new JTextField();
+		txtTEObsRef6.setColumns(10);
+		pnlTEObsRef.add(txtTEObsRef6);
+
+		txtTEObsRef7 = new JTextField();
+		txtTEObsRef7.setColumns(10);
+		pnlTEObsRef.add(txtTEObsRef7);
+
+		txtTEObsRef8 = new JTextField();
+		txtTEObsRef8.setColumns(10);
+		pnlTEObsRef.add(txtTEObsRef8);
+
+		lblTECantidad = new JLabel("Cantidad");
+		lblTECantidad.setBounds(210, 1, 55, 14);
+		pnlTE.add(lblTECantidad);
+
+		lblTEObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		lblTEObsRef.setBounds(267, 1, 143, 14);
+		pnlTE.add(lblTEObsRef);
+
+		pnlED = new JPanel();
+		pnlED.setLayout(null);
+		pnlED.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		pnlED.setBounds(10, 282, 414, 163);
+		pnlPestaña1.add(pnlED);
+
+		pnlEDEtiquetas = new JPanel();
+		pnlEDEtiquetas.setBounds(3, 17, 199, 144);
+		pnlED.add(pnlEDEtiquetas);
+		pnlEDEtiquetas.setLayout(new GridLayout(6, 0, 0, 0));
+
+		lblDadosCimentacionBXB = new JLabel("Dados de cimentaci\u00F3n de postes BXBcm");
+		pnlEDEtiquetas.add(lblDadosCimentacionBXB);
+
+		lblReflectoresLed = new JLabel("Reflectores LED 400 w - 30000 lum");
+		pnlEDEtiquetas.add(lblReflectoresLed);
+
+		lblPostes6mts = new JLabel("Postes de 6 mts simples");
+		pnlEDEtiquetas.add(lblPostes6mts);
+
+		lblEDCajasConexion = new JLabel("Cajas de Conexi\u00F3n  .60x.60 mt");
+		pnlEDEtiquetas.add(lblEDCajasConexion);
+
+		lblEDKitCableadoElectrico = new JLabel("Kit Cableado El\u00E9ctrico ED");
+		pnlEDEtiquetas.add(lblEDKitCableadoElectrico);
+
+		lblEDTuberaPvc = new JLabel("Tuber\u00EDa PVC 1\u00B4para cableado l=6m");
+		pnlEDEtiquetas.add(lblEDTuberaPvc);
+
+		lblEDKitEsparcimD = new JLabel("KIT DE ESPARCIMIENTO DEPORTIVO");
+		lblEDKitEsparcimD.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblEDKitEsparcimD.setBounds(3, 1, 211, 14);
+		pnlED.add(lblEDKitEsparcimD);
+
+		pnlEDCantidad = new JPanel();
+		pnlEDCantidad.setBounds(210, 17, 55, 144);
+		pnlED.add(pnlEDCantidad);
+		pnlEDCantidad.setLayout(new GridLayout(6, 2, 0, 0));
+
+		txtEDCantidad00 = new JTextField();
+		txtEDCantidad00.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad00);
+
+		txtEDCantidad01 = new JTextField();
+		txtEDCantidad01.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad01);
+
+		txtEDCantidad10 = new JTextField();
+		txtEDCantidad10.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad10);
+
+		txtEDCantidad11 = new JTextField();
+		txtEDCantidad11.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad11);
+
+		txtEDCantidad20 = new JTextField();
+		txtEDCantidad20.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad20);
+
+		txtEDCantidad21 = new JTextField();
+		txtEDCantidad21.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad21);
+
+		txtEDCantidad30 = new JTextField();
+		txtEDCantidad30.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad30);
+
+		txtEDCantidad31 = new JTextField();
+		txtEDCantidad31.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad31);
+
+		txtEDCantidad40 = new JTextField();
+		txtEDCantidad40.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad40);
+
+		txtEDCantidad41 = new JTextField();
+		txtEDCantidad41.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad41);
+
+		txtEDCantidad50 = new JTextField();
+		txtEDCantidad50.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad50);
+
+		txtEDCantidad51 = new JTextField();
+		txtEDCantidad51.setColumns(10);
+		pnlEDCantidad.add(txtEDCantidad51);
+
+		pnlEDObsRef = new JPanel();
+		pnlEDObsRef.setBounds(267, 17, 143, 144);
+		pnlED.add(pnlEDObsRef);
+		pnlEDObsRef.setLayout(new GridLayout(6, 0, 0, 0));
+
+		txtEDObsRef0 = new JTextField();
+		txtEDObsRef0.setColumns(10);
+		pnlEDObsRef.add(txtEDObsRef0);
+
+		txtEDObsRef1 = new JTextField();
+		txtEDObsRef1.setColumns(10);
+		pnlEDObsRef.add(txtEDObsRef1);
+
+		txtEDObsRef2 = new JTextField();
+		txtEDObsRef2.setColumns(10);
+		pnlEDObsRef.add(txtEDObsRef2);
+
+		txtEDObsRef3 = new JTextField();
+		txtEDObsRef3.setColumns(10);
+		pnlEDObsRef.add(txtEDObsRef3);
+
+		txtEDObsRef4 = new JTextField();
+		txtEDObsRef4.setColumns(10);
+		pnlEDObsRef.add(txtEDObsRef4);
+
+		txtEDObsRef5 = new JTextField();
+		txtEDObsRef5.setColumns(10);
+		pnlEDObsRef.add(txtEDObsRef5);
+
+		lblEDCantidad = new JLabel("Cantidad");
+		lblEDCantidad.setBounds(210, 1, 55, 14);
+		pnlED.add(lblEDCantidad);
+
+		lblEDObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		lblEDObsRef.setBounds(267, 1, 143, 14);
+		pnlED.add(lblEDObsRef);
+
+		pnlAE = new JPanel();
+		pnlAE.setLayout(null);
+		pnlAE.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		pnlAE.setBounds(434, 11, 414, 190);
+		pnlPestaña1.add(pnlAE);
+
+		pnlAEEtiquetas = new JPanel();
+		pnlAEEtiquetas.setBounds(3, 17, 199, 169);
+		pnlAE.add(pnlAEEtiquetas);
+		pnlAEEtiquetas.setLayout(new GridLayout(7, 0, 0, 0));
+
+		lblDadosCimentacionAXA = new JLabel("Dados de cimentaci\u00F3n de postes AXAcm");
+		pnlAEEtiquetas.add(lblDadosCimentacionAXA);
+
+		lblLuminariasLed = new JLabel("Luminarias LED 120 W - 12000 lum");
+		pnlAEEtiquetas.add(lblLuminariasLed);
+
+		lblPostesSimples = new JLabel("Postes de 6 mts simples");
+		pnlAEEtiquetas.add(lblPostesSimples);
+
+		lblPostesDobles = new JLabel("Postes de 6 mts dobles");
+		pnlAEEtiquetas.add(lblPostesDobles);
+
+		lblAECajasConexion = new JLabel("Cajas de Conexi\u00F3n  0,60x0,60 mt");
+		pnlAEEtiquetas.add(lblAECajasConexion);
+
+		lblAEKitCableadoElectrico = new JLabel("Kit cableado el\u00E9ctrico AE");
+		pnlAEEtiquetas.add(lblAEKitCableadoElectrico);
+
+		lblAETuberaPvc = new JLabel("Tuber\u00EDa PVC 1\u00B4para cableado l=6m");
+		pnlAEEtiquetas.add(lblAETuberaPvc);
+
+		lblAEKitAlumbradoExterior = new JLabel("KIT ALUMBRADO EXTERIOR");
+		lblAEKitAlumbradoExterior.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblAEKitAlumbradoExterior.setBounds(3, 1, 176, 14);
+		pnlAE.add(lblAEKitAlumbradoExterior);
+
+		pnlAECantidad = new JPanel();
+		pnlAECantidad.setBounds(210, 17, 55, 169);
+		pnlAE.add(pnlAECantidad);
+		pnlAECantidad.setLayout(new GridLayout(7, 2, 0, 0));
+
+		txtAECantidad00 = new JTextField();
+		txtAECantidad00.setColumns(10);
+		pnlAECantidad.add(txtAECantidad00);
+
+		txtAECantidad01 = new JTextField();
+		txtAECantidad01.setColumns(10);
+		pnlAECantidad.add(txtAECantidad01);
+
+		txtAECantidad10 = new JTextField();
+		txtAECantidad10.setColumns(10);
+		pnlAECantidad.add(txtAECantidad10);
+
+		txtAECantidad11 = new JTextField();
+		txtAECantidad11.setColumns(10);
+		pnlAECantidad.add(txtAECantidad11);
+
+		txtAECantidad20 = new JTextField();
+		txtAECantidad20.setColumns(10);
+		pnlAECantidad.add(txtAECantidad20);
+
+		txtAECantidad21 = new JTextField();
+		txtAECantidad21.setColumns(10);
+		pnlAECantidad.add(txtAECantidad21);
+
+		txtAECantidad30 = new JTextField();
+		txtAECantidad30.setColumns(10);
+		pnlAECantidad.add(txtAECantidad30);
+
+		txtAECantidad31 = new JTextField();
+		txtAECantidad31.setColumns(10);
+		pnlAECantidad.add(txtAECantidad31);
+
+		txtAECantidad40 = new JTextField();
+		txtAECantidad40.setColumns(10);
+		pnlAECantidad.add(txtAECantidad40);
+
+		txtAECantidad41 = new JTextField();
+		txtAECantidad41.setColumns(10);
+		pnlAECantidad.add(txtAECantidad41);
+
+		txtAECantidad50 = new JTextField();
+		txtAECantidad50.setColumns(10);
+		pnlAECantidad.add(txtAECantidad50);
+
+		txtAECantidad51 = new JTextField();
+		txtAECantidad51.setColumns(10);
+		pnlAECantidad.add(txtAECantidad51);
+
+		txtAECantidad60 = new JTextField();
+		txtAECantidad60.setColumns(10);
+		pnlAECantidad.add(txtAECantidad60);
+
+		txtAECantidad61 = new JTextField();
+		txtAECantidad61.setColumns(10);
+		pnlAECantidad.add(txtAECantidad61);
+
+		pnlAEObsRef = new JPanel();
+		pnlAEObsRef.setBounds(267, 17, 143, 169);
+		pnlAE.add(pnlAEObsRef);
+		pnlAEObsRef.setLayout(new GridLayout(7, 0, 0, 0));
+
+		txtAEObsRef0 = new JTextField();
+		txtAEObsRef0.setColumns(10);
+		pnlAEObsRef.add(txtAEObsRef0);
+
+		txtAEObsRef1 = new JTextField();
+		txtAEObsRef1.setColumns(10);
+		pnlAEObsRef.add(txtAEObsRef1);
+
+		txtAEObsRef2 = new JTextField();
+		txtAEObsRef2.setColumns(10);
+		pnlAEObsRef.add(txtAEObsRef2);
+
+		txtAEObsRef3 = new JTextField();
+		txtAEObsRef3.setColumns(10);
+		pnlAEObsRef.add(txtAEObsRef3);
+
+		txtAEObsRef4 = new JTextField();
+		txtAEObsRef4.setColumns(10);
+		pnlAEObsRef.add(txtAEObsRef4);
+
+		txtAEObsRef5 = new JTextField();
+		txtAEObsRef5.setColumns(10);
+		pnlAEObsRef.add(txtAEObsRef5);
+
+		txtAEObsRef6 = new JTextField();
+		txtAEObsRef6.setColumns(10);
+		pnlAEObsRef.add(txtAEObsRef6);
+
+		lblAECantidad = new JLabel("Cantidad");
+		lblAECantidad.setBounds(210, 1, 55, 14);
+		pnlAE.add(lblAECantidad);
+
+		lblAEObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		lblAEObsRef.setBounds(267, 1, 143, 14);
+		pnlAE.add(lblAEObsRef);
+
+		pnlT = new JPanel();
+		pnlT.setLayout(null);
+		pnlT.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		pnlT.setBounds(858, 11, 414, 141);
+		pnlPestaña1.add(pnlT);
+
+		pnlTEtiquetas = new JPanel();
+		pnlTEtiquetas.setBounds(3, 17, 199, 120);
+		pnlT.add(pnlTEtiquetas);
+		pnlTEtiquetas.setLayout(new GridLayout(5, 0, 0, 0));
+
+		lblTKitCableadoTR = new JLabel("Kit de cableado el\u00E9ctrico TR");
+		pnlTEtiquetas.add(lblTKitCableadoTR);
+
+		lblTuberiaPvc = new JLabel("Tuber\u00EDa PVC 3\u00B4para cableado l=6m");
+		pnlTEtiquetas.add(lblTuberiaPvc);
+
+		lblTransformadorKva = new JLabel("Transformador 100 Kva");
+		pnlTEtiquetas.add(lblTransformadorKva);
+
+		lblCimentacinTransf = new JLabel("Cimentaci\u00F3n Transformador");
+		pnlTEtiquetas.add(lblCimentacinTransf);
+
+		lblCajasDeConexion = new JLabel("Cajas de Conexi\u00F3n  0,60x0,60 mt");
+		pnlTEtiquetas.add(lblCajasDeConexion);
+
+		lblTKitTransformador = new JLabel("KIT TRANSFORMADOR");
+		lblTKitTransformador.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblTKitTransformador.setBounds(3, 1, 176, 14);
+		pnlT.add(lblTKitTransformador);
+
+		pnlTCantidad = new JPanel();
+		pnlTCantidad.setBounds(210, 17, 55, 120);
+		pnlT.add(pnlTCantidad);
+		pnlTCantidad.setLayout(new GridLayout(5, 2, 0, 0));
+
+		txtTCantidad00 = new JTextField();
+		txtTCantidad00.setColumns(10);
+		pnlTCantidad.add(txtTCantidad00);
+
+		txtTCantidad01 = new JTextField();
+		txtTCantidad01.setColumns(10);
+		pnlTCantidad.add(txtTCantidad01);
+
+		txtTCantidad10 = new JTextField();
+		txtTCantidad10.setColumns(10);
+		pnlTCantidad.add(txtTCantidad10);
+
+		txtTCantidad11 = new JTextField();
+		txtTCantidad11.setColumns(10);
+		pnlTCantidad.add(txtTCantidad11);
+
+		txtTCantidad20 = new JTextField();
+		txtTCantidad20.setColumns(10);
+		pnlTCantidad.add(txtTCantidad20);
+
+		txtTCantidad21 = new JTextField();
+		txtTCantidad21.setColumns(10);
+		pnlTCantidad.add(txtTCantidad21);
+
+		txtTCantidad30 = new JTextField();
+		txtTCantidad30.setColumns(10);
+		pnlTCantidad.add(txtTCantidad30);
+
+		txtTCantidad31 = new JTextField();
+		txtTCantidad31.setColumns(10);
+		pnlTCantidad.add(txtTCantidad31);
+
+		txtTCantidad40 = new JTextField();
+		txtTCantidad40.setColumns(10);
+		pnlTCantidad.add(txtTCantidad40);
+
+		txtTCantidad41 = new JTextField();
+		txtTCantidad41.setColumns(10);
+		pnlTCantidad.add(txtTCantidad41);
+
+		pnlTObsRef = new JPanel();
+		pnlTObsRef.setBounds(267, 17, 143, 120);
+		pnlT.add(pnlTObsRef);
+		pnlTObsRef.setLayout(new GridLayout(5, 0, 0, 0));
+
+		txtTObsRef0 = new JTextField();
+		txtTObsRef0.setColumns(10);
+		pnlTObsRef.add(txtTObsRef0);
+
+		txtTObsRef1 = new JTextField();
+		txtTObsRef1.setColumns(10);
+		pnlTObsRef.add(txtTObsRef1);
+
+		txtTObsRef2 = new JTextField();
+		txtTObsRef2.setColumns(10);
+		pnlTObsRef.add(txtTObsRef2);
+
+		txtTObsRef3 = new JTextField();
+		txtTObsRef3.setColumns(10);
+		pnlTObsRef.add(txtTObsRef3);
+
+		txtTObsRef4 = new JTextField();
+		txtTObsRef4.setColumns(10);
+		pnlTObsRef.add(txtTObsRef4);
+
+		lblTCantidad = new JLabel("Cantidad");
+		lblTCantidad.setBounds(210, 1, 55, 14);
+		pnlT.add(lblTCantidad);
+
+		lblTObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		lblTObsRef.setBounds(267, 1, 143, 14);
+		pnlT.add(lblTObsRef);
+
+		pnlBA = new JPanel();
+		pnlBA.setLayout(null);
+		pnlBA.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		pnlBA.setBounds(434, 212, 414, 95);
+		pnlPestaña1.add(pnlBA);
+
+		pnlBAEtiquetas = new JPanel();
+		pnlBAEtiquetas.setBounds(3, 17, 199, 73);
+		pnlBA.add(pnlBAEtiquetas);
+		pnlBAEtiquetas.setLayout(new GridLayout(3, 0, 0, 0));
+
+		lblKitCableadoBA = new JLabel("Kit de cableado el\u00E9ctrico BA");
+		pnlBAEtiquetas.add(lblKitCableadoBA);
+
+		lblBATuberaPvc = new JLabel("Tuber\u00EDa PVC 2\u00B4para cableado l=6m");
+		pnlBAEtiquetas.add(lblBATuberaPvc);
+
+		lblBACajasConexion = new JLabel("Cajas de Conexi\u00F3n  0,60x0,60 mt");
+		pnlBAEtiquetas.add(lblBACajasConexion);
+
+		lblKitBombaA = new JLabel("KIT BOMBA DE AGUA");
+		lblKitBombaA.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblKitBombaA.setBounds(3, 1, 176, 14);
+		pnlBA.add(lblKitBombaA);
+
+		pnlBACantidad = new JPanel();
+		pnlBACantidad.setBounds(210, 17, 55, 73);
+		pnlBA.add(pnlBACantidad);
+		pnlBACantidad.setLayout(new GridLayout(3, 2, 0, 0));
+
+		txtBACantidad00 = new JTextField();
+		txtBACantidad00.setColumns(10);
+		pnlBACantidad.add(txtBACantidad00);
+
+		txtBACantidad01 = new JTextField();
+		txtBACantidad01.setColumns(10);
+		pnlBACantidad.add(txtBACantidad01);
+
+		txtBACantidad10 = new JTextField();
+		txtBACantidad10.setColumns(10);
+		pnlBACantidad.add(txtBACantidad10);
+
+		txtBACantidad11 = new JTextField();
+		txtBACantidad11.setColumns(10);
+		pnlBACantidad.add(txtBACantidad11);
+
+		txtBACantidad20 = new JTextField();
+		txtBACantidad20.setColumns(10);
+		pnlBACantidad.add(txtBACantidad20);
+
+		txtBACantidad21 = new JTextField();
+		txtBACantidad21.setColumns(10);
+		pnlBACantidad.add(txtBACantidad21);
+
+		pnlBAObsRef = new JPanel();
+		pnlBAObsRef.setBounds(267, 17, 143, 73);
+		pnlBA.add(pnlBAObsRef);
+		pnlBAObsRef.setLayout(new GridLayout(3, 0, 0, 0));
+
+		txtBAObsRef0 = new JTextField();
+		txtBAObsRef0.setColumns(10);
+		pnlBAObsRef.add(txtBAObsRef0);
+
+		txtBAObsRef1 = new JTextField();
+		txtBAObsRef1.setColumns(10);
+		pnlBAObsRef.add(txtBAObsRef1);
+
+		txtBAObsRef2 = new JTextField();
+		txtBAObsRef2.setColumns(10);
+		pnlBAObsRef.add(txtBAObsRef2);
+
+		lblBACantidad = new JLabel("Cantidad");
+		lblBACantidad.setBounds(210, 1, 55, 14);
+		pnlBA.add(lblBACantidad);
+
+		lblBAObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		lblBAObsRef.setBounds(267, 1, 143, 14);
+		pnlBA.add(lblBAObsRef);
+
+		pnlSMT = new JPanel();
+		pnlSMT.setLayout(null);
+		pnlSMT.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		pnlSMT.setBounds(858, 154, 414, 47);
+		pnlPestaña1.add(pnlSMT);
+
+		pnlSMTEtiquetas = new JPanel();
+		pnlSMTEtiquetas.setBounds(3, 17, 199, 25);
+		pnlSMT.add(pnlSMTEtiquetas);
+		pnlSMTEtiquetas.setLayout(new GridLayout(1, 0, 0, 0));
+
+		lblKitCableadoMT = new JLabel("Kit de cableado el\u00E9ctrico MT");
+		pnlSMTEtiquetas.add(lblKitCableadoMT);
+
+		lblSistemaMallaT = new JLabel("SISTEMA MALLA A TIERRA");
+		lblSistemaMallaT.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblSistemaMallaT.setBounds(3, 1, 176, 14);
+		pnlSMT.add(lblSistemaMallaT);
+
+		pnlSMTCantidad = new JPanel();
+		pnlSMTCantidad.setBounds(210, 17, 55, 25);
+		pnlSMT.add(pnlSMTCantidad);
+		pnlSMTCantidad.setLayout(new GridLayout(1, 1, 0, 0));
+
+		txtSMTCantidad00 = new JTextField();
+		txtSMTCantidad00.setColumns(10);
+		pnlSMTCantidad.add(txtSMTCantidad00);
+
+		txtSMTCantidad01 = new JTextField();
+		txtSMTCantidad01.setColumns(10);
+		pnlSMTCantidad.add(txtSMTCantidad01);
+
+		pnlSMTObsRef = new JPanel();
+		pnlSMTObsRef.setBounds(267, 17, 143, 25);
+		pnlSMT.add(pnlSMTObsRef);
+		pnlSMTObsRef.setLayout(new GridLayout(1, 0, 0, 0));
+
+		txtSMTObsRef0 = new JTextField();
+		txtSMTObsRef0.setColumns(10);
+		pnlSMTObsRef.add(txtSMTObsRef0);
+
+		lblSMTCantidad = new JLabel("Cantidad");
+		lblSMTCantidad.setBounds(210, 1, 55, 14);
+		pnlSMT.add(lblSMTCantidad);
+
+		lblSMTObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		lblSMTObsRef.setBounds(267, 1, 143, 14);
+		pnlSMT.add(lblSMTObsRef);
+
 		panel_21 = new JPanel();
-		panel_21.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n Obligatoria", TitledBorder.LEADING, TitledBorder.TOP, null, Color.RED));
+		panel_21.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n Obligatoria",
+				TitledBorder.LEADING, TitledBorder.TOP, null, Color.RED));
 		panel_21.setBounds(458, 313, 791, 141);
 		pnlPestaña1.add(panel_21);
 		panel_21.setLayout(null);
-		
+
 		panel_23 = new JPanel();
 		panel_23.setBounds(561, 11, 220, 97);
 		panel_21.add(panel_23);
 		panel_23.setLayout(new GridLayout(4, 0, 0, 0));
-		
-		textField_77 = new JTextField();
-		textField_77.setColumns(10);
-		panel_23.add(textField_77);
-		
-		textField_79 = new JTextField();
-		textField_79.setColumns(10);
-		panel_23.add(textField_79);
-		
-		textField_80 = new JTextField();
-		textField_80.setColumns(10);
-		panel_23.add(textField_80);
-		
-		textField_82 = new JTextField();
-		textField_82.setColumns(10);
-		panel_23.add(textField_82);
-		
+
+		txtObsGenDer = new JTextField();
+		txtObsGenDer.setColumns(10);
+		panel_23.add(txtObsGenDer);
+
+		txtResponsableContratista = new JTextField();
+		txtResponsableContratista.setColumns(10);
+		panel_23.add(txtResponsableContratista);
+
+		txtCargoDer = new JTextField();
+		txtCargoDer.setColumns(10);
+		panel_23.add(txtCargoDer);
+
+		txtFecha = new JTextField();
+		txtFecha.setColumns(10);
+		panel_23.add(txtFecha);
+
 		panel_22 = new JPanel();
-		panel_22.setBounds(145, 22, 220, 73);
+		panel_22.setBounds(166, 22, 220, 73);
 		panel_21.add(panel_22);
 		panel_22.setLayout(new GridLayout(3, 0, 0, 0));
-		
-		textField_71 = new JTextField();
-		textField_71.setColumns(10);
-		panel_22.add(textField_71);
-		
-		textField_72 = new JTextField();
-		textField_72.setColumns(10);
-		panel_22.add(textField_72);
-		
-		textField_76 = new JTextField();
-		textField_76.setColumns(10);
-		panel_22.add(textField_76);
-		
+
+		txtObsGenIzq = new JTextField();
+		txtObsGenIzq.setColumns(10);
+		panel_22.add(txtObsGenIzq);
+
+		txtResponsableMineduc = new JTextField();
+		txtResponsableMineduc.setColumns(10);
+		panel_22.add(txtResponsableMineduc);
+
+		txtCargoIzq = new JTextField();
+		txtCargoIzq.setColumns(10);
+		panel_22.add(txtCargoIzq);
+
 		panel_24 = new JPanel();
-		panel_24.setBounds(10, 22, 132, 73);
+		panel_24.setBounds(10, 22, 157, 73);
 		panel_21.add(panel_24);
 		panel_24.setLayout(new GridLayout(3, 0, 0, 0));
-		
-		label_31 = new JLabel("Tablero El\u00E9ctrico Tipo A");
-		panel_24.add(label_31);
-		
-		label_35 = new JLabel("Tablero El\u00E9ctrico Tipo B");
-		panel_24.add(label_35);
-		
-		label_39 = new JLabel("Tablero El\u00E9ctrico Tipo C");
-		panel_24.add(label_39);
-		
+
+		lblObsGenIzq = new JLabel("Observaciones Generales:");
+		panel_24.add(lblObsGenIzq);
+
+		lblResponsableMineduc = new JLabel("Responsable MinEduc:");
+		panel_24.add(lblResponsableMineduc);
+
+		lblCargoIzq = new JLabel("Cargo:");
+		panel_24.add(lblCargoIzq);
+
 		panel_25 = new JPanel();
-		panel_25.setBounds(425, 11, 132, 97);
+		panel_25.setBounds(403, 11, 157, 97);
 		panel_21.add(panel_25);
 		panel_25.setLayout(new GridLayout(4, 0, 0, 0));
-		
-		label_40 = new JLabel("Tablero El\u00E9ctrico Tipo A");
-		panel_25.add(label_40);
-		
-		label_41 = new JLabel("Tablero El\u00E9ctrico Tipo B");
-		panel_25.add(label_41);
-		
-		label_42 = new JLabel("Tablero El\u00E9ctrico Tipo C");
-		panel_25.add(label_42);
-		
-		label_43 = new JLabel("Tablero El\u00E9ctrico Tipo D");
-		panel_25.add(label_43);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(276, 106, 89, 23);
-		panel_21.add(btnNewButton);
+
+		lblObsGenDer = new JLabel("Observaciones Generales:");
+		panel_25.add(lblObsGenDer);
+
+		lblResponsableContratista = new JLabel("Responsable Contratista:");
+		panel_25.add(lblResponsableContratista);
+
+		lblCargoDer = new JLabel("Cargo:");
+		panel_25.add(lblCargoDer);
+
+		lblFecha = new JLabel("Fecha:");
+		panel_25.add(lblFecha);
+
+		JButton btnInsertarFoto = new JButton("Insertar FOTO");
+		btnInsertarFoto.setBounds(278, 100, 120, 35);
+		panel_21.add(btnInsertarFoto);
 	}
 }
