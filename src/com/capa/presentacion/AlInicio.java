@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-public class AL_INICIO extends JFrame {
+public class AlInicio extends JFrame {
 
 	/**
 	 * 
@@ -23,7 +23,7 @@ public class AL_INICIO extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AL_INICIO frame = new AL_INICIO();
+					AlInicio frame = new AlInicio();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +35,7 @@ public class AL_INICIO extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AL_INICIO() {
+	public AlInicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 480, 430);
 		setTitle("DIRECCIÓN NACIONAL DE INFRAESTRUCTURA FÍSICA");

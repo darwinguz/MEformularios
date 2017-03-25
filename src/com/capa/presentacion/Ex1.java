@@ -15,7 +15,7 @@ import javax.swing.JTextPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 
-public class EX_1 extends JFrame {
+public class Ex1 extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -31,7 +31,7 @@ public class EX_1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EX_1 frame = new EX_1();
+					Ex1 frame = new Ex1();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +43,7 @@ public class EX_1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public EX_1() {
+	public Ex1() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1061, 455);
 		contentPane = new JPanel();
