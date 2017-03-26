@@ -184,21 +184,21 @@ public class Ex1 extends JFrame {
 	private JTextField txtSMTObsRef0;
 	private JLabel lblSMTCantidad;
 	private JLabel lblSMTObsRef;
-	private JPanel panel_21;
-	private JPanel panel_23;
+	private JPanel pnlInformacionObl;
+	private JPanel pnlIOTexts2;
 	private JTextField txtObsGenDer;
 	private JTextField txtResponsableContratista;
 	private JTextField txtCargoDer;
 	private JTextField txtFecha;
-	private JPanel panel_22;
+	private JPanel pnlIOTexts1;
 	private JTextField txtObsGenIzq;
 	private JTextField txtResponsableMineduc;
 	private JTextField txtCargoIzq;
-	private JPanel panel_24;
+	private JPanel pnlIOEtiquetas1;
 	private JLabel lblObsGenIzq;
 	private JLabel lblResponsableMineduc;
 	private JLabel lblCargoIzq;
-	private JPanel panel_25;
+	private JPanel pnlIOEtiquetas2;
 	private JLabel lblObsGenDer;
 	private JLabel lblResponsableContratista;
 	private JLabel lblCargoDer;
@@ -1018,84 +1018,84 @@ public class Ex1 extends JFrame {
 		lblSMTObsRef.setBounds(267, 1, 143, 14);
 		pnlSMT.add(lblSMTObsRef);
 
-		panel_21 = new JPanel();
-		panel_21.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n Obligatoria",
-				TitledBorder.LEADING, TitledBorder.TOP, null, Color.RED));
-		panel_21.setBounds(458, 313, 791, 141);
-		pnlPestaña1.add(panel_21);
-		panel_21.setLayout(null);
+		pnlInformacionObl = new JPanel();
+		pnlInformacionObl.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"),
+				"Informaci\u00F3n Obligatoria", TitledBorder.LEADING, TitledBorder.TOP, null, Color.RED));
+		pnlInformacionObl.setBounds(458, 313, 791, 141);
+		pnlPestaña1.add(pnlInformacionObl);
+		pnlInformacionObl.setLayout(null);
 
-		panel_23 = new JPanel();
-		panel_23.setBounds(561, 11, 220, 97);
-		panel_21.add(panel_23);
-		panel_23.setLayout(new GridLayout(4, 0, 0, 0));
+		pnlIOEtiquetas1 = new JPanel();
+		pnlIOEtiquetas1.setBounds(10, 22, 157, 73);
+		pnlInformacionObl.add(pnlIOEtiquetas1);
+		pnlIOEtiquetas1.setLayout(new GridLayout(3, 0, 0, 0));
 
-		txtObsGenDer = new JTextField();
-		txtObsGenDer.setColumns(10);
-		panel_23.add(txtObsGenDer);
+		lblObsGenIzq = new JLabel("Observaciones Generales:");
+		pnlIOEtiquetas1.add(lblObsGenIzq);
 
-		txtResponsableContratista = new JTextField();
-		txtResponsableContratista.setColumns(10);
-		panel_23.add(txtResponsableContratista);
+		lblResponsableMineduc = new JLabel("Responsable MinEduc:");
+		pnlIOEtiquetas1.add(lblResponsableMineduc);
 
-		txtCargoDer = new JTextField();
-		txtCargoDer.setColumns(10);
-		panel_23.add(txtCargoDer);
+		lblCargoIzq = new JLabel("Cargo:");
+		pnlIOEtiquetas1.add(lblCargoIzq);
 
-		txtFecha = new JTextField();
-		txtFecha.setColumns(10);
-		panel_23.add(txtFecha);
-
-		panel_22 = new JPanel();
-		panel_22.setBounds(166, 22, 220, 73);
-		panel_21.add(panel_22);
-		panel_22.setLayout(new GridLayout(3, 0, 0, 0));
+		pnlIOTexts1 = new JPanel();
+		pnlIOTexts1.setBounds(166, 22, 220, 73);
+		pnlInformacionObl.add(pnlIOTexts1);
+		pnlIOTexts1.setLayout(new GridLayout(3, 0, 0, 0));
 
 		txtObsGenIzq = new JTextField();
 		txtObsGenIzq.setColumns(10);
-		panel_22.add(txtObsGenIzq);
+		pnlIOTexts1.add(txtObsGenIzq);
 
 		txtResponsableMineduc = new JTextField();
 		txtResponsableMineduc.setColumns(10);
-		panel_22.add(txtResponsableMineduc);
+		pnlIOTexts1.add(txtResponsableMineduc);
 
 		txtCargoIzq = new JTextField();
 		txtCargoIzq.setColumns(10);
-		panel_22.add(txtCargoIzq);
+		pnlIOTexts1.add(txtCargoIzq);
 
-		panel_24 = new JPanel();
-		panel_24.setBounds(10, 22, 157, 73);
-		panel_21.add(panel_24);
-		panel_24.setLayout(new GridLayout(3, 0, 0, 0));
-
-		lblObsGenIzq = new JLabel("Observaciones Generales:");
-		panel_24.add(lblObsGenIzq);
-
-		lblResponsableMineduc = new JLabel("Responsable MinEduc:");
-		panel_24.add(lblResponsableMineduc);
-
-		lblCargoIzq = new JLabel("Cargo:");
-		panel_24.add(lblCargoIzq);
-
-		panel_25 = new JPanel();
-		panel_25.setBounds(403, 11, 157, 97);
-		panel_21.add(panel_25);
-		panel_25.setLayout(new GridLayout(4, 0, 0, 0));
+		pnlIOEtiquetas2 = new JPanel();
+		pnlIOEtiquetas2.setBounds(403, 11, 157, 97);
+		pnlInformacionObl.add(pnlIOEtiquetas2);
+		pnlIOEtiquetas2.setLayout(new GridLayout(4, 0, 0, 0));
 
 		lblObsGenDer = new JLabel("Observaciones Generales:");
-		panel_25.add(lblObsGenDer);
+		pnlIOEtiquetas2.add(lblObsGenDer);
 
 		lblResponsableContratista = new JLabel("Responsable Contratista:");
-		panel_25.add(lblResponsableContratista);
+		pnlIOEtiquetas2.add(lblResponsableContratista);
 
 		lblCargoDer = new JLabel("Cargo:");
-		panel_25.add(lblCargoDer);
+		pnlIOEtiquetas2.add(lblCargoDer);
 
 		lblFecha = new JLabel("Fecha:");
-		panel_25.add(lblFecha);
+		pnlIOEtiquetas2.add(lblFecha);
+
+		pnlIOTexts2 = new JPanel();
+		pnlIOTexts2.setBounds(561, 11, 220, 97);
+		pnlInformacionObl.add(pnlIOTexts2);
+		pnlIOTexts2.setLayout(new GridLayout(4, 0, 0, 0));
+
+		txtObsGenDer = new JTextField();
+		txtObsGenDer.setColumns(10);
+		pnlIOTexts2.add(txtObsGenDer);
+
+		txtResponsableContratista = new JTextField();
+		txtResponsableContratista.setColumns(10);
+		pnlIOTexts2.add(txtResponsableContratista);
+
+		txtCargoDer = new JTextField();
+		txtCargoDer.setColumns(10);
+		pnlIOTexts2.add(txtCargoDer);
+
+		txtFecha = new JTextField();
+		txtFecha.setColumns(10);
+		pnlIOTexts2.add(txtFecha);
 
 		JButton btnInsertarFoto = new JButton("Insertar FOTO");
 		btnInsertarFoto.setBounds(278, 100, 120, 35);
-		panel_21.add(btnInsertarFoto);
+		pnlInformacionObl.add(btnInsertarFoto);
 	}
 }
