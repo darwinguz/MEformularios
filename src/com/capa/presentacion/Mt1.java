@@ -215,6 +215,7 @@ public class Mt1 extends JFrame {
 	private JLabel lbl_pst8;
 	private JLabel lbl_pst9;
 	private JLabel lbl_pst10;
+	private JTextField textField_38;
 
 	/**
 	 * Launch the application.
@@ -879,6 +880,10 @@ public class Mt1 extends JFrame {
 		panel_10.setBounds(210, 17, 55, 29);
 		pnlFachadaLateral.add(panel_10);
 		panel_10.setLayout(new GridLayout(1, 2, 0, 0));
+		
+		textField_38 = new JTextField();
+		textField_38.setColumns(10);
+		panel_10.add(textField_38);
 
 		textField_27 = new JTextField();
 		textField_27.setColumns(10);
