@@ -19,8 +19,9 @@ public class JPcabecera {
 	private JTextField txtFechaInicioTrabajo;
 	private JTextField txtProyecto;
 	private JTextField txtParroquia;
+private JPanel pnlSuperior;
 
-	public JPanel getCabecera(JPanel pnlSuperior) {
+	public JPanel getCabecera() {
 		pnlSuperior = new JPanel();
 		pnlSuperior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlSuperior.setBounds(10, 10, 1270, 103);
