@@ -780,6 +780,85 @@ public class Ex1 extends JFrame {
 		lblAEObsRef = new JLabel("Observaci\u00F3n/Referencia");
 		lblAEObsRef.setBounds(267, 1, 143, 14);
 		pnlAE.add(lblAEObsRef);
+		
+				pnlBA = new JPanel();
+				pnlBA.setLayout(null);
+				pnlBA.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+				pnlBA.setBounds(434, 212, 414, 95);
+				pnlPestaña1.add(pnlBA);
+				
+						pnlBAEtiquetas = new JPanel();
+						pnlBAEtiquetas.setBounds(3, 17, 199, 73);
+						pnlBA.add(pnlBAEtiquetas);
+						pnlBAEtiquetas.setLayout(new GridLayout(3, 0, 0, 0));
+						
+								lblKitCableadoBA = new JLabel("Kit de cableado el\u00E9ctrico BA");
+								pnlBAEtiquetas.add(lblKitCableadoBA);
+								
+										lblBATuberaPvc = new JLabel("Tuber\u00EDa PVC 2\u00B4para cableado l=6m");
+										pnlBAEtiquetas.add(lblBATuberaPvc);
+										
+												lblBACajasConexion = new JLabel("Cajas de Conexi\u00F3n  0,60x0,60 mt");
+												pnlBAEtiquetas.add(lblBACajasConexion);
+												
+														lblKitBombaA = new JLabel("KIT BOMBA DE AGUA");
+														lblKitBombaA.setFont(new Font("Tahoma", Font.BOLD, 11));
+														lblKitBombaA.setBounds(3, 1, 176, 14);
+														pnlBA.add(lblKitBombaA);
+														
+																pnlBACantidad = new JPanel();
+																pnlBACantidad.setBounds(210, 17, 55, 73);
+																pnlBA.add(pnlBACantidad);
+																pnlBACantidad.setLayout(new GridLayout(3, 2, 0, 0));
+																
+																		txtBACantidad00 = new JTextField();
+																		txtBACantidad00.setColumns(10);
+																		pnlBACantidad.add(txtBACantidad00);
+																		
+																				txtBACantidad01 = new JTextField();
+																				txtBACantidad01.setColumns(10);
+																				pnlBACantidad.add(txtBACantidad01);
+																				
+																						txtBACantidad10 = new JTextField();
+																						txtBACantidad10.setColumns(10);
+																						pnlBACantidad.add(txtBACantidad10);
+																						
+																								txtBACantidad11 = new JTextField();
+																								txtBACantidad11.setColumns(10);
+																								pnlBACantidad.add(txtBACantidad11);
+																								
+																										txtBACantidad20 = new JTextField();
+																										txtBACantidad20.setColumns(10);
+																										pnlBACantidad.add(txtBACantidad20);
+																										
+																												txtBACantidad21 = new JTextField();
+																												txtBACantidad21.setColumns(10);
+																												pnlBACantidad.add(txtBACantidad21);
+																												
+																														pnlBAObsRef = new JPanel();
+																														pnlBAObsRef.setBounds(267, 17, 143, 73);
+																														pnlBA.add(pnlBAObsRef);
+																														pnlBAObsRef.setLayout(new GridLayout(3, 0, 0, 0));
+																														
+																																txtBAObsRef0 = new JTextField();
+																																txtBAObsRef0.setColumns(10);
+																																pnlBAObsRef.add(txtBAObsRef0);
+																																
+																																		txtBAObsRef1 = new JTextField();
+																																		txtBAObsRef1.setColumns(10);
+																																		pnlBAObsRef.add(txtBAObsRef1);
+																																		
+																																				txtBAObsRef2 = new JTextField();
+																																				txtBAObsRef2.setColumns(10);
+																																				pnlBAObsRef.add(txtBAObsRef2);
+																																				
+																																						lblBACantidad = new JLabel("Cantidad");
+																																						lblBACantidad.setBounds(210, 1, 55, 14);
+																																						pnlBA.add(lblBACantidad);
+																																						
+																																								lblBAObsRef = new JLabel("Observaci\u00F3n/Referencia");
+																																								lblBAObsRef.setBounds(267, 1, 143, 14);
+																																								pnlBA.add(lblBAObsRef);
 
 		pnlT = new JPanel();
 		pnlT.setLayout(null);
@@ -889,85 +968,6 @@ public class Ex1 extends JFrame {
 		lblTObsRef = new JLabel("Observaci\u00F3n/Referencia");
 		lblTObsRef.setBounds(267, 1, 143, 14);
 		pnlT.add(lblTObsRef);
-
-		pnlBA = new JPanel();
-		pnlBA.setLayout(null);
-		pnlBA.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlBA.setBounds(434, 212, 414, 95);
-		pnlPestaña1.add(pnlBA);
-
-		pnlBAEtiquetas = new JPanel();
-		pnlBAEtiquetas.setBounds(3, 17, 199, 73);
-		pnlBA.add(pnlBAEtiquetas);
-		pnlBAEtiquetas.setLayout(new GridLayout(3, 0, 0, 0));
-
-		lblKitCableadoBA = new JLabel("Kit de cableado el\u00E9ctrico BA");
-		pnlBAEtiquetas.add(lblKitCableadoBA);
-
-		lblBATuberaPvc = new JLabel("Tuber\u00EDa PVC 2\u00B4para cableado l=6m");
-		pnlBAEtiquetas.add(lblBATuberaPvc);
-
-		lblBACajasConexion = new JLabel("Cajas de Conexi\u00F3n  0,60x0,60 mt");
-		pnlBAEtiquetas.add(lblBACajasConexion);
-
-		lblKitBombaA = new JLabel("KIT BOMBA DE AGUA");
-		lblKitBombaA.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblKitBombaA.setBounds(3, 1, 176, 14);
-		pnlBA.add(lblKitBombaA);
-
-		pnlBACantidad = new JPanel();
-		pnlBACantidad.setBounds(210, 17, 55, 73);
-		pnlBA.add(pnlBACantidad);
-		pnlBACantidad.setLayout(new GridLayout(3, 2, 0, 0));
-
-		txtBACantidad00 = new JTextField();
-		txtBACantidad00.setColumns(10);
-		pnlBACantidad.add(txtBACantidad00);
-
-		txtBACantidad01 = new JTextField();
-		txtBACantidad01.setColumns(10);
-		pnlBACantidad.add(txtBACantidad01);
-
-		txtBACantidad10 = new JTextField();
-		txtBACantidad10.setColumns(10);
-		pnlBACantidad.add(txtBACantidad10);
-
-		txtBACantidad11 = new JTextField();
-		txtBACantidad11.setColumns(10);
-		pnlBACantidad.add(txtBACantidad11);
-
-		txtBACantidad20 = new JTextField();
-		txtBACantidad20.setColumns(10);
-		pnlBACantidad.add(txtBACantidad20);
-
-		txtBACantidad21 = new JTextField();
-		txtBACantidad21.setColumns(10);
-		pnlBACantidad.add(txtBACantidad21);
-
-		pnlBAObsRef = new JPanel();
-		pnlBAObsRef.setBounds(267, 17, 143, 73);
-		pnlBA.add(pnlBAObsRef);
-		pnlBAObsRef.setLayout(new GridLayout(3, 0, 0, 0));
-
-		txtBAObsRef0 = new JTextField();
-		txtBAObsRef0.setColumns(10);
-		pnlBAObsRef.add(txtBAObsRef0);
-
-		txtBAObsRef1 = new JTextField();
-		txtBAObsRef1.setColumns(10);
-		pnlBAObsRef.add(txtBAObsRef1);
-
-		txtBAObsRef2 = new JTextField();
-		txtBAObsRef2.setColumns(10);
-		pnlBAObsRef.add(txtBAObsRef2);
-
-		lblBACantidad = new JLabel("Cantidad");
-		lblBACantidad.setBounds(210, 1, 55, 14);
-		pnlBA.add(lblBACantidad);
-
-		lblBAObsRef = new JLabel("Observaci\u00F3n/Referencia");
-		lblBAObsRef.setBounds(267, 1, 143, 14);
-		pnlBA.add(lblBAObsRef);
 
 		pnlSMT = new JPanel();
 		pnlSMT.setLayout(null);
