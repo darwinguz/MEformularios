@@ -19,7 +19,8 @@ public class JPcabecera {
 	private JTextField txtFechaInicioTrabajo;
 	private JTextField txtProyecto;
 	private JTextField txtParroquia;
-private JPanel pnlSuperior;
+	private JPanel pnlSuperior;
+	private JButton btnRegistrar;
 
 	public JPanel getCabecera() {
 		pnlSuperior = new JPanel();
@@ -120,7 +121,7 @@ private JPanel pnlSuperior;
 		lblFechaInicioTrabajo.setBounds(1043, 11, 114, 14);
 		pnlSuperior.add(lblFechaInicioTrabajo);
 
-		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setBounds(1162, 11, 98, 81);
 		pnlSuperior.add(btnRegistrar);
 
@@ -135,4 +136,13 @@ private JPanel pnlSuperior;
 		pnlSuperior.add(txtParroquia);
 		return pnlSuperior;
 	}
+
+	public JButton getBtnRegistrar() {
+		return btnRegistrar;
+	}
+
+	public void setBtnRegistrar(JButton btnRegistrar) {
+		this.btnRegistrar = btnRegistrar;
+	}
+
 }
