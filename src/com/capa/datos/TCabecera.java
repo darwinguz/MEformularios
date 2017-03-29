@@ -1,5 +1,5 @@
 package com.capa.datos;
-// Generated 28-mar-2017 16:36:10 by Hibernate Tools 4.3.1
+// Generated 29-mar-2017 0:19:52 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
