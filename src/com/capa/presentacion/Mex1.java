@@ -3,6 +3,8 @@ package com.capa.presentacion;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -133,9 +135,17 @@ public class Mex1 extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		JPcabecera pnlCabecera = new JPcabecera();
-		contentPane.add(pnlCabecera.getCabecera());
+		JPcabecera cabecera = new JPcabecera();
+		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("EVENTO BOTON REGISTRAR");
+			}
+		});
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 126, 1286, 575);
