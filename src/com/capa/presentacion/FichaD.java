@@ -3,15 +3,20 @@ package com.capa.presentacion;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import com.capa.util.Utilitarios;
 
 public class FichaD extends JFrame {
 
@@ -65,7 +70,14 @@ public class FichaD extends JFrame {
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
 
-		cabecera = new JPcabecera();
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				obtenerDatos();
+			}
+		});
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(10, 144, 640, 354);
@@ -96,6 +108,11 @@ public class FichaD extends JFrame {
 		panel_1.add(lblReferencia);
 
 		JButton btnInsertarFoto1 = new JButton("Insertar FOTO");
+		btnInsertarFoto1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, Utilitarios.retornarPathImagen());
+			}
+		});
 		btnInsertarFoto1.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto1.setBounds(460, 34, 125, 23);
 		panel_1.add(btnInsertarFoto1);
@@ -350,6 +367,10 @@ public class FichaD extends JFrame {
 		btnFotoD.setFont(new Font("Arial", Font.BOLD, 14));
 		btnFotoD.setBounds(157, 226, 214, 23);
 		panel_2.add(btnFotoD);
+	}
 
+	private void obtenerDatos() {
+		String desc1, desc2, desc3, desc4, desc5, desc6, desc7, desc8, desc9, desc10;
+		desc1 = txtDesc1.getText();
 	}
 }
