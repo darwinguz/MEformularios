@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 public class AlInicio extends JFrame {
 
@@ -15,6 +17,7 @@ public class AlInicio extends JFrame {
 	 */
 	private static final long serialVersionUID = -2063817460198744409L;
 	private JPanel contentPane;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -45,7 +48,7 @@ public class AlInicio extends JFrame {
 		contentPane.setLayout(null);
 
 		JPanel pnlBotones = new JPanel();
-		pnlBotones.setBounds(85, 26, 288, 309);
+		pnlBotones.setBounds(86, 71, 288, 309);
 		contentPane.add(pnlBotones);
 		pnlBotones.setLayout(new GridLayout(6, 0, 0, 5));
 
@@ -66,9 +69,14 @@ public class AlInicio extends JFrame {
 
 		JButton btnReporteInsp = new JButton("6.- Reporte de Inspecci\u00F3n (D)");
 		pnlBotones.add(btnReporteInsp);
-
-		JButton btnSalir = new JButton("Salir");
-		btnSalir.setBounds(284, 346, 89, 34);
-		contentPane.add(btnSalir);
+		
+		JLabel lblBuscarProyecto = new JLabel("Buscar Proyecto");
+		lblBuscarProyecto.setBounds(86, 30, 102, 14);
+		contentPane.add(lblBuscarProyecto);
+		
+		textField = new JTextField();
+		textField.setBounds(187, 27, 187, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
 	}
 }
