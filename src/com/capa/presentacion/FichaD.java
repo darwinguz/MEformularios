@@ -74,7 +74,7 @@ public class FichaD extends JFrame {
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
 
-		InformacionObligatoriaV infor = new InformacionObligatoriaV(165, 247);
+		InformacionObligatoriaV infor = new InformacionObligatoriaV(165, 280);
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -113,7 +113,7 @@ public class FichaD extends JFrame {
 		lblDescripcion1.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescripcion1.setOpaque(true);
 		lblDescripcion1.setBackground(new Color(176, 196, 222));
-		lblDescripcion1.setBounds(119, 36, 93, 18);
+		lblDescripcion1.setBounds(10, 36, 200, 18);
 		panel_1.add(lblDescripcion1);
 
 		txtDesc1 = new JTextField();
@@ -141,7 +141,7 @@ public class FichaD extends JFrame {
 		lblDescripcion2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDescripcion2.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescripcion2.setBackground(new Color(211, 211, 211));
-		lblDescripcion2.setBounds(119, 67, 93, 18);
+		lblDescripcion2.setBounds(10, 67, 200, 18);
 		panel_1.add(lblDescripcion2);
 
 		txtDescripcion2 = new JTextField();
@@ -159,7 +159,7 @@ public class FichaD extends JFrame {
 		lblDescripcion3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDescripcion3.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescripcion3.setBackground(new Color(176, 196, 222));
-		lblDescripcion3.setBounds(119, 98, 93, 18);
+		lblDescripcion3.setBounds(10, 98, 200, 18);
 		panel_1.add(lblDescripcion3);
 
 		txtDescripcion3 = new JTextField();
@@ -177,7 +177,7 @@ public class FichaD extends JFrame {
 		lblDescripcion4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDescripcion4.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescripcion4.setBackground(new Color(211, 211, 211));
-		lblDescripcion4.setBounds(119, 129, 93, 18);
+		lblDescripcion4.setBounds(10, 129, 200, 18);
 		panel_1.add(lblDescripcion4);
 
 		txtDescripcion4 = new JTextField();
@@ -195,7 +195,7 @@ public class FichaD extends JFrame {
 		lblDescripcion5.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDescripcion5.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescripcion5.setBackground(new Color(176, 196, 222));
-		lblDescripcion5.setBounds(119, 160, 93, 18);
+		lblDescripcion5.setBounds(10, 160, 200, 18);
 		panel_1.add(lblDescripcion5);
 
 		txtDescripcion5 = new JTextField();
@@ -213,7 +213,7 @@ public class FichaD extends JFrame {
 		lblDescripcion6.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDescripcion6.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescripcion6.setBackground(new Color(211, 211, 211));
-		lblDescripcion6.setBounds(119, 191, 93, 18);
+		lblDescripcion6.setBounds(10, 191, 200, 18);
 		panel_1.add(lblDescripcion6);
 
 		txtDescripcion6 = new JTextField();
@@ -231,7 +231,7 @@ public class FichaD extends JFrame {
 		lblDescripcion7.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDescripcion7.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescripcion7.setBackground(new Color(176, 196, 222));
-		lblDescripcion7.setBounds(119, 222, 93, 18);
+		lblDescripcion7.setBounds(10, 222, 200, 18);
 		panel_1.add(lblDescripcion7);
 
 		txtDescripcion7 = new JTextField();
@@ -249,7 +249,7 @@ public class FichaD extends JFrame {
 		lblDescripcion8.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDescripcion8.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescripcion8.setBackground(new Color(211, 211, 211));
-		lblDescripcion8.setBounds(119, 253, 93, 18);
+		lblDescripcion8.setBounds(10, 253, 200, 18);
 		panel_1.add(lblDescripcion8);
 
 		txtDescripcion8 = new JTextField();
@@ -267,7 +267,7 @@ public class FichaD extends JFrame {
 		lblDescripcion9.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDescripcion9.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescripcion9.setBackground(new Color(176, 196, 222));
-		lblDescripcion9.setBounds(119, 284, 93, 18);
+		lblDescripcion9.setBounds(10, 284, 200, 18);
 		panel_1.add(lblDescripcion9);
 
 		txtDescripcion9 = new JTextField();
@@ -285,7 +285,7 @@ public class FichaD extends JFrame {
 		lblDescripcion10.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDescripcion10.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescripcion10.setBackground(new Color(211, 211, 211));
-		lblDescripcion10.setBounds(119, 315, 93, 18);
+		lblDescripcion10.setBounds(10, 315, 200, 18);
 		panel_1.add(lblDescripcion10);
 
 		txtDescripcion10 = new JTextField();
