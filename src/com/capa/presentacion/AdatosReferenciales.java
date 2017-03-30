@@ -29,7 +29,6 @@ public class AdatosReferenciales extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
@@ -65,7 +64,7 @@ public class AdatosReferenciales extends JFrame {
 
 		List<TLugarGeografico> listaLugares = new ComponenteLugarGeo().lugares();
 
-		JLabel lbl_logo_msp = new JLabel("icono MSP");
+		JLabel lbl_logo_msp = new JLabel(Utilitarios.getImagenIcon("logoMinEdu.png", 150, 60, 100));
 		lbl_logo_msp.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_logo_msp.setBounds(37, 11, 153, 61);
 		panelPrincipal.add(lbl_logo_msp);
@@ -102,16 +101,16 @@ public class AdatosReferenciales extends JFrame {
 
 		JLabel lbl_distrito = new JLabel("Distrito");
 		lbl_distrito.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_distrito.setBounds(261, 121, 200, 14);
+		lbl_distrito.setBounds(27, 191, 200, 14);
 		panelPrincipal.add(lbl_distrito);
 
 		JLabel lbl_circuito = new JLabel("Circuito");
 		lbl_circuito.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_circuito.setBounds(496, 121, 200, 14);
+		lbl_circuito.setBounds(261, 191, 200, 14);
 		panelPrincipal.add(lbl_circuito);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(506, 140, 180, 20);
+		textField_2.setBounds(271, 210, 180, 20);
 		panelPrincipal.add(textField_2);
 		textField_2.setColumns(10);
 
@@ -124,7 +123,7 @@ public class AdatosReferenciales extends JFrame {
 		}
 
 		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(271, 140, 180, 20);
+		comboBox_1.setBounds(37, 210, 180, 20);
 		panelPrincipal.add(comboBox_1);
 
 		JComboBox<String> comboBox_2 = new JComboBox<String>();
@@ -137,12 +136,12 @@ public class AdatosReferenciales extends JFrame {
 
 		JLabel lbl_canton = new JLabel("Cant\u00F3n");
 		lbl_canton.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_canton.setBounds(27, 190, 200, 14);
+		lbl_canton.setBounds(261, 120, 200, 14);
 		panelPrincipal.add(lbl_canton);
 
 		JLabel lbl_parroquia = new JLabel("Parroquia");
 		lbl_parroquia.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_parroquia.setBounds(261, 190, 200, 14);
+		lbl_parroquia.setBounds(496, 121, 200, 14);
 		panelPrincipal.add(lbl_parroquia);
 
 		JLabel lbl_sector = new JLabel("Sector");
@@ -151,13 +150,8 @@ public class AdatosReferenciales extends JFrame {
 		panelPrincipal.add(lbl_sector);
 
 		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(37, 210, 180, 20);
+		comboBox_3.setBounds(271, 140, 180, 20);
 		panelPrincipal.add(comboBox_3);
-
-		textField_3 = new JTextField();
-		textField_3.setBounds(271, 210, 180, 20);
-		panelPrincipal.add(textField_3);
-		textField_3.setColumns(10);
 
 		textField_4 = new JTextField();
 		textField_4.setBounds(506, 210, 180, 20);
@@ -221,10 +215,14 @@ public class AdatosReferenciales extends JFrame {
 				Date fechaEntrega = Utilitarios.getFecha(textField_5.getText());
 				Date fechaInicio = Utilitarios.getFecha(textField_6.getText());
 				Date fechaFin = Utilitarios.getFecha(textField_7.getText());
-				
+
 			}
 		});
 		btn_registrar.setBounds(538, 327, 125, 23);
 		panelPrincipal.add(btn_registrar);
+
+		JComboBox comboBox_4 = new JComboBox();
+		comboBox_4.setBounds(506, 140, 180, 20);
+		panelPrincipal.add(comboBox_4);
 	}
 }
