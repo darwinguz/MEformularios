@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import com.capa.datos.TCabecera;
 import com.capa.datos.TLugarGeografico;
 import com.capa.negocios.ComponenteLugarGeo;
 import com.capa.negocios.ComponenteProyecto;
@@ -181,6 +182,13 @@ public class AdatosReferenciales extends JFrame {
 		for (TLugarGeografico lugar : listaLugares) {
 			cbxProvincia.addItem(lugar);
 		}
+//		cbxProvincia.addActionListener(new ActionListener() {
+//
+//			public void actionPerformed(ActionEvent arg0) {
+//				rellenaCombo2((String) combo1.getSelectedItem());
+//			}
+//
+//		});
 
 		cbxCanton = new JComboBox<>();
 		cbxCanton.setBounds(271, 140, 180, 20);
@@ -215,25 +223,39 @@ public class AdatosReferenciales extends JFrame {
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ComponenteProyecto proyecto = new ComponenteProyecto();
+				// TCabecera cab = new TCabecera();
 				String Proyecto = txtProyecto.getText();
 				String amie = txtAmei.getText();
 				String zona = (String) cbxZona.getSelectedItem();
-				String provincia = (String) cbxProvincia.getSelectedItem();
+				// String provincia = (String) cbxProvincia.getSelectedItem();
 				String distrito = (String) cbxDistrito.getSelectedItem();
 				String cicuito = txtCircuito.getText();
 				String canton = (String) cbxCanton.getSelectedItem();
-				String parroquia = textField_3.getText();
+				TLugarGeografico cab = (TLugarGeografico) cbxProvincia.getSelectedItem();
 				String sector = txtSector.getText();
-				// String fechaEntrega = textField_5.getText();
-				// String fechaInicio = textField_6.getText();
-				// String fechaElaboracion = textField_7.getText();
-				Date fechaEntrega = Utilitarios.getFecha(txtEntregaPredioFecha.getText());
-				Date fechaInicio = Utilitarios.getFecha(txtInicioTrabajoFecha.getText());
-				Date fechaFin = Utilitarios.getFecha(txtElabInformeFecha.getText());
+
+				System.out.println(cab.getLgNombre());
+				System.out.println(cab.getLgCodigo());
+
+				// Date fechaEntrega =
+				// Utilitarios.getFecha(txtEntregaPredioFecha.getText());
+				// Date fechaInicio =
+				// Utilitarios.getFecha(txtInicioTrabajoFecha.getText());
+				// Date fechaFin =
+				// Utilitarios.getFecha(txtElabInformeFecha.getText());
 
 			}
 		});
 		btnRegistrar.setBounds(538, 327, 125, 23);
 		panelPrincipal.add(btnRegistrar);
+	}
+
+	public void rellenarComboCanton(String busca) {
+		List<TLugarGeografico> listaLugares;
+		listaLugares = new ComponenteLugarGeo().buscarPorId(busca);
+		cbxCanton.removeAllItems();
+		for (TLugarGeografico l : listaLugares) {
+			cbxCanton.addItem(l);
+		}
 	}
 }
