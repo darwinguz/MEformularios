@@ -21,6 +21,10 @@ import com.capa.presentacion.InformacionObligatoriaV;
 
 public class FichaD extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2522828583385937960L;
 	private JPanel contentPane;
 	private JTextField txtDesc1;
 	private JTextField txtDescripcion2;
