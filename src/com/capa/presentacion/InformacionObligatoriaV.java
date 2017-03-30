@@ -1,20 +1,16 @@
 package com.capa.presentacion;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.UIManager;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-public class JPInformacionObligatoria {
+public class InformacionObligatoriaV {
 
 	private JPanel pnlInformacionObl;
 	private JPanel pnlIOTexts2;
@@ -37,7 +33,7 @@ public class JPInformacionObligatoria {
 	private JLabel lblFecha;
 	private JButton btnInsertarFoto;
 
-	public JPInformacionObligatoria(int x, int y) {
+	public InformacionObligatoriaV(int x, int y) {
 		pnlInformacionObl = new JPanel();
 		pnlInformacionObl.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"),
 				"Informaci\u00F3n Obligatoria", TitledBorder.LEADING, TitledBorder.TOP, null, Color.RED));

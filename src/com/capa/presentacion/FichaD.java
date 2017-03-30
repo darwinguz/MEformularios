@@ -14,9 +14,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.TitledBorder;
 
+import com.capa.presentacion.JPcabecera;
 import com.capa.util.Utilitarios;
+import com.capa.presentacion.InformacionObligatoriaV;
 
 public class FichaD extends JFrame {
 
@@ -62,16 +63,18 @@ public class FichaD extends JFrame {
 	public FichaD() {
 		setTitle("EVALUACI\u00D3N D");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1165, 561);
+		setBounds(100, 100, 1310, 730);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		setLocationRelativeTo(null);
+
 		JPcabecera cabecera = new JPcabecera();
 
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
 
-		JPInformacionObligatoria infor = new JPInformacionObligatoria(1, 1);
+		InformacionObligatoriaV infor = new InformacionObligatoriaV(165, 247);
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -300,7 +303,7 @@ public class FichaD extends JFrame {
 		// panel_2.setBorder(new TitledBorder(null, "Informaci\u00F3n
 		// Obligatoria", TitledBorder.LEADING, TitledBorder.TOP,
 		// null, Color.RED));
-		panel_2.setBounds(703, 186, 406, 269);
+		panel_2.setBounds(703, 186, 582, 489);
 		contentPane.add(panel_2);
 
 		panel_2.add(infor.getPnlInformacionObl());

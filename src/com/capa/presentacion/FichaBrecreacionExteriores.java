@@ -61,7 +61,7 @@ public class FichaBrecreacionExteriores extends JFrame {
 		JPcabecera cabecera = new JPcabecera();
 		panelPrincipal.add(cabecera.getCabecera());
 
-		JPInformacionObligatoria infoObligatoria = new JPInformacionObligatoria(1,1);
+		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(1,1);
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 
 		JPanel panel_0 = new JPanel();

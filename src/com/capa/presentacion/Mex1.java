@@ -687,7 +687,7 @@ public class Mex1 extends JFrame {
 		label_11.setBounds(267, 1, 143, 14);
 		panel_19.add(label_11);
 
-		JPInformacionObligatoria informacionObligatoriaV = new JPInformacionObligatoria(858, 295);
+		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(858, 295);
 		panel.add(informacionObligatoriaV.getPnlInformacionObl());
 
 	}

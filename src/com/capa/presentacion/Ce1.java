@@ -75,7 +75,7 @@ public class Ce1 extends JFrame {
 		JPcabecera cabecera = new JPcabecera();
 		panelPrincipal.add(cabecera.getCabecera());
 
-		JPInformacionObligatoria infoObligatoria = new JPInformacionObligatoria(434, 377);
+		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(434, 377);
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 
 		JPanel pnlModuloWPC = new JPanel();

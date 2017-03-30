@@ -268,7 +268,7 @@ public class Ma1 extends JFrame {
 		lblTableroElectricoD.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		lblTableroElectricoD.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlTEEtiquetas.add(lblTableroElectricoD);
-		
+
 		lblDetectorDeHumo = new JLabel("Detector de Humo  ");
 		lblDetectorDeHumo.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblDetectorDeHumo.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -315,11 +315,11 @@ public class Ma1 extends JFrame {
 		txtTECantidad31 = new JTextField();
 		txtTECantidad31.setColumns(10);
 		pnlTECantidad.add(txtTECantidad31);
-		
+
 		textField_39 = new JTextField();
 		textField_39.setColumns(10);
 		pnlTECantidad.add(textField_39);
-		
+
 		textField_40 = new JTextField();
 		textField_40.setColumns(10);
 		pnlTECantidad.add(textField_40);
@@ -344,7 +344,7 @@ public class Ma1 extends JFrame {
 		txtTEObsRef3 = new JTextField();
 		txtTEObsRef3.setColumns(10);
 		pnlTEObsRef.add(txtTEObsRef3);
-		
+
 		textField_41 = new JTextField();
 		textField_41.setColumns(10);
 		pnlTEObsRef.add(textField_41);
@@ -500,7 +500,8 @@ public class Ma1 extends JFrame {
 		lblBisagras.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lblBisagras);
 
-		JLabel lblPerfilSfTipo = new JLabel("<html><body><p align=\"right\">Perfil SF Tipo 12 MA-SF-12 para puerta y Tipo 12 MS-SF 12 paredes</p></body></html>");
+		JLabel lblPerfilSfTipo = new JLabel(
+				"<html><body><p align=\"right\">Perfil SF Tipo 12 MA-SF-12 para puerta y Tipo 12 MS-SF 12 paredes</p></body></html>");
 		lblPerfilSfTipo.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		lblPerfilSfTipo.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_1.add(lblPerfilSfTipo);
@@ -785,139 +786,139 @@ public class Ma1 extends JFrame {
 		JLabel label_8 = new JLabel("Observaci\u00F3n/Referencia");
 		label_8.setBounds(267, 1, 143, 14);
 		pnlFachadaPosterior.add(label_8);
-		
+
 		pnlFachadaLateral = new JPanel();
 		pnlFachadaLateral.setLayout(null);
 		pnlFachadaLateral.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlFachadaLateral.setBounds(434, 200, 414, 61);
 		pnlPestaña1.add(pnlFachadaLateral);
-		
+
 		panel_4 = new JPanel();
 		panel_4.setBounds(3, 17, 199, 40);
 		pnlFachadaLateral.add(panel_4);
 		panel_4.setLayout(new GridLayout(2, 0, 0, 0));
-		
+
 		label = new JLabel("Paneles vynil piso (0,15x1,93 m)  ");
 		label.setHorizontalAlignment(SwingConstants.RIGHT);
 		label.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel_4.add(label);
-		
+
 		label_4 = new JLabel("Paneles EPS para cubierta I=7, a= 1 m  ");
 		label_4.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel_4.add(label_4);
-		
+
 		lblFachadaLateral_1 = new JLabel("FACHADA LATERAL");
 		lblFachadaLateral_1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblFachadaLateral_1.setBounds(3, 1, 176, 14);
 		pnlFachadaLateral.add(lblFachadaLateral_1);
-		
+
 		label_12 = new JLabel("Cantidad");
 		label_12.setBounds(210, 1, 55, 14);
 		pnlFachadaLateral.add(label_12);
-		
+
 		label_15 = new JLabel("Observaci\u00F3n/Referencia");
 		label_15.setBounds(267, 1, 143, 14);
 		pnlFachadaLateral.add(label_15);
-		
+
 		panel_8 = new JPanel();
 		panel_8.setBounds(210, 17, 55, 40);
 		pnlFachadaLateral.add(panel_8);
 		panel_8.setLayout(new GridLayout(2, 2, 0, 0));
-		
+
 		textField_9 = new JTextField();
 		textField_9.setColumns(10);
 		panel_8.add(textField_9);
-		
+
 		textField_14 = new JTextField();
 		textField_14.setColumns(10);
 		panel_8.add(textField_14);
-		
+
 		textField_16 = new JTextField();
 		textField_16.setColumns(10);
 		panel_8.add(textField_16);
-		
+
 		textField_42 = new JTextField();
 		textField_42.setColumns(10);
 		panel_8.add(textField_42);
-		
+
 		panel_12 = new JPanel();
 		panel_12.setBounds(267, 17, 143, 40);
 		pnlFachadaLateral.add(panel_12);
 		panel_12.setLayout(new GridLayout(2, 0, 0, 0));
-		
+
 		textField_45 = new JTextField();
 		textField_45.setColumns(10);
 		panel_12.add(textField_45);
-		
+
 		textField_46 = new JTextField();
 		textField_46.setColumns(10);
 		panel_12.add(textField_46);
-		
+
 		pnlInterior = new JPanel();
 		pnlInterior.setLayout(null);
 		pnlInterior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlInterior.setBounds(434, 266, 414, 61);
 		pnlPestaña1.add(pnlInterior);
-		
+
 		panel_14 = new JPanel();
 		panel_14.setBounds(3, 17, 199, 40);
 		pnlInterior.add(panel_14);
 		panel_14.setLayout(new GridLayout(2, 0, 0, 0));
-		
+
 		label_10 = new JLabel("Paneles vynil piso (0,15x1,93 m)  ");
 		label_10.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_10.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel_14.add(label_10);
-		
+
 		label_11 = new JLabel("Paneles EPS para cubierta I=7, a= 1 m  ");
 		label_11.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_11.setFont(new Font("Tahoma", Font.PLAIN, 10));
 		panel_14.add(label_11);
-		
+
 		lblInterior = new JLabel("INTERIOR");
 		lblInterior.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblInterior.setBounds(3, 1, 176, 14);
 		pnlInterior.add(lblInterior);
-		
+
 		label_17 = new JLabel("Cantidad");
 		label_17.setBounds(210, 1, 55, 14);
 		pnlInterior.add(label_17);
-		
+
 		label_18 = new JLabel("Observaci\u00F3n/Referencia");
 		label_18.setBounds(267, 1, 143, 14);
 		pnlInterior.add(label_18);
-		
+
 		panel_15 = new JPanel();
 		panel_15.setBounds(210, 17, 55, 40);
 		pnlInterior.add(panel_15);
 		panel_15.setLayout(new GridLayout(2, 2, 0, 0));
-		
+
 		textField_43 = new JTextField();
 		textField_43.setColumns(10);
 		panel_15.add(textField_43);
-		
+
 		textField_44 = new JTextField();
 		textField_44.setColumns(10);
 		panel_15.add(textField_44);
-		
+
 		textField_47 = new JTextField();
 		textField_47.setColumns(10);
 		panel_15.add(textField_47);
-		
+
 		textField_48 = new JTextField();
 		textField_48.setColumns(10);
 		panel_15.add(textField_48);
-		
+
 		panel_16 = new JPanel();
 		panel_16.setBounds(267, 17, 143, 40);
 		pnlInterior.add(panel_16);
 		panel_16.setLayout(new GridLayout(2, 0, 0, 0));
-		
+
 		textField_49 = new JTextField();
 		textField_49.setColumns(10);
 		panel_16.add(textField_49);
-		
+
 		textField_50 = new JTextField();
 		textField_50.setColumns(10);
 		panel_16.add(textField_50);
@@ -1044,7 +1045,7 @@ public class Ma1 extends JFrame {
 		lbl_pst11 = new JLabel("Perfil SF Tipo 11  ");
 		lbl_pst11.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlTEtiquetas.add(lbl_pst11);
-		
+
 		lbl_pst12 = new JLabel("Perfil SF Tipo 12  ");
 		lbl_pst12.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlTEtiquetas.add(lbl_pst12);
@@ -1097,7 +1098,7 @@ public class Ma1 extends JFrame {
 		textField_29 = new JTextField();
 		textField_29.setColumns(10);
 		pnlTCantidad.add(textField_29);
-		
+
 		textField_51 = new JTextField();
 		textField_51.setColumns(10);
 		pnlTCantidad.add(textField_51);
@@ -1154,7 +1155,7 @@ public class Ma1 extends JFrame {
 		textField_36 = new JTextField();
 		textField_36.setColumns(10);
 		pnlTObsRef.add(textField_36);
-		
+
 		textField_52 = new JTextField();
 		textField_52.setColumns(10);
 		pnlTObsRef.add(textField_52);
@@ -1163,8 +1164,8 @@ public class Ma1 extends JFrame {
 		textField_37.setColumns(10);
 		pnlTObsRef.add(textField_37);
 
-		JPInformacionObligatoria infoObligatoria = new JPInformacionObligatoria(1,1);
-		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
+		InformacionObligatoriaH infoObligatoria = new InformacionObligatoriaH();
+		pnlPestaña1.add(infoObligatoria.getInformacionObligatoria());
 	}
 
 }

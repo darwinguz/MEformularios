@@ -1084,7 +1084,7 @@ public class Mt1 extends JFrame {
 		lblTObsRef.setBounds(267, 1, 143, 14);
 		pnlComponenteEst.add(lblTObsRef);
 
-		JPInformacionObligatoria infoObligatoria = new JPInformacionObligatoria(1, 1);
+		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(1, 1);
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 	}
 }
