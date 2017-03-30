@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class Query {
-	private static MySql mysql = new MySql("localhost", "db_fastfood_v1", "root", "root");
+	private static MySql mysql = new MySql("localhost", "db_ministerio_ed", "root", "admin");
 
 	public static ResultSet seleccionar(String query) {
 		Statement comando;
