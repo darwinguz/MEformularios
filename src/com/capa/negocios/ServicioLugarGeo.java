@@ -8,4 +8,6 @@ public interface ServicioLugarGeo {
 	void crear(TLugarGeografico lugar);
 
 	List<TLugarGeografico> lugares();
+
+	List<TLugarGeografico> buscarPorId(String id);
 }
