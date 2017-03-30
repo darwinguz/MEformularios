@@ -25,14 +25,24 @@ import javax.swing.SwingConstants;
 
 public class AdatosReferenciales extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8285324221431924056L;
+
 	private JPanel panelPrincipal;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
+
+	private JTextField txtProyecto;
+	private JTextField txtAmei;
+	private JTextField txtCircuito;
+	private JTextField txtSector;
+	private JTextField txtEntregaPredioFecha;
+	private JTextField txtInicioTrabajoFecha;
+	private JTextField txtElabInformeFecha;
+
+	private JComboBox<TLugarGeografico> cbxProvincia;
+	private JComboBox<TLugarGeografico> cbxCanton;
+	private JComboBox<TLugarGeografico> cbxParroquia;
 
 	/**
 	 * Launch the application.
@@ -84,16 +94,6 @@ public class AdatosReferenciales extends JFrame {
 		lbl_zona.setBounds(598, 34, 86, 14);
 		panelPrincipal.add(lbl_zona);
 
-		textField = new JTextField();
-		textField.setBounds(221, 52, 230, 20);
-		panelPrincipal.add(textField);
-		textField.setColumns(10);
-
-		textField_1 = new JTextField();
-		textField_1.setBounds(473, 52, 90, 20);
-		panelPrincipal.add(textField_1);
-		textField_1.setColumns(10);
-
 		JLabel lbl_provincia = new JLabel("Provincia");
 		lbl_provincia.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_provincia.setBounds(27, 121, 180, 14);
@@ -108,31 +108,6 @@ public class AdatosReferenciales extends JFrame {
 		lbl_circuito.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_circuito.setBounds(261, 191, 200, 14);
 		panelPrincipal.add(lbl_circuito);
-
-		textField_2 = new JTextField();
-		textField_2.setBounds(271, 210, 180, 20);
-		panelPrincipal.add(textField_2);
-		textField_2.setColumns(10);
-
-		JComboBox<String> comboBox = new JComboBox<String>();
-		comboBox.setBounds(37, 140, 180, 20);
-		panelPrincipal.add(comboBox);
-
-		for (TLugarGeografico lugar : listaLugares) {
-			comboBox.addItem(lugar.getLgNombre());
-		}
-
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(37, 210, 180, 20);
-		panelPrincipal.add(comboBox_1);
-
-		JComboBox<String> comboBox_2 = new JComboBox<String>();
-		comboBox_2.setBounds(598, 52, 90, 20);
-		panelPrincipal.add(comboBox_2);
-
-		for (int i = 1; i < 10; i++) {
-			comboBox_2.addItem(String.valueOf(i));
-		}
 
 		JLabel lbl_canton = new JLabel("Cant\u00F3n");
 		lbl_canton.setHorizontalAlignment(SwingConstants.CENTER);
@@ -149,30 +124,6 @@ public class AdatosReferenciales extends JFrame {
 		lbl_sector.setBounds(496, 190, 200, 14);
 		panelPrincipal.add(lbl_sector);
 
-		JComboBox comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(271, 140, 180, 20);
-		panelPrincipal.add(comboBox_3);
-
-		textField_4 = new JTextField();
-		textField_4.setBounds(506, 210, 180, 20);
-		panelPrincipal.add(textField_4);
-		textField_4.setColumns(10);
-
-		textField_5 = new JTextField();
-		textField_5.setBounds(37, 280, 180, 20);
-		panelPrincipal.add(textField_5);
-		textField_5.setColumns(10);
-
-		textField_6 = new JTextField();
-		textField_6.setBounds(271, 280, 180, 20);
-		panelPrincipal.add(textField_6);
-		textField_6.setColumns(10);
-
-		textField_7 = new JTextField();
-		textField_7.setBounds(506, 280, 180, 20);
-		panelPrincipal.add(textField_7);
-		textField_7.setColumns(10);
-
 		JLabel lbl_entrega_pedido = new JLabel("Fecha de entrega del Predio");
 		lbl_entrega_pedido.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_entrega_pedido.setBounds(27, 260, 200, 14);
@@ -188,41 +139,101 @@ public class AdatosReferenciales extends JFrame {
 		lbl_elab_informe.setBounds(496, 260, 200, 14);
 		panelPrincipal.add(lbl_elab_informe);
 
-		JButton btn_foto_general = new JButton("Foto General");
-		btn_foto_general.setBounds(65, 327, 125, 23);
-		panelPrincipal.add(btn_foto_general);
+		txtProyecto = new JTextField();
+		txtProyecto.setBounds(221, 52, 230, 20);
+		panelPrincipal.add(txtProyecto);
+		txtProyecto.setColumns(10);
 
-		JButton btn_croquis = new JButton("Croquis");
-		btn_croquis.setBounds(301, 327, 125, 23);
-		panelPrincipal.add(btn_croquis);
+		txtAmei = new JTextField();
+		txtAmei.setBounds(473, 52, 90, 20);
+		panelPrincipal.add(txtAmei);
+		txtAmei.setColumns(10);
 
-		JButton btn_registrar = new JButton("Registrar");
-		btn_registrar.addActionListener(new ActionListener() {
+		txtCircuito = new JTextField();
+		txtCircuito.setBounds(271, 210, 180, 20);
+		panelPrincipal.add(txtCircuito);
+		txtCircuito.setColumns(10);
+
+		txtSector = new JTextField();
+		txtSector.setBounds(506, 210, 180, 20);
+		panelPrincipal.add(txtSector);
+		txtSector.setColumns(10);
+
+		txtEntregaPredioFecha = new JTextField();
+		txtEntregaPredioFecha.setBounds(37, 280, 180, 20);
+		panelPrincipal.add(txtEntregaPredioFecha);
+		txtEntregaPredioFecha.setColumns(10);
+
+		txtInicioTrabajoFecha = new JTextField();
+		txtInicioTrabajoFecha.setBounds(271, 280, 180, 20);
+		panelPrincipal.add(txtInicioTrabajoFecha);
+		txtInicioTrabajoFecha.setColumns(10);
+
+		txtElabInformeFecha = new JTextField();
+		txtElabInformeFecha.setBounds(506, 280, 180, 20);
+		panelPrincipal.add(txtElabInformeFecha);
+		txtElabInformeFecha.setColumns(10);
+
+		cbxProvincia = new JComboBox<>();
+		cbxProvincia.setBounds(37, 140, 180, 20);
+		panelPrincipal.add(cbxProvincia);
+
+		for (TLugarGeografico lugar : listaLugares) {
+			cbxProvincia.addItem(lugar);
+		}
+
+		cbxCanton = new JComboBox<>();
+		cbxCanton.setBounds(271, 140, 180, 20);
+		panelPrincipal.add(cbxCanton);
+
+		cbxParroquia = new JComboBox<>();
+		cbxParroquia.setBounds(506, 140, 180, 20);
+		panelPrincipal.add(cbxParroquia);
+
+		JComboBox<String> cbxDistrito = new JComboBox<>();
+		cbxDistrito.setBounds(37, 210, 180, 20);
+
+		panelPrincipal.add(cbxDistrito);
+
+		JComboBox<String> cbxZona = new JComboBox<>();
+		cbxZona.setBounds(598, 52, 90, 20);
+		panelPrincipal.add(cbxZona);
+
+		for (int i = 1; i < 10; i++) {
+			cbxZona.addItem(String.valueOf(i));
+		}
+
+		JButton btnFotoGeneral = new JButton("Foto General");
+		btnFotoGeneral.setBounds(65, 327, 125, 23);
+		panelPrincipal.add(btnFotoGeneral);
+
+		JButton btnCroquis = new JButton("Croquis");
+		btnCroquis.setBounds(301, 327, 125, 23);
+		panelPrincipal.add(btnCroquis);
+
+		JButton btnRegistrar = new JButton("Registrar");
+		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ComponenteProyecto proyecto = new ComponenteProyecto();
-				String Proyecto = textField.getText();
-				String amie = textField_1.getText();
-				String zona = (String) comboBox_2.getSelectedItem();
-				String provincia = (String) comboBox.getSelectedItem();
-				String distrito = (String) comboBox_1.getSelectedItem();
-				String cicuito = textField_2.getText();
-				String canton = (String) comboBox_3.getSelectedItem();
+				String Proyecto = txtProyecto.getText();
+				String amie = txtAmei.getText();
+				String zona = (String) cbxZona.getSelectedItem();
+				String provincia = (String) cbxProvincia.getSelectedItem();
+				String distrito = (String) cbxDistrito.getSelectedItem();
+				String cicuito = txtCircuito.getText();
+				String canton = (String) cbxCanton.getSelectedItem();
 				String parroquia = textField_3.getText();
-				String sector = textField_4.getText();
+				String sector = txtSector.getText();
 				// String fechaEntrega = textField_5.getText();
 				// String fechaInicio = textField_6.getText();
 				// String fechaElaboracion = textField_7.getText();
-				Date fechaEntrega = Utilitarios.getFecha(textField_5.getText());
-				Date fechaInicio = Utilitarios.getFecha(textField_6.getText());
-				Date fechaFin = Utilitarios.getFecha(textField_7.getText());
+				Date fechaEntrega = Utilitarios.getFecha(txtEntregaPredioFecha.getText());
+				Date fechaInicio = Utilitarios.getFecha(txtInicioTrabajoFecha.getText());
+				Date fechaFin = Utilitarios.getFecha(txtElabInformeFecha.getText());
 
 			}
 		});
-		btn_registrar.setBounds(538, 327, 125, 23);
-		panelPrincipal.add(btn_registrar);
-
-		JComboBox comboBox_4 = new JComboBox();
-		comboBox_4.setBounds(506, 140, 180, 20);
-		panelPrincipal.add(comboBox_4);
+		btnRegistrar.setBounds(538, 327, 125, 23);
+		panelPrincipal.add(btnRegistrar);
 	}
 }
