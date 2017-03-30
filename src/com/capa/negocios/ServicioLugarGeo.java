@@ -10,4 +10,6 @@ public interface ServicioLugarGeo {
 	List<TLugarGeografico> lugares();
 
 	List<TLugarGeografico> buscarPorId(String id);
+	
+	List<TLugarGeografico> buscarProvincia();
 }

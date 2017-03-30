@@ -73,8 +73,6 @@ public class AdatosReferenciales extends JFrame {
 		setContentPane(panelPrincipal);
 		panelPrincipal.setLayout(null);
 
-		List<TLugarGeografico> listaLugares = new ComponenteLugarGeo().lugares();
-
 		JLabel lbl_logo_msp = new JLabel(Utilitarios.getImagenIcon("logoMinEdu.png", 150, 60, 100));
 		lbl_logo_msp.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_logo_msp.setBounds(37, 11, 153, 61);
@@ -177,22 +175,26 @@ public class AdatosReferenciales extends JFrame {
 
 		cbxProvincia = new JComboBox<>();
 		cbxProvincia.setBounds(37, 140, 180, 20);
+		cbxProvincia.addItem(new TLugarGeografico("", "Seleccionar", "Seleccionar"));
 		panelPrincipal.add(cbxProvincia);
 
+		List<TLugarGeografico> listaLugares = new ComponenteLugarGeo().buscarProvincia();
 		for (TLugarGeografico lugar : listaLugares) {
 			cbxProvincia.addItem(lugar);
 		}
-//		cbxProvincia.addActionListener(new ActionListener() {
-//
-//			public void actionPerformed(ActionEvent arg0) {
-//				rellenaCombo2((String) combo1.getSelectedItem());
-//			}
-//
-//		});
 
 		cbxCanton = new JComboBox<>();
 		cbxCanton.setBounds(271, 140, 180, 20);
 		panelPrincipal.add(cbxCanton);
+
+		cbxProvincia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TLugarGeografico lugarG = (TLugarGeografico) cbxProvincia.getSelectedItem();
+				rellenarComboCanton(lugarG.getLgCodigo());
+				System.out.println(lugarG.getLgNombre());
+				System.out.println(lugarG.getLgCodigo());
+			}
+		});
 
 		cbxParroquia = new JComboBox<>();
 		cbxParroquia.setBounds(506, 140, 180, 20);
@@ -251,6 +253,7 @@ public class AdatosReferenciales extends JFrame {
 	}
 
 	public void rellenarComboCanton(String busca) {
+		System.out.println("Buscar " + busca);
 		List<TLugarGeografico> listaLugares;
 		listaLugares = new ComponenteLugarGeo().buscarPorId(busca);
 		cbxCanton.removeAllItems();

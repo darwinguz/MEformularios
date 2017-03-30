@@ -13,6 +13,8 @@ public class TLugarGeografico implements java.io.Serializable {
 	public TLugarGeografico() {
 	}
 
+	
+
 	public TLugarGeografico(String lgCodigo) {
 		this.lgCodigo = lgCodigo;
 	}
