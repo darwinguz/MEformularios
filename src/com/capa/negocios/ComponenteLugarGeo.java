@@ -43,4 +43,27 @@ public class ComponenteLugarGeo implements ServicioLugarGeo {
 		return listaLugares;
 	}
 
+	@Override
+	public List<TLugarGeografico> buscarPorId(String id) {
+		// TODO Auto-generated method stub
+		List<TLugarGeografico> listaLugares = new ArrayList<>();
+		String sql = "SELECT * FROM t_lugar_geografico WHERE t_l_lg_codigo LIKE '" + id + "'";
+
+		try {
+			ResultSet rs = Query.seleccionar(sql);
+			while (rs.next()) {
+				TLugarGeografico lugar = new TLugarGeografico();
+				lugar.setLgCodigo(rs.getString("lg_codigo"));
+				lugar.setLgNombre(rs.getString("t_l_lg_codigo"));
+				lugar.setLgNombre(rs.getString("lg_nombre"));
+				listaLugares.add(lugar);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			JOptionPane.showMessageDialog(null, "Error al BUSCAR: " + e.getMessage(), "ERROR",
+					JOptionPane.ERROR_MESSAGE);
+		}
+		return listaLugares;
+	}
+
 }
