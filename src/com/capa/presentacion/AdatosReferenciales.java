@@ -182,6 +182,13 @@ public class AdatosReferenciales extends JFrame {
 		for (TLugarGeografico lugar : listaLugares) {
 			cbxProvincia.addItem(lugar);
 		}
+//		cbxProvincia.addActionListener(new ActionListener() {
+//
+//			public void actionPerformed(ActionEvent arg0) {
+//				rellenaCombo2((String) combo1.getSelectedItem());
+//			}
+//
+//		});
 
 		cbxCanton = new JComboBox<>();
 		cbxCanton.setBounds(271, 140, 180, 20);
