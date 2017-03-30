@@ -35,6 +35,7 @@ public class InformacionObligatoriaV {
 	private JLabel lblResponsableContratista;
 	private JLabel lblCargoDer;
 	private JLabel lblFecha;
+	JButton btnInsertarFoto;
 
 	public InformacionObligatoriaV(int x, int y) {
 		pnlInformacionObl = new JPanel();
@@ -112,9 +113,65 @@ public class InformacionObligatoriaV {
 		txtFecha.setColumns(10);
 		pnlIOTexts2.add(txtFecha);
 
-		JButton btnInsertarFoto = new JButton("Insertar FOTO");
+		btnInsertarFoto = new JButton("Insertar FOTO");
 		btnInsertarFoto.setBounds(166, 201, 120, 35);
 		pnlInformacionObl.add(btnInsertarFoto);
+	}
+
+	public JTextField getTxtObsGenDer() {
+		return txtObsGenDer;
+	}
+
+	public void setTxtObsGenDer(JTextField txtObsGenDer) {
+		this.txtObsGenDer = txtObsGenDer;
+	}
+
+	public JTextField getTxtResponsableContratista() {
+		return txtResponsableContratista;
+	}
+
+	public void setTxtResponsableContratista(JTextField txtResponsableContratista) {
+		this.txtResponsableContratista = txtResponsableContratista;
+	}
+
+	public JTextField getTxtCargoDer() {
+		return txtCargoDer;
+	}
+
+	public void setTxtCargoDer(JTextField txtCargoDer) {
+		this.txtCargoDer = txtCargoDer;
+	}
+
+	public JTextField getTxtFecha() {
+		return txtFecha;
+	}
+
+	public void setTxtFecha(JTextField txtFecha) {
+		this.txtFecha = txtFecha;
+	}
+
+	public JTextField getTxtObsGenIzq() {
+		return txtObsGenIzq;
+	}
+
+	public void setTxtObsGenIzq(JTextField txtObsGenIzq) {
+		this.txtObsGenIzq = txtObsGenIzq;
+	}
+
+	public JTextField getTxtResponsableMineduc() {
+		return txtResponsableMineduc;
+	}
+
+	public void setTxtResponsableMineduc(JTextField txtResponsableMineduc) {
+		this.txtResponsableMineduc = txtResponsableMineduc;
+	}
+
+	public JTextField getTxtCargoIzq() {
+		return txtCargoIzq;
+	}
+
+	public void setTxtCargoIzq(JTextField txtCargoIzq) {
+		this.txtCargoIzq = txtCargoIzq;
 	}
 
 	public JPanel getPnlInformacionObl() {
@@ -125,4 +182,12 @@ public class InformacionObligatoriaV {
 		this.pnlInformacionObl = pnlInformacionObl;
 	}
 
+	public JButton getBtnInsertarFoto() {
+		return btnInsertarFoto;
+	}
+
+	public void setBtnInsertarFoto(JButton btnInsertarFoto) {
+		this.btnInsertarFoto = btnInsertarFoto;
+	}
+	
 }

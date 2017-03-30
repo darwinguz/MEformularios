@@ -3,15 +3,20 @@ package com.capa.presentacion;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import com.capa.util.Utilitarios;
 
 public class FichaD extends JFrame {
 
@@ -62,10 +67,33 @@ public class FichaD extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		JPcabecera cabecera = new JPcabecera();
+
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
 
-		cabecera = new JPcabecera();
+		InformacionObligatoriaV infor = new InformacionObligatoriaV(1, 1);
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if (Utilitarios.validarInfo(infor.getTxtObsGenIzq().getText(),
+						infor.getTxtResponsableMineduc().getText(), infor.getTxtCargoIzq().getText(),
+						infor.getTxtObsGenDer().getText(), infor.getTxtResponsableContratista().getText(),
+						infor.getTxtCargoDer().getText(), infor.getTxtFecha().getText())) {
+					JOptionPane.showMessageDialog(null, "Datos correctos");
+				} else {
+					JOptionPane.showMessageDialog(null, "Datos obligatorios");
+				}
+			}
+		});
+
+		infor.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				JOptionPane.showMessageDialog(null, Utilitarios.getPathImagen());
+			}
+		});
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(10, 144, 640, 354);
@@ -96,6 +124,11 @@ public class FichaD extends JFrame {
 		panel_1.add(lblReferencia);
 
 		JButton btnInsertarFoto1 = new JButton("Insertar FOTO");
+		btnInsertarFoto1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, Utilitarios.getPathImagen());
+			}
+		});
 		btnInsertarFoto1.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto1.setBounds(460, 34, 125, 23);
 		panel_1.add(btnInsertarFoto1);
@@ -264,92 +297,99 @@ public class FichaD extends JFrame {
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setLayout(null);
-		panel_2.setBorder(new TitledBorder(null, "Informaci\u00F3n Obligatoria", TitledBorder.LEADING, TitledBorder.TOP,
-				null, Color.RED));
+		// panel_2.setBorder(new TitledBorder(null, "Informaci\u00F3n
+		// Obligatoria", TitledBorder.LEADING, TitledBorder.TOP,
+		// null, Color.RED));
 		panel_2.setBounds(703, 186, 406, 269);
 		contentPane.add(panel_2);
 
-		JLabel label_12 = new JLabel("Observaciones Generales:");
-		label_12.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_12.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_12.setBounds(10, 26, 139, 14);
-		panel_2.add(label_12);
+		panel_2.add(infor.getPnlInformacionObl());
 
-		txtObsGenD = new JTextField();
-		txtObsGenD.setColumns(10);
-		txtObsGenD.setBounds(159, 23, 228, 20);
-		panel_2.add(txtObsGenD);
+		// JLabel label_12 = new JLabel("Observaciones Generales:");
+		// label_12.setHorizontalAlignment(SwingConstants.RIGHT);
+		// label_12.setFont(new Font("Arial", Font.PLAIN, 11));
+		// label_12.setBounds(10, 26, 139, 14);
+		// panel_2.add(label_12);
+		//
+		// txtObsGenD = new JTextField();
+		// txtObsGenD.setColumns(10);
+		// txtObsGenD.setBounds(159, 23, 228, 20);
+		// panel_2.add(txtObsGenD);
+		//
+		// JLabel label_13 = new JLabel("Responsable MinEduc:");
+		// label_13.setHorizontalAlignment(SwingConstants.RIGHT);
+		// label_13.setFont(new Font("Arial", Font.PLAIN, 11));
+		// label_13.setBounds(10, 52, 139, 14);
+		// panel_2.add(label_13);
+		//
+		// txtResponsableD = new JTextField();
+		// txtResponsableD.setColumns(10);
+		// txtResponsableD.setBounds(159, 49, 228, 20);
+		// panel_2.add(txtResponsableD);
+		//
+		// JLabel label_14 = new JLabel("Cargo:");
+		// label_14.setHorizontalAlignment(SwingConstants.RIGHT);
+		// label_14.setFont(new Font("Arial", Font.PLAIN, 11));
+		// label_14.setBounds(10, 78, 139, 14);
+		// panel_2.add(label_14);
+		//
+		// txtCargoD = new JTextField();
+		// txtCargoD.setColumns(10);
+		// txtCargoD.setBounds(159, 75, 228, 20);
+		// panel_2.add(txtCargoD);
+		//
+		// JLabel label_15 = new JLabel("Observaciones Generales:");
+		// label_15.setHorizontalAlignment(SwingConstants.RIGHT);
+		// label_15.setFont(new Font("Arial", Font.PLAIN, 11));
+		// label_15.setBounds(10, 120, 139, 14);
+		// panel_2.add(label_15);
+		//
+		// txtObsGen2D = new JTextField();
+		// txtObsGen2D.setColumns(10);
+		// txtObsGen2D.setBounds(159, 117, 228, 20);
+		// panel_2.add(txtObsGen2D);
+		//
+		// JLabel label_16 = new JLabel("Responsable Contratista");
+		// label_16.setHorizontalAlignment(SwingConstants.RIGHT);
+		// label_16.setFont(new Font("Arial", Font.PLAIN, 11));
+		// label_16.setBounds(10, 146, 139, 14);
+		// panel_2.add(label_16);
+		//
+		// txtResponsableContraD = new JTextField();
+		// txtResponsableContraD.setColumns(10);
+		// txtResponsableContraD.setBounds(159, 143, 228, 20);
+		// panel_2.add(txtResponsableContraD);
+		//
+		// JLabel label_17 = new JLabel("Cargo:");
+		// label_17.setHorizontalAlignment(SwingConstants.RIGHT);
+		// label_17.setFont(new Font("Arial", Font.PLAIN, 11));
+		// label_17.setBounds(10, 172, 139, 14);
+		// panel_2.add(label_17);
+		//
+		// txtCargo2D = new JTextField();
+		// txtCargo2D.setColumns(10);
+		// txtCargo2D.setBounds(159, 169, 228, 20);
+		// panel_2.add(txtCargo2D);
+		//
+		// JLabel label_18 = new JLabel("Fecha:");
+		// label_18.setHorizontalAlignment(SwingConstants.RIGHT);
+		// label_18.setFont(new Font("Arial", Font.PLAIN, 11));
+		// label_18.setBounds(10, 198, 139, 14);
+		// panel_2.add(label_18);
+		//
+		// txtFechaD = new JTextField();
+		// txtFechaD.setColumns(10);
+		// txtFechaD.setBounds(159, 195, 228, 20);
+		// panel_2.add(txtFechaD);
+		//
+		// JButton btnFotoD = new JButton("Insertar Foto General");
+		// btnFotoD.setFont(new Font("Arial", Font.BOLD, 14));
+		// btnFotoD.setBounds(157, 226, 214, 23);
+		// panel_2.add(btnFotoD);
+	}
 
-		JLabel label_13 = new JLabel("Responsable MinEduc:");
-		label_13.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_13.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_13.setBounds(10, 52, 139, 14);
-		panel_2.add(label_13);
-
-		txtResponsableD = new JTextField();
-		txtResponsableD.setColumns(10);
-		txtResponsableD.setBounds(159, 49, 228, 20);
-		panel_2.add(txtResponsableD);
-
-		JLabel label_14 = new JLabel("Cargo:");
-		label_14.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_14.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_14.setBounds(10, 78, 139, 14);
-		panel_2.add(label_14);
-
-		txtCargoD = new JTextField();
-		txtCargoD.setColumns(10);
-		txtCargoD.setBounds(159, 75, 228, 20);
-		panel_2.add(txtCargoD);
-
-		JLabel label_15 = new JLabel("Observaciones Generales:");
-		label_15.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_15.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_15.setBounds(10, 120, 139, 14);
-		panel_2.add(label_15);
-
-		txtObsGen2D = new JTextField();
-		txtObsGen2D.setColumns(10);
-		txtObsGen2D.setBounds(159, 117, 228, 20);
-		panel_2.add(txtObsGen2D);
-
-		JLabel label_16 = new JLabel("Responsable Contratista");
-		label_16.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_16.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_16.setBounds(10, 146, 139, 14);
-		panel_2.add(label_16);
-
-		txtResponsableContraD = new JTextField();
-		txtResponsableContraD.setColumns(10);
-		txtResponsableContraD.setBounds(159, 143, 228, 20);
-		panel_2.add(txtResponsableContraD);
-
-		JLabel label_17 = new JLabel("Cargo:");
-		label_17.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_17.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_17.setBounds(10, 172, 139, 14);
-		panel_2.add(label_17);
-
-		txtCargo2D = new JTextField();
-		txtCargo2D.setColumns(10);
-		txtCargo2D.setBounds(159, 169, 228, 20);
-		panel_2.add(txtCargo2D);
-
-		JLabel label_18 = new JLabel("Fecha:");
-		label_18.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_18.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_18.setBounds(10, 198, 139, 14);
-		panel_2.add(label_18);
-
-		txtFechaD = new JTextField();
-		txtFechaD.setColumns(10);
-		txtFechaD.setBounds(159, 195, 228, 20);
-		panel_2.add(txtFechaD);
-
-		JButton btnFotoD = new JButton("Insertar Foto General");
-		btnFotoD.setFont(new Font("Arial", Font.BOLD, 14));
-		btnFotoD.setBounds(157, 226, 214, 23);
-		panel_2.add(btnFotoD);
-
+	private void obtenerDatos() {
+		String desc1, desc2, desc3, desc4, desc5, desc6, desc7, desc8, desc9, desc10;
+		desc1 = txtDesc1.getText();
 	}
 }
