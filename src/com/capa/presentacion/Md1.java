@@ -2840,7 +2840,7 @@ public class Md1 extends JFrame {
 		label_49.setBounds(267, 1, 143, 14);
 		panel_61.add(label_49);
 
-		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(858, 295);
+		JPInformacionObligatoria informacionObligatoriaV = new JPInformacionObligatoria(858, 295);
 		panel_44.add(informacionObligatoriaV.getPnlInformacionObl());
 
 	}

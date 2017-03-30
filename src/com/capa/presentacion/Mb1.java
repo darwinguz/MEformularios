@@ -1170,8 +1170,8 @@ public class Mb1 extends JFrame {
 		label_9.setBounds(267, 1, 143, 14);
 		panel_31.add(label_9);
 
-		JPInformacionObligatoria pnlInformacionOblig = new JPInformacionObligatoria();
+		JPInformacionObligatoria pnlInformacionOblig = new JPInformacionObligatoria(1,1);
 
-		panel.add(pnlInformacionOblig.getInformacionObligatoria());
+		panel.add(pnlInformacionOblig.getPnlInformacionObl());
 	}
 }

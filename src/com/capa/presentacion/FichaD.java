@@ -71,7 +71,7 @@ public class FichaD extends JFrame {
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
 
-		InformacionObligatoriaV infor = new InformacionObligatoriaV(1, 1);
+		JPInformacionObligatoria infor = new JPInformacionObligatoria(1, 1);
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
