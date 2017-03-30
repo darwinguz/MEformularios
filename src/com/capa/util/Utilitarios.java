@@ -21,7 +21,7 @@ public class Utilitarios {
 		return icono.getImage().getScaledInstance(base, altura, resolucion);
 	}
 
-	public static String retornarPathImagen() {
+	public static String getPathImagen() {
 		String pathImagen = null;
 		JFileChooser chooser = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF Images", "jpg", "gif");
@@ -31,6 +31,19 @@ public class Utilitarios {
 			pathImagen = chooser.getCurrentDirectory() + chooser.getSelectedFile().getName();
 		}
 		return pathImagen;
+	}
+
+	public static boolean validarInfo(String... campos) {
+		boolean valida = true;
+		for (String texto : campos) {
+			if (!texto.equals("")) {
+				continue;
+			} else {
+				valida = false;
+				break;
+			}
+		}
+		return valida;
 	}
 
 }
