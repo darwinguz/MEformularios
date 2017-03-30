@@ -880,7 +880,7 @@ public class Mt1 extends JFrame {
 		panel_10.setBounds(210, 17, 55, 29);
 		pnlFachadaLateral.add(panel_10);
 		panel_10.setLayout(new GridLayout(1, 2, 0, 0));
-		
+
 		textField_38 = new JTextField();
 		textField_38.setColumns(10);
 		panel_10.add(textField_38);
@@ -1084,7 +1084,7 @@ public class Mt1 extends JFrame {
 		lblTObsRef.setBounds(267, 1, 143, 14);
 		pnlComponenteEst.add(lblTObsRef);
 
-		JPInformacionObligatoria infoObligatoria = new JPInformacionObligatoria();
-		pnlPestaña1.add(infoObligatoria.getInformacionObligatoria());
+		JPInformacionObligatoria infoObligatoria = new JPInformacionObligatoria(1, 1);
+		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 	}
 }

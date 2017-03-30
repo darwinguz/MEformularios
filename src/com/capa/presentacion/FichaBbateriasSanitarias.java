@@ -431,8 +431,8 @@ public class FichaBbateriasSanitarias extends JFrame {
 		JPcabecera cabecera = new JPcabecera();
 		panelPrincipal.add(cabecera.getCabecera());
 
-		JPInformacionObligatoria infoObligatoria = new JPInformacionObligatoria();
-		pnlPestaña2.add(infoObligatoria.getInformacionObligatoria());
+		JPInformacionObligatoria infoObligatoria = new JPInformacionObligatoria(1,1);
+		pnlPestaña2.add(infoObligatoria.getPnlInformacionObl());
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);

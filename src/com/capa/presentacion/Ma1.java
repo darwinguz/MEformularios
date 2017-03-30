@@ -1163,8 +1163,8 @@ public class Ma1 extends JFrame {
 		textField_37.setColumns(10);
 		pnlTObsRef.add(textField_37);
 
-		JPInformacionObligatoria infoObligatoria = new JPInformacionObligatoria();
-		pnlPestaña1.add(infoObligatoria.getInformacionObligatoria());
+		JPInformacionObligatoria infoObligatoria = new JPInformacionObligatoria(1,1);
+		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 	}
 
 }
