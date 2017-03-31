@@ -12,7 +12,7 @@ public class ComponenteProyecto implements ServicioProyecto {
 	public void crear(TCabecera cabecera) {
 		String sql = "INSERT INTO t_cabecera ("
 				+ "lg_codigo, c_nombre_proyecto, c_amie, c_zona, c_fecha_entrega, c_fecha_inicio, c_fecha_elaboracion_informe, "
-				+ "c_foto_general, c_croquis, c_circuito, c_sector, c_distrito) VALUES ('"
+				+ "c_foto_general, c_croquis, c_circuito, c_sector, c_distrito) VALUES " + "('"
 				+ cabecera.getTLugarGeografico().getLgCodigo() + "','" + cabecera.getCNombreProyecto() + "','"
 				+ cabecera.getCAmie() + "','" + cabecera.getCZona() + "'," + cabecera.getCFotoGeneral()
 				+ cabecera.getCCroquis() + ")";
