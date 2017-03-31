@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class TCabecera implements java.io.Serializable {
 
-	private static final long serialVersionUID = -303298668263638638L;
+	private static final long serialVersionUID = 1L;
 	private Integer CSerial;
 	private TLugarGeografico TLugarGeografico;
 	private String CNombreProyecto;
