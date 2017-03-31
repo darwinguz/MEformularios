@@ -1,6 +1,7 @@
 package com.capa.datos;
 // Generated 29-mar-2017 0:19:52 by Hibernate Tools 4.3.1
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -151,4 +152,13 @@ public class TCabecera implements java.io.Serializable {
 	public void setCircuito(String circuito) {
 		this.circuito = circuito;
 	}
+
+	@Override
+	public String toString() {
+		return "TCabecera [CSerial=" + CSerial + ", TLugarGeografico=" + TLugarGeografico + ", CNombreProyecto="
+				+ CNombreProyecto + ", CAmie=" + CAmie + ", CZona=" + CZona + ", CFechaEntrega=" + CFechaEntrega
+				+ ", CFechaInicio=" + CFechaInicio + ", CFechaElaboracionInforme=" + CFechaElaboracionInforme
+				+ ", sector=" + sector + ", circuito=" + circuito + "]";
+	}
+
 }
