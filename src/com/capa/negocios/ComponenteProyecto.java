@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 import com.capa.datos.TCabecera;
+import com.capa.datos.TLugarGeografico;
 
 public class ComponenteProyecto implements ServicioProyecto {
 
@@ -36,11 +37,19 @@ public class ComponenteProyecto implements ServicioProyecto {
 		// TODO Auto-generated method stub
 		String sql = "SELECT * FROM t_cabecera WHERE c_nombre_proyecto='" + nombre + "'";
 		TCabecera cabecera = new TCabecera();
+		TLugarGeografico lugar = new TLugarGeografico();
 		try {
 			ResultSet rs = Query.seleccionar(sql);
 			while (rs.next()) {
 				cabecera.setCSerial(rs.getInt("c_serial"));
-//				cabecera.set
+				lugar.setLgCodigo(rs.getString("lg_codigo"));
+				cabecera.setTLugarGeografico(lugar);
+				cabecera.setCNombreProyecto(rs.getString("c_nombre_proyecto"));
+				cabecera.setCAmie(rs.getString("c_amie"));
+				cabecera.setCZona(rs.getString("c_zona"));
+				cabecera.setCFechaEntrega(rs.getDate("c_fecha_entrega"));
+				cabecera.setCFechaInicio(rs.getDate("c_fecha_inicio"));
+				cabecera.setCFechaElaboracionInforme(rs.getDate("c_fecha_elaboracion_informe"));
 				// lugar.setLgCodigo(rs.getString("lg_codigo"));
 				// lugar.setLgNombre(rs.getString("t_l_lg_codigo"));
 			}

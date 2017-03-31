@@ -2,13 +2,19 @@ package com.capa.presentacion;
 
 import java.awt.EventQueue;
 import java.awt.GridLayout;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import com.capa.datos.TCabecera;
+import com.capa.negocios.ComponenteProyecto;
 
 public class AlInicio extends JFrame {
 
@@ -18,6 +24,7 @@ public class AlInicio extends JFrame {
 	private static final long serialVersionUID = -2063817460198744409L;
 	private JPanel contentPane;
 	private JTextField textField;
+	private TCabecera tCabecera;
 
 	/**
 	 * Launch the application.
@@ -47,6 +54,8 @@ public class AlInicio extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		ComponenteProyecto comProyecto = new ComponenteProyecto();
+
 		JPanel pnlBotones = new JPanel();
 		pnlBotones.setBounds(86, 71, 288, 309);
 		contentPane.add(pnlBotones);
@@ -69,14 +78,30 @@ public class AlInicio extends JFrame {
 
 		JButton btnReporteInsp = new JButton("6.- Reporte de Inspecci\u00F3n (D)");
 		pnlBotones.add(btnReporteInsp);
-		
+
 		JLabel lblBuscarProyecto = new JLabel("Buscar Proyecto");
 		lblBuscarProyecto.setBounds(86, 30, 102, 14);
 		contentPane.add(lblBuscarProyecto);
-		
+
 		textField = new JTextField();
 		textField.setBounds(187, 27, 187, 20);
 		contentPane.add(textField);
 		textField.setColumns(10);
+		textField.addKeyListener(new KeyAdapter() {
+			public void keyPressed(final KeyEvent e) {
+				int key = e.getKeyCode();
+				if (key == KeyEvent.VK_ENTER) {
+					try {
+						tCabecera = comProyecto.buscarPorNombre(textField.getText());
+						textField.setEnabled(false);
+						System.out.println(tCabecera.getTLugarGeografico().getLgCodigo());
+					} catch (NullPointerException np) {
+						// TODO: handle exception
+						JOptionPane.showMessageDialog(null, "No existe el proyecto");
+						textField.setEnabled(true);
+					}
+				}
+			}
+		});
 	}
 }
