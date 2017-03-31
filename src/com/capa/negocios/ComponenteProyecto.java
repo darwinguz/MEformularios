@@ -10,17 +10,12 @@ public class ComponenteProyecto implements ServicioProyecto {
 
 	@Override
 	public void crear(TCabecera cabecera) {
-		// String sql = "INSERT INTO t_cabecera (lg_codigo, c_nombre_proyecto,
-		// c_amie, c_zona, c_fecha_entrega,"
-		// + "c_fecha_inicio, c_fecha_elaboracion_informe) VALUES ('"
-		// + cabecera.getTLugarGeografico().getLgCodigo() + "','" +
-		// cabecera.getCNombreProyecto() + "','"
-		// + cabecera.getCAmie() + "','" + cabecera.getCZona() + "')";
-
-		String sql = "INSERT INTO t_cabecera (lg_codigo, c_nombre_proyecto, c_amie, c_zona, c_foto_general,"
-				+ "c_croquis)  VALUES ('" + cabecera.getTLugarGeografico().getLgCodigo() + "','"
-				+ cabecera.getCNombreProyecto() + "','" + cabecera.getCAmie() + "','" + cabecera.getCZona() + "',"
-				+ cabecera.getCFotoGeneral() + cabecera.getCCroquis() + ")";
+		String sql = "INSERT INTO t_cabecera ("
+				+ "lg_codigo, c_nombre_proyecto, c_amie, c_zona, c_fecha_entrega, c_fecha_inicio, c_fecha_elaboracion_informe, "
+				+ "c_foto_general, c_croquis, c_circuito, c_sector, c_distrito) VALUES ('"
+				+ cabecera.getTLugarGeografico().getLgCodigo() + "','" + cabecera.getCNombreProyecto() + "','"
+				+ cabecera.getCAmie() + "','" + cabecera.getCZona() + "'," + cabecera.getCFotoGeneral()
+				+ cabecera.getCCroquis() + ")";
 		try {
 			Query.insertar(sql);
 			JOptionPane.showMessageDialog(null, "Datos insertados", "DATOS", JOptionPane.ERROR_MESSAGE);
@@ -40,7 +35,7 @@ public class ComponenteProyecto implements ServicioProyecto {
 			ResultSet rs = Query.seleccionar(sql);
 			while (rs.next()) {
 				cabecera.setCSerial(rs.getInt("c_serial"));
-//				cabecera.set
+				// cabecera.set
 				// lugar.setLgCodigo(rs.getString("lg_codigo"));
 				// lugar.setLgNombre(rs.getString("t_l_lg_codigo"));
 			}

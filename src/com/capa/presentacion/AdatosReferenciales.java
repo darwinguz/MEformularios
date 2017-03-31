@@ -1,6 +1,5 @@
 package com.capa.presentacion;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,23 +8,22 @@ import java.awt.event.ItemListener;
 import java.util.Date;
 import java.util.List;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import com.capa.datos.TCabecera;
 import com.capa.datos.TLugarGeografico;
 import com.capa.negocios.ComponenteLugarGeo;
 import com.capa.negocios.ComponenteProyecto;
+import com.capa.negocios.ServicioProyecto;
 import com.capa.util.Utilitarios;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.JSpinner;
-import javax.swing.JComboBox;
-import javax.swing.JButton;
-import javax.swing.SwingConstants;
+import com.toedter.calendar.JDateChooser;
 
 public class AdatosReferenciales extends JFrame {
 
@@ -40,9 +38,9 @@ public class AdatosReferenciales extends JFrame {
 	private JTextField txtAmei;
 	private JTextField txtCircuito;
 	private JTextField txtSector;
-	private JTextField txtEntregaPredioFecha;
-	private JTextField txtInicioTrabajoFecha;
-	private JTextField txtElabInformeFecha;
+	private JDateChooser dateEntregaPredioFecha;
+	private JDateChooser dateInicioTrabajoFecha;
+	private JDateChooser dateElabInformeFecha;
 
 	private JComboBox<TLugarGeografico> cbxProvincia;
 	private JComboBox<TLugarGeografico> cbxCanton;
@@ -163,20 +161,23 @@ public class AdatosReferenciales extends JFrame {
 		panelPrincipal.add(txtSector);
 		txtSector.setColumns(10);
 
-		txtEntregaPredioFecha = new JTextField();
-		txtEntregaPredioFecha.setBounds(37, 280, 180, 20);
-		panelPrincipal.add(txtEntregaPredioFecha);
-		txtEntregaPredioFecha.setColumns(10);
+		dateEntregaPredioFecha = new JDateChooser();
+		dateEntregaPredioFecha.setBounds(37, 280, 180, 20);
+		dateEntregaPredioFecha.setDateFormatString("yyyy-MM-dd");
+		dateEntregaPredioFecha.setDate(new Date());
+		panelPrincipal.add(dateEntregaPredioFecha);
 
-		txtInicioTrabajoFecha = new JTextField();
-		txtInicioTrabajoFecha.setBounds(271, 280, 180, 20);
-		panelPrincipal.add(txtInicioTrabajoFecha);
-		txtInicioTrabajoFecha.setColumns(10);
+		dateInicioTrabajoFecha = new JDateChooser();
+		dateInicioTrabajoFecha.setBounds(271, 280, 180, 20);
+		dateInicioTrabajoFecha.setDateFormatString("yyyy-MM-dd");
+		dateInicioTrabajoFecha.setDate(new Date());
+		panelPrincipal.add(dateInicioTrabajoFecha);
 
-		txtElabInformeFecha = new JTextField();
-		txtElabInformeFecha.setBounds(506, 280, 180, 20);
-		panelPrincipal.add(txtElabInformeFecha);
-		txtElabInformeFecha.setColumns(10);
+		dateElabInformeFecha = new JDateChooser();
+		dateElabInformeFecha.setBounds(506, 280, 180, 20);
+		dateElabInformeFecha.setDateFormatString("yyyy-MM-dd");
+		dateElabInformeFecha.setDate(new Date());
+		panelPrincipal.add(dateElabInformeFecha);
 
 		cbxProvincia = new JComboBox<>();
 		cbxProvincia.setBounds(37, 140, 180, 20);
@@ -267,26 +268,26 @@ public class AdatosReferenciales extends JFrame {
 		JButton btnRegistrar = new JButton("Registrar");
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				ComponenteProyecto proyecto = new ComponenteProyecto();
+				ServicioProyecto proyecto = new ComponenteProyecto();
+
 				String proy = txtProyecto.getText();
 				String amie = txtAmei.getText();
 				String zona = (String) cbxZona.getSelectedItem();
-				// String provincia = (String) cbxProvincia.getSelectedItem();
+				TLugarGeografico parroquia = (TLugarGeografico) cbxParroquia.getSelectedItem();
 				String distrito = (String) cbxDistrito.getSelectedItem();
 				String circuito = txtCircuito.getText();
-				// String canton = (String) cbxCanton.getSelectedItem();
-				TLugarGeografico lugarGeog = (TLugarGeografico) cbxParroquia.getSelectedItem();
 				String sector = txtSector.getText();
-				Date fechaEntrega = Utilitarios.getFecha(txtEntregaPredioFecha.getText());
-				Date fechaInicio = Utilitarios.getFecha(txtInicioTrabajoFecha.getText());
-				Date fechaFin = Utilitarios.getFecha(txtElabInformeFecha.getText());
-				byte[] foto = Utilitarios.cargarImagen(pathFoto);
+				Date fechaEntrega = dateEntregaPredioFecha.getDate();
+				Date fechaInicio = dateInicioTrabajoFecha.getDate();
+				Date fechaFin = dateElabInformeFecha.getDate();
+				byte[] fotoGeneral = Utilitarios.cargarImagen(pathFoto);
 				byte[] croquis = Utilitarios.cargarImagen(pathCroquis);
-				TCabecera cab = new TCabecera(lugarGeog, proy, amie, zona, fechaEntrega, fechaInicio, fechaFin, foto,
-						croquis, null, sector, circuito);
-				proyecto.crear(cab);
-				System.out.println(lugarGeog.getLgNombre());
-				System.out.println(lugarGeog.getLgCodigo());
+
+				TCabecera cabecera = new TCabecera(proy, amie, zona, parroquia, distrito, circuito, sector,
+						fechaEntrega, fechaInicio, fechaFin, fotoGeneral, croquis);
+
+				// proyecto.crear(cab);
+				System.out.println(cabecera);
 			}
 		});
 		btnRegistrar.setBounds(538, 327, 125, 23);
