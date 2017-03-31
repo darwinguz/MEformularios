@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +20,7 @@ import com.capa.negocios.ComponenteProyecto;
 import com.capa.util.Utilitarios;
 
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JSpinner;
 import javax.swing.JComboBox;
@@ -44,6 +47,8 @@ public class AdatosReferenciales extends JFrame {
 	private JComboBox<TLugarGeografico> cbxProvincia;
 	private JComboBox<TLugarGeografico> cbxCanton;
 	private JComboBox<TLugarGeografico> cbxParroquia;
+
+	String pathFoto, pathCroquis;
 
 	/**
 	 * Launch the application.
@@ -185,20 +190,45 @@ public class AdatosReferenciales extends JFrame {
 
 		cbxCanton = new JComboBox<>();
 		cbxCanton.setBounds(271, 140, 180, 20);
+		cbxCanton.addItem(new TLugarGeografico("", "Seleccionar", "Seleccionar"));
 		panelPrincipal.add(cbxCanton);
 
-		cbxProvincia.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				TLugarGeografico lugarG = (TLugarGeografico) cbxProvincia.getSelectedItem();
-				rellenarComboCanton(lugarG.getLgCodigo());
-				System.out.println(lugarG.getLgNombre());
-				System.out.println(lugarG.getLgCodigo());
+		// cbxProvincia.addActionListener(new ActionListener() {
+		// public void actionPerformed(ActionEvent arg0) {
+		// TLugarGeografico lugarG = (TLugarGeografico)
+		// cbxProvincia.getSelectedItem();
+		// rellenarComboCanton(lugarG.getLgCodigo());
+		// System.out.println(lugarG.getLgNombre());
+		// System.out.println(lugarG.getLgCodigo());
+		// }
+		// });
+
+		cbxProvincia.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				// TODO Auto-generated method stub
+				if (e.getStateChange() == ItemEvent.SELECTED) {
+					TLugarGeografico lugarG = (TLugarGeografico) cbxProvincia.getSelectedItem();
+					rellenarComboCanton(lugarG.getLgCodigo());
+				}
 			}
 		});
 
 		cbxParroquia = new JComboBox<>();
 		cbxParroquia.setBounds(506, 140, 180, 20);
+		cbxParroquia.addItem(new TLugarGeografico("", "Seleccionar", "Seleccionar"));
 		panelPrincipal.add(cbxParroquia);
+
+		cbxCanton.addItemListener(new ItemListener() {
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				// TODO Auto-generated method stub
+				if (e.getStateChange() == ItemEvent.SELECTED) {
+					TLugarGeografico lugarG = (TLugarGeografico) cbxCanton.getSelectedItem();
+					rellenarComboParroquia(lugarG.getLgCodigo());
+				}
+			}
+		});
 
 		JComboBox<String> cbxDistrito = new JComboBox<>();
 		cbxDistrito.setBounds(37, 210, 180, 20);
@@ -208,16 +238,29 @@ public class AdatosReferenciales extends JFrame {
 		JComboBox<String> cbxZona = new JComboBox<>();
 		cbxZona.setBounds(598, 52, 90, 20);
 		panelPrincipal.add(cbxZona);
-
 		for (int i = 1; i < 10; i++) {
 			cbxZona.addItem(String.valueOf(i));
 		}
 
 		JButton btnFotoGeneral = new JButton("Foto General");
+		btnFotoGeneral.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				pathFoto = Utilitarios.getPathImagen();
+			}
+		});
 		btnFotoGeneral.setBounds(65, 327, 125, 23);
 		panelPrincipal.add(btnFotoGeneral);
 
 		JButton btnCroquis = new JButton("Croquis");
+		btnCroquis.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				pathCroquis = Utilitarios.getPathImagen();
+			}
+		});
 		btnCroquis.setBounds(301, 327, 125, 23);
 		panelPrincipal.add(btnCroquis);
 
@@ -225,27 +268,25 @@ public class AdatosReferenciales extends JFrame {
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ComponenteProyecto proyecto = new ComponenteProyecto();
-				// TCabecera cab = new TCabecera();
-				String Proyecto = txtProyecto.getText();
+				String proy = txtProyecto.getText();
 				String amie = txtAmei.getText();
 				String zona = (String) cbxZona.getSelectedItem();
 				// String provincia = (String) cbxProvincia.getSelectedItem();
 				String distrito = (String) cbxDistrito.getSelectedItem();
-				String cicuito = txtCircuito.getText();
-				String canton = (String) cbxCanton.getSelectedItem();
-				TLugarGeografico cab = (TLugarGeografico) cbxProvincia.getSelectedItem();
+				String circuito = txtCircuito.getText();
+				// String canton = (String) cbxCanton.getSelectedItem();
+				TLugarGeografico lugarGeog = (TLugarGeografico) cbxParroquia.getSelectedItem();
 				String sector = txtSector.getText();
-
-				System.out.println(cab.getLgNombre());
-				System.out.println(cab.getLgCodigo());
-
-				// Date fechaEntrega =
-				// Utilitarios.getFecha(txtEntregaPredioFecha.getText());
-				// Date fechaInicio =
-				// Utilitarios.getFecha(txtInicioTrabajoFecha.getText());
-				// Date fechaFin =
-				// Utilitarios.getFecha(txtElabInformeFecha.getText());
-
+				Date fechaEntrega = Utilitarios.getFecha(txtEntregaPredioFecha.getText());
+				Date fechaInicio = Utilitarios.getFecha(txtInicioTrabajoFecha.getText());
+				Date fechaFin = Utilitarios.getFecha(txtElabInformeFecha.getText());
+				byte[] foto = Utilitarios.cargarImagen(pathFoto);
+				byte[] croquis = Utilitarios.cargarImagen(pathCroquis);
+				TCabecera cab = new TCabecera(lugarGeog, proy, amie, zona, fechaEntrega, fechaInicio, fechaFin, foto,
+						croquis, null, sector, circuito);
+				proyecto.crear(cab);
+				System.out.println(lugarGeog.getLgNombre());
+				System.out.println(lugarGeog.getLgCodigo());
 			}
 		});
 		btnRegistrar.setBounds(538, 327, 125, 23);
@@ -253,12 +294,21 @@ public class AdatosReferenciales extends JFrame {
 	}
 
 	public void rellenarComboCanton(String busca) {
-		System.out.println("Buscar " + busca);
 		List<TLugarGeografico> listaLugares;
 		listaLugares = new ComponenteLugarGeo().buscarPorId(busca);
 		cbxCanton.removeAllItems();
 		for (TLugarGeografico l : listaLugares) {
 			cbxCanton.addItem(l);
+		}
+	}
+
+	public void rellenarComboParroquia(String busca) {
+		// cbxParroquia.removeAllItems();
+		List<TLugarGeografico> listaLugares;
+		listaLugares = new ComponenteLugarGeo().buscarPorId(busca);
+		cbxParroquia.removeAllItems();
+		for (TLugarGeografico l : listaLugares) {
+			cbxParroquia.addItem(l);
 		}
 	}
 }

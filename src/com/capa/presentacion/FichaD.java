@@ -40,6 +40,7 @@ public class FichaD extends JFrame {
 	private JTextField txtCargo2D;
 	private JTextField txtFechaD;
 	private JPcabecera cabecera;
+	private String pathFotoInfor, pathFoto;
 
 	/**
 	 * Launch the application.
@@ -94,7 +95,7 @@ public class FichaD extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				JOptionPane.showMessageDialog(null, Utilitarios.getPathImagen());
+				pathFotoInfor = Utilitarios.getPathImagen();
 			}
 		});
 
@@ -129,7 +130,7 @@ public class FichaD extends JFrame {
 		JButton btnInsertarFoto1 = new JButton("Insertar FOTO");
 		btnInsertarFoto1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, Utilitarios.getPathImagen());
+				pathFoto = Utilitarios.getPathImagen();
 			}
 		});
 		btnInsertarFoto1.setFont(new Font("Arial", Font.BOLD, 12));
@@ -150,6 +151,11 @@ public class FichaD extends JFrame {
 		panel_1.add(txtDescripcion2);
 
 		JButton btnInsertarFoto2 = new JButton("Insertar FOTO");
+		btnInsertarFoto2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pathFoto = Utilitarios.getPathImagen();
+			}
+		});
 		btnInsertarFoto2.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto2.setBounds(460, 65, 125, 23);
 		panel_1.add(btnInsertarFoto2);
@@ -168,6 +174,11 @@ public class FichaD extends JFrame {
 		panel_1.add(txtDescripcion3);
 
 		JButton btnInsertarFoto3 = new JButton("Insertar FOTO");
+		btnInsertarFoto3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pathFoto = Utilitarios.getPathImagen();
+			}
+		});
 		btnInsertarFoto3.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto3.setBounds(460, 96, 125, 23);
 		panel_1.add(btnInsertarFoto3);
@@ -186,6 +197,11 @@ public class FichaD extends JFrame {
 		panel_1.add(txtDescripcion4);
 
 		JButton btnInsertarFoto4 = new JButton("Insertar FOTO");
+		btnInsertarFoto4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pathFoto = Utilitarios.getPathImagen();
+			}
+		});
 		btnInsertarFoto4.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto4.setBounds(460, 127, 125, 23);
 		panel_1.add(btnInsertarFoto4);
@@ -204,6 +220,11 @@ public class FichaD extends JFrame {
 		panel_1.add(txtDescripcion5);
 
 		JButton btnInsertarFoto5 = new JButton("Insertar FOTO");
+		btnInsertarFoto5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pathFoto = Utilitarios.getPathImagen();
+			}
+		});
 		btnInsertarFoto5.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto5.setBounds(460, 158, 125, 23);
 		panel_1.add(btnInsertarFoto5);
@@ -222,6 +243,11 @@ public class FichaD extends JFrame {
 		panel_1.add(txtDescripcion6);
 
 		JButton btnInsertarFoto6 = new JButton("Insertar FOTO");
+		btnInsertarFoto6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pathFoto = Utilitarios.getPathImagen();
+			}
+		});
 		btnInsertarFoto6.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto6.setBounds(460, 189, 125, 23);
 		panel_1.add(btnInsertarFoto6);
@@ -240,6 +266,11 @@ public class FichaD extends JFrame {
 		panel_1.add(txtDescripcion7);
 
 		JButton btnInsertarFoto7 = new JButton("Insertar FOTO");
+		btnInsertarFoto7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pathFoto = Utilitarios.getPathImagen();
+			}
+		});
 		btnInsertarFoto7.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto7.setBounds(460, 220, 125, 23);
 		panel_1.add(btnInsertarFoto7);
@@ -258,6 +289,11 @@ public class FichaD extends JFrame {
 		panel_1.add(txtDescripcion8);
 
 		JButton btnInsertarFoto8 = new JButton("Insertar FOTO");
+		btnInsertarFoto8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pathFoto = Utilitarios.getPathImagen();
+			}
+		});
 		btnInsertarFoto8.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto8.setBounds(460, 251, 125, 23);
 		panel_1.add(btnInsertarFoto8);
@@ -276,6 +312,11 @@ public class FichaD extends JFrame {
 		panel_1.add(txtDescripcion9);
 
 		JButton btnInsertarFoto9 = new JButton("Insertar FOTO");
+		btnInsertarFoto9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pathFoto = Utilitarios.getPathImagen();
+			}
+		});
 		btnInsertarFoto9.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto9.setBounds(460, 282, 125, 23);
 		panel_1.add(btnInsertarFoto9);
@@ -294,6 +335,11 @@ public class FichaD extends JFrame {
 		panel_1.add(txtDescripcion10);
 
 		JButton btnInsertarFoto10 = new JButton("Insertar FOTO");
+		btnInsertarFoto10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				pathFoto = Utilitarios.getPathImagen();
+			}
+		});
 		btnInsertarFoto10.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto10.setBounds(460, 313, 125, 23);
 		panel_1.add(btnInsertarFoto10);
