@@ -303,7 +303,6 @@ public class AdatosReferenciales extends JFrame {
 	}
 
 	public void rellenarComboParroquia(String busca) {
-		// cbxParroquia.removeAllItems();
 		List<TLugarGeografico> listaLugares;
 		listaLugares = new ComponenteLugarGeo().buscarPorId(busca);
 		cbxParroquia.removeAllItems();

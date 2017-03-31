@@ -1,5 +1,7 @@
 package com.capa.negocios;
 
+import java.sql.ResultSet;
+
 import javax.swing.JOptionPane;
 
 import com.capa.datos.TCabecera;
@@ -27,6 +29,26 @@ public class ComponenteProyecto implements ServicioProyecto {
 			JOptionPane.showMessageDialog(null, "Error al insertar Datos " + e.getMessage(), "ERROR",
 					JOptionPane.ERROR_MESSAGE);
 		}
+	}
+
+	@Override
+	public TCabecera buscarPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		String sql = "SELECT * FROM t_cabecera WHERE c_nombre_proyecto='" + nombre + "'";
+		TCabecera cabecera = new TCabecera();
+		try {
+			ResultSet rs = Query.seleccionar(sql);
+			while (rs.next()) {
+				cabecera.setCSerial(rs.getInt("c_serial"));
+//				cabecera.set
+				// lugar.setLgCodigo(rs.getString("lg_codigo"));
+				// lugar.setLgNombre(rs.getString("t_l_lg_codigo"));
+			}
+
+		} catch (Exception e) {
+			System.out.println("Error al BUSCAR: " + e.getMessage());
+		}
+		return cabecera;
 	}
 
 }
