@@ -2,6 +2,8 @@ package com.capa.presentacion;
 
 import java.awt.EventQueue;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -15,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.datos.TCabecera;
 import com.capa.negocios.ComponenteProyecto;
+import com.capa.util.Utilitarios;
 
 public class AlInicio extends JFrame {
 
@@ -77,6 +80,18 @@ public class AlInicio extends JFrame {
 		pnlBotones.add(btnReporteAct);
 
 		JButton btnReporteInsp = new JButton("6.- Reporte de Inspecci\u00F3n (D)");
+		btnReporteInsp.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				FichaD fichaD = new FichaD();
+				fichaD.setNombP("Proy");
+				System.out.println(tCabecera.getCAmie());
+				// fichaD.setProyecto(tCabecera);
+				fichaD.setVisible(true);
+			}
+		});
+
 		pnlBotones.add(btnReporteInsp);
 
 		JLabel lblBuscarProyecto = new JLabel("Buscar Proyecto");

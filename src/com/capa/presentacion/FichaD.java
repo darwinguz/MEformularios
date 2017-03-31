@@ -17,6 +17,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.presentacion.JPcabecera;
 import com.capa.util.Utilitarios;
+import com.capa.datos.TCabecera;
 import com.capa.presentacion.InformacionObligatoriaV;
 
 public class FichaD extends JFrame {
@@ -45,22 +46,40 @@ public class FichaD extends JFrame {
 	private JTextField txtFechaD;
 	private JPcabecera cabecera;
 	private String pathFotoInfor, pathFoto;
+	private TCabecera proyecto;
+	private String nombP;
+
+	public TCabecera getProyecto() {
+		return proyecto;
+	}
+
+	public void setProyecto(TCabecera proyecto) {
+		this.proyecto = proyecto;
+	}
+
+	public String getNombP() {
+		return nombP;
+	}
+
+	public void setNombP(String nombP) {
+		this.nombP = nombP;
+	}
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FichaD frame = new FichaD();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// FichaD frame = new FichaD();
+	// frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
@@ -73,11 +92,13 @@ public class FichaD extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
+		// proyecto = new TCabecera();
 
 		JPcabecera cabecera = new JPcabecera();
-
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
+
+		System.out.println("Pr " + nombP);
 
 		InformacionObligatoriaV infor = new InformacionObligatoriaV(165, 280);
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
@@ -367,4 +388,5 @@ public class FichaD extends JFrame {
 
 		panel_2.add(infor.getPnlInformacionObl());
 	}
+
 }

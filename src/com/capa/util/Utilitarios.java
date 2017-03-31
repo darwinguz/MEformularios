@@ -4,7 +4,6 @@ import java.awt.Image;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
