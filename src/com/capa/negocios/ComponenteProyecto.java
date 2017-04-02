@@ -10,32 +10,28 @@ import com.capa.util.Utilitarios;
 public class ComponenteProyecto implements ServicioProyecto {
 
 	@Override
-	public void crear(TCabecera cabecera) {
+	public void crear(TCabecera cabecera, String path) {
 		// String sql = "INSERT INTO t_cabecera ("
 		// + "lg_codigo, c_nombre_proyecto, c_amie, c_zona, c_fecha_entrega,
 		// c_fecha_inicio, c_fecha_elaboracion_informe, "
-		// + "c_foto_general, c_croquis, c_circuito, c_sector, c_distrito)
-		// VALUES " + "('"
-		// + cabecera.getTLugarGeografico().getLgCodigo() + "','" +
-		// cabecera.getCNombreProyecto() + "','"
-		// + cabecera.getCAmie() + "','" + cabecera.getCZona() + "','" +
-		// cabecera.getCFechaEntrega() + "','"
-		// + cabecera.getCFechaInicio() + "','" +
-		// cabecera.getCFechaElaboracionInforme() + "','"
-		// + cabecera.getCFotoGeneral() + "','" + cabecera.getCCroquis() + "','"
-		// + cabecera.getCircuito() + "','"
-		// + cabecera.getSector() + "','" + cabecera.getDistrito() + ")";
-		String sql = "INSERT INTO t_cabecera ("
-				+ "lg_codigo, c_nombre_proyecto, c_amie, c_zona, c_fecha_entrega, c_fecha_inicio, c_fecha_elaboracion_informe, "
-				+ "c_circuito, c_sector, c_distrito) VALUES " + "('" + cabecera.getTLugarGeografico().getLgCodigo()
-				+ "','" + cabecera.getCNombreProyecto() + "','" + cabecera.getCAmie() + "','" + cabecera.getCZona()
-				+ "','" + Utilitarios.getFechaNacimiento(cabecera.getCFechaEntrega()) + "','"
-				+ Utilitarios.getFechaNacimiento(cabecera.getCFechaInicio()) + "','"
-				+ Utilitarios.getFechaNacimiento(cabecera.getCFechaElaboracionInforme()) + "','"
-				+ cabecera.getCircuito() + "','" + cabecera.getSector() + "','" + cabecera.getDistrito() + "');";
+		// + "c_circuito, c_sector, c_distrito) VALUES " + "('" +
+		// cabecera.getTLugarGeografico().getLgCodigo()
+		// + "','" + cabecera.getCNombreProyecto() + "','" + cabecera.getCAmie()
+		// + "','" + cabecera.getCZona()
+		// + "','" + Utilitarios.getFechaNacimiento(cabecera.getCFechaEntrega())
+		// + "','"
+		// + Utilitarios.getFechaNacimiento(cabecera.getCFechaInicio()) + "','"
+		// +
+		// Utilitarios.getFechaNacimiento(cabecera.getCFechaElaboracionInforme())
+		// + "','"
+		// + cabecera.getCircuito() + "','" + cabecera.getSector() + "','" +
+		// cabecera.getDistrito() + "');";
+
+		String sql = "INSERT INTO t_cabecera (lg_codigo, c_foto_general) values(?,?)";
+
 		System.out.println(sql);
 		try {
-			Query.insertar(sql);
+			Query.insertarImagen(sql, cabecera, path);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Error al insertar Datos " + e.getMessage(), "ERROR",
 					JOptionPane.ERROR_MESSAGE);

@@ -76,23 +76,23 @@ public class Utilitarios {
 		return fecha;
 	}
 
-	public static byte[] cargarImagen(String pathImagen) {
-		byte imagen[] = null;
-		File file = new File(pathImagen);
-		FileInputStream in;
-		BufferedInputStream reader;
-		try {
-			in = new FileInputStream(file);
-			reader = new BufferedInputStream(in);
-			int length = reader.available();
-			imagen = new byte[length];
-			reader.read(imagen, 0, length);
-			reader.close();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return imagen;
-	}
+//	public static byte[] cargarImagen(String pathImagen) {
+//		byte imagen[] = null;
+//		File file = new File(pathImagen);
+//		FileInputStream in;
+//		BufferedInputStream reader;
+//		try {
+//			in = new FileInputStream(file);
+//			reader = new BufferedInputStream(in);
+//			int length = reader.available();
+//			imagen = new byte[length];
+//			reader.read(imagen, 0, length);
+//			reader.close();
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		return imagen;
+//	}
 
 }

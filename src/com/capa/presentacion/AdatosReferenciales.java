@@ -291,12 +291,13 @@ public class AdatosReferenciales extends JFrame {
 				Date fechaInicio = dateInicioTrabajoFecha.getDate();
 				Date fechaFin = dateElabInformeFecha.getDate();
 				// byte[] fotoGeneral = Utilitarios.cargarImagen(pathFoto);
-				// byte[] croquis = Utilitarios.cargarImagen(pathCroquis);
+				// byte[] fotoCroquis = Utilitarios.cargarImagen(pathCroquis);
 
 				TCabecera cabecera = new TCabecera(proy, amie, zona, parroquia, distrito, circuito, sector,
 						fechaEntrega, fechaInicio, fechaFin, null, null);
+				System.out.println(pathFoto);
 
-				proyecto.crear(cabecera);
+				proyecto.crear(cabecera, pathFoto);
 				System.out.println(cabecera);
 			}
 		});
