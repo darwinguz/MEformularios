@@ -2,6 +2,7 @@ package com.capa.negocios;
 
 import java.sql.ResultSet;
 
+import javax.print.CancelablePrintJob;
 import javax.swing.JOptionPane;
 
 import com.capa.datos.TCabecera;
@@ -47,6 +48,8 @@ public class ComponenteProyecto implements ServicioProyecto {
 				cabecera.setCNombreProyecto(rs.getString("c_nombre_proyecto"));
 				cabecera.setCAmie(rs.getString("c_amie"));
 				cabecera.setCZona(rs.getString("c_zona"));
+				cabecera.setCircuito(rs.getString("c_circuito"));
+				cabecera.setSector(rs.getString("c_sector"));
 				cabecera.setCFechaEntrega(rs.getDate("c_fecha_entrega"));
 				cabecera.setCFechaInicio(rs.getDate("c_fecha_inicio"));
 				cabecera.setCFechaElaboracionInforme(rs.getDate("c_fecha_elaboracion_informe"));
