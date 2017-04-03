@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import com.capa.datos.TCabecera;
+import com.capa.util.Utilitarios;
 
 public class Query {
 	private static MySql mysql = new MySql("localhost", "db_ministerio_ed", "root", "root");
@@ -76,35 +77,47 @@ public class Query {
 		}
 	}
 
-	public static void insertarImagen(String insert, TCabecera cabecera, String ruta) {
-		FileInputStream fis = null;
+	public static void insertarImagen(String insert, TCabecera cabecera) {
+		FileInputStream fis1 = null;
+		FileInputStream fis2 = null;
 		PreparedStatement ps = null;
 
 		try {
 			mysql.getConexion().setAutoCommit(false);
-			File file = new File(ruta);
-			fis = new FileInputStream(file);
-			System.out.println(insert);
+
+			File file1 = new File(cabecera.getCFotoGeneral());
+			File file2 = new File(cabecera.getCCroquis());
+			fis1 = new FileInputStream(file1);
+			fis2 = new FileInputStream(file2);
 
 			ps = mysql.getConexion().prepareStatement(insert);
-			ps.setString(1, "'EC01'");
-			ps.setBinaryStream(2, fis, (long) file.length());
+			ps.setString(1, cabecera.getTLugarGeografico().getLgCodigo());
+			ps.setString(2, cabecera.getCNombreProyecto());
+			ps.setString(3, cabecera.getCAmie());
+			ps.setString(4, cabecera.getCZona());
+			ps.setString(5, Utilitarios.getFechaString(cabecera.getCFechaEntrega()));
+			ps.setString(6, Utilitarios.getFechaString(cabecera.getCFechaInicio()));
+			ps.setString(7, Utilitarios.getFechaString(cabecera.getCFechaElaboracionInforme()));
+			ps.setString(8, cabecera.getCircuito());
+			ps.setString(9, cabecera.getSector());
+			ps.setString(10, cabecera.getDistrito());
+			ps.setBinaryStream(11, fis1, (long) file1.length());
+			ps.setBinaryStream(12, fis2, (long) file2.length());
+			ps.setString(13, cabecera.getTipoFicha());
 
-			System.out.println(insert);
 			ps.executeUpdate();
 			mysql.getConexion().commit();
-			// return true;
 		} catch (Exception ex) {
 			Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
 			try {
 				ps.close();
-				fis.close();
+				fis1.close();
+				fis2.close();
 			} catch (Exception ex) {
 				Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
 			}
 		}
-		// return false;
 	}
 
 }

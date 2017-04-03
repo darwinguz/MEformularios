@@ -51,7 +51,8 @@ public class AdatosReferenciales extends JFrame {
 	private JComboBox<String> cbxDistrito;
 	private Map<String, String> distrito;
 
-	String pathFoto, pathCroquis;
+	private String pathFotoGeneral;
+	private String pathFotoCroquis;
 
 	/**
 	 * Launch the application.
@@ -211,7 +212,6 @@ public class AdatosReferenciales extends JFrame {
 		cbxCanton.addItemListener(new ItemListener() {
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				// TODO Auto-generated method stub
 				if (e.getStateChange() == ItemEvent.SELECTED) {
 					TLugarGeografico lugarG = (TLugarGeografico) cbxCanton.getSelectedItem();
 					rellenarComboParroquia(lugarG.getLgCodigo());
@@ -257,19 +257,17 @@ public class AdatosReferenciales extends JFrame {
 		btnFotoGeneral.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				pathFoto = Utilitarios.getPathImagen();
+				pathFotoGeneral = Utilitarios.getPathImagen();
 			}
 		});
 		btnFotoGeneral.setBounds(65, 327, 125, 23);
 		panelPrincipal.add(btnFotoGeneral);
 
-		JButton btnCroquis = new JButton("Croquis");
+		JButton btnCroquis = new JButton("Foto Croquis");
 		btnCroquis.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				pathCroquis = Utilitarios.getPathImagen();
+				pathFotoCroquis = Utilitarios.getPathImagen();
 			}
 		});
 		btnCroquis.setBounds(301, 327, 125, 23);
@@ -290,15 +288,12 @@ public class AdatosReferenciales extends JFrame {
 				Date fechaEntrega = dateEntregaPredioFecha.getDate();
 				Date fechaInicio = dateInicioTrabajoFecha.getDate();
 				Date fechaFin = dateElabInformeFecha.getDate();
-				// byte[] fotoGeneral = Utilitarios.cargarImagen(pathFoto);
-				// byte[] fotoCroquis = Utilitarios.cargarImagen(pathCroquis);
 
 				TCabecera cabecera = new TCabecera(proy, amie, zona, parroquia, distrito, circuito, sector,
-						fechaEntrega, fechaInicio, fechaFin, null, null);
-				System.out.println(pathFoto);
+						fechaEntrega, fechaInicio, fechaFin, pathFotoGeneral, pathFotoCroquis, "D");
 
-				proyecto.crear(cabecera, pathFoto);
-				System.out.println(cabecera);
+				proyecto.crear(cabecera);
+
 			}
 		});
 		btnRegistrar.setBounds(538, 327, 125, 23);

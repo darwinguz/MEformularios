@@ -51,7 +51,7 @@ public class Utilitarios {
 		return valida;
 	}
 
-	public static String getFechaNacimiento(Date date) {
+	public static String getFechaString(Date date) {
 		String fecha = "";
 		try {
 			SimpleDateFormat formateador = new SimpleDateFormat("yyyy/MM/dd", new Locale("es", "EC"));
