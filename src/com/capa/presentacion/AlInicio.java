@@ -16,8 +16,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import com.capa.datos.TCabecera;
+import com.capa.negocios.ClaseCabecera;
 import com.capa.negocios.ComponenteProyecto;
-import com.capa.util.Utilitarios;
 
 public class AlInicio extends JFrame {
 
@@ -85,13 +85,9 @@ public class AlInicio extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				FichaD fichaD = new FichaD();
-				fichaD.setNombP("Proy");
-				System.out.println(tCabecera.getCAmie());
-				// fichaD.setProyecto(tCabecera);
 				fichaD.setVisible(true);
 			}
 		});
-
 		pnlBotones.add(btnReporteInsp);
 
 		JLabel lblBuscarProyecto = new JLabel("Buscar Proyecto");
@@ -108,11 +104,14 @@ public class AlInicio extends JFrame {
 				if (key == KeyEvent.VK_ENTER) {
 					try {
 						tCabecera = comProyecto.buscarPorNombre(textField.getText());
-						textField.setEnabled(false);
+						ClaseCabecera clC = ClaseCabecera.getInstanciaCab(tCabecera);
 						System.out.println(tCabecera.getTLugarGeografico().getLgCodigo());
+						System.out.println(tCabecera.getCircuito());
+						System.out.println("Clase singleton " + clC.getCabecSingleton().getCircuito());
+						textField.setEnabled(false);
 					} catch (NullPointerException np) {
 						// TODO: handle exception
-						JOptionPane.showMessageDialog(null, "No existe el proyecto");
+						JOptionPane.showMessageDialog(null, "No existe el proyecto ");
 						textField.setEnabled(true);
 					}
 				}

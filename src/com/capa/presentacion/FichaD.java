@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,7 +18,10 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.presentacion.JPcabecera;
 import com.capa.util.Utilitarios;
-import com.capa.datos.TCabecera;
+import com.capa.datos.TInformacionObligatoria;
+import com.capa.negocios.ClaseCabecera;
+import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.presentacion.InformacionObligatoriaV;
 
 public class FichaD extends JFrame {
@@ -46,40 +50,24 @@ public class FichaD extends JFrame {
 	private JTextField txtFechaD;
 	private JPcabecera cabecera;
 	private String pathFotoInfor, pathFoto;
-	private TCabecera proyecto;
-	private String nombP;
 
-	public TCabecera getProyecto() {
-		return proyecto;
-	}
-
-	public void setProyecto(TCabecera proyecto) {
-		this.proyecto = proyecto;
-	}
-
-	public String getNombP() {
-		return nombP;
-	}
-
-	public void setNombP(String nombP) {
-		this.nombP = nombP;
-	}
+	ClaseCabecera cabec = ClaseCabecera.getInstanciaCab(null);
 
 	/**
 	 * Launch the application.
 	 */
-	// public static void main(String[] args) {
-	// EventQueue.invokeLater(new Runnable() {
-	// public void run() {
-	// try {
-	// FichaD frame = new FichaD();
-	// frame.setVisible(true);
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// });
-	// }
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					FichaD frame = new FichaD();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
 	/**
 	 * Create the frame.
@@ -92,19 +80,31 @@ public class FichaD extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		setLocationRelativeTo(null);
-		// proyecto = new TCabecera();
 
 		JPcabecera cabecera = new JPcabecera();
+
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
 
-		System.out.println("Pr " + nombP);
+		cabecera.getTxtProyecto().setText(cabec.getCabecSingleton().getCNombreProyecto());
+		cabecera.getTxtAmie().setText(cabec.getCabecSingleton().getCAmie());
+		cabecera.getTxtDistrito().setText(cabec.getCabecSingleton().getDistrito());
+		cabecera.getTxtCircuito().setText(cabec.getCabecSingleton().getCircuito());
+		cabecera.getTxtFechaEntrega().setText("" + cabec.getCabecSingleton().getCFechaEntrega());
+		cabecera.getTxtFechaInicioTrabajo().setText("" + cabec.getCabecSingleton().getCFechaInicio());
+		cabecera.getTxtZona().setText(cabec.getCabecSingleton().getCZona());
+		// !!!colocar provincia, canton, parroquia
+		cabecera.getTxtProvincia().setText(cabec.getCabecSingleton().getTLugarGeografico().getLgCodigo());
+
+		cabecera.getTxtSector().setText(cabec.getCabecSingleton().getSector());
 
 		InformacionObligatoriaV infor = new InformacionObligatoriaV(165, 280);
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				ServicioInfoObligatoria infoServicio = new ComponenteInfoObligatoria();
+				TInformacionObligatoria informacion;
 				String responsableMinEduc, cargoIzq, obsGenIz;
 				String responsableContrat, cargoDer, obsGenDer, fecha;
 				String descripcion;
@@ -115,10 +115,12 @@ public class FichaD extends JFrame {
 				cargoDer = infor.getTxtCargoDer().getText();
 				obsGenDer = infor.getTxtObsGenDer().getText();
 				fecha = infor.getTxtFecha().getText();
+				Date fechaInformacion = Utilitarios.getFecha(fecha);
 				if (Utilitarios.validarInfo(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
 						cargoDer, fecha)) {
-					descripcion = txtDesc1.getText();
-					JOptionPane.showMessageDialog(null, "Datos correctos");
+					informacion = new TInformacionObligatoria(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer,
+							responsableContrat, cargoDer, null);
+					infoServicio.crear(informacion);
 				} else {
 					JOptionPane.showMessageDialog(null, "Datos obligatorios");
 				}
@@ -388,5 +390,4 @@ public class FichaD extends JFrame {
 
 		panel_2.add(infor.getPnlInformacionObl());
 	}
-
 }
