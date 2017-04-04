@@ -1,6 +1,5 @@
 package com.capa.datos;
 
-import java.util.Arrays;
 import java.util.Date;
 
 public class TCabecera implements java.io.Serializable {
@@ -17,8 +16,9 @@ public class TCabecera implements java.io.Serializable {
 	private String sector;
 	private String circuito;
 	private String distrito;
-	private byte[] CFotoGeneral;
-	private byte[] CCroquis;
+	private String CFotoGeneral;
+	private String cFotoCroquis;
+	private String tipoFicha;
 
 	public TCabecera() {
 	}
@@ -29,7 +29,7 @@ public class TCabecera implements java.io.Serializable {
 
 	public TCabecera(String proyecto, String amie, String zona, TLugarGeografico parroquia, String distrito,
 			String circuito, String sector, Date fechaEntrega, Date fechaInicio, Date fechaElabInforme,
-			byte[] fotoGeneral, byte[] fotoCroquis) {
+			String fotoGeneral, String fotoCroquis, String tipoFicha) {
 
 		this.CNombreProyecto = proyecto;
 		this.CAmie = amie;
@@ -42,7 +42,8 @@ public class TCabecera implements java.io.Serializable {
 		this.CFechaInicio = fechaInicio;
 		this.CFechaElaboracionInforme = fechaElabInforme;
 		this.CFotoGeneral = fotoGeneral;
-		this.CCroquis = fotoCroquis;
+		this.cFotoCroquis = fotoCroquis;
+		this.tipoFicha = tipoFicha;
 
 	}
 
@@ -110,22 +111,6 @@ public class TCabecera implements java.io.Serializable {
 		this.CFechaElaboracionInforme = CFechaElaboracionInforme;
 	}
 
-	public byte[] getCFotoGeneral() {
-		return this.CFotoGeneral;
-	}
-
-	public void setCFotoGeneral(byte[] CFotoGeneral) {
-		this.CFotoGeneral = CFotoGeneral;
-	}
-
-	public byte[] getCCroquis() {
-		return this.CCroquis;
-	}
-
-	public void setCCroquis(byte[] CCroquis) {
-		this.CCroquis = CCroquis;
-	}
-
 	public String getSector() {
 		return sector;
 	}
@@ -150,13 +135,37 @@ public class TCabecera implements java.io.Serializable {
 		this.distrito = distrito;
 	}
 
+	public String getTipoFicha() {
+		return tipoFicha;
+	}
+
+	public void setTipoFicha(String tipoFicha) {
+		this.tipoFicha = tipoFicha;
+	}
+
+	public String getCFotoGeneral() {
+		return CFotoGeneral;
+	}
+
+	public void setCFotoGeneral(String cFotoGeneral) {
+		CFotoGeneral = cFotoGeneral;
+	}
+
+	public String getCCroquis() {
+		return cFotoCroquis;
+	}
+
+	public void setCCroquis(String cCroquis) {
+		cFotoCroquis = cCroquis;
+	}
+
 	@Override
 	public String toString() {
 		return "TCabecera [CSerial=" + CSerial + ", TLugarGeografico=" + TLugarGeografico + ", CNombreProyecto="
 				+ CNombreProyecto + ", CAmie=" + CAmie + ", CZona=" + CZona + ", CFechaEntrega=" + CFechaEntrega
 				+ ", CFechaInicio=" + CFechaInicio + ", CFechaElaboracionInforme=" + CFechaElaboracionInforme
 				+ ", sector=" + sector + ", circuito=" + circuito + ", distrito=" + distrito + ", CFotoGeneral="
-				+ Arrays.toString(CFotoGeneral) + ", CCroquis=" + Arrays.toString(CCroquis) + "]";
+				+ CFotoGeneral + ", cFotoCroquis=" + cFotoCroquis + ", tipoFicha=" + tipoFicha + "]";
 	}
 
 }

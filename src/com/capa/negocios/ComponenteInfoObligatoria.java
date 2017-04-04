@@ -14,7 +14,8 @@ public class ComponenteInfoObligatoria implements ServicioInfoObligatoria {
 				+ "io_obs_general, io_responsable_min, io_cargo_min, io_obs_gen_cont, io_responsable_cont, io_cargo_cont, "
 				+ "io_fecha_io) VALUES " + "('" + inforObl.getIoObsGeneral() + "','" + inforObl.getIoResponsableMin()
 				+ "','" + inforObl.getIoCargoMin() + "','" + inforObl.getIoObsGenCont() + "','"
-				+ inforObl.getIoResponsableCont() + "','" + inforObl.getIoCargoCont() + "','" + "');";
+				+ inforObl.getIoResponsableCont() + "','" + inforObl.getIoCargoCont() + "','"
+				+ Utilitarios.getFechaString(inforObl.getIoFechaIo()) + "');";
 		try {
 			Query.insertar(sql);
 		} catch (Exception e) {

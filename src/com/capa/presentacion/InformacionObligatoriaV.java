@@ -3,6 +3,7 @@ package com.capa.presentacion;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -11,6 +12,8 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.border.TitledBorder;
 
+import com.toedter.calendar.JDateChooser;
+
 public class InformacionObligatoriaV {
 
 	private JPanel pnlInformacionObl;
@@ -18,7 +21,7 @@ public class InformacionObligatoriaV {
 	private JTextField txtObsGenDer;
 	private JTextField txtResponsableContratista;
 	private JTextField txtCargoDer;
-	private JTextField txtFecha;
+	private JDateChooser dateFechaIO;
 	private JTextField txtObsGenIzq;
 	private JTextField txtResponsableMineduc;
 	private JTextField txtCargoIzq;
@@ -116,9 +119,12 @@ public class InformacionObligatoriaV {
 		lblFecha.setOpaque(true);
 		lblFecha.setBackground(new Color(211, 211, 211));
 		pnlIOfechaLBL.add(lblFecha);
-		txtFecha = new JTextField();
-		txtFecha.setColumns(10);
-		pnlIOfechaTXT.add(txtFecha);
+		dateFechaIO = new JDateChooser();
+		// dateFechaIO.setBounds(37, 280, 180, 20);
+		dateFechaIO.setDateFormatString("yyyy-MM-dd");
+		dateFechaIO.setDate(new Date());
+
+		pnlIOfechaTXT.add(dateFechaIO);
 
 		btnInsertarFoto = new JButton("Insertar FOTO");
 		btnInsertarFoto.setBounds(166, 175, 120, 23);
@@ -149,12 +155,12 @@ public class InformacionObligatoriaV {
 		this.txtCargoDer = txtCargoDer;
 	}
 
-	public JTextField getTxtFecha() {
-		return txtFecha;
+	public JDateChooser getDateFechaIO() {
+		return dateFechaIO;
 	}
 
-	public void setTxtFecha(JTextField txtFecha) {
-		this.txtFecha = txtFecha;
+	public void setDateFechaIO(JDateChooser dateFechaIO) {
+		this.dateFechaIO = dateFechaIO;
 	}
 
 	public JTextField getTxtObsGenIzq() {

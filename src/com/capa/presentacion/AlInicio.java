@@ -56,6 +56,8 @@ public class AlInicio extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 
 		ComponenteProyecto comProyecto = new ComponenteProyecto();
 
@@ -65,6 +67,13 @@ public class AlInicio extends JFrame {
 		pnlBotones.setLayout(new GridLayout(6, 0, 0, 5));
 
 		JButton btnDatosGenerales = new JButton("1.- Datos Generales UEPTM");
+		btnDatosGenerales.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				new AdatosReferenciales().setVisible(true);
+			}
+		});
 		pnlBotones.add(btnDatosGenerales);
 
 		JButton btnAvanceGeneral = new JButton("2.- Avance General (A)");

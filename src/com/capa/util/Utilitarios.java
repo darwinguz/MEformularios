@@ -8,6 +8,7 @@ import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -30,12 +31,12 @@ public class Utilitarios {
 
 	public static String getPathImagen() {
 		String pathImagen = null;
-		JFileChooser chooser = new JFileChooser();
+		final JFileChooser chooser = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF Images", "jpg", "gif");
 		chooser.setFileFilter(filter);
 		int returnVal = chooser.showOpenDialog(null);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
-			pathImagen = chooser.getCurrentDirectory() + "\\" + chooser.getSelectedFile().getName();
+			pathImagen = chooser.getSelectedFile().getAbsolutePath();
 		}
 		return pathImagen;
 	}
@@ -53,35 +54,26 @@ public class Utilitarios {
 		return valida;
 	}
 
+	public static String getFechaString(Date date) {
+		String fecha = "";
+		try {
+			SimpleDateFormat formateador = new SimpleDateFormat("yyyy/MM/dd", new Locale("es", "EC"));
+			fecha = formateador.format(date);
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Error al obtener fecha", "ERROR", JOptionPane.ERROR_MESSAGE);
+		}
+		return fecha;
+	}
+
 	public static Date getFecha(String cadenaFecha) {
 		SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy/MM/dd");
 		Date fecha = null;
 		try {
 			fecha = formatoFecha.parse(cadenaFecha);
 		} catch (ParseException e) {
-			// TODO: handle exception
 			JOptionPane.showMessageDialog(null, "Error al obtener fecha", "ERROR", JOptionPane.ERROR_MESSAGE);
 		}
 		return fecha;
-	}
-
-	public static byte[] cargarImagen(String pathImagen) {
-		byte imagen[] = null;
-		File file = new File(pathImagen);
-		FileInputStream in;
-		BufferedInputStream reader;
-		try {
-			in = new FileInputStream(file);
-			reader = new BufferedInputStream(in);
-			int length = reader.available();
-			imagen = new byte[length];
-			reader.read(imagen, 0, length);
-			reader.close();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return imagen;
 	}
 
 }
