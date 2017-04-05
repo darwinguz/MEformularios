@@ -403,14 +403,14 @@ public class Hs1 extends JFrame {
 		tabbedPane.setBounds(10, 110, 1286, 586);
 		contentPane.add(tabbedPane);
 
-		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("1.-HS-KIT HIDROSANITARIO", null, pnlPestaña1, null);
-		pnlPestaña1.setLayout(null);
+		JPanel pnlPestaÃ±a1 = new JPanel();
+		tabbedPane.addTab("1.-HS-KIT HIDROSANITARIO", null, pnlPestaÃ±a1, null);
+		pnlPestaÃ±a1.setLayout(null);
 
 		JPanel pnlCA = new JPanel();
 		pnlCA.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlCA.setBounds(10, 4, 414, 461);
-		pnlPestaña1.add(pnlCA);
+		pnlPestaÃ±a1.add(pnlCA);
 		pnlCA.setLayout(null);
 
 		JLabel lblComponenteArq = new JLabel("COMPONENTE ARQUITECT\u00D3NICO");
@@ -679,14 +679,14 @@ public class Hs1 extends JFrame {
 		panel_5.add(panel);
 		panel.setLayout(new GridLayout(4, 1, 0, 0));
 
-		lblCAKitConexionTuberia200 = new JLabel("<html><body>Kit para conexión de tubería 200 mm. "
-				+ "(lija  un pliego, polipega 1/4 gal, 1/4 gl suelda líquida, 2 "
+		lblCAKitConexionTuberia200 = new JLabel("<html><body>Kit para conexiÃ±n de tuberÃ±a 200 mm. "
+				+ "(lija  un pliego, polipega 1/4 gal, 1/4 gl suelda lÃ±quida, 2 "
 				+ "uniones, cama de arena, anclajes)</body></html>");
 		lblCAKitConexionTuberia200.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel.add(lblCAKitConexionTuberia200);
 
-		lblCAKitConexionTuberia74 = new JLabel("<html><body>Kit para conexión de tubería 75 mm. (lija "
-				+ "pliego, polipega 1/2gal,1/2 gl suelda líquida, 20 uniones,18codo 90°,8codo45°)</body></html>");
+		lblCAKitConexionTuberia74 = new JLabel("<html><body>Kit para conexiÃ±n de tuberÃ±a 75 mm. (lija "
+				+ "pliego, polipega 1/2gal,1/2 gl suelda lÃ±quida, 20 uniones,18codo 90Ã±,8codo45Ã±)</body></html>");
 		lblCAKitConexionTuberia74.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel.add(lblCAKitConexionTuberia74);
 
@@ -705,7 +705,7 @@ public class Hs1 extends JFrame {
 		pnlKAR1.setLayout(null);
 		pnlKAR1.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlKAR1.setBounds(10, 469, 414, 85);
-		pnlPestaña1.add(pnlKAR1);
+		pnlPestaÃ±a1.add(pnlKAR1);
 
 		pnlEDEtiquetas = new JPanel();
 		pnlEDEtiquetas.setBounds(3, 17, 199, 67);
@@ -787,7 +787,7 @@ public class Hs1 extends JFrame {
 		pnlKAR2.setLayout(null);
 		pnlKAR2.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlKAR2.setBounds(434, 4, 414, 413);
-		pnlPestaña1.add(pnlKAR2);
+		pnlPestaÃ±a1.add(pnlKAR2);
 
 		lblKitAguaRes2 = new JLabel("KIT AGUA RESIDUAL");
 		lblKitAguaRes2.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -1032,7 +1032,7 @@ public class Hs1 extends JFrame {
 		pnlKAP1.setLayout(null);
 		pnlKAP1.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlKAP1.setBounds(434, 420, 414, 134);
-		pnlPestaña1.add(pnlKAP1);
+		pnlPestaÃ±a1.add(pnlKAP1);
 
 		panel_7 = new JPanel();
 		panel_7.setBounds(3, 17, 199, 113);
@@ -1147,7 +1147,7 @@ public class Hs1 extends JFrame {
 		pnlKAP2.setLayout(null);
 		pnlKAP2.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlKAP2.setBounds(858, 4, 414, 215);
-		pnlPestaña1.add(pnlKAP2);
+		pnlPestaÃ±a1.add(pnlKAP2);
 
 		lblKitAguaPot2 = new JLabel("KIT AGUA POTABLE");
 		lblKitAguaPot2.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -1305,7 +1305,7 @@ public class Hs1 extends JFrame {
 		pnlKH.setLayout(null);
 		pnlKH.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlKH.setBounds(858, 225, 414, 84);
-		pnlPestaña1.add(pnlKH);
+		pnlPestaÃ±a1.add(pnlKH);
 
 		pnlBAEtiquetas = new JPanel();
 		pnlBAEtiquetas.setBounds(3, 17, 199, 64);
@@ -1387,7 +1387,7 @@ public class Hs1 extends JFrame {
 		pnlInformacionObl.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"),
 				"Informaci\u00F3n Obligatoria", TitledBorder.LEADING, TitledBorder.TOP, null, Color.RED));
 		pnlInformacionObl.setBounds(858, 310, 414, 244);
-		pnlPestaña1.add(pnlInformacionObl);
+		pnlPestaÃ±a1.add(pnlInformacionObl);
 		pnlInformacionObl.setLayout(null);
 
 		pnlIOEtiquetas1 = new JPanel();

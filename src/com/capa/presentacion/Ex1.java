@@ -20,9 +20,7 @@ import com.capa.util.Utilitarios;
 
 public class Ex1 extends JFrame {
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 2991536081432510517L;
 	private JPanel contentPane;
 	private JTextField txtAmie;
@@ -345,14 +343,14 @@ public class Ex1 extends JFrame {
 		tabbedPane.setBounds(10, 125, 1286, 484);
 		contentPane.add(tabbedPane);
 
-		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("1.-EX-KIT ELÉCTRICA EXTERNA", null, pnlPestaña1, null);
-		pnlPestaña1.setLayout(null);
+		JPanel pnlPestaÃ±a1 = new JPanel();
+		tabbedPane.addTab("1.-EX-KIT ELï¿½CTRICA EXTERNA", null, pnlPestaÃ±a1, null);
+		pnlPestaÃ±a1.setLayout(null);
 
 		JPanel pnlTE = new JPanel();
 		pnlTE.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlTE.setBounds(10, 11, 414, 237);
-		pnlPestaña1.add(pnlTE);
+		pnlPestaÃ±a1.add(pnlTE);
 		pnlTE.setLayout(null);
 
 		JPanel pnlTEEtiquetas = new JPanel();
@@ -522,7 +520,7 @@ public class Ex1 extends JFrame {
 		pnlED.setLayout(null);
 		pnlED.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlED.setBounds(10, 282, 414, 163);
-		pnlPestaña1.add(pnlED);
+		pnlPestaÃ±a1.add(pnlED);
 
 		pnlEDEtiquetas = new JPanel();
 		pnlEDEtiquetas.setBounds(3, 17, 199, 144);
@@ -646,7 +644,7 @@ public class Ex1 extends JFrame {
 		pnlAE.setLayout(null);
 		pnlAE.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlAE.setBounds(434, 11, 414, 190);
-		pnlPestaña1.add(pnlAE);
+		pnlPestaÃ±a1.add(pnlAE);
 
 		pnlAEEtiquetas = new JPanel();
 		pnlAEEtiquetas.setBounds(3, 17, 199, 169);
@@ -785,7 +783,7 @@ public class Ex1 extends JFrame {
 				pnlBA.setLayout(null);
 				pnlBA.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 				pnlBA.setBounds(434, 212, 414, 95);
-				pnlPestaña1.add(pnlBA);
+				pnlPestaÃ±a1.add(pnlBA);
 				
 						pnlBAEtiquetas = new JPanel();
 						pnlBAEtiquetas.setBounds(3, 17, 199, 73);
@@ -864,7 +862,7 @@ public class Ex1 extends JFrame {
 		pnlT.setLayout(null);
 		pnlT.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlT.setBounds(858, 11, 414, 141);
-		pnlPestaña1.add(pnlT);
+		pnlPestaÃ±a1.add(pnlT);
 
 		pnlTEtiquetas = new JPanel();
 		pnlTEtiquetas.setBounds(3, 17, 199, 120);
@@ -973,7 +971,7 @@ public class Ex1 extends JFrame {
 		pnlSMT.setLayout(null);
 		pnlSMT.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlSMT.setBounds(858, 154, 414, 47);
-		pnlPestaña1.add(pnlSMT);
+		pnlPestaÃ±a1.add(pnlSMT);
 
 		pnlSMTEtiquetas = new JPanel();
 		pnlSMTEtiquetas.setBounds(3, 17, 199, 25);
@@ -1022,7 +1020,7 @@ public class Ex1 extends JFrame {
 		pnlInformacionObl.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"),
 				"Informaci\u00F3n Obligatoria", TitledBorder.LEADING, TitledBorder.TOP, null, Color.RED));
 		pnlInformacionObl.setBounds(458, 313, 791, 141);
-		pnlPestaña1.add(pnlInformacionObl);
+		pnlPestaÃ±a1.add(pnlInformacionObl);
 		pnlInformacionObl.setLayout(null);
 
 		pnlIOEtiquetas1 = new JPanel();

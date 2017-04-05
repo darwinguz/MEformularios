@@ -1,29 +1,20 @@
 package com.capa.presentacion;
 
-import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import com.capa.util.Utilitarios;
-import javax.swing.SwingConstants;
-
 public class Mt1 extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 2991536081432510517L;
 	private JPanel contentPane;
 	private JTextField txtAmie;
@@ -253,14 +244,14 @@ public class Mt1 extends JFrame {
 		tabbedPane.setBounds(10, 125, 1286, 560);
 		contentPane.add(tabbedPane);
 
-		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("1-MT Lab. Tecnológico-1", null, pnlPestaña1, null);
-		pnlPestaña1.setLayout(null);
+		JPanel pnlPestaÃ±a1 = new JPanel();
+		tabbedPane.addTab("1-MT Lab. TecnolÃ±gico-1", null, pnlPestaÃ±a1, null);
+		pnlPestaÃ±a1.setLayout(null);
 
 		JPanel pnlKitElectrico = new JPanel();
 		pnlKitElectrico.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlKitElectrico.setBounds(10, 10, 414, 118);
-		pnlPestaña1.add(pnlKitElectrico);
+		pnlPestaÃ±a1.add(pnlKitElectrico);
 		pnlKitElectrico.setLayout(null);
 
 		JPanel pnlTEEtiquetas = new JPanel();
@@ -359,7 +350,7 @@ public class Mt1 extends JFrame {
 		pnlKitAguaLluvia.setLayout(null);
 		pnlKitAguaLluvia.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlKitAguaLluvia.setBounds(10, 150, 414, 163);
-		pnlPestaña1.add(pnlKitAguaLluvia);
+		pnlPestaÃ±a1.add(pnlKitAguaLluvia);
 
 		pnlEDEtiquetas = new JPanel();
 		pnlEDEtiquetas.setBounds(3, 17, 199, 144);
@@ -475,7 +466,7 @@ public class Mt1 extends JFrame {
 		pnlCompArquitect1_1.setLayout(null);
 		pnlCompArquitect1_1.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlCompArquitect1_1.setBounds(10, 353, 414, 163);
-		pnlPestaña1.add(pnlCompArquitect1_1);
+		pnlPestaÃ±a1.add(pnlCompArquitect1_1);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(3, 17, 199, 144);
@@ -606,7 +597,7 @@ public class Mt1 extends JFrame {
 		pnlCompArquitect1_2.setLayout(null);
 		pnlCompArquitect1_2.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlCompArquitect1_2.setBounds(434, 10, 414, 86);
-		pnlPestaña1.add(pnlCompArquitect1_2);
+		pnlPestaÃ±a1.add(pnlCompArquitect1_2);
 
 		pnlBAEtiquetas = new JPanel();
 		pnlBAEtiquetas.setBounds(3, 17, 199, 65);
@@ -688,7 +679,7 @@ public class Mt1 extends JFrame {
 		pnlFachadaFrontal.setLayout(null);
 		pnlFachadaFrontal.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlFachadaFrontal.setBounds(434, 99, 414, 118);
-		pnlPestaña1.add(pnlFachadaFrontal);
+		pnlPestaÃ±a1.add(pnlFachadaFrontal);
 
 		pnlAEEtiquetas = new JPanel();
 		pnlAEEtiquetas.setBounds(3, 17, 199, 98);
@@ -782,7 +773,7 @@ public class Mt1 extends JFrame {
 		pnlFachadaPosterior.setLayout(null);
 		pnlFachadaPosterior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlFachadaPosterior.setBounds(434, 220, 414, 95);
-		pnlPestaña1.add(pnlFachadaPosterior);
+		pnlPestaÃ±a1.add(pnlFachadaPosterior);
 
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(3, 17, 199, 73);
@@ -861,7 +852,7 @@ public class Mt1 extends JFrame {
 		pnlFachadaLateral.setLayout(null);
 		pnlFachadaLateral.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlFachadaLateral.setBounds(434, 317, 414, 49);
-		pnlPestaña1.add(pnlFachadaLateral);
+		pnlPestaÃ±a1.add(pnlFachadaLateral);
 
 		panel_9 = new JPanel();
 		panel_9.setBounds(3, 17, 199, 29);
@@ -910,7 +901,7 @@ public class Mt1 extends JFrame {
 		pnlComponenteEst.setLayout(null);
 		pnlComponenteEst.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlComponenteEst.setBounds(858, 11, 414, 357);
-		pnlPestaña1.add(pnlComponenteEst);
+		pnlPestaÃ±a1.add(pnlComponenteEst);
 
 		pnlTEtiquetas = new JPanel();
 		pnlTEtiquetas.setBounds(3, 17, 199, 334);
@@ -1085,6 +1076,6 @@ public class Mt1 extends JFrame {
 		pnlComponenteEst.add(lblTObsRef);
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(1, 1);
-		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
+		pnlPestaÃ±a1.add(infoObligatoria.getPnlInformacionObl());
 	}
 }

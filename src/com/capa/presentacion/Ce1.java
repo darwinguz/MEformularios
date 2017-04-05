@@ -16,6 +16,8 @@ import javax.swing.JTextField;
 
 public class Ce1 extends JFrame {
 
+
+	private static final long serialVersionUID = 4781774484295539711L;
 	private JPanel panelPrincipal;
 	private JTextField textField00;
 	private JTextField textField01;
@@ -68,21 +70,21 @@ public class Ce1 extends JFrame {
 		tabbedPane.setBounds(10, 125, 1286, 560);
 		panelPrincipal.add(tabbedPane);
 
-		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("1.- CE-cerramiento", null, pnlPestaña1, null);
-		pnlPestaña1.setLayout(null);
+		JPanel pnlPestaÃ±a1 = new JPanel();
+		tabbedPane.addTab("1.- CE-cerramiento", null, pnlPestaÃ±a1, null);
+		pnlPestaÃ±a1.setLayout(null);
 
 		JPcabecera cabecera = new JPcabecera();
 		panelPrincipal.add(cabecera.getCabecera());
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(434, 377);
-		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
+		pnlPestaÃ±a1.add(infoObligatoria.getPnlInformacionObl());
 
 		JPanel pnlModuloWPC = new JPanel();
 		pnlModuloWPC.setLayout(null);
 		pnlModuloWPC.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlModuloWPC.setBounds(20, 20, 414, 49);
-		pnlPestaña1.add(pnlModuloWPC);
+		pnlPestaÃ±a1.add(pnlModuloWPC);
 
 		JLabel lblModuloWpcTipo = new JLabel("MODULO WPC TIPO A - 180x105 cm");
 		lblModuloWpcTipo.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -132,7 +134,7 @@ public class Ce1 extends JFrame {
 		pnlCompEstructural.setLayout(null);
 		pnlCompEstructural.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlCompEstructural.setBounds(20, 100, 414, 163);
-		pnlPestaña1.add(pnlCompEstructural);
+		pnlPestaÃ±a1.add(pnlCompEstructural);
 
 		JLabel lbl_p1 = new JLabel("COMPONENTE ESTRUCTURAL");
 		lbl_p1.setFont(new Font("Tahoma", Font.BOLD, 11));

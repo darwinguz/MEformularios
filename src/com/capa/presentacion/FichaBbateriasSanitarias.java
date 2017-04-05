@@ -60,15 +60,15 @@ public class FichaBbateriasSanitarias extends JFrame {
 		tabbedPane.setBounds(10, 125, 1286, 560);
 		panelPrincipal.add(tabbedPane);
 		
-				JPanel pnlPestaña1 = new JPanel();
-				tabbedPane.addTab("1.- Ficha Baterias Sanitarias", null, pnlPestaña1, null);
-				pnlPestaña1.setLayout(null);
+				JPanel pnlPestaÃ±a1 = new JPanel();
+				tabbedPane.addTab("1.- Ficha Baterias Sanitarias", null, pnlPestaÃ±a1, null);
+				pnlPestaÃ±a1.setLayout(null);
 				
 				JPanel panel_0 = new JPanel();
 				panel_0.setLayout(null);
 				panel_0.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Dimensiones", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 				panel_0.setBounds(10, 11, 249, 61);
-				pnlPestaña1.add(panel_0);
+				pnlPestaÃ±a1.add(panel_0);
 				
 				JLabel lbllargoDelAula = new JLabel("<html>\r\n<body>\r\n<p align=\"justify\">Largo del aula: 6,00 m\r\n<br>Ancho del aula: 4,60 m\r\n<br>Altura del aula:  M\u00EDnima: 2,70 m, M\u00E1xima: 3,00 m \r\n</p>\r\n</body>\r\n</html>");
 				lbllargoDelAula.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -79,7 +79,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_1.setLayout(null);
 				panel_1.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 				panel_1.setBounds(284, 14, 139, 58);
-				pnlPestaña1.add(panel_1);
+				pnlPestaÃ±a1.add(panel_1);
 				
 				JLabel label_1 = new JLabel("Observaci\u00F3n/Referencia");
 				label_1.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -113,7 +113,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_2.setLayout(null);
 				panel_2.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Piezas Sanitarias", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 				panel_2.setBounds(10, 77, 249, 117);
-				pnlPestaña1.add(panel_2);
+				pnlPestaÃ±a1.add(panel_2);
 				
 				JLabel lblBaterasmujeres = new JLabel("<html>\r\n<body>\r\n<p align=\"justify\">6 Bater\u00EDas: \r\n<br>MUJERES: 3 inodoros - 2 lavamanos\r\n<br>HOMBRES: 2 inodoros - 2 urinarios - 2 lavamanos\r\n<br>1 Ba\u00F1o administrativo: \r\n<br>MUJERES: 2 inodoros - 1 lavamanos\r\n<br>HOMBRES: 1 inodoro - 1 urinario - 1 lavamanos\r\n<br>2 Bater\u00EDas Educaci\u00F3n Inicial: \r\n<br>MUJERES: 2 inodoros - 2 lavamanos\r\n<br>HOMBRES: 2 inodoro - 2 lavamanos\r\n</p>\r\n</body>\r\n</html>");
 				lblBaterasmujeres.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -124,7 +124,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_3.setLayout(null);
 				panel_3.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 				panel_3.setBounds(284, 84, 139, 58);
-				pnlPestaña1.add(panel_3);
+				pnlPestaÃ±a1.add(panel_3);
 				
 				JLabel label = new JLabel("Observaci\u00F3n/Referencia");
 				label.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -158,7 +158,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_4.setLayout(null);
 				panel_4.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Bases pre-fabricadas", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 				panel_4.setBounds(10, 200, 249, 62);
-				pnlPestaña1.add(panel_4);
+				pnlPestaÃ±a1.add(panel_4);
 				
 				JLabel lblmateriallosElementos = new JLabel("<html>\r\n<body>\r\n<p align=\"justify\">Material: \r\n<br>Los elementos de base son prefabricados, con hormig\u00F3n premezclado con una resisitencia m\u00EDnima de 210 kg/cm2.\r\n<br>Plano de referencia:  No. E1\r\n</p>\r\n</body>\r\n</html>");
 				lblmateriallosElementos.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -169,7 +169,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_5.setLayout(null);
 				panel_5.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 				panel_5.setBounds(284, 204, 139, 58);
-				pnlPestaña1.add(panel_5);
+				pnlPestaÃ±a1.add(panel_5);
 				
 				JLabel label_6 = new JLabel("Observaci\u00F3n/Referencia");
 				label_6.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -203,7 +203,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_6.setLayout(null);
 				panel_6.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Estructura met\u00E1lica Steel", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 				panel_6.setBounds(10, 269, 249, 256);
-				pnlPestaña1.add(panel_6);
+				pnlPestaÃ±a1.add(panel_6);
 				
 				JLabel lblmaterialesestructuraMetlica = new JLabel("<html>\r\n<body>\r\n<p align=\"justify\">Materiales: Estructura met\u00E1lica Steel Framing (sistema prefabricado de armado para la cubierta y contrapiso), perfiles metalicos galvanizados, laminados en frio normados por los est\u00E1ndares del Instituto Americano de Hierro y Acero AISI (por sus siglas en ingl\u00E9s).\r\n<br>Dimensiones m\u00EDnimas: Cada estructura met\u00E1lica est\u00E1 conformada por perfiles tipo G con dimensiones variables de 100 mm a 200 mm de alto, 40 mm de ala y 17 mm de aleta (m\u00EDnimo) y perfiles tipo U de 100 mm a 200 mm de altura, 35 mm de alma (m\u00EDnimo) con espesores de placa  entre 0,93 - 1,64 mm, laminados en frio, los cuales est\u00E1n utilizados en funci\u00F3n del elemento a soportar y se ensamblan entre s\u00ED utilizando su respectiva tuerca y perno galvanizado.\r\n<br>El proceso de ensamblado es realizado en sitio y es agrupado dependiendo de la funci\u00F3n de la estructura y su acoplamiento. \r\n<br>Normativa: La estructura es capaz de soportar acciones horizontales y verticales de acuerdo a lo se\u00F1alado en la Norma T\u00E9cnica Ecuatoriana (NEC14).\r\n<br>Plano de referencia:  No. E1\r\n</p>\r\n</body>\r\n</html>");
 				lblmaterialesestructuraMetlica.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -214,7 +214,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_7.setLayout(null);
 				panel_7.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 				panel_7.setBounds(284, 275, 139, 58);
-				pnlPestaña1.add(panel_7);
+				pnlPestaÃ±a1.add(panel_7);
 				
 				JLabel label_9 = new JLabel("Observaci\u00F3n/Referencia");
 				label_9.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -248,7 +248,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_15.setLayout(null);
 				panel_15.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Paneles de pared con alma de EPS", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 				panel_15.setBounds(433, 11, 249, 251);
-				pnlPestaña1.add(panel_15);
+				pnlPestaÃ±a1.add(panel_15);
 				
 				JLabel lbllargoDelAula_1 = new JLabel("<html>\r\n<body>\r\n<p align=\"justify\">Largo del aula: 6,00 m\r\n<br>Materiales:  Acero galvanizado pre pintado de acuerdo a dise\u00F1o arquitect\u00F3nico en 0,5 mm de grosor seg\u00FAn norma ASTM.\r\n<br>EPS: Poliestireno expandido con retardante al fuego tipo F.\r\n<br>Las paredes son conformadas por un panel s\u00E1ndwich formado por un n\u00FAcleo aislante t\u00E9rmico de espuma r\u00EDgida de poliestireno expandido (EPS) con retardante de fuego, adem\u00E1s de un recubrimiento en ambas caras de plancha met\u00E1lica.\r\n<br>Dimensiones m\u00EDnimas:  Los paneles de EPS son de medidas m\u00EDnimo de: 1,00 - 1,20 mts de ancho y de espesor de 100 mm, con una densidad entre 18 - 20 kg/m3.\r\n<br>Composici\u00F3n: Los paneles son termo ac\u00FAsticos, auto portantes, durables, inoxidables.\r\n<br>Normativa: Los paneles para paredes tienen la capacidad de resisitrir acciones horizontales y verticales de acuerdo a lo se\u00F1alado en el NEC2014.\r\n<br>Plano de referencia:  No. E1\r\n</p>\r\n</body>\r\n</html>");
 				lbllargoDelAula_1.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -259,7 +259,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_8.setLayout(null);
 				panel_8.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 				panel_8.setBounds(707, 18, 139, 58);
-				pnlPestaña1.add(panel_8);
+				pnlPestaÃ±a1.add(panel_8);
 				
 				JLabel label_13 = new JLabel("Observaci\u00F3n/Referencia");
 				label_13.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -293,7 +293,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_9.setLayout(null);
 				panel_9.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Panel de cubierta con EPS", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 				panel_9.setBounds(858, 11, 249, 251);
-				pnlPestaña1.add(panel_9);
+				pnlPestaÃ±a1.add(panel_9);
 				
 				JLabel lblmaterialeselPanel = new JLabel("<html>\r\n<body>\r\n<p align=\"justify\">Materiales: \r\n<br>El panel consta de materiales:\r\n<br>Acero: Acero galvanizado pre pintado de acuerdo a dise\u00F1o arquitect\u00F3nico y disponibilidad de colores de acuerdo, en  0,5 mm de grosor seg\u00FAn norma ASTM.\r\n<br>EPS: Poliestireno expandido con retardante al fuego tipo F.\r\n<br>Dimensiones m\u00EDnimas:  El panel de cubierta EPS (panel prefabricado de poliestireno con retardante al fuego) est\u00E1 compuesto por m\u00F3dulos de 1,00 a 1,20 mts de ancho y de espesor m\u00EDnimo de 100 mm, con una densidad entre 18-20 kg/m3.\r\n<br>Composici\u00F3n:  Los paneles son termoc\u00FAsticos, auto portantes, durables, inoxidables.\r\n<br>Normativa: Los paneles de cubierta tienen la capacidad de resisitrir acciones horizontales y verticales de acuerdo a lo se\u00F1alado en el NEC2014.\r\n<br>Plano de referencia:  No. E1\t\r\n</p>\r\n</body>\r\n</html>");
 				lblmaterialeselPanel.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -304,7 +304,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_10.setLayout(null);
 				panel_10.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 				panel_10.setBounds(1132, 18, 139, 58);
-				pnlPestaña1.add(panel_10);
+				pnlPestaÃ±a1.add(panel_10);
 				
 				JLabel label_17 = new JLabel("Observaci\u00F3n/Referencia");
 				label_17.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -338,7 +338,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_11.setLayout(null);
 				panel_11.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Ventanas de UPVC", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 				panel_11.setBounds(433, 269, 249, 256);
-				pnlPestaña1.add(panel_11);
+				pnlPestaÃ±a1.add(panel_11);
 				
 				JLabel lbllargoDelAula_2 = new JLabel("<html>\r\n<body>\r\n<p align=\"justify\">Largo del aula: 6,00 m\r\n<br>Materiales:  UPVC (Policloruro de vinilo sin plastificar).\r\n<br>Dimensiones m\u00EDnimas: Las ventanas en los m\u00F3dulos de ba\u00F1os son de 0,45 X 2 mts y/o de 0,45 X 1 mt.\r\n<br>Composici\u00F3n:  La ventanear\u00EDa de los m\u00F3dulos es corrediza en perfiles de UPVC, con todos los sistemas de fijaci\u00F3n, anclaje y seguridad que se requiere.\r\n<br>El marco de la ventana es elaborada con canal C met\u00E1lico galvanizado laminado en frio, Steel Framing bajo los est\u00E1ndares del Instituto americano de Hierro y Acero AISI. \r\n<br>El anclaje es realizado con tornillos autorroscantes directamente al panel EPS.\r\n<br>Normativa: Instituto americano de Hierro y Acero AISI.\r\n<br>Plano de referencia:  No. E1\"\t\t\t\t\t\r\n</p>\r\n</body>\r\n</html>");
 				lbllargoDelAula_2.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -349,7 +349,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_12.setLayout(null);
 				panel_12.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 				panel_12.setBounds(707, 276, 139, 58);
-				pnlPestaña1.add(panel_12);
+				pnlPestaÃ±a1.add(panel_12);
 				
 				JLabel label_21 = new JLabel("Observaci\u00F3n/Referencia");
 				label_21.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -383,7 +383,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_13.setLayout(null);
 				panel_13.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "<html><body>Compuesto de madera y pl\u00E1stico <br>(WPC) para piso de m\u00F3dulos</body></html>", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 				panel_13.setBounds(858, 269, 249, 256);
-				pnlPestaña1.add(panel_13);
+				pnlPestaÃ±a1.add(panel_13);
 				
 				JLabel lblmaterialesmdulosConformados = new JLabel("<html>\r\n<body>\r\n<p align=\"justify\">Materiales: \r\n<br>M\u00F3dulos conformados por paneles compuestos de madera y pl\u00E1stico (WPC).\r\n<br>Caracter\u00EDsticas:  \r\n<br>Es impermeable y presenta una superficie antideslizante, resistente a deformaciones y ralladuras.\r\n<br>Es resistente al ataque de insectos y hongos, y es 100% reciclable.\r\n<br>El ensamblado es de tipo machiembrado con click de ancastre.\r\n<br>Normativa: Soporta las cargas vivas m\u00E1ximas de dise\u00F1o se\u00F1alado en el NEC2014 para su uso..\r\n<br>Plano de referencia:  PE-08\"\t\r\n</p>\r\n</body>\r\n</html>");
 				lblmaterialesmdulosConformados.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -394,7 +394,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 				panel_14.setLayout(null);
 				panel_14.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 				panel_14.setBounds(1132, 284, 139, 58);
-				pnlPestaña1.add(panel_14);
+				pnlPestaÃ±a1.add(panel_14);
 				
 				JLabel label_25 = new JLabel("Observaci\u00F3n/Referencia");
 				label_25.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -424,21 +424,21 @@ public class FichaBbateriasSanitarias extends JFrame {
 				textField_7.setBounds(10, 32, 123, 20);
 				panel_14.add(textField_7);
 
-		JPanel pnlPestaña2 = new JPanel();
-		tabbedPane.addTab("2.- Ficha Baterias Sanitarias", null, pnlPestaña2, null);
-		pnlPestaña2.setLayout(null);
+		JPanel pnlPestaÃ±a2 = new JPanel();
+		tabbedPane.addTab("2.- Ficha Baterias Sanitarias", null, pnlPestaÃ±a2, null);
+		pnlPestaÃ±a2.setLayout(null);
 
 		JPcabecera cabecera = new JPcabecera();
 		panelPrincipal.add(cabecera.getCabecera());
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(1,1);
-		pnlPestaña2.add(infoObligatoria.getPnlInformacionObl());
+		pnlPestaÃ±a2.add(infoObligatoria.getPnlInformacionObl());
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Dimensiones", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel.setBounds(10, 11, 249, 181);
-		pnlPestaña2.add(panel);
+		pnlPestaÃ±a2.add(panel);
 		
 		JLabel lblmaterialesluminariasTipo = new JLabel("<html>\r\n<body>\r\n<p align=\"justify\">Materiales: \r\n<br>Luminarias tipo LED.\r\n<br>Caracter\u00EDsticas:  Luminarias tipo LED de al menos 60 W y 5000 l\u00FAmenes.\r\n<br>Composici\u00F3n:  Los conductores de iluminaci\u00F3n son de calibre m\u00EDnimo No. 14AWG THHN flexible y adicionalmente tienen un cable desnudo a tierra del mismo calibre, colocados en el interior de manguera flexible anillada met\u00E1lica, con el espaciamiento de reserva y ventilaci\u00F3n acorde a norma.\r\n<br>Normativa: La instalaci\u00F3n se realiza acorde a los establecido a la norma NEC 384-6 (C\u00F3digo El\u00E9ctrico Ecuatoriano).\r\n<br>Plano de referencia:  PE-08\r\n</p>\r\n</body>\r\n</html>");
 		lblmaterialesluminariasTipo.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -447,7 +447,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 		
 		JPanel panel_17 = new JPanel();
 		panel_17.setBounds(10, 210, 249, 150);
-		pnlPestaña2.add(panel_17);
+		pnlPestaÃ±a2.add(panel_17);
 		panel_17.setLayout(null);
 		panel_17.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Piezas Sanitarias", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		
@@ -460,7 +460,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 		panel_16.setLayout(null);
 		panel_16.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_16.setBounds(284, 19, 139, 58);
-		pnlPestaña2.add(panel_16);
+		pnlPestaÃ±a2.add(panel_16);
 		
 		JLabel label_16 = new JLabel("Observaci\u00F3n/Referencia");
 		label_16.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -494,7 +494,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 		panel_18.setLayout(null);
 		panel_18.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_18.setBounds(284, 215, 139, 58);
-		pnlPestaña2.add(panel_18);
+		pnlPestaÃ±a2.add(panel_18);
 		
 		JLabel label_29 = new JLabel("Observaci\u00F3n/Referencia");
 		label_29.setFont(new Font("Tahoma", Font.BOLD, 10));
@@ -528,7 +528,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 		panel_19.setLayout(null);
 		panel_19.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Bases pre-fabricadas", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel_19.setBounds(10, 371, 249, 150);
-		pnlPestaña2.add(panel_19);
+		pnlPestaÃ±a2.add(panel_19);
 		
 		JLabel lblcaractersticaslosUrinarios = new JLabel("<html>\r\n<body>\r\n<p align=\"justify\">Caracter\u00EDsticas: \r\n<br>Los urinarios cumplen con las especificaciones de la norma NTE INEN 1571: Artefectos sanitarios.\r\n<br>La grifer\u00EDa cumpe con las normas NTE INEN: 602, 950, 967, 968, 969 y las establecidas ASTM en las referidas normas.\r\n<br>Normativa:  NTE INEN 1571: Artefactos sanitarios, NTE INEN:602, 950, 967, 968, 969 y las establecidas ASTM en las referidas normas.\r\n<br>Plano de referencia: PE-05\r\n</p>\r\n</body>\r\n</html>");
 		lblcaractersticaslosUrinarios.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -539,7 +539,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 		panel_20.setLayout(null);
 		panel_20.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel_20.setBounds(284, 379, 139, 58);
-		pnlPestaña2.add(panel_20);
+		pnlPestaÃ±a2.add(panel_20);
 		
 		JLabel label_33 = new JLabel("Observaci\u00F3n/Referencia");
 		label_33.setFont(new Font("Tahoma", Font.BOLD, 10));
