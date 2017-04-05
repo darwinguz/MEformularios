@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -287,18 +289,58 @@ public class Ma1 extends JFrame {
 		txtTECantidad00 = new JTextField();
 		pnlTECantidad.add(txtTECantidad00);
 		txtTECantidad00.setColumns(10);
+		txtTECantidad00.addKeyListener(new KeyAdapter() {
+			public void keyTyped(KeyEvent e) {
+				char caracter = e.getKeyChar();
+				// Verificar si la tecla pulsada no es un digito
+				if (((caracter < '0') || (caracter > '9'))
+						&& (caracter != '\b' /* corresponde a BACK_SPACE */)) {
+					e.consume(); // ignorar el evento de teclado
+				}
+			}
+		});
 
 		txtTECantidad01 = new JTextField();
 		txtTECantidad01.setColumns(10);
 		pnlTECantidad.add(txtTECantidad01);
+		txtTECantidad01.addKeyListener(new KeyAdapter() {
+			public void keyTyped(KeyEvent e) {
+				char caracter = e.getKeyChar();
+				// Verificar si la tecla pulsada no es un digito
+				if (((caracter < '0') || (caracter > '9'))
+						&& (caracter != '\b' /* corresponde a BACK_SPACE */)) {
+					e.consume(); // ignorar el evento de teclado
+				}
+			}
+		});
 
 		txtTECantidad10 = new JTextField();
 		txtTECantidad10.setColumns(10);
 		pnlTECantidad.add(txtTECantidad10);
+		txtTECantidad10.addKeyListener(new KeyAdapter() {
+			public void keyTyped(KeyEvent e) {
+				char caracter = e.getKeyChar();
+				// Verificar si la tecla pulsada no es un digito
+				if (((caracter < '0') || (caracter > '9'))
+						&& (caracter != '\b' /* corresponde a BACK_SPACE */)) {
+					e.consume(); // ignorar el evento de teclado
+				}
+			}
+		});
 
 		txtTECantidad11 = new JTextField();
 		txtTECantidad11.setColumns(10);
 		pnlTECantidad.add(txtTECantidad11);
+		txtTECantidad11.addKeyListener(new KeyAdapter() {
+			public void keyTyped(KeyEvent e) {
+				char caracter = e.getKeyChar();
+				// Verificar si la tecla pulsada no es un digito
+				if (((caracter < '0') || (caracter > '9'))
+						&& (caracter != '\b' /* corresponde a BACK_SPACE */)) {
+					e.consume(); // ignorar el evento de teclado
+				}
+			}
+		});
 
 		txtTECantidad20 = new JTextField();
 		txtTECantidad20.setColumns(10);
