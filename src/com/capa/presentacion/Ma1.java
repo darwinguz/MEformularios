@@ -16,6 +16,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import com.capa.util.Utilitarios;
+
 public class Ma1 extends JFrame {
 
 	private static final long serialVersionUID = 8480152059626754031L;
@@ -228,9 +230,13 @@ public class Ma1 extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
+
+		Utilitarios.llenarCabecera(cabecera);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
@@ -289,82 +295,51 @@ public class Ma1 extends JFrame {
 		txtTECantidad00 = new JTextField();
 		pnlTECantidad.add(txtTECantidad00);
 		txtTECantidad00.setColumns(10);
-		txtTECantidad00.addKeyListener(new KeyAdapter() {
-			public void keyTyped(KeyEvent e) {
-				char caracter = e.getKeyChar();
-				// Verificar si la tecla pulsada no es un digito
-				if (((caracter < '0') || (caracter > '9'))
-						&& (caracter != '\b' /* corresponde a BACK_SPACE */)) {
-					e.consume(); // ignorar el evento de teclado
-				}
-			}
-		});
+		Utilitarios.validarDigitos(txtTECantidad00);
 
 		txtTECantidad01 = new JTextField();
 		txtTECantidad01.setColumns(10);
 		pnlTECantidad.add(txtTECantidad01);
-		txtTECantidad01.addKeyListener(new KeyAdapter() {
-			public void keyTyped(KeyEvent e) {
-				char caracter = e.getKeyChar();
-				// Verificar si la tecla pulsada no es un digito
-				if (((caracter < '0') || (caracter > '9'))
-						&& (caracter != '\b' /* corresponde a BACK_SPACE */)) {
-					e.consume(); // ignorar el evento de teclado
-				}
-			}
-		});
+		Utilitarios.validarDigitos(txtTECantidad01);
 
 		txtTECantidad10 = new JTextField();
 		txtTECantidad10.setColumns(10);
 		pnlTECantidad.add(txtTECantidad10);
-		txtTECantidad10.addKeyListener(new KeyAdapter() {
-			public void keyTyped(KeyEvent e) {
-				char caracter = e.getKeyChar();
-				// Verificar si la tecla pulsada no es un digito
-				if (((caracter < '0') || (caracter > '9'))
-						&& (caracter != '\b' /* corresponde a BACK_SPACE */)) {
-					e.consume(); // ignorar el evento de teclado
-				}
-			}
-		});
 
 		txtTECantidad11 = new JTextField();
 		txtTECantidad11.setColumns(10);
 		pnlTECantidad.add(txtTECantidad11);
-		txtTECantidad11.addKeyListener(new KeyAdapter() {
-			public void keyTyped(KeyEvent e) {
-				char caracter = e.getKeyChar();
-				// Verificar si la tecla pulsada no es un digito
-				if (((caracter < '0') || (caracter > '9'))
-						&& (caracter != '\b' /* corresponde a BACK_SPACE */)) {
-					e.consume(); // ignorar el evento de teclado
-				}
-			}
-		});
+		Utilitarios.validarDigitos(txtTECantidad11);
 
 		txtTECantidad20 = new JTextField();
 		txtTECantidad20.setColumns(10);
 		pnlTECantidad.add(txtTECantidad20);
+		Utilitarios.validarDigitos(txtTECantidad20);
 
 		txtTECantidad21 = new JTextField();
 		txtTECantidad21.setColumns(10);
 		pnlTECantidad.add(txtTECantidad21);
+		Utilitarios.validarDigitos(txtTECantidad21);
 
 		txtTECantidad30 = new JTextField();
 		txtTECantidad30.setColumns(10);
 		pnlTECantidad.add(txtTECantidad30);
+		Utilitarios.validarDigitos(txtTECantidad30);
 
 		txtTECantidad31 = new JTextField();
 		txtTECantidad31.setColumns(10);
 		pnlTECantidad.add(txtTECantidad31);
+		Utilitarios.validarDigitos(txtTECantidad31);
 
 		textField_39 = new JTextField();
 		textField_39.setColumns(10);
 		pnlTECantidad.add(textField_39);
+		Utilitarios.validarDigitos(textField_39);
 
 		textField_40 = new JTextField();
 		textField_40.setColumns(10);
 		pnlTECantidad.add(textField_40);
+		Utilitarios.validarDigitos(textField_40);
 
 		JPanel pnlTEObsRef = new JPanel();
 		pnlTEObsRef.setBounds(267, 17, 143, 97);
@@ -387,7 +362,7 @@ public class Ma1 extends JFrame {
 		txtTEObsRef3.setColumns(10);
 		pnlTEObsRef.add(txtTEObsRef3);
 
-		textField_41 = new JTextField();
+		textField_41 = new JTextField();// txt observacion
 		textField_41.setColumns(10);
 		pnlTEObsRef.add(textField_41);
 
@@ -451,42 +426,52 @@ public class Ma1 extends JFrame {
 		txtEDCantidad00 = new JTextField();
 		txtEDCantidad00.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad00);
+		Utilitarios.validarDigitos(txtEDCantidad00);
 
 		txtEDCantidad01 = new JTextField();
 		txtEDCantidad01.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad01);
+		Utilitarios.validarDigitos(txtEDCantidad01);
 
 		txtEDCantidad10 = new JTextField();
 		txtEDCantidad10.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad10);
+		Utilitarios.validarDigitos(txtEDCantidad10);
 
 		txtEDCantidad11 = new JTextField();
 		txtEDCantidad11.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad11);
+		Utilitarios.validarDigitos(txtEDCantidad11);
 
 		txtEDCantidad20 = new JTextField();
 		txtEDCantidad20.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad20);
+		Utilitarios.validarDigitos(txtEDCantidad20);
 
 		txtEDCantidad21 = new JTextField();
 		txtEDCantidad21.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad21);
+		Utilitarios.validarDigitos(txtEDCantidad21);
 
 		txtEDCantidad30 = new JTextField();
 		txtEDCantidad30.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad30);
+		Utilitarios.validarDigitos(txtEDCantidad30);
 
 		txtEDCantidad31 = new JTextField();
 		txtEDCantidad31.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad31);
+		Utilitarios.validarDigitos(txtEDCantidad31);
 
 		txtEDCantidad40 = new JTextField();
 		txtEDCantidad40.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad40);
+		Utilitarios.validarDigitos(txtEDCantidad40);
 
 		txtEDCantidad41 = new JTextField();
 		txtEDCantidad41.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad41);
+		Utilitarios.validarDigitos(txtEDCantidad41);
 
 		pnlEDObsRef = new JPanel();
 		pnlEDObsRef.setBounds(267, 17, 143, 164);
@@ -572,65 +557,75 @@ public class Ma1 extends JFrame {
 		textField = new JTextField();
 		textField.setColumns(10);
 		panel_2.add(textField);
+		Utilitarios.validarDigitos(textField);
 
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		panel_2.add(textField_1);
+		Utilitarios.validarDigitos(textField_1);
 
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 		panel_2.add(textField_2);
+		Utilitarios.validarDigitos(textField_2);
 
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
 		panel_2.add(textField_3);
+		Utilitarios.validarDigitos(textField_3);
 
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
 		panel_2.add(textField_4);
+		Utilitarios.validarDigitos(textField_4);
 
 		textField_5 = new JTextField();
 		textField_5.setColumns(10);
 		panel_2.add(textField_5);
+		Utilitarios.validarDigitos(textField_5);
 
 		textField_6 = new JTextField();
 		textField_6.setColumns(10);
 		panel_2.add(textField_6);
+		Utilitarios.validarDigitos(textField_6);
 
 		textField_7 = new JTextField();
 		textField_7.setColumns(10);
 		panel_2.add(textField_7);
+		Utilitarios.validarDigitos(textField_7);
 
 		textField_8 = new JTextField();
 		textField_8.setColumns(10);
 		panel_2.add(textField_8);
+		Utilitarios.validarDigitos(textField_8);
 
 		textField_15 = new JTextField();
 		textField_15.setColumns(10);
 		panel_2.add(textField_15);
+		Utilitarios.validarDigitos(textField_15);
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(267, 17, 143, 157);
 		pnlCompArquitect.add(panel_3);
 		panel_3.setLayout(new GridLayout(5, 0, 0, 0));
 
-		textField_10 = new JTextField();
+		textField_10 = new JTextField(); // txt Observacion
 		textField_10.setColumns(10);
 		panel_3.add(textField_10);
 
-		textField_11 = new JTextField();
+		textField_11 = new JTextField();// txt Observacion
 		textField_11.setColumns(10);
 		panel_3.add(textField_11);
 
-		textField_12 = new JTextField();
+		textField_12 = new JTextField();// txt Observacion
 		textField_12.setColumns(10);
 		panel_3.add(textField_12);
 
-		textField_13 = new JTextField();
+		textField_13 = new JTextField();// txt Observacion
 		textField_13.setColumns(10);
 		panel_3.add(textField_13);
 
-		textField_17 = new JTextField();
+		textField_17 = new JTextField();// txt Observacion
 		textField_17.setColumns(10);
 		panel_3.add(textField_17);
 
@@ -686,34 +681,42 @@ public class Ma1 extends JFrame {
 		txtAECantidad00 = new JTextField();
 		txtAECantidad00.setColumns(10);
 		pnlAECantidad.add(txtAECantidad00);
+		Utilitarios.validarDigitos(txtAECantidad00);
 
 		txtAECantidad01 = new JTextField();
 		txtAECantidad01.setColumns(10);
 		pnlAECantidad.add(txtAECantidad01);
+		Utilitarios.validarDigitos(txtAECantidad01);
 
 		txtAECantidad10 = new JTextField();
 		txtAECantidad10.setColumns(10);
 		pnlAECantidad.add(txtAECantidad10);
+		Utilitarios.validarDigitos(txtAECantidad10);
 
 		txtAECantidad11 = new JTextField();
 		txtAECantidad11.setColumns(10);
 		pnlAECantidad.add(txtAECantidad11);
+		Utilitarios.validarDigitos(txtAECantidad11);
 
 		txtAECantidad20 = new JTextField();
 		txtAECantidad20.setColumns(10);
 		pnlAECantidad.add(txtAECantidad20);
+		Utilitarios.validarDigitos(txtAECantidad20);
 
 		txtAECantidad21 = new JTextField();
 		txtAECantidad21.setColumns(10);
 		pnlAECantidad.add(txtAECantidad21);
+		Utilitarios.validarDigitos(txtAECantidad21);
 
 		txtAECantidad30 = new JTextField();
 		txtAECantidad30.setColumns(10);
 		pnlAECantidad.add(txtAECantidad30);
+		Utilitarios.validarDigitos(txtAECantidad30);
 
 		txtAECantidad31 = new JTextField();
 		txtAECantidad31.setColumns(10);
 		pnlAECantidad.add(txtAECantidad31);
+		Utilitarios.validarDigitos(txtAECantidad31);
 
 		pnlAEObsRef = new JPanel();
 		pnlAEObsRef.setBounds(267, 17, 143, 80);
@@ -783,41 +786,47 @@ public class Ma1 extends JFrame {
 		textField_18 = new JTextField();
 		textField_18.setColumns(10);
 		panel_6.add(textField_18);
+		Utilitarios.validarDigitos(textField_18);
 
 		textField_19 = new JTextField();
 		textField_19.setColumns(10);
 		panel_6.add(textField_19);
+		Utilitarios.validarDigitos(textField_19);
 
 		textField_20 = new JTextField();
 		textField_20.setColumns(10);
 		panel_6.add(textField_20);
+		Utilitarios.validarDigitos(textField_20);
 
 		textField_21 = new JTextField();
 		textField_21.setColumns(10);
 		panel_6.add(textField_21);
+		Utilitarios.validarDigitos(textField_21);
 
 		textField_22 = new JTextField();
 		textField_22.setColumns(10);
 		panel_6.add(textField_22);
+		Utilitarios.validarDigitos(textField_22);
 
 		textField_23 = new JTextField();
 		textField_23.setColumns(10);
 		panel_6.add(textField_23);
+		Utilitarios.validarDigitos(textField_23);
 
 		JPanel panel_7 = new JPanel();
 		panel_7.setBounds(267, 17, 143, 60);
 		pnlFachadaPosterior.add(panel_7);
 		panel_7.setLayout(new GridLayout(3, 0, 0, 0));
 
-		textField_24 = new JTextField();
+		textField_24 = new JTextField();// txt Observacion
 		textField_24.setColumns(10);
 		panel_7.add(textField_24);
 
-		textField_25 = new JTextField();
+		textField_25 = new JTextField();// txt Observacion
 		textField_25.setColumns(10);
 		panel_7.add(textField_25);
 
-		textField_26 = new JTextField();
+		textField_26 = new JTextField();// txt Observacion
 		textField_26.setColumns(10);
 		panel_7.add(textField_26);
 
@@ -871,29 +880,33 @@ public class Ma1 extends JFrame {
 		textField_9 = new JTextField();
 		textField_9.setColumns(10);
 		panel_8.add(textField_9);
+		Utilitarios.validarDigitos(textField_9);
 
 		textField_14 = new JTextField();
 		textField_14.setColumns(10);
 		panel_8.add(textField_14);
+		Utilitarios.validarDigitos(textField_14);
 
 		textField_16 = new JTextField();
 		textField_16.setColumns(10);
 		panel_8.add(textField_16);
+		Utilitarios.validarDigitos(textField_16);
 
 		textField_42 = new JTextField();
 		textField_42.setColumns(10);
 		panel_8.add(textField_42);
+		Utilitarios.validarDigitos(textField_42);
 
 		panel_12 = new JPanel();
 		panel_12.setBounds(267, 17, 143, 40);
 		pnlFachadaLateral.add(panel_12);
 		panel_12.setLayout(new GridLayout(2, 0, 0, 0));
 
-		textField_45 = new JTextField();
+		textField_45 = new JTextField();// txt Observacion
 		textField_45.setColumns(10);
 		panel_12.add(textField_45);
 
-		textField_46 = new JTextField();
+		textField_46 = new JTextField();// txt Observacion
 		textField_46.setColumns(10);
 		panel_12.add(textField_46);
 
@@ -939,29 +952,33 @@ public class Ma1 extends JFrame {
 		textField_43 = new JTextField();
 		textField_43.setColumns(10);
 		panel_15.add(textField_43);
+		Utilitarios.validarDigitos(textField_43);
 
 		textField_44 = new JTextField();
 		textField_44.setColumns(10);
 		panel_15.add(textField_44);
+		Utilitarios.validarDigitos(textField_44);
 
 		textField_47 = new JTextField();
 		textField_47.setColumns(10);
 		panel_15.add(textField_47);
+		Utilitarios.validarDigitos(textField_47);
 
 		textField_48 = new JTextField();
 		textField_48.setColumns(10);
 		panel_15.add(textField_48);
+		Utilitarios.validarDigitos(textField_48);
 
 		panel_16 = new JPanel();
 		panel_16.setBounds(267, 17, 143, 40);
 		pnlInterior.add(panel_16);
 		panel_16.setLayout(new GridLayout(2, 0, 0, 0));
 
-		textField_49 = new JTextField();
+		textField_49 = new JTextField();// txt Observacion
 		textField_49.setColumns(10);
 		panel_16.add(textField_49);
 
-		textField_50 = new JTextField();
+		textField_50 = new JTextField();// txt Observacion
 		textField_50.setColumns(10);
 		panel_16.add(textField_50);
 
@@ -994,17 +1011,19 @@ public class Ma1 extends JFrame {
 		textField_38 = new JTextField();
 		textField_38.setColumns(10);
 		panel_10.add(textField_38);
+		Utilitarios.validarDigitos(textField_38);
 
 		textField_27 = new JTextField();
 		textField_27.setColumns(10);
 		panel_10.add(textField_27);
+		Utilitarios.validarDigitos(textField_27);
 
 		panel_11 = new JPanel();
 		panel_11.setBounds(267, 17, 143, 29);
 		pnlCubierta.add(panel_11);
 		panel_11.setLayout(new GridLayout(1, 0, 0, 0));
 
-		textField_33 = new JTextField();
+		textField_33 = new JTextField();// txt Observacion
 		textField_33.setColumns(10);
 		panel_11.add(textField_33);
 
@@ -1100,54 +1119,67 @@ public class Ma1 extends JFrame {
 		txtTCantidad00 = new JTextField();
 		txtTCantidad00.setColumns(10);
 		pnlTCantidad.add(txtTCantidad00);
+		Utilitarios.validarDigitos(txtTCantidad00);
 
 		txtTCantidad01 = new JTextField();
 		txtTCantidad01.setColumns(10);
 		pnlTCantidad.add(txtTCantidad01);
+		Utilitarios.validarDigitos(txtTCantidad01);
 
 		txtTCantidad10 = new JTextField();
 		txtTCantidad10.setColumns(10);
 		pnlTCantidad.add(txtTCantidad10);
+		Utilitarios.validarDigitos(txtTCantidad10);
 
 		txtTCantidad11 = new JTextField();
 		txtTCantidad11.setColumns(10);
 		pnlTCantidad.add(txtTCantidad11);
+		Utilitarios.validarDigitos(txtTCantidad11);
 
 		txtTCantidad20 = new JTextField();
 		txtTCantidad20.setColumns(10);
 		pnlTCantidad.add(txtTCantidad20);
+		Utilitarios.validarDigitos(txtTCantidad20);
 
 		txtTCantidad21 = new JTextField();
 		txtTCantidad21.setColumns(10);
 		pnlTCantidad.add(txtTCantidad21);
+		Utilitarios.validarDigitos(txtTCantidad21);
 
 		txtTCantidad30 = new JTextField();
 		txtTCantidad30.setColumns(10);
 		pnlTCantidad.add(txtTCantidad30);
+		Utilitarios.validarDigitos(txtTCantidad30);
 
 		txtTCantidad31 = new JTextField();
 		txtTCantidad31.setColumns(10);
 		pnlTCantidad.add(txtTCantidad31);
+		Utilitarios.validarDigitos(txtTCantidad31);
 
 		txtTCantidad40 = new JTextField();
 		txtTCantidad40.setColumns(10);
 		pnlTCantidad.add(txtTCantidad40);
+		Utilitarios.validarDigitos(txtTCantidad40);
 
 		txtTCantidad41 = new JTextField();
 		txtTCantidad41.setColumns(10);
 		pnlTCantidad.add(txtTCantidad41);
+		Utilitarios.validarDigitos(txtTCantidad41);
 
 		textField_29 = new JTextField();
 		textField_29.setColumns(10);
 		pnlTCantidad.add(textField_29);
+		Utilitarios.validarDigitos(textField_29);
 
 		textField_51 = new JTextField();
 		textField_51.setColumns(10);
 		pnlTCantidad.add(textField_51);
+		Utilitarios.validarDigitos(textField_51);
 
 		textField_28 = new JTextField();
 		textField_28.setColumns(10);
 		pnlTCantidad.add(textField_28);
+		Utilitarios.validarDigitos(textField_28);
 
 		pnlTObsRef = new JPanel();
 		pnlTObsRef.setBounds(267, 17, 143, 348);
@@ -1170,19 +1202,19 @@ public class Ma1 extends JFrame {
 		txtTObsRef3.setColumns(10);
 		pnlTObsRef.add(txtTObsRef3);
 
-		textField_30 = new JTextField();
+		textField_30 = new JTextField();// txt observacion
 		textField_30.setColumns(10);
 		pnlTObsRef.add(textField_30);
 
-		textField_31 = new JTextField();
+		textField_31 = new JTextField();// txt observacion
 		textField_31.setColumns(10);
 		pnlTObsRef.add(textField_31);
 
-		textField_32 = new JTextField();
+		textField_32 = new JTextField();// txt observacion
 		textField_32.setColumns(10);
 		pnlTObsRef.add(textField_32);
 
-		textField_34 = new JTextField();
+		textField_34 = new JTextField();// txt observacion
 		textField_34.setColumns(10);
 		pnlTObsRef.add(textField_34);
 
@@ -1190,19 +1222,19 @@ public class Ma1 extends JFrame {
 		txtTObsRef4.setColumns(10);
 		pnlTObsRef.add(txtTObsRef4);
 
-		textField_35 = new JTextField();
+		textField_35 = new JTextField();// txt observacion
 		textField_35.setColumns(10);
 		pnlTObsRef.add(textField_35);
 
-		textField_36 = new JTextField();
+		textField_36 = new JTextField();// txt observacion
 		textField_36.setColumns(10);
 		pnlTObsRef.add(textField_36);
 
-		textField_52 = new JTextField();
+		textField_52 = new JTextField();// txt observacion
 		textField_52.setColumns(10);
 		pnlTObsRef.add(textField_52);
 
-		textField_37 = new JTextField();
+		textField_37 = new JTextField();// txt observacion
 		textField_37.setColumns(10);
 		pnlTObsRef.add(textField_37);
 

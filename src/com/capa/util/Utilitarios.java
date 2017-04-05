@@ -1,9 +1,8 @@
 package com.capa.util;
 
 import java.awt.Image;
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,9 +12,18 @@ import java.util.Locale;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
+import com.capa.datos.TCabecera;
+import com.capa.datos.TLugarGeografico;
+import com.capa.negocios.ComponenteLugarGeo;
+import com.capa.negocios.ServicioLugarGeo;
+import com.capa.presentacion.JPcabecera;
+
 public class Utilitarios {
+
+	private static TCabecera tCabecera;
 
 	public static ImageIcon getImagenIcon(String path, int base, int altura, int resolucion) {
 		URL url = Utilitarios.class.getResource("/com/capa/imagenes/" + path);
@@ -74,6 +82,47 @@ public class Utilitarios {
 			JOptionPane.showMessageDialog(null, "Error al obtener fecha", "ERROR", JOptionPane.ERROR_MESSAGE);
 		}
 		return fecha;
+	}
+
+	public static TCabecera gettCabecera() {
+		return tCabecera;
+	}
+
+	public static void settCabecera(TCabecera tCabecera) {
+		Utilitarios.tCabecera = tCabecera;
+	}
+
+	public static void llenarCabecera(JPcabecera jCabecera) {
+		ServicioLugarGeo geo = new ComponenteLugarGeo();
+		TLugarGeografico lugar;
+		jCabecera.getTxtProyecto().setText(gettCabecera().getCNombreProyecto());
+		lugar = geo.buscarProvincia(gettCabecera().getTLugarGeografico().getLgCodigo());
+		jCabecera.getTxtProvincia().setText(lugar.getLgNombre());
+		lugar = geo.buscarCanton(gettCabecera().getTLugarGeografico().getLgCodigo());
+		jCabecera.getTxtCanton().setText(lugar.getLgNombre());
+		lugar = geo.buscarParroquia(gettCabecera().getTLugarGeografico().getLgCodigo());
+		jCabecera.getTxtParroquia().setText(lugar.getLgNombre());
+		jCabecera.getTxtProyecto().setText(Utilitarios.gettCabecera().getCNombreProyecto());
+		jCabecera.getTxtAmie().setText(Utilitarios.gettCabecera().getCAmie());
+		jCabecera.getTxtDistrito().setText(Utilitarios.gettCabecera().getDistrito());
+		jCabecera.getTxtCircuito().setText(Utilitarios.gettCabecera().getCircuito());
+		jCabecera.getTxtFechaEntrega().setText("" + Utilitarios.gettCabecera().getCFechaEntrega());
+		jCabecera.getTxtFechaInicioTrabajo().setText("" + Utilitarios.gettCabecera().getCFechaInicio());
+		jCabecera.getTxtZona().setText(Utilitarios.gettCabecera().getCZona());
+		jCabecera.getTxtSector().setText(Utilitarios.gettCabecera().getSector());
+	}
+
+	public static void validarDigitos(JTextField textField) {
+		textField.addKeyListener(new KeyAdapter() {
+			public void keyTyped(KeyEvent e) {
+				char caracter = e.getKeyChar();
+				// Verificar si la tecla pulsada no es un digito
+				if (((caracter < '0') || (caracter > '9'))
+						&& (caracter != '\b' /* corresponde a BACK_SPACE */)) {
+					e.consume(); // ignorar el evento de teclado
+				}
+			}
+		});
 	}
 
 }

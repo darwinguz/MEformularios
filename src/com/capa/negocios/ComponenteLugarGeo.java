@@ -91,60 +91,65 @@ public class ComponenteLugarGeo implements ServicioLugarGeo {
 	}
 
 	@Override
-	public String buscarCanton(String codigo) {
+	public TLugarGeografico buscarCanton(String codigo) {
 		// TODO Auto-generated method stub
-		String nombreCanton = null;
+		TLugarGeografico lugarGeo = new TLugarGeografico();
+
 		String sql = "SELECT lg_fk_codigo, lg_nombre FROM t_lugar_geografico WHERE lg_codigo "
 				+ "LIKE (SELECT lg_fk_codigo FROM t_lugar_geografico WHERE lg_codigo LIKE '" + codigo + "')";
 		ResultSet rs = Query.seleccionar(sql);
 		try {
 			while (rs.next()) {
-				nombreCanton = rs.getString("lg_nombre");
+				lugarGeo.setLgCodigo(rs.getString("lg_fk_codigo"));
+				lugarGeo.setLgNombre(rs.getString("lg_nombre"));
 			}
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return nombreCanton;
+		return lugarGeo;
 	}
 
 	@Override
-	public String buscarProvincia(String codigo) {
+	public TLugarGeografico buscarProvincia(String codigo) {
 		// TODO Auto-generated method stub
-		String nombreProvincia = null;
-		String sql = "SELECT lg_nombre FROM t_lugar_geografico WHERE lg_codigo "
+		TLugarGeografico lugarGeo = new TLugarGeografico();
+		String sql = "SELECT lg_fk_codigo, lg_nombre FROM t_lugar_geografico WHERE lg_codigo "
 				+ "LIKE (SELECT lg_fk_codigo FROM t_lugar_geografico WHERE lg_codigo "
 				+ "LIKE (SELECT lg_fk_codigo FROM t_lugar_geografico WHERE lg_codigo LIKE '" + codigo + "'))";
 		ResultSet rs = Query.seleccionar(sql);
 		try {
 			while (rs.next()) {
-				nombreProvincia = rs.getString("lg_nombre");
+				// nombreProvincia = rs.getString("lg_nombre");
+				lugarGeo.setLgCodigo(rs.getString("lg_fk_codigo"));
+				lugarGeo.setLgNombre(rs.getString("lg_nombre"));
 			}
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return nombreProvincia;
+		return lugarGeo;
 	}
 
 	@Override
-	public String buscarParroquia(String codigo) {
+	public TLugarGeografico buscarParroquia(String codigo) {
 		// TODO Auto-generated method stub
-		String nombreParroquia = null;
-		String sql = "SELECT lg_nombre FROM t_lugar_geografico where lg_codigo =  '" + codigo + "'";
+		TLugarGeografico lugarGeo = new TLugarGeografico();
+		String sql = "SELECT lg_fk_codigo, lg_nombre FROM t_lugar_geografico where lg_codigo =  '" + codigo + "'";
 		ResultSet rs = Query.seleccionar(sql);
 		try {
 			while (rs.next()) {
-				nombreParroquia = rs.getString("lg_nombre");
+				lugarGeo.setLgCodigo(rs.getString("lg_fk_codigo"));
+				lugarGeo.setLgNombre(rs.getString("lg_nombre"));
 			}
 
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return nombreParroquia;
+		return lugarGeo;
 	}
 
 }

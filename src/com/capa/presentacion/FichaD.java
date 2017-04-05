@@ -18,6 +18,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.presentacion.JPcabecera;
 import com.capa.util.Utilitarios;
+import com.capa.datos.TCabecera;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.negocios.ClaseCabecera;
 import com.capa.negocios.ComponenteInfoObligatoria;
@@ -53,23 +54,21 @@ public class FichaD extends JFrame {
 	private JPcabecera cabecera;
 	private String pathFotoInfor, pathFoto;
 
-	ClaseCabecera cabec = ClaseCabecera.getInstanciaCab(null);
-
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FichaD frame = new FichaD();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// FichaD frame = new FichaD();
+	// frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
@@ -89,25 +88,7 @@ public class FichaD extends JFrame {
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
 
-		String canton, provincia, parroquia;
-		ServicioLugarGeo geo = new ComponenteLugarGeo();
-		canton = geo.buscarCanton(cabec.getCabecSingleton().getTLugarGeografico().getLgCodigo());
-		provincia = geo.buscarProvincia(cabec.getCabecSingleton().getTLugarGeografico().getLgCodigo());
-		parroquia = geo.buscarParroquia(cabec.getCabecSingleton().getTLugarGeografico().getLgCodigo());
-
-		cabecera.getTxtProyecto().setText(cabec.getCabecSingleton().getCNombreProyecto());
-		cabecera.getTxtAmie().setText(cabec.getCabecSingleton().getCAmie());
-		cabecera.getTxtDistrito().setText(cabec.getCabecSingleton().getDistrito());
-		cabecera.getTxtCircuito().setText(cabec.getCabecSingleton().getCircuito());
-		cabecera.getTxtFechaEntrega().setText("" + cabec.getCabecSingleton().getCFechaEntrega());
-		cabecera.getTxtFechaInicioTrabajo().setText("" + cabec.getCabecSingleton().getCFechaInicio());
-		cabecera.getTxtZona().setText(cabec.getCabecSingleton().getCZona());
-		// !!!provincia, canton, parroquia
-		cabecera.getTxtProvincia().setText(provincia);
-		cabecera.getTxtCanton().setText(canton);
-		cabecera.getTxtParroquia().setText(parroquia);
-
-		cabecera.getTxtSector().setText(cabec.getCabecSingleton().getSector());
+		Utilitarios.llenarCabecera(cabecera);
 
 		InformacionObligatoriaV infor = new InformacionObligatoriaV(165, 280);
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
@@ -131,7 +112,7 @@ public class FichaD extends JFrame {
 				if (Utilitarios.validarInfo(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
 						cargoDer)) {
 					informacion = new TInformacionObligatoria(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer,
-							responsableContrat, cargoDer, fecha, cabec);
+							responsableContrat, cargoDer, fecha, null);
 					infoServicio.crear(informacion);
 				} else {
 					JOptionPane.showMessageDialog(null, "Datos obligatorios");
@@ -401,6 +382,7 @@ public class FichaD extends JFrame {
 		contentPane.add(panel_2);
 
 		panel_2.add(infor.getPnlInformacionObl());
+
 	}
 
 	public void cargarCanton() {

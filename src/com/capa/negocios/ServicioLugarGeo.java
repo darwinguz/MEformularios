@@ -13,9 +13,9 @@ public interface ServicioLugarGeo {
 
 	List<TLugarGeografico> buscarProvincia();
 
-	String buscarCanton(String codigo);
+	TLugarGeografico buscarCanton(String codigo);
 
-	String buscarProvincia(String codigo);
-	
-	String buscarParroquia(String codigo);
+	TLugarGeografico buscarProvincia(String codigo);
+
+	TLugarGeografico buscarParroquia(String codigo);
 }

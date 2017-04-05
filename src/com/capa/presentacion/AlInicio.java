@@ -18,6 +18,7 @@ import javax.swing.border.EmptyBorder;
 import com.capa.datos.TCabecera;
 import com.capa.negocios.ClaseCabecera;
 import com.capa.negocios.ComponenteProyecto;
+import com.capa.util.Utilitarios;
 
 public class AlInicio extends JFrame {
 
@@ -86,6 +87,15 @@ public class AlInicio extends JFrame {
 		pnlBotones.add(btnCuantifComp);
 
 		JButton btnReporteAct = new JButton("5.- Reporte de Actividades (C.1)");
+		btnReporteAct.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				// ClaseCabecera.cabeceraPojo = tCabecera;
+				Utilitarios.settCabecera(tCabecera);
+				new Ma1().setVisible(true);
+			}
+		});
 		pnlBotones.add(btnReporteAct);
 
 		JButton btnReporteInsp = new JButton("6.- Reporte de Inspecci\u00F3n (D)");
@@ -93,6 +103,8 @@ public class AlInicio extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				// ClaseCabecera.cabeceraPojo = tCabecera;
+				Utilitarios.settCabecera(tCabecera);
 				FichaD fichaD = new FichaD();
 				fichaD.setVisible(true);
 			}
@@ -113,10 +125,12 @@ public class AlInicio extends JFrame {
 				if (key == KeyEvent.VK_ENTER) {
 					try {
 						tCabecera = comProyecto.buscarPorNombre(textField.getText());
-						ClaseCabecera clC = ClaseCabecera.getInstanciaCab(tCabecera);
+						// ClaseCabecera clC =
+						// ClaseCabecera.getInstanciaCab(tCabecera);
 						System.out.println(tCabecera.getTLugarGeografico().getLgCodigo());
 						System.out.println(tCabecera.getCircuito());
-						System.out.println("Clase singleton " + clC.getCabecSingleton().getCircuito());
+						// System.out.println("Clase singleton " +
+						// clC.getCabecSingleton().getCircuito());
 						textField.setEnabled(false);
 					} catch (NullPointerException np) {
 						// TODO: handle exception
