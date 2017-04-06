@@ -18,6 +18,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.presentacion.JPcabecera;
 import com.capa.util.Utilitarios;
+import com.capa.util.Validaciones;
 import com.capa.datos.TCabecera;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.negocios.ClaseCabecera;
@@ -109,7 +110,7 @@ public class FichaD extends JFrame {
 				obsGenDer = infor.getTxtObsGenDer().getText();
 				fecha = infor.getDateFechaIO().getDate();
 
-				if (Utilitarios.validarInfo(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
+				if (Validaciones.validarInfo(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
 						cargoDer)) {
 					informacion = new TInformacionObligatoria(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer,
 							responsableContrat, cargoDer, fecha, null);

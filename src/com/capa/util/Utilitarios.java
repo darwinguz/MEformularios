@@ -49,19 +49,6 @@ public class Utilitarios {
 		return pathImagen;
 	}
 
-	public static boolean validarInfo(String... campos) {
-		boolean valida = true;
-		for (String texto : campos) {
-			if (!texto.equals("")) {
-				continue;
-			} else {
-				valida = false;
-				break;
-			}
-		}
-		return valida;
-	}
-
 	public static String getFechaString(Date date) {
 		String fecha = "";
 		try {
@@ -110,19 +97,6 @@ public class Utilitarios {
 		jCabecera.getTxtFechaInicioTrabajo().setText("" + Utilitarios.gettCabecera().getCFechaInicio());
 		jCabecera.getTxtZona().setText(Utilitarios.gettCabecera().getCZona());
 		jCabecera.getTxtSector().setText(Utilitarios.gettCabecera().getSector());
-	}
-
-	public static void validarDigitos(JTextField textField) {
-		textField.addKeyListener(new KeyAdapter() {
-			public void keyTyped(KeyEvent e) {
-				char caracter = e.getKeyChar();
-				// Verificar si la tecla pulsada no es un digito
-				if (((caracter < '0') || (caracter > '9'))
-						&& (caracter != '\b' /* corresponde a BACK_SPACE */)) {
-					e.consume(); // ignorar el evento de teclado
-				}
-			}
-		});
 	}
 
 }

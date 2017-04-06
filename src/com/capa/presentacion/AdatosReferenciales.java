@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -54,6 +55,8 @@ public class AdatosReferenciales extends JFrame {
 	private String pathFotoGeneral;
 	private String pathFotoCroquis;
 
+	private AlInicio alInicio;
+
 	/**
 	 * Launch the application.
 	 */
@@ -61,7 +64,7 @@ public class AdatosReferenciales extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					AdatosReferenciales frame = new AdatosReferenciales();
+					AdatosReferenciales frame = new AdatosReferenciales(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -73,7 +76,11 @@ public class AdatosReferenciales extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AdatosReferenciales() {
+	public AdatosReferenciales(AlInicio alInicio) {
+		this.alInicio = alInicio;
+		if (alInicio != null) {
+			alInicio.setVisible(false);
+		}
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 750, 400);
 		setLocationRelativeTo(null);
@@ -274,10 +281,26 @@ public class AdatosReferenciales extends JFrame {
 		});
 		btnCroquis.setBounds(301, 327, 125, 23);
 		panelPrincipal.add(btnCroquis);
+		JFrame temp = this;
 
 		JButton btnRegistrar = new JButton("Registrar");
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+
+				String validar = "";
+
+				if (pathFotoCroquis == null) {
+					validar = "ERROR: Foto del Croquis no ingresada!\n";
+				}
+				if (pathFotoGeneral == null) {
+					validar += "ERROR: Foto General no ingresada!\n";
+				}
+				if (!validar.equals("")) {
+					JOptionPane.showMessageDialog(null, "Resolver los siguientes errores:\n" + validar,
+							"Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+
 				ServicioProyecto proyecto = new ComponenteProyecto();
 
 				String proy = txtProyecto.getText();
@@ -295,7 +318,12 @@ public class AdatosReferenciales extends JFrame {
 						fechaEntrega, fechaInicio, fechaFin, pathFotoGeneral, pathFotoCroquis, "D");
 
 				proyecto.crear(cabecera);
-
+				alInicio.settCabecera(cabecera);
+				Utilitarios.settCabecera(cabecera);
+				JOptionPane.showMessageDialog(null, "Proyecto registrado con éxito!", "Mensaje de Confirmación",
+						JOptionPane.INFORMATION_MESSAGE);
+				alInicio.setVisible(true);
+				temp.dispose();
 			}
 		});
 		btnRegistrar.setBounds(538, 327, 125, 23);

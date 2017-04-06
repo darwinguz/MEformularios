@@ -67,12 +67,15 @@ public class AlInicio extends JFrame {
 		contentPane.add(pnlBotones);
 		pnlBotones.setLayout(new GridLayout(6, 0, 0, 5));
 
+		AlInicio alInicio = this;
+
 		JButton btnDatosGenerales = new JButton("1.- Datos Generales UEPTM");
 		btnDatosGenerales.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				new AdatosReferenciales().setVisible(true);
+				AdatosReferenciales adatosReferenciales = new AdatosReferenciales(alInicio);
+				adatosReferenciales.setVisible(true);
 			}
 		});
 		pnlBotones.add(btnDatosGenerales);
@@ -91,8 +94,11 @@ public class AlInicio extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				// ClaseCabecera.cabeceraPojo = tCabecera;
-				Utilitarios.settCabecera(tCabecera);
+				if (tCabecera == null) {
+					JOptionPane.showMessageDialog(null, "ERROR: Proyecto no ingresado", "Mensaje de Error",
+							JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 				new Ma1().setVisible(true);
 			}
 		});
@@ -103,8 +109,11 @@ public class AlInicio extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				// ClaseCabecera.cabeceraPojo = tCabecera;
-				Utilitarios.settCabecera(tCabecera);
+				if (tCabecera == null) {
+					JOptionPane.showMessageDialog(null, "ERROR: Proyecto no ingresado", "Mensaje de Error",
+							JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 				FichaD fichaD = new FichaD();
 				fichaD.setVisible(true);
 			}
@@ -125,12 +134,9 @@ public class AlInicio extends JFrame {
 				if (key == KeyEvent.VK_ENTER) {
 					try {
 						tCabecera = comProyecto.buscarPorNombre(textField.getText());
-						// ClaseCabecera clC =
-						// ClaseCabecera.getInstanciaCab(tCabecera);
+						Utilitarios.settCabecera(tCabecera);
 						System.out.println(tCabecera.getTLugarGeografico().getLgCodigo());
 						System.out.println(tCabecera.getCircuito());
-						// System.out.println("Clase singleton " +
-						// clC.getCabecSingleton().getCircuito());
 						textField.setEnabled(false);
 					} catch (NullPointerException np) {
 						// TODO: handle exception
@@ -140,5 +146,15 @@ public class AlInicio extends JFrame {
 				}
 			}
 		});
+	}
+
+	public TCabecera gettCabecera() {
+		return tCabecera;
+	}
+
+	public void settCabecera(TCabecera tCabecera) {
+		textField.setText(tCabecera.getCNombreProyecto());
+		textField.setEnabled(false);
+		this.tCabecera = tCabecera;
 	}
 }
