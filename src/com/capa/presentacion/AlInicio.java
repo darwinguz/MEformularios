@@ -52,7 +52,7 @@ public class AlInicio extends JFrame {
 	public AlInicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 480, 430);
-		setTitle("DIRECCIÓN NACIONAL DE INFRAESTRUCTURA FÍSICA");
+		setTitle("DIRECCIï¿½N NACIONAL DE INFRAESTRUCTURA Fï¿½SICA");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -99,7 +99,7 @@ public class AlInicio extends JFrame {
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				new Ma1().setVisible(true);
+				// new Ma1().setVisible(true);
 			}
 		});
 		pnlBotones.add(btnReporteAct);
