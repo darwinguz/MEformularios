@@ -17,10 +17,8 @@ public class TFichaD implements java.io.Serializable {
 		this.tInformacionObligatoria = TInformacionObligatoria;
 	}
 
-	public TFichaD(TCabecera TCabecera, TInformacionObligatoria TInformacionObligatoria, String FDescripcion,
-			String FFotoFichaD) {
+	public TFichaD(TCabecera TCabecera, String FDescripcion, String FFotoFichaD) {
 		this.tCabecera = TCabecera;
-		this.tInformacionObligatoria = TInformacionObligatoria;
 		this.fDescripcion = FDescripcion;
 		this.fFotoFichaD = FFotoFichaD;
 	}

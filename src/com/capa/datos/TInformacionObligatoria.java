@@ -16,14 +16,13 @@ public class TInformacionObligatoria implements java.io.Serializable {
 	private String ioResponsableCont;
 	private String ioCargoCont;
 	private Date ioFechaIo;
-
-	private ClaseCabecera tCabe;
+	private TCabecera tCabe;
 
 	public TInformacionObligatoria() {
 	}
 
 	public TInformacionObligatoria(String ioObsGeneral, String ioResponsableMin, String ioCargoMin, String ioObsGenCont,
-			String ioResponsableCont, String ioCargoCont, Date ioFechaIo, ClaseCabecera tC) {
+			String ioResponsableCont, String ioCargoCont, Date ioFechaIo, TCabecera tC) {
 		this.ioObsGeneral = ioObsGeneral;
 		this.ioResponsableMin = ioResponsableMin;
 		this.ioCargoMin = ioCargoMin;
@@ -98,11 +97,11 @@ public class TInformacionObligatoria implements java.io.Serializable {
 		this.ioFechaIo = ioFechaIo;
 	}
 
-	public ClaseCabecera gettCabe() {
+	public TCabecera gettCabe() {
 		return tCabe;
 	}
 
-	public void settCabe(ClaseCabecera tCabe) {
+	public void settCabe(TCabecera tCabe) {
 		this.tCabe = tCabe;
 	}
 

@@ -7,7 +7,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -22,6 +24,7 @@ import com.capa.presentacion.JPcabecera;
 import com.capa.util.Utilitarios;
 import com.capa.util.Validaciones;
 import com.capa.datos.TCabecera;
+import com.capa.datos.TFichaD;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.negocios.ClaseCabecera;
 import com.capa.negocios.ComponenteInfoObligatoria;
@@ -98,6 +101,8 @@ public class FichaD extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
+				List<TFichaD> listasD = new ArrayList<TFichaD>();
+				TFichaD fichaD;
 				ServicioInfoObligatoria infoServicio = new ComponenteInfoObligatoria();
 				TInformacionObligatoria informacion;
 				String responsableMinEduc, cargoIzq, obsGenIz;
@@ -111,15 +116,35 @@ public class FichaD extends JFrame {
 				cargoDer = infor.getTxtCargoDer().getText();
 				obsGenDer = infor.getTxtObsGenDer().getText();
 				fecha = infor.getDateFechaIO().getDate();
-
-				if (Validaciones.validarInfo(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
-						cargoDer)) {
-					informacion = new TInformacionObligatoria(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer,
-							responsableContrat, cargoDer, fecha, null);
-					infoServicio.crear(informacion);
-				} else {
-					JOptionPane.showMessageDialog(null, "Datos obligatorios");
-				}
+				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDesc1.getText(), "");
+				listasD.add(fichaD);
+				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion2.getText(), "");
+				listasD.add(fichaD);
+				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion3.getText(), "");
+				listasD.add(fichaD);
+				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion4.getText(), "");
+				listasD.add(fichaD);
+				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion5.getText(), "");
+				listasD.add(fichaD);
+				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion6.getText(), "");
+				listasD.add(fichaD);
+				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion7.getText(), "");
+				listasD.add(fichaD);
+				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion8.getText(), "");
+				listasD.add(fichaD);
+				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion9.getText(), "");
+				listasD.add(fichaD);
+				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion10.getText(), "");
+				listasD.add(fichaD);
+				System.out.println(listasD.get(4).getfDescripcion());
+//				if (Validaciones.validarInfo(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
+//						cargoDer)) {
+//					informacion = new TInformacionObligatoria(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer,
+//							responsableContrat, cargoDer, fecha, Utilitarios.gettCabecera());
+//					infoServicio.crear(informacion);
+//				} else {
+//					JOptionPane.showMessageDialog(null, "Datos obligatorios");
+//				}
 			}
 		});
 
