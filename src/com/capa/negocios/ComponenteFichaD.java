@@ -6,10 +6,9 @@ public class ComponenteFichaD implements ServicioFichaD {
 
 	@Override
 	public void crear(TFichaD fichaD) {
-		String sql = "INSERT INTO t_ficha_d (io_serial, f_descripcion)  VALUES ('"
-				+ fichaD.gettInformacionObligatoria().getIoSerial() + "','" + fichaD.getfDescripcion() + "')";
+		String sql = "INSERT INTO t_ficha_d (c_serial, f_descripcion, f_foto_ficha_d, fd_actualizacion_n) VALUES (?,?,?,?);";
 		try {
-			Query.insertar(sql);
+			Query.insertar(sql, fichaD);
 		} catch (Exception e) {
 			System.out.println("Error al INSERTAR: " + e.getMessage());
 		}

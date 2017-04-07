@@ -32,7 +32,7 @@ public class ComponenteCabecera implements ServicioCabecera {
 				+ "c_foto_croquis, c_tipo_ficha) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		try {
-			Query.insertarImagen(sql, cabecera);
+			Query.insertar(sql, cabecera);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Error al insertar Datos " + e.getMessage(), "ERROR",
 					JOptionPane.ERROR_MESSAGE);

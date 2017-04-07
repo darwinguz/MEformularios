@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 import com.capa.datos.TCabecera;
-import com.capa.datos.TInformacionObligatoria;
+import com.capa.datos.TFichaD;
 import com.capa.util.Utilitarios;
 
 public class Query {
@@ -28,7 +28,7 @@ public class Query {
 			resultado = comando.executeQuery(query);
 		} catch (SQLException e) {
 			String message = "<html><p><b>La consulta ejecutada fue: </b>" + query + " </p>"
-					+ "<p><b>Error de Mysql-Select: </b> " + e.getMessage() + "</p> " + "<p><b>C�digo de Error: </b>"
+					+ "<p><b>Error de Mysql-Select: </b> " + e.getMessage() + "</p> " + "<p><b>Código de Error: </b>"
 					+ e.getErrorCode() + " </p></html>";
 			JOptionPane.showMessageDialog(new JFrame(), message);
 		}
@@ -42,7 +42,7 @@ public class Query {
 			comando.executeUpdate(query);
 		} catch (SQLException error) {
 			String message = "<html><p><b>Error de Mysql-Insert: </b> " + error.getMessage() + "</p> "
-					+ "<p><b>C�digo de Error: </b>" + error.getErrorCode() + " </p></html>";
+					+ "<p><b>Código de Error: </b>" + error.getErrorCode() + " </p></html>";
 			JOptionPane.showMessageDialog(new JFrame(), message);
 		}
 	}
@@ -55,7 +55,7 @@ public class Query {
 		} catch (SQLException e) {
 			e.getSQLState();
 			String message = "<html><p><b>La actualizacion fue ejecutada: </b>" + query + " </p>"
-					+ "<p><b>Error de Mysql-Update: </b> " + e.getMessage() + "</p> " + "<p><b>C�digo de Error: </b>"
+					+ "<p><b>Error de Mysql-Update: </b> " + e.getMessage() + "</p> " + "<p><b>Código de Error: </b>"
 					+ e.getErrorCode() + " </p></html>";
 			System.out.println(query);
 			JOptionPane.showMessageDialog(new JFrame(), message);
@@ -72,13 +72,13 @@ public class Query {
 			String message = null;
 
 			message = "<html><p><b>Error de Mysql-Delete: </b> " + error.getMessage() + "</p> "
-					+ "<p><b>C�digo de Error: </b>" + error.getErrorCode() + " </p></html>";
+					+ "<p><b>Código de Error: </b>" + error.getErrorCode() + " </p></html>";
 			JOptionPane.showMessageDialog(new JFrame(), message);
 
 		}
 	}
 
-	public static void insertarImagen(String insert, TCabecera cabecera) {
+	public static void insertar(String insert, TCabecera cabecera) {
 		FileInputStream fis1 = null;
 		FileInputStream fis2 = null;
 		PreparedStatement ps = null;
@@ -115,6 +115,35 @@ public class Query {
 				ps.close();
 				fis1.close();
 				fis2.close();
+			} catch (Exception ex) {
+				Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		}
+	}
+
+	public static void insertar(String insert, TFichaD fichaD) {
+		FileInputStream fis1 = null;
+		PreparedStatement ps = null;
+
+		try {
+			mysql.getConexion().setAutoCommit(false);
+
+			File file1 = new File(fichaD.getfFotoFichaD());
+			fis1 = new FileInputStream(file1);
+
+			ps = mysql.getConexion().prepareStatement(insert);
+			ps.setInt(1, fichaD.gettCabecera().getCSerial());
+			ps.setString(2, fichaD.getfDescripcion());
+			ps.setBinaryStream(3, fis1, (long) file1.length());
+
+			ps.executeUpdate();
+			mysql.getConexion().commit();
+		} catch (Exception ex) {
+			Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
+		} finally {
+			try {
+				ps.close();
+				fis1.close();
 			} catch (Exception ex) {
 				Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
 			}
