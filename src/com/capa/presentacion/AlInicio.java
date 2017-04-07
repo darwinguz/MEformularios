@@ -16,7 +16,6 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import com.capa.datos.TCabecera;
-import com.capa.negocios.ClaseCabecera;
 import com.capa.negocios.ComponenteProyecto;
 import com.capa.util.Utilitarios;
 
@@ -52,7 +51,7 @@ public class AlInicio extends JFrame {
 	public AlInicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 480, 430);
-		setTitle("DIRECCI�N NACIONAL DE INFRAESTRUCTURA F�SICA");
+		setTitle("DIRECCIÓN NACIONAL DE INFRAESTRUCTURA FÍSICA");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -146,6 +145,24 @@ public class AlInicio extends JFrame {
 				}
 			}
 		});
+
+		JButton btnLimpiar = new JButton("Nuevo");
+		btnLimpiar.setBounds(384, 24, 70, 25);
+		btnLimpiar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setDefaults();
+			}
+
+		});
+		contentPane.add(btnLimpiar);
+	}
+
+	private void setDefaults() {
+		this.tCabecera = null;
+		this.textField.setText("");
+		this.textField.setEditable(true);
 	}
 
 	public TCabecera gettCabecera() {

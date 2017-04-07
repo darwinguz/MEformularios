@@ -17,7 +17,7 @@ import com.capa.datos.TInformacionObligatoria;
 import com.capa.util.Utilitarios;
 
 public class Query {
-	private static MySql mysql = new MySql("localhost", "db_ministerio_ed", "root", "admin");
+	private static MySql mysql = new MySql("localhost", "db_ministerio_ed", "root", "root");
 
 	public static ResultSet seleccionar(String query) {
 		Statement comando;
@@ -28,7 +28,7 @@ public class Query {
 			resultado = comando.executeQuery(query);
 		} catch (SQLException e) {
 			String message = "<html><p><b>La consulta ejecutada fue: </b>" + query + " </p>"
-					+ "<p><b>Error de Mysql-Select: </b> " + e.getMessage() + "</p> " + "<p><b>Código de Error: </b>"
+					+ "<p><b>Error de Mysql-Select: </b> " + e.getMessage() + "</p> " + "<p><b>Cï¿½digo de Error: </b>"
 					+ e.getErrorCode() + " </p></html>";
 			JOptionPane.showMessageDialog(new JFrame(), message);
 		}
@@ -42,7 +42,7 @@ public class Query {
 			comando.executeUpdate(query);
 		} catch (SQLException error) {
 			String message = "<html><p><b>Error de Mysql-Insert: </b> " + error.getMessage() + "</p> "
-					+ "<p><b>Código de Error: </b>" + error.getErrorCode() + " </p></html>";
+					+ "<p><b>Cï¿½digo de Error: </b>" + error.getErrorCode() + " </p></html>";
 			JOptionPane.showMessageDialog(new JFrame(), message);
 		}
 	}
@@ -55,7 +55,7 @@ public class Query {
 		} catch (SQLException e) {
 			e.getSQLState();
 			String message = "<html><p><b>La actualizacion fue ejecutada: </b>" + query + " </p>"
-					+ "<p><b>Error de Mysql-Update: </b> " + e.getMessage() + "</p> " + "<p><b>Código de Error: </b>"
+					+ "<p><b>Error de Mysql-Update: </b> " + e.getMessage() + "</p> " + "<p><b>Cï¿½digo de Error: </b>"
 					+ e.getErrorCode() + " </p></html>";
 			System.out.println(query);
 			JOptionPane.showMessageDialog(new JFrame(), message);
@@ -72,7 +72,7 @@ public class Query {
 			String message = null;
 
 			message = "<html><p><b>Error de Mysql-Delete: </b> " + error.getMessage() + "</p> "
-					+ "<p><b>Código de Error: </b>" + error.getErrorCode() + " </p></html>";
+					+ "<p><b>Cï¿½digo de Error: </b>" + error.getErrorCode() + " </p></html>";
 			JOptionPane.showMessageDialog(new JFrame(), message);
 
 		}

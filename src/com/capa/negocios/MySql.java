@@ -30,7 +30,7 @@ public class MySql {
 			this.conexion.close();
 		} catch (SQLException error) {
 			String message = null;
-			message = "<html><p><b>Error de Mysql: </b> " + error.getMessage() + "</p> " + "<p><b>Código de Error: </b>"
+			message = "<html><p><b>Error de Mysql: </b> " + error.getMessage() + "</p> " + "<p><b>Codigo de : </b>"
 					+ error.getErrorCode() + " </p></html>";
 			JOptionPane.showMessageDialog(new JFrame(), message);
 		}
