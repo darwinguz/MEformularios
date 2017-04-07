@@ -136,7 +136,7 @@ public class AlInicio extends JFrame {
 						Utilitarios.settCabecera(tCabecera);
 						System.out.println(tCabecera.getTLugarGeografico().getLgCodigo());
 						System.out.println(tCabecera.getCircuito());
-						textField.setEnabled(false);
+						textField.setEditable(false);
 					} catch (NullPointerException np) {
 						// TODO: handle exception
 						JOptionPane.showMessageDialog(null, "No existe el proyecto ");
