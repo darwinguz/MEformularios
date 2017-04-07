@@ -45,7 +45,7 @@ public class JPcabecera {
 
 		txtProyecto = new JTextField();
 		txtProyecto.setBounds(170, 28, 296, 20);
-		txtProyecto.setEnabled(false);
+		txtProyecto.setEditable(false);
 		pnlSuperior.add(txtProyecto);
 		txtProyecto.setColumns(10);
 
@@ -56,7 +56,7 @@ public class JPcabecera {
 
 		txtZona = new JTextField();
 		txtZona.setBounds(170, 72, 86, 20);
-		txtZona.setEnabled(false);
+		txtZona.setEditable(false);
 		pnlSuperior.add(txtZona);
 
 		JLabel lblProvincia = new JLabel(" Provincia");
@@ -66,7 +66,7 @@ public class JPcabecera {
 
 		txtProvincia = new JTextField();
 		txtProvincia.setBounds(289, 72, 160, 20);
-		txtProvincia.setEnabled(false);
+		txtProvincia.setEditable(false);
 		pnlSuperior.add(txtProvincia);
 
 		JLabel lblCanton = new JLabel(" Cant\u00F3n");
@@ -76,7 +76,7 @@ public class JPcabecera {
 
 		txtCanton = new JTextField();
 		txtCanton.setBounds(472, 72, 160, 20);
-		txtCanton.setEnabled(false);
+		txtCanton.setEditable(false);
 		pnlSuperior.add(txtCanton);
 
 		JLabel lblParroquia = new JLabel(" Parroquia");
@@ -87,7 +87,7 @@ public class JPcabecera {
 		txtParroquia = new JTextField();
 		txtParroquia.setColumns(10);
 		txtParroquia.setBounds(661, 72, 125, 20);
-		txtParroquia.setEnabled(false);
+		txtParroquia.setEditable(false);
 		pnlSuperior.add(txtParroquia);
 
 		JLabel lblSector = new JLabel(" Sector");
@@ -98,7 +98,7 @@ public class JPcabecera {
 		txtSector = new JTextField();
 		txtSector.setColumns(10);
 		txtSector.setBounds(823, 72, 318, 20);
-		txtSector.setEnabled(false);
+		txtSector.setEditable(false);
 		pnlSuperior.add(txtSector);
 
 		JLabel lblAmie = new JLabel(" AMIE");
@@ -108,7 +108,7 @@ public class JPcabecera {
 
 		txtAmie = new JTextField();
 		txtAmie.setBounds(506, 28, 86, 20);
-		txtAmie.setEnabled(false);
+		txtAmie.setEditable(false);
 		pnlSuperior.add(txtAmie);
 		txtAmie.setColumns(10);
 
@@ -119,7 +119,7 @@ public class JPcabecera {
 
 		txtDistrito = new JTextField();
 		txtDistrito.setBounds(626, 28, 160, 20);
-		txtDistrito.setEnabled(false);
+		txtDistrito.setEditable(false);
 		pnlSuperior.add(txtDistrito);
 
 		JLabel lblCircuito = new JLabel(" Circuito");
@@ -130,7 +130,7 @@ public class JPcabecera {
 
 		txtCircuito = new JTextField();
 		txtCircuito.setBounds(823, 28, 100, 20);
-		txtCircuito.setEnabled(false);
+		txtCircuito.setEditable(false);
 		pnlSuperior.add(txtCircuito);
 		txtCircuito.setColumns(10);
 
@@ -143,7 +143,7 @@ public class JPcabecera {
 		txtFechaEntrega = new JTextField();
 		txtFechaEntrega.setColumns(10);
 		txtFechaEntrega.setBounds(933, 28, 100, 20);
-		txtFechaEntrega.setEnabled(false);
+		txtFechaEntrega.setEditable(false);
 		pnlSuperior.add(txtFechaEntrega);
 
 		JLabel lblFechaInicioTrabajo = new JLabel(" Fecha Inicio Trabajo");
@@ -155,7 +155,7 @@ public class JPcabecera {
 		txtFechaInicioTrabajo = new JTextField();
 		txtFechaInicioTrabajo.setColumns(10);
 		txtFechaInicioTrabajo.setBounds(1043, 28, 100, 20);
-		txtFechaInicioTrabajo.setEnabled(false);
+		txtFechaInicioTrabajo.setEditable(false);
 		pnlSuperior.add(txtFechaInicioTrabajo);
 
 		btnRegistrar = new JButton("Registrar");
