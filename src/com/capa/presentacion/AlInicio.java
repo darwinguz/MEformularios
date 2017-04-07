@@ -9,10 +9,10 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import com.capa.datos.TCabecera;
@@ -42,7 +42,7 @@ public class AlInicio extends JFrame {
 
 	public AlInicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 480, 430);
+		setBounds(100, 100, 500, 430);
 		setTitle("DIRECCIÓN NACIONAL DE INFRAESTRUCTURA FÍSICA");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -54,13 +54,14 @@ public class AlInicio extends JFrame {
 		ServicioCabecera comProyecto = new ComponenteCabecera();
 
 		JPanel pnlBotones = new JPanel();
-		pnlBotones.setBounds(86, 71, 288, 309);
+		pnlBotones.setBounds(105, 71, 288, 309);
 		contentPane.add(pnlBotones);
 		pnlBotones.setLayout(new GridLayout(6, 0, 0, 5));
 
 		AlInicio alInicio = this;
 
-		JButton btnDatosGenerales = new JButton("1.- Datos Generales UEPTM");
+		JButton btnDatosGenerales = new JButton("   1.- Datos Generales UEPTM");
+		btnDatosGenerales.setHorizontalAlignment(SwingConstants.LEFT);
 		btnDatosGenerales.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -71,16 +72,20 @@ public class AlInicio extends JFrame {
 		});
 		pnlBotones.add(btnDatosGenerales);
 
-		JButton btnAvanceGeneral = new JButton("2.- Avance General (A)");
+		JButton btnAvanceGeneral = new JButton("   2.- Avance General (A)");
+		btnAvanceGeneral.setHorizontalAlignment(SwingConstants.LEFT);
 		pnlBotones.add(btnAvanceGeneral);
 
-		JButton btnRevisionCaract = new JButton("3.- Revisi\u00F3n Caracter\u00EDsticas T\u00E9cnicas (B)");
+		JButton btnRevisionCaract = new JButton("   3.- Revisión Características Técnicas (B)");
+		btnRevisionCaract.setHorizontalAlignment(SwingConstants.LEFT);
 		pnlBotones.add(btnRevisionCaract);
 
-		JButton btnCuantifComp = new JButton("4.- Cuantificaci\u00F3n Componentes (C)");
+		JButton btnCuantifComp = new JButton("   4.- Cuantificación Componentes (C)");
+		btnCuantifComp.setHorizontalAlignment(SwingConstants.LEFT);
 		pnlBotones.add(btnCuantifComp);
 
-		JButton btnReporteAct = new JButton("5.- Reporte de Actividades (C.1)");
+		JButton btnReporteAct = new JButton("   5.- Reporte de Actividades (C.1)");
+		btnReporteAct.setHorizontalAlignment(SwingConstants.LEFT);
 		btnReporteAct.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -95,7 +100,8 @@ public class AlInicio extends JFrame {
 		});
 		pnlBotones.add(btnReporteAct);
 
-		JButton btnReporteInsp = new JButton("6.- Reporte de Inspecci\u00F3n (D)");
+		JButton btnReporteInsp = new JButton("   6.- Reporte de Inspección (D)");
+		btnReporteInsp.setHorizontalAlignment(SwingConstants.LEFT);
 		btnReporteInsp.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -111,17 +117,16 @@ public class AlInicio extends JFrame {
 		});
 		pnlBotones.add(btnReporteInsp);
 
-		JLabel lblBuscarProyecto = new JLabel("Reset");
-		lblBuscarProyecto.setBounds(86, 30, 102, 14);
-		contentPane.add(lblBuscarProyecto);
-
 		textField = new JTextField();
-		textField.setBounds(187, 27, 187, 20);
+		textField.setBounds(105, 27, 199, 21);
+		textField.setText("Buscar proyecto");
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		textField.addKeyListener(new KeyAdapter() {
 			public void keyPressed(final KeyEvent e) {
 				int key = e.getKeyCode();
+
 				if (key == KeyEvent.VK_ENTER) {
 					try {
 						tCabecera = comProyecto.buscarProyecto(textField.getText());
@@ -141,8 +146,8 @@ public class AlInicio extends JFrame {
 			}
 		});
 
-		JButton btnLimpiar = new JButton("Nuevo");
-		btnLimpiar.setBounds(384, 24, 70, 25);
+		JButton btnLimpiar = new JButton("Reset");
+		btnLimpiar.setBounds(322, 27, 70, 20);
 		btnLimpiar.addActionListener(new ActionListener() {
 
 			@Override
