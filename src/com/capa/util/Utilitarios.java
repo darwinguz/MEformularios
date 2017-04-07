@@ -93,8 +93,8 @@ public class Utilitarios {
 		jCabecera.getTxtAmie().setText(Utilitarios.gettCabecera().getCAmie());
 		jCabecera.getTxtDistrito().setText(Utilitarios.gettCabecera().getDistrito());
 		jCabecera.getTxtCircuito().setText(Utilitarios.gettCabecera().getCircuito());
-		jCabecera.getTxtFechaEntrega().setText("" + Utilitarios.gettCabecera().getCFechaEntrega());
-		jCabecera.getTxtFechaInicioTrabajo().setText("" + Utilitarios.gettCabecera().getCFechaInicio());
+		jCabecera.getTxtFechaEntrega().setText("" + getFechaString(Utilitarios.gettCabecera().getCFechaEntrega()));
+		jCabecera.getTxtFechaInicioTrabajo().setText("" + getFechaString(Utilitarios.gettCabecera().getCFechaInicio()));
 		jCabecera.getTxtZona().setText(Utilitarios.gettCabecera().getCZona());
 		jCabecera.getTxtSector().setText(Utilitarios.gettCabecera().getSector());
 	}

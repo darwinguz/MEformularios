@@ -51,7 +51,7 @@ public class Menu extends JFrame {
 		JButton btnAula1 = new JButton("<html><body>MA<br>aulas-1</body></html>");
 		btnAula1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 			}
 		});
 		btnAula1.setHorizontalAlignment(SwingConstants.LEFT);
