@@ -13,6 +13,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Menu extends JFrame {
 
@@ -47,6 +49,11 @@ public class Menu extends JFrame {
 		contentPane.setLayout(null);
 
 		JButton btnAula1 = new JButton("<html><body>MA<br>aulas-1</body></html>");
+		btnAula1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
 		btnAula1.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAula1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnAula1.setBounds(79, 74, 67, 72);
