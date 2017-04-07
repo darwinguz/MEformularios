@@ -307,7 +307,7 @@ public class AdatosReferenciales extends JFrame {
 				String amie = txtAmei.getText();
 				String zona = (String) cbxZona.getSelectedItem();
 				TLugarGeografico parroquia = (TLugarGeografico) cbxParroquia.getSelectedItem();
-				String distrito = String.valueOf(cbxDistrito.getSelectedIndex());
+				String distrito = String.valueOf(cbxDistrito.getSelectedItem());
 				String circuito = txtCircuito.getText();
 				String sector = txtSector.getText();
 				Date fechaEntrega = dateEntregaPredioFecha.getDate();
@@ -320,7 +320,7 @@ public class AdatosReferenciales extends JFrame {
 				proyecto.crear(cabecera);
 				alInicio.settCabecera(cabecera);
 				Utilitarios.settCabecera(cabecera);
-				JOptionPane.showMessageDialog(null, "Proyecto registrado con éxito!", "Mensaje de Confirmación",
+				JOptionPane.showMessageDialog(null, "Proyecto registrado con Oxito!", "Mensaje de ConfirmaciOn",
 						JOptionPane.INFORMATION_MESSAGE);
 				alInicio.setVisible(true);
 				temp.dispose();
@@ -355,7 +355,7 @@ public class AdatosReferenciales extends JFrame {
 	public void rrellenarComboDistrito() {
 		distrito = new HashMap<>();
 		distrito.put("04D01", "SAN PEDRO DE HUACA - TULCAN ");
-		distrito.put("04D02", "MONTUFAR - BOLÍVAR ");
+		distrito.put("04D02", "MONTUFAR - BOLOVAR ");
 		distrito.put("04D03", "ESPEJO - MIRA ");
 		distrito.put("08D01", "ESMERALDAS ");
 		distrito.put("08D02", "ELOY ALFARO ");
@@ -365,7 +365,7 @@ public class AdatosReferenciales extends JFrame {
 		distrito.put("08D06", "RIO VERDE ");
 		distrito.put("10D02", "ANTONIO ANTE -OTAVALO ");
 		distrito.put("10D03", "COTACACHI ");
-		distrito.put("21D01", "CÁSCALES - GONZALO PIZARRO - SUCUMBÍOS ");
+		distrito.put("21D01", "COSCALES - GONZALO PIZARRO - SUCUMBOOS ");
 		distrito.put("21D02", "LAGO AGRIO ");
 		distrito.put("21D03", "CUYABENO - PUTUMAYO ");
 		distrito.put("21D04", "SHUSHUFINDI ");
@@ -386,36 +386,36 @@ public class AdatosReferenciales extends JFrame {
 		distrito.put("06D01", "CHAMBO RIOBAMBA ");
 		distrito.put("06D02", "ALAUSI - CHUNCHI ");
 		distrito.put("06D03", "CUMANDA - PALLATANGA ");
-		distrito.put("06D04", "COLTA - GUAMÓTE ");
+		distrito.put("06D04", "COLTA - GUAMOTE ");
 		distrito.put("06D05", "GUANO - PENIPE ");
 		distrito.put("16D01", "PASTAZA - MERA - SANTA CLARA ");
 		distrito.put("16D02", "ARAJUNO ");
-		distrito.put("18D01", "MARTÍNEZ - CONSTATINO FERNANDEZ -CUNCHIBAMBA IZAMBA ");
+		distrito.put("18D01", "MARTONEZ - CONSTATINO FERNANDEZ -CUNCHIBAMBA IZAMBA ");
 		distrito.put("18D02", "HUACHI GRANDE ");
-		distrito.put("18D03", "BAÑOS DE AGUA SANTA ");
+		distrito.put("18D03", "BAOOS DE AGUA SANTA ");
 		distrito.put("18D04", "PATATE - SAN PEDRO DE PELILEO ");
 		distrito.put("18D05", "SANTIAGO DE PILLARO ");
 		distrito.put("18D06", "CEVALLOS - MOCHA - QUERO TISALEO ");
 		distrito.put("13D01", "PORTOVIEJO ");
 		distrito.put("13D02", "JARAMIJO - MANTA - MONTECRISTI ");
-		distrito.put("13D03", "JIPIJAPA - PUERTO LÓPEZ ");
+		distrito.put("13D03", "JIPIJAPA - PUERTO LOPEZ ");
 		distrito.put("13D04", "24 DE MAYO - SANTA ANA - OLMEDO ");
 		distrito.put("13D05", "EL CARMEN ");
-		distrito.put("13D06", "JUNIN BOLÍVAR ");
+		distrito.put("13D06", "JUNIN BOLOVAR ");
 		distrito.put("13D07", "CHONE - FLAVIO ALFARO ");
 		distrito.put("13D08", "PICHINCHA ");
 		distrito.put("13D09", "PAJAN ");
 		distrito.put("13D10", "JAMA - PEDERNALES ");
 		distrito.put("13D11", "SAN VICENTE - SUCRE ");
 		distrito.put("13D12", "ROCAFUERTE - TOSAGUA ");
-		distrito.put("23D01", "RIO VERDE - SANTO DOMINGO - ZARACAY - RÍO TOACHI  ");
-		distrito.put("23D02", "ABRAHAM CALAZACÓN - BOMBOLI ");
+		distrito.put("23D01", "RIO VERDE - SANTO DOMINGO - ZARACAY - ROO TOACHI  ");
+		distrito.put("23D02", "ABRAHAM CALAZACON - BOMBOLI ");
 		distrito.put("23D03", "LA CONCORDIA ");
 		distrito.put("02D01", "GUARANDA ");
 		distrito.put("02D02", "CHILLANES ");
 		distrito.put("02D03", "CHIMBO - SAN MIGUEL ");
 		distrito.put("02D04", "CALUMA - ECHEANDIA - LAS NAVES ");
-		distrito.put("09D11", "ALFREDO BAQUERIZO MORENO - SIMÓN BOLÍVAR ");
+		distrito.put("09D11", "ALFREDO BAQUERIZO MORENO - SIMON BOLOVAR ");
 		distrito.put("09D12", "BALAO - NARANJAL ");
 		distrito.put("09D13", "BALZAR - COLIMES - PALESTINA ");
 		distrito.put("09D14", "ISIDRO AYORA - LOMAS DE SARGENTILLO - PEDRO CARBO ");
@@ -433,28 +433,28 @@ public class AdatosReferenciales extends JFrame {
 		distrito.put("12D04", "QUINSALOMA - VENTANAS ");
 		distrito.put("12D05", "PALENQUE - VINCES ");
 		distrito.put("12D06", "BUENA FE - VALENCIA ");
-		distrito.put("20D01", "SAN CRISTÓBAL - SANTA CRUZ - ISABELA ");
+		distrito.put("20D01", "SAN CRISTOBAL - SANTA CRUZ - ISABELA ");
 		distrito.put("24D01", "SANTA ELENA ");
 		distrito.put("24D02", "LA LIBERTAD - SALINAS ");
 		distrito.put("01D01", "MACHANGARA - HMNO MIGUEL - EL VECINO - TOTORACOCHA");
 		distrito.put("01D02", "SAN SEBASTIAN- EL BATAN - YANUNCAY - SUCRE - HUAYNA CAPAC - MONAY ");
-		distrito.put("01D03", "GIRÓN - PUCARÁ - SAN FERNANDO - SANTA ISABEL ");
+		distrito.put("01D03", "GIRON - PUCARO - SAN FERNANDO - SANTA ISABEL ");
 		distrito.put("01D04", "CHORDELEG - GUALACEO ");
 		distrito.put("01D05", "NABON-ONA ");
 		distrito.put("01D06", "EL PAN - GUACHAPALA - PAUTE - SEVILLA DE ORO ");
 		distrito.put("01D07", "CAMILO PONCE ENRIQUEZ ");
 		distrito.put("01D08", "SIGSIG ");
 		distrito.put("03D01", "AZOGUES - BIBLIAN - DELEG ");
-		distrito.put("03D02", "CAÑAR - EL TAMBO - SUSCAL ");
+		distrito.put("03D02", "CAOAR - EL TAMBO - SUSCAL ");
 		distrito.put("03D03", "LA TRONCAL ");
 		distrito.put("14D01", "MORONA ");
 		distrito.put("14D02", "HUAMBOYA - PABLO SEXTO - PALORA ");
-		distrito.put("14D03", "LOGROÑO - SUCUA ");
+		distrito.put("14D03", "LOGROOO - SUCUA ");
 		distrito.put("14D04", "GUALAQUIZA - SAN JUAN BOSCO ");
 		distrito.put("14D05", "TAISHA ");
-		distrito.put("14D06", "LIMÓN INDANZA - SANTIAGO - TIWINTZA ");
+		distrito.put("14D06", "LIMON INDANZA - SANTIAGO - TIWINTZA ");
 		distrito.put("07D01", "CHILLA - EL GUABO - PASAJE ");
-		distrito.put("07D02", "MÁCHALA ");
+		distrito.put("07D02", "MOCHALA ");
 		distrito.put("07D03", "ATAHUALPA - PORTO VELO - ZARUMA ");
 		distrito.put("07D04", "BALSAS - MARCABELI - PINAS ");
 		distrito.put("07D05", "ARENILLAS - HUAQUILLAS - LAS LAJAS ");
@@ -462,19 +462,19 @@ public class AdatosReferenciales extends JFrame {
 		distrito.put("11D01", "LOJA ");
 		distrito.put("11D02", "CATAMAYO - CHAGUARPAMBA - OLMEDO ");
 		distrito.put("11D03", "PALTAS ");
-		distrito.put("11D04", "CÉLICA - P1NDAL - PUYANGO ");
+		distrito.put("11D04", "COLICA - P1NDAL - PUYANGO ");
 		distrito.put("11DO5", "ESPINDOLA ");
 		distrito.put("11D06", "CALVAS - GONZANAMA - QUILANGA ");
 		distrito.put("11D07", "MACARA - SOZORANGA ");
 		distrito.put("11D08", "SARAGURO ");
 		distrito.put("11D09", "ZAPOTILLO ");
 		distrito.put("19D01", "YACUAMBI - ZAMORA ");
-		distrito.put("19D02", "CENTINELA DEL CÓNDOR - NANGARITZA -PAQUISHA ");
+		distrito.put("19D02", "CENTINELA DEL CONDOR - NANGARITZA -PAQUISHA ");
 		distrito.put("19D03", "CHINCHIPE - PALANDA ");
 		distrito.put("19D04", "EL PANGUI - YANTZAZA ");
 		distrito.put("09D01", "XIMENA ");
 		distrito.put("09D02", "XIMENA 2 ");
-		distrito.put("09D03", "GARCÍA MORENO - LETAMENDI AYACUCHO ");
+		distrito.put("09D03", "GARCOA MORENO - LETAMENDI AYACUCHO ");
 		distrito.put("09D04", "FEBRES CORDERO ");
 		distrito.put("09D05", "JARQUI - 1,TENGUEL ");
 		distrito.put("09D06", "TARQUI - 2 ");
@@ -485,16 +485,16 @@ public class AdatosReferenciales extends JFrame {
 		distrito.put("09D23", "SAMBORONDON ");
 		distrito.put("09D24", "DURAN ");
 		distrito.put("17D01", "NANEGAL - PACTO -GUALEA - NANEGALITO ");
-		distrito.put("17D02", "CALDERÓN - LLANO CHICO - GUAYLLABAMBA ");
-		distrito.put("17D03", "EL CONDADO - PONCEANO - COTOCOLLAO - COMITÉ DEL PUEBLO- CARCELÉN ");
-		distrito.put("17D04", "PUENGASI - CENTRO HISTÓRICO - SAN JUAN - LA LIBERTAD - ITCHIMBÍA ");
+		distrito.put("17D02", "CALDERON - LLANO CHICO - GUAYLLABAMBA ");
+		distrito.put("17D03", "EL CONDADO - PONCEANO - COTOCOLLAO - COMITO DEL PUEBLO- CARCELON ");
+		distrito.put("17D04", "PUENGASI - CENTRO HISTORICO - SAN JUAN - LA LIBERTAD - ITCHIMBOA ");
 		distrito.put("17D05",
-				"LA CONCEPCIÓN MARISCAL SUCRE - BELISARIO QUEVEDO - SAN ISIDRO DEL INCA - RUMIPAMBA - KENNEDY");
+				"LA CONCEPCION MARISCAL SUCRE - BELISARIO QUEVEDO - SAN ISIDRO DEL INCA - RUMIPAMBA - KENNEDY");
 		distrito.put("17D06",
 				"CHILIBULO - SAN BARTOLO - CHIMBACALLE - LA ARGELIA -SOLANDA - LA MENA - LA MAGDALENA - LA FERROVIARIA ");
-		distrito.put("17D07", "CHILLOGALLO GUAMANÍ- QUITUMBE - TURUBAMBA - LA ECUATORIANA ");
-		distrito.put("17D08", "CONOCOTO - PINTAG AMAGUAÑA ALANGASÍ - GUANGOPOLO - LA MERCED ");
-		distrito.put("17D09", "TUMBACO CUMBAYÁ - PIFO - YARUQUÍ - EL QUINCHE - PUEMBO CHECA - TABABELA ");
+		distrito.put("17D07", "CHILLOGALLO GUAMANO- QUITUMBE - TURUBAMBA - LA ECUATORIANA ");
+		distrito.put("17D08", "CONOCOTO - PINTAG AMAGUAOA ALANGASO - GUANGOPOLO - LA MERCED ");
+		distrito.put("17D09", "TUMBACO CUMBAYO - PIFO - YARUQUO - EL QUINCHE - PUEMBO CHECA - TABABELA ");
 
 	}
 }
