@@ -21,7 +21,9 @@ import com.capa.datos.TAula;
 import com.capa.datos.TCabecera;
 import com.capa.datos.TFichaMa;
 import com.capa.datos.TGrupo;
+import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFichaMA;
 import com.capa.util.Utilitarios;
 import com.capa.util.Validaciones;
@@ -1413,11 +1415,19 @@ public class MaTemplate extends JFrame {
 		LinkedList<TFichaMa> listaKE = new LinkedList<TFichaMa>();
 		TCabecera cabecera = Utilitarios.gettCabecera();
 
-		ServicioFichaMA servicioFichaMA = new ComponenteFichaMA();
+		ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
+		ServicioCabecera srvCabecera = new ComponenteCabecera();
+		
+		srvFichaMA.buscarAula("");
+		srvFichaMA.buscarGrupo("");
+		srvCabecera.buscarProyecto("");
 
-//		listaKE.add(new TFichaMa(servicioFichaMA.buscarAula(nombreAula), Utilitarios.gettCabecera(),
-//				servicioFichaMA.buscarGrupo("Kit eléctrico"), null, txtTECantidad00.getText(),
-//				txtTECantidad01.getText(), servicioFichaMA.buscarUpdateFicha(), txtTEObsRef0.getText(), FCantidadLimite,
-//				FCantidadIngresada, FObservacionReferencia));
+		// listaKE.add(new TFichaMa(servicioFichaMA.buscarAula(nombreAula),
+		// Utilitarios.gettCabecera(),
+		// servicioFichaMA.buscarGrupo("Kit eléctrico"), null,
+		// txtTECantidad00.getText(),
+		// txtTECantidad01.getText(), servicioFichaMA.buscarUpdateFicha(),
+		// txtTEObsRef0.getText(), FCantidadLimite,
+		// FCantidadIngresada, FObservacionReferencia));
 	}
 }

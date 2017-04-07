@@ -11,11 +11,8 @@ public class TFichaMa implements java.io.Serializable {
 	private String fmaEtiqueta;
 	private Integer fmaCantidadLimite;
 	private Integer fmaCantidadEjecutada;
+	private String fmaObsRef;
 	private Integer fmaActualizacionN;
-	private String FDetalleMa;
-	private Integer FCantidadLimite;
-	private Integer FCantidadIngresada;
-	private String FObservacionReferencia;
 
 	public TFichaMa() {
 	}
@@ -27,8 +24,7 @@ public class TFichaMa implements java.io.Serializable {
 	}
 
 	public TFichaMa(TAula TAula, TCabecera TCabecera, TGrupo TGrupo, String fmaEtiqueta, Integer fmaCantidadLimite,
-			Integer fmaCantidadEjecutada, Integer fmaActualizacionN, String FDetalleMa, Integer FCantidadLimite,
-			Integer FCantidadIngresada, String FObservacionReferencia) {
+			Integer fmaCantidadEjecutada, String FObservacionReferencia, Integer fmaActualizacionN) {
 		this.TAula = TAula;
 		this.TCabecera = TCabecera;
 		this.TGrupo = TGrupo;
@@ -36,14 +32,11 @@ public class TFichaMa implements java.io.Serializable {
 		this.fmaCantidadLimite = fmaCantidadLimite;
 		this.fmaCantidadEjecutada = fmaCantidadEjecutada;
 		this.fmaActualizacionN = fmaActualizacionN;
-		this.FDetalleMa = FDetalleMa;
-		this.FCantidadLimite = FCantidadLimite;
-		this.FCantidadIngresada = FCantidadIngresada;
-		this.FObservacionReferencia = FObservacionReferencia;
+		this.fmaObsRef = FObservacionReferencia;
 	}
 
 	public Integer getFmaSerial() {
-		return this.fmaSerial;
+		return fmaSerial;
 	}
 
 	public void setFmaSerial(Integer fmaSerial) {
@@ -51,31 +44,31 @@ public class TFichaMa implements java.io.Serializable {
 	}
 
 	public TAula getTAula() {
-		return this.TAula;
+		return TAula;
 	}
 
-	public void setTAula(TAula TAula) {
-		this.TAula = TAula;
+	public void setTAula(TAula tAula) {
+		TAula = tAula;
 	}
 
 	public TCabecera getTCabecera() {
-		return this.TCabecera;
+		return TCabecera;
 	}
 
-	public void setTCabecera(TCabecera TCabecera) {
-		this.TCabecera = TCabecera;
+	public void setTCabecera(TCabecera tCabecera) {
+		TCabecera = tCabecera;
 	}
 
 	public TGrupo getTGrupo() {
-		return this.TGrupo;
+		return TGrupo;
 	}
 
-	public void setTGrupo(TGrupo TGrupo) {
-		this.TGrupo = TGrupo;
+	public void setTGrupo(TGrupo tGrupo) {
+		TGrupo = tGrupo;
 	}
 
 	public String getFmaEtiqueta() {
-		return this.fmaEtiqueta;
+		return fmaEtiqueta;
 	}
 
 	public void setFmaEtiqueta(String fmaEtiqueta) {
@@ -83,7 +76,7 @@ public class TFichaMa implements java.io.Serializable {
 	}
 
 	public Integer getFmaCantidadLimite() {
-		return this.fmaCantidadLimite;
+		return fmaCantidadLimite;
 	}
 
 	public void setFmaCantidadLimite(Integer fmaCantidadLimite) {
@@ -91,51 +84,35 @@ public class TFichaMa implements java.io.Serializable {
 	}
 
 	public Integer getFmaCantidadEjecutada() {
-		return this.fmaCantidadEjecutada;
+		return fmaCantidadEjecutada;
 	}
 
 	public void setFmaCantidadEjecutada(Integer fmaCantidadEjecutada) {
 		this.fmaCantidadEjecutada = fmaCantidadEjecutada;
 	}
 
+	public String getFmaObsRef() {
+		return fmaObsRef;
+	}
+
+	public void setFmaObsRef(String fmaObsRef) {
+		this.fmaObsRef = fmaObsRef;
+	}
+
 	public Integer getFmaActualizacionN() {
-		return this.fmaActualizacionN;
+		return fmaActualizacionN;
 	}
 
 	public void setFmaActualizacionN(Integer fmaActualizacionN) {
 		this.fmaActualizacionN = fmaActualizacionN;
 	}
 
-	public String getFDetalleMa() {
-		return this.FDetalleMa;
-	}
-
-	public void setFDetalleMa(String FDetalleMa) {
-		this.FDetalleMa = FDetalleMa;
-	}
-
-	public Integer getFCantidadLimite() {
-		return this.FCantidadLimite;
-	}
-
-	public void setFCantidadLimite(Integer FCantidadLimite) {
-		this.FCantidadLimite = FCantidadLimite;
-	}
-
-	public Integer getFCantidadIngresada() {
-		return this.FCantidadIngresada;
-	}
-
-	public void setFCantidadIngresada(Integer FCantidadIngresada) {
-		this.FCantidadIngresada = FCantidadIngresada;
-	}
-
-	public String getFObservacionReferencia() {
-		return this.FObservacionReferencia;
-	}
-
-	public void setFObservacionReferencia(String FObservacionReferencia) {
-		this.FObservacionReferencia = FObservacionReferencia;
+	@Override
+	public String toString() {
+		return "TFichaMa [fmaSerial=" + fmaSerial + ", TAula=" + TAula + ", TCabecera=" + TCabecera + ", TGrupo="
+				+ TGrupo + ", fmaEtiqueta=" + fmaEtiqueta + ", fmaCantidadLimite=" + fmaCantidadLimite
+				+ ", fmaCantidadEjecutada=" + fmaCantidadEjecutada + ", fmaObsRef=" + fmaObsRef + ", fmaActualizacionN="
+				+ fmaActualizacionN + "]";
 	}
 
 }

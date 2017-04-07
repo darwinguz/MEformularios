@@ -23,9 +23,9 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.datos.TCabecera;
 import com.capa.datos.TLugarGeografico;
+import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteLugarGeo;
-import com.capa.negocios.ComponenteProyecto;
-import com.capa.negocios.ServicioProyecto;
+import com.capa.negocios.ServicioCabecera;
 import com.capa.util.Utilitarios;
 import com.toedter.calendar.JDateChooser;
 
@@ -301,7 +301,7 @@ public class AdatosReferenciales extends JFrame {
 					return;
 				}
 
-				ServicioProyecto proyecto = new ComponenteProyecto();
+				ServicioCabecera proyecto = new ComponenteCabecera();
 
 				String proy = txtProyecto.getText();
 				String amie = txtAmei.getText();

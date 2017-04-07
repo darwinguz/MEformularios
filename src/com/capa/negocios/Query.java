@@ -121,52 +121,6 @@ public class Query {
 		}
 	}
 
-	public static void insertarImagen(String insert, TInformacionObligatoria infor) {
-		FileInputStream fis1 = null;
-		FileInputStream fis2 = null;
-		PreparedStatement ps = null;
-
-		try {
-			mysql.getConexion().setAutoCommit(false);
-
-			// File file1 = new File(infor.get());
-			// File file2 = new File(infor.getCCroquis());
-			// fis1 = new FileInputStream(file1);
-			// fis2 = new FileInputStream(file2);
-			//
-			// ps = mysql.getConexion().prepareStatement(insert);
-			// ps.setString(1, infor.getTLugarGeografico().getLgCodigo());
-			// ps.setString(2, infor.getCNombreProyecto());
-			// ps.setString(3, infor.getCAmie());
-			// ps.setString(4, infor.getCZona());
-			// ps.setString(5,
-			// Utilitarios.getFechaString(infor.getCFechaEntrega()));
-			// ps.setString(6,
-			// Utilitarios.getFechaString(infor.getCFechaInicio()));
-			// ps.setString(7,
-			// Utilitarios.getFechaString(infor.getCFechaElaboracionInforme()));
-			// ps.setString(8, infor.getCircuito());
-			// ps.setString(9, infor.getSector());
-			// ps.setString(10, infor.getDistrito());
-			// ps.setBinaryStream(11, fis1, (long) file1.length());
-			// ps.setBinaryStream(12, fis2, (long) file2.length());
-			// ps.setString(13, infor.getTipoFicha());
-
-			ps.executeUpdate();
-			mysql.getConexion().commit();
-		} catch (Exception ex) {
-			Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
-		} finally {
-			try {
-				ps.close();
-				fis1.close();
-				fis2.close();
-			} catch (Exception ex) {
-				Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
-			}
-		}
-	}
-
 	public static MySql getMysql() {
 		return mysql;
 	}

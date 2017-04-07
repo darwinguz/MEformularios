@@ -16,7 +16,8 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import com.capa.datos.TCabecera;
-import com.capa.negocios.ComponenteProyecto;
+import com.capa.negocios.ComponenteCabecera;
+import com.capa.negocios.ServicioCabecera;
 import com.capa.util.Utilitarios;
 
 public class AlInicio extends JFrame {
@@ -59,7 +60,7 @@ public class AlInicio extends JFrame {
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 
-		ComponenteProyecto comProyecto = new ComponenteProyecto();
+		ServicioCabecera comProyecto = new ComponenteCabecera();
 
 		JPanel pnlBotones = new JPanel();
 		pnlBotones.setBounds(86, 71, 288, 309);
@@ -132,7 +133,7 @@ public class AlInicio extends JFrame {
 				int key = e.getKeyCode();
 				if (key == KeyEvent.VK_ENTER) {
 					try {
-						tCabecera = comProyecto.buscarPorNombre(textField.getText());
+						tCabecera = comProyecto.buscarProyecto(textField.getText());
 						Utilitarios.settCabecera(tCabecera);
 						System.out.println(tCabecera.getTLugarGeografico().getLgCodigo());
 						System.out.println(tCabecera.getCircuito());
