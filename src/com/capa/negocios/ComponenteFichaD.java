@@ -7,7 +7,7 @@ public class ComponenteFichaD implements ServicioFichaD {
 	@Override
 	public void crear(TFichaD fichaD) {
 		String sql = "INSERT INTO t_ficha_d (io_serial, f_descripcion)  VALUES ('"
-				+ fichaD.getTInformacionObligatoria().getIoSerial() + "','" + fichaD.getFDescripcion() + "')";
+				+ fichaD.gettInformacionObligatoria().getIoSerial() + "','" + fichaD.getfDescripcion() + "')";
 		try {
 			Query.insertar(sql);
 		} catch (Exception e) {
