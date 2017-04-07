@@ -22,17 +22,11 @@ import com.capa.util.Utilitarios;
 
 public class AlInicio extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2063817460198744409L;
 	private JPanel contentPane;
 	private JTextField textField;
 	private TCabecera tCabecera;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -46,9 +40,6 @@ public class AlInicio extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public AlInicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 480, 430);
@@ -120,7 +111,7 @@ public class AlInicio extends JFrame {
 		});
 		pnlBotones.add(btnReporteInsp);
 
-		JLabel lblBuscarProyecto = new JLabel("Buscar Proyecto");
+		JLabel lblBuscarProyecto = new JLabel("Reset");
 		lblBuscarProyecto.setBounds(86, 30, 102, 14);
 		contentPane.add(lblBuscarProyecto);
 
