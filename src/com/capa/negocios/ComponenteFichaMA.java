@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.capa.datos.TAula;
-import com.capa.datos.TLugarGeografico;
+import com.capa.datos.TGrupo;
 
 public class ComponenteFichaMA implements ServicioFichaMA {
 
@@ -26,6 +26,18 @@ public class ComponenteFichaMA implements ServicioFichaMA {
 			e.printStackTrace();
 		}
 		return aula;
+	}
+
+	@Override
+	public TGrupo buscarGrupo(String grupo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer buscarUpdateFicha() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

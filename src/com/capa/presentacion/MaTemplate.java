@@ -1415,8 +1415,9 @@ public class MaTemplate extends JFrame {
 
 		ServicioFichaMA servicioFichaMA = new ComponenteFichaMA();
 
-		listaKE.add(new TFichaMa(servicioFichaMA.buscarAula(nombreAula), Utilitarios.gettCabecera(), servicioFichaMA.buscarGrupo("Kit eléctrico"),
-				fmaEtiqueta, fmaCantidadLimite, fmaCantidadEjecutada, fmaActualizacionN, FDetalleMa, FCantidadLimite,
-				FCantidadIngresada, FObservacionReferencia));
+//		listaKE.add(new TFichaMa(servicioFichaMA.buscarAula(nombreAula), Utilitarios.gettCabecera(),
+//				servicioFichaMA.buscarGrupo("Kit eléctrico"), null, txtTECantidad00.getText(),
+//				txtTECantidad01.getText(), servicioFichaMA.buscarUpdateFicha(), txtTEObsRef0.getText(), FCantidadLimite,
+//				FCantidadIngresada, FObservacionReferencia));
 	}
 }

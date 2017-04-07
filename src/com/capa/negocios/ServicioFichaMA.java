@@ -8,4 +8,6 @@ public interface ServicioFichaMA {
 	public TAula buscarAula(String nombre);
 
 	public TGrupo buscarGrupo(String grupo);
+
+	public Integer buscarUpdateFicha();
 }
