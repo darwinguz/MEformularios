@@ -4,6 +4,9 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.LinkedList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,8 +17,13 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import com.capa.presentacion.InformacionObligatoriaV;
-import com.capa.presentacion.JPcabecera;
+import com.capa.datos.TAula;
+import com.capa.datos.TCabecera;
+import com.capa.datos.TFichaMa;
+import com.capa.datos.TGrupo;
+import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ServicioFichaMA;
+import com.capa.util.Utilitarios;
 import com.capa.util.Validaciones;
 
 public class MaTemplate extends JFrame {
@@ -131,6 +139,7 @@ public class MaTemplate extends JFrame {
 	protected JTextField txtTECantidad20;
 	protected JTextField txtTECantidad30;
 	protected JTextField txtEDCantidad00;
+	protected String nombreAula;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -150,6 +159,7 @@ public class MaTemplate extends JFrame {
 	 * Create the frame.
 	 */
 	public MaTemplate(String nombreAula) {
+		this.nombreAula = nombreAula;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		contentPane = new JPanel();
@@ -162,12 +172,20 @@ public class MaTemplate extends JFrame {
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
 
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cargarListas();
+			}
+		});
+
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1284, 560);
 		contentPane.add(tabbedPane);
 
 		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab(nombreAula, null, pnlPestaña1, null);
+		tabbedPane.addTab("MA-" + nombreAula, null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
 
 		JPanel pnlKitElectrico = new JPanel();
@@ -1388,5 +1406,17 @@ public class MaTemplate extends JFrame {
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(860, 312);
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
+	}
+
+	private void cargarListas() {
+
+		LinkedList<TFichaMa> listaKE = new LinkedList<TFichaMa>();
+		TCabecera cabecera = Utilitarios.gettCabecera();
+
+		ServicioFichaMA servicioFichaMA = new ComponenteFichaMA();
+
+		listaKE.add(new TFichaMa(servicioFichaMA.buscarAula(nombreAula), Utilitarios.gettCabecera(), servicioFichaMA.buscarGrupo("Kit eléctrico"),
+				fmaEtiqueta, fmaCantidadLimite, fmaCantidadEjecutada, fmaActualizacionN, FDetalleMa, FCantidadLimite,
+				FCantidadIngresada, FObservacionReferencia));
 	}
 }
