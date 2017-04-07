@@ -137,14 +137,14 @@ public class FichaD extends JFrame {
 				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion10.getText(), "");
 				listasD.add(fichaD);
 				System.out.println(listasD.get(4).getfDescripcion());
-//				if (Validaciones.validarInfo(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
-//						cargoDer)) {
-//					informacion = new TInformacionObligatoria(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer,
-//							responsableContrat, cargoDer, fecha, Utilitarios.gettCabecera());
-//					infoServicio.crear(informacion);
-//				} else {
-//					JOptionPane.showMessageDialog(null, "Datos obligatorios");
-//				}
+				if (Validaciones.validarInfo(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
+						cargoDer)) {
+					informacion = new TInformacionObligatoria(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer,
+							responsableContrat, cargoDer, fecha, Utilitarios.gettCabecera());
+					infoServicio.crear(informacion);
+				} else {
+					JOptionPane.showMessageDialog(null, "Datos obligatorios");
+				}
 			}
 		});
 
