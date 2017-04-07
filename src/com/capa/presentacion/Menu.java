@@ -219,12 +219,36 @@ public class Menu extends JFrame {
 		btnAula29.setBackground(Color.CYAN);
 		btnAula29.setBounds(1095, 475, 67, 72);
 		contentPane.add(btnAula29);
-
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel.setIcon(new ImageIcon(Menu.class.getResource("/com/capa/imagenes/panel_menu.PNG")));
-		lblNewLabel.setBounds(43, 11, 1164, 679);
-		contentPane.add(lblNewLabel);
+		
+		JButton btnAula30 = new JButton("<html><body>MA<br>aulas-30</body></html>");
+		btnAula30.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnAula30.setBackground(Color.CYAN);
+		btnAula30.setBounds(1095, 545, 67, 72);
+		contentPane.add(btnAula30);
+		
+		JButton btnAula24 = new JButton("<html><body>MA<br>aulas-24</body></html>");
+		btnAula24.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnAula24.setBackground(Color.CYAN);
+		btnAula24.setBounds(958, 402, 67, 74);
+		contentPane.add(btnAula24);
+				
+				JButton btnAula25 = new JButton("<html><body>MA<br>aulas-25</body></html>");
+				btnAula25.setFont(new Font("Tahoma", Font.BOLD, 11));
+				btnAula25.setBackground(Color.CYAN);
+				btnAula25.setBounds(958, 476, 67, 71);
+				contentPane.add(btnAula25);
+				
+				JButton btnAula26 = new JButton("<html><body>MA<br>aulas-26</body></html>");
+				btnAula26.setFont(new Font("Tahoma", Font.BOLD, 11));
+				btnAula26.setBackground(Color.CYAN);
+				btnAula26.setBounds(958, 546, 67, 71);
+				contentPane.add(btnAula26);
+				
+						JLabel lblNewLabel = new JLabel("");
+						lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
+						lblNewLabel.setIcon(new ImageIcon(Menu.class.getResource("/com/capa/imagenes/panel_menu.PNG")));
+						lblNewLabel.setBounds(43, 11, 1164, 679);
+						contentPane.add(lblNewLabel);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		// JLabel lblNewLabel = new JLabel("");
