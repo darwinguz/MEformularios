@@ -98,7 +98,7 @@ public class AlInicio extends JFrame {
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				// new Ma1().setVisible(true);
+				new Menu().setVisible(true);
 			}
 		});
 		pnlBotones.add(btnReporteAct);
