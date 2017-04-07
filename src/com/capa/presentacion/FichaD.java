@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.util.Date;
 
 import javax.swing.JButton;
@@ -147,17 +149,13 @@ public class FichaD extends JFrame {
 		lblDescripcion1.setBounds(10, 36, 200, 18);
 		panel_1.add(lblDescripcion1);
 
-		txtDesc1 = new JTextField();
-		txtDesc1.setBounds(222, 36, 228, 20);
-		panel_1.add(txtDesc1);
-		txtDesc1.setColumns(10);
-
 		JLabel lblReferencia = new JLabel("OBSERVACI\u00D3N/PROBLEM\u00C1TICA/REFERENCIA");
 		lblReferencia.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblReferencia.setBounds(227, 11, 233, 14);
 		panel_1.add(lblReferencia);
 
 		JButton btnInsertarFoto1 = new JButton("Insertar FOTO");
+		btnInsertarFoto1.setEnabled(false);
 		btnInsertarFoto1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pathFoto = Utilitarios.getPathImagen();
@@ -167,6 +165,16 @@ public class FichaD extends JFrame {
 		btnInsertarFoto1.setBounds(460, 34, 125, 23);
 		panel_1.add(btnInsertarFoto1);
 
+		txtDesc1 = new JTextField();
+		txtDesc1.setBounds(222, 36, 228, 20);
+		panel_1.add(txtDesc1);
+		txtDesc1.setColumns(10);
+		txtDesc1.addKeyListener(new KeyAdapter() {
+			public void keyPressed(final KeyEvent e) {
+				btnInsertarFoto1.setEnabled(true);
+			}
+		});
+
 		JLabel lblDescripcion2 = new JLabel("Descripci\u00F3n 2");
 		lblDescripcion2.setOpaque(true);
 		lblDescripcion2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -175,12 +183,8 @@ public class FichaD extends JFrame {
 		lblDescripcion2.setBounds(10, 67, 200, 18);
 		panel_1.add(lblDescripcion2);
 
-		txtDescripcion2 = new JTextField();
-		txtDescripcion2.setColumns(10);
-		txtDescripcion2.setBounds(222, 67, 228, 20);
-		panel_1.add(txtDescripcion2);
-
 		JButton btnInsertarFoto2 = new JButton("Insertar FOTO");
+		btnInsertarFoto2.setEnabled(false);
 		btnInsertarFoto2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pathFoto = Utilitarios.getPathImagen();
@@ -190,6 +194,16 @@ public class FichaD extends JFrame {
 		btnInsertarFoto2.setBounds(460, 65, 125, 23);
 		panel_1.add(btnInsertarFoto2);
 
+		txtDescripcion2 = new JTextField();
+		txtDescripcion2.setColumns(10);
+		txtDescripcion2.setBounds(222, 67, 228, 20);
+		panel_1.add(txtDescripcion2);
+		txtDescripcion2.addKeyListener(new KeyAdapter() {
+			public void keyPressed(final KeyEvent e) {
+				btnInsertarFoto2.setEnabled(true);
+			}
+		});
+
 		JLabel lblDescripcion3 = new JLabel("Descripci\u00F3n 3");
 		lblDescripcion3.setOpaque(true);
 		lblDescripcion3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -198,12 +212,8 @@ public class FichaD extends JFrame {
 		lblDescripcion3.setBounds(10, 98, 200, 18);
 		panel_1.add(lblDescripcion3);
 
-		txtDescripcion3 = new JTextField();
-		txtDescripcion3.setColumns(10);
-		txtDescripcion3.setBounds(222, 98, 228, 20);
-		panel_1.add(txtDescripcion3);
-
 		JButton btnInsertarFoto3 = new JButton("Insertar FOTO");
+		btnInsertarFoto3.setEnabled(false);
 		btnInsertarFoto3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pathFoto = Utilitarios.getPathImagen();
@@ -213,6 +223,16 @@ public class FichaD extends JFrame {
 		btnInsertarFoto3.setBounds(460, 96, 125, 23);
 		panel_1.add(btnInsertarFoto3);
 
+		txtDescripcion3 = new JTextField();
+		txtDescripcion3.setColumns(10);
+		txtDescripcion3.setBounds(222, 98, 228, 20);
+		panel_1.add(txtDescripcion3);
+		txtDescripcion3.addKeyListener(new KeyAdapter() {
+			public void keyPressed(final KeyEvent e) {
+				btnInsertarFoto3.setEnabled(true);
+			}
+		});
+
 		JLabel lblDescripcion4 = new JLabel("Descripci\u00F3n 4");
 		lblDescripcion4.setOpaque(true);
 		lblDescripcion4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -221,12 +241,8 @@ public class FichaD extends JFrame {
 		lblDescripcion4.setBounds(10, 129, 200, 18);
 		panel_1.add(lblDescripcion4);
 
-		txtDescripcion4 = new JTextField();
-		txtDescripcion4.setColumns(10);
-		txtDescripcion4.setBounds(222, 129, 228, 20);
-		panel_1.add(txtDescripcion4);
-
 		JButton btnInsertarFoto4 = new JButton("Insertar FOTO");
+		btnInsertarFoto4.setEnabled(false);
 		btnInsertarFoto4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pathFoto = Utilitarios.getPathImagen();
@@ -236,6 +252,16 @@ public class FichaD extends JFrame {
 		btnInsertarFoto4.setBounds(460, 127, 125, 23);
 		panel_1.add(btnInsertarFoto4);
 
+		txtDescripcion4 = new JTextField();
+		txtDescripcion4.setColumns(10);
+		txtDescripcion4.setBounds(222, 129, 228, 20);
+		panel_1.add(txtDescripcion4);
+		txtDescripcion4.addKeyListener(new KeyAdapter() {
+			public void keyPressed(final KeyEvent e) {
+				btnInsertarFoto4.setEnabled(true);
+			}
+		});
+
 		JLabel lblDescripcion5 = new JLabel("Descripci\u00F3n 5");
 		lblDescripcion5.setOpaque(true);
 		lblDescripcion5.setHorizontalAlignment(SwingConstants.CENTER);
@@ -244,12 +270,8 @@ public class FichaD extends JFrame {
 		lblDescripcion5.setBounds(10, 160, 200, 18);
 		panel_1.add(lblDescripcion5);
 
-		txtDescripcion5 = new JTextField();
-		txtDescripcion5.setColumns(10);
-		txtDescripcion5.setBounds(222, 160, 228, 20);
-		panel_1.add(txtDescripcion5);
-
 		JButton btnInsertarFoto5 = new JButton("Insertar FOTO");
+		btnInsertarFoto5.setEnabled(false);
 		btnInsertarFoto5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pathFoto = Utilitarios.getPathImagen();
@@ -259,6 +281,16 @@ public class FichaD extends JFrame {
 		btnInsertarFoto5.setBounds(460, 158, 125, 23);
 		panel_1.add(btnInsertarFoto5);
 
+		txtDescripcion5 = new JTextField();
+		txtDescripcion5.setColumns(10);
+		txtDescripcion5.setBounds(222, 160, 228, 20);
+		panel_1.add(txtDescripcion5);
+		txtDescripcion5.addKeyListener(new KeyAdapter() {
+			public void keyPressed(final KeyEvent e) {
+				btnInsertarFoto5.setEnabled(true);
+			}
+		});
+
 		JLabel lblDescripcion6 = new JLabel("Descripci\u00F3n 6");
 		lblDescripcion6.setOpaque(true);
 		lblDescripcion6.setHorizontalAlignment(SwingConstants.CENTER);
@@ -267,12 +299,8 @@ public class FichaD extends JFrame {
 		lblDescripcion6.setBounds(10, 191, 200, 18);
 		panel_1.add(lblDescripcion6);
 
-		txtDescripcion6 = new JTextField();
-		txtDescripcion6.setColumns(10);
-		txtDescripcion6.setBounds(222, 191, 228, 20);
-		panel_1.add(txtDescripcion6);
-
 		JButton btnInsertarFoto6 = new JButton("Insertar FOTO");
+		btnInsertarFoto6.setEnabled(false);
 		btnInsertarFoto6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pathFoto = Utilitarios.getPathImagen();
@@ -282,6 +310,16 @@ public class FichaD extends JFrame {
 		btnInsertarFoto6.setBounds(460, 189, 125, 23);
 		panel_1.add(btnInsertarFoto6);
 
+		txtDescripcion6 = new JTextField();
+		txtDescripcion6.setColumns(10);
+		txtDescripcion6.setBounds(222, 191, 228, 20);
+		panel_1.add(txtDescripcion6);
+		txtDescripcion6.addKeyListener(new KeyAdapter() {
+			public void keyPressed(final KeyEvent e) {
+				btnInsertarFoto6.setEnabled(true);
+			}
+		});
+
 		JLabel lblDescripcion7 = new JLabel("Descripci\u00F3n 7");
 		lblDescripcion7.setOpaque(true);
 		lblDescripcion7.setHorizontalAlignment(SwingConstants.CENTER);
@@ -290,12 +328,8 @@ public class FichaD extends JFrame {
 		lblDescripcion7.setBounds(10, 222, 200, 18);
 		panel_1.add(lblDescripcion7);
 
-		txtDescripcion7 = new JTextField();
-		txtDescripcion7.setColumns(10);
-		txtDescripcion7.setBounds(222, 222, 228, 20);
-		panel_1.add(txtDescripcion7);
-
 		JButton btnInsertarFoto7 = new JButton("Insertar FOTO");
+		btnInsertarFoto7.setEnabled(false);
 		btnInsertarFoto7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pathFoto = Utilitarios.getPathImagen();
@@ -305,6 +339,16 @@ public class FichaD extends JFrame {
 		btnInsertarFoto7.setBounds(460, 220, 125, 23);
 		panel_1.add(btnInsertarFoto7);
 
+		txtDescripcion7 = new JTextField();
+		txtDescripcion7.setColumns(10);
+		txtDescripcion7.setBounds(222, 222, 228, 20);
+		panel_1.add(txtDescripcion7);
+		txtDescripcion7.addKeyListener(new KeyAdapter() {
+			public void keyPressed(final KeyEvent e) {
+				btnInsertarFoto7.setEnabled(true);
+			}
+		});
+
 		JLabel lblDescripcion8 = new JLabel("Descripci\u00F3n 8");
 		lblDescripcion8.setOpaque(true);
 		lblDescripcion8.setHorizontalAlignment(SwingConstants.CENTER);
@@ -313,12 +357,8 @@ public class FichaD extends JFrame {
 		lblDescripcion8.setBounds(10, 253, 200, 18);
 		panel_1.add(lblDescripcion8);
 
-		txtDescripcion8 = new JTextField();
-		txtDescripcion8.setColumns(10);
-		txtDescripcion8.setBounds(222, 253, 228, 20);
-		panel_1.add(txtDescripcion8);
-
 		JButton btnInsertarFoto8 = new JButton("Insertar FOTO");
+		btnInsertarFoto8.setEnabled(false);
 		btnInsertarFoto8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pathFoto = Utilitarios.getPathImagen();
@@ -328,6 +368,16 @@ public class FichaD extends JFrame {
 		btnInsertarFoto8.setBounds(460, 251, 125, 23);
 		panel_1.add(btnInsertarFoto8);
 
+		txtDescripcion8 = new JTextField();
+		txtDescripcion8.setColumns(10);
+		txtDescripcion8.setBounds(222, 253, 228, 20);
+		panel_1.add(txtDescripcion8);
+		txtDescripcion8.addKeyListener(new KeyAdapter() {
+			public void keyPressed(final KeyEvent e) {
+				btnInsertarFoto8.setEnabled(true);
+			}
+		});
+
 		JLabel lblDescripcion9 = new JLabel("Descripci\u00F3n 9");
 		lblDescripcion9.setOpaque(true);
 		lblDescripcion9.setHorizontalAlignment(SwingConstants.CENTER);
@@ -336,12 +386,8 @@ public class FichaD extends JFrame {
 		lblDescripcion9.setBounds(10, 284, 200, 18);
 		panel_1.add(lblDescripcion9);
 
-		txtDescripcion9 = new JTextField();
-		txtDescripcion9.setColumns(10);
-		txtDescripcion9.setBounds(222, 284, 228, 20);
-		panel_1.add(txtDescripcion9);
-
 		JButton btnInsertarFoto9 = new JButton("Insertar FOTO");
+		btnInsertarFoto9.setEnabled(false);
 		btnInsertarFoto9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pathFoto = Utilitarios.getPathImagen();
@@ -351,6 +397,16 @@ public class FichaD extends JFrame {
 		btnInsertarFoto9.setBounds(460, 282, 125, 23);
 		panel_1.add(btnInsertarFoto9);
 
+		txtDescripcion9 = new JTextField();
+		txtDescripcion9.setColumns(10);
+		txtDescripcion9.setBounds(222, 284, 228, 20);
+		panel_1.add(txtDescripcion9);
+		txtDescripcion9.addKeyListener(new KeyAdapter() {
+			public void keyPressed(final KeyEvent e) {
+				btnInsertarFoto9.setEnabled(true);
+			}
+		});
+
 		JLabel lblDescripcion10 = new JLabel("Descripci\u00F3n 10");
 		lblDescripcion10.setOpaque(true);
 		lblDescripcion10.setHorizontalAlignment(SwingConstants.CENTER);
@@ -359,12 +415,8 @@ public class FichaD extends JFrame {
 		lblDescripcion10.setBounds(10, 315, 200, 18);
 		panel_1.add(lblDescripcion10);
 
-		txtDescripcion10 = new JTextField();
-		txtDescripcion10.setColumns(10);
-		txtDescripcion10.setBounds(222, 315, 228, 20);
-		panel_1.add(txtDescripcion10);
-
 		JButton btnInsertarFoto10 = new JButton("Insertar FOTO");
+		btnInsertarFoto10.setEnabled(false);
 		btnInsertarFoto10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				pathFoto = Utilitarios.getPathImagen();
@@ -373,6 +425,16 @@ public class FichaD extends JFrame {
 		btnInsertarFoto10.setFont(new Font("Arial", Font.BOLD, 12));
 		btnInsertarFoto10.setBounds(460, 313, 125, 23);
 		panel_1.add(btnInsertarFoto10);
+
+		txtDescripcion10 = new JTextField();
+		txtDescripcion10.setColumns(10);
+		txtDescripcion10.setBounds(222, 315, 228, 20);
+		panel_1.add(txtDescripcion10);
+		txtDescripcion10.addKeyListener(new KeyAdapter() {
+			public void keyPressed(final KeyEvent e) {
+				btnInsertarFoto10.setEnabled(true);
+			}
+		});
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setLayout(null);
@@ -386,7 +448,4 @@ public class FichaD extends JFrame {
 
 	}
 
-	public void cargarCanton() {
-
-	}
 }
