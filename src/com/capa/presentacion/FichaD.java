@@ -21,7 +21,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 import com.capa.presentacion.JPcabecera;
-import com.capa.util.Utilitarios;
+import static com.capa.util.Utilitarios.*;
+import static com.capa.util.Validaciones.*;
 import com.capa.util.Validaciones;
 import com.capa.datos.TCabecera;
 import com.capa.datos.TFichaD;
@@ -94,53 +95,31 @@ public class FichaD extends JFrame {
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
 
-		Utilitarios.llenarCabecera(cabecera);
+		llenarCabecera(cabecera);
 
 		InformacionObligatoriaV infor = new InformacionObligatoriaV(165, 280);
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				List<TFichaD> listasD = new ArrayList<TFichaD>();
-				TFichaD fichaD;
+
 				ServicioInfoObligatoria infoServicio = new ComponenteInfoObligatoria();
-				TInformacionObligatoria informacion;
-				String responsableMinEduc, cargoIzq, obsGenIz;
-				String responsableContrat, cargoDer, obsGenDer;
-				Date fecha;
-				String descripcion;
-				responsableMinEduc = infor.getTxtResponsableMineduc().getText();
-				cargoIzq = infor.getTxtCargoIzq().getText();
-				obsGenIz = infor.getTxtObsGenIzq().getText();
-				responsableContrat = infor.getTxtResponsableContratista().getText();
-				cargoDer = infor.getTxtCargoDer().getText();
-				obsGenDer = infor.getTxtObsGenDer().getText();
-				fecha = infor.getDateFechaIO().getDate();
-				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDesc1.getText(), "");
-				listasD.add(fichaD);
-				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion2.getText(), "");
-				listasD.add(fichaD);
-				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion3.getText(), "");
-				listasD.add(fichaD);
-				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion4.getText(), "");
-				listasD.add(fichaD);
-				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion5.getText(), "");
-				listasD.add(fichaD);
-				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion6.getText(), "");
-				listasD.add(fichaD);
-				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion7.getText(), "");
-				listasD.add(fichaD);
-				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion8.getText(), "");
-				listasD.add(fichaD);
-				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion9.getText(), "");
-				listasD.add(fichaD);
-				fichaD = new TFichaD(Utilitarios.gettCabecera(), txtDescripcion10.getText(), "");
-				listasD.add(fichaD);
-				System.out.println(listasD.get(4).getfDescripcion());
-				if (Validaciones.validarInfo(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
-						cargoDer)) {
-					informacion = new TInformacionObligatoria(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer,
-							responsableContrat, cargoDer, fecha, Utilitarios.gettCabecera());
+				// TInformacionObligatoria informacion;
+				// String responsableMinEduc, cargoIzq, obsGenIz;
+				// String responsableContrat, cargoDer, obsGenDer;
+				// Date fecha;
+				// responsableMinEduc =
+				// infor.getTxtResponsableMineduc().getText();
+				// cargoIzq = infor.getTxtCargoIzq().getText();
+				// obsGenIz = infor.getTxtObsGenIzq().getText();
+				// responsableContrat =
+				// infor.getTxtResponsableContratista().getText();
+				// cargoDer = infor.getTxtCargoDer().getText();
+				// obsGenDer = infor.getTxtObsGenDer().getText();
+				// fecha = infor.getDateFechaIO().getDate();
+
+				TInformacionObligatoria informacion = cargarInfoObligatoria(infor);
+				if (validarInfo(informacion)) {
 					infoServicio.crear(informacion);
 				} else {
 					JOptionPane.showMessageDialog(null, "Datos obligatorios");
@@ -152,7 +131,7 @@ public class FichaD extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				pathFotoInfor = Utilitarios.getPathImagen();
+				pathFotoInfor = getPathImagen();
 			}
 		});
 
@@ -183,7 +162,7 @@ public class FichaD extends JFrame {
 		btnInsertarFoto1.setEnabled(false);
 		btnInsertarFoto1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto = Utilitarios.getPathImagen();
+				pathFoto = getPathImagen();
 			}
 		});
 		btnInsertarFoto1.setFont(new Font("Arial", Font.BOLD, 12));
@@ -212,7 +191,7 @@ public class FichaD extends JFrame {
 		btnInsertarFoto2.setEnabled(false);
 		btnInsertarFoto2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto = Utilitarios.getPathImagen();
+				pathFoto = getPathImagen();
 			}
 		});
 		btnInsertarFoto2.setFont(new Font("Arial", Font.BOLD, 12));
@@ -241,7 +220,7 @@ public class FichaD extends JFrame {
 		btnInsertarFoto3.setEnabled(false);
 		btnInsertarFoto3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto = Utilitarios.getPathImagen();
+				pathFoto = getPathImagen();
 			}
 		});
 		btnInsertarFoto3.setFont(new Font("Arial", Font.BOLD, 12));
@@ -270,7 +249,7 @@ public class FichaD extends JFrame {
 		btnInsertarFoto4.setEnabled(false);
 		btnInsertarFoto4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto = Utilitarios.getPathImagen();
+				pathFoto = getPathImagen();
 			}
 		});
 		btnInsertarFoto4.setFont(new Font("Arial", Font.BOLD, 12));
@@ -299,7 +278,7 @@ public class FichaD extends JFrame {
 		btnInsertarFoto5.setEnabled(false);
 		btnInsertarFoto5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto = Utilitarios.getPathImagen();
+				pathFoto = getPathImagen();
 			}
 		});
 		btnInsertarFoto5.setFont(new Font("Arial", Font.BOLD, 12));
@@ -328,7 +307,7 @@ public class FichaD extends JFrame {
 		btnInsertarFoto6.setEnabled(false);
 		btnInsertarFoto6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto = Utilitarios.getPathImagen();
+				pathFoto = getPathImagen();
 			}
 		});
 		btnInsertarFoto6.setFont(new Font("Arial", Font.BOLD, 12));
@@ -357,7 +336,7 @@ public class FichaD extends JFrame {
 		btnInsertarFoto7.setEnabled(false);
 		btnInsertarFoto7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto = Utilitarios.getPathImagen();
+				pathFoto = getPathImagen();
 			}
 		});
 		btnInsertarFoto7.setFont(new Font("Arial", Font.BOLD, 12));
@@ -386,7 +365,7 @@ public class FichaD extends JFrame {
 		btnInsertarFoto8.setEnabled(false);
 		btnInsertarFoto8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto = Utilitarios.getPathImagen();
+				pathFoto = getPathImagen();
 			}
 		});
 		btnInsertarFoto8.setFont(new Font("Arial", Font.BOLD, 12));
@@ -415,7 +394,7 @@ public class FichaD extends JFrame {
 		btnInsertarFoto9.setEnabled(false);
 		btnInsertarFoto9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto = Utilitarios.getPathImagen();
+				pathFoto = getPathImagen();
 			}
 		});
 		btnInsertarFoto9.setFont(new Font("Arial", Font.BOLD, 12));
@@ -444,7 +423,7 @@ public class FichaD extends JFrame {
 		btnInsertarFoto10.setEnabled(false);
 		btnInsertarFoto10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto = Utilitarios.getPathImagen();
+				pathFoto = getPathImagen();
 			}
 		});
 		btnInsertarFoto10.setFont(new Font("Arial", Font.BOLD, 12));
@@ -471,6 +450,33 @@ public class FichaD extends JFrame {
 
 		panel_2.add(infor.getPnlInformacionObl());
 
+	}
+
+	public List<TFichaD> listaFichaD() {
+		List<TFichaD> listasD = new ArrayList<TFichaD>();
+		TFichaD fichaD;
+		fichaD = new TFichaD(gettCabecera(), txtDesc1.getText(), "");
+		listasD.add(fichaD);
+		fichaD = new TFichaD(gettCabecera(), txtDescripcion2.getText(), "");
+		listasD.add(fichaD);
+		fichaD = new TFichaD(gettCabecera(), txtDescripcion3.getText(), "");
+		listasD.add(fichaD);
+		fichaD = new TFichaD(gettCabecera(), txtDescripcion4.getText(), "");
+		listasD.add(fichaD);
+		fichaD = new TFichaD(gettCabecera(), txtDescripcion5.getText(), "");
+		listasD.add(fichaD);
+		fichaD = new TFichaD(gettCabecera(), txtDescripcion6.getText(), "");
+		listasD.add(fichaD);
+		fichaD = new TFichaD(gettCabecera(), txtDescripcion7.getText(), "");
+		listasD.add(fichaD);
+		fichaD = new TFichaD(gettCabecera(), txtDescripcion8.getText(), "");
+		listasD.add(fichaD);
+		fichaD = new TFichaD(gettCabecera(), txtDescripcion9.getText(), "");
+		listasD.add(fichaD);
+		fichaD = new TFichaD(gettCabecera(), txtDescripcion10.getText(), "");
+		listasD.add(fichaD);
+		System.out.println(listasD.get(4).getfDescripcion());
+		return listasD;
 	}
 
 }

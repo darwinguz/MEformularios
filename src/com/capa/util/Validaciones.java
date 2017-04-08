@@ -5,6 +5,8 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.JTextField;
 
+import com.capa.datos.TInformacionObligatoria;
+
 public class Validaciones {
 
 	public static void validarDigitos(JTextField textField) {
@@ -19,15 +21,12 @@ public class Validaciones {
 		});
 	}
 
-	public static boolean validarInfo(String... campos) {
+	public static boolean validarInfo(TInformacionObligatoria inf) {
 		boolean valida = true;
-		for (String texto : campos) {
-			if (!texto.equals("")) {
-				continue;
-			} else {
-				valida = false;
-				break;
-			}
+		if (inf.getIoCargoCont().equals("") && inf.getIoCargoMin().equals("") && inf.getIoObsGenCont().equals("")
+				&& inf.getIoObsGeneral().equals("") && inf.getIoResponsableCont().equals("")
+				&& inf.getIoResponsableMin().equals("")) {
+			valida = false;
 		}
 		return valida;
 	}

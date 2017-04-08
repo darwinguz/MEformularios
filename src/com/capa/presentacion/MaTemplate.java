@@ -21,12 +21,15 @@ import com.capa.datos.TAula;
 import com.capa.datos.TCabecera;
 import com.capa.datos.TFichaMa;
 import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
 import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteFichaMA;
 import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFichaMA;
 import com.capa.negocios.ServicioInfoObligatoria;
+import static com.capa.util.Utilitarios.*;
+
 import com.capa.util.Utilitarios;
 import com.capa.util.Validaciones;
 
@@ -185,21 +188,6 @@ public class MaTemplate extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		this.setTitle(nombreAula);
-
-		JPcabecera cabecera = new JPcabecera();
-		contentPane.add(cabecera.getCabecera());
-
-		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
-				ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-				// srvInfoObl.crear(inforObl);
-				srvFichaMA.insertarFormulario(cargarListas());
-
-			}
-		});
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1284, 560);
@@ -1495,8 +1483,26 @@ public class MaTemplate extends JFrame {
 		txtCECantidad121.setColumns(10);
 		panel.add(txtCECantidad121);
 
+		JPcabecera cabecera = new JPcabecera();
+		contentPane.add(cabecera.getCabecera());
+
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(860, 312);
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
+
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
+				ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+				srvFichaMA.insertarFormulario(cargarListas());
+				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
+				ServicioCabecera srvTempCabecera = new ComponenteCabecera();
+				infoObl.settCabe(srvTempCabecera.buscarProyecto(gettCabecera().getCNombreProyecto()));
+				srvInfoObl.crear(infoObl);
+			}
+		});
+
 	}
 
 	private LinkedList<LinkedList<TFichaMa>> cargarListas() {
@@ -1505,7 +1511,10 @@ public class MaTemplate extends JFrame {
 		ServicioCabecera srvCabecera = new ComponenteCabecera();
 
 		LinkedList<TFichaMa> listaKE = new LinkedList<TFichaMa>();
-		TCabecera cabecera = srvCabecera.buscarProyecto(Utilitarios.gettCabecera().getCNombreProyecto());
+		settCabecera(new TCabecera(5, "proyecto test"));
+		TCabecera cabecera = srvCabecera.buscarProyecto(gettCabecera().getCNombreProyecto());
+
+		nombreAula = "Aula 1";
 		TAula aula = srvFichaMA.buscarAula(nombreAula);
 		TGrupo grupoTmp = srvFichaMA.buscarGrupo("Kit eléctrico");
 		Integer updateFicha = srvFichaMA.buscarUpdateFicha();

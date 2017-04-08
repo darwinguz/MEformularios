@@ -27,6 +27,12 @@ public class TCabecera implements java.io.Serializable {
 		this.TLugarGeografico = TLugarGeografico;
 	}
 
+	public TCabecera(Integer cSerial, String cNombreProyecto) {
+		super();
+		CSerial = cSerial;
+		CNombreProyecto = cNombreProyecto;
+	}
+
 	public TCabecera(String proyecto, String amie, String zona, TLugarGeografico parroquia, String distrito,
 			String circuito, String sector, Date fechaEntrega, Date fechaInicio, Date fechaElabInforme,
 			String fotoGeneral, String fotoCroquis, String tipoFicha) {

@@ -1,8 +1,6 @@
 package com.capa.util;
 
 import java.awt.Image;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,13 +10,14 @@ import java.util.Locale;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.capa.datos.TCabecera;
+import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TLugarGeografico;
 import com.capa.negocios.ComponenteLugarGeo;
 import com.capa.negocios.ServicioLugarGeo;
+import com.capa.presentacion.InformacionObligatoriaV;
 import com.capa.presentacion.JPcabecera;
 
 public class Utilitarios {
@@ -97,6 +96,23 @@ public class Utilitarios {
 		jCabecera.getTxtFechaInicioTrabajo().setText("" + getFechaString(Utilitarios.gettCabecera().getCFechaInicio()));
 		jCabecera.getTxtZona().setText(Utilitarios.gettCabecera().getCZona());
 		jCabecera.getTxtSector().setText(Utilitarios.gettCabecera().getSector());
+	}
+
+	public static TInformacionObligatoria cargarInfoObligatoria(InformacionObligatoriaV infor) {
+		TInformacionObligatoria tInfor;
+		String responsableMinEduc, cargoIzq, obsGenIz;
+		String responsableContrat, cargoDer, obsGenDer;
+		Date fecha;
+		responsableMinEduc = infor.getTxtResponsableMineduc().getText();
+		cargoIzq = infor.getTxtCargoIzq().getText();
+		obsGenIz = infor.getTxtObsGenIzq().getText();
+		responsableContrat = infor.getTxtResponsableContratista().getText();
+		cargoDer = infor.getTxtCargoDer().getText();
+		obsGenDer = infor.getTxtObsGenDer().getText();
+		fecha = infor.getDateFechaIO().getDate();
+		tInfor = new TInformacionObligatoria(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
+				cargoDer, fecha, tCabecera);
+		return tInfor;
 	}
 
 }
