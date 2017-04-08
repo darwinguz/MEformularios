@@ -17,7 +17,7 @@ import javax.swing.border.TitledBorder;
 import com.capa.presentacion.InformacionObligatoriaV;
 import com.capa.presentacion.JPcabecera;
 
-public class MMTemplate extends JFrame {
+public class MmTemplate extends JFrame {
 
 	private static final long serialVersionUID = -3891089127852241756L;
 	private JPanel contentPane;
@@ -201,7 +201,7 @@ public class MMTemplate extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MMTemplate frame = new MMTemplate("Template");
+					MmTemplate frame = new MmTemplate("Template");
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -211,7 +211,7 @@ public class MMTemplate extends JFrame {
 		});
 	}
 
-	public MMTemplate(String laboratorio) {
+	public MmTemplate(String laboratorio) {
 		setTitle("MM-" + laboratorio);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1311, 706);
