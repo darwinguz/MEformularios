@@ -13,7 +13,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-public class PG1 extends JFrame {
+public class PGTemplate extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtCantidadHumo1;
@@ -321,7 +321,7 @@ public class PG1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					PG1 frame = new PG1();
+					PGTemplate frame = new PGTemplate();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -333,7 +333,7 @@ public class PG1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public PG1() {
+	public PGTemplate() {
 		setTitle("PG_1");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
@@ -355,7 +355,7 @@ public class PG1 extends JFrame {
 		String textoLabel31 = "<html><body>Kit de Accesorios de Conexi\u00F3n Agua<br>Potable (Inodoros)(1 te reducciones 1-1/2,<br>1 neplos,1 uniones de 1/2,1 codos de<br>"
 				+ "90\u00B0,1 mangueras de abasto,1 llave de<br>paso , 1 rollo tefl\u00F3n, 1/2 tubos de pasta<br>selladora)</body></html>";
 
-		String textoLabel18 = "<html><body>Potable (Lavabos)(1  te 1/2\"  ,  1 neplos,1<br>unión de 1/2,1 codo de 90\u00B0,1 manguera de<br>abasto,1 llave de paso, teflón, pasta<br>"
+		String textoLabel18 = "<html><body>Potable (Lavabos)(1  te 1/2\"  ,  1 neplos,1<br>uniï¿½n de 1/2,1 codo de 90\u00B0,1 manguera de<br>abasto,1 llave de paso, teflï¿½n, pasta<br>"
 				+ "selladora)</body></html>";
 
 		JPanel panel1 = new JPanel();
@@ -399,6 +399,7 @@ public class PG1 extends JFrame {
 		panel1.add(label_5);
 
 		txtCantidadHumo1 = new JTextField();
+		txtCantidadHumo1.setEditable(false);
 		txtCantidadHumo1.setColumns(10);
 		txtCantidadHumo1.setBounds(203, 131, 35, 20);
 		panel1.add(txtCantidadHumo1);
@@ -414,11 +415,13 @@ public class PG1 extends JFrame {
 		panel1.add(txtCantidadKit2);
 
 		txtCantidadKit1 = new JTextField();
+		txtCantidadKit1.setEditable(false);
 		txtCantidadKit1.setColumns(10);
 		txtCantidadKit1.setBounds(203, 109, 35, 20);
 		panel1.add(txtCantidadKit1);
 
 		txtCantidadInter1 = new JTextField();
+		txtCantidadInter1.setEditable(false);
 		txtCantidadInter1.setColumns(10);
 		txtCantidadInter1.setBounds(203, 87, 35, 20);
 		panel1.add(txtCantidadInter1);
@@ -434,11 +437,13 @@ public class PG1 extends JFrame {
 		panel1.add(txtCantidadToma2);
 
 		txtCantidadToma1 = new JTextField();
+		txtCantidadToma1.setEditable(false);
 		txtCantidadToma1.setColumns(10);
 		txtCantidadToma1.setBounds(203, 65, 35, 20);
 		panel1.add(txtCantidadToma1);
 
 		txtCantidadLumi1 = new JTextField();
+		txtCantidadLumi1.setEditable(false);
 		txtCantidadLumi1.setColumns(10);
 		txtCantidadLumi1.setBounds(203, 43, 35, 20);
 		panel1.add(txtCantidadLumi1);
@@ -524,6 +529,7 @@ public class PG1 extends JFrame {
 		panel1.add(label_13);
 
 		txtCantidadCone1 = new JTextField();
+		txtCantidadCone1.setEditable(false);
 		txtCantidadCone1.setColumns(10);
 		txtCantidadCone1.setBounds(203, 322, 35, 20);
 		panel1.add(txtCantidadCone1);
@@ -549,11 +555,13 @@ public class PG1 extends JFrame {
 		panel1.add(txtCantidadPVC2);
 
 		txtCantidadPVC1 = new JTextField();
+		txtCantidadPVC1.setEditable(false);
 		txtCantidadPVC1.setColumns(10);
 		txtCantidadPVC1.setBounds(203, 286, 35, 20);
 		panel1.add(txtCantidadPVC1);
 
 		txtCantidadTub1 = new JTextField();
+		txtCantidadTub1.setEditable(false);
 		txtCantidadTub1.setColumns(10);
 		txtCantidadTub1.setBounds(203, 264, 35, 20);
 		panel1.add(txtCantidadTub1);
@@ -569,11 +577,13 @@ public class PG1 extends JFrame {
 		panel1.add(txtCantidadAcce2);
 
 		txtCantidadAcce1 = new JTextField();
+		txtCantidadAcce1.setEditable(false);
 		txtCantidadAcce1.setColumns(10);
 		txtCantidadAcce1.setBounds(203, 233, 35, 20);
 		panel1.add(txtCantidadAcce1);
 
 		txtCantidadCanal1 = new JTextField();
+		txtCantidadCanal1.setEditable(false);
 		txtCantidadCanal1.setColumns(10);
 		txtCantidadCanal1.setBounds(203, 190, 35, 20);
 		panel1.add(txtCantidadCanal1);
@@ -629,11 +639,13 @@ public class PG1 extends JFrame {
 		panel1.add(lblPanelesEpsPared_1);
 
 		textField = new JTextField();
+		textField.setEditable(false);
 		textField.setColumns(10);
 		textField.setBounds(624, 62, 35, 20);
 		panel1.add(textField);
 
 		textField_1 = new JTextField();
+		textField_1.setEditable(false);
 		textField_1.setColumns(10);
 		textField_1.setBounds(624, 40, 35, 20);
 		panel1.add(textField_1);
@@ -677,6 +689,7 @@ public class PG1 extends JFrame {
 		panel1.add(lblPanelesEpsPared_2);
 
 		textField_6 = new JTextField();
+		textField_6.setEditable(false);
 		textField_6.setColumns(10);
 		textField_6.setBounds(624, 84, 35, 20);
 		panel1.add(textField_6);
@@ -716,16 +729,19 @@ public class PG1 extends JFrame {
 		panel1.add(lblPanelAlturaVariable);
 
 		textField_9 = new JTextField();
+		textField_9.setEditable(false);
 		textField_9.setColumns(10);
 		textField_9.setBounds(624, 194, 35, 20);
 		panel1.add(textField_9);
 
 		textField_10 = new JTextField();
+		textField_10.setEditable(false);
 		textField_10.setColumns(10);
 		textField_10.setBounds(624, 172, 35, 20);
 		panel1.add(textField_10);
 
 		textField_11 = new JTextField();
+		textField_11.setEditable(false);
 		textField_11.setColumns(10);
 		textField_11.setBounds(624, 150, 35, 20);
 		panel1.add(textField_11);
@@ -821,6 +837,7 @@ public class PG1 extends JFrame {
 		panel1.add(lblPanelesEpsPared_4);
 
 		textField_18 = new JTextField();
+		textField_18.setEditable(false);
 		textField_18.setColumns(10);
 		textField_18.setBounds(624, 473, 35, 20);
 		panel1.add(textField_18);
@@ -836,11 +853,13 @@ public class PG1 extends JFrame {
 		panel1.add(textField_20);
 
 		textField_21 = new JTextField();
+		textField_21.setEditable(false);
 		textField_21.setColumns(10);
 		textField_21.setBounds(624, 451, 35, 20);
 		panel1.add(textField_21);
 
 		textField_22 = new JTextField();
+		textField_22.setEditable(false);
 		textField_22.setColumns(10);
 		textField_22.setBounds(624, 429, 35, 20);
 		panel1.add(textField_22);
@@ -856,21 +875,25 @@ public class PG1 extends JFrame {
 		panel1.add(textField_24);
 
 		textField_25 = new JTextField();
+		textField_25.setEditable(false);
 		textField_25.setColumns(10);
 		textField_25.setBounds(624, 407, 35, 20);
 		panel1.add(textField_25);
 
 		textField_26 = new JTextField();
+		textField_26.setEditable(false);
 		textField_26.setColumns(10);
 		textField_26.setBounds(624, 385, 35, 20);
 		panel1.add(textField_26);
 
 		textField_27 = new JTextField();
+		textField_27.setEditable(false);
 		textField_27.setColumns(10);
 		textField_27.setBounds(624, 363, 35, 20);
 		panel1.add(textField_27);
 
 		textField_28 = new JTextField();
+		textField_28.setEditable(false);
 		textField_28.setColumns(10);
 		textField_28.setBounds(624, 341, 35, 20);
 		panel1.add(textField_28);
@@ -956,11 +979,13 @@ public class PG1 extends JFrame {
 		panel1.add(lblPanelEpsPared_1);
 
 		textField_39 = new JTextField();
+		textField_39.setEditable(false);
 		textField_39.setColumns(10);
 		textField_39.setBounds(624, 283, 35, 20);
 		panel1.add(textField_39);
 
 		textField_40 = new JTextField();
+		textField_40.setEditable(false);
 		textField_40.setColumns(10);
 		textField_40.setBounds(624, 261, 35, 20);
 		panel1.add(textField_40);
@@ -1034,26 +1059,31 @@ public class PG1 extends JFrame {
 		panel1.add(label_26);
 
 		txtCantHumo1 = new JTextField();
+		txtCantHumo1.setEditable(false);
 		txtCantHumo1.setColumns(10);
 		txtCantHumo1.setBounds(1062, 131, 35, 20);
 		panel1.add(txtCantHumo1);
 
 		txtCantKit1 = new JTextField();
+		txtCantKit1.setEditable(false);
 		txtCantKit1.setColumns(10);
 		txtCantKit1.setBounds(1062, 109, 35, 20);
 		panel1.add(txtCantKit1);
 
 		txtCantInt1 = new JTextField();
+		txtCantInt1.setEditable(false);
 		txtCantInt1.setColumns(10);
 		txtCantInt1.setBounds(1062, 87, 35, 20);
 		panel1.add(txtCantInt1);
 
 		txtCantToma1 = new JTextField();
+		txtCantToma1.setEditable(false);
 		txtCantToma1.setColumns(10);
 		txtCantToma1.setBounds(1062, 65, 35, 20);
 		panel1.add(txtCantToma1);
 
 		txtCantLumi1 = new JTextField();
+		txtCantLumi1.setEditable(false);
 		txtCantLumi1.setColumns(10);
 		txtCantLumi1.setBounds(1062, 43, 35, 20);
 		panel1.add(txtCantLumi1);
@@ -1139,11 +1169,13 @@ public class PG1 extends JFrame {
 		panel1.add(lblLava);
 
 		txtCantLava1 = new JTextField();
+		txtCantLava1.setEditable(false);
 		txtCantLava1.setColumns(10);
 		txtCantLava1.setBounds(1062, 200, 35, 20);
 		panel1.add(txtCantLava1);
 
 		txtCantInodoros1 = new JTextField();
+		txtCantInodoros1.setEditable(false);
 		txtCantInodoros1.setColumns(10);
 		txtCantInodoros1.setBounds(1062, 178, 35, 20);
 		panel1.add(txtCantInodoros1);
@@ -1199,6 +1231,7 @@ public class PG1 extends JFrame {
 		panel1.add(label_31);
 
 		txtCantidadAcceAP1 = new JTextField();
+		txtCantidadAcceAP1.setEditable(false);
 		txtCantidadAcceAP1.setColumns(10);
 		txtCantidadAcceAP1.setBounds(1061, 291, 35, 20);
 		panel1.add(txtCantidadAcceAP1);
@@ -1226,6 +1259,7 @@ public class PG1 extends JFrame {
 		panel1.add(label_18);
 
 		txtCantidadPotable1 = new JTextField();
+		txtCantidadPotable1.setEditable(false);
 		txtCantidadPotable1.setColumns(10);
 		txtCantidadPotable1.setBounds(1062, 363, 35, 20);
 		panel1.add(txtCantidadPotable1);
@@ -1247,6 +1281,7 @@ public class PG1 extends JFrame {
 		panel1.add(lblTuberaDePvc);
 
 		txtCantPVCAP1 = new JTextField();
+		txtCantPVCAP1.setEditable(false);
 		txtCantPVCAP1.setColumns(10);
 		txtCantPVCAP1.setBounds(1062, 413, 35, 20);
 		panel1.add(txtCantPVCAP1);
@@ -1268,6 +1303,7 @@ public class PG1 extends JFrame {
 		panel1.add(lblTuberaDePvc_1);
 
 		txtCantTubAP1 = new JTextField();
+		txtCantTubAP1.setEditable(false);
 		txtCantTubAP1.setColumns(10);
 		txtCantTubAP1.setBounds(1062, 435, 35, 20);
 		panel1.add(txtCantTubAP1);
@@ -1290,6 +1326,7 @@ public class PG1 extends JFrame {
 		panel1.add(lblkitParaConexin);
 
 		txtCantConeTub1 = new JTextField();
+		txtCantConeTub1.setEditable(false);
 		txtCantConeTub1.setColumns(10);
 		txtCantConeTub1.setBounds(1062, 471, 35, 20);
 		panel1.add(txtCantConeTub1);
