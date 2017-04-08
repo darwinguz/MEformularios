@@ -3710,4 +3710,764 @@ public class MdTemplate extends JFrame {
 		this.txtAPCantidad31 = txtAPCantidad31;
 	}
 
+	public JTextField getTxtKAObs3() {
+		return txtKAObs3;
+	}
+
+	public void setTxtKAObs3(JTextField txtKAObs3) {
+		this.txtKAObs3 = txtKAObs3;
+	}
+
+	public JTextField getTxtKAObs4() {
+		return txtKAObs4;
+	}
+
+	public void setTxtKAObs4(JTextField txtKAObs4) {
+		this.txtKAObs4 = txtKAObs4;
+	}
+
+	public JTextField getTxtKAObs5() {
+		return txtKAObs5;
+	}
+
+	public void setTxtKAObs5(JTextField txtKAObs5) {
+		this.txtKAObs5 = txtKAObs5;
+	}
+
+	public JTextField getTxtKAObs2() {
+		return txtKAObs2;
+	}
+
+	public void setTxtKAObs2(JTextField txtKAObs2) {
+		this.txtKAObs2 = txtKAObs2;
+	}
+
+	public JTextField getTxtKEObs0() {
+		return txtKEObs0;
+	}
+
+	public void setTxtKEObs0(JTextField txtKEObs0) {
+		this.txtKEObs0 = txtKEObs0;
+	}
+
+	public JTextField getTxtKEObs1() {
+		return txtKEObs1;
+	}
+
+	public void setTxtKEObs1(JTextField txtKEObs1) {
+		this.txtKEObs1 = txtKEObs1;
+	}
+
+	public JTextField getTxtKEObs2() {
+		return txtKEObs2;
+	}
+
+	public void setTxtKEObs2(JTextField txtKEObs2) {
+		this.txtKEObs2 = txtKEObs2;
+	}
+
+	public JTextField getTxtKEObs3() {
+		return txtKEObs3;
+	}
+
+	public void setTxtKEObs3(JTextField txtKEObs3) {
+		this.txtKEObs3 = txtKEObs3;
+	}
+
+	public JTextField getTxtKEObs4() {
+		return txtKEObs4;
+	}
+
+	public void setTxtKEObs4(JTextField txtKEObs4) {
+		this.txtKEObs4 = txtKEObs4;
+	}
+
+	public JTextField getTxtPIObs0() {
+		return txtPIObs0;
+	}
+
+	public void setTxtPIObs0(JTextField txtPIObs0) {
+		this.txtPIObs0 = txtPIObs0;
+	}
+
+	public JTextField getTxtPIObs1() {
+		return txtPIObs1;
+	}
+
+	public void setTxtPIObs1(JTextField txtPIObs1) {
+		this.txtPIObs1 = txtPIObs1;
+	}
+
+	public JTextField getTxtPIObs2() {
+		return txtPIObs2;
+	}
+
+	public void setTxtPIObs2(JTextField txtPIObs2) {
+		this.txtPIObs2 = txtPIObs2;
+	}
+
+	public JTextField getTxtFPObs0() {
+		return txtFPObs0;
+	}
+
+	public void setTxtFPObs0(JTextField txtFPObs0) {
+		this.txtFPObs0 = txtFPObs0;
+	}
+
+	public JTextField getTxtFPObs1() {
+		return txtFPObs1;
+	}
+
+	public void setTxtFPObs1(JTextField txtFPObs1) {
+		this.txtFPObs1 = txtFPObs1;
+	}
+
+	public JTextField getTxtFPObs2() {
+		return txtFPObs2;
+	}
+
+	public void setTxtFPObs2(JTextField txtFPObs2) {
+		this.txtFPObs2 = txtFPObs2;
+	}
+
+	public JTextField getTxtFPObs3() {
+		return txtFPObs3;
+	}
+
+	public void setTxtFPObs3(JTextField txtFPObs3) {
+		this.txtFPObs3 = txtFPObs3;
+	}
+
+	public JTextField getTxtFPObs4() {
+		return txtFPObs4;
+	}
+
+	public void setTxtFPObs4(JTextField txtFPObs4) {
+		this.txtFPObs4 = txtFPObs4;
+	}
+
+	public JTextField getTxtCEObs0() {
+		return txtCEObs0;
+	}
+
+	public void setTxtCEObs0(JTextField txtCEObs0) {
+		this.txtCEObs0 = txtCEObs0;
+	}
+
+	public JTextField getTxtCEObs1() {
+		return txtCEObs1;
+	}
+
+	public void setTxtCEObs1(JTextField txtCEObs1) {
+		this.txtCEObs1 = txtCEObs1;
+	}
+
+	public JTextField getTxtCEObs2() {
+		return txtCEObs2;
+	}
+
+	public void setTxtCEObs2(JTextField txtCEObs2) {
+		this.txtCEObs2 = txtCEObs2;
+	}
+
+	public JTextField getTxtCEObs3() {
+		return txtCEObs3;
+	}
+
+	public void setTxtCEObs3(JTextField txtCEObs3) {
+		this.txtCEObs3 = txtCEObs3;
+	}
+
+	public JTextField getTxtCEObs4() {
+		return txtCEObs4;
+	}
+
+	public void setTxtCEObs4(JTextField txtCEObs4) {
+		this.txtCEObs4 = txtCEObs4;
+	}
+
+	public JTextField getTxtCEObs5() {
+		return txtCEObs5;
+	}
+
+	public void setTxtCEObs5(JTextField txtCEObs5) {
+		this.txtCEObs5 = txtCEObs5;
+	}
+
+	public JTextField getTxtCEObs6() {
+		return txtCEObs6;
+	}
+
+	public void setTxtCEObs6(JTextField txtCEObs6) {
+		this.txtCEObs6 = txtCEObs6;
+	}
+
+	public JTextField getTxtCEObs7() {
+		return txtCEObs7;
+	}
+
+	public void setTxtCEObs7(JTextField txtCEObs7) {
+		this.txtCEObs7 = txtCEObs7;
+	}
+
+	public JTextField getTxtCEObs8() {
+		return txtCEObs8;
+	}
+
+	public void setTxtCEObs8(JTextField txtCEObs8) {
+		this.txtCEObs8 = txtCEObs8;
+	}
+
+	public JTextField getTxtCEObs9() {
+		return txtCEObs9;
+	}
+
+	public void setTxtCEObs9(JTextField txtCEObs9) {
+		this.txtCEObs9 = txtCEObs9;
+	}
+
+	public JTextField getTxtCEObs10() {
+		return txtCEObs10;
+	}
+
+	public void setTxtCEObs10(JTextField txtCEObs10) {
+		this.txtCEObs10 = txtCEObs10;
+	}
+
+	public JTextField getTxtCEObs11() {
+		return txtCEObs11;
+	}
+
+	public void setTxtCEObs11(JTextField txtCEObs11) {
+		this.txtCEObs11 = txtCEObs11;
+	}
+
+	public JTextField getTxtKEObs5() {
+		return txtKEObs5;
+	}
+
+	public void setTxtKEObs5(JTextField txtKEObs5) {
+		this.txtKEObs5 = txtKEObs5;
+	}
+
+	public JTextField getTxtKAObs0() {
+		return txtKAObs0;
+	}
+
+	public void setTxtKAObs0(JTextField txtKAObs0) {
+		this.txtKAObs0 = txtKAObs0;
+	}
+
+	public JTextField getTxtKAObs1() {
+		return txtKAObs1;
+	}
+
+	public void setTxtKAObs1(JTextField txtKAObs1) {
+		this.txtKAObs1 = txtKAObs1;
+	}
+
+	public JTextField getTxtKHObs0() {
+		return txtKHObs0;
+	}
+
+	public void setTxtKHObs0(JTextField txtKHObs0) {
+		this.txtKHObs0 = txtKHObs0;
+	}
+
+	public JTextField getTxtKHObs1() {
+		return txtKHObs1;
+	}
+
+	public void setTxtKHObs1(JTextField txtKHObs1) {
+		this.txtKHObs1 = txtKHObs1;
+	}
+
+	public JTextField getTxtKHObs2() {
+		return txtKHObs2;
+	}
+
+	public void setTxtKHObs2(JTextField txtKHObs2) {
+		this.txtKHObs2 = txtKHObs2;
+	}
+
+	public JTextField getTxtFLObs0() {
+		return txtFLObs0;
+	}
+
+	public void setTxtFLObs0(JTextField txtFLObs0) {
+		this.txtFLObs0 = txtFLObs0;
+	}
+
+	public JTextField getTxtAPObs0() {
+		return txtAPObs0;
+	}
+
+	public void setTxtAPObs0(JTextField txtAPObs0) {
+		this.txtAPObs0 = txtAPObs0;
+	}
+
+	public JTextField getTxtAPObs1() {
+		return txtAPObs1;
+	}
+
+	public void setTxtAPObs1(JTextField txtAPObs1) {
+		this.txtAPObs1 = txtAPObs1;
+	}
+
+	public JTextField getTxtAPObs2() {
+		return txtAPObs2;
+	}
+
+	public void setTxtAPObs2(JTextField txtAPObs2) {
+		this.txtAPObs2 = txtAPObs2;
+	}
+
+	public JTextField getTxtAPObs3() {
+		return txtAPObs3;
+	}
+
+	public void setTxtAPObs3(JTextField txtAPObs3) {
+		this.txtAPObs3 = txtAPObs3;
+	}
+
+	public JTextField getTxtAPObs4() {
+		return txtAPObs4;
+	}
+
+	public void setTxtAPObs4(JTextField txtAPObs4) {
+		this.txtAPObs4 = txtAPObs4;
+	}
+
+	public JTextField getTxtAPObs5() {
+		return txtAPObs5;
+	}
+
+	public void setTxtAPObs5(JTextField txtAPObs5) {
+		this.txtAPObs5 = txtAPObs5;
+	}
+
+	public JTextField getTxtAPObs6() {
+		return txtAPObs6;
+	}
+
+	public void setTxtAPObs6(JTextField txtAPObs6) {
+		this.txtAPObs6 = txtAPObs6;
+	}
+
+	public JTextField getTxtAPObs7() {
+		return txtAPObs7;
+	}
+
+	public void setTxtAPObs7(JTextField txtAPObs7) {
+		this.txtAPObs7 = txtAPObs7;
+	}
+
+	public JTextField getTxtASObs0() {
+		return txtASObs0;
+	}
+
+	public void setTxtASObs0(JTextField txtASObs0) {
+		this.txtASObs0 = txtASObs0;
+	}
+
+	public JTextField getTxtASObs1() {
+		return txtASObs1;
+	}
+
+	public void setTxtASObs1(JTextField txtASObs1) {
+		this.txtASObs1 = txtASObs1;
+	}
+
+	public JTextField getTxtASObs2() {
+		return txtASObs2;
+	}
+
+	public void setTxtASObs2(JTextField txtASObs2) {
+		this.txtASObs2 = txtASObs2;
+	}
+
+	public JTextField getTxtASObs3() {
+		return txtASObs3;
+	}
+
+	public void setTxtASObs3(JTextField txtASObs3) {
+		this.txtASObs3 = txtASObs3;
+	}
+
+	public JTextField getTxtASObs4() {
+		return txtASObs4;
+	}
+
+	public void setTxtASObs4(JTextField txtASObs4) {
+		this.txtASObs4 = txtASObs4;
+	}
+
+	public JTextField getTxtASObs5() {
+		return txtASObs5;
+	}
+
+	public void setTxtASObs5(JTextField txtASObs5) {
+		this.txtASObs5 = txtASObs5;
+	}
+
+	public JTextField getTxtASObs6() {
+		return txtASObs6;
+	}
+
+	public void setTxtASObs6(JTextField txtASObs6) {
+		this.txtASObs6 = txtASObs6;
+	}
+
+	public JTextField getTxtASObs9() {
+		return txtASObs9;
+	}
+
+	public void setTxtASObs9(JTextField txtASObs9) {
+		this.txtASObs9 = txtASObs9;
+	}
+
+	public JTextField getTxtASObs7() {
+		return txtASObs7;
+	}
+
+	public void setTxtASObs7(JTextField txtASObs7) {
+		this.txtASObs7 = txtASObs7;
+	}
+
+	public JTextField getTxtASObs8() {
+		return txtASObs8;
+	}
+
+	public void setTxtASObs8(JTextField txtASObs8) {
+		this.txtASObs8 = txtASObs8;
+	}
+
+	public JTextField getTxtASObs10() {
+		return txtASObs10;
+	}
+
+	public void setTxtASObs10(JTextField txtASObs10) {
+		this.txtASObs10 = txtASObs10;
+	}
+
+	public JTextField getTxtASObs11() {
+		return txtASObs11;
+	}
+
+	public void setTxtASObs11(JTextField txtASObs11) {
+		this.txtASObs11 = txtASObs11;
+	}
+
+	public JTextField getTxtComObs2() {
+		return txtComObs2;
+	}
+
+	public void setTxtComObs2(JTextField txtComObs2) {
+		this.txtComObs2 = txtComObs2;
+	}
+
+	public JTextField getTxtComObs3() {
+		return txtComObs3;
+	}
+
+	public void setTxtComObs3(JTextField txtComObs3) {
+		this.txtComObs3 = txtComObs3;
+	}
+
+	public JTextField getTxtComObs4() {
+		return txtComObs4;
+	}
+
+	public void setTxtComObs4(JTextField txtComObs4) {
+		this.txtComObs4 = txtComObs4;
+	}
+
+	public JTextField getTxtComObs0() {
+		return txtComObs0;
+	}
+
+	public void setTxtComObs0(JTextField txtComObs0) {
+		this.txtComObs0 = txtComObs0;
+	}
+
+	public JTextField getTxtComObs1() {
+		return txtComObs1;
+	}
+
+	public void setTxtComObs1(JTextField txtComObs1) {
+		this.txtComObs1 = txtComObs1;
+	}
+
+	public JTextField getTxtFFObs0() {
+		return txtFFObs0;
+	}
+
+	public void setTxtFFObs0(JTextField txtFFObs0) {
+		this.txtFFObs0 = txtFFObs0;
+	}
+
+	public JTextField getTxtFFObs1() {
+		return txtFFObs1;
+	}
+
+	public void setTxtFFObs1(JTextField txtFFObs1) {
+		this.txtFFObs1 = txtFFObs1;
+	}
+
+	public JTextField getTxtFFObs2() {
+		return txtFFObs2;
+	}
+
+	public void setTxtFFObs2(JTextField txtFFObs2) {
+		this.txtFFObs2 = txtFFObs2;
+	}
+
+	public JTextField getTxtFFObs3() {
+		return txtFFObs3;
+	}
+
+	public void setTxtFFObs3(JTextField txtFFObs3) {
+		this.txtFFObs3 = txtFFObs3;
+	}
+
+	public JTextField getTxtFFObs4() {
+		return txtFFObs4;
+	}
+
+	public void setTxtFFObs4(JTextField txtFFObs4) {
+		this.txtFFObs4 = txtFFObs4;
+	}
+
+	public JTextField getTxtFFObs5() {
+		return txtFFObs5;
+	}
+
+	public void setTxtFFObs5(JTextField txtFFObs5) {
+		this.txtFFObs5 = txtFFObs5;
+	}
+
+	public JTextField getTxtFFObs6() {
+		return txtFFObs6;
+	}
+
+	public void setTxtFFObs6(JTextField txtFFObs6) {
+		this.txtFFObs6 = txtFFObs6;
+	}
+
+	public JTextField getTxtFL2Obs0() {
+		return txtFL2Obs0;
+	}
+
+	public void setTxtFL2Obs0(JTextField txtFL2Obs0) {
+		this.txtFL2Obs0 = txtFL2Obs0;
+	}
+
+	public JTextField getTxtFL2Obs1() {
+		return txtFL2Obs1;
+	}
+
+	public void setTxtFL2Obs1(JTextField txtFL2Obs1) {
+		this.txtFL2Obs1 = txtFL2Obs1;
+	}
+
+	public JTextField getTxtFL2Obs3() {
+		return txtFL2Obs3;
+	}
+
+	public void setTxtFL2Obs3(JTextField txtFL2Obs3) {
+		this.txtFL2Obs3 = txtFL2Obs3;
+	}
+
+	public JTextField getTxtFL2Obs4() {
+		return txtFL2Obs4;
+	}
+
+	public void setTxtFL2Obs4(JTextField txtFL2Obs4) {
+		this.txtFL2Obs4 = txtFL2Obs4;
+	}
+
+	public JTextField getTxtFL2Obs5() {
+		return txtFL2Obs5;
+	}
+
+	public void setTxtFL2Obs5(JTextField txtFL2Obs5) {
+		this.txtFL2Obs5 = txtFL2Obs5;
+	}
+
+	public JTextField getTxtCAObs0() {
+		return txtCAObs0;
+	}
+
+	public void setTxtCAObs0(JTextField txtCAObs0) {
+		this.txtCAObs0 = txtCAObs0;
+	}
+
+	public JTextField getTxtCAObs1() {
+		return txtCAObs1;
+	}
+
+	public void setTxtCAObs1(JTextField txtCAObs1) {
+		this.txtCAObs1 = txtCAObs1;
+	}
+
+	public JTextField getTxtCAObs2() {
+		return txtCAObs2;
+	}
+
+	public void setTxtCAObs2(JTextField txtCAObs2) {
+		this.txtCAObs2 = txtCAObs2;
+	}
+
+	public JTextField getTxtCAObs3() {
+		return txtCAObs3;
+	}
+
+	public void setTxtCAObs3(JTextField txtCAObs3) {
+		this.txtCAObs3 = txtCAObs3;
+	}
+
+	public JTextField getTxtCAObs4() {
+		return txtCAObs4;
+	}
+
+	public void setTxtCAObs4(JTextField txtCAObs4) {
+		this.txtCAObs4 = txtCAObs4;
+	}
+
+	public JTextField getTxtCAObs5() {
+		return txtCAObs5;
+	}
+
+	public void setTxtCAObs5(JTextField txtCAObs5) {
+		this.txtCAObs5 = txtCAObs5;
+	}
+
+	public JTextField getTxtCAObs6() {
+		return txtCAObs6;
+	}
+
+	public void setTxtCAObs6(JTextField txtCAObs6) {
+		this.txtCAObs6 = txtCAObs6;
+	}
+
+	public JTextField getTxtCAObs7() {
+		return txtCAObs7;
+	}
+
+	public void setTxtCAObs7(JTextField txtCAObs7) {
+		this.txtCAObs7 = txtCAObs7;
+	}
+
+	public JTextField getTxtCAObs8() {
+		return txtCAObs8;
+	}
+
+	public void setTxtCAObs8(JTextField txtCAObs8) {
+		this.txtCAObs8 = txtCAObs8;
+	}
+
+	public JTextField getTxtCAObs9() {
+		return txtCAObs9;
+	}
+
+	public void setTxtCAObs9(JTextField txtCAObs9) {
+		this.txtCAObs9 = txtCAObs9;
+	}
+
+	public JTextField getTxtCAObs10() {
+		return txtCAObs10;
+	}
+
+	public void setTxtCAObs10(JTextField txtCAObs10) {
+		this.txtCAObs10 = txtCAObs10;
+	}
+
+	public JTextField getTxtCAObs11() {
+		return txtCAObs11;
+	}
+
+	public void setTxtCAObs11(JTextField txtCAObs11) {
+		this.txtCAObs11 = txtCAObs11;
+	}
+
+	public JTextField getTxtCAObs12() {
+		return txtCAObs12;
+	}
+
+	public void setTxtCAObs12(JTextField txtCAObs12) {
+		this.txtCAObs12 = txtCAObs12;
+	}
+
+	public JTextField getTxtCAObs13() {
+		return txtCAObs13;
+	}
+
+	public void setTxtCAObs13(JTextField txtCAObs13) {
+		this.txtCAObs13 = txtCAObs13;
+	}
+
+	public JTextField getTxtCAObs14() {
+		return txtCAObs14;
+	}
+
+	public void setTxtCAObs14(JTextField txtCAObs14) {
+		this.txtCAObs14 = txtCAObs14;
+	}
+
+	public JTextField getTxtCAObs15() {
+		return txtCAObs15;
+	}
+
+	public void setTxtCAObs15(JTextField txtCAObs15) {
+		this.txtCAObs15 = txtCAObs15;
+	}
+
+	public JTextField getTxtCAObs16() {
+		return txtCAObs16;
+	}
+
+	public void setTxtCAObs16(JTextField txtCAObs16) {
+		this.txtCAObs16 = txtCAObs16;
+	}
+
+	public JTextField getTxtCAObs17() {
+		return txtCAObs17;
+	}
+
+	public void setTxtCAObs17(JTextField txtCAObs17) {
+		this.txtCAObs17 = txtCAObs17;
+	}
+
+	public JTextField getTxtCAObs18() {
+		return txtCAObs18;
+	}
+
+	public void setTxtCAObs18(JTextField txtCAObs18) {
+		this.txtCAObs18 = txtCAObs18;
+	}
+
+	public JTextField getTxtCAObs19() {
+		return txtCAObs19;
+	}
+
+	public void setTxtCAObs19(JTextField txtCAObs19) {
+		this.txtCAObs19 = txtCAObs19;
+	}
+
+	public JTextField getTxtCAObs20() {
+		return txtCAObs20;
+	}
+
+	public void setTxtCAObs20(JTextField txtCAObs20) {
+		this.txtCAObs20 = txtCAObs20;
+	}
+
+	public JTextField getTxtCAObs21() {
+		return txtCAObs21;
+	}
+
+	public void setTxtCAObs21(JTextField txtCAObs21) {
+		this.txtCAObs21 = txtCAObs21;
+	}
+
 }

@@ -1,6 +1,5 @@
 package com.capa.presentacion;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -15,86 +14,89 @@ import javax.swing.JButton;
 
 public class PGTemplate extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField txtCantidadHumo1;
-	private JTextField txtCantidadHumo2;
-	private JTextField txtCantidadKit2;
-	private JTextField txtCantidadKit1;
-	private JTextField txtCantidadInter1;
-	private JTextField txtCantidadInter2;
-	private JTextField txtCantidadToma2;
-	private JTextField txtCantidadToma1;
-	private JTextField txtCantidadLumi1;
-	private JTextField txtCantidadLumi2;
-	private JTextField txtRefLumi;
-	private JTextField txtRefToma;
-	private JTextField txtRefInterr;
-	private JTextField txtRefKit;
-	private JTextField txtRefHumo;
-	private JTextField txtCantidadCone1;
-	private JTextField txtCantidadCone2;
-	private JTextField txtRefCone;
-	private JTextField txtRefPVC;
-	private JTextField txtCantidadPVC2;
-	private JTextField txtCantidadPVC1;
-	private JTextField txtCantidadTub1;
-	private JTextField txtCantidadTub2;
-	private JTextField txtCantidadAcce2;
-	private JTextField txtCantidadAcce1;
-	private JTextField txtCantidadCanal1;
-	private JTextField txtCantidadCanal2;
-	private JTextField txtRefCanal;
-	private JTextField txtRefAcce;
-	private JTextField txtRefTub;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
-	private JTextField textField_18;
-	private JTextField textField_19;
-	private JTextField textField_20;
-	private JTextField textField_21;
-	private JTextField textField_22;
-	private JTextField textField_23;
-	private JTextField textField_24;
-	private JTextField textField_25;
-	private JTextField textField_26;
-	private JTextField textField_27;
-	private JTextField textField_28;
-	private JTextField textField_29;
-	private JTextField textField_30;
-	private JTextField textField_31;
-	private JTextField textField_32;
-	private JTextField textField_33;
-	private JTextField textField_34;
-	private JTextField textField_35;
-	private JTextField textField_36;
-	private JTextField textField_37;
-	private JTextField textField_38;
+	private JTextField txtKECantidad40;
+	private JTextField txtKECantidad41;
+	private JTextField txtKECantidad31;
+	private JTextField txtKECantidad30;
+	private JTextField txtKECantidad20;
+	private JTextField txtKECantidad21;
+	private JTextField txtKECantidad11;
+	private JTextField txtKECantidad10;
+	private JTextField txtKECantidad00;
+	private JTextField txtKECantidad01;
+	private JTextField txtKEObs0;
+	private JTextField txtKEObs1;
+	private JTextField txtKEObs3;
+	private JTextField txtKEObs4;
+	private JTextField txtALCantidad40;
+	private JTextField txtALCantidad41;
+	private JTextField txtALObs4;
+	private JTextField txtALObs3;
+	private JTextField txtALCantidad31;
+	private JTextField txtALCantidad30;
+	private JTextField txtALCantidad20;
+	private JTextField txtALCantidad21;
+	private JTextField txtALCantidad11;
+	private JTextField txtALCantidad10;
+	private JTextField txtALCantidad00;
+	private JTextField txtALCantidad01;
+	private JTextField txtALObs0;
+	private JTextField txtALObs1;
+	private JTextField txtALObs2;
+	private JTextField txtFFCantidad10;
+	private JTextField txtFFCantidad00;
+	private JTextField txtFFCantidad01;
+	private JTextField txtFFCantidad11;
+	private JTextField txtFFObs1;
+	private JTextField txtFFObs0;
+	private JTextField txtFFCantidad20;
+	private JTextField txtFFCantidad21;
+	private JTextField txtFFObs2;
+	private JTextField txtFPCantidad20;
+	private JTextField txtFPCantidad10;
+	private JTextField txtFPCantidad00;
+	private JTextField txtFPCantidad01;
+	private JTextField txtFPCantidad11;
+	private JTextField txtFPCantidad21;
+	private JTextField txtFPObs2;
+	private JTextField txtFPObs1;
+	private JTextField txtFPObs0;
+	private JTextField txtFLDCantidad60;
+	private JTextField txtFLDCantidad61;
+	private JTextField txtFLDCantidad51;
+	private JTextField txtFLDCantidad50;
+	private JTextField txtFLDCantidad40;
+	private JTextField txtFLDCantidad41;
+	private JTextField txtFLDCantidad31;
+	private JTextField txtFLDCantidad30;
+	private JTextField txtFLDCantidad20;
+	private JTextField txtFLDCantidad10;
+	private JTextField txtFLDCantidad00;
+	private JTextField txtFLDCantidad01;
+	private JTextField txtFLDCantidad11;
+	private JTextField txtFLDCantidad21;
+	private JTextField txtFLDObs0;
+	private JTextField txtFLDObs1;
+	private JTextField txtFLDObs2;
+	private JTextField txtFLDObs3;
+	private JTextField txtFLDObs5;
+	private JTextField txtFLDObs6;
+	private JTextField txtFLDObs7;
 	private JLabel lblFachadaLateralIzquierda_1;
 	private JLabel lblPanelEpsPared;
 	private JLabel lblPanelEpsPared_1;
-	private JTextField textField_39;
-	private JTextField textField_40;
+	private JTextField txtFLCantidad10;
+	private JTextField txtFLCantidad00;
 	private JLabel label_33;
-	private JTextField textField_41;
-	private JTextField textField_42;
-	private JTextField textField_43;
-	private JTextField textField_44;
+	private JTextField txtFLCantidad01;
+	private JTextField txtFLCantidad11;
+	private JTextField txtFLObs1;
+	private JTextField txtFLObs0;
 	private JLabel label_34;
 	private JLabel label_17;
 	private JLabel lblLuminariasLed;
@@ -102,57 +104,57 @@ public class PGTemplate extends JFrame {
 	private JLabel label_22;
 	private JLabel lblKitCableElctrico;
 	private JLabel label_26;
-	private JTextField txtCantHumo1;
-	private JTextField txtCantKit1;
-	private JTextField txtCantInt1;
-	private JTextField txtCantToma1;
-	private JTextField txtCantLumi1;
+	private JTextField txtKE2Cantidad40;
+	private JTextField txtKE2Cantidad30;
+	private JTextField txtKE2Cantidad20;
+	private JTextField txtKE2Cantidad10;
+	private JTextField txtKE2Cantidad00;
 	private JLabel label_27;
-	private JTextField txtCantLumi2;
-	private JTextField txtCantToma2;
-	private JTextField txtCantInt2;
-	private JTextField txtCantKit2;
-	private JTextField txtCantHumo2;
-	private JTextField txtReferHumo;
-	private JTextField txtReferKit;
-	private JTextField txtRefInt;
-	private JTextField txtRefTomacorr;
-	private JTextField txtRefLuminarias;
+	private JTextField txtKE2Cantidad01;
+	private JTextField txtKE2Cantidad11;
+	private JTextField txtKE2Cantidad21;
+	private JTextField txtKE2Cantidad31;
+	private JTextField txtKE2Cantidad41;
+	private JTextField txtKE2Obs4;
+	private JTextField txtKE2Obs3;
+	private JTextField txtKE2Obs2;
+	private JTextField txtKE2Obs1;
+	private JTextField txtKE2Obs0;
 	private JLabel label_28;
 	private JLabel lblKitHidrosanitario;
 	private JLabel lblInodoros;
 	private JLabel lblLava;
-	private JTextField txtCantLava1;
-	private JTextField txtCantInodoros1;
+	private JTextField txtKHCantidad10;
+	private JTextField txtKHCantidad00;
 	private JLabel label_32;
-	private JTextField txtCantInodoros2;
-	private JTextField txtCantLava2;
-	private JTextField txtRefLava;
-	private JTextField txtRefInodoros;
+	private JTextField txtKHCantidad01;
+	private JTextField txtKHCantidad11;
+	private JTextField txtKHObs1;
+	private JTextField txtKHObs0;
 	private JLabel label_35;
 	private JLabel lblKitAguaPotable;
 	private JLabel label_25;
 	private JLabel label_31;
-	private JTextField txtCantidadAcceAP1;
-	private JTextField txtCantidadAcceAP2;
-	private JTextField txtRefAcceAP;
+	private JTextField txtAPCantidad00;
+	private JTextField txtAPCantidad01;
+	private JTextField txtAPObs0;
 	private JLabel label_36;
 	private JLabel label_18;
-	private JTextField txtCantidadPotable1;
-	private JTextField txtCantidadPotable2;
-	private JTextField txtRefPotable;
+	private JTextField txtAPCantidad10;
+	private JTextField txtAPCantidad11;
+	private JTextField txtAPObs1;
 	private JLabel lblTuberaDePvc;
-	private JTextField txtCantPVCAP1;
-	private JTextField txtCantPVCAP2;
-	private JTextField txtRefPVCAP;
+	private JTextField txtAPCantidad20;
+	private JTextField txtAPCantidad21;
+	private JTextField txtAPObs2;
 	private JLabel lblTuberaDePvc_1;
-	private JTextField txtCantTubAP1;
-	private JTextField txtCantTubAP2;
-	private JTextField txtRefTubAP;
+	private JTextField txtAPCantidad30;
+	private JTextField txtAPCantidad31;
+	private JTextField txtAPObs3;
 	private JLabel lblkitParaConexin;
-	private JTextField txtCantConeTub1;
-	private JTextField txtCantConeTub2;
-	private JTextField txtRefConeTub;
+	private JTextField txtAPCantidad40;
+	private JTextField txtAPCantidad41;
+	private JTextField txtAPObs4;
 	private JButton btnSiguiente;
 	private JLabel label_37;
 	private JLabel lblkitDeAccesorios;
@@ -162,29 +164,29 @@ public class PGTemplate extends JFrame {
 	private JLabel lblTuberaDePvc_2;
 	private JLabel lblkitParaConexin_1;
 	private JLabel lblkitParaConexin_2;
-	private JTextField textField_45;
-	private JTextField textField_46;
-	private JTextField txtCantidadConex1;
-	private JTextField txtCantidadConex2;
-	private JTextField txtCantidTubAR2;
-	private JTextField txtCantidTubAR1;
-	private JTextField txtCantiTubAR1;
-	private JTextField txtCantiTubAR2;
-	private JTextField txtCantAcceInod2;
-	private JTextField txtCantAcceInod1;
-	private JTextField txtCantTubAR1;
-	private JTextField txtCantConeAR1;
-	private JTextField txtCantConeAR2;
-	private JTextField txtCantTubAR2;
+	private JTextField txtARCantidad60;
+	private JTextField txtARCantidad61;
+	private JTextField txtARCantidad50;
+	private JTextField txtARCantidad51;
+	private JTextField txtARCantidad41;
+	private JTextField txtARCantidad40;
+	private JTextField txtARCantidad30;
+	private JTextField txtARCantidad31;
+	private JTextField txtARCantidad21;
+	private JTextField txtARCantidad20;
+	private JTextField txtARCantidad10;
+	private JTextField txtARCantidad00;
+	private JTextField txtARCantidad01;
+	private JTextField txtARCantidad11;
 	private JLabel label_45;
 	private JLabel label_46;
-	private JTextField txtRefConeAR;
-	private JTextField txtRefTubAR;
-	private JTextField txtRefAcceInod;
-	private JTextField txtRefTubARes;
-	private JTextField txtRef;
-	private JTextField txtRefConex;
-	private JTextField textField_65;
+	private JTextField txtARObs0;
+	private JTextField txtARObs1;
+	private JTextField txtARObs2;
+	private JTextField txtARObs3;
+	private JTextField txtARObs4;
+	private JTextField txtARObs5;
+	private JTextField txtARObs6;
 	private JLabel label_38;
 	private JLabel label_39;
 	private JLabel label_40;
@@ -198,47 +200,47 @@ public class PGTemplate extends JFrame {
 	private JLabel lblPerfilSfTipo_2;
 	private JLabel lblPerfilSfTipo_3;
 	private JLabel lblPerfilSfTipo_4;
-	private JTextField textField_47;
-	private JTextField textField_48;
-	private JTextField textField_49;
-	private JTextField textField_50;
-	private JTextField textField_51;
-	private JTextField textField_52;
-	private JTextField textField_53;
-	private JTextField textField_54;
-	private JTextField textField_55;
-	private JTextField textField_56;
-	private JTextField textField_57;
-	private JTextField textField_58;
-	private JTextField textField_59;
-	private JTextField textField_60;
-	private JTextField textField_61;
-	private JTextField textField_62;
-	private JTextField textField_63;
-	private JTextField textField_64;
-	private JTextField textField_66;
-	private JTextField textField_67;
-	private JTextField textField_68;
-	private JTextField textField_69;
-	private JTextField textField_70;
-	private JTextField textField_71;
-	private JTextField textField_72;
-	private JTextField textField_73;
-	private JTextField textField_74;
-	private JTextField textField_75;
-	private JTextField textField_76;
-	private JTextField textField_77;
+	private JTextField txtCECantidad90;
+	private JTextField txtCECantidad80;
+	private JTextField txtCECantidad70;
+	private JTextField txtCECantidad60;
+	private JTextField txtCECantidad50;
+	private JTextField txtCECantidad40;
+	private JTextField txtCECantidad30;
+	private JTextField txtCECantidad20;
+	private JTextField txtCECantidad10;
+	private JTextField txtCECantidad00;
+	private JTextField txtCECantidad01;
+	private JTextField txtCECantidad11;
+	private JTextField txtCECantidad21;
+	private JTextField txtCECantidad31;
+	private JTextField txtCECantidad41;
+	private JTextField txtCECantidad51;
+	private JTextField txtCECantidad61;
+	private JTextField txtCECantidad71;
+	private JTextField txtCECantidad81;
+	private JTextField txtCECantidad91;
+	private JTextField txtCEObs10;
+	private JTextField txtCEObs9;
+	private JTextField txtCEObs8;
+	private JTextField txtCEObs7;
+	private JTextField txtCEObs6;
+	private JTextField txtCEObs5;
+	private JTextField txtCEObs4;
+	private JTextField txtCEObs3;
+	private JTextField txtCEObs1;
+	private JTextField txtCEObs0;
 	private JLabel lblPortn;
 	private JLabel lblLuminariasDePared;
-	private JTextField txtCantidadLumP1;
+	private JTextField txtPCantidad00;
 	private JLabel label_50;
-	private JTextField txtCantidadLumP2;
-	private JTextField txtRefLumP;
+	private JTextField txtPCantidad01;
+	private JTextField txtPObs0;
 	private JLabel label_51;
 	private JLabel lblElementoPortn;
-	private JTextField txtCantidadPorton1;
-	private JTextField txtCantidadPorton2;
-	private JTextField txtRefPorton;
+	private JTextField txtPCantidad10;
+	private JTextField txtPCantidad11;
+	private JTextField txtPObs1;
 	private JLabel lblComponenteArquitectnico;
 	private JLabel lblPanelesEpsPared_5;
 	private JLabel lblPanelesEpsPared_6;
@@ -252,67 +254,68 @@ public class PGTemplate extends JFrame {
 	private JLabel lblPanelesEpsPared_14;
 	private JLabel lblPanelesEpsPared_15;
 	private JLabel lblPanelesEpsPared_16;
-	private JTextField textField_78;
-	private JTextField textField_79;
-	private JTextField textField_80;
-	private JTextField textField_81;
-	private JTextField textField_82;
-	private JTextField textField_83;
-	private JTextField textField_84;
-	private JTextField textField_85;
-	private JTextField textField_86;
-	private JTextField textField_87;
-	private JTextField textField_88;
-	private JTextField textField_89;
+	private JTextField txtCACantidad110;
+	private JTextField txtCACantidad100;
+	private JTextField txtCACantidad90;
+	private JTextField txtCACantidad80;
+	private JTextField txtCACantidad70;
+	private JTextField txtCACantidad60;
+	private JTextField txtCACantidad50;
+	private JTextField txtCACantidad40;
+	private JTextField txtCACantidad30;
+	private JTextField txtCACantidad20;
+	private JTextField txtCACantidad10;
+	private JTextField txtCACantidad00;
 	private JLabel label_63;
-	private JTextField textField_90;
-	private JTextField textField_91;
-	private JTextField textField_92;
-	private JTextField textField_93;
-	private JTextField textField_94;
-	private JTextField textField_95;
-	private JTextField textField_96;
-	private JTextField textField_97;
-	private JTextField textField_98;
-	private JTextField textField_99;
-	private JTextField textField_100;
-	private JTextField textField_101;
-	private JTextField textField_102;
-	private JTextField textField_103;
-	private JTextField textField_104;
-	private JTextField textField_105;
-	private JTextField textField_106;
-	private JTextField textField_107;
-	private JTextField textField_108;
-	private JTextField textField_109;
-	private JTextField textField_110;
-	private JTextField textField_111;
-	private JTextField textField_112;
-	private JTextField textField_113;
+	private JTextField txtCACantidad01;
+	private JTextField txtCACantidad11;
+	private JTextField txtCACantidad21;
+	private JTextField txtCACantidad31;
+	private JTextField txtCACantidad41;
+	private JTextField txtCACantidad51;
+	private JTextField txtCACantidad61;
+	private JTextField txtCACantidad71;
+	private JTextField txtCACantidad81;
+	private JTextField txtCACantidad91;
+	private JTextField txtCACantidad101;
+	private JTextField txtCACantidad111;
+	private JTextField txtCAObs11;
+	private JTextField txtCAObs10;
+	private JTextField txtCAObs9;
+	private JTextField txtCAObs8;
+	private JTextField txtCAObs7;
+	private JTextField txtCAObs6;
+	private JTextField txtCAObs5;
+	private JTextField txtCAObs4;
+	private JTextField txtCAObs3;
+	private JTextField txtCAObs2;
+	private JTextField txtCAObs1;
+	private JTextField txtCAObs0;
 	private JLabel label_64;
 	private JLabel lblPanelesEpsPared_17;
-	private JTextField textField_114;
-	private JTextField textField_115;
-	private JTextField textField_116;
+	private JTextField txtCACantidad120;
+	private JTextField txtCACantidad121;
+	private JTextField txtCAObs12;
 	private JLabel lblPanelesEpsPared_18;
-	private JTextField textField_117;
-	private JTextField textField_118;
-	private JTextField textField_119;
+	private JTextField txtCACantidad130;
+	private JTextField txtCACantidad131;
+	private JTextField txtCAObs13;
 	private JLabel lblComponenteEstructural;
 	private JLabel lblDadoCimentacinPortn;
 	private JLabel lblPerfilSfTipo_5;
-	private JTextField txtCantidadCim1;
+	private JTextField txtCE2Cantidad00;
 	private JLabel label_53;
-	private JTextField txtCantidadCim2;
-	private JTextField txtCantPerfilPared2;
-	private JTextField txtCantPerfilPared1;
-	private JTextField txtRefPerfilPared;
-	private JTextField txtRefCim;
+	private JTextField txtCE2Cantidad01;
+	private JTextField txtCE2Cantidad11;
+	private JTextField txtCE2Cantidad10;
+	private JTextField txtCE2Obs1;
+	private JTextField txtCE2Obs0;
 	private JLabel label_54;
 	private JLabel lblPerfilSfTipo_6;
-	private JTextField txtCantPerfilPuerta1;
-	private JTextField txtCantPerfilPuerta2;
-	private JTextField txtRefPerfilPuerta;
+	private JTextField txtCE2Cantidad20;
+	private JTextField txtCE2Cantidad21;
+	private JTextField txtCE2Obs2;
+	private JTextField txtKEObs2;
 
 	/**
 	 * Launch the application.
@@ -398,60 +401,60 @@ public class PGTemplate extends JFrame {
 		label_5.setBounds(10, 134, 203, 14);
 		panel1.add(label_5);
 
-		txtCantidadHumo1 = new JTextField();
-		txtCantidadHumo1.setEditable(false);
-		txtCantidadHumo1.setColumns(10);
-		txtCantidadHumo1.setBounds(203, 131, 35, 20);
-		panel1.add(txtCantidadHumo1);
+		txtKECantidad40 = new JTextField();
+		txtKECantidad40.setEditable(false);
+		txtKECantidad40.setColumns(10);
+		txtKECantidad40.setBounds(203, 131, 35, 20);
+		panel1.add(txtKECantidad40);
 
-		txtCantidadHumo2 = new JTextField();
-		txtCantidadHumo2.setColumns(10);
-		txtCantidadHumo2.setBounds(240, 131, 35, 20);
-		panel1.add(txtCantidadHumo2);
+		txtKECantidad41 = new JTextField();
+		txtKECantidad41.setColumns(10);
+		txtKECantidad41.setBounds(240, 131, 35, 20);
+		panel1.add(txtKECantidad41);
 
-		txtCantidadKit2 = new JTextField();
-		txtCantidadKit2.setColumns(10);
-		txtCantidadKit2.setBounds(240, 109, 35, 20);
-		panel1.add(txtCantidadKit2);
+		txtKECantidad31 = new JTextField();
+		txtKECantidad31.setColumns(10);
+		txtKECantidad31.setBounds(240, 109, 35, 20);
+		panel1.add(txtKECantidad31);
 
-		txtCantidadKit1 = new JTextField();
-		txtCantidadKit1.setEditable(false);
-		txtCantidadKit1.setColumns(10);
-		txtCantidadKit1.setBounds(203, 109, 35, 20);
-		panel1.add(txtCantidadKit1);
+		txtKECantidad30 = new JTextField();
+		txtKECantidad30.setEditable(false);
+		txtKECantidad30.setColumns(10);
+		txtKECantidad30.setBounds(203, 109, 35, 20);
+		panel1.add(txtKECantidad30);
 
-		txtCantidadInter1 = new JTextField();
-		txtCantidadInter1.setEditable(false);
-		txtCantidadInter1.setColumns(10);
-		txtCantidadInter1.setBounds(203, 87, 35, 20);
-		panel1.add(txtCantidadInter1);
+		txtKECantidad20 = new JTextField();
+		txtKECantidad20.setEditable(false);
+		txtKECantidad20.setColumns(10);
+		txtKECantidad20.setBounds(203, 87, 35, 20);
+		panel1.add(txtKECantidad20);
 
-		txtCantidadInter2 = new JTextField();
-		txtCantidadInter2.setColumns(10);
-		txtCantidadInter2.setBounds(240, 87, 35, 20);
-		panel1.add(txtCantidadInter2);
+		txtKECantidad21 = new JTextField();
+		txtKECantidad21.setColumns(10);
+		txtKECantidad21.setBounds(240, 87, 35, 20);
+		panel1.add(txtKECantidad21);
 
-		txtCantidadToma2 = new JTextField();
-		txtCantidadToma2.setColumns(10);
-		txtCantidadToma2.setBounds(240, 65, 35, 20);
-		panel1.add(txtCantidadToma2);
+		txtKECantidad11 = new JTextField();
+		txtKECantidad11.setColumns(10);
+		txtKECantidad11.setBounds(240, 65, 35, 20);
+		panel1.add(txtKECantidad11);
 
-		txtCantidadToma1 = new JTextField();
-		txtCantidadToma1.setEditable(false);
-		txtCantidadToma1.setColumns(10);
-		txtCantidadToma1.setBounds(203, 65, 35, 20);
-		panel1.add(txtCantidadToma1);
+		txtKECantidad10 = new JTextField();
+		txtKECantidad10.setEditable(false);
+		txtKECantidad10.setColumns(10);
+		txtKECantidad10.setBounds(203, 65, 35, 20);
+		panel1.add(txtKECantidad10);
 
-		txtCantidadLumi1 = new JTextField();
-		txtCantidadLumi1.setEditable(false);
-		txtCantidadLumi1.setColumns(10);
-		txtCantidadLumi1.setBounds(203, 43, 35, 20);
-		panel1.add(txtCantidadLumi1);
+		txtKECantidad00 = new JTextField();
+		txtKECantidad00.setEditable(false);
+		txtKECantidad00.setColumns(10);
+		txtKECantidad00.setBounds(203, 43, 35, 20);
+		panel1.add(txtKECantidad00);
 
-		txtCantidadLumi2 = new JTextField();
-		txtCantidadLumi2.setColumns(10);
-		txtCantidadLumi2.setBounds(240, 43, 35, 20);
-		panel1.add(txtCantidadLumi2);
+		txtKECantidad01 = new JTextField();
+		txtKECantidad01.setColumns(10);
+		txtKECantidad01.setBounds(240, 43, 35, 20);
+		panel1.add(txtKECantidad01);
 
 		JLabel label_6 = new JLabel("Cantidad");
 		label_6.setHorizontalAlignment(SwingConstants.CENTER);
@@ -465,30 +468,30 @@ public class PGTemplate extends JFrame {
 		label_7.setBounds(700, 18, 139, 14);
 		panel1.add(label_7);
 
-		txtRefLumi = new JTextField();
-		txtRefLumi.setColumns(10);
-		txtRefLumi.setBounds(278, 43, 133, 20);
-		panel1.add(txtRefLumi);
+		txtKEObs0 = new JTextField();
+		txtKEObs0.setColumns(10);
+		txtKEObs0.setBounds(278, 43, 133, 20);
+		panel1.add(txtKEObs0);
 
-		txtRefToma = new JTextField();
-		txtRefToma.setColumns(10);
-		txtRefToma.setBounds(278, 65, 133, 20);
-		panel1.add(txtRefToma);
+		txtKEObs1 = new JTextField();
+		txtKEObs1.setColumns(10);
+		txtKEObs1.setBounds(278, 65, 133, 20);
+		panel1.add(txtKEObs1);
 
-		txtRefInterr = new JTextField();
-		txtRefInterr.setColumns(10);
-		txtRefInterr.setBounds(278, 87, 133, 20);
-		panel1.add(txtRefInterr);
+		txtKEObs2 = new JTextField();
+		txtKEObs2.setColumns(10);
+		txtKEObs2.setBounds(278, 87, 133, 20);
+		panel1.add(txtKEObs2);
 
-		txtRefKit = new JTextField();
-		txtRefKit.setColumns(10);
-		txtRefKit.setBounds(278, 109, 133, 20);
-		panel1.add(txtRefKit);
+		txtKEObs3 = new JTextField();
+		txtKEObs3.setColumns(10);
+		txtKEObs3.setBounds(278, 109, 133, 20);
+		panel1.add(txtKEObs3);
 
-		txtRefHumo = new JTextField();
-		txtRefHumo.setColumns(10);
-		txtRefHumo.setBounds(278, 131, 133, 20);
-		panel1.add(txtRefHumo);
+		txtKEObs4 = new JTextField();
+		txtKEObs4.setColumns(10);
+		txtKEObs4.setBounds(278, 131, 133, 20);
+		panel1.add(txtKEObs4);
 
 		JLabel label_8 = new JLabel("KIT AGUA LLUVIA");
 		label_8.setHorizontalAlignment(SwingConstants.CENTER);
@@ -528,70 +531,70 @@ public class PGTemplate extends JFrame {
 		label_13.setBounds(10, 314, 203, 39);
 		panel1.add(label_13);
 
-		txtCantidadCone1 = new JTextField();
-		txtCantidadCone1.setEditable(false);
-		txtCantidadCone1.setColumns(10);
-		txtCantidadCone1.setBounds(203, 322, 35, 20);
-		panel1.add(txtCantidadCone1);
+		txtALCantidad40 = new JTextField();
+		txtALCantidad40.setEditable(false);
+		txtALCantidad40.setColumns(10);
+		txtALCantidad40.setBounds(203, 322, 35, 20);
+		panel1.add(txtALCantidad40);
 
-		txtCantidadCone2 = new JTextField();
-		txtCantidadCone2.setColumns(10);
-		txtCantidadCone2.setBounds(240, 322, 35, 20);
-		panel1.add(txtCantidadCone2);
+		txtALCantidad41 = new JTextField();
+		txtALCantidad41.setColumns(10);
+		txtALCantidad41.setBounds(240, 322, 35, 20);
+		panel1.add(txtALCantidad41);
 
-		txtRefCone = new JTextField();
-		txtRefCone.setColumns(10);
-		txtRefCone.setBounds(278, 322, 133, 20);
-		panel1.add(txtRefCone);
+		txtALObs4 = new JTextField();
+		txtALObs4.setColumns(10);
+		txtALObs4.setBounds(278, 322, 133, 20);
+		panel1.add(txtALObs4);
 
-		txtRefPVC = new JTextField();
-		txtRefPVC.setColumns(10);
-		txtRefPVC.setBounds(278, 286, 133, 20);
-		panel1.add(txtRefPVC);
+		txtALObs3 = new JTextField();
+		txtALObs3.setColumns(10);
+		txtALObs3.setBounds(278, 286, 133, 20);
+		panel1.add(txtALObs3);
 
-		txtCantidadPVC2 = new JTextField();
-		txtCantidadPVC2.setColumns(10);
-		txtCantidadPVC2.setBounds(240, 286, 35, 20);
-		panel1.add(txtCantidadPVC2);
+		txtALCantidad31 = new JTextField();
+		txtALCantidad31.setColumns(10);
+		txtALCantidad31.setBounds(240, 286, 35, 20);
+		panel1.add(txtALCantidad31);
 
-		txtCantidadPVC1 = new JTextField();
-		txtCantidadPVC1.setEditable(false);
-		txtCantidadPVC1.setColumns(10);
-		txtCantidadPVC1.setBounds(203, 286, 35, 20);
-		panel1.add(txtCantidadPVC1);
+		txtALCantidad30 = new JTextField();
+		txtALCantidad30.setEditable(false);
+		txtALCantidad30.setColumns(10);
+		txtALCantidad30.setBounds(203, 286, 35, 20);
+		panel1.add(txtALCantidad30);
 
-		txtCantidadTub1 = new JTextField();
-		txtCantidadTub1.setEditable(false);
-		txtCantidadTub1.setColumns(10);
-		txtCantidadTub1.setBounds(203, 264, 35, 20);
-		panel1.add(txtCantidadTub1);
+		txtALCantidad20 = new JTextField();
+		txtALCantidad20.setEditable(false);
+		txtALCantidad20.setColumns(10);
+		txtALCantidad20.setBounds(203, 264, 35, 20);
+		panel1.add(txtALCantidad20);
 
-		txtCantidadTub2 = new JTextField();
-		txtCantidadTub2.setColumns(10);
-		txtCantidadTub2.setBounds(240, 264, 35, 20);
-		panel1.add(txtCantidadTub2);
+		txtALCantidad21 = new JTextField();
+		txtALCantidad21.setColumns(10);
+		txtALCantidad21.setBounds(240, 264, 35, 20);
+		panel1.add(txtALCantidad21);
 
-		txtCantidadAcce2 = new JTextField();
-		txtCantidadAcce2.setColumns(10);
-		txtCantidadAcce2.setBounds(240, 233, 35, 20);
-		panel1.add(txtCantidadAcce2);
+		txtALCantidad11 = new JTextField();
+		txtALCantidad11.setColumns(10);
+		txtALCantidad11.setBounds(240, 233, 35, 20);
+		panel1.add(txtALCantidad11);
 
-		txtCantidadAcce1 = new JTextField();
-		txtCantidadAcce1.setEditable(false);
-		txtCantidadAcce1.setColumns(10);
-		txtCantidadAcce1.setBounds(203, 233, 35, 20);
-		panel1.add(txtCantidadAcce1);
+		txtALCantidad10 = new JTextField();
+		txtALCantidad10.setEditable(false);
+		txtALCantidad10.setColumns(10);
+		txtALCantidad10.setBounds(203, 233, 35, 20);
+		panel1.add(txtALCantidad10);
 
-		txtCantidadCanal1 = new JTextField();
-		txtCantidadCanal1.setEditable(false);
-		txtCantidadCanal1.setColumns(10);
-		txtCantidadCanal1.setBounds(203, 190, 35, 20);
-		panel1.add(txtCantidadCanal1);
+		txtALCantidad00 = new JTextField();
+		txtALCantidad00.setEditable(false);
+		txtALCantidad00.setColumns(10);
+		txtALCantidad00.setBounds(203, 190, 35, 20);
+		panel1.add(txtALCantidad00);
 
-		txtCantidadCanal2 = new JTextField();
-		txtCantidadCanal2.setColumns(10);
-		txtCantidadCanal2.setBounds(240, 190, 35, 20);
-		panel1.add(txtCantidadCanal2);
+		txtALCantidad01 = new JTextField();
+		txtALCantidad01.setColumns(10);
+		txtALCantidad01.setBounds(240, 190, 35, 20);
+		panel1.add(txtALCantidad01);
 
 		JLabel label_14 = new JLabel("Cantidad");
 		label_14.setHorizontalAlignment(SwingConstants.CENTER);
@@ -605,20 +608,20 @@ public class PGTemplate extends JFrame {
 		label_15.setBounds(279, 168, 139, 14);
 		panel1.add(label_15);
 
-		txtRefCanal = new JTextField();
-		txtRefCanal.setColumns(10);
-		txtRefCanal.setBounds(278, 190, 133, 20);
-		panel1.add(txtRefCanal);
+		txtALObs0 = new JTextField();
+		txtALObs0.setColumns(10);
+		txtALObs0.setBounds(278, 190, 133, 20);
+		panel1.add(txtALObs0);
 
-		txtRefAcce = new JTextField();
-		txtRefAcce.setColumns(10);
-		txtRefAcce.setBounds(278, 233, 133, 20);
-		panel1.add(txtRefAcce);
+		txtALObs1 = new JTextField();
+		txtALObs1.setColumns(10);
+		txtALObs1.setBounds(278, 233, 133, 20);
+		panel1.add(txtALObs1);
 
-		txtRefTub = new JTextField();
-		txtRefTub.setColumns(10);
-		txtRefTub.setBounds(278, 264, 133, 20);
-		panel1.add(txtRefTub);
+		txtALObs2 = new JTextField();
+		txtALObs2.setColumns(10);
+		txtALObs2.setBounds(278, 264, 133, 20);
+		panel1.add(txtALObs2);
 
 		JLabel label_16 = new JLabel("FACHADA FRONTAL");
 		label_16.setHorizontalAlignment(SwingConstants.CENTER);
@@ -638,17 +641,17 @@ public class PGTemplate extends JFrame {
 		lblPanelesEpsPared_1.setBounds(421, 68, 203, 14);
 		panel1.add(lblPanelesEpsPared_1);
 
-		textField = new JTextField();
-		textField.setEditable(false);
-		textField.setColumns(10);
-		textField.setBounds(624, 62, 35, 20);
-		panel1.add(textField);
+		txtFFCantidad10 = new JTextField();
+		txtFFCantidad10.setEditable(false);
+		txtFFCantidad10.setColumns(10);
+		txtFFCantidad10.setBounds(624, 62, 35, 20);
+		panel1.add(txtFFCantidad10);
 
-		textField_1 = new JTextField();
-		textField_1.setEditable(false);
-		textField_1.setColumns(10);
-		textField_1.setBounds(624, 40, 35, 20);
-		panel1.add(textField_1);
+		txtFFCantidad00 = new JTextField();
+		txtFFCantidad00.setEditable(false);
+		txtFFCantidad00.setColumns(10);
+		txtFFCantidad00.setBounds(624, 40, 35, 20);
+		panel1.add(txtFFCantidad00);
 
 		JLabel label_19 = new JLabel("Cantidad");
 		label_19.setHorizontalAlignment(SwingConstants.CENTER);
@@ -656,25 +659,25 @@ public class PGTemplate extends JFrame {
 		label_19.setBounds(627, 18, 63, 14);
 		panel1.add(label_19);
 
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(661, 40, 35, 20);
-		panel1.add(textField_2);
+		txtFFCantidad01 = new JTextField();
+		txtFFCantidad01.setColumns(10);
+		txtFFCantidad01.setBounds(661, 40, 35, 20);
+		panel1.add(txtFFCantidad01);
 
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(661, 62, 35, 20);
-		panel1.add(textField_3);
+		txtFFCantidad11 = new JTextField();
+		txtFFCantidad11.setColumns(10);
+		txtFFCantidad11.setBounds(661, 62, 35, 20);
+		panel1.add(txtFFCantidad11);
 
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(700, 62, 133, 20);
-		panel1.add(textField_4);
+		txtFFObs1 = new JTextField();
+		txtFFObs1.setColumns(10);
+		txtFFObs1.setBounds(700, 62, 133, 20);
+		panel1.add(txtFFObs1);
 
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(700, 40, 133, 20);
-		panel1.add(textField_5);
+		txtFFObs0 = new JTextField();
+		txtFFObs0.setColumns(10);
+		txtFFObs0.setBounds(700, 40, 133, 20);
+		panel1.add(txtFFObs0);
 
 		JLabel label_20 = new JLabel("Observaci\u00F3n/Referencia");
 		label_20.setHorizontalAlignment(SwingConstants.LEFT);
@@ -688,21 +691,21 @@ public class PGTemplate extends JFrame {
 		lblPanelesEpsPared_2.setBounds(421, 90, 203, 14);
 		panel1.add(lblPanelesEpsPared_2);
 
-		textField_6 = new JTextField();
-		textField_6.setEditable(false);
-		textField_6.setColumns(10);
-		textField_6.setBounds(624, 84, 35, 20);
-		panel1.add(textField_6);
+		txtFFCantidad20 = new JTextField();
+		txtFFCantidad20.setEditable(false);
+		txtFFCantidad20.setColumns(10);
+		txtFFCantidad20.setBounds(624, 84, 35, 20);
+		panel1.add(txtFFCantidad20);
 
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(661, 84, 35, 20);
-		panel1.add(textField_7);
+		txtFFCantidad21 = new JTextField();
+		txtFFCantidad21.setColumns(10);
+		txtFFCantidad21.setBounds(661, 84, 35, 20);
+		panel1.add(txtFFCantidad21);
 
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(700, 84, 133, 20);
-		panel1.add(textField_8);
+		txtFFObs2 = new JTextField();
+		txtFFObs2.setColumns(10);
+		txtFFObs2.setBounds(700, 84, 133, 20);
+		panel1.add(txtFFObs2);
 
 		JLabel lblFachadaPosterior = new JLabel("FACHADA POSTERIOR");
 		lblFachadaPosterior.setHorizontalAlignment(SwingConstants.CENTER);
@@ -728,23 +731,23 @@ public class PGTemplate extends JFrame {
 		lblPanelAlturaVariable.setBounds(421, 200, 203, 14);
 		panel1.add(lblPanelAlturaVariable);
 
-		textField_9 = new JTextField();
-		textField_9.setEditable(false);
-		textField_9.setColumns(10);
-		textField_9.setBounds(624, 194, 35, 20);
-		panel1.add(textField_9);
+		txtFPCantidad20 = new JTextField();
+		txtFPCantidad20.setEditable(false);
+		txtFPCantidad20.setColumns(10);
+		txtFPCantidad20.setBounds(624, 194, 35, 20);
+		panel1.add(txtFPCantidad20);
 
-		textField_10 = new JTextField();
-		textField_10.setEditable(false);
-		textField_10.setColumns(10);
-		textField_10.setBounds(624, 172, 35, 20);
-		panel1.add(textField_10);
+		txtFPCantidad10 = new JTextField();
+		txtFPCantidad10.setEditable(false);
+		txtFPCantidad10.setColumns(10);
+		txtFPCantidad10.setBounds(624, 172, 35, 20);
+		panel1.add(txtFPCantidad10);
 
-		textField_11 = new JTextField();
-		textField_11.setEditable(false);
-		textField_11.setColumns(10);
-		textField_11.setBounds(624, 150, 35, 20);
-		panel1.add(textField_11);
+		txtFPCantidad00 = new JTextField();
+		txtFPCantidad00.setEditable(false);
+		txtFPCantidad00.setColumns(10);
+		txtFPCantidad00.setBounds(624, 150, 35, 20);
+		panel1.add(txtFPCantidad00);
 
 		JLabel label_23 = new JLabel("Cantidad");
 		label_23.setHorizontalAlignment(SwingConstants.CENTER);
@@ -752,35 +755,35 @@ public class PGTemplate extends JFrame {
 		label_23.setBounds(627, 128, 63, 14);
 		panel1.add(label_23);
 
-		textField_12 = new JTextField();
-		textField_12.setColumns(10);
-		textField_12.setBounds(661, 150, 35, 20);
-		panel1.add(textField_12);
+		txtFPCantidad01 = new JTextField();
+		txtFPCantidad01.setColumns(10);
+		txtFPCantidad01.setBounds(661, 150, 35, 20);
+		panel1.add(txtFPCantidad01);
 
-		textField_13 = new JTextField();
-		textField_13.setColumns(10);
-		textField_13.setBounds(661, 172, 35, 20);
-		panel1.add(textField_13);
+		txtFPCantidad11 = new JTextField();
+		txtFPCantidad11.setColumns(10);
+		txtFPCantidad11.setBounds(661, 172, 35, 20);
+		panel1.add(txtFPCantidad11);
 
-		textField_14 = new JTextField();
-		textField_14.setColumns(10);
-		textField_14.setBounds(661, 194, 35, 20);
-		panel1.add(textField_14);
+		txtFPCantidad21 = new JTextField();
+		txtFPCantidad21.setColumns(10);
+		txtFPCantidad21.setBounds(661, 194, 35, 20);
+		panel1.add(txtFPCantidad21);
 
-		textField_15 = new JTextField();
-		textField_15.setColumns(10);
-		textField_15.setBounds(700, 194, 133, 20);
-		panel1.add(textField_15);
+		txtFPObs2 = new JTextField();
+		txtFPObs2.setColumns(10);
+		txtFPObs2.setBounds(700, 194, 133, 20);
+		panel1.add(txtFPObs2);
 
-		textField_16 = new JTextField();
-		textField_16.setColumns(10);
-		textField_16.setBounds(700, 172, 133, 20);
-		panel1.add(textField_16);
+		txtFPObs1 = new JTextField();
+		txtFPObs1.setColumns(10);
+		txtFPObs1.setBounds(700, 172, 133, 20);
+		panel1.add(txtFPObs1);
 
-		textField_17 = new JTextField();
-		textField_17.setColumns(10);
-		textField_17.setBounds(700, 150, 133, 20);
-		panel1.add(textField_17);
+		txtFPObs0 = new JTextField();
+		txtFPObs0.setColumns(10);
+		txtFPObs0.setBounds(700, 150, 133, 20);
+		panel1.add(txtFPObs0);
 
 		JLabel label_24 = new JLabel("Observaci\u00F3n/Referencia");
 		label_24.setHorizontalAlignment(SwingConstants.LEFT);
@@ -836,67 +839,67 @@ public class PGTemplate extends JFrame {
 		lblPanelesEpsPared_4.setBounds(421, 479, 203, 14);
 		panel1.add(lblPanelesEpsPared_4);
 
-		textField_18 = new JTextField();
-		textField_18.setEditable(false);
-		textField_18.setColumns(10);
-		textField_18.setBounds(624, 473, 35, 20);
-		panel1.add(textField_18);
+		txtFLDCantidad60 = new JTextField();
+		txtFLDCantidad60.setEditable(false);
+		txtFLDCantidad60.setColumns(10);
+		txtFLDCantidad60.setBounds(624, 473, 35, 20);
+		panel1.add(txtFLDCantidad60);
 
-		textField_19 = new JTextField();
-		textField_19.setColumns(10);
-		textField_19.setBounds(661, 473, 35, 20);
-		panel1.add(textField_19);
+		txtFLDCantidad61 = new JTextField();
+		txtFLDCantidad61.setColumns(10);
+		txtFLDCantidad61.setBounds(661, 473, 35, 20);
+		panel1.add(txtFLDCantidad61);
 
-		textField_20 = new JTextField();
-		textField_20.setColumns(10);
-		textField_20.setBounds(661, 451, 35, 20);
-		panel1.add(textField_20);
+		txtFLDCantidad51 = new JTextField();
+		txtFLDCantidad51.setColumns(10);
+		txtFLDCantidad51.setBounds(661, 451, 35, 20);
+		panel1.add(txtFLDCantidad51);
 
-		textField_21 = new JTextField();
-		textField_21.setEditable(false);
-		textField_21.setColumns(10);
-		textField_21.setBounds(624, 451, 35, 20);
-		panel1.add(textField_21);
+		txtFLDCantidad50 = new JTextField();
+		txtFLDCantidad50.setEditable(false);
+		txtFLDCantidad50.setColumns(10);
+		txtFLDCantidad50.setBounds(624, 451, 35, 20);
+		panel1.add(txtFLDCantidad50);
 
-		textField_22 = new JTextField();
-		textField_22.setEditable(false);
-		textField_22.setColumns(10);
-		textField_22.setBounds(624, 429, 35, 20);
-		panel1.add(textField_22);
+		txtFLDCantidad40 = new JTextField();
+		txtFLDCantidad40.setEditable(false);
+		txtFLDCantidad40.setColumns(10);
+		txtFLDCantidad40.setBounds(624, 429, 35, 20);
+		panel1.add(txtFLDCantidad40);
 
-		textField_23 = new JTextField();
-		textField_23.setColumns(10);
-		textField_23.setBounds(661, 429, 35, 20);
-		panel1.add(textField_23);
+		txtFLDCantidad41 = new JTextField();
+		txtFLDCantidad41.setColumns(10);
+		txtFLDCantidad41.setBounds(661, 429, 35, 20);
+		panel1.add(txtFLDCantidad41);
 
-		textField_24 = new JTextField();
-		textField_24.setColumns(10);
-		textField_24.setBounds(661, 407, 35, 20);
-		panel1.add(textField_24);
+		txtFLDCantidad31 = new JTextField();
+		txtFLDCantidad31.setColumns(10);
+		txtFLDCantidad31.setBounds(661, 407, 35, 20);
+		panel1.add(txtFLDCantidad31);
 
-		textField_25 = new JTextField();
-		textField_25.setEditable(false);
-		textField_25.setColumns(10);
-		textField_25.setBounds(624, 407, 35, 20);
-		panel1.add(textField_25);
+		txtFLDCantidad30 = new JTextField();
+		txtFLDCantidad30.setEditable(false);
+		txtFLDCantidad30.setColumns(10);
+		txtFLDCantidad30.setBounds(624, 407, 35, 20);
+		panel1.add(txtFLDCantidad30);
 
-		textField_26 = new JTextField();
-		textField_26.setEditable(false);
-		textField_26.setColumns(10);
-		textField_26.setBounds(624, 385, 35, 20);
-		panel1.add(textField_26);
+		txtFLDCantidad20 = new JTextField();
+		txtFLDCantidad20.setEditable(false);
+		txtFLDCantidad20.setColumns(10);
+		txtFLDCantidad20.setBounds(624, 385, 35, 20);
+		panel1.add(txtFLDCantidad20);
 
-		textField_27 = new JTextField();
-		textField_27.setEditable(false);
-		textField_27.setColumns(10);
-		textField_27.setBounds(624, 363, 35, 20);
-		panel1.add(textField_27);
+		txtFLDCantidad10 = new JTextField();
+		txtFLDCantidad10.setEditable(false);
+		txtFLDCantidad10.setColumns(10);
+		txtFLDCantidad10.setBounds(624, 363, 35, 20);
+		panel1.add(txtFLDCantidad10);
 
-		textField_28 = new JTextField();
-		textField_28.setEditable(false);
-		textField_28.setColumns(10);
-		textField_28.setBounds(624, 341, 35, 20);
-		panel1.add(textField_28);
+		txtFLDCantidad00 = new JTextField();
+		txtFLDCantidad00.setEditable(false);
+		txtFLDCantidad00.setColumns(10);
+		txtFLDCantidad00.setBounds(624, 341, 35, 20);
+		panel1.add(txtFLDCantidad00);
 
 		JLabel label_29 = new JLabel("Cantidad");
 		label_29.setHorizontalAlignment(SwingConstants.CENTER);
@@ -904,20 +907,20 @@ public class PGTemplate extends JFrame {
 		label_29.setBounds(634, 319, 63, 14);
 		panel1.add(label_29);
 
-		textField_29 = new JTextField();
-		textField_29.setColumns(10);
-		textField_29.setBounds(661, 341, 35, 20);
-		panel1.add(textField_29);
+		txtFLDCantidad01 = new JTextField();
+		txtFLDCantidad01.setColumns(10);
+		txtFLDCantidad01.setBounds(661, 341, 35, 20);
+		panel1.add(txtFLDCantidad01);
 
-		textField_30 = new JTextField();
-		textField_30.setColumns(10);
-		textField_30.setBounds(661, 363, 35, 20);
-		panel1.add(textField_30);
+		txtFLDCantidad11 = new JTextField();
+		txtFLDCantidad11.setColumns(10);
+		txtFLDCantidad11.setBounds(661, 363, 35, 20);
+		panel1.add(txtFLDCantidad11);
 
-		textField_31 = new JTextField();
-		textField_31.setColumns(10);
-		textField_31.setBounds(661, 385, 35, 20);
-		panel1.add(textField_31);
+		txtFLDCantidad21 = new JTextField();
+		txtFLDCantidad21.setColumns(10);
+		txtFLDCantidad21.setBounds(661, 385, 35, 20);
+		panel1.add(txtFLDCantidad21);
 
 		JLabel label_30 = new JLabel("Observaci\u00F3n/Referencia");
 		label_30.setHorizontalAlignment(SwingConstants.LEFT);
@@ -925,40 +928,40 @@ public class PGTemplate extends JFrame {
 		label_30.setBounds(700, 319, 139, 14);
 		panel1.add(label_30);
 
-		textField_32 = new JTextField();
-		textField_32.setColumns(10);
-		textField_32.setBounds(700, 341, 133, 20);
-		panel1.add(textField_32);
+		txtFLDObs0 = new JTextField();
+		txtFLDObs0.setColumns(10);
+		txtFLDObs0.setBounds(700, 341, 133, 20);
+		panel1.add(txtFLDObs0);
 
-		textField_33 = new JTextField();
-		textField_33.setColumns(10);
-		textField_33.setBounds(700, 363, 133, 20);
-		panel1.add(textField_33);
+		txtFLDObs1 = new JTextField();
+		txtFLDObs1.setColumns(10);
+		txtFLDObs1.setBounds(700, 363, 133, 20);
+		panel1.add(txtFLDObs1);
 
-		textField_34 = new JTextField();
-		textField_34.setColumns(10);
-		textField_34.setBounds(700, 385, 133, 20);
-		panel1.add(textField_34);
+		txtFLDObs2 = new JTextField();
+		txtFLDObs2.setColumns(10);
+		txtFLDObs2.setBounds(700, 385, 133, 20);
+		panel1.add(txtFLDObs2);
 
-		textField_35 = new JTextField();
-		textField_35.setColumns(10);
-		textField_35.setBounds(700, 407, 133, 20);
-		panel1.add(textField_35);
+		txtFLDObs3 = new JTextField();
+		txtFLDObs3.setColumns(10);
+		txtFLDObs3.setBounds(700, 407, 133, 20);
+		panel1.add(txtFLDObs3);
 
-		textField_36 = new JTextField();
-		textField_36.setColumns(10);
-		textField_36.setBounds(700, 429, 133, 20);
-		panel1.add(textField_36);
+		txtFLDObs5 = new JTextField();
+		txtFLDObs5.setColumns(10);
+		txtFLDObs5.setBounds(700, 429, 133, 20);
+		panel1.add(txtFLDObs5);
 
-		textField_37 = new JTextField();
-		textField_37.setColumns(10);
-		textField_37.setBounds(700, 451, 133, 20);
-		panel1.add(textField_37);
+		txtFLDObs6 = new JTextField();
+		txtFLDObs6.setColumns(10);
+		txtFLDObs6.setBounds(700, 451, 133, 20);
+		panel1.add(txtFLDObs6);
 
-		textField_38 = new JTextField();
-		textField_38.setColumns(10);
-		textField_38.setBounds(700, 473, 133, 20);
-		panel1.add(textField_38);
+		txtFLDObs7 = new JTextField();
+		txtFLDObs7.setColumns(10);
+		txtFLDObs7.setBounds(700, 473, 133, 20);
+		panel1.add(txtFLDObs7);
 
 		lblFachadaLateralIzquierda_1 = new JLabel("FACHADA LATERAL IZQUIERDA");
 		lblFachadaLateralIzquierda_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -978,17 +981,17 @@ public class PGTemplate extends JFrame {
 		lblPanelEpsPared_1.setBounds(421, 289, 203, 14);
 		panel1.add(lblPanelEpsPared_1);
 
-		textField_39 = new JTextField();
-		textField_39.setEditable(false);
-		textField_39.setColumns(10);
-		textField_39.setBounds(624, 283, 35, 20);
-		panel1.add(textField_39);
+		txtFLCantidad10 = new JTextField();
+		txtFLCantidad10.setEditable(false);
+		txtFLCantidad10.setColumns(10);
+		txtFLCantidad10.setBounds(624, 283, 35, 20);
+		panel1.add(txtFLCantidad10);
 
-		textField_40 = new JTextField();
-		textField_40.setEditable(false);
-		textField_40.setColumns(10);
-		textField_40.setBounds(624, 261, 35, 20);
-		panel1.add(textField_40);
+		txtFLCantidad00 = new JTextField();
+		txtFLCantidad00.setEditable(false);
+		txtFLCantidad00.setColumns(10);
+		txtFLCantidad00.setBounds(624, 261, 35, 20);
+		panel1.add(txtFLCantidad00);
 
 		label_33 = new JLabel("Cantidad");
 		label_33.setHorizontalAlignment(SwingConstants.CENTER);
@@ -996,25 +999,25 @@ public class PGTemplate extends JFrame {
 		label_33.setBounds(627, 239, 63, 14);
 		panel1.add(label_33);
 
-		textField_41 = new JTextField();
-		textField_41.setColumns(10);
-		textField_41.setBounds(661, 261, 35, 20);
-		panel1.add(textField_41);
+		txtFLCantidad01 = new JTextField();
+		txtFLCantidad01.setColumns(10);
+		txtFLCantidad01.setBounds(661, 261, 35, 20);
+		panel1.add(txtFLCantidad01);
 
-		textField_42 = new JTextField();
-		textField_42.setColumns(10);
-		textField_42.setBounds(661, 283, 35, 20);
-		panel1.add(textField_42);
+		txtFLCantidad11 = new JTextField();
+		txtFLCantidad11.setColumns(10);
+		txtFLCantidad11.setBounds(661, 283, 35, 20);
+		panel1.add(txtFLCantidad11);
 
-		textField_43 = new JTextField();
-		textField_43.setColumns(10);
-		textField_43.setBounds(700, 283, 133, 20);
-		panel1.add(textField_43);
+		txtFLObs1 = new JTextField();
+		txtFLObs1.setColumns(10);
+		txtFLObs1.setBounds(700, 283, 133, 20);
+		panel1.add(txtFLObs1);
 
-		textField_44 = new JTextField();
-		textField_44.setColumns(10);
-		textField_44.setBounds(700, 261, 133, 20);
-		panel1.add(textField_44);
+		txtFLObs0 = new JTextField();
+		txtFLObs0.setColumns(10);
+		txtFLObs0.setBounds(700, 261, 133, 20);
+		panel1.add(txtFLObs0);
 
 		label_34 = new JLabel("Observaci\u00F3n/Referencia");
 		label_34.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1058,35 +1061,35 @@ public class PGTemplate extends JFrame {
 		label_26.setBounds(849, 134, 203, 14);
 		panel1.add(label_26);
 
-		txtCantHumo1 = new JTextField();
-		txtCantHumo1.setEditable(false);
-		txtCantHumo1.setColumns(10);
-		txtCantHumo1.setBounds(1062, 131, 35, 20);
-		panel1.add(txtCantHumo1);
+		txtKE2Cantidad40 = new JTextField();
+		txtKE2Cantidad40.setEditable(false);
+		txtKE2Cantidad40.setColumns(10);
+		txtKE2Cantidad40.setBounds(1062, 131, 35, 20);
+		panel1.add(txtKE2Cantidad40);
 
-		txtCantKit1 = new JTextField();
-		txtCantKit1.setEditable(false);
-		txtCantKit1.setColumns(10);
-		txtCantKit1.setBounds(1062, 109, 35, 20);
-		panel1.add(txtCantKit1);
+		txtKE2Cantidad30 = new JTextField();
+		txtKE2Cantidad30.setEditable(false);
+		txtKE2Cantidad30.setColumns(10);
+		txtKE2Cantidad30.setBounds(1062, 109, 35, 20);
+		panel1.add(txtKE2Cantidad30);
 
-		txtCantInt1 = new JTextField();
-		txtCantInt1.setEditable(false);
-		txtCantInt1.setColumns(10);
-		txtCantInt1.setBounds(1062, 87, 35, 20);
-		panel1.add(txtCantInt1);
+		txtKE2Cantidad20 = new JTextField();
+		txtKE2Cantidad20.setEditable(false);
+		txtKE2Cantidad20.setColumns(10);
+		txtKE2Cantidad20.setBounds(1062, 87, 35, 20);
+		panel1.add(txtKE2Cantidad20);
 
-		txtCantToma1 = new JTextField();
-		txtCantToma1.setEditable(false);
-		txtCantToma1.setColumns(10);
-		txtCantToma1.setBounds(1062, 65, 35, 20);
-		panel1.add(txtCantToma1);
+		txtKE2Cantidad10 = new JTextField();
+		txtKE2Cantidad10.setEditable(false);
+		txtKE2Cantidad10.setColumns(10);
+		txtKE2Cantidad10.setBounds(1062, 65, 35, 20);
+		panel1.add(txtKE2Cantidad10);
 
-		txtCantLumi1 = new JTextField();
-		txtCantLumi1.setEditable(false);
-		txtCantLumi1.setColumns(10);
-		txtCantLumi1.setBounds(1062, 43, 35, 20);
-		panel1.add(txtCantLumi1);
+		txtKE2Cantidad00 = new JTextField();
+		txtKE2Cantidad00.setEditable(false);
+		txtKE2Cantidad00.setColumns(10);
+		txtKE2Cantidad00.setBounds(1062, 43, 35, 20);
+		panel1.add(txtKE2Cantidad00);
 
 		label_27 = new JLabel("Cantidad");
 		label_27.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1094,55 +1097,55 @@ public class PGTemplate extends JFrame {
 		label_27.setBounds(1065, 21, 63, 14);
 		panel1.add(label_27);
 
-		txtCantLumi2 = new JTextField();
-		txtCantLumi2.setColumns(10);
-		txtCantLumi2.setBounds(1099, 43, 35, 20);
-		panel1.add(txtCantLumi2);
+		txtKE2Cantidad01 = new JTextField();
+		txtKE2Cantidad01.setColumns(10);
+		txtKE2Cantidad01.setBounds(1099, 43, 35, 20);
+		panel1.add(txtKE2Cantidad01);
 
-		txtCantToma2 = new JTextField();
-		txtCantToma2.setColumns(10);
-		txtCantToma2.setBounds(1099, 65, 35, 20);
-		panel1.add(txtCantToma2);
+		txtKE2Cantidad11 = new JTextField();
+		txtKE2Cantidad11.setColumns(10);
+		txtKE2Cantidad11.setBounds(1099, 65, 35, 20);
+		panel1.add(txtKE2Cantidad11);
 
-		txtCantInt2 = new JTextField();
-		txtCantInt2.setColumns(10);
-		txtCantInt2.setBounds(1099, 87, 35, 20);
-		panel1.add(txtCantInt2);
+		txtKE2Cantidad21 = new JTextField();
+		txtKE2Cantidad21.setColumns(10);
+		txtKE2Cantidad21.setBounds(1099, 87, 35, 20);
+		panel1.add(txtKE2Cantidad21);
 
-		txtCantKit2 = new JTextField();
-		txtCantKit2.setColumns(10);
-		txtCantKit2.setBounds(1099, 109, 35, 20);
-		panel1.add(txtCantKit2);
+		txtKE2Cantidad31 = new JTextField();
+		txtKE2Cantidad31.setColumns(10);
+		txtKE2Cantidad31.setBounds(1099, 109, 35, 20);
+		panel1.add(txtKE2Cantidad31);
 
-		txtCantHumo2 = new JTextField();
-		txtCantHumo2.setColumns(10);
-		txtCantHumo2.setBounds(1099, 131, 35, 20);
-		panel1.add(txtCantHumo2);
+		txtKE2Cantidad41 = new JTextField();
+		txtKE2Cantidad41.setColumns(10);
+		txtKE2Cantidad41.setBounds(1099, 131, 35, 20);
+		panel1.add(txtKE2Cantidad41);
 
-		txtReferHumo = new JTextField();
-		txtReferHumo.setColumns(10);
-		txtReferHumo.setBounds(1138, 131, 133, 20);
-		panel1.add(txtReferHumo);
+		txtKE2Obs4 = new JTextField();
+		txtKE2Obs4.setColumns(10);
+		txtKE2Obs4.setBounds(1138, 131, 133, 20);
+		panel1.add(txtKE2Obs4);
 
-		txtReferKit = new JTextField();
-		txtReferKit.setColumns(10);
-		txtReferKit.setBounds(1138, 109, 133, 20);
-		panel1.add(txtReferKit);
+		txtKE2Obs3 = new JTextField();
+		txtKE2Obs3.setColumns(10);
+		txtKE2Obs3.setBounds(1138, 109, 133, 20);
+		panel1.add(txtKE2Obs3);
 
-		txtRefInt = new JTextField();
-		txtRefInt.setColumns(10);
-		txtRefInt.setBounds(1138, 87, 133, 20);
-		panel1.add(txtRefInt);
+		txtKE2Obs2 = new JTextField();
+		txtKE2Obs2.setColumns(10);
+		txtKE2Obs2.setBounds(1138, 87, 133, 20);
+		panel1.add(txtKE2Obs2);
 
-		txtRefTomacorr = new JTextField();
-		txtRefTomacorr.setColumns(10);
-		txtRefTomacorr.setBounds(1138, 65, 133, 20);
-		panel1.add(txtRefTomacorr);
+		txtKE2Obs1 = new JTextField();
+		txtKE2Obs1.setColumns(10);
+		txtKE2Obs1.setBounds(1138, 65, 133, 20);
+		panel1.add(txtKE2Obs1);
 
-		txtRefLuminarias = new JTextField();
-		txtRefLuminarias.setColumns(10);
-		txtRefLuminarias.setBounds(1138, 43, 133, 20);
-		panel1.add(txtRefLuminarias);
+		txtKE2Obs0 = new JTextField();
+		txtKE2Obs0.setColumns(10);
+		txtKE2Obs0.setBounds(1138, 43, 133, 20);
+		panel1.add(txtKE2Obs0);
 
 		label_28 = new JLabel("Observaci\u00F3n/Referencia");
 		label_28.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1168,17 +1171,17 @@ public class PGTemplate extends JFrame {
 		lblLava.setBounds(849, 203, 203, 14);
 		panel1.add(lblLava);
 
-		txtCantLava1 = new JTextField();
-		txtCantLava1.setEditable(false);
-		txtCantLava1.setColumns(10);
-		txtCantLava1.setBounds(1062, 200, 35, 20);
-		panel1.add(txtCantLava1);
+		txtKHCantidad10 = new JTextField();
+		txtKHCantidad10.setEditable(false);
+		txtKHCantidad10.setColumns(10);
+		txtKHCantidad10.setBounds(1062, 200, 35, 20);
+		panel1.add(txtKHCantidad10);
 
-		txtCantInodoros1 = new JTextField();
-		txtCantInodoros1.setEditable(false);
-		txtCantInodoros1.setColumns(10);
-		txtCantInodoros1.setBounds(1062, 178, 35, 20);
-		panel1.add(txtCantInodoros1);
+		txtKHCantidad00 = new JTextField();
+		txtKHCantidad00.setEditable(false);
+		txtKHCantidad00.setColumns(10);
+		txtKHCantidad00.setBounds(1062, 178, 35, 20);
+		panel1.add(txtKHCantidad00);
 
 		label_32 = new JLabel("Cantidad");
 		label_32.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1186,25 +1189,25 @@ public class PGTemplate extends JFrame {
 		label_32.setBounds(1065, 156, 63, 14);
 		panel1.add(label_32);
 
-		txtCantInodoros2 = new JTextField();
-		txtCantInodoros2.setColumns(10);
-		txtCantInodoros2.setBounds(1099, 178, 35, 20);
-		panel1.add(txtCantInodoros2);
+		txtKHCantidad01 = new JTextField();
+		txtKHCantidad01.setColumns(10);
+		txtKHCantidad01.setBounds(1099, 178, 35, 20);
+		panel1.add(txtKHCantidad01);
 
-		txtCantLava2 = new JTextField();
-		txtCantLava2.setColumns(10);
-		txtCantLava2.setBounds(1099, 200, 35, 20);
-		panel1.add(txtCantLava2);
+		txtKHCantidad11 = new JTextField();
+		txtKHCantidad11.setColumns(10);
+		txtKHCantidad11.setBounds(1099, 200, 35, 20);
+		panel1.add(txtKHCantidad11);
 
-		txtRefLava = new JTextField();
-		txtRefLava.setColumns(10);
-		txtRefLava.setBounds(1138, 200, 133, 20);
-		panel1.add(txtRefLava);
+		txtKHObs1 = new JTextField();
+		txtKHObs1.setColumns(10);
+		txtKHObs1.setBounds(1138, 200, 133, 20);
+		panel1.add(txtKHObs1);
 
-		txtRefInodoros = new JTextField();
-		txtRefInodoros.setColumns(10);
-		txtRefInodoros.setBounds(1138, 178, 133, 20);
-		panel1.add(txtRefInodoros);
+		txtKHObs0 = new JTextField();
+		txtKHObs0.setColumns(10);
+		txtKHObs0.setBounds(1138, 178, 133, 20);
+		panel1.add(txtKHObs0);
 
 		label_35 = new JLabel("Observaci\u00F3n/Referencia");
 		label_35.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1230,21 +1233,21 @@ public class PGTemplate extends JFrame {
 		label_31.setBounds(848, 258, 214, 94);
 		panel1.add(label_31);
 
-		txtCantidadAcceAP1 = new JTextField();
-		txtCantidadAcceAP1.setEditable(false);
-		txtCantidadAcceAP1.setColumns(10);
-		txtCantidadAcceAP1.setBounds(1061, 291, 35, 20);
-		panel1.add(txtCantidadAcceAP1);
+		txtAPCantidad00 = new JTextField();
+		txtAPCantidad00.setEditable(false);
+		txtAPCantidad00.setColumns(10);
+		txtAPCantidad00.setBounds(1061, 291, 35, 20);
+		panel1.add(txtAPCantidad00);
 
-		txtCantidadAcceAP2 = new JTextField();
-		txtCantidadAcceAP2.setColumns(10);
-		txtCantidadAcceAP2.setBounds(1098, 291, 35, 20);
-		panel1.add(txtCantidadAcceAP2);
+		txtAPCantidad01 = new JTextField();
+		txtAPCantidad01.setColumns(10);
+		txtAPCantidad01.setBounds(1098, 291, 35, 20);
+		panel1.add(txtAPCantidad01);
 
-		txtRefAcceAP = new JTextField();
-		txtRefAcceAP.setColumns(10);
-		txtRefAcceAP.setBounds(1137, 291, 133, 20);
-		panel1.add(txtRefAcceAP);
+		txtAPObs0 = new JTextField();
+		txtAPObs0.setColumns(10);
+		txtAPObs0.setBounds(1137, 291, 133, 20);
+		panel1.add(txtAPObs0);
 
 		label_36 = new JLabel("Observaci\u00F3n/Referencia");
 		label_36.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1258,21 +1261,21 @@ public class PGTemplate extends JFrame {
 		label_18.setBounds(849, 347, 214, 70);
 		panel1.add(label_18);
 
-		txtCantidadPotable1 = new JTextField();
-		txtCantidadPotable1.setEditable(false);
-		txtCantidadPotable1.setColumns(10);
-		txtCantidadPotable1.setBounds(1062, 363, 35, 20);
-		panel1.add(txtCantidadPotable1);
+		txtAPCantidad10 = new JTextField();
+		txtAPCantidad10.setEditable(false);
+		txtAPCantidad10.setColumns(10);
+		txtAPCantidad10.setBounds(1062, 363, 35, 20);
+		panel1.add(txtAPCantidad10);
 
-		txtCantidadPotable2 = new JTextField();
-		txtCantidadPotable2.setColumns(10);
-		txtCantidadPotable2.setBounds(1099, 363, 35, 20);
-		panel1.add(txtCantidadPotable2);
+		txtAPCantidad11 = new JTextField();
+		txtAPCantidad11.setColumns(10);
+		txtAPCantidad11.setBounds(1099, 363, 35, 20);
+		panel1.add(txtAPCantidad11);
 
-		txtRefPotable = new JTextField();
-		txtRefPotable.setColumns(10);
-		txtRefPotable.setBounds(1138, 363, 133, 20);
-		panel1.add(txtRefPotable);
+		txtAPObs1 = new JTextField();
+		txtAPObs1.setColumns(10);
+		txtAPObs1.setBounds(1138, 363, 133, 20);
+		panel1.add(txtAPObs1);
 
 		lblTuberaDePvc = new JLabel("Tuber\u00EDa de PVC 1/2\" y L=3m");
 		lblTuberaDePvc.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1280,21 +1283,21 @@ public class PGTemplate extends JFrame {
 		lblTuberaDePvc.setBounds(849, 416, 183, 14);
 		panel1.add(lblTuberaDePvc);
 
-		txtCantPVCAP1 = new JTextField();
-		txtCantPVCAP1.setEditable(false);
-		txtCantPVCAP1.setColumns(10);
-		txtCantPVCAP1.setBounds(1062, 413, 35, 20);
-		panel1.add(txtCantPVCAP1);
+		txtAPCantidad20 = new JTextField();
+		txtAPCantidad20.setEditable(false);
+		txtAPCantidad20.setColumns(10);
+		txtAPCantidad20.setBounds(1062, 413, 35, 20);
+		panel1.add(txtAPCantidad20);
 
-		txtCantPVCAP2 = new JTextField();
-		txtCantPVCAP2.setColumns(10);
-		txtCantPVCAP2.setBounds(1099, 413, 35, 20);
-		panel1.add(txtCantPVCAP2);
+		txtAPCantidad21 = new JTextField();
+		txtAPCantidad21.setColumns(10);
+		txtAPCantidad21.setBounds(1099, 413, 35, 20);
+		panel1.add(txtAPCantidad21);
 
-		txtRefPVCAP = new JTextField();
-		txtRefPVCAP.setColumns(10);
-		txtRefPVCAP.setBounds(1138, 413, 133, 20);
-		panel1.add(txtRefPVCAP);
+		txtAPObs2 = new JTextField();
+		txtAPObs2.setColumns(10);
+		txtAPObs2.setBounds(1138, 413, 133, 20);
+		panel1.add(txtAPObs2);
 
 		lblTuberaDePvc_1 = new JLabel("Tuber\u00EDa de PVC 3/4\" y L=3m");
 		lblTuberaDePvc_1.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1302,21 +1305,21 @@ public class PGTemplate extends JFrame {
 		lblTuberaDePvc_1.setBounds(849, 438, 183, 14);
 		panel1.add(lblTuberaDePvc_1);
 
-		txtCantTubAP1 = new JTextField();
-		txtCantTubAP1.setEditable(false);
-		txtCantTubAP1.setColumns(10);
-		txtCantTubAP1.setBounds(1062, 435, 35, 20);
-		panel1.add(txtCantTubAP1);
+		txtAPCantidad30 = new JTextField();
+		txtAPCantidad30.setEditable(false);
+		txtAPCantidad30.setColumns(10);
+		txtAPCantidad30.setBounds(1062, 435, 35, 20);
+		panel1.add(txtAPCantidad30);
 
-		txtCantTubAP2 = new JTextField();
-		txtCantTubAP2.setColumns(10);
-		txtCantTubAP2.setBounds(1099, 435, 35, 20);
-		panel1.add(txtCantTubAP2);
+		txtAPCantidad31 = new JTextField();
+		txtAPCantidad31.setColumns(10);
+		txtAPCantidad31.setBounds(1099, 435, 35, 20);
+		panel1.add(txtAPCantidad31);
 
-		txtRefTubAP = new JTextField();
-		txtRefTubAP.setColumns(10);
-		txtRefTubAP.setBounds(1138, 435, 133, 20);
-		panel1.add(txtRefTubAP);
+		txtAPObs3 = new JTextField();
+		txtAPObs3.setColumns(10);
+		txtAPObs3.setBounds(1138, 435, 133, 20);
+		panel1.add(txtAPObs3);
 
 		lblkitParaConexin = new JLabel(
 				"<html><body>Kit para conexi\u00F3n de tuber\u00EDa 1/2\". (lija<br>pliego, polipega 1/4gal,1 uni\u00F3n)</body></html>");
@@ -1325,21 +1328,21 @@ public class PGTemplate extends JFrame {
 		lblkitParaConexin.setBounds(849, 463, 203, 39);
 		panel1.add(lblkitParaConexin);
 
-		txtCantConeTub1 = new JTextField();
-		txtCantConeTub1.setEditable(false);
-		txtCantConeTub1.setColumns(10);
-		txtCantConeTub1.setBounds(1062, 471, 35, 20);
-		panel1.add(txtCantConeTub1);
+		txtAPCantidad40 = new JTextField();
+		txtAPCantidad40.setEditable(false);
+		txtAPCantidad40.setColumns(10);
+		txtAPCantidad40.setBounds(1062, 471, 35, 20);
+		panel1.add(txtAPCantidad40);
 
-		txtCantConeTub2 = new JTextField();
-		txtCantConeTub2.setColumns(10);
-		txtCantConeTub2.setBounds(1099, 471, 35, 20);
-		panel1.add(txtCantConeTub2);
+		txtAPCantidad41 = new JTextField();
+		txtAPCantidad41.setColumns(10);
+		txtAPCantidad41.setBounds(1099, 471, 35, 20);
+		panel1.add(txtAPCantidad41);
 
-		txtRefConeTub = new JTextField();
-		txtRefConeTub.setColumns(10);
-		txtRefConeTub.setBounds(1138, 471, 133, 20);
-		panel1.add(txtRefConeTub);
+		txtAPObs4 = new JTextField();
+		txtAPObs4.setColumns(10);
+		txtAPObs4.setBounds(1138, 471, 133, 20);
+		panel1.add(txtAPObs4);
 
 		btnSiguiente = new JButton("Siguiente p\u00E1gina");
 		btnSiguiente.setBounds(1072, 502, 188, 23);
@@ -1405,75 +1408,75 @@ public class PGTemplate extends JFrame {
 		lblkitParaConexin_2.setBounds(10, 250, 203, 42);
 		panel2.add(lblkitParaConexin_2);
 
-		textField_45 = new JTextField();
-		textField_45.setColumns(10);
-		textField_45.setBounds(223, 261, 35, 20);
-		panel2.add(textField_45);
+		txtARCantidad60 = new JTextField();
+		txtARCantidad60.setColumns(10);
+		txtARCantidad60.setBounds(223, 261, 35, 20);
+		panel2.add(txtARCantidad60);
 
-		textField_46 = new JTextField();
-		textField_46.setColumns(10);
-		textField_46.setBounds(260, 261, 35, 20);
-		panel2.add(textField_46);
+		txtARCantidad61 = new JTextField();
+		txtARCantidad61.setColumns(10);
+		txtARCantidad61.setBounds(260, 261, 35, 20);
+		panel2.add(txtARCantidad61);
 
-		txtCantidadConex1 = new JTextField();
-		txtCantidadConex1.setColumns(10);
-		txtCantidadConex1.setBounds(223, 212, 35, 20);
-		panel2.add(txtCantidadConex1);
+		txtARCantidad50 = new JTextField();
+		txtARCantidad50.setColumns(10);
+		txtARCantidad50.setBounds(223, 212, 35, 20);
+		panel2.add(txtARCantidad50);
 
-		txtCantidadConex2 = new JTextField();
-		txtCantidadConex2.setColumns(10);
-		txtCantidadConex2.setBounds(260, 212, 35, 20);
-		panel2.add(txtCantidadConex2);
+		txtARCantidad51 = new JTextField();
+		txtARCantidad51.setColumns(10);
+		txtARCantidad51.setBounds(260, 212, 35, 20);
+		panel2.add(txtARCantidad51);
 
-		txtCantidTubAR2 = new JTextField();
-		txtCantidTubAR2.setColumns(10);
-		txtCantidTubAR2.setBounds(260, 173, 35, 20);
-		panel2.add(txtCantidTubAR2);
+		txtARCantidad41 = new JTextField();
+		txtARCantidad41.setColumns(10);
+		txtARCantidad41.setBounds(260, 173, 35, 20);
+		panel2.add(txtARCantidad41);
 
-		txtCantidTubAR1 = new JTextField();
-		txtCantidTubAR1.setColumns(10);
-		txtCantidTubAR1.setBounds(223, 173, 35, 20);
-		panel2.add(txtCantidTubAR1);
+		txtARCantidad40 = new JTextField();
+		txtARCantidad40.setColumns(10);
+		txtARCantidad40.setBounds(223, 173, 35, 20);
+		panel2.add(txtARCantidad40);
 
-		txtCantiTubAR1 = new JTextField();
-		txtCantiTubAR1.setColumns(10);
-		txtCantiTubAR1.setBounds(223, 151, 35, 20);
-		panel2.add(txtCantiTubAR1);
+		txtARCantidad30 = new JTextField();
+		txtARCantidad30.setColumns(10);
+		txtARCantidad30.setBounds(223, 151, 35, 20);
+		panel2.add(txtARCantidad30);
 
-		txtCantiTubAR2 = new JTextField();
-		txtCantiTubAR2.setColumns(10);
-		txtCantiTubAR2.setBounds(260, 151, 35, 20);
-		panel2.add(txtCantiTubAR2);
+		txtARCantidad31 = new JTextField();
+		txtARCantidad31.setColumns(10);
+		txtARCantidad31.setBounds(260, 151, 35, 20);
+		panel2.add(txtARCantidad31);
 
-		txtCantAcceInod2 = new JTextField();
-		txtCantAcceInod2.setColumns(10);
-		txtCantAcceInod2.setBounds(260, 112, 35, 20);
-		panel2.add(txtCantAcceInod2);
+		txtARCantidad21 = new JTextField();
+		txtARCantidad21.setColumns(10);
+		txtARCantidad21.setBounds(260, 112, 35, 20);
+		panel2.add(txtARCantidad21);
 
-		txtCantAcceInod1 = new JTextField();
-		txtCantAcceInod1.setColumns(10);
-		txtCantAcceInod1.setBounds(223, 112, 35, 20);
-		panel2.add(txtCantAcceInod1);
+		txtARCantidad20 = new JTextField();
+		txtARCantidad20.setColumns(10);
+		txtARCantidad20.setBounds(223, 112, 35, 20);
+		panel2.add(txtARCantidad20);
 
-		txtCantTubAR1 = new JTextField();
-		txtCantTubAR1.setColumns(10);
-		txtCantTubAR1.setBounds(223, 75, 35, 20);
-		panel2.add(txtCantTubAR1);
+		txtARCantidad10 = new JTextField();
+		txtARCantidad10.setColumns(10);
+		txtARCantidad10.setBounds(223, 75, 35, 20);
+		panel2.add(txtARCantidad10);
 
-		txtCantConeAR1 = new JTextField();
-		txtCantConeAR1.setColumns(10);
-		txtCantConeAR1.setBounds(223, 44, 35, 20);
-		panel2.add(txtCantConeAR1);
+		txtARCantidad00 = new JTextField();
+		txtARCantidad00.setColumns(10);
+		txtARCantidad00.setBounds(223, 44, 35, 20);
+		panel2.add(txtARCantidad00);
 
-		txtCantConeAR2 = new JTextField();
-		txtCantConeAR2.setColumns(10);
-		txtCantConeAR2.setBounds(260, 44, 35, 20);
-		panel2.add(txtCantConeAR2);
+		txtARCantidad01 = new JTextField();
+		txtARCantidad01.setColumns(10);
+		txtARCantidad01.setBounds(260, 44, 35, 20);
+		panel2.add(txtARCantidad01);
 
-		txtCantTubAR2 = new JTextField();
-		txtCantTubAR2.setColumns(10);
-		txtCantTubAR2.setBounds(260, 75, 35, 20);
-		panel2.add(txtCantTubAR2);
+		txtARCantidad11 = new JTextField();
+		txtARCantidad11.setColumns(10);
+		txtARCantidad11.setBounds(260, 75, 35, 20);
+		panel2.add(txtARCantidad11);
 
 		label_45 = new JLabel("Cantidad");
 		label_45.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1487,40 +1490,40 @@ public class PGTemplate extends JFrame {
 		label_46.setBounds(299, 11, 139, 14);
 		panel2.add(label_46);
 
-		txtRefConeAR = new JTextField();
-		txtRefConeAR.setColumns(10);
-		txtRefConeAR.setBounds(299, 44, 133, 20);
-		panel2.add(txtRefConeAR);
+		txtARObs0 = new JTextField();
+		txtARObs0.setColumns(10);
+		txtARObs0.setBounds(299, 44, 133, 20);
+		panel2.add(txtARObs0);
 
-		txtRefTubAR = new JTextField();
-		txtRefTubAR.setColumns(10);
-		txtRefTubAR.setBounds(299, 75, 133, 20);
-		panel2.add(txtRefTubAR);
+		txtARObs1 = new JTextField();
+		txtARObs1.setColumns(10);
+		txtARObs1.setBounds(299, 75, 133, 20);
+		panel2.add(txtARObs1);
 
-		txtRefAcceInod = new JTextField();
-		txtRefAcceInod.setColumns(10);
-		txtRefAcceInod.setBounds(299, 112, 133, 20);
-		panel2.add(txtRefAcceInod);
+		txtARObs2 = new JTextField();
+		txtARObs2.setColumns(10);
+		txtARObs2.setBounds(299, 112, 133, 20);
+		panel2.add(txtARObs2);
 
-		txtRefTubARes = new JTextField();
-		txtRefTubARes.setColumns(10);
-		txtRefTubARes.setBounds(299, 151, 133, 20);
-		panel2.add(txtRefTubARes);
+		txtARObs3 = new JTextField();
+		txtARObs3.setColumns(10);
+		txtARObs3.setBounds(299, 151, 133, 20);
+		panel2.add(txtARObs3);
 
-		txtRef = new JTextField();
-		txtRef.setColumns(10);
-		txtRef.setBounds(299, 173, 133, 20);
-		panel2.add(txtRef);
+		txtARObs4 = new JTextField();
+		txtARObs4.setColumns(10);
+		txtARObs4.setBounds(299, 173, 133, 20);
+		panel2.add(txtARObs4);
 
-		txtRefConex = new JTextField();
-		txtRefConex.setColumns(10);
-		txtRefConex.setBounds(299, 212, 133, 20);
-		panel2.add(txtRefConex);
+		txtARObs5 = new JTextField();
+		txtARObs5.setColumns(10);
+		txtARObs5.setBounds(299, 212, 133, 20);
+		panel2.add(txtARObs5);
 
-		textField_65 = new JTextField();
-		textField_65.setColumns(10);
-		textField_65.setBounds(299, 261, 133, 20);
-		panel2.add(textField_65);
+		txtARObs6 = new JTextField();
+		txtARObs6.setColumns(10);
+		txtARObs6.setBounds(299, 261, 133, 20);
+		panel2.add(txtARObs6);
 
 		label_38 = new JLabel("COMPONENTE ESTRUCTURAL");
 		label_38.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1600,155 +1603,155 @@ public class PGTemplate extends JFrame {
 		lblPerfilSfTipo_4.setBounds(10, 515, 203, 14);
 		panel2.add(lblPerfilSfTipo_4);
 
-		textField_47 = new JTextField();
-		textField_47.setColumns(10);
-		textField_47.setBounds(223, 512, 35, 20);
-		panel2.add(textField_47);
+		txtCECantidad90 = new JTextField();
+		txtCECantidad90.setColumns(10);
+		txtCECantidad90.setBounds(223, 512, 35, 20);
+		panel2.add(txtCECantidad90);
 
-		textField_48 = new JTextField();
-		textField_48.setColumns(10);
-		textField_48.setBounds(223, 490, 35, 20);
-		panel2.add(textField_48);
+		txtCECantidad80 = new JTextField();
+		txtCECantidad80.setColumns(10);
+		txtCECantidad80.setBounds(223, 490, 35, 20);
+		panel2.add(txtCECantidad80);
 
-		textField_49 = new JTextField();
-		textField_49.setColumns(10);
-		textField_49.setBounds(223, 468, 35, 20);
-		panel2.add(textField_49);
+		txtCECantidad70 = new JTextField();
+		txtCECantidad70.setColumns(10);
+		txtCECantidad70.setBounds(223, 468, 35, 20);
+		panel2.add(txtCECantidad70);
 
-		textField_50 = new JTextField();
-		textField_50.setColumns(10);
-		textField_50.setBounds(223, 446, 35, 20);
-		panel2.add(textField_50);
+		txtCECantidad60 = new JTextField();
+		txtCECantidad60.setColumns(10);
+		txtCECantidad60.setBounds(223, 446, 35, 20);
+		panel2.add(txtCECantidad60);
 
-		textField_51 = new JTextField();
-		textField_51.setColumns(10);
-		textField_51.setBounds(223, 424, 35, 20);
-		panel2.add(textField_51);
+		txtCECantidad50 = new JTextField();
+		txtCECantidad50.setColumns(10);
+		txtCECantidad50.setBounds(223, 424, 35, 20);
+		panel2.add(txtCECantidad50);
 
-		textField_52 = new JTextField();
-		textField_52.setColumns(10);
-		textField_52.setBounds(223, 402, 35, 20);
-		panel2.add(textField_52);
+		txtCECantidad40 = new JTextField();
+		txtCECantidad40.setColumns(10);
+		txtCECantidad40.setBounds(223, 402, 35, 20);
+		panel2.add(txtCECantidad40);
 
-		textField_53 = new JTextField();
-		textField_53.setColumns(10);
-		textField_53.setBounds(223, 380, 35, 20);
-		panel2.add(textField_53);
+		txtCECantidad30 = new JTextField();
+		txtCECantidad30.setColumns(10);
+		txtCECantidad30.setBounds(223, 380, 35, 20);
+		panel2.add(txtCECantidad30);
 
-		textField_54 = new JTextField();
-		textField_54.setColumns(10);
-		textField_54.setBounds(223, 358, 35, 20);
-		panel2.add(textField_54);
+		txtCECantidad20 = new JTextField();
+		txtCECantidad20.setColumns(10);
+		txtCECantidad20.setBounds(223, 358, 35, 20);
+		panel2.add(txtCECantidad20);
 
-		textField_55 = new JTextField();
-		textField_55.setColumns(10);
-		textField_55.setBounds(223, 336, 35, 20);
-		panel2.add(textField_55);
+		txtCECantidad10 = new JTextField();
+		txtCECantidad10.setColumns(10);
+		txtCECantidad10.setBounds(223, 336, 35, 20);
+		panel2.add(txtCECantidad10);
 
-		textField_56 = new JTextField();
-		textField_56.setColumns(10);
-		textField_56.setBounds(223, 314, 35, 20);
-		panel2.add(textField_56);
+		txtCECantidad00 = new JTextField();
+		txtCECantidad00.setColumns(10);
+		txtCECantidad00.setBounds(223, 314, 35, 20);
+		panel2.add(txtCECantidad00);
 
-		textField_57 = new JTextField();
-		textField_57.setColumns(10);
-		textField_57.setBounds(260, 314, 35, 20);
-		panel2.add(textField_57);
+		txtCECantidad01 = new JTextField();
+		txtCECantidad01.setColumns(10);
+		txtCECantidad01.setBounds(260, 314, 35, 20);
+		panel2.add(txtCECantidad01);
 
-		textField_58 = new JTextField();
-		textField_58.setColumns(10);
-		textField_58.setBounds(260, 336, 35, 20);
-		panel2.add(textField_58);
+		txtCECantidad11 = new JTextField();
+		txtCECantidad11.setColumns(10);
+		txtCECantidad11.setBounds(260, 336, 35, 20);
+		panel2.add(txtCECantidad11);
 
-		textField_59 = new JTextField();
-		textField_59.setColumns(10);
-		textField_59.setBounds(260, 358, 35, 20);
-		panel2.add(textField_59);
+		txtCECantidad21 = new JTextField();
+		txtCECantidad21.setColumns(10);
+		txtCECantidad21.setBounds(260, 358, 35, 20);
+		panel2.add(txtCECantidad21);
 
-		textField_60 = new JTextField();
-		textField_60.setColumns(10);
-		textField_60.setBounds(260, 380, 35, 20);
-		panel2.add(textField_60);
+		txtCECantidad31 = new JTextField();
+		txtCECantidad31.setColumns(10);
+		txtCECantidad31.setBounds(260, 380, 35, 20);
+		panel2.add(txtCECantidad31);
 
-		textField_61 = new JTextField();
-		textField_61.setColumns(10);
-		textField_61.setBounds(260, 402, 35, 20);
-		panel2.add(textField_61);
+		txtCECantidad41 = new JTextField();
+		txtCECantidad41.setColumns(10);
+		txtCECantidad41.setBounds(260, 402, 35, 20);
+		panel2.add(txtCECantidad41);
 
-		textField_62 = new JTextField();
-		textField_62.setColumns(10);
-		textField_62.setBounds(260, 424, 35, 20);
-		panel2.add(textField_62);
+		txtCECantidad51 = new JTextField();
+		txtCECantidad51.setColumns(10);
+		txtCECantidad51.setBounds(260, 424, 35, 20);
+		panel2.add(txtCECantidad51);
 
-		textField_63 = new JTextField();
-		textField_63.setColumns(10);
-		textField_63.setBounds(260, 446, 35, 20);
-		panel2.add(textField_63);
+		txtCECantidad61 = new JTextField();
+		txtCECantidad61.setColumns(10);
+		txtCECantidad61.setBounds(260, 446, 35, 20);
+		panel2.add(txtCECantidad61);
 
-		textField_64 = new JTextField();
-		textField_64.setColumns(10);
-		textField_64.setBounds(260, 468, 35, 20);
-		panel2.add(textField_64);
+		txtCECantidad71 = new JTextField();
+		txtCECantidad71.setColumns(10);
+		txtCECantidad71.setBounds(260, 468, 35, 20);
+		panel2.add(txtCECantidad71);
 
-		textField_66 = new JTextField();
-		textField_66.setColumns(10);
-		textField_66.setBounds(260, 490, 35, 20);
-		panel2.add(textField_66);
+		txtCECantidad81 = new JTextField();
+		txtCECantidad81.setColumns(10);
+		txtCECantidad81.setBounds(260, 490, 35, 20);
+		panel2.add(txtCECantidad81);
 
-		textField_67 = new JTextField();
-		textField_67.setColumns(10);
-		textField_67.setBounds(260, 512, 35, 20);
-		panel2.add(textField_67);
+		txtCECantidad91 = new JTextField();
+		txtCECantidad91.setColumns(10);
+		txtCECantidad91.setBounds(260, 512, 35, 20);
+		panel2.add(txtCECantidad91);
 
-		textField_68 = new JTextField();
-		textField_68.setColumns(10);
-		textField_68.setBounds(299, 512, 133, 20);
-		panel2.add(textField_68);
+		txtCEObs10 = new JTextField();
+		txtCEObs10.setColumns(10);
+		txtCEObs10.setBounds(299, 512, 133, 20);
+		panel2.add(txtCEObs10);
 
-		textField_69 = new JTextField();
-		textField_69.setColumns(10);
-		textField_69.setBounds(299, 490, 133, 20);
-		panel2.add(textField_69);
+		txtCEObs9 = new JTextField();
+		txtCEObs9.setColumns(10);
+		txtCEObs9.setBounds(299, 490, 133, 20);
+		panel2.add(txtCEObs9);
 
-		textField_70 = new JTextField();
-		textField_70.setColumns(10);
-		textField_70.setBounds(299, 468, 133, 20);
-		panel2.add(textField_70);
+		txtCEObs8 = new JTextField();
+		txtCEObs8.setColumns(10);
+		txtCEObs8.setBounds(299, 468, 133, 20);
+		panel2.add(txtCEObs8);
 
-		textField_71 = new JTextField();
-		textField_71.setColumns(10);
-		textField_71.setBounds(299, 446, 133, 20);
-		panel2.add(textField_71);
+		txtCEObs7 = new JTextField();
+		txtCEObs7.setColumns(10);
+		txtCEObs7.setBounds(299, 446, 133, 20);
+		panel2.add(txtCEObs7);
 
-		textField_72 = new JTextField();
-		textField_72.setColumns(10);
-		textField_72.setBounds(299, 424, 133, 20);
-		panel2.add(textField_72);
+		txtCEObs6 = new JTextField();
+		txtCEObs6.setColumns(10);
+		txtCEObs6.setBounds(299, 424, 133, 20);
+		panel2.add(txtCEObs6);
 
-		textField_73 = new JTextField();
-		textField_73.setColumns(10);
-		textField_73.setBounds(299, 402, 133, 20);
-		panel2.add(textField_73);
+		txtCEObs5 = new JTextField();
+		txtCEObs5.setColumns(10);
+		txtCEObs5.setBounds(299, 402, 133, 20);
+		panel2.add(txtCEObs5);
 
-		textField_74 = new JTextField();
-		textField_74.setColumns(10);
-		textField_74.setBounds(299, 380, 133, 20);
-		panel2.add(textField_74);
+		txtCEObs4 = new JTextField();
+		txtCEObs4.setColumns(10);
+		txtCEObs4.setBounds(299, 380, 133, 20);
+		panel2.add(txtCEObs4);
 
-		textField_75 = new JTextField();
-		textField_75.setColumns(10);
-		textField_75.setBounds(299, 358, 133, 20);
-		panel2.add(textField_75);
+		txtCEObs3 = new JTextField();
+		txtCEObs3.setColumns(10);
+		txtCEObs3.setBounds(299, 358, 133, 20);
+		panel2.add(txtCEObs3);
 
-		textField_76 = new JTextField();
-		textField_76.setColumns(10);
-		textField_76.setBounds(299, 336, 133, 20);
-		panel2.add(textField_76);
+		txtCEObs1 = new JTextField();
+		txtCEObs1.setColumns(10);
+		txtCEObs1.setBounds(299, 336, 133, 20);
+		panel2.add(txtCEObs1);
 
-		textField_77 = new JTextField();
-		textField_77.setColumns(10);
-		textField_77.setBounds(299, 314, 133, 20);
-		panel2.add(textField_77);
+		txtCEObs0 = new JTextField();
+		txtCEObs0.setColumns(10);
+		txtCEObs0.setBounds(299, 314, 133, 20);
+		panel2.add(txtCEObs0);
 
 		lblPortn = new JLabel("PORT\u00D3N");
 		lblPortn.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1762,10 +1765,10 @@ public class PGTemplate extends JFrame {
 		lblLuminariasDePared.setBounds(442, 36, 203, 14);
 		panel2.add(lblLuminariasDePared);
 
-		txtCantidadLumP1 = new JTextField();
-		txtCantidadLumP1.setColumns(10);
-		txtCantidadLumP1.setBounds(649, 33, 35, 20);
-		panel2.add(txtCantidadLumP1);
+		txtPCantidad00 = new JTextField();
+		txtPCantidad00.setColumns(10);
+		txtPCantidad00.setBounds(649, 33, 35, 20);
+		panel2.add(txtPCantidad00);
 
 		label_50 = new JLabel("Cantidad");
 		label_50.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1773,15 +1776,15 @@ public class PGTemplate extends JFrame {
 		label_50.setBounds(652, 11, 63, 14);
 		panel2.add(label_50);
 
-		txtCantidadLumP2 = new JTextField();
-		txtCantidadLumP2.setColumns(10);
-		txtCantidadLumP2.setBounds(686, 33, 35, 20);
-		panel2.add(txtCantidadLumP2);
+		txtPCantidad01 = new JTextField();
+		txtPCantidad01.setColumns(10);
+		txtPCantidad01.setBounds(686, 33, 35, 20);
+		panel2.add(txtPCantidad01);
 
-		txtRefLumP = new JTextField();
-		txtRefLumP.setColumns(10);
-		txtRefLumP.setBounds(725, 33, 133, 20);
-		panel2.add(txtRefLumP);
+		txtPObs0 = new JTextField();
+		txtPObs0.setColumns(10);
+		txtPObs0.setBounds(725, 33, 133, 20);
+		panel2.add(txtPObs0);
 
 		label_51 = new JLabel("Observaci\u00F3n/Referencia");
 		label_51.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1795,20 +1798,20 @@ public class PGTemplate extends JFrame {
 		lblElementoPortn.setBounds(442, 58, 203, 14);
 		panel2.add(lblElementoPortn);
 
-		txtCantidadPorton1 = new JTextField();
-		txtCantidadPorton1.setColumns(10);
-		txtCantidadPorton1.setBounds(649, 55, 35, 20);
-		panel2.add(txtCantidadPorton1);
+		txtPCantidad10 = new JTextField();
+		txtPCantidad10.setColumns(10);
+		txtPCantidad10.setBounds(649, 55, 35, 20);
+		panel2.add(txtPCantidad10);
 
-		txtCantidadPorton2 = new JTextField();
-		txtCantidadPorton2.setColumns(10);
-		txtCantidadPorton2.setBounds(686, 55, 35, 20);
-		panel2.add(txtCantidadPorton2);
+		txtPCantidad11 = new JTextField();
+		txtPCantidad11.setColumns(10);
+		txtPCantidad11.setBounds(686, 55, 35, 20);
+		panel2.add(txtPCantidad11);
 
-		txtRefPorton = new JTextField();
-		txtRefPorton.setColumns(10);
-		txtRefPorton.setBounds(725, 55, 133, 20);
-		panel2.add(txtRefPorton);
+		txtPObs1 = new JTextField();
+		txtPObs1.setColumns(10);
+		txtPObs1.setBounds(725, 55, 133, 20);
+		panel2.add(txtPObs1);
 
 		lblComponenteArquitectnico = new JLabel("COMPONENTE ARQUITECT\u00D3NICO");
 		lblComponenteArquitectnico.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1888,65 +1891,65 @@ public class PGTemplate extends JFrame {
 		lblPanelesEpsPared_16.setBounds(442, 361, 203, 14);
 		panel2.add(lblPanelesEpsPared_16);
 
-		textField_78 = new JTextField();
-		textField_78.setColumns(10);
-		textField_78.setBounds(649, 355, 35, 20);
-		panel2.add(textField_78);
+		txtCACantidad110 = new JTextField();
+		txtCACantidad110.setColumns(10);
+		txtCACantidad110.setBounds(649, 355, 35, 20);
+		panel2.add(txtCACantidad110);
 
-		textField_79 = new JTextField();
-		textField_79.setColumns(10);
-		textField_79.setBounds(649, 333, 35, 20);
-		panel2.add(textField_79);
+		txtCACantidad100 = new JTextField();
+		txtCACantidad100.setColumns(10);
+		txtCACantidad100.setBounds(649, 333, 35, 20);
+		panel2.add(txtCACantidad100);
 
-		textField_80 = new JTextField();
-		textField_80.setColumns(10);
-		textField_80.setBounds(649, 311, 35, 20);
-		panel2.add(textField_80);
+		txtCACantidad90 = new JTextField();
+		txtCACantidad90.setColumns(10);
+		txtCACantidad90.setBounds(649, 311, 35, 20);
+		panel2.add(txtCACantidad90);
 
-		textField_81 = new JTextField();
-		textField_81.setColumns(10);
-		textField_81.setBounds(649, 289, 35, 20);
-		panel2.add(textField_81);
+		txtCACantidad80 = new JTextField();
+		txtCACantidad80.setColumns(10);
+		txtCACantidad80.setBounds(649, 289, 35, 20);
+		panel2.add(txtCACantidad80);
 
-		textField_82 = new JTextField();
-		textField_82.setColumns(10);
-		textField_82.setBounds(649, 267, 35, 20);
-		panel2.add(textField_82);
+		txtCACantidad70 = new JTextField();
+		txtCACantidad70.setColumns(10);
+		txtCACantidad70.setBounds(649, 267, 35, 20);
+		panel2.add(txtCACantidad70);
 
-		textField_83 = new JTextField();
-		textField_83.setColumns(10);
-		textField_83.setBounds(649, 245, 35, 20);
-		panel2.add(textField_83);
+		txtCACantidad60 = new JTextField();
+		txtCACantidad60.setColumns(10);
+		txtCACantidad60.setBounds(649, 245, 35, 20);
+		panel2.add(txtCACantidad60);
 
-		textField_84 = new JTextField();
-		textField_84.setColumns(10);
-		textField_84.setBounds(649, 223, 35, 20);
-		panel2.add(textField_84);
+		txtCACantidad50 = new JTextField();
+		txtCACantidad50.setColumns(10);
+		txtCACantidad50.setBounds(649, 223, 35, 20);
+		panel2.add(txtCACantidad50);
 
-		textField_85 = new JTextField();
-		textField_85.setColumns(10);
-		textField_85.setBounds(649, 201, 35, 20);
-		panel2.add(textField_85);
+		txtCACantidad40 = new JTextField();
+		txtCACantidad40.setColumns(10);
+		txtCACantidad40.setBounds(649, 201, 35, 20);
+		panel2.add(txtCACantidad40);
 
-		textField_86 = new JTextField();
-		textField_86.setColumns(10);
-		textField_86.setBounds(649, 179, 35, 20);
-		panel2.add(textField_86);
+		txtCACantidad30 = new JTextField();
+		txtCACantidad30.setColumns(10);
+		txtCACantidad30.setBounds(649, 179, 35, 20);
+		panel2.add(txtCACantidad30);
 
-		textField_87 = new JTextField();
-		textField_87.setColumns(10);
-		textField_87.setBounds(649, 157, 35, 20);
-		panel2.add(textField_87);
+		txtCACantidad20 = new JTextField();
+		txtCACantidad20.setColumns(10);
+		txtCACantidad20.setBounds(649, 157, 35, 20);
+		panel2.add(txtCACantidad20);
 
-		textField_88 = new JTextField();
-		textField_88.setColumns(10);
-		textField_88.setBounds(649, 135, 35, 20);
-		panel2.add(textField_88);
+		txtCACantidad10 = new JTextField();
+		txtCACantidad10.setColumns(10);
+		txtCACantidad10.setBounds(649, 135, 35, 20);
+		panel2.add(txtCACantidad10);
 
-		textField_89 = new JTextField();
-		textField_89.setColumns(10);
-		textField_89.setBounds(649, 113, 35, 20);
-		panel2.add(textField_89);
+		txtCACantidad00 = new JTextField();
+		txtCACantidad00.setColumns(10);
+		txtCACantidad00.setBounds(649, 113, 35, 20);
+		panel2.add(txtCACantidad00);
 
 		label_63 = new JLabel("Cantidad");
 		label_63.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1954,125 +1957,125 @@ public class PGTemplate extends JFrame {
 		label_63.setBounds(652, 91, 63, 14);
 		panel2.add(label_63);
 
-		textField_90 = new JTextField();
-		textField_90.setColumns(10);
-		textField_90.setBounds(686, 113, 35, 20);
-		panel2.add(textField_90);
+		txtCACantidad01 = new JTextField();
+		txtCACantidad01.setColumns(10);
+		txtCACantidad01.setBounds(686, 113, 35, 20);
+		panel2.add(txtCACantidad01);
 
-		textField_91 = new JTextField();
-		textField_91.setColumns(10);
-		textField_91.setBounds(686, 135, 35, 20);
-		panel2.add(textField_91);
+		txtCACantidad11 = new JTextField();
+		txtCACantidad11.setColumns(10);
+		txtCACantidad11.setBounds(686, 135, 35, 20);
+		panel2.add(txtCACantidad11);
 
-		textField_92 = new JTextField();
-		textField_92.setColumns(10);
-		textField_92.setBounds(686, 157, 35, 20);
-		panel2.add(textField_92);
+		txtCACantidad21 = new JTextField();
+		txtCACantidad21.setColumns(10);
+		txtCACantidad21.setBounds(686, 157, 35, 20);
+		panel2.add(txtCACantidad21);
 
-		textField_93 = new JTextField();
-		textField_93.setColumns(10);
-		textField_93.setBounds(686, 179, 35, 20);
-		panel2.add(textField_93);
+		txtCACantidad31 = new JTextField();
+		txtCACantidad31.setColumns(10);
+		txtCACantidad31.setBounds(686, 179, 35, 20);
+		panel2.add(txtCACantidad31);
 
-		textField_94 = new JTextField();
-		textField_94.setColumns(10);
-		textField_94.setBounds(686, 201, 35, 20);
-		panel2.add(textField_94);
+		txtCACantidad41 = new JTextField();
+		txtCACantidad41.setColumns(10);
+		txtCACantidad41.setBounds(686, 201, 35, 20);
+		panel2.add(txtCACantidad41);
 
-		textField_95 = new JTextField();
-		textField_95.setColumns(10);
-		textField_95.setBounds(686, 223, 35, 20);
-		panel2.add(textField_95);
+		txtCACantidad51 = new JTextField();
+		txtCACantidad51.setColumns(10);
+		txtCACantidad51.setBounds(686, 223, 35, 20);
+		panel2.add(txtCACantidad51);
 
-		textField_96 = new JTextField();
-		textField_96.setColumns(10);
-		textField_96.setBounds(686, 245, 35, 20);
-		panel2.add(textField_96);
+		txtCACantidad61 = new JTextField();
+		txtCACantidad61.setColumns(10);
+		txtCACantidad61.setBounds(686, 245, 35, 20);
+		panel2.add(txtCACantidad61);
 
-		textField_97 = new JTextField();
-		textField_97.setColumns(10);
-		textField_97.setBounds(686, 267, 35, 20);
-		panel2.add(textField_97);
+		txtCACantidad71 = new JTextField();
+		txtCACantidad71.setColumns(10);
+		txtCACantidad71.setBounds(686, 267, 35, 20);
+		panel2.add(txtCACantidad71);
 
-		textField_98 = new JTextField();
-		textField_98.setColumns(10);
-		textField_98.setBounds(686, 289, 35, 20);
-		panel2.add(textField_98);
+		txtCACantidad81 = new JTextField();
+		txtCACantidad81.setColumns(10);
+		txtCACantidad81.setBounds(686, 289, 35, 20);
+		panel2.add(txtCACantidad81);
 
-		textField_99 = new JTextField();
-		textField_99.setColumns(10);
-		textField_99.setBounds(686, 311, 35, 20);
-		panel2.add(textField_99);
+		txtCACantidad91 = new JTextField();
+		txtCACantidad91.setColumns(10);
+		txtCACantidad91.setBounds(686, 311, 35, 20);
+		panel2.add(txtCACantidad91);
 
-		textField_100 = new JTextField();
-		textField_100.setColumns(10);
-		textField_100.setBounds(686, 333, 35, 20);
-		panel2.add(textField_100);
+		txtCACantidad101 = new JTextField();
+		txtCACantidad101.setColumns(10);
+		txtCACantidad101.setBounds(686, 333, 35, 20);
+		panel2.add(txtCACantidad101);
 
-		textField_101 = new JTextField();
-		textField_101.setColumns(10);
-		textField_101.setBounds(686, 355, 35, 20);
-		panel2.add(textField_101);
+		txtCACantidad111 = new JTextField();
+		txtCACantidad111.setColumns(10);
+		txtCACantidad111.setBounds(686, 355, 35, 20);
+		panel2.add(txtCACantidad111);
 
-		textField_102 = new JTextField();
-		textField_102.setColumns(10);
-		textField_102.setBounds(725, 355, 133, 20);
-		panel2.add(textField_102);
+		txtCAObs11 = new JTextField();
+		txtCAObs11.setColumns(10);
+		txtCAObs11.setBounds(725, 355, 133, 20);
+		panel2.add(txtCAObs11);
 
-		textField_103 = new JTextField();
-		textField_103.setColumns(10);
-		textField_103.setBounds(725, 333, 133, 20);
-		panel2.add(textField_103);
+		txtCAObs10 = new JTextField();
+		txtCAObs10.setColumns(10);
+		txtCAObs10.setBounds(725, 333, 133, 20);
+		panel2.add(txtCAObs10);
 
-		textField_104 = new JTextField();
-		textField_104.setColumns(10);
-		textField_104.setBounds(725, 311, 133, 20);
-		panel2.add(textField_104);
+		txtCAObs9 = new JTextField();
+		txtCAObs9.setColumns(10);
+		txtCAObs9.setBounds(725, 311, 133, 20);
+		panel2.add(txtCAObs9);
 
-		textField_105 = new JTextField();
-		textField_105.setColumns(10);
-		textField_105.setBounds(725, 289, 133, 20);
-		panel2.add(textField_105);
+		txtCAObs8 = new JTextField();
+		txtCAObs8.setColumns(10);
+		txtCAObs8.setBounds(725, 289, 133, 20);
+		panel2.add(txtCAObs8);
 
-		textField_106 = new JTextField();
-		textField_106.setColumns(10);
-		textField_106.setBounds(725, 267, 133, 20);
-		panel2.add(textField_106);
+		txtCAObs7 = new JTextField();
+		txtCAObs7.setColumns(10);
+		txtCAObs7.setBounds(725, 267, 133, 20);
+		panel2.add(txtCAObs7);
 
-		textField_107 = new JTextField();
-		textField_107.setColumns(10);
-		textField_107.setBounds(725, 245, 133, 20);
-		panel2.add(textField_107);
+		txtCAObs6 = new JTextField();
+		txtCAObs6.setColumns(10);
+		txtCAObs6.setBounds(725, 245, 133, 20);
+		panel2.add(txtCAObs6);
 
-		textField_108 = new JTextField();
-		textField_108.setColumns(10);
-		textField_108.setBounds(725, 223, 133, 20);
-		panel2.add(textField_108);
+		txtCAObs5 = new JTextField();
+		txtCAObs5.setColumns(10);
+		txtCAObs5.setBounds(725, 223, 133, 20);
+		panel2.add(txtCAObs5);
 
-		textField_109 = new JTextField();
-		textField_109.setColumns(10);
-		textField_109.setBounds(725, 201, 133, 20);
-		panel2.add(textField_109);
+		txtCAObs4 = new JTextField();
+		txtCAObs4.setColumns(10);
+		txtCAObs4.setBounds(725, 201, 133, 20);
+		panel2.add(txtCAObs4);
 
-		textField_110 = new JTextField();
-		textField_110.setColumns(10);
-		textField_110.setBounds(725, 179, 133, 20);
-		panel2.add(textField_110);
+		txtCAObs3 = new JTextField();
+		txtCAObs3.setColumns(10);
+		txtCAObs3.setBounds(725, 179, 133, 20);
+		panel2.add(txtCAObs3);
 
-		textField_111 = new JTextField();
-		textField_111.setColumns(10);
-		textField_111.setBounds(725, 157, 133, 20);
-		panel2.add(textField_111);
+		txtCAObs2 = new JTextField();
+		txtCAObs2.setColumns(10);
+		txtCAObs2.setBounds(725, 157, 133, 20);
+		panel2.add(txtCAObs2);
 
-		textField_112 = new JTextField();
-		textField_112.setColumns(10);
-		textField_112.setBounds(725, 135, 133, 20);
-		panel2.add(textField_112);
+		txtCAObs1 = new JTextField();
+		txtCAObs1.setColumns(10);
+		txtCAObs1.setBounds(725, 135, 133, 20);
+		panel2.add(txtCAObs1);
 
-		textField_113 = new JTextField();
-		textField_113.setColumns(10);
-		textField_113.setBounds(725, 113, 133, 20);
-		panel2.add(textField_113);
+		txtCAObs0 = new JTextField();
+		txtCAObs0.setColumns(10);
+		txtCAObs0.setBounds(725, 113, 133, 20);
+		panel2.add(txtCAObs0);
 
 		label_64 = new JLabel("Observaci\u00F3n/Referencia");
 		label_64.setHorizontalAlignment(SwingConstants.LEFT);
@@ -2086,20 +2089,20 @@ public class PGTemplate extends JFrame {
 		lblPanelesEpsPared_17.setBounds(442, 383, 203, 14);
 		panel2.add(lblPanelesEpsPared_17);
 
-		textField_114 = new JTextField();
-		textField_114.setColumns(10);
-		textField_114.setBounds(649, 377, 35, 20);
-		panel2.add(textField_114);
+		txtCACantidad120 = new JTextField();
+		txtCACantidad120.setColumns(10);
+		txtCACantidad120.setBounds(649, 377, 35, 20);
+		panel2.add(txtCACantidad120);
 
-		textField_115 = new JTextField();
-		textField_115.setColumns(10);
-		textField_115.setBounds(686, 377, 35, 20);
-		panel2.add(textField_115);
+		txtCACantidad121 = new JTextField();
+		txtCACantidad121.setColumns(10);
+		txtCACantidad121.setBounds(686, 377, 35, 20);
+		panel2.add(txtCACantidad121);
 
-		textField_116 = new JTextField();
-		textField_116.setColumns(10);
-		textField_116.setBounds(725, 377, 133, 20);
-		panel2.add(textField_116);
+		txtCAObs12 = new JTextField();
+		txtCAObs12.setColumns(10);
+		txtCAObs12.setBounds(725, 377, 133, 20);
+		panel2.add(txtCAObs12);
 
 		lblPanelesEpsPared_18 = new JLabel("Paneles EPS pared port\u00F3n- (1,0x0,35 mt)");
 		lblPanelesEpsPared_18.setHorizontalAlignment(SwingConstants.LEFT);
@@ -2107,20 +2110,20 @@ public class PGTemplate extends JFrame {
 		lblPanelesEpsPared_18.setBounds(442, 405, 203, 14);
 		panel2.add(lblPanelesEpsPared_18);
 
-		textField_117 = new JTextField();
-		textField_117.setColumns(10);
-		textField_117.setBounds(649, 399, 35, 20);
-		panel2.add(textField_117);
+		txtCACantidad130 = new JTextField();
+		txtCACantidad130.setColumns(10);
+		txtCACantidad130.setBounds(649, 399, 35, 20);
+		panel2.add(txtCACantidad130);
 
-		textField_118 = new JTextField();
-		textField_118.setColumns(10);
-		textField_118.setBounds(686, 399, 35, 20);
-		panel2.add(textField_118);
+		txtCACantidad131 = new JTextField();
+		txtCACantidad131.setColumns(10);
+		txtCACantidad131.setBounds(686, 399, 35, 20);
+		panel2.add(txtCACantidad131);
 
-		textField_119 = new JTextField();
-		textField_119.setColumns(10);
-		textField_119.setBounds(725, 399, 133, 20);
-		panel2.add(textField_119);
+		txtCAObs13 = new JTextField();
+		txtCAObs13.setColumns(10);
+		txtCAObs13.setBounds(725, 399, 133, 20);
+		panel2.add(txtCAObs13);
 
 		lblComponenteEstructural = new JLabel("COMPONENTE ESTRUCTURAL");
 		lblComponenteEstructural.setHorizontalAlignment(SwingConstants.CENTER);
@@ -2140,10 +2143,10 @@ public class PGTemplate extends JFrame {
 		lblPerfilSfTipo_5.setBounds(868, 58, 203, 14);
 		panel2.add(lblPerfilSfTipo_5);
 
-		txtCantidadCim1 = new JTextField();
-		txtCantidadCim1.setColumns(10);
-		txtCantidadCim1.setBounds(1070, 33, 35, 20);
-		panel2.add(txtCantidadCim1);
+		txtCE2Cantidad00 = new JTextField();
+		txtCE2Cantidad00.setColumns(10);
+		txtCE2Cantidad00.setBounds(1070, 33, 35, 20);
+		panel2.add(txtCE2Cantidad00);
 
 		label_53 = new JLabel("Cantidad");
 		label_53.setHorizontalAlignment(SwingConstants.CENTER);
@@ -2151,30 +2154,30 @@ public class PGTemplate extends JFrame {
 		label_53.setBounds(1073, 11, 63, 14);
 		panel2.add(label_53);
 
-		txtCantidadCim2 = new JTextField();
-		txtCantidadCim2.setColumns(10);
-		txtCantidadCim2.setBounds(1107, 33, 35, 20);
-		panel2.add(txtCantidadCim2);
+		txtCE2Cantidad01 = new JTextField();
+		txtCE2Cantidad01.setColumns(10);
+		txtCE2Cantidad01.setBounds(1107, 33, 35, 20);
+		panel2.add(txtCE2Cantidad01);
 
-		txtCantPerfilPared2 = new JTextField();
-		txtCantPerfilPared2.setColumns(10);
-		txtCantPerfilPared2.setBounds(1107, 55, 35, 20);
-		panel2.add(txtCantPerfilPared2);
+		txtCE2Cantidad11 = new JTextField();
+		txtCE2Cantidad11.setColumns(10);
+		txtCE2Cantidad11.setBounds(1107, 55, 35, 20);
+		panel2.add(txtCE2Cantidad11);
 
-		txtCantPerfilPared1 = new JTextField();
-		txtCantPerfilPared1.setColumns(10);
-		txtCantPerfilPared1.setBounds(1070, 55, 35, 20);
-		panel2.add(txtCantPerfilPared1);
+		txtCE2Cantidad10 = new JTextField();
+		txtCE2Cantidad10.setColumns(10);
+		txtCE2Cantidad10.setBounds(1070, 55, 35, 20);
+		panel2.add(txtCE2Cantidad10);
 
-		txtRefPerfilPared = new JTextField();
-		txtRefPerfilPared.setColumns(10);
-		txtRefPerfilPared.setBounds(1146, 55, 133, 20);
-		panel2.add(txtRefPerfilPared);
+		txtCE2Obs1 = new JTextField();
+		txtCE2Obs1.setColumns(10);
+		txtCE2Obs1.setBounds(1146, 55, 133, 20);
+		panel2.add(txtCE2Obs1);
 
-		txtRefCim = new JTextField();
-		txtRefCim.setColumns(10);
-		txtRefCim.setBounds(1146, 33, 133, 20);
-		panel2.add(txtRefCim);
+		txtCE2Obs0 = new JTextField();
+		txtCE2Obs0.setColumns(10);
+		txtCE2Obs0.setBounds(1146, 33, 133, 20);
+		panel2.add(txtCE2Obs0);
 
 		label_54 = new JLabel("Observaci\u00F3n/Referencia");
 		label_54.setHorizontalAlignment(SwingConstants.LEFT);
@@ -2188,20 +2191,1191 @@ public class PGTemplate extends JFrame {
 		lblPerfilSfTipo_6.setBounds(868, 80, 203, 14);
 		panel2.add(lblPerfilSfTipo_6);
 
-		txtCantPerfilPuerta1 = new JTextField();
-		txtCantPerfilPuerta1.setColumns(10);
-		txtCantPerfilPuerta1.setBounds(1070, 77, 35, 20);
-		panel2.add(txtCantPerfilPuerta1);
+		txtCE2Cantidad20 = new JTextField();
+		txtCE2Cantidad20.setColumns(10);
+		txtCE2Cantidad20.setBounds(1070, 77, 35, 20);
+		panel2.add(txtCE2Cantidad20);
 
-		txtCantPerfilPuerta2 = new JTextField();
-		txtCantPerfilPuerta2.setColumns(10);
-		txtCantPerfilPuerta2.setBounds(1107, 77, 35, 20);
-		panel2.add(txtCantPerfilPuerta2);
+		txtCE2Cantidad21 = new JTextField();
+		txtCE2Cantidad21.setColumns(10);
+		txtCE2Cantidad21.setBounds(1107, 77, 35, 20);
+		panel2.add(txtCE2Cantidad21);
 
-		txtRefPerfilPuerta = new JTextField();
-		txtRefPerfilPuerta.setColumns(10);
-		txtRefPerfilPuerta.setBounds(1146, 77, 133, 20);
-		panel2.add(txtRefPerfilPuerta);
+		txtCE2Obs2 = new JTextField();
+		txtCE2Obs2.setColumns(10);
+		txtCE2Obs2.setBounds(1146, 77, 133, 20);
+		panel2.add(txtCE2Obs2);
+
+		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(865, 325);
+		panel2.add(informacionObligatoriaV.getPnlInformacionObl());
+	}
+
+	public JTextField getTxtKECantidad41() {
+		return txtKECantidad41;
+	}
+
+	public void setTxtKECantidad41(JTextField txtKECantidad41) {
+		this.txtKECantidad41 = txtKECantidad41;
+	}
+
+	public JTextField getTxtKECantidad31() {
+		return txtKECantidad31;
+	}
+
+	public void setTxtKECantidad31(JTextField txtKECantidad31) {
+		this.txtKECantidad31 = txtKECantidad31;
+	}
+
+	public JTextField getTxtKECantidad21() {
+		return txtKECantidad21;
+	}
+
+	public void setTxtKECantidad21(JTextField txtKECantidad21) {
+		this.txtKECantidad21 = txtKECantidad21;
+	}
+
+	public JTextField getTxtKECantidad11() {
+		return txtKECantidad11;
+	}
+
+	public void setTxtKECantidad11(JTextField txtKECantidad11) {
+		this.txtKECantidad11 = txtKECantidad11;
+	}
+
+	public JTextField getTxtKECantidad01() {
+		return txtKECantidad01;
+	}
+
+	public void setTxtKECantidad01(JTextField txtKECantidad01) {
+		this.txtKECantidad01 = txtKECantidad01;
+	}
+
+	public JTextField getTxtKEObs0() {
+		return txtKEObs0;
+	}
+
+	public void setTxtKEObs0(JTextField txtKEObs0) {
+		this.txtKEObs0 = txtKEObs0;
+	}
+
+	public JTextField getTxtKEObs1() {
+		return txtKEObs1;
+	}
+
+	public void setTxtKEObs1(JTextField txtKEObs1) {
+		this.txtKEObs1 = txtKEObs1;
+	}
+
+	public JTextField getTxtKEObs3() {
+		return txtKEObs3;
+	}
+
+	public void setTxtKEObs3(JTextField txtKEObs3) {
+		this.txtKEObs3 = txtKEObs3;
+	}
+
+	public JTextField getTxtKEObs4() {
+		return txtKEObs4;
+	}
+
+	public void setTxtKEObs4(JTextField txtKEObs4) {
+		this.txtKEObs4 = txtKEObs4;
+	}
+
+	public JTextField getTxtALCantidad41() {
+		return txtALCantidad41;
+	}
+
+	public void setTxtALCantidad41(JTextField txtALCantidad41) {
+		this.txtALCantidad41 = txtALCantidad41;
+	}
+
+	public JTextField getTxtALCantidad31() {
+		return txtALCantidad31;
+	}
+
+	public void setTxtALCantidad31(JTextField txtALCantidad31) {
+		this.txtALCantidad31 = txtALCantidad31;
+	}
+
+	public JTextField getTxtALCantidad21() {
+		return txtALCantidad21;
+	}
+
+	public void setTxtALCantidad21(JTextField txtALCantidad21) {
+		this.txtALCantidad21 = txtALCantidad21;
+	}
+
+	public JTextField getTxtALCantidad11() {
+		return txtALCantidad11;
+	}
+
+	public void setTxtALCantidad11(JTextField txtALCantidad11) {
+		this.txtALCantidad11 = txtALCantidad11;
+	}
+
+	public JTextField getTxtALCantidad01() {
+		return txtALCantidad01;
+	}
+
+	public void setTxtALCantidad01(JTextField txtALCantidad01) {
+		this.txtALCantidad01 = txtALCantidad01;
+	}
+
+	public JTextField getTxtFFCantidad01() {
+		return txtFFCantidad01;
+	}
+
+	public void setTxtFFCantidad01(JTextField txtFFCantidad01) {
+		this.txtFFCantidad01 = txtFFCantidad01;
+	}
+
+	public JTextField getTxtFFCantidad11() {
+		return txtFFCantidad11;
+	}
+
+	public void setTxtFFCantidad11(JTextField txtFFCantidad11) {
+		this.txtFFCantidad11 = txtFFCantidad11;
+	}
+
+	public JTextField getTxtFFObs1() {
+		return txtFFObs1;
+	}
+
+	public void setTxtFFObs1(JTextField txtFFObs1) {
+		this.txtFFObs1 = txtFFObs1;
+	}
+
+	public JTextField getTxtFFObs0() {
+		return txtFFObs0;
+	}
+
+	public void setTxtFFObs0(JTextField txtFFObs0) {
+		this.txtFFObs0 = txtFFObs0;
+	}
+
+	public JTextField getTxtFFCantidad21() {
+		return txtFFCantidad21;
+	}
+
+	public void setTxtFFCantidad21(JTextField txtFFCantidad21) {
+		this.txtFFCantidad21 = txtFFCantidad21;
+	}
+
+	public JTextField getTxtFFObs2() {
+		return txtFFObs2;
+	}
+
+	public void setTxtFFObs2(JTextField txtFFObs2) {
+		this.txtFFObs2 = txtFFObs2;
+	}
+
+	public JTextField getTxtFPCantidad01() {
+		return txtFPCantidad01;
+	}
+
+	public void setTxtFPCantidad01(JTextField txtFPCantidad01) {
+		this.txtFPCantidad01 = txtFPCantidad01;
+	}
+
+	public JTextField getTxtFPCantidad11() {
+		return txtFPCantidad11;
+	}
+
+	public void setTxtFPCantidad11(JTextField txtFPCantidad11) {
+		this.txtFPCantidad11 = txtFPCantidad11;
+	}
+
+	public JTextField getTxtFPCantidad21() {
+		return txtFPCantidad21;
+	}
+
+	public void setTxtFPCantidad21(JTextField txtFPCantidad21) {
+		this.txtFPCantidad21 = txtFPCantidad21;
+	}
+
+	public JTextField getTxtFPObs2() {
+		return txtFPObs2;
+	}
+
+	public void setTxtFPObs2(JTextField txtFPObs2) {
+		this.txtFPObs2 = txtFPObs2;
+	}
+
+	public JTextField getTxtFPObs1() {
+		return txtFPObs1;
+	}
+
+	public void setTxtFPObs1(JTextField txtFPObs1) {
+		this.txtFPObs1 = txtFPObs1;
+	}
+
+	public JTextField getTxtFPObs0() {
+		return txtFPObs0;
+	}
+
+	public void setTxtFPObs0(JTextField txtFPObs0) {
+		this.txtFPObs0 = txtFPObs0;
+	}
+
+	public JTextField getTxtFLDCantidad61() {
+		return txtFLDCantidad61;
+	}
+
+	public void setTxtFLDCantidad61(JTextField txtFLDCantidad61) {
+		this.txtFLDCantidad61 = txtFLDCantidad61;
+	}
+
+	public JTextField getTxtFLDCantidad51() {
+		return txtFLDCantidad51;
+	}
+
+	public void setTxtFLDCantidad51(JTextField txtFLDCantidad51) {
+		this.txtFLDCantidad51 = txtFLDCantidad51;
+	}
+
+	public JTextField getTxtFLDCantidad41() {
+		return txtFLDCantidad41;
+	}
+
+	public void setTxtFLDCantidad41(JTextField txtFLDCantidad41) {
+		this.txtFLDCantidad41 = txtFLDCantidad41;
+	}
+
+	public JTextField getTxtFLDCantidad31() {
+		return txtFLDCantidad31;
+	}
+
+	public void setTxtFLDCantidad31(JTextField txtFLDCantidad31) {
+		this.txtFLDCantidad31 = txtFLDCantidad31;
+	}
+
+	public JTextField getTxtFLDCantidad01() {
+		return txtFLDCantidad01;
+	}
+
+	public void setTxtFLDCantidad01(JTextField txtFLDCantidad01) {
+		this.txtFLDCantidad01 = txtFLDCantidad01;
+	}
+
+	public JTextField getTxtFLDCantidad11() {
+		return txtFLDCantidad11;
+	}
+
+	public void setTxtFLDCantidad11(JTextField txtFLDCantidad11) {
+		this.txtFLDCantidad11 = txtFLDCantidad11;
+	}
+
+	public JTextField getTxtFLDCantidad21() {
+		return txtFLDCantidad21;
+	}
+
+	public void setTxtFLDCantidad21(JTextField txtFLDCantidad21) {
+		this.txtFLDCantidad21 = txtFLDCantidad21;
+	}
+
+	public JTextField getTxtFLDObs0() {
+		return txtFLDObs0;
+	}
+
+	public void setTxtFLDObs0(JTextField txtFLDObs0) {
+		this.txtFLDObs0 = txtFLDObs0;
+	}
+
+	public JTextField getTxtFLDObs1() {
+		return txtFLDObs1;
+	}
+
+	public void setTxtFLDObs1(JTextField txtFLDObs1) {
+		this.txtFLDObs1 = txtFLDObs1;
+	}
+
+	public JTextField getTxtFLDObs2() {
+		return txtFLDObs2;
+	}
+
+	public void setTxtFLDObs2(JTextField txtFLDObs2) {
+		this.txtFLDObs2 = txtFLDObs2;
+	}
+
+	public JTextField getTxtFLDObs3() {
+		return txtFLDObs3;
+	}
+
+	public void setTxtFLDObs3(JTextField txtFLDObs3) {
+		this.txtFLDObs3 = txtFLDObs3;
+	}
+
+	public JTextField getTxtFLDObs5() {
+		return txtFLDObs5;
+	}
+
+	public void setTxtFLDObs5(JTextField txtFLDObs5) {
+		this.txtFLDObs5 = txtFLDObs5;
+	}
+
+	public JTextField getTxtFLDObs6() {
+		return txtFLDObs6;
+	}
+
+	public void setTxtFLDObs6(JTextField txtFLDObs6) {
+		this.txtFLDObs6 = txtFLDObs6;
+	}
+
+	public JTextField getTxtFLDObs7() {
+		return txtFLDObs7;
+	}
+
+	public void setTxtFLDObs7(JTextField txtFLDObs7) {
+		this.txtFLDObs7 = txtFLDObs7;
+	}
+
+	public JTextField getTxtFLCantidad01() {
+		return txtFLCantidad01;
+	}
+
+	public void setTxtFLCantidad01(JTextField txtFLCantidad01) {
+		this.txtFLCantidad01 = txtFLCantidad01;
+	}
+
+	public JTextField getTxtFLCantidad11() {
+		return txtFLCantidad11;
+	}
+
+	public void setTxtFLCantidad11(JTextField txtFLCantidad11) {
+		this.txtFLCantidad11 = txtFLCantidad11;
+	}
+
+	public JTextField getTxtFLObs1() {
+		return txtFLObs1;
+	}
+
+	public void setTxtFLObs1(JTextField txtFLObs1) {
+		this.txtFLObs1 = txtFLObs1;
+	}
+
+	public JTextField getTxtFLObs0() {
+		return txtFLObs0;
+	}
+
+	public void setTxtFLObs0(JTextField txtFLObs0) {
+		this.txtFLObs0 = txtFLObs0;
+	}
+
+	public JTextField getTxtKE2Cantidad01() {
+		return txtKE2Cantidad01;
+	}
+
+	public void setTxtKE2Cantidad01(JTextField txtKE2Cantidad01) {
+		this.txtKE2Cantidad01 = txtKE2Cantidad01;
+	}
+
+	public JTextField getTxtKE2Cantidad11() {
+		return txtKE2Cantidad11;
+	}
+
+	public void setTxtKE2Cantidad11(JTextField txtKE2Cantidad11) {
+		this.txtKE2Cantidad11 = txtKE2Cantidad11;
+	}
+
+	public JTextField getTxtKE2Cantidad21() {
+		return txtKE2Cantidad21;
+	}
+
+	public void setTxtKE2Cantidad21(JTextField txtKE2Cantidad21) {
+		this.txtKE2Cantidad21 = txtKE2Cantidad21;
+	}
+
+	public JTextField getTxtKE2Cantidad31() {
+		return txtKE2Cantidad31;
+	}
+
+	public void setTxtKE2Cantidad31(JTextField txtKE2Cantidad31) {
+		this.txtKE2Cantidad31 = txtKE2Cantidad31;
+	}
+
+	public JTextField getTxtKE2Cantidad41() {
+		return txtKE2Cantidad41;
+	}
+
+	public void setTxtKE2Cantidad41(JTextField txtKE2Cantidad41) {
+		this.txtKE2Cantidad41 = txtKE2Cantidad41;
+	}
+
+	public JTextField getTxtKE2Obs4() {
+		return txtKE2Obs4;
+	}
+
+	public void setTxtKE2Obs4(JTextField txtKE2Obs4) {
+		this.txtKE2Obs4 = txtKE2Obs4;
+	}
+
+	public JTextField getTxtKE2Obs3() {
+		return txtKE2Obs3;
+	}
+
+	public void setTxtKE2Obs3(JTextField txtKE2Obs3) {
+		this.txtKE2Obs3 = txtKE2Obs3;
+	}
+
+	public JTextField getTxtKE2Obs2() {
+		return txtKE2Obs2;
+	}
+
+	public void setTxtKE2Obs2(JTextField txtKE2Obs2) {
+		this.txtKE2Obs2 = txtKE2Obs2;
+	}
+
+	public JTextField getTxtKE2Obs1() {
+		return txtKE2Obs1;
+	}
+
+	public void setTxtKE2Obs1(JTextField txtKE2Obs1) {
+		this.txtKE2Obs1 = txtKE2Obs1;
+	}
+
+	public JTextField getTxtKE2Obs0() {
+		return txtKE2Obs0;
+	}
+
+	public void setTxtKE2Obs0(JTextField txtKE2Obs0) {
+		this.txtKE2Obs0 = txtKE2Obs0;
+	}
+
+	public JTextField getTxtKHCantidad01() {
+		return txtKHCantidad01;
+	}
+
+	public void setTxtKHCantidad01(JTextField txtKHCantidad01) {
+		this.txtKHCantidad01 = txtKHCantidad01;
+	}
+
+	public JTextField getTxtKHCantidad11() {
+		return txtKHCantidad11;
+	}
+
+	public void setTxtKHCantidad11(JTextField txtKHCantidad11) {
+		this.txtKHCantidad11 = txtKHCantidad11;
+	}
+
+	public JTextField getTxtKHObs1() {
+		return txtKHObs1;
+	}
+
+	public void setTxtKHObs1(JTextField txtKHObs1) {
+		this.txtKHObs1 = txtKHObs1;
+	}
+
+	public JTextField getTxtKHObs0() {
+		return txtKHObs0;
+	}
+
+	public void setTxtKHObs0(JTextField txtKHObs0) {
+		this.txtKHObs0 = txtKHObs0;
+	}
+
+	public JTextField getTxtAPCantidad01() {
+		return txtAPCantidad01;
+	}
+
+	public void setTxtAPCantidad01(JTextField txtAPCantidad01) {
+		this.txtAPCantidad01 = txtAPCantidad01;
+	}
+
+	public JTextField getTxtAPCantidad11() {
+		return txtAPCantidad11;
+	}
+
+	public void setTxtAPCantidad11(JTextField txtAPCantidad11) {
+		this.txtAPCantidad11 = txtAPCantidad11;
+	}
+
+	public JTextField getTxtAPCantidad21() {
+		return txtAPCantidad21;
+	}
+
+	public void setTxtAPCantidad21(JTextField txtAPCantidad21) {
+		this.txtAPCantidad21 = txtAPCantidad21;
+	}
+
+	public JTextField getTxtAPCantidad31() {
+		return txtAPCantidad31;
+	}
+
+	public void setTxtAPCantidad31(JTextField txtAPCantidad31) {
+		this.txtAPCantidad31 = txtAPCantidad31;
+	}
+
+	public JTextField getTxtAPCantidad41() {
+		return txtAPCantidad41;
+	}
+
+	public void setTxtAPCantidad41(JTextField txtAPCantidad41) {
+		this.txtAPCantidad41 = txtAPCantidad41;
+	}
+
+	public JTextField getTxtARCantidad61() {
+		return txtARCantidad61;
+	}
+
+	public void setTxtARCantidad61(JTextField txtARCantidad61) {
+		this.txtARCantidad61 = txtARCantidad61;
+	}
+
+	public JTextField getTxtARCantidad51() {
+		return txtARCantidad51;
+	}
+
+	public void setTxtARCantidad51(JTextField txtARCantidad51) {
+		this.txtARCantidad51 = txtARCantidad51;
+	}
+
+	public JTextField getTxtARCantidad41() {
+		return txtARCantidad41;
+	}
+
+	public void setTxtARCantidad41(JTextField txtARCantidad41) {
+		this.txtARCantidad41 = txtARCantidad41;
+	}
+
+	public JTextField getTxtARCantidad31() {
+		return txtARCantidad31;
+	}
+
+	public void setTxtARCantidad31(JTextField txtARCantidad31) {
+		this.txtARCantidad31 = txtARCantidad31;
+	}
+
+	public JTextField getTxtARCantidad21() {
+		return txtARCantidad21;
+	}
+
+	public void setTxtARCantidad21(JTextField txtARCantidad21) {
+		this.txtARCantidad21 = txtARCantidad21;
+	}
+
+	public JTextField getTxtARCantidad01() {
+		return txtARCantidad01;
+	}
+
+	public void setTxtARCantidad01(JTextField txtARCantidad01) {
+		this.txtARCantidad01 = txtARCantidad01;
+	}
+
+	public JTextField getTxtARCantidad11() {
+		return txtARCantidad11;
+	}
+
+	public void setTxtARCantidad11(JTextField txtARCantidad11) {
+		this.txtARCantidad11 = txtARCantidad11;
+	}
+
+	public JTextField getTxtCECantidad01() {
+		return txtCECantidad01;
+	}
+
+	public void setTxtCECantidad01(JTextField txtCECantidad01) {
+		this.txtCECantidad01 = txtCECantidad01;
+	}
+
+	public JTextField getTxtCECantidad11() {
+		return txtCECantidad11;
+	}
+
+	public void setTxtCECantidad11(JTextField txtCECantidad11) {
+		this.txtCECantidad11 = txtCECantidad11;
+	}
+
+	public JTextField getTxtCECantidad21() {
+		return txtCECantidad21;
+	}
+
+	public void setTxtCECantidad21(JTextField txtCECantidad21) {
+		this.txtCECantidad21 = txtCECantidad21;
+	}
+
+	public JTextField getTxtCECantidad31() {
+		return txtCECantidad31;
+	}
+
+	public void setTxtCECantidad31(JTextField txtCECantidad31) {
+		this.txtCECantidad31 = txtCECantidad31;
+	}
+
+	public JTextField getTxtCECantidad41() {
+		return txtCECantidad41;
+	}
+
+	public void setTxtCECantidad41(JTextField txtCECantidad41) {
+		this.txtCECantidad41 = txtCECantidad41;
+	}
+
+	public JTextField getTxtCECantidad51() {
+		return txtCECantidad51;
+	}
+
+	public void setTxtCECantidad51(JTextField txtCECantidad51) {
+		this.txtCECantidad51 = txtCECantidad51;
+	}
+
+	public JTextField getTxtCECantidad61() {
+		return txtCECantidad61;
+	}
+
+	public void setTxtCECantidad61(JTextField txtCECantidad61) {
+		this.txtCECantidad61 = txtCECantidad61;
+	}
+
+	public JTextField getTxtCECantidad71() {
+		return txtCECantidad71;
+	}
+
+	public void setTxtCECantidad71(JTextField txtCECantidad71) {
+		this.txtCECantidad71 = txtCECantidad71;
+	}
+
+	public JTextField getTxtCECantidad81() {
+		return txtCECantidad81;
+	}
+
+	public void setTxtCECantidad81(JTextField txtCECantidad81) {
+		this.txtCECantidad81 = txtCECantidad81;
+	}
+
+	public JTextField getTxtCECantidad91() {
+		return txtCECantidad91;
+	}
+
+	public void setTxtCECantidad91(JTextField txtCECantidad91) {
+		this.txtCECantidad91 = txtCECantidad91;
+	}
+
+	public JTextField getTxtCEObs10() {
+		return txtCEObs10;
+	}
+
+	public void setTxtCEObs10(JTextField txtCEObs10) {
+		this.txtCEObs10 = txtCEObs10;
+	}
+
+	public JTextField getTxtCEObs9() {
+		return txtCEObs9;
+	}
+
+	public void setTxtCEObs9(JTextField txtCEObs9) {
+		this.txtCEObs9 = txtCEObs9;
+	}
+
+	public JTextField getTxtCEObs8() {
+		return txtCEObs8;
+	}
+
+	public void setTxtCEObs8(JTextField txtCEObs8) {
+		this.txtCEObs8 = txtCEObs8;
+	}
+
+	public JTextField getTxtCEObs7() {
+		return txtCEObs7;
+	}
+
+	public void setTxtCEObs7(JTextField txtCEObs7) {
+		this.txtCEObs7 = txtCEObs7;
+	}
+
+	public JTextField getTxtCEObs6() {
+		return txtCEObs6;
+	}
+
+	public void setTxtCEObs6(JTextField txtCEObs6) {
+		this.txtCEObs6 = txtCEObs6;
+	}
+
+	public JTextField getTxtCEObs5() {
+		return txtCEObs5;
+	}
+
+	public void setTxtCEObs5(JTextField txtCEObs5) {
+		this.txtCEObs5 = txtCEObs5;
+	}
+
+	public JTextField getTxtCEObs4() {
+		return txtCEObs4;
+	}
+
+	public void setTxtCEObs4(JTextField txtCEObs4) {
+		this.txtCEObs4 = txtCEObs4;
+	}
+
+	public JTextField getTxtCEObs3() {
+		return txtCEObs3;
+	}
+
+	public void setTxtCEObs3(JTextField txtCEObs3) {
+		this.txtCEObs3 = txtCEObs3;
+	}
+
+	public JTextField getTxtCEObs1() {
+		return txtCEObs1;
+	}
+
+	public void setTxtCEObs1(JTextField txtCEObs1) {
+		this.txtCEObs1 = txtCEObs1;
+	}
+
+	public JTextField getTxtCEObs0() {
+		return txtCEObs0;
+	}
+
+	public void setTxtCEObs0(JTextField txtCEObs0) {
+		this.txtCEObs0 = txtCEObs0;
+	}
+
+	public JTextField getTxtPCantidad01() {
+		return txtPCantidad01;
+	}
+
+	public void setTxtPCantidad01(JTextField txtPCantidad01) {
+		this.txtPCantidad01 = txtPCantidad01;
+	}
+
+	public JTextField getTxtPObs0() {
+		return txtPObs0;
+	}
+
+	public void setTxtPObs0(JTextField txtPObs0) {
+		this.txtPObs0 = txtPObs0;
+	}
+
+	public JTextField getTxtPCantidad11() {
+		return txtPCantidad11;
+	}
+
+	public void setTxtPCantidad11(JTextField txtPCantidad11) {
+		this.txtPCantidad11 = txtPCantidad11;
+	}
+
+	public JTextField getTxtPObs1() {
+		return txtPObs1;
+	}
+
+	public void setTxtPObs1(JTextField txtPObs1) {
+		this.txtPObs1 = txtPObs1;
+	}
+
+	public JTextField getTxtCACantidad01() {
+		return txtCACantidad01;
+	}
+
+	public void setTxtCACantidad01(JTextField txtCACantidad01) {
+		this.txtCACantidad01 = txtCACantidad01;
+	}
+
+	public JTextField getTxtCACantidad11() {
+		return txtCACantidad11;
+	}
+
+	public void setTxtCACantidad11(JTextField txtCACantidad11) {
+		this.txtCACantidad11 = txtCACantidad11;
+	}
+
+	public JTextField getTxtCACantidad21() {
+		return txtCACantidad21;
+	}
+
+	public void setTxtCACantidad21(JTextField txtCACantidad21) {
+		this.txtCACantidad21 = txtCACantidad21;
+	}
+
+	public JTextField getTxtCACantidad31() {
+		return txtCACantidad31;
+	}
+
+	public void setTxtCACantidad31(JTextField txtCACantidad31) {
+		this.txtCACantidad31 = txtCACantidad31;
+	}
+
+	public JTextField getTxtCACantidad41() {
+		return txtCACantidad41;
+	}
+
+	public void setTxtCACantidad41(JTextField txtCACantidad41) {
+		this.txtCACantidad41 = txtCACantidad41;
+	}
+
+	public JTextField getTxtCACantidad51() {
+		return txtCACantidad51;
+	}
+
+	public void setTxtCACantidad51(JTextField txtCACantidad51) {
+		this.txtCACantidad51 = txtCACantidad51;
+	}
+
+	public JTextField getTxtCACantidad61() {
+		return txtCACantidad61;
+	}
+
+	public void setTxtCACantidad61(JTextField txtCACantidad61) {
+		this.txtCACantidad61 = txtCACantidad61;
+	}
+
+	public JTextField getTxtCACantidad71() {
+		return txtCACantidad71;
+	}
+
+	public void setTxtCACantidad71(JTextField txtCACantidad71) {
+		this.txtCACantidad71 = txtCACantidad71;
+	}
+
+	public JTextField getTxtCACantidad81() {
+		return txtCACantidad81;
+	}
+
+	public void setTxtCACantidad81(JTextField txtCACantidad81) {
+		this.txtCACantidad81 = txtCACantidad81;
+	}
+
+	public JTextField getTxtCACantidad91() {
+		return txtCACantidad91;
+	}
+
+	public void setTxtCACantidad91(JTextField txtCACantidad91) {
+		this.txtCACantidad91 = txtCACantidad91;
+	}
+
+	public JTextField getTxtCACantidad101() {
+		return txtCACantidad101;
+	}
+
+	public void setTxtCACantidad101(JTextField txtCACantidad101) {
+		this.txtCACantidad101 = txtCACantidad101;
+	}
+
+	public JTextField getTxtCACantidad111() {
+		return txtCACantidad111;
+	}
+
+	public void setTxtCACantidad111(JTextField txtCACantidad111) {
+		this.txtCACantidad111 = txtCACantidad111;
+	}
+
+	public JTextField getTxtCAObs11() {
+		return txtCAObs11;
+	}
+
+	public void setTxtCAObs11(JTextField txtCAObs11) {
+		this.txtCAObs11 = txtCAObs11;
+	}
+
+	public JTextField getTxtCAObs10() {
+		return txtCAObs10;
+	}
+
+	public void setTxtCAObs10(JTextField txtCAObs10) {
+		this.txtCAObs10 = txtCAObs10;
+	}
+
+	public JTextField getTxtCAObs9() {
+		return txtCAObs9;
+	}
+
+	public void setTxtCAObs9(JTextField txtCAObs9) {
+		this.txtCAObs9 = txtCAObs9;
+	}
+
+	public JTextField getTxtCAObs8() {
+		return txtCAObs8;
+	}
+
+	public void setTxtCAObs8(JTextField txtCAObs8) {
+		this.txtCAObs8 = txtCAObs8;
+	}
+
+	public JTextField getTxtCAObs7() {
+		return txtCAObs7;
+	}
+
+	public void setTxtCAObs7(JTextField txtCAObs7) {
+		this.txtCAObs7 = txtCAObs7;
+	}
+
+	public JTextField getTxtCAObs6() {
+		return txtCAObs6;
+	}
+
+	public void setTxtCAObs6(JTextField txtCAObs6) {
+		this.txtCAObs6 = txtCAObs6;
+	}
+
+	public JTextField getTxtCAObs5() {
+		return txtCAObs5;
+	}
+
+	public void setTxtCAObs5(JTextField txtCAObs5) {
+		this.txtCAObs5 = txtCAObs5;
+	}
+
+	public JTextField getTxtCAObs4() {
+		return txtCAObs4;
+	}
+
+	public void setTxtCAObs4(JTextField txtCAObs4) {
+		this.txtCAObs4 = txtCAObs4;
+	}
+
+	public JTextField getTxtCAObs3() {
+		return txtCAObs3;
+	}
+
+	public void setTxtCAObs3(JTextField txtCAObs3) {
+		this.txtCAObs3 = txtCAObs3;
+	}
+
+	public JTextField getTxtCAObs2() {
+		return txtCAObs2;
+	}
+
+	public void setTxtCAObs2(JTextField txtCAObs2) {
+		this.txtCAObs2 = txtCAObs2;
+	}
+
+	public JTextField getTxtCAObs1() {
+		return txtCAObs1;
+	}
+
+	public void setTxtCAObs1(JTextField txtCAObs1) {
+		this.txtCAObs1 = txtCAObs1;
+	}
+
+	public JTextField getTxtCAObs0() {
+		return txtCAObs0;
+	}
+
+	public void setTxtCAObs0(JTextField txtCAObs0) {
+		this.txtCAObs0 = txtCAObs0;
+	}
+
+	public JTextField getTxtCACantidad121() {
+		return txtCACantidad121;
+	}
+
+	public void setTxtCACantidad121(JTextField txtCACantidad121) {
+		this.txtCACantidad121 = txtCACantidad121;
+	}
+
+	public JTextField getTxtCAObs12() {
+		return txtCAObs12;
+	}
+
+	public void setTxtCAObs12(JTextField txtCAObs12) {
+		this.txtCAObs12 = txtCAObs12;
+	}
+
+	public JTextField getTxtCACantidad131() {
+		return txtCACantidad131;
+	}
+
+	public void setTxtCACantidad131(JTextField txtCACantidad131) {
+		this.txtCACantidad131 = txtCACantidad131;
+	}
+
+	public JTextField getTxtCAObs13() {
+		return txtCAObs13;
+	}
+
+	public void setTxtCAObs13(JTextField txtCAObs13) {
+		this.txtCAObs13 = txtCAObs13;
+	}
+
+	public JTextField getTxtCE2Cantidad01() {
+		return txtCE2Cantidad01;
+	}
+
+	public void setTxtCE2Cantidad01(JTextField txtCE2Cantidad01) {
+		this.txtCE2Cantidad01 = txtCE2Cantidad01;
+	}
+
+	public JTextField getTxtCE2Cantidad11() {
+		return txtCE2Cantidad11;
+	}
+
+	public void setTxtCE2Cantidad11(JTextField txtCE2Cantidad11) {
+		this.txtCE2Cantidad11 = txtCE2Cantidad11;
+	}
+
+	public JTextField getTxtCE2Obs1() {
+		return txtCE2Obs1;
+	}
+
+	public void setTxtCE2Obs1(JTextField txtCE2Obs1) {
+		this.txtCE2Obs1 = txtCE2Obs1;
+	}
+
+	public JTextField getTxtCE2Obs0() {
+		return txtCE2Obs0;
+	}
+
+	public void setTxtCE2Obs0(JTextField txtCE2Obs0) {
+		this.txtCE2Obs0 = txtCE2Obs0;
+	}
+
+	public JTextField getTxtCE2Cantidad21() {
+		return txtCE2Cantidad21;
+	}
+
+	public void setTxtCE2Cantidad21(JTextField txtCE2Cantidad21) {
+		this.txtCE2Cantidad21 = txtCE2Cantidad21;
+	}
+
+	public JTextField getTxtCE2Obs2() {
+		return txtCE2Obs2;
+	}
+
+	public void setTxtCE2Obs2(JTextField txtCE2Obs2) {
+		this.txtCE2Obs2 = txtCE2Obs2;
+	}
+
+	public JTextField getTxtKEObs2() {
+		return txtKEObs2;
+	}
+
+	public void setTxtKEObs2(JTextField txtKEObs2) {
+		this.txtKEObs2 = txtKEObs2;
+	}
+
+	public JTextField getTxtALObs4() {
+		return txtALObs4;
+	}
+
+	public void setTxtALObs4(JTextField txtALObs4) {
+		this.txtALObs4 = txtALObs4;
+	}
+
+	public JTextField getTxtALObs3() {
+		return txtALObs3;
+	}
+
+	public void setTxtALObs3(JTextField txtALObs3) {
+		this.txtALObs3 = txtALObs3;
+	}
+
+	public JTextField getTxtALObs0() {
+		return txtALObs0;
+	}
+
+	public void setTxtALObs0(JTextField txtALObs0) {
+		this.txtALObs0 = txtALObs0;
+	}
+
+	public JTextField getTxtALObs1() {
+		return txtALObs1;
+	}
+
+	public void setTxtALObs1(JTextField txtALObs1) {
+		this.txtALObs1 = txtALObs1;
+	}
+
+	public JTextField getTxtALObs2() {
+		return txtALObs2;
+	}
+
+	public void setTxtALObs2(JTextField txtALObs2) {
+		this.txtALObs2 = txtALObs2;
+	}
+
+	public JTextField getTxtAPObs0() {
+		return txtAPObs0;
+	}
+
+	public void setTxtAPObs0(JTextField txtAPObs0) {
+		this.txtAPObs0 = txtAPObs0;
+	}
+
+	public JTextField getTxtAPObs1() {
+		return txtAPObs1;
+	}
+
+	public void setTxtAPObs1(JTextField txtAPObs1) {
+		this.txtAPObs1 = txtAPObs1;
+	}
+
+	public JTextField getTxtAPObs2() {
+		return txtAPObs2;
+	}
+
+	public void setTxtAPObs2(JTextField txtAPObs2) {
+		this.txtAPObs2 = txtAPObs2;
+	}
+
+	public JTextField getTxtAPObs3() {
+		return txtAPObs3;
+	}
+
+	public void setTxtAPObs3(JTextField txtAPObs3) {
+		this.txtAPObs3 = txtAPObs3;
+	}
+
+	public JTextField getTxtAPObs4() {
+		return txtAPObs4;
+	}
+
+	public void setTxtAPObs4(JTextField txtAPObs4) {
+		this.txtAPObs4 = txtAPObs4;
+	}
+
+	public JTextField getTxtARObs0() {
+		return txtARObs0;
+	}
+
+	public void setTxtARObs0(JTextField txtARObs0) {
+		this.txtARObs0 = txtARObs0;
+	}
+
+	public JTextField getTxtARObs1() {
+		return txtARObs1;
+	}
+
+	public void setTxtARObs1(JTextField txtARObs1) {
+		this.txtARObs1 = txtARObs1;
+	}
+
+	public JTextField getTxtARObs2() {
+		return txtARObs2;
+	}
+
+	public void setTxtARObs2(JTextField txtARObs2) {
+		this.txtARObs2 = txtARObs2;
+	}
+
+	public JTextField getTxtARObs3() {
+		return txtARObs3;
+	}
+
+	public void setTxtARObs3(JTextField txtARObs3) {
+		this.txtARObs3 = txtARObs3;
+	}
+
+	public JTextField getTxtARObs4() {
+		return txtARObs4;
+	}
+
+	public void setTxtARObs4(JTextField txtARObs4) {
+		this.txtARObs4 = txtARObs4;
+	}
+
+	public JTextField getTxtARObs5() {
+		return txtARObs5;
+	}
+
+	public void setTxtARObs5(JTextField txtARObs5) {
+		this.txtARObs5 = txtARObs5;
+	}
+
+	public JTextField getTxtARObs6() {
+		return txtARObs6;
+	}
+
+	public void setTxtARObs6(JTextField txtARObs6) {
+		this.txtARObs6 = txtARObs6;
 	}
 
 }
