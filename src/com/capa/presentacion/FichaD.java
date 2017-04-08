@@ -104,19 +104,6 @@ public class FichaD extends JFrame {
 				// TODO Auto-generated method stub
 
 				ServicioInfoObligatoria infoServicio = new ComponenteInfoObligatoria();
-				// TInformacionObligatoria informacion;
-				// String responsableMinEduc, cargoIzq, obsGenIz;
-				// String responsableContrat, cargoDer, obsGenDer;
-				// Date fecha;
-				// responsableMinEduc =
-				// infor.getTxtResponsableMineduc().getText();
-				// cargoIzq = infor.getTxtCargoIzq().getText();
-				// obsGenIz = infor.getTxtObsGenIzq().getText();
-				// responsableContrat =
-				// infor.getTxtResponsableContratista().getText();
-				// cargoDer = infor.getTxtCargoDer().getText();
-				// obsGenDer = infor.getTxtObsGenDer().getText();
-				// fecha = infor.getDateFechaIO().getDate();
 
 				TInformacionObligatoria informacion = cargarInfoObligatoria(infor);
 				if (validarInfo(informacion)) {

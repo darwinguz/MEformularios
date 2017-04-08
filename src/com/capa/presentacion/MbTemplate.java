@@ -1,5 +1,7 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.llenarCabecera;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -206,16 +208,21 @@ public class MbTemplate extends JFrame {
 	 * Create the frame.
 	 */
 	public MbTemplate() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(0, 0, 1307, 762);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 1320, 730);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
 		JPcabecera pnlCabecera = new JPcabecera();
 		contentPane.add(pnlCabecera.getCabecera());
-		pnlCabecera.getCabecera().setLocation(70, 50);
+		setContentPane(contentPane);
 		contentPane.setLayout(null);
+
+		llenarCabecera(pnlCabecera);
+
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 126, 1286, 586);
@@ -1209,7 +1216,7 @@ public class MbTemplate extends JFrame {
 		label_9.setBounds(267, 1, 143, 14);
 		panel_31.add(label_9);
 
-		InformacionObligatoriaV pnlInformacionOblig = new InformacionObligatoriaV(1, 1);
+		InformacionObligatoriaV pnlInformacionOblig = new InformacionObligatoriaV(865, 325);
 
 		panel.add(pnlInformacionOblig.getPnlInformacionObl());
 	}

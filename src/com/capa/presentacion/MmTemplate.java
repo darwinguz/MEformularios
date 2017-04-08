@@ -1,5 +1,7 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.llenarCabecera;
+
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -212,8 +214,7 @@ public class MmTemplate extends JFrame {
 	}
 
 	public MmTemplate(String laboratorio) {
-		setTitle("MM-" + laboratorio);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1311, 706);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -222,6 +223,12 @@ public class MmTemplate extends JFrame {
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
+		setTitle("MM-" + laboratorio);
+
+		llenarCabecera(cabecera);
+
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1284, 540);

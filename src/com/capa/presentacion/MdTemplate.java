@@ -13,6 +13,9 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import static com.capa.util.Utilitarios.*;
+import static com.capa.util.Validaciones.*;
+
 public class MdTemplate extends JFrame {
 
 	private JPanel contentPane;
@@ -477,7 +480,7 @@ public class MdTemplate extends JFrame {
 	 * Create the frame.
 	 */
 	public MdTemplate() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -486,6 +489,7 @@ public class MdTemplate extends JFrame {
 		JPcabecera pnlCabecera = new JPcabecera();
 		contentPane.add(pnlCabecera.getCabecera());
 		contentPane.setLayout(null);
+		llenarCabecera(pnlCabecera);
 
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
@@ -496,7 +500,7 @@ public class MdTemplate extends JFrame {
 
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
-		tabbedPane.addTab("1.-MD Administraci�n-1", null, panel, null);
+		tabbedPane.addTab("1.-MD Administraci\u00F3n-1", null, panel, null);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setLayout(null);
@@ -1856,7 +1860,7 @@ public class MdTemplate extends JFrame {
 
 		JPanel panel_44 = new JPanel();
 		panel_44.setLayout(null);
-		tabbedPane.addTab("2.-MD Administraci�n-1", null, panel_44, null);
+		tabbedPane.addTab("2.-MD Administraci\u00F3n-1", null, panel_44, null);
 
 		JPanel panel_55 = new JPanel();
 		panel_55.setLayout(null);

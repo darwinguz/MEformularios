@@ -12,6 +12,9 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
+import static com.capa.util.Utilitarios.*;
+import static com.capa.util.Validaciones.*;
+
 public class PGTemplate extends JFrame {
 
 	/**
@@ -347,6 +350,8 @@ public class PGTemplate extends JFrame {
 		contentPane.add(cabecera.getCabecera());
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+
+		llenarCabecera(cabecera);
 
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);

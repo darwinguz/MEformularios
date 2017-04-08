@@ -10,6 +10,7 @@ import java.util.LinkedList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
@@ -29,6 +30,7 @@ import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFichaMA;
 import com.capa.negocios.ServicioInfoObligatoria;
 import static com.capa.util.Utilitarios.*;
+import static com.capa.util.Validaciones.validarInfo;
 
 import com.capa.util.Utilitarios;
 import com.capa.util.Validaciones;
@@ -180,7 +182,7 @@ public class MaTemplate extends JFrame {
 	 */
 	public MaTemplate(String nombreAula) {
 		this.nombreAula = nombreAula;
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -188,13 +190,15 @@ public class MaTemplate extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		this.setTitle(nombreAula);
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1284, 560);
 		contentPane.add(tabbedPane);
 
 		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("MA-" + nombreAula, null, pnlPestaña1, null);
+		tabbedPane.addTab(nombreAula, null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
 
 		JPanel pnlKitElectrico = new JPanel();
@@ -1485,21 +1489,25 @@ public class MaTemplate extends JFrame {
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
+		llenarCabecera(cabecera);
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(860, 312);
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
-				ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-				srvFichaMA.insertarFormulario(cargarListas());
 				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
-				ServicioCabecera srvTempCabecera = new ComponenteCabecera();
-				infoObl.settCabe(srvTempCabecera.buscarProyecto(gettCabecera().getCNombreProyecto()));
-				srvInfoObl.crear(infoObl);
+				if (validarInfo(infoObl)) {
+					ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
+					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+					srvFichaMA.insertarFormulario(cargarListas());
+					ServicioCabecera srvTempCabecera = new ComponenteCabecera();
+					infoObl.settCabe(srvTempCabecera.buscarProyecto(gettCabecera().getCNombreProyecto()));
+					srvInfoObl.crear(infoObl);
+				} else {
+					JOptionPane.showMessageDialog(null, "Datos obligatorios");
+				}
 			}
 		});
 
