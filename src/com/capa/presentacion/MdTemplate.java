@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.LinkedList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,11 +16,19 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ServicioFichaMA;
+
 import static com.capa.util.Utilitarios.*;
 import static com.capa.util.Validaciones.*;
 
 public class MdTemplate extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7293344096499392660L;
 	private JPanel contentPane;
 	private JTextField txtKACantidad30;
 	private JTextField txtKACantidad31;
@@ -2952,6 +2961,24 @@ public class MdTemplate extends JFrame {
 		});
 	}
 
+	public LinkedList<LinkedList<TdetalleFicha>> cargarListas() {
+		LinkedList<TdetalleFicha> listaElectrico = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaAL = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaSanitario = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaAP = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaAR = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaArquitectonico = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaParedes = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaFrontal = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaPosterior = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaLateral = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaArquitectonico2 = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
+		ServicioFichaMA servFicha = new ComponenteFichaMA();
+		
+		
+	}
+
 	public JTextField getTxtKACantidad31() {
 		return txtKACantidad31;
 	}
@@ -4479,5 +4506,4 @@ public class MdTemplate extends JFrame {
 	public void setTxtCAObs21(JTextField txtCAObs21) {
 		this.txtCAObs21 = txtCAObs21;
 	}
-
 }
