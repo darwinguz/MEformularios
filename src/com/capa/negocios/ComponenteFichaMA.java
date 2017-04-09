@@ -49,8 +49,19 @@ public class ComponenteFichaMA implements ServicioFichaMA {
 
 	@Override
 	public Integer buscarUpdateFicha() {
-		// TODO Auto-generated method stub
-		return 1;
+		Integer maxima = null;
+		String query = "SELECT MAX(c_serial) FROM t_cabecera;";
+
+		try {
+			ResultSet rs = Query.seleccionar(query);
+			while (rs.next()) {
+				maxima = new Integer(rs.getInt("MAX(c_serial)"));
+			}
+		} catch (Exception e) {
+			System.out.println("Error al BUSCAR: " + e.getMessage());
+		}
+		System.out.println("");
+		return maxima;
 	}
 
 	@Override
@@ -76,4 +87,36 @@ public class ComponenteFichaMA implements ServicioFichaMA {
 
 	}
 
+	@Override
+	public boolean existeFicha() {
+		String query = "SELECT * FROM t_ficha_ma WHERE c_serial=" + Utilitarios.gettCabecera().getCSerial() + ";";
+		ResultSet rs = Query.seleccionar(query);
+		int temp = -1;
+		try {
+			while (rs.next()) {
+				temp = rs.getInt("fma_serial");
+				if (temp != -1)
+					return true;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
+
+	@Override
+	public LinkedList<String[]> extraerFormulario() {
+		LinkedList<String[]> camposFormularios = new LinkedList<>();
+		String query = "SELECT * FROM t_ficha_ma WHERE c_serial=" + Utilitarios.gettCabecera().getCSerial() + ";";
+		ResultSet rs = Query.seleccionar(query);
+		try {
+			while (rs.next()) {
+				camposFormularios.add(new String[] { rs.getString("fma_cantidad_ejecutada"),
+						rs.getString("f_observacion_referencia") });
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return camposFormularios;
+	}
 }

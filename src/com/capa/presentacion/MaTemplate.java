@@ -165,6 +165,8 @@ public class MaTemplate extends JFrame {
 	private JTextField txtCECantidad111;
 	private JTextField txtCECantidad121;
 
+	LinkedList<JTextField[]> textFields;
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -183,6 +185,8 @@ public class MaTemplate extends JFrame {
 	 * Create the frame.
 	 */
 	public MaTemplate(String nombreAula) {
+
+		textFields = new LinkedList<JTextField[]>();
 		this.nombreAula = nombreAula;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
@@ -346,6 +350,12 @@ public class MaTemplate extends JFrame {
 		txtKEObsRef4 = new JTextField();
 		txtKEObsRef4.setColumns(10);
 		pnlTEObsRef.add(txtKEObsRef4);
+
+		textFields.add(new JTextField[] { txtKECantidad01, txtKEObsRef0 });
+		textFields.add(new JTextField[] { txtKECantidad11, txtKEObsRef1 });
+		textFields.add(new JTextField[] { txtKECantidad21, txtKEObsRef2 });
+		textFields.add(new JTextField[] { txtKECantidad31, txtKEObsRef3 });
+		textFields.add(new JTextField[] { txtKECantidad41, txtKEObsRef4 });
 
 		JPanel pnlKitAguaLluvia = new JPanel();
 		pnlKitAguaLluvia.setLayout(null);
@@ -539,6 +549,12 @@ public class MaTemplate extends JFrame {
 		txtKALObsRef4.setColumns(10);
 		pnlEDObsRef4.add(txtKALObsRef4);
 
+		textFields.add(new JTextField[] { txtKALCantidad01, txtKALObsRef0 });
+		textFields.add(new JTextField[] { txtKALCantidad11, txtKALObsRef1 });
+		textFields.add(new JTextField[] { txtKALCantidad21, txtKALObsRef2 });
+		textFields.add(new JTextField[] { txtKALCantidad31, txtKALObsRef3 });
+		textFields.add(new JTextField[] { txtKALCantidad41, txtKALObsRef4 });
+
 		JPanel pnlCompArquitect = new JPanel();
 		pnlCompArquitect.setLayout(null);
 		pnlCompArquitect.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -730,6 +746,12 @@ public class MaTemplate extends JFrame {
 		txtCAObsRef4.setColumns(10);
 		pnlOR3.add(txtCAObsRef4);
 
+		textFields.add(new JTextField[] { txtCACantidad01, txtCAObsRef0 });
+		textFields.add(new JTextField[] { txtCACantidad11, txtCAObsRef1 });
+		textFields.add(new JTextField[] { txtCACantidad21, txtCAObsRef2 });
+		textFields.add(new JTextField[] { txtCACantidad31, txtCAObsRef3 });
+		textFields.add(new JTextField[] { txtCACantidad41, txtCAObsRef4 });
+
 		JPanel pnlFachadaFrontal = new JPanel();
 		pnlFachadaFrontal.setLayout(null);
 		pnlFachadaFrontal.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -852,6 +874,11 @@ public class MaTemplate extends JFrame {
 		txtFFObsRef3.setColumns(10);
 		pnlAEObsRef.add(txtFFObsRef3);
 
+		textFields.add(new JTextField[] { txtFFCantidad01, txtFFObsRef0 });
+		textFields.add(new JTextField[] { txtFFCantidad11, txtFFObsRef1 });
+		textFields.add(new JTextField[] { txtFFCantidad21, txtFFObsRef2 });
+		textFields.add(new JTextField[] { txtFFCantidad31, txtFFObsRef3 });
+
 		JPanel pnlFachadaPosterior = new JPanel();
 		pnlFachadaPosterior.setLayout(null);
 		pnlFachadaPosterior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -953,6 +980,10 @@ public class MaTemplate extends JFrame {
 		txtFPObsRef2.setColumns(10);
 		pnlObsRefFP.add(txtFPObsRef2);
 
+		textFields.add(new JTextField[] { txtFPCantidad01, txtFPObsRef0 });
+		textFields.add(new JTextField[] { txtFPCantidad11, txtFPObsRef1 });
+		textFields.add(new JTextField[] { txtFPCantidad21, txtFPObsRef2 });
+
 		JPanel pnlFachadaLateral = new JPanel();
 		pnlFachadaLateral.setLayout(null);
 		pnlFachadaLateral.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -1031,6 +1062,9 @@ public class MaTemplate extends JFrame {
 		txtFLObsRef1.setColumns(10);
 		pnlObsRefFL.add(txtFLObsRef1);
 
+		textFields.add(new JTextField[] { txtFLCantidad01, txtFLObsRef0 });
+		textFields.add(new JTextField[] { txtFLCantidad11, txtFLObsRef1 });
+
 		JPanel pnlInterior = new JPanel();
 		pnlInterior.setLayout(null);
 		pnlInterior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -1108,6 +1142,9 @@ public class MaTemplate extends JFrame {
 		txtIObsRef1.setColumns(10);
 		pnlObsRefI.add(txtIObsRef1);
 
+		textFields.add(new JTextField[] { txtICantidad01, txtIObsRef0 });
+		textFields.add(new JTextField[] { txtICantidad11, txtIObsRef1 });
+
 		JPanel pnlCubierta = new JPanel();
 		pnlCubierta.setLayout(null);
 		pnlCubierta.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -1163,6 +1200,8 @@ public class MaTemplate extends JFrame {
 		txtCObsRef0 = new JTextField();
 		txtCObsRef0.setColumns(10);
 		pnlObsRefC.add(txtCObsRef0);
+
+		textFields.add(new JTextField[] { txtCCantidad01, txtCObsRef0 });
 
 		JPanel pnlComponenteEst = new JPanel();
 		pnlComponenteEst.setLayout(null);
@@ -1489,6 +1528,20 @@ public class MaTemplate extends JFrame {
 		txtCECantidad121.setColumns(10);
 		panel.add(txtCECantidad121);
 
+		textFields.add(new JTextField[] { txtCECantidad01, txtCEObsRef0 });
+		textFields.add(new JTextField[] { txtCECantidad11, txtCEObsRef1 });
+		textFields.add(new JTextField[] { txtCECantidad21, txtCEObsRef2 });
+		textFields.add(new JTextField[] { txtCECantidad31, txtCEObsRef3 });
+		textFields.add(new JTextField[] { txtCECantidad41, txtCEObsRef4 });
+		textFields.add(new JTextField[] { txtCECantidad51, txtCEObsRef5 });
+		textFields.add(new JTextField[] { txtCECantidad61, txtCEObsRef6 });
+		textFields.add(new JTextField[] { txtCECantidad71, txtCEObsRef7 });
+		textFields.add(new JTextField[] { txtCECantidad81, txtCEObsRef8 });
+		textFields.add(new JTextField[] { txtCECantidad91, txtCEObsRef9 });
+		textFields.add(new JTextField[] { txtCECantidad101, txtCEObsRef10 });
+		textFields.add(new JTextField[] { txtCECantidad111, txtCEObsRef11 });
+		textFields.add(new JTextField[] { txtCECantidad121, txtCEObsRef12 });
+
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
 		llenarCabecera(cabecera);
@@ -1528,7 +1581,7 @@ public class MaTemplate extends JFrame {
 		TAula aula = srvFichaMA.buscarAula(nombreAula);
 		TGrupo grupoTmp = srvFichaMA.buscarGrupo("Kit eléctrico");
 		Integer updateFicha = srvFichaMA.buscarUpdateFicha();
-		
+
 		listaKE.add(
 				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKECantidad00.getText()),
 						Integer.parseInt(txtKECantidad01.getText()), txtKEObsRef0.getText(), updateFicha));
@@ -1687,4 +1740,13 @@ public class MaTemplate extends JFrame {
 
 		return listaFormulario;
 	}
+
+	public LinkedList<JTextField[]> getTextFields() {
+		return textFields;
+	}
+
+	public void setTextFields(LinkedList<JTextField[]> textFields) {
+		this.textFields = textFields;
+	}
+
 }

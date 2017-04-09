@@ -89,7 +89,6 @@ public class AlInicio extends JFrame {
 		btnReporteAct.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (tCabecera == null) {
 					JOptionPane.showMessageDialog(null, "ERROR: Proyecto no ingresado", "Mensaje de Error",
 							JOptionPane.ERROR_MESSAGE);

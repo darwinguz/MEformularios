@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -13,7 +15,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import static com.capa.util.Utilitarios.*;
+
+import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ServicioFichaMA;
 
 public class Menu extends JFrame {
 
@@ -47,11 +51,35 @@ public class Menu extends JFrame {
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 
+		ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
 		JButton btnAula1 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>1</body></html>");
 		btnAula1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MaTemplate("MA aulas-1").setVisible(true);
+				MaTemplate maTemplate = new MaTemplate("MA aulas-1");
+				maTemplate.setVisible(true);
+
+				if (srvFichaMA.existeFicha()) {
+					llenarFicha(maTemplate);
+				}
 			}
+
+			private void llenarFicha(MaTemplate maTemplate) {
+				LinkedList<String[]> camposFormularios = srvFichaMA.extraerFormulario();
+				if (camposFormularios.size() != maTemplate.getTextFields().size()) {
+					System.err.println("ERROR: String=" + camposFormularios.size() + " JTextField="
+							+ maTemplate.getTextFields().size());
+					return;
+				}
+
+				Iterator<String[]> it = camposFormularios.iterator();
+				maTemplate.getTextFields().forEach((item) -> {
+					String[] temp = it.next();
+					item[0].setText(temp[0]);
+					item[1].setText(temp[1]);
+				});
+
+			}
+
 		});
 		btnAula1.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAula1.setFont(new Font("Tahoma", Font.BOLD, 11));

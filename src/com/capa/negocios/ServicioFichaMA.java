@@ -15,4 +15,8 @@ public interface ServicioFichaMA {
 	public Integer buscarUpdateFicha();
 
 	public void insertarFormulario(LinkedList<LinkedList<TFichaMa>> cargarListas);
+
+	public boolean existeFicha();
+
+	public LinkedList<String[]> extraerFormulario();
 }
