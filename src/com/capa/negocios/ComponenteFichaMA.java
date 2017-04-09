@@ -1,6 +1,5 @@
 package com.capa.negocios;
 
-import java.sql.Blob;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
@@ -10,6 +9,7 @@ import javax.swing.JOptionPane;
 import com.capa.datos.TAula;
 import com.capa.datos.TFichaMa;
 import com.capa.datos.TGrupo;
+import com.capa.util.Utilitarios;
 
 public class ComponenteFichaMA implements ServicioFichaMA {
 
@@ -23,12 +23,9 @@ public class ComponenteFichaMA implements ServicioFichaMA {
 			while (rs.next()) {
 				aula.setAuSerial(rs.getInt("au_serial"));
 				aula.setAuNombre(rs.getString("au_nombre"));
-				Blob foto = rs.getBlob("au_foto");
-				byte[] data = foto.getBytes(1, (int) foto.length());
-				aula.setAuFotoRecuperaDB(data);
+				aula.setImagen(Utilitarios.parseImagen(rs.getBlob("au_foto")));
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return aula;

@@ -1,5 +1,11 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Utilitarios.llenarCabecera;
+import static com.capa.util.Utilitarios.settCabecera;
+import static com.capa.util.Validaciones.validarInfo;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -29,10 +35,6 @@ import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFichaMA;
 import com.capa.negocios.ServicioInfoObligatoria;
-import static com.capa.util.Utilitarios.*;
-import static com.capa.util.Validaciones.validarInfo;
-
-import com.capa.util.Utilitarios;
 import com.capa.util.Validaciones;
 
 public class MaTemplate extends JFrame {
@@ -1526,6 +1528,7 @@ public class MaTemplate extends JFrame {
 		TAula aula = srvFichaMA.buscarAula(nombreAula);
 		TGrupo grupoTmp = srvFichaMA.buscarGrupo("Kit eléctrico");
 		Integer updateFicha = srvFichaMA.buscarUpdateFicha();
+		
 		listaKE.add(
 				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKECantidad00.getText()),
 						Integer.parseInt(txtKECantidad01.getText()), txtKEObsRef0.getText(), updateFicha));

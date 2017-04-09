@@ -5,6 +5,8 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Blob;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -40,7 +42,7 @@ public class Utilitarios {
 		return icono.getImage().getScaledInstance(base, altura, resolucion);
 	}
 
-	public static Image getImagen(Image imagen, int base, int altura, int resolucion) {
+	public static Image getRedimensionarImagen(Image imagen, int base, int altura, int resolucion) {
 		ImageIcon icono = new ImageIcon(imagen);
 		return icono.getImage().getScaledInstance(base, altura, resolucion);
 	}
@@ -53,6 +55,16 @@ public class Utilitarios {
 			ex.getMessage();
 		}
 		return img;
+	}
+
+	public static Image parseImagen(Blob foto) throws SQLException {
+		Image imagen = null;
+		try {
+			imagen = ImageIO.read(foto.getBinaryStream());
+		} catch (IOException ex) {
+			ex.getMessage();
+		}
+		return imagen;
 	}
 
 	public static String getPathImagen() {
@@ -97,25 +109,30 @@ public class Utilitarios {
 		Utilitarios.tCabecera = tCabecera;
 	}
 
-	public static void llenarCabecera(JPcabecera jCabecera) {
-		ServicioLugarGeo geo = new ComponenteLugarGeo();
-		TLugarGeografico lugar;
-		jCabecera.getTxtProyecto().setText(gettCabecera().getCNombreProyecto());
-		lugar = geo.buscarProvincia(gettCabecera().getTLugarGeografico().getLgCodigo());
-		jCabecera.getTxtProvincia().setText(lugar.getLgNombre());
-		lugar = geo.buscarCanton(gettCabecera().getTLugarGeografico().getLgCodigo());
-		jCabecera.getTxtCanton().setText(lugar.getLgNombre());
-		lugar = geo.buscarParroquia(gettCabecera().getTLugarGeografico().getLgCodigo());
-		jCabecera.getTxtParroquia().setText(lugar.getLgNombre());
-		jCabecera.getTxtProyecto().setText(Utilitarios.gettCabecera().getCNombreProyecto());
-		jCabecera.getTxtAmie().setText(Utilitarios.gettCabecera().getCAmie());
-		jCabecera.getTxtDistrito().setText(Utilitarios.gettCabecera().getDistrito());
-		jCabecera.getTxtCircuito().setText(Utilitarios.gettCabecera().getCircuito());
-		jCabecera.getTxtFechaEntrega().setText("" + getFechaString(Utilitarios.gettCabecera().getCFechaEntrega()));
-		jCabecera.getTxtFechaInicioTrabajo().setText("" + getFechaString(Utilitarios.gettCabecera().getCFechaInicio()));
-		jCabecera.getTxtZona().setText(Utilitarios.gettCabecera().getCZona());
-		jCabecera.getTxtSector().setText(Utilitarios.gettCabecera().getSector());
-	}
+	 public static void llenarCabecera(JPcabecera jCabecera) {
+	 ServicioLugarGeo geo = new ComponenteLugarGeo();
+	 TLugarGeografico lugar;
+	 jCabecera.getTxtProyecto().setText(gettCabecera().getCNombreProyecto());
+	 lugar =
+	 geo.buscarProvincia(gettCabecera().getTLugarGeografico().getLgCodigo());
+	 jCabecera.getTxtProvincia().setText(lugar.getLgNombre());
+	 lugar =
+	 geo.buscarCanton(gettCabecera().getTLugarGeografico().getLgCodigo());
+	 jCabecera.getTxtCanton().setText(lugar.getLgNombre());
+	 lugar =
+	 geo.buscarParroquia(gettCabecera().getTLugarGeografico().getLgCodigo());
+	 jCabecera.getTxtParroquia().setText(lugar.getLgNombre());
+	 jCabecera.getTxtProyecto().setText(Utilitarios.gettCabecera().getCNombreProyecto());
+	 jCabecera.getTxtAmie().setText(Utilitarios.gettCabecera().getCAmie());
+	 jCabecera.getTxtDistrito().setText(Utilitarios.gettCabecera().getDistrito());
+	 jCabecera.getTxtCircuito().setText(Utilitarios.gettCabecera().getCircuito());
+	 jCabecera.getTxtFechaEntrega().setText("" +
+	 getFechaString(Utilitarios.gettCabecera().getCFechaEntrega()));
+	 jCabecera.getTxtFechaInicioTrabajo().setText("" +
+	 getFechaString(Utilitarios.gettCabecera().getCFechaInicio()));
+	 jCabecera.getTxtZona().setText(Utilitarios.gettCabecera().getCZona());
+	 jCabecera.getTxtSector().setText(Utilitarios.gettCabecera().getSector());
+	 }
 
 	public static TInformacionObligatoria cargarInfoObligatoria(InformacionObligatoriaV infor) {
 		TInformacionObligatoria tInfor;

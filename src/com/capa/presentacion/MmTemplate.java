@@ -6,7 +6,6 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -69,13 +68,6 @@ public class MmTemplate extends JFrame {
 	private JTextField textField_84;
 	private JTextField textField_85;
 	private JTextField textField_86;
-	private JTextField textField_87;
-	private JTextField textField_88;
-	private JTextField textField_89;
-	private JLabel lblkitParaConexin;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
 	private JTextField textField_90;
 	private JTextField textField_91;
 	private JTextField textField_92;
@@ -98,18 +90,6 @@ public class MmTemplate extends JFrame {
 	private JTextField textField_96;
 	private JTextField textField_97;
 	private JTextField textField_98;
-	private JTextField textField_99;
-	private JTextField textField_100;
-	private JTextField textField_101;
-	private JTextField textField_102;
-	private JTextField textField_103;
-	private JTextField textField_104;
-	private JTextField textField_110;
-	private JTextField textField_111;
-	private JTextField textField_112;
-	private JTextField textField_108;
-	private JTextField textField_109;
-	private JTextField textField_113;
 	private JTextField textField_114;
 	private JTextField textField_115;
 	private JTextField textField_116;
@@ -125,43 +105,6 @@ public class MmTemplate extends JFrame {
 	private JTextField textField_126;
 	private JTextField textField_127;
 	private JTextField textField_128;
-	private JTextField textField_129;
-	private JTextField textField_130;
-	private JTextField textField_131;
-	private JTextField textField_132;
-	private JTextField textField_133;
-	private JTextField textField_134;
-	private JTextField textField_135;
-	private JTextField textField_136;
-	private JTextField textField_137;
-	private JTextField textField_138;
-	private JTextField textField_139;
-	private JTextField textField_140;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
-	private JTextField textField_143;
-	private JTextField textField_144;
-	private JTextField textField_145;
-	private JTextField textField_18;
-	private JTextField textField_19;
-	private JTextField textField_24;
-	private JTextField textField_20;
-	private JTextField textField_21;
-	private JTextField textField_22;
-	private JTextField textField_23;
-	private JTextField textField_25;
-	private JTextField textField_26;
-	private JTextField textField_141;
-	private JTextField textField_142;
-	private JTextField textField_146;
-	private JTextField textField_147;
-	private JTextField textField_148;
-	private JTextField textField_149;
-	private JTextField textField_150;
 	private JTextField textField_151;
 	private JTextField textField_152;
 	private JTextField textField_153;
@@ -198,6 +141,60 @@ public class MmTemplate extends JFrame {
 	private JTextField textField_36;
 	private JTextField textField_37;
 	private JTextField textField_38;
+	private JTextField textField_48;
+	private JTextField textField_49;
+	private JTextField textField_50;
+	private JTextField textField_51;
+	private JTextField textField_52;
+	private JTextField textField_53;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_39;
+	private JTextField textField_40;
+	private JTextField textField_41;
+	private JTextField textField_42;
+	private JTextField textField_43;
+	private JTextField textField_44;
+	private JTextField textField_45;
+	private JTextField textField_46;
+	private JTextField textField_47;
+	private JTextField textField_12;
+	private JTextField textField_13;
+	private JTextField textField_14;
+	private JTextField textField_15;
+	private JTextField textField_16;
+	private JTextField textField_17;
+	private JTextField textField_18;
+	private JTextField textField_19;
+	private JTextField textField_20;
+	private JTextField textField_24;
+	private JTextField textField_54;
+	private JTextField textField_55;
+	private JTextField textField_56;
+	private JTextField textField_57;
+	private JTextField textField_58;
+	private JTextField textField_59;
+	private JTextField textField_87;
+	private JTextField textField_88;
+	private JTextField textField_89;
+	private JTextField textField_99;
+	private JTextField textField_100;
+	private JTextField textField_101;
+	private JTextField textField_102;
+	private JTextField textField_103;
+	private JTextField textField_21;
+	private JTextField textField_22;
+	private JTextField textField_23;
+	private JTextField textField_25;
+	private JTextField textField_26;
+	private JTextField textField_108;
+	private JTextField textField_109;
+	private JTextField textField_110;
+	private JTextField textField_111;
+	private JTextField textField_112;
+	private JTextField textField_113;
+	private JTextField textField_129;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -272,10 +269,6 @@ public class MmTemplate extends JFrame {
 		label_13.setFont(new Font("Arial", Font.BOLD, 11));
 		label_13.setBounds(1281, 11, 153, 14);
 		panelLab1.add(label_13);
-
-		JButton btnSiguiente = new JButton("Siguiente p\u00E1gina");
-		btnSiguiente.setBounds(1132, 471, 139, 34);
-		panelLab1.add(btnSiguiente);
 
 		JPanel pnlKitElectrico = new JPanel();
 		pnlKitElectrico.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -399,7 +392,7 @@ public class MmTemplate extends JFrame {
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel.setBounds(10, 207, 414, 36);
+		panel.setBounds(10, 118, 414, 36);
 		panelLab1.add(panel);
 
 		JPanel panel_1 = new JPanel();
@@ -456,7 +449,7 @@ public class MmTemplate extends JFrame {
 		JPanel panel_4 = new JPanel();
 		panel_4.setLayout(null);
 		panel_4.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_4.setBounds(10, 328, 414, 177);
+		panel_4.setBounds(10, 165, 414, 177);
 		panelLab1.add(panel_4);
 
 		JPanel panel_5 = new JPanel();
@@ -632,7 +625,7 @@ public class MmTemplate extends JFrame {
 		JPanel panel_17 = new JPanel();
 		panel_17.setLayout(null);
 		panel_17.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_17.setBounds(433, 9, 414, 225);
+		panel_17.setBounds(10, 353, 414, 151);
 		panelLab1.add(panel_17);
 
 		JPanel panel_18 = new JPanel();
@@ -738,78 +731,10 @@ public class MmTemplate extends JFrame {
 		textField_86.setColumns(10);
 		panel_23.add(textField_86);
 
-		JPanel panel_24 = new JPanel();
-		panel_24.setBounds(2, 137, 191, 40);
-		panel_17.add(panel_24);
-		panel_24.setLayout(new GridLayout(1, 1, 0, 0));
-
-		lblkitParaConexin = new JLabel(
-				"<html><body><p align=\"right\">Kit para conexión de tubería 1/2\". (lija, pliego, polipega 1/4gal,3 uniones)</body></html>");
-		lblkitParaConexin.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblkitParaConexin.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_24.add(lblkitParaConexin);
-
-		JPanel panel_25 = new JPanel();
-		panel_25.setBounds(195, 144, 50, 20);
-		panel_17.add(panel_25);
-		panel_25.setLayout(new GridLayout(1, 2, 0, 0));
-
-		textField_87 = new JTextField();
-		textField_87.setEditable(false);
-		textField_87.setColumns(10);
-		panel_25.add(textField_87);
-
-		textField_88 = new JTextField();
-		textField_88.setColumns(10);
-		panel_25.add(textField_88);
-
-		JPanel panel_26 = new JPanel();
-		panel_26.setBounds(248, 144, 162, 20);
-		panel_17.add(panel_26);
-		panel_26.setLayout(new GridLayout(1, 1, 0, 0));
-
-		textField_89 = new JTextField();
-		textField_89.setColumns(10);
-		panel_26.add(textField_89);
-
-		JPanel panel_27 = new JPanel();
-		panel_27.setBounds(2, 177, 191, 40);
-		panel_17.add(panel_27);
-		panel_27.setLayout(new GridLayout(1, 1, 0, 0));
-
-		JLabel lblKitParaConexin_1 = new JLabel(
-				"<html><body><p align=\"right\"> Kit para conexión de tubería 3/4\". (lija, pliego, polipega 1/4gal,3 uniones)</body></html>");
-		lblKitParaConexin_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblKitParaConexin_1.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_27.add(lblKitParaConexin_1);
-
-		JPanel panel_28 = new JPanel();
-		panel_28.setBounds(195, 185, 50, 20);
-		panel_17.add(panel_28);
-		panel_28.setLayout(new GridLayout(1, 2, 0, 0));
-
-		textField = new JTextField();
-		textField.setEditable(false);
-		textField.setColumns(10);
-		panel_28.add(textField);
-
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		panel_28.add(textField_1);
-
-		JPanel panel_29 = new JPanel();
-		panel_29.setBounds(248, 185, 162, 20);
-		panel_17.add(panel_29);
-		panel_29.setLayout(new GridLayout(1, 1, 0, 0));
-
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		panel_29.add(textField_2);
-
 		JPanel panel_30 = new JPanel();
 		panel_30.setLayout(null);
 		panel_30.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_30.setBounds(433, 243, 414, 262);
+		panel_30.setBounds(433, 112, 414, 262);
 		panelLab1.add(panel_30);
 
 		JPanel panel_31 = new JPanel();
@@ -1057,86 +982,8 @@ public class MmTemplate extends JFrame {
 		JPanel panel_49 = new JPanel();
 		panel_49.setLayout(null);
 		panel_49.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_49.setBounds(857, 11, 414, 232);
+		panel_49.setBounds(854, 11, 414, 131);
 		panelLab1.add(panel_49);
-
-		JPanel panel_50 = new JPanel();
-		panel_50.setBounds(2, 14, 191, 60);
-		panel_49.add(panel_50);
-		panel_50.setLayout(new GridLayout(3, 1, 0, 0));
-
-		JLabel label_5 = new JLabel("Puerta");
-		label_5.setVerticalAlignment(SwingConstants.TOP);
-		label_5.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_5.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_50.add(label_5);
-
-		JLabel label_6 = new JLabel("Bisagras");
-		label_6.setVerticalAlignment(SwingConstants.TOP);
-		label_6.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_6.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_50.add(label_6);
-
-		JLabel label_32 = new JLabel("Perfil SF Tipo 12 MA-SF-12 para puerta");
-		label_32.setVerticalAlignment(SwingConstants.TOP);
-		label_32.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_32.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_50.add(label_32);
-
-		JPanel panel_51 = new JPanel();
-		panel_51.setBounds(195, 14, 50, 60);
-		panel_49.add(panel_51);
-		panel_51.setLayout(new GridLayout(3, 2, 0, 0));
-
-		textField_99 = new JTextField();
-		textField_99.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_99.setEditable(false);
-		textField_99.setColumns(10);
-		panel_51.add(textField_99);
-
-		textField_100 = new JTextField();
-		textField_100.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_100.setColumns(10);
-		panel_51.add(textField_100);
-
-		textField_101 = new JTextField();
-		textField_101.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_101.setEditable(false);
-		textField_101.setColumns(10);
-		panel_51.add(textField_101);
-
-		textField_102 = new JTextField();
-		textField_102.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_102.setColumns(10);
-		panel_51.add(textField_102);
-
-		textField_103 = new JTextField();
-		textField_103.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_103.setEditable(false);
-		textField_103.setColumns(10);
-		panel_51.add(textField_103);
-
-		textField_104 = new JTextField();
-		textField_104.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_104.setColumns(10);
-		panel_51.add(textField_104);
-
-		JPanel panel_52 = new JPanel();
-		panel_52.setBounds(248, 14, 162, 60);
-		panel_49.add(panel_52);
-		panel_52.setLayout(new GridLayout(3, 1, 0, 0));
-
-		textField_110 = new JTextField();
-		textField_110.setColumns(10);
-		panel_52.add(textField_110);
-
-		textField_111 = new JTextField();
-		textField_111.setColumns(10);
-		panel_52.add(textField_111);
-
-		textField_112 = new JTextField();
-		textField_112.setColumns(10);
-		panel_52.add(textField_112);
 
 		JLabel label_35 = new JLabel("Cantidad");
 		label_35.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1150,49 +997,14 @@ public class MmTemplate extends JFrame {
 		label_37.setBounds(258, 0, 190, 14);
 		panel_49.add(label_37);
 
-		JPanel panel_53 = new JPanel();
-		panel_53.setBounds(2, 75, 191, 47);
-		panel_49.add(panel_53);
-		panel_53.setLayout(new GridLayout(1, 1, 0, 0));
-
-		JLabel lblventanaCorrederaCompuesta = new JLabel(
-				"<html><body><p align=\"right\">Ventana corredera, compuesta por tres hojas y dos carriles. UPVC con vidrio flotado de 3 mm de 3x1,10</body></html>");
-		lblventanaCorrederaCompuesta.setVerticalAlignment(SwingConstants.TOP);
-		lblventanaCorrederaCompuesta.setHorizontalAlignment(SwingConstants.LEFT);
-		lblventanaCorrederaCompuesta.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_53.add(lblventanaCorrederaCompuesta);
-
-		JPanel panel_54 = new JPanel();
-		panel_54.setBounds(195, 86, 50, 20);
-		panel_49.add(panel_54);
-		panel_54.setLayout(new GridLayout(1, 2, 0, 0));
-
-		textField_108 = new JTextField();
-		textField_108.setEditable(false);
-		textField_108.setColumns(10);
-		panel_54.add(textField_108);
-
-		textField_109 = new JTextField();
-		textField_109.setColumns(10);
-		panel_54.add(textField_109);
-
-		JPanel panel_55 = new JPanel();
-		panel_55.setBounds(248, 86, 162, 20);
-		panel_49.add(panel_55);
-		panel_55.setLayout(new GridLayout(1, 1, 0, 0));
-
-		textField_113 = new JTextField();
-		textField_113.setColumns(10);
-		panel_55.add(textField_113);
-
-		JLabel lblComponenteArquitectnico = new JLabel("  COMPONENTE ARQUITECTÓNICO");
+		JLabel lblComponenteArquitectnico = new JLabel(".. COMPONENTE ARQUITECTÓNICO");
 		lblComponenteArquitectnico.setHorizontalAlignment(SwingConstants.LEFT);
 		lblComponenteArquitectnico.setFont(new Font("Arial", Font.BOLD, 11));
 		lblComponenteArquitectnico.setBounds(2, 0, 193, 14);
 		panel_49.add(lblComponenteArquitectnico);
 
 		JPanel panel_56 = new JPanel();
-		panel_56.setBounds(2, 124, 191, 100);
+		panel_56.setBounds(2, 25, 191, 100);
 		panel_49.add(panel_56);
 		panel_56.setLayout(new GridLayout(5, 1, 0, 0));
 
@@ -1227,7 +1039,7 @@ public class MmTemplate extends JFrame {
 		panel_56.add(label_39);
 
 		JPanel panel_57 = new JPanel();
-		panel_57.setBounds(195, 124, 50, 100);
+		panel_57.setBounds(195, 25, 50, 100);
 		panel_49.add(panel_57);
 		panel_57.setLayout(new GridLayout(5, 2, 0, 0));
 
@@ -1287,7 +1099,7 @@ public class MmTemplate extends JFrame {
 		panel_57.add(textField_127);
 
 		JPanel panel_58 = new JPanel();
-		panel_58.setBounds(248, 124, 162, 100);
+		panel_58.setBounds(248, 25, 162, 100);
 		panel_49.add(panel_58);
 		panel_58.setLayout(new GridLayout(5, 1, 0, 0));
 
@@ -1311,415 +1123,639 @@ public class MmTemplate extends JFrame {
 		textField_125.setColumns(10);
 		panel_58.add(textField_125);
 
-		JPanel panelLab2 = new JPanel();
-		tabbedPane.addTab("2.-  MM laboratorio-1", null, panelLab2, null);
-		panelLab2.setLayout(null);
+		JPanel panel_79 = new JPanel();
+		panel_79.setLayout(null);
+		panel_79.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_79.setBounds(434, 11, 414, 96);
+		panelLab1.add(panel_79);
 
-		JPanel panel_59 = new JPanel();
-		panel_59.setLayout(null);
-		panel_59.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_59.setBounds(10, 11, 490, 96);
-		panelLab2.add(panel_59);
+		JLabel label_21 = new JLabel("Cantidad");
+		label_21.setHorizontalAlignment(SwingConstants.LEFT);
+		label_21.setFont(new Font("Arial", Font.BOLD, 11));
+		label_21.setBounds(195, 0, 60, 14);
+		panel_79.add(label_21);
 
-		JPanel panel_60 = new JPanel();
-		panel_60.setBounds(2, 14, 252, 80);
-		panel_59.add(panel_60);
-		panel_60.setLayout(new GridLayout(4, 1, 0, 0));
+		JLabel label_28 = new JLabel("Observación/Referencia");
+		label_28.setHorizontalAlignment(SwingConstants.LEFT);
+		label_28.setFont(new Font("Arial", Font.BOLD, 11));
+		label_28.setBounds(258, 0, 190, 14);
+		panel_79.add(label_28);
 
-		JLabel label_40 = new JLabel("Paneles EPS pared -   ( 1x3x0,09x0,09 m)");
-		label_40.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_40.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_60.add(label_40);
+		JLabel lblKitAgua = new JLabel(".. KIT AGUA POTABLE");
+		lblKitAgua.setHorizontalAlignment(SwingConstants.LEFT);
+		lblKitAgua.setFont(new Font("Arial", Font.BOLD, 11));
+		lblKitAgua.setBounds(2, 0, 191, 14);
+		panel_79.add(lblKitAgua);
 
-		JLabel label_41 = new JLabel("Paneles EPS pared -   ( 1x0,90x0,90 m)");
-		label_41.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_41.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_60.add(label_41);
+		JPanel panel_86 = new JPanel();
+		panel_86.setBounds(2, 11, 191, 40);
+		panel_79.add(panel_86);
+		panel_86.setLayout(new GridLayout(1, 1, 0, 0));
 
-		JLabel label_42 = new JLabel("Paneles EPS pared -   ( 1x1,10x0,09 m)");
-		label_42.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_42.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_60.add(label_42);
+		JLabel label_74 = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexión de tubería 1/2\". (lija, pliego, polipega 1/4gal,3 uniones)</body></html>");
+		label_74.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_74.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_86.add(label_74);
 
-		JLabel label_43 = new JLabel("Paneles EPS pared -   ( 1x0,80x0,09 m)");
-		label_43.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_43.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_60.add(label_43);
+		JPanel panel_87 = new JPanel();
+		panel_87.setBounds(195, 18, 50, 20);
+		panel_79.add(panel_87);
+		panel_87.setLayout(new GridLayout(1, 2, 0, 0));
 
-		JPanel panel_61 = new JPanel();
-		panel_61.setBounds(260, 14, 50, 80);
-		panel_59.add(panel_61);
-		panel_61.setLayout(new GridLayout(4, 2, 0, 0));
+		textField_48 = new JTextField();
+		textField_48.setEditable(false);
+		textField_48.setColumns(10);
+		panel_87.add(textField_48);
 
-		textField_129 = new JTextField();
-		textField_129.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_129.setEditable(false);
-		textField_129.setColumns(10);
-		panel_61.add(textField_129);
+		textField_49 = new JTextField();
+		textField_49.setColumns(10);
+		panel_87.add(textField_49);
 
-		textField_130 = new JTextField();
-		textField_130.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_130.setColumns(10);
-		panel_61.add(textField_130);
+		JPanel panel_88 = new JPanel();
+		panel_88.setBounds(248, 18, 162, 20);
+		panel_79.add(panel_88);
+		panel_88.setLayout(new GridLayout(1, 1, 0, 0));
 
-		textField_131 = new JTextField();
-		textField_131.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_131.setEditable(false);
-		textField_131.setColumns(10);
-		panel_61.add(textField_131);
+		textField_50 = new JTextField();
+		textField_50.setColumns(10);
+		panel_88.add(textField_50);
 
-		textField_132 = new JTextField();
-		textField_132.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_132.setColumns(10);
-		panel_61.add(textField_132);
+		JPanel panel_89 = new JPanel();
+		panel_89.setBounds(2, 51, 191, 40);
+		panel_79.add(panel_89);
+		panel_89.setLayout(new GridLayout(1, 1, 0, 0));
 
-		textField_133 = new JTextField();
-		textField_133.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_133.setEditable(false);
-		textField_133.setColumns(10);
-		panel_61.add(textField_133);
+		JLabel label_75 = new JLabel(
+				"<html><body><p align=\"right\"> Kit para conexión de tubería 3/4\". (lija, pliego, polipega 1/4gal,3 uniones)</body></html>");
+		label_75.setHorizontalAlignment(SwingConstants.LEFT);
+		label_75.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_89.add(label_75);
 
-		textField_134 = new JTextField();
-		textField_134.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_134.setColumns(10);
-		panel_61.add(textField_134);
+		JPanel panel_90 = new JPanel();
+		panel_90.setBounds(195, 59, 50, 20);
+		panel_79.add(panel_90);
+		panel_90.setLayout(new GridLayout(1, 2, 0, 0));
 
-		textField_135 = new JTextField();
-		textField_135.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_135.setEditable(false);
-		textField_135.setColumns(10);
-		panel_61.add(textField_135);
+		textField_51 = new JTextField();
+		textField_51.setEditable(false);
+		textField_51.setColumns(10);
+		panel_90.add(textField_51);
 
-		textField_136 = new JTextField();
-		textField_136.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_136.setColumns(10);
-		panel_61.add(textField_136);
+		textField_52 = new JTextField();
+		textField_52.setColumns(10);
+		panel_90.add(textField_52);
 
-		JPanel panel_62 = new JPanel();
-		panel_62.setBounds(315, 14, 170, 80);
-		panel_59.add(panel_62);
-		panel_62.setLayout(new GridLayout(4, 1, 0, 0));
+		JPanel panel_91 = new JPanel();
+		panel_91.setBounds(248, 59, 162, 20);
+		panel_79.add(panel_91);
+		panel_91.setLayout(new GridLayout(1, 1, 0, 0));
 
-		textField_137 = new JTextField();
-		textField_137.setColumns(10);
-		panel_62.add(textField_137);
+		textField_53 = new JTextField();
+		textField_53.setColumns(10);
+		panel_91.add(textField_53);
 
-		textField_138 = new JTextField();
-		textField_138.setColumns(10);
-		panel_62.add(textField_138);
+		JPanel panel_24 = new JPanel();
+		panel_24.setLayout(null);
+		panel_24.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_24.setBounds(433, 380, 414, 124);
+		panelLab1.add(panel_24);
 
-		textField_139 = new JTextField();
-		textField_139.setColumns(10);
-		panel_62.add(textField_139);
+		JPanel panel_25 = new JPanel();
+		panel_25.setBounds(2, 14, 191, 60);
+		panel_24.add(panel_25);
+		panel_25.setLayout(new GridLayout(3, 1, 0, 0));
 
-		textField_140 = new JTextField();
-		textField_140.setColumns(10);
-		panel_62.add(textField_140);
+		JLabel label_18 = new JLabel("Puerta");
+		label_18.setVerticalAlignment(SwingConstants.TOP);
+		label_18.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_18.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_25.add(label_18);
 
-		JLabel label_45 = new JLabel("Cantidad");
-		label_45.setHorizontalAlignment(SwingConstants.LEFT);
-		label_45.setFont(new Font("Arial", Font.BOLD, 11));
-		label_45.setBounds(263, 0, 50, 14);
-		panel_59.add(label_45);
+		JLabel label_31 = new JLabel("Bisagras");
+		label_31.setVerticalAlignment(SwingConstants.TOP);
+		label_31.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_31.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_25.add(label_31);
 
-		JLabel label_46 = new JLabel("Observación/Referencia");
-		label_46.setHorizontalAlignment(SwingConstants.LEFT);
-		label_46.setFont(new Font("Arial", Font.BOLD, 11));
-		label_46.setBounds(315, 0, 159, 14);
-		panel_59.add(label_46);
+		JLabel label_72 = new JLabel("Perfil SF Tipo 12 MA-SF-12 para puerta");
+		label_72.setVerticalAlignment(SwingConstants.TOP);
+		label_72.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_72.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_25.add(label_72);
 
-		JLabel label_44 = new JLabel("FACHADA FRONTAL");
-		label_44.setHorizontalAlignment(SwingConstants.CENTER);
-		label_44.setFont(new Font("Arial", Font.BOLD, 11));
-		label_44.setBounds(2, 0, 129, 14);
-		panel_59.add(label_44);
+		JPanel panel_26 = new JPanel();
+		panel_26.setBounds(195, 14, 50, 60);
+		panel_24.add(panel_26);
+		panel_26.setLayout(new GridLayout(3, 2, 0, 0));
 
-		JPanel panel_63 = new JPanel();
-		panel_63.setLayout(null);
-		panel_63.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_63.setBounds(10, 113, 490, 80);
-		panelLab2.add(panel_63);
+		textField = new JTextField();
+		textField.setHorizontalAlignment(SwingConstants.CENTER);
+		textField.setEditable(false);
+		textField.setColumns(10);
+		panel_26.add(textField);
 
-		JPanel panel_64 = new JPanel();
-		panel_64.setBounds(2, 14, 253, 60);
-		panel_63.add(panel_64);
-		panel_64.setLayout(new GridLayout(3, 1, 0, 0));
+		textField_1 = new JTextField();
+		textField_1.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_1.setColumns(10);
+		panel_26.add(textField_1);
 
-		JLabel label_14 = new JLabel("Paneles EPS pared -   ( 1x2,70 x0,90  m)");
-		label_14.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_14.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_64.add(label_14);
+		textField_2 = new JTextField();
+		textField_2.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_2.setEditable(false);
+		textField_2.setColumns(10);
+		panel_26.add(textField_2);
 
-		JLabel label_15 = new JLabel("Paneles EPS pared -   ( 1x1,10 x0,90  m)");
-		label_15.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_15.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_64.add(label_15);
+		textField_39 = new JTextField();
+		textField_39.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_39.setColumns(10);
+		panel_26.add(textField_39);
 
-		JLabel label_47 = new JLabel("Paneles EPS pared -   ( 1x0,50 x0,90  m)");
-		label_47.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_47.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_64.add(label_47);
+		textField_40 = new JTextField();
+		textField_40.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_40.setEditable(false);
+		textField_40.setColumns(10);
+		panel_26.add(textField_40);
 
-		JPanel panel_65 = new JPanel();
-		panel_65.setBounds(260, 14, 50, 60);
-		panel_63.add(panel_65);
-		panel_65.setLayout(new GridLayout(3, 2, 0, 0));
+		textField_41 = new JTextField();
+		textField_41.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_41.setColumns(10);
+		panel_26.add(textField_41);
+
+		JPanel panel_27 = new JPanel();
+		panel_27.setBounds(248, 14, 162, 60);
+		panel_24.add(panel_27);
+		panel_27.setLayout(new GridLayout(3, 1, 0, 0));
+
+		textField_42 = new JTextField();
+		textField_42.setColumns(10);
+		panel_27.add(textField_42);
+
+		textField_43 = new JTextField();
+		textField_43.setColumns(10);
+		panel_27.add(textField_43);
+
+		textField_44 = new JTextField();
+		textField_44.setColumns(10);
+		panel_27.add(textField_44);
+
+		JLabel label_73 = new JLabel("Cantidad");
+		label_73.setHorizontalAlignment(SwingConstants.LEFT);
+		label_73.setFont(new Font("Arial", Font.BOLD, 11));
+		label_73.setBounds(195, 0, 60, 14);
+		panel_24.add(label_73);
+
+		JLabel label_76 = new JLabel("Observación/Referencia");
+		label_76.setHorizontalAlignment(SwingConstants.LEFT);
+		label_76.setFont(new Font("Arial", Font.BOLD, 11));
+		label_76.setBounds(258, 0, 190, 14);
+		panel_24.add(label_76);
+
+		JPanel panel_28 = new JPanel();
+		panel_28.setBounds(2, 75, 191, 47);
+		panel_24.add(panel_28);
+		panel_28.setLayout(new GridLayout(1, 1, 0, 0));
+
+		JLabel label_77 = new JLabel(
+				"<html><body><p align=\"right\">Ventana corredera, compuesta por tres hojas y dos carriles. UPVC con vidrio flotado de 3 mm de 3x1,10</body></html>");
+		label_77.setVerticalAlignment(SwingConstants.TOP);
+		label_77.setHorizontalAlignment(SwingConstants.LEFT);
+		label_77.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_28.add(label_77);
+
+		JPanel panel_29 = new JPanel();
+		panel_29.setBounds(195, 86, 50, 20);
+		panel_24.add(panel_29);
+		panel_29.setLayout(new GridLayout(1, 2, 0, 0));
+
+		textField_45 = new JTextField();
+		textField_45.setEditable(false);
+		textField_45.setColumns(10);
+		panel_29.add(textField_45);
+
+		textField_46 = new JTextField();
+		textField_46.setColumns(10);
+		panel_29.add(textField_46);
+
+		JPanel panel_80 = new JPanel();
+		panel_80.setBounds(248, 86, 162, 20);
+		panel_24.add(panel_80);
+		panel_80.setLayout(new GridLayout(1, 1, 0, 0));
+
+		textField_47 = new JTextField();
+		textField_47.setColumns(10);
+		panel_80.add(textField_47);
+
+		JLabel label_78 = new JLabel("  COMPONENTE ARQUITECTÓNICO");
+		label_78.setHorizontalAlignment(SwingConstants.LEFT);
+		label_78.setFont(new Font("Arial", Font.BOLD, 11));
+		label_78.setBounds(2, 0, 193, 14);
+		panel_24.add(label_78);
+
+		JPanel panel_50 = new JPanel();
+		panel_50.setLayout(null);
+		panel_50.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_50.setBounds(854, 153, 414, 96);
+		panelLab1.add(panel_50);
+
+		JPanel panel_51 = new JPanel();
+		panel_51.setBounds(2, 14, 191, 80);
+		panel_50.add(panel_51);
+		panel_51.setLayout(new GridLayout(4, 1, 0, 0));
+
+		JLabel lblPanelesEpsPared = new JLabel("Paneles EPS pared(1x3x0,09x0,09 m)");
+		lblPanelesEpsPared.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelesEpsPared.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_51.add(lblPanelesEpsPared);
+
+		JLabel lblPanelesEpsPared_1 = new JLabel("Paneles EPS pared( 1x0,90x0,90 m)");
+		lblPanelesEpsPared_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelesEpsPared_1.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_51.add(lblPanelesEpsPared_1);
+
+		JLabel lblPanelesEpsParedxx = new JLabel("Paneles EPS pared(1x1,10x0,09 m)");
+		lblPanelesEpsParedxx.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelesEpsParedxx.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_51.add(lblPanelesEpsParedxx);
+
+		JLabel lblPanelesEpsPared_2 = new JLabel("Paneles EPS pared(1x0,80x0,09 m)");
+		lblPanelesEpsPared_2.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelesEpsPared_2.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_51.add(lblPanelesEpsPared_2);
+
+		JPanel panel_52 = new JPanel();
+		panel_52.setBounds(195, 14, 50, 80);
+		panel_50.add(panel_52);
+		panel_52.setLayout(new GridLayout(4, 2, 0, 0));
 
 		textField_12 = new JTextField();
 		textField_12.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_12.setEditable(false);
 		textField_12.setColumns(10);
-		panel_65.add(textField_12);
+		panel_52.add(textField_12);
 
 		textField_13 = new JTextField();
 		textField_13.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_13.setColumns(10);
-		panel_65.add(textField_13);
+		panel_52.add(textField_13);
 
 		textField_14 = new JTextField();
 		textField_14.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_14.setEditable(false);
 		textField_14.setColumns(10);
-		panel_65.add(textField_14);
+		panel_52.add(textField_14);
 
 		textField_15 = new JTextField();
 		textField_15.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_15.setColumns(10);
-		panel_65.add(textField_15);
+		panel_52.add(textField_15);
 
 		textField_16 = new JTextField();
 		textField_16.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_16.setEditable(false);
 		textField_16.setColumns(10);
-		panel_65.add(textField_16);
+		panel_52.add(textField_16);
 
 		textField_17 = new JTextField();
 		textField_17.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_17.setColumns(10);
-		panel_65.add(textField_17);
-
-		JPanel panel_66 = new JPanel();
-		panel_66.setBounds(315, 14, 170, 60);
-		panel_63.add(panel_66);
-		panel_66.setLayout(new GridLayout(3, 1, 0, 0));
-
-		textField_143 = new JTextField();
-		textField_143.setColumns(10);
-		panel_66.add(textField_143);
-
-		textField_144 = new JTextField();
-		textField_144.setColumns(10);
-		panel_66.add(textField_144);
-
-		textField_145 = new JTextField();
-		textField_145.setColumns(10);
-		panel_66.add(textField_145);
-
-		JLabel label_49 = new JLabel("Cantidad");
-		label_49.setHorizontalAlignment(SwingConstants.LEFT);
-		label_49.setFont(new Font("Arial", Font.BOLD, 11));
-		label_49.setBounds(260, 0, 60, 14);
-		panel_63.add(label_49);
-
-		JLabel label_50 = new JLabel("Observación/Referencia");
-		label_50.setHorizontalAlignment(SwingConstants.LEFT);
-		label_50.setFont(new Font("Arial", Font.BOLD, 11));
-		label_50.setBounds(315, 0, 190, 14);
-		panel_63.add(label_50);
-
-		JLabel label_51 = new JLabel("FACHADA POSTERIOR");
-		label_51.setHorizontalAlignment(SwingConstants.CENTER);
-		label_51.setFont(new Font("Arial", Font.BOLD, 11));
-		label_51.setBounds(2, 0, 129, 14);
-		panel_63.add(label_51);
-
-		JPanel panel_67 = new JPanel();
-		panel_67.setLayout(null);
-		panel_67.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_67.setBounds(10, 198, 490, 36);
-		panelLab2.add(panel_67);
-
-		JPanel panel_68 = new JPanel();
-		panel_68.setBounds(2, 14, 250, 20);
-		panel_67.add(panel_68);
-		panel_68.setLayout(new GridLayout(1, 1, 0, 0));
-
-		JLabel label_11 = new JLabel("Panel Hvar- pared laterales izq (libre)");
-		label_11.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_11.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_68.add(label_11);
-
-		JPanel panel_69 = new JPanel();
-		panel_69.setBounds(258, 14, 50, 20);
-		panel_67.add(panel_69);
-		panel_69.setLayout(new GridLayout(1, 2, 0, 0));
+		panel_52.add(textField_17);
 
 		textField_18 = new JTextField();
 		textField_18.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_18.setEditable(false);
 		textField_18.setColumns(10);
-		panel_69.add(textField_18);
+		panel_52.add(textField_18);
 
 		textField_19 = new JTextField();
 		textField_19.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_19.setColumns(10);
-		panel_69.add(textField_19);
+		panel_52.add(textField_19);
 
-		JPanel panel_70 = new JPanel();
-		panel_70.setBounds(315, 14, 170, 20);
-		panel_67.add(panel_70);
-		panel_70.setLayout(new GridLayout(1, 1, 0, 0));
+		JPanel panel_53 = new JPanel();
+		panel_53.setBounds(248, 14, 162, 80);
+		panel_50.add(panel_53);
+		panel_53.setLayout(new GridLayout(4, 1, 0, 0));
 
 		textField_20 = new JTextField();
 		textField_20.setColumns(10);
-		panel_70.add(textField_20);
+		panel_53.add(textField_20);
 
-		JLabel label_20 = new JLabel("Cantidad");
+		textField_24 = new JTextField();
+		textField_24.setColumns(10);
+		panel_53.add(textField_24);
+
+		textField_54 = new JTextField();
+		textField_54.setColumns(10);
+		panel_53.add(textField_54);
+
+		textField_55 = new JTextField();
+		textField_55.setColumns(10);
+		panel_53.add(textField_55);
+
+		JLabel label_15 = new JLabel("Cantidad");
+		label_15.setHorizontalAlignment(SwingConstants.LEFT);
+		label_15.setFont(new Font("Arial", Font.BOLD, 11));
+		label_15.setBounds(195, 0, 50, 14);
+		panel_50.add(label_15);
+
+		JLabel label_20 = new JLabel("Observación/Referencia");
 		label_20.setHorizontalAlignment(SwingConstants.LEFT);
 		label_20.setFont(new Font("Arial", Font.BOLD, 11));
-		label_20.setBounds(258, 0, 60, 14);
-		panel_67.add(label_20);
+		label_20.setBounds(247, 0, 159, 14);
+		panel_50.add(label_20);
+
+		JLabel label_32 = new JLabel("FACHADA FRONTAL");
+		label_32.setHorizontalAlignment(SwingConstants.CENTER);
+		label_32.setFont(new Font("Arial", Font.BOLD, 11));
+		label_32.setBounds(2, 0, 129, 14);
+		panel_50.add(label_32);
+
+		JPanel panel_54 = new JPanel();
+		panel_54.setLayout(null);
+		panel_54.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_54.setBounds(854, 262, 414, 80);
+		panelLab1.add(panel_54);
+
+		JPanel panel_55 = new JPanel();
+		panel_55.setBounds(2, 14, 191, 60);
+		panel_54.add(panel_55);
+		panel_55.setLayout(new GridLayout(3, 1, 0, 0));
+
+		JLabel lblPanelesEpsParedx = new JLabel("Paneles EPS pared(1x2,70 x0,90  m)");
+		lblPanelesEpsParedx.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelesEpsParedx.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_55.add(lblPanelesEpsParedx);
+
+		JLabel lblPanelesEpsParedx_1 = new JLabel("Paneles EPS pared(1x1,10 x0,90  m)");
+		lblPanelesEpsParedx_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelesEpsParedx_1.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_55.add(lblPanelesEpsParedx_1);
+
+		JLabel lblPanelesEpsParedx_2 = new JLabel("Paneles EPS pared(1x0,50 x0,90  m)");
+		lblPanelesEpsParedx_2.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelesEpsParedx_2.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_55.add(lblPanelesEpsParedx_2);
+
+		JPanel panel_59 = new JPanel();
+		panel_59.setBounds(195, 14, 50, 60);
+		panel_54.add(panel_59);
+		panel_59.setLayout(new GridLayout(3, 2, 0, 0));
+
+		textField_56 = new JTextField();
+		textField_56.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_56.setEditable(false);
+		textField_56.setColumns(10);
+		panel_59.add(textField_56);
+
+		textField_57 = new JTextField();
+		textField_57.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_57.setColumns(10);
+		panel_59.add(textField_57);
+
+		textField_58 = new JTextField();
+		textField_58.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_58.setEditable(false);
+		textField_58.setColumns(10);
+		panel_59.add(textField_58);
+
+		textField_59 = new JTextField();
+		textField_59.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_59.setColumns(10);
+		panel_59.add(textField_59);
+
+		textField_87 = new JTextField();
+		textField_87.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_87.setEditable(false);
+		textField_87.setColumns(10);
+		panel_59.add(textField_87);
+
+		textField_88 = new JTextField();
+		textField_88.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_88.setColumns(10);
+		panel_59.add(textField_88);
+
+		JPanel panel_60 = new JPanel();
+		panel_60.setBounds(248, 14, 162, 60);
+		panel_54.add(panel_60);
+		panel_60.setLayout(new GridLayout(3, 1, 0, 0));
+
+		textField_89 = new JTextField();
+		textField_89.setColumns(10);
+		panel_60.add(textField_89);
+
+		textField_99 = new JTextField();
+		textField_99.setColumns(10);
+		panel_60.add(textField_99);
+
+		textField_100 = new JTextField();
+		textField_100.setColumns(10);
+		panel_60.add(textField_100);
+
+		JLabel label_43 = new JLabel("Cantidad");
+		label_43.setHorizontalAlignment(SwingConstants.LEFT);
+		label_43.setFont(new Font("Arial", Font.BOLD, 11));
+		label_43.setBounds(195, 0, 60, 14);
+		panel_54.add(label_43);
+
+		JLabel label_44 = new JLabel("Observación/Referencia");
+		label_44.setHorizontalAlignment(SwingConstants.LEFT);
+		label_44.setFont(new Font("Arial", Font.BOLD, 11));
+		label_44.setBounds(250, 0, 190, 14);
+		panel_54.add(label_44);
+
+		JLabel label_45 = new JLabel("FACHADA POSTERIOR");
+		label_45.setHorizontalAlignment(SwingConstants.CENTER);
+		label_45.setFont(new Font("Arial", Font.BOLD, 11));
+		label_45.setBounds(2, 0, 129, 14);
+		panel_54.add(label_45);
+
+		JPanel panel_61 = new JPanel();
+		panel_61.setLayout(null);
+		panel_61.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_61.setBounds(854, 354, 414, 36);
+		panelLab1.add(panel_61);
+
+		JPanel panel_62 = new JPanel();
+		panel_62.setBounds(2, 14, 191, 20);
+		panel_61.add(panel_62);
+		panel_62.setLayout(new GridLayout(1, 1, 0, 0));
+
+		JLabel lblPanelHvaparedLaterales = new JLabel("Panel Hva-pared laterales izq (libre)");
+		lblPanelHvaparedLaterales.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelHvaparedLaterales.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_62.add(lblPanelHvaparedLaterales);
+
+		JPanel panel_63 = new JPanel();
+		panel_63.setBounds(195, 14, 50, 20);
+		panel_61.add(panel_63);
+		panel_63.setLayout(new GridLayout(1, 2, 0, 0));
+
+		textField_101 = new JTextField();
+		textField_101.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_101.setEditable(false);
+		textField_101.setColumns(10);
+		panel_63.add(textField_101);
+
+		textField_102 = new JTextField();
+		textField_102.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_102.setColumns(10);
+		panel_63.add(textField_102);
+
+		JPanel panel_64 = new JPanel();
+		panel_64.setBounds(248, 14, 162, 20);
+		panel_61.add(panel_64);
+		panel_64.setLayout(new GridLayout(1, 1, 0, 0));
+
+		textField_103 = new JTextField();
+		textField_103.setColumns(10);
+		panel_64.add(textField_103);
+
+		JLabel label_47 = new JLabel("Cantidad");
+		label_47.setHorizontalAlignment(SwingConstants.LEFT);
+		label_47.setFont(new Font("Arial", Font.BOLD, 11));
+		label_47.setBounds(195, 0, 60, 14);
+		panel_61.add(label_47);
 
 		JLabel label_48 = new JLabel("Observación/Referencia");
 		label_48.setHorizontalAlignment(SwingConstants.LEFT);
 		label_48.setFont(new Font("Arial", Font.BOLD, 11));
-		label_48.setBounds(314, 0, 190, 14);
-		panel_67.add(label_48);
+		label_48.setBounds(251, 0, 190, 14);
+		panel_61.add(label_48);
 
-		JLabel label_52 = new JLabel("FACHADA LATERAL");
-		label_52.setHorizontalAlignment(SwingConstants.CENTER);
-		label_52.setFont(new Font("Arial", Font.BOLD, 11));
-		label_52.setBounds(2, 0, 129, 14);
-		panel_67.add(label_52);
+		JLabel label_49 = new JLabel("FACHADA LATERAL");
+		label_49.setHorizontalAlignment(SwingConstants.CENTER);
+		label_49.setFont(new Font("Arial", Font.BOLD, 11));
+		label_49.setBounds(2, 0, 129, 14);
+		panel_61.add(label_49);
 
-		textField_24 = new JTextField();
-		textField_24.setBounds(318, 14, 170, 20);
-		panel_67.add(textField_24);
-		textField_24.setColumns(10);
+		JPanel panel_65 = new JPanel();
+		panel_65.setLayout(null);
+		panel_65.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel_65.setBounds(854, 409, 414, 96);
+		panelLab1.add(panel_65);
 
-		JPanel panel_71 = new JPanel();
-		panel_71.setLayout(null);
-		panel_71.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_71.setBounds(10, 239, 490, 96);
-		panelLab2.add(panel_71);
+		JPanel panel_66 = new JPanel();
+		panel_66.setBounds(2, 14, 191, 80);
+		panel_65.add(panel_66);
+		panel_66.setLayout(new GridLayout(4, 1, 0, 0));
 
-		JPanel panel_72 = new JPanel();
-		panel_72.setBounds(2, 14, 252, 80);
-		panel_71.add(panel_72);
-		panel_72.setLayout(new GridLayout(4, 1, 0, 0));
+		JLabel lblPanelesEpsParedxxx = new JLabel("Paneles EPS pared(1x3x0,09x0,09 m)");
+		lblPanelesEpsParedxxx.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelesEpsParedxxx.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_66.add(lblPanelesEpsParedxxx);
 
-		JLabel label_16 = new JLabel("Paneles EPS pared -   ( 1x3x0,09x0,09 m)");
-		label_16.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_16.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_72.add(label_16);
+		JLabel lblPanelesEpsParedxx_1 = new JLabel("Paneles EPS pared(1x0,90x0,90 m)");
+		lblPanelesEpsParedxx_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelesEpsParedxx_1.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_66.add(lblPanelesEpsParedxx_1);
 
-		JLabel label_19 = new JLabel("Paneles EPS pared -   ( 1x0,90x0,90 m)");
-		label_19.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_19.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_72.add(label_19);
+		JLabel lblPanelesEpsParedxx_2 = new JLabel("Paneles EPS pared(1x1,10x0,09 m)");
+		lblPanelesEpsParedxx_2.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelesEpsParedxx_2.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_66.add(lblPanelesEpsParedxx_2);
 
-		JLabel label_53 = new JLabel("Paneles EPS pared -   ( 1x1,10x0,09 m)");
-		label_53.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_53.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_72.add(label_53);
+		JLabel lblPanelesEpsParedxx_3 = new JLabel("Paneles EPS pared(1x0,80x0,09 m)");
+		lblPanelesEpsParedxx_3.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblPanelesEpsParedxx_3.setFont(new Font("Arial", Font.PLAIN, 11));
+		panel_66.add(lblPanelesEpsParedxx_3);
 
-		JLabel label_54 = new JLabel("Paneles EPS pared -   ( 1x0,80x0,09 m)");
-		label_54.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_54.setFont(new Font("Arial", Font.PLAIN, 11));
-		panel_72.add(label_54);
-
-		JPanel panel_73 = new JPanel();
-		panel_73.setBounds(260, 14, 50, 80);
-		panel_71.add(panel_73);
-		panel_73.setLayout(new GridLayout(4, 2, 0, 0));
+		JPanel panel_67 = new JPanel();
+		panel_67.setBounds(195, 14, 50, 80);
+		panel_65.add(panel_67);
+		panel_67.setLayout(new GridLayout(4, 2, 0, 0));
 
 		textField_21 = new JTextField();
 		textField_21.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_21.setEditable(false);
 		textField_21.setColumns(10);
-		panel_73.add(textField_21);
+		panel_67.add(textField_21);
 
 		textField_22 = new JTextField();
 		textField_22.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_22.setColumns(10);
-		panel_73.add(textField_22);
+		panel_67.add(textField_22);
 
 		textField_23 = new JTextField();
 		textField_23.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_23.setEditable(false);
 		textField_23.setColumns(10);
-		panel_73.add(textField_23);
+		panel_67.add(textField_23);
 
 		textField_25 = new JTextField();
 		textField_25.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_25.setColumns(10);
-		panel_73.add(textField_25);
+		panel_67.add(textField_25);
 
 		textField_26 = new JTextField();
 		textField_26.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_26.setEditable(false);
 		textField_26.setColumns(10);
-		panel_73.add(textField_26);
+		panel_67.add(textField_26);
 
-		textField_141 = new JTextField();
-		textField_141.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_141.setColumns(10);
-		panel_73.add(textField_141);
+		textField_108 = new JTextField();
+		textField_108.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_108.setColumns(10);
+		panel_67.add(textField_108);
 
-		textField_142 = new JTextField();
-		textField_142.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_142.setEditable(false);
-		textField_142.setColumns(10);
-		panel_73.add(textField_142);
+		textField_109 = new JTextField();
+		textField_109.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_109.setEditable(false);
+		textField_109.setColumns(10);
+		panel_67.add(textField_109);
 
-		textField_146 = new JTextField();
-		textField_146.setHorizontalAlignment(SwingConstants.CENTER);
-		textField_146.setColumns(10);
-		panel_73.add(textField_146);
+		textField_110 = new JTextField();
+		textField_110.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_110.setColumns(10);
+		panel_67.add(textField_110);
 
-		JPanel panel_74 = new JPanel();
-		panel_74.setBounds(315, 14, 170, 80);
-		panel_71.add(panel_74);
-		panel_74.setLayout(new GridLayout(4, 1, 0, 0));
+		JPanel panel_68 = new JPanel();
+		panel_68.setBounds(248, 14, 162, 80);
+		panel_65.add(panel_68);
+		panel_68.setLayout(new GridLayout(4, 1, 0, 0));
 
-		textField_147 = new JTextField();
-		textField_147.setColumns(10);
-		panel_74.add(textField_147);
+		textField_111 = new JTextField();
+		textField_111.setColumns(10);
+		panel_68.add(textField_111);
 
-		textField_148 = new JTextField();
-		textField_148.setColumns(10);
-		panel_74.add(textField_148);
+		textField_112 = new JTextField();
+		textField_112.setColumns(10);
+		panel_68.add(textField_112);
 
-		textField_149 = new JTextField();
-		textField_149.setColumns(10);
-		panel_74.add(textField_149);
+		textField_113 = new JTextField();
+		textField_113.setColumns(10);
+		panel_68.add(textField_113);
 
-		textField_150 = new JTextField();
-		textField_150.setColumns(10);
-		panel_74.add(textField_150);
+		textField_129 = new JTextField();
+		textField_129.setColumns(10);
+		panel_68.add(textField_129);
 
-		JLabel label_55 = new JLabel("Cantidad");
-		label_55.setHorizontalAlignment(SwingConstants.LEFT);
-		label_55.setFont(new Font("Arial", Font.BOLD, 11));
-		label_55.setBounds(260, 0, 60, 14);
-		panel_71.add(label_55);
+		JLabel label_52 = new JLabel("Cantidad");
+		label_52.setHorizontalAlignment(SwingConstants.LEFT);
+		label_52.setFont(new Font("Arial", Font.BOLD, 11));
+		label_52.setBounds(195, 0, 60, 14);
+		panel_65.add(label_52);
 
-		JLabel label_56 = new JLabel("Observación/Referencia");
-		label_56.setHorizontalAlignment(SwingConstants.LEFT);
-		label_56.setFont(new Font("Arial", Font.BOLD, 11));
-		label_56.setBounds(315, 0, 190, 14);
-		panel_71.add(label_56);
+		JLabel label_53 = new JLabel("Observación/Referencia");
+		label_53.setHorizontalAlignment(SwingConstants.LEFT);
+		label_53.setFont(new Font("Arial", Font.BOLD, 11));
+		label_53.setBounds(250, 0, 190, 14);
+		panel_65.add(label_53);
 
-		JLabel label_57 = new JLabel("FACHADA FRONTAL");
-		label_57.setHorizontalAlignment(SwingConstants.CENTER);
-		label_57.setFont(new Font("Arial", Font.BOLD, 11));
-		label_57.setBounds(2, 0, 129, 14);
-		panel_71.add(label_57);
+		JLabel label_54 = new JLabel("FACHADA FRONTAL");
+		label_54.setHorizontalAlignment(SwingConstants.CENTER);
+		label_54.setFont(new Font("Arial", Font.BOLD, 11));
+		label_54.setBounds(2, 0, 129, 14);
+		panel_65.add(label_54);
+
+		JPanel panelLab2 = new JPanel();
+		tabbedPane.addTab("2.-  MM laboratorio-1", null, panelLab2, null);
+		panelLab2.setLayout(null);
 
 		JPanel panel_75 = new JPanel();
 		panel_75.setLayout(null);
 		panel_75.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_75.setBounds(520, 11, 749, 259);
+		panel_75.setBounds(10, 11, 749, 259);
 		panelLab2.add(panel_75);
 
 		JPanel panel_76 = new JPanel();
