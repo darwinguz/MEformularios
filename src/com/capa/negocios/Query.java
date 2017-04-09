@@ -128,13 +128,14 @@ public class Query {
 		try {
 			mysql.getConexion().setAutoCommit(false);
 
-			File file1 = new File(fichaD.getfFotoFichaD());
+			File file1 = new File(fichaD.getfDfotoPath());
 			fis1 = new FileInputStream(file1);
 
 			ps = mysql.getConexion().prepareStatement(insert);
 			ps.setInt(1, fichaD.gettCabecera().getCSerial());
 			ps.setString(2, fichaD.getfDescripcion());
 			ps.setBinaryStream(3, fis1, (long) file1.length());
+			ps.setInt(4, fichaD.getfDactualizacionN());
 
 			ps.executeUpdate();
 			mysql.getConexion().commit();
