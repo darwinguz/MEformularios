@@ -1,12 +1,16 @@
 package com.capa.util;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -34,6 +38,21 @@ public class Utilitarios {
 		URL url = Utilitarios.class.getResource("/com/capa/imagenes/" + path);
 		ImageIcon icono = new ImageIcon(url);
 		return icono.getImage().getScaledInstance(base, altura, resolucion);
+	}
+
+	public static Image getImagen(Image imagen, int base, int altura, int resolucion) {
+		ImageIcon icono = new ImageIcon(imagen);
+		return icono.getImage().getScaledInstance(base, altura, resolucion);
+	}
+
+	public static Image loadImagen(byte[] imagen) {
+		BufferedImage img = null;
+		try {
+			img = ImageIO.read(new ByteArrayInputStream(imagen));
+		} catch (IOException ex) {
+			ex.getMessage();
+		}
+		return img;
 	}
 
 	public static String getPathImagen() {
