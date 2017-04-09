@@ -109,30 +109,25 @@ public class Utilitarios {
 		Utilitarios.tCabecera = tCabecera;
 	}
 
-	 public static void llenarCabecera(JPcabecera jCabecera) {
-	 ServicioLugarGeo geo = new ComponenteLugarGeo();
-	 TLugarGeografico lugar;
-	 jCabecera.getTxtProyecto().setText(gettCabecera().getCNombreProyecto());
-	 lugar =
-	 geo.buscarProvincia(gettCabecera().getTLugarGeografico().getLgCodigo());
-	 jCabecera.getTxtProvincia().setText(lugar.getLgNombre());
-	 lugar =
-	 geo.buscarCanton(gettCabecera().getTLugarGeografico().getLgCodigo());
-	 jCabecera.getTxtCanton().setText(lugar.getLgNombre());
-	 lugar =
-	 geo.buscarParroquia(gettCabecera().getTLugarGeografico().getLgCodigo());
-	 jCabecera.getTxtParroquia().setText(lugar.getLgNombre());
-	 jCabecera.getTxtProyecto().setText(Utilitarios.gettCabecera().getCNombreProyecto());
-	 jCabecera.getTxtAmie().setText(Utilitarios.gettCabecera().getCAmie());
-	 jCabecera.getTxtDistrito().setText(Utilitarios.gettCabecera().getDistrito());
-	 jCabecera.getTxtCircuito().setText(Utilitarios.gettCabecera().getCircuito());
-	 jCabecera.getTxtFechaEntrega().setText("" +
-	 getFechaString(Utilitarios.gettCabecera().getCFechaEntrega()));
-	 jCabecera.getTxtFechaInicioTrabajo().setText("" +
-	 getFechaString(Utilitarios.gettCabecera().getCFechaInicio()));
-	 jCabecera.getTxtZona().setText(Utilitarios.gettCabecera().getCZona());
-	 jCabecera.getTxtSector().setText(Utilitarios.gettCabecera().getSector());
-	 }
+	public static void llenarCabecera(JPcabecera jCabecera) {
+		ServicioLugarGeo geo = new ComponenteLugarGeo();
+		TLugarGeografico lugar;
+		jCabecera.getTxtProyecto().setText(gettCabecera().getCNombreProyecto());
+		lugar = geo.buscarProvincia(gettCabecera().getTLugarGeografico().getLgCodigo());
+		jCabecera.getTxtProvincia().setText(lugar.getLgNombre());
+		lugar = geo.buscarCanton(gettCabecera().getTLugarGeografico().getLgCodigo());
+		jCabecera.getTxtCanton().setText(lugar.getLgNombre());
+		lugar = geo.buscarParroquia(gettCabecera().getTLugarGeografico().getLgCodigo());
+		jCabecera.getTxtParroquia().setText(lugar.getLgNombre());
+		jCabecera.getTxtProyecto().setText(Utilitarios.gettCabecera().getCNombreProyecto());
+		jCabecera.getTxtAmie().setText(Utilitarios.gettCabecera().getCAmie());
+		jCabecera.getTxtDistrito().setText(Utilitarios.gettCabecera().getDistrito());
+		jCabecera.getTxtCircuito().setText(Utilitarios.gettCabecera().getCircuito());
+		jCabecera.getTxtFechaEntrega().setText("" + getFechaString(Utilitarios.gettCabecera().getCFechaEntrega()));
+		jCabecera.getTxtFechaInicioTrabajo().setText("" + getFechaString(Utilitarios.gettCabecera().getCFechaInicio()));
+		jCabecera.getTxtZona().setText(Utilitarios.gettCabecera().getCZona());
+		jCabecera.getTxtSector().setText(Utilitarios.gettCabecera().getSector());
+	}
 
 	public static TInformacionObligatoria cargarInfoObligatoria(InformacionObligatoriaV infor) {
 		TInformacionObligatoria tInfor;

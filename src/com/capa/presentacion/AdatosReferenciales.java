@@ -316,7 +316,7 @@ public class AdatosReferenciales extends JFrame {
 
 				TCabecera cabecera = new TCabecera(proy, amie, zona, parroquia, distrito, circuito, sector,
 						fechaEntrega, fechaInicio, fechaFin, pathFotoGeneral, pathFotoCroquis, "D");
-
+				System.out.println(cabecera);
 				proyecto.crear(cabecera);
 				alInicio.settCabecera(cabecera);
 				Utilitarios.settCabecera(cabecera);
