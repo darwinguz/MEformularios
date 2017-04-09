@@ -9,7 +9,6 @@ public class ComponenteInfoObligatoria implements ServicioInfoObligatoria {
 
 	@Override
 	public void crear(TInformacionObligatoria inforObl) {
-		// TODO Auto-generated method stub
 		String sql = "INSERT INTO t_informacion_obligatoria (c_serial, "
 				+ "io_obs_general, io_responsable_min, io_cargo_min, io_obs_gen_cont, io_responsable_cont, io_cargo_cont, "
 				+ "io_fecha_io) VALUES (" + inforObl.gettCabe().getCSerial() + ",'" + inforObl.getIoObsGeneral() + "','"

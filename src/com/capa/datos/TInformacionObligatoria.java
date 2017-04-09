@@ -1,9 +1,8 @@
 package com.capa.datos;
 // Generated 28-mar-2017 16:36:10 by Hibernate Tools 4.3.1
 
+import java.awt.Image;
 import java.util.Date;
-
-import com.capa.negocios.ClaseCabecera;
 
 public class TInformacionObligatoria implements java.io.Serializable {
 
@@ -16,6 +15,8 @@ public class TInformacionObligatoria implements java.io.Serializable {
 	private String ioResponsableCont;
 	private String ioCargoCont;
 	private Date ioFechaIo;
+	private String ioFotoPath;
+	private Image ioFotoImage;
 	private TCabecera tCabe;
 
 	public TInformacionObligatoria() {
@@ -31,6 +32,11 @@ public class TInformacionObligatoria implements java.io.Serializable {
 		this.ioCargoCont = ioCargoCont;
 		this.ioFechaIo = ioFechaIo;
 		this.tCabe = tC;
+	}
+
+	public TInformacionObligatoria(Integer ioSerial) {
+		super();
+		this.ioSerial = ioSerial;
 	}
 
 	public Integer getIoSerial() {
@@ -103,6 +109,31 @@ public class TInformacionObligatoria implements java.io.Serializable {
 
 	public void settCabe(TCabecera tCabe) {
 		this.tCabe = tCabe;
+	}
+
+	public String getIoFotoPath() {
+		return ioFotoPath;
+	}
+
+	public void setIoFotoPath(String ioFotoPath) {
+		this.ioFotoPath = ioFotoPath;
+	}
+
+	public Image getIoFotoImage() {
+		return ioFotoImage;
+	}
+
+	public void setIoFotoImage(Image ioFotoImage) {
+		this.ioFotoImage = ioFotoImage;
+	}
+
+	@Override
+	public String toString() {
+		return "TInformacionObligatoria [ioSerial=" + ioSerial + ", ioObsGeneral=" + ioObsGeneral
+				+ ", ioResponsableMin=" + ioResponsableMin + ", ioCargoMin=" + ioCargoMin + ", ioObsGenCont="
+				+ ioObsGenCont + ", ioResponsableCont=" + ioResponsableCont + ", ioCargoCont=" + ioCargoCont
+				+ ", ioFechaIo=" + ioFechaIo + ", ioFotoPath=" + ioFotoPath + ", ioFotoImage=" + ioFotoImage
+				+ ", tCabe=" + tCabe + "]";
 	}
 
 }
