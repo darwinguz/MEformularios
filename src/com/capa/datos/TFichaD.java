@@ -1,34 +1,39 @@
 package com.capa.datos;
 
+import java.awt.Image;
+
 public class TFichaD implements java.io.Serializable {
 
 	private static final long serialVersionUID = -3765966936467972032L;
-	private Integer fdSerial;
+	private Integer fDserial;
 	private TCabecera tCabecera;
-	private TInformacionObligatoria tInformacionObligatoria;
 	private String fDescripcion;
-	private String fFotoFichaD;
+	private int fDactualizacionN;
+	private String fDfotoPath;
+	private Image fDfotoImage;
 
 	public TFichaD() {
 	}
 
-	public TFichaD(TCabecera TCabecera, TInformacionObligatoria TInformacionObligatoria) {
+	public TFichaD(TCabecera TCabecera, String path) {
 		this.tCabecera = TCabecera;
-		this.tInformacionObligatoria = TInformacionObligatoria;
+		this.fDfotoPath = path;
 	}
 
-	public TFichaD(TCabecera TCabecera, String FDescripcion, String FFotoFichaD) {
-		this.tCabecera = TCabecera;
-		this.fDescripcion = FDescripcion;
-		this.fFotoFichaD = FFotoFichaD;
+	public TFichaD(TCabecera tCabecera, String fDescripcion, int fDactualizacionN, String fDfotoPath) {
+		super();
+		this.tCabecera = tCabecera;
+		this.fDescripcion = fDescripcion;
+		this.fDactualizacionN = fDactualizacionN;
+		this.fDfotoPath = fDfotoPath;
 	}
 
-	public Integer getFdSerial() {
-		return fdSerial;
+	public Integer getfDserial() {
+		return fDserial;
 	}
 
-	public void setFdSerial(Integer fdSerial) {
-		this.fdSerial = fdSerial;
+	public void setfDserial(Integer fDserial) {
+		this.fDserial = fDserial;
 	}
 
 	public TCabecera gettCabecera() {
@@ -39,14 +44,6 @@ public class TFichaD implements java.io.Serializable {
 		this.tCabecera = tCabecera;
 	}
 
-	public TInformacionObligatoria gettInformacionObligatoria() {
-		return tInformacionObligatoria;
-	}
-
-	public void settInformacionObligatoria(TInformacionObligatoria tInformacionObligatoria) {
-		this.tInformacionObligatoria = tInformacionObligatoria;
-	}
-
 	public String getfDescripcion() {
 		return fDescripcion;
 	}
@@ -55,18 +52,35 @@ public class TFichaD implements java.io.Serializable {
 		this.fDescripcion = fDescripcion;
 	}
 
-	public String getfFotoFichaD() {
-		return fFotoFichaD;
+	public int getfDactualizacionN() {
+		return fDactualizacionN;
 	}
 
-	public void setfFotoFichaD(String fFotoFichaD) {
-		this.fFotoFichaD = fFotoFichaD;
+	public void setfDactualizacionN(int fDactualizacionN) {
+		this.fDactualizacionN = fDactualizacionN;
+	}
+
+	public String getfDfotoPath() {
+		return fDfotoPath;
+	}
+
+	public void setfDfotoPath(String fDfotoPath) {
+		this.fDfotoPath = fDfotoPath;
+	}
+
+	public Image getfDfotoImage() {
+		return fDfotoImage;
+	}
+
+	public void setfDfotoImage(Image fDfotoImage) {
+		this.fDfotoImage = fDfotoImage;
 	}
 
 	@Override
 	public String toString() {
-		return "TFichaD [fdSerial=" + fdSerial + ", tCabecera=" + tCabecera + ", tInformacionObligatoria="
-				+ tInformacionObligatoria + ", fDescripcion=" + fDescripcion + ", fFotoFichaD=" + fFotoFichaD + "]";
+		return "TFichaD [fDserial=" + fDserial + ", tCabecera=" + tCabecera + ", fDescripcion=" + fDescripcion
+				+ ", fDactualizacionN=" + fDactualizacionN + ", fDfotoPath=" + fDfotoPath + ", fDfotoImage="
+				+ fDfotoImage + "]";
 	}
 
 }
