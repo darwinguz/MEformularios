@@ -49,9 +49,9 @@ public class ComponenteFichaMA implements ServicioFichaMA {
 
 	@Override
 	public Integer buscarUpdateFicha() {
+		//Pendiente OJO!
 		Integer maxima = null;
 		String query = "SELECT MAX(c_serial) FROM t_cabecera;";
-
 		try {
 			ResultSet rs = Query.seleccionar(query);
 			while (rs.next()) {
@@ -60,7 +60,6 @@ public class ComponenteFichaMA implements ServicioFichaMA {
 		} catch (Exception e) {
 			System.out.println("Error al BUSCAR: " + e.getMessage());
 		}
-		System.out.println("");
 		return maxima;
 	}
 
