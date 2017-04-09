@@ -11,10 +11,13 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 
-public class MS extends JFrame {
+public class MSTemplate extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField txtCantidadHumo1;
@@ -201,7 +204,7 @@ public class MS extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MS frame = new MS("");
+					MSTemplate frame = new MSTemplate("");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -213,7 +216,7 @@ public class MS extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MS(String nombre) {
+	public MSTemplate(String nombre) {
 		setTitle(nombre);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1550, 827);
@@ -1231,6 +1234,13 @@ public class MS extends JFrame {
 		textField_63.setColumns(10);
 		textField_63.setBounds(1301, 317, 167, 20);
 		panel1.add(textField_63);
+
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				new Menu().setVisible(true);
+				dispose();
+			}
+		});
 	}
 
 }

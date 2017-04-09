@@ -3,6 +3,8 @@ package com.capa.presentacion;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -463,18 +465,18 @@ public class MdTemplate extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MdTemplate frame = new MdTemplate();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// MdTemplate frame = new MdTemplate();
+	// frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
@@ -493,6 +495,7 @@ public class MdTemplate extends JFrame {
 
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
+		setTitle("MD");
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 126, 1286, 575);
@@ -1489,10 +1492,6 @@ public class MdTemplate extends JFrame {
 				"<html><body>Kit para conexi\u00F3n de tuber\u00EDa 1\". (lija pliego,polipega 1/4gal,2 uniones)</body></html>");
 		lblKitParaConexin_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_96.add(lblKitParaConexin_1);
-
-		JButton btnSiguientePgina = new JButton("Siguiente p\u00E1gina");
-		btnSiguientePgina.setBounds(959, 515, 142, 28);
-		panel.add(btnSiguientePgina);
 
 		JPanel panel_36 = new JPanel();
 		panel_36.setLayout(null);
@@ -2944,6 +2943,13 @@ public class MdTemplate extends JFrame {
 
 		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(858, 335);
 		panel_44.add(informacionObligatoriaV.getPnlInformacionObl());
+
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				new Menu().setVisible(true);
+				dispose();
+			}
+		});
 	}
 
 	public JTextField getTxtKACantidad31() {

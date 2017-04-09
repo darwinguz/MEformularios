@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -42,7 +44,7 @@ public class Menu extends JFrame {
 	 */
 	public Menu() {
 
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(10, 10, 1200, 699);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -57,10 +59,10 @@ public class Menu extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				MaTemplate maTemplate = new MaTemplate("MA aulas-1");
 				maTemplate.setVisible(true);
-
 				if (srvFichaMA.existeFicha()) {
 					llenarFicha(maTemplate);
 				}
+
 			}
 
 			private void llenarFicha(MaTemplate maTemplate) {
@@ -77,9 +79,7 @@ public class Menu extends JFrame {
 					item[0].setText(temp[0]);
 					item[1].setText(temp[1]);
 				});
-
 			}
-
 		});
 		btnAula1.setHorizontalAlignment(SwingConstants.LEFT);
 		btnAula1.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -91,6 +91,7 @@ public class Menu extends JFrame {
 		btnAula2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-2").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula2.setHorizontalAlignment(SwingConstants.LEFT);
@@ -104,6 +105,7 @@ public class Menu extends JFrame {
 		btnAula3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-3").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula3.setHorizontalAlignment(SwingConstants.LEFT);
@@ -116,6 +118,7 @@ public class Menu extends JFrame {
 		btnAula17.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-17").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula17.setHorizontalAlignment(SwingConstants.LEFT);
@@ -128,6 +131,7 @@ public class Menu extends JFrame {
 		btnAula18.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-18").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula18.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -139,6 +143,7 @@ public class Menu extends JFrame {
 		btnAula19.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-19").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula19.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -150,6 +155,7 @@ public class Menu extends JFrame {
 		btnAula20.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-20").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula20.setHorizontalAlignment(SwingConstants.LEFT);
@@ -162,6 +168,7 @@ public class Menu extends JFrame {
 		btnAula4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-4").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula4.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -173,6 +180,7 @@ public class Menu extends JFrame {
 		btnAula5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-5").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula5.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -184,6 +192,7 @@ public class Menu extends JFrame {
 		btnAula6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-6").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula6.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -195,6 +204,7 @@ public class Menu extends JFrame {
 		btnAula21.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-21").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula21.setHorizontalAlignment(SwingConstants.LEFT);
@@ -207,6 +217,7 @@ public class Menu extends JFrame {
 		btnAula22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-22").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula22.setHorizontalAlignment(SwingConstants.LEFT);
@@ -219,6 +230,7 @@ public class Menu extends JFrame {
 		btnAula23.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-23").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula23.setHorizontalAlignment(SwingConstants.LEFT);
@@ -231,6 +243,7 @@ public class Menu extends JFrame {
 		btnAula7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-7").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula7.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -242,6 +255,7 @@ public class Menu extends JFrame {
 		btnAula9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-9").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula9.setFont(new Font("T" + "ahoma", Font.BOLD, 11));
@@ -253,6 +267,7 @@ public class Menu extends JFrame {
 		btnAula8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-8").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula8.setHorizontalAlignment(SwingConstants.LEFT);
@@ -265,6 +280,7 @@ public class Menu extends JFrame {
 		btnAula10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-10").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula10.setHorizontalAlignment(SwingConstants.LEFT);
@@ -277,6 +293,7 @@ public class Menu extends JFrame {
 		btnAula11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-11").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula11.setHorizontalAlignment(SwingConstants.LEFT);
@@ -289,6 +306,7 @@ public class Menu extends JFrame {
 		btnAula12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-12").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula12.setHorizontalAlignment(SwingConstants.LEFT);
@@ -301,6 +319,7 @@ public class Menu extends JFrame {
 		btnAula13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-13").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula13.setHorizontalAlignment(SwingConstants.LEFT);
@@ -313,6 +332,7 @@ public class Menu extends JFrame {
 		btnAula24.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-24").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula24.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -324,6 +344,7 @@ public class Menu extends JFrame {
 		btnAula25.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-25").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula25.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -335,6 +356,7 @@ public class Menu extends JFrame {
 		btnAula26.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-26").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula26.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -346,6 +368,7 @@ public class Menu extends JFrame {
 		btnAula14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-14").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula14.setHorizontalAlignment(SwingConstants.LEFT);
@@ -358,6 +381,7 @@ public class Menu extends JFrame {
 		btnAula15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-15").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula15.setHorizontalAlignment(SwingConstants.LEFT);
@@ -370,6 +394,7 @@ public class Menu extends JFrame {
 		btnAula16.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-16").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula16.setHorizontalAlignment(SwingConstants.LEFT);
@@ -382,6 +407,7 @@ public class Menu extends JFrame {
 		btnAula27.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-27").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula27.setHorizontalAlignment(SwingConstants.LEFT);
@@ -394,6 +420,7 @@ public class Menu extends JFrame {
 		btnAula28.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-28").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula28.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -405,6 +432,7 @@ public class Menu extends JFrame {
 		btnAula29.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-29").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula29.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -416,6 +444,7 @@ public class Menu extends JFrame {
 		btnAula30.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MaTemplate("MA aulas-30").setVisible(true);
+				dispose();
 			}
 		});
 		btnAula30.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -440,7 +469,8 @@ public class Menu extends JFrame {
 				"<html><body><p align=\"center\">MS<br>Salón<br>uso<br>público<br>1</body></html>");
 		btnMSsalon1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MS("MS Salón de Uso Múltiple-1").setVisible(true);
+				new MSTemplate("MS Salón de Uso Múltiple-1").setVisible(true);
+				dispose();
 			}
 		});
 		btnMSsalon1.setForeground(new Color(255, 255, 255));
@@ -454,7 +484,8 @@ public class Menu extends JFrame {
 				"<html><body><p align=\"center\">MS<br>Salón<br>uso<br>público<br>2</body></html>");
 		btnMSsalon2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MS("MS Salón de Uso Múltiple-2").setVisible(true);
+				new MSTemplate("MS Salón de Uso Múltiple-2").setVisible(true);
+				dispose();
 			}
 		});
 		btnMSsalon2.setForeground(new Color(255, 255, 255));
@@ -468,6 +499,7 @@ public class Menu extends JFrame {
 		btnMBbiblio1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MbTemplate().setVisible(true);
+				dispose();
 			}
 		});
 		btnMBbiblio1.setHorizontalAlignment(SwingConstants.LEFT);
@@ -506,6 +538,12 @@ public class Menu extends JFrame {
 
 		JButton btnMTtecnlogico1 = new JButton(
 				"<html><body><p align=\"left\">MT Lab<br>Tecnólogico<br>1</body></html>");
+		btnMTtecnlogico1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new MtTemplate("MT Lab. Tecnológico-1").setVisible(true);
+				dispose();
+			}
+		});
 		btnMTtecnlogico1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnMTtecnlogico1.setBackground(new Color(238, 130, 238));
 		btnMTtecnlogico1.setBounds(579, 457, 64, 73);
@@ -513,6 +551,12 @@ public class Menu extends JFrame {
 
 		JButton btnMTtecnlogico2 = new JButton(
 				"<html><body><p align=\"left\">MT Lab<br>Tecnólogico<br>1</body></html>");
+		btnMTtecnlogico2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new MtTemplate("MT Lab. Tecnológico-2").setVisible(true);
+				dispose();
+			}
+		});
 		btnMTtecnlogico2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnMTtecnlogico2.setBackground(new Color(238, 130, 238));
 		btnMTtecnlogico2.setBounds(579, 531, 64, 74);
@@ -522,6 +566,7 @@ public class Menu extends JFrame {
 		btnMMlab1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MmTemplate("laboratorio-1").setVisible(true);
+				dispose();
 			}
 		});
 		btnMMlab1.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -533,6 +578,7 @@ public class Menu extends JFrame {
 		btnMMlab2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MmTemplate("laboratorio-2").setVisible(true);
+				dispose();
 			}
 		});
 		btnMMlab2.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -558,6 +604,7 @@ public class Menu extends JFrame {
 		btnMDadmin1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MdTemplate().setVisible(true);
+				dispose();
 			}
 		});
 		btnMDadmin1.setHorizontalAlignment(SwingConstants.LEFT);
@@ -571,6 +618,7 @@ public class Menu extends JFrame {
 		btnPortonGarita.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new PGTemplate().setVisible(true);
+				dispose();
 			}
 		});
 		btnPortonGarita.setForeground(new Color(255, 255, 255));
@@ -580,30 +628,60 @@ public class Menu extends JFrame {
 		contentPane.add(btnPortonGarita);
 
 		JButton btnEXkitElec = new JButton("<html><body><p align=\"center\">EX kit<br>Elec</body></html>");
+		btnEXkitElec.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new ExTemplate().setVisible(true);
+				dispose();
+			}
+		});
 		btnEXkitElec.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnEXkitElec.setBackground(new Color(144, 238, 144));
 		btnEXkitElec.setBounds(668, 176, 62, 36);
 		contentPane.add(btnEXkitElec);
 
 		JButton btnhlKithidrosa = new JButton("<html><body><p align=\"center\">HL kit<br>Hidrosa</body></html>");
+		btnhlKithidrosa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new HsTemplate().setVisible(true);
+				dispose();
+			}
+		});
 		btnhlKithidrosa.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnhlKithidrosa.setBackground(new Color(50, 205, 50));
 		btnhlKithidrosa.setBounds(729, 176, 62, 36);
 		contentPane.add(btnhlKithidrosa);
 
 		JButton btnWFvozDatos = new JButton("<html><body><p align=\"center\">WF<br>Voz-Datos</body></html>");
+		btnWFvozDatos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new WFTemplate().setVisible(true);
+				dispose();
+			}
+		});
 		btnWFvozDatos.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnWFvozDatos.setBackground(new Color(238, 232, 170));
 		btnWFvozDatos.setBounds(668, 211, 62, 36);
 		contentPane.add(btnWFvozDatos);
 
 		JButton btnMEXexterior = new JButton("<html><body><p align=\"center\">MEX<br>Exterior</body></html>");
+		btnMEXexterior.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new MexTemplate().setVisible(true);
+				dispose();
+			}
+		});
 		btnMEXexterior.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnMEXexterior.setBackground(new Color(144, 238, 144));
 		btnMEXexterior.setBounds(729, 211, 62, 36);
 		contentPane.add(btnMEXexterior);
 
 		JButton btnCEcerramiento = new JButton("<html><body><p align=\"center\">CE1<br>Cerramiento</body></html>");
+		btnCEcerramiento.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new CeTemplate().setVisible(true);
+				dispose();
+			}
+		});
 		btnCEcerramiento.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnCEcerramiento.setBackground(new Color(144, 238, 144));
 		btnCEcerramiento.setBounds(668, 247, 62, 36);
@@ -615,7 +693,12 @@ public class Menu extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon(Menu.class.getResource("/com/capa/imagenes/General.png")));
 		lblNewLabel.setBounds(20, 0, 1164, 679);
 		contentPane.add(lblNewLabel);
-		this.setResizable(false);
-		this.setLocationRelativeTo(null);
+
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				new AlInicio().setVisible(true);
+				dispose();
+			}
+		});
 	}
 }

@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -16,10 +18,9 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import com.capa.util.Utilitarios;
+import static com.capa.util.Utilitarios.*;
 
-public class Ex1 extends JFrame {
-
+public class ExTemplate extends JFrame {
 
 	private static final long serialVersionUID = 2991536081432510517L;
 	private JPanel contentPane;
@@ -209,7 +210,7 @@ public class Ex1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Ex1 frame = new Ex1();
+					ExTemplate frame = new ExTemplate();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -221,123 +222,24 @@ public class Ex1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Ex1() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public ExTemplate() {
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1318, 659);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JPanel pnlSuperior = new JPanel();
-		pnlSuperior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlSuperior.setBounds(127, 11, 1052, 103);
-		contentPane.add(pnlSuperior);
-		pnlSuperior.setLayout(null);
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		setTitle("EX");
 
-		JLabel lblLogoMinEdu = new JLabel("");
-		lblLogoMinEdu.setIcon(Utilitarios.getImagenIcon("logoMinEdu.png", 160, 80, 100));
-		lblLogoMinEdu.setBounds(0, 11, 160, 81);
-		pnlSuperior.add(lblLogoMinEdu);
+		JPcabecera cabecera = new JPcabecera();
+		contentPane.add(cabecera.getCabecera());
+		setContentPane(contentPane);
+		llenarCabecera(cabecera);
 
-		txtAmie = new JTextField();
-		txtAmie.setBounds(391, 24, 86, 20);
-		pnlSuperior.add(txtAmie);
-		txtAmie.setColumns(10);
-
-		JComboBox cmbDistrito = new JComboBox();
-		cmbDistrito.setBounds(512, 24, 160, 20);
-		pnlSuperior.add(cmbDistrito);
-
-		JComboBox cmbZona = new JComboBox();
-		cmbZona.setBounds(160, 72, 50, 20);
-		pnlSuperior.add(cmbZona);
-
-		JComboBox cmbProvincia = new JComboBox();
-		cmbProvincia.setBounds(234, 72, 125, 20);
-		pnlSuperior.add(cmbProvincia);
-
-		JComboBox cmbCanton = new JComboBox();
-		cmbCanton.setBounds(391, 72, 125, 20);
-		pnlSuperior.add(cmbCanton);
-
-		txtCircuito = new JTextField();
-		txtCircuito.setBounds(717, 24, 86, 20);
-		pnlSuperior.add(txtCircuito);
-		txtCircuito.setColumns(10);
-
-		txtFechaEntrega = new JTextField();
-		txtFechaEntrega.setColumns(10);
-		txtFechaEntrega.setBounds(813, 24, 86, 20);
-		pnlSuperior.add(txtFechaEntrega);
-
-		txtFechaInicioTrabajo = new JTextField();
-		txtFechaInicioTrabajo.setColumns(10);
-		txtFechaInicioTrabajo.setBounds(912, 24, 86, 20);
-		pnlSuperior.add(txtFechaInicioTrabajo);
-
-		txtSector = new JTextField();
-		txtSector.setColumns(10);
-		txtSector.setBounds(705, 72, 208, 20);
-		pnlSuperior.add(txtSector);
-
-		JLabel lblProyecto = new JLabel("Proyecto");
-		lblProyecto.setBounds(164, 11, 57, 14);
-		pnlSuperior.add(lblProyecto);
-
-		JLabel lblZona = new JLabel("Zona");
-		lblZona.setBounds(160, 55, 40, 14);
-		pnlSuperior.add(lblZona);
-
-		JLabel lblProvincia = new JLabel("Provincia");
-		lblProvincia.setBounds(234, 55, 57, 14);
-		pnlSuperior.add(lblProvincia);
-
-		JLabel lblCanton = new JLabel("Cant\u00F3n");
-		lblCanton.setBounds(391, 55, 40, 14);
-		pnlSuperior.add(lblCanton);
-
-		JLabel lblParroquia = new JLabel("Parroquia");
-		lblParroquia.setBounds(545, 55, 57, 14);
-		pnlSuperior.add(lblParroquia);
-
-		JLabel lblSector = new JLabel("Sector");
-		lblSector.setBounds(705, 55, 57, 14);
-		pnlSuperior.add(lblSector);
-
-		JLabel lblAmie = new JLabel("AMIE");
-		lblAmie.setBounds(391, 11, 40, 14);
-		pnlSuperior.add(lblAmie);
-
-		JLabel lblDistrito = new JLabel("Distrito");
-		lblDistrito.setBounds(512, 11, 64, 14);
-		pnlSuperior.add(lblDistrito);
-
-		JLabel lblCircuito = new JLabel("Circuito");
-		lblCircuito.setBounds(717, 11, 57, 14);
-		pnlSuperior.add(lblCircuito);
-
-		JLabel lblFechaEntrega = new JLabel("Fecha Entrega");
-		lblFechaEntrega.setBounds(813, 11, 84, 14);
-		pnlSuperior.add(lblFechaEntrega);
-
-		JLabel lblFechaInicioTrabajo = new JLabel("Fecha Inicio Trabajo");
-		lblFechaInicioTrabajo.setBounds(911, 11, 114, 14);
-		pnlSuperior.add(lblFechaInicioTrabajo);
-
-		JButton btnRegistrar = new JButton("Registrar");
-		btnRegistrar.setBounds(938, 60, 98, 32);
-		pnlSuperior.add(btnRegistrar);
-
-		txtProyecto = new JTextField();
-		txtProyecto.setBounds(160, 24, 199, 20);
-		pnlSuperior.add(txtProyecto);
-		txtProyecto.setColumns(10);
-
-		txtParroquia = new JTextField();
-		txtParroquia.setColumns(10);
-		txtParroquia.setBounds(545, 72, 114, 20);
-		pnlSuperior.add(txtParroquia);
+		contentPane.setLayout(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 484);
@@ -778,85 +680,85 @@ public class Ex1 extends JFrame {
 		lblAEObsRef = new JLabel("Observaci\u00F3n/Referencia");
 		lblAEObsRef.setBounds(267, 1, 143, 14);
 		pnlAE.add(lblAEObsRef);
-		
-				pnlBA = new JPanel();
-				pnlBA.setLayout(null);
-				pnlBA.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-				pnlBA.setBounds(434, 212, 414, 95);
-				pnlPestaña1.add(pnlBA);
-				
-						pnlBAEtiquetas = new JPanel();
-						pnlBAEtiquetas.setBounds(3, 17, 199, 73);
-						pnlBA.add(pnlBAEtiquetas);
-						pnlBAEtiquetas.setLayout(new GridLayout(3, 0, 0, 0));
-						
-								lblKitCableadoBA = new JLabel("Kit de cableado el\u00E9ctrico BA");
-								pnlBAEtiquetas.add(lblKitCableadoBA);
-								
-										lblBATuberaPvc = new JLabel("Tuber\u00EDa PVC 2\u00B4para cableado l=6m");
-										pnlBAEtiquetas.add(lblBATuberaPvc);
-										
-												lblBACajasConexion = new JLabel("Cajas de Conexi\u00F3n  0,60x0,60 mt");
-												pnlBAEtiquetas.add(lblBACajasConexion);
-												
-														lblKitBombaA = new JLabel("KIT BOMBA DE AGUA");
-														lblKitBombaA.setFont(new Font("Tahoma", Font.BOLD, 11));
-														lblKitBombaA.setBounds(3, 1, 176, 14);
-														pnlBA.add(lblKitBombaA);
-														
-																pnlBACantidad = new JPanel();
-																pnlBACantidad.setBounds(210, 17, 55, 73);
-																pnlBA.add(pnlBACantidad);
-																pnlBACantidad.setLayout(new GridLayout(3, 2, 0, 0));
-																
-																		txtBACantidad00 = new JTextField();
-																		txtBACantidad00.setColumns(10);
-																		pnlBACantidad.add(txtBACantidad00);
-																		
-																				txtBACantidad01 = new JTextField();
-																				txtBACantidad01.setColumns(10);
-																				pnlBACantidad.add(txtBACantidad01);
-																				
-																						txtBACantidad10 = new JTextField();
-																						txtBACantidad10.setColumns(10);
-																						pnlBACantidad.add(txtBACantidad10);
-																						
-																								txtBACantidad11 = new JTextField();
-																								txtBACantidad11.setColumns(10);
-																								pnlBACantidad.add(txtBACantidad11);
-																								
-																										txtBACantidad20 = new JTextField();
-																										txtBACantidad20.setColumns(10);
-																										pnlBACantidad.add(txtBACantidad20);
-																										
-																												txtBACantidad21 = new JTextField();
-																												txtBACantidad21.setColumns(10);
-																												pnlBACantidad.add(txtBACantidad21);
-																												
-																														pnlBAObsRef = new JPanel();
-																														pnlBAObsRef.setBounds(267, 17, 143, 73);
-																														pnlBA.add(pnlBAObsRef);
-																														pnlBAObsRef.setLayout(new GridLayout(3, 0, 0, 0));
-																														
-																																txtBAObsRef0 = new JTextField();
-																																txtBAObsRef0.setColumns(10);
-																																pnlBAObsRef.add(txtBAObsRef0);
-																																
-																																		txtBAObsRef1 = new JTextField();
-																																		txtBAObsRef1.setColumns(10);
-																																		pnlBAObsRef.add(txtBAObsRef1);
-																																		
-																																				txtBAObsRef2 = new JTextField();
-																																				txtBAObsRef2.setColumns(10);
-																																				pnlBAObsRef.add(txtBAObsRef2);
-																																				
-																																						lblBACantidad = new JLabel("Cantidad");
-																																						lblBACantidad.setBounds(210, 1, 55, 14);
-																																						pnlBA.add(lblBACantidad);
-																																						
-																																								lblBAObsRef = new JLabel("Observaci\u00F3n/Referencia");
-																																								lblBAObsRef.setBounds(267, 1, 143, 14);
-																																								pnlBA.add(lblBAObsRef);
+
+		pnlBA = new JPanel();
+		pnlBA.setLayout(null);
+		pnlBA.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		pnlBA.setBounds(434, 212, 414, 95);
+		pnlPestaña1.add(pnlBA);
+
+		pnlBAEtiquetas = new JPanel();
+		pnlBAEtiquetas.setBounds(3, 17, 199, 73);
+		pnlBA.add(pnlBAEtiquetas);
+		pnlBAEtiquetas.setLayout(new GridLayout(3, 0, 0, 0));
+
+		lblKitCableadoBA = new JLabel("Kit de cableado el\u00E9ctrico BA");
+		pnlBAEtiquetas.add(lblKitCableadoBA);
+
+		lblBATuberaPvc = new JLabel("Tuber\u00EDa PVC 2\u00B4para cableado l=6m");
+		pnlBAEtiquetas.add(lblBATuberaPvc);
+
+		lblBACajasConexion = new JLabel("Cajas de Conexi\u00F3n  0,60x0,60 mt");
+		pnlBAEtiquetas.add(lblBACajasConexion);
+
+		lblKitBombaA = new JLabel("KIT BOMBA DE AGUA");
+		lblKitBombaA.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblKitBombaA.setBounds(3, 1, 176, 14);
+		pnlBA.add(lblKitBombaA);
+
+		pnlBACantidad = new JPanel();
+		pnlBACantidad.setBounds(210, 17, 55, 73);
+		pnlBA.add(pnlBACantidad);
+		pnlBACantidad.setLayout(new GridLayout(3, 2, 0, 0));
+
+		txtBACantidad00 = new JTextField();
+		txtBACantidad00.setColumns(10);
+		pnlBACantidad.add(txtBACantidad00);
+
+		txtBACantidad01 = new JTextField();
+		txtBACantidad01.setColumns(10);
+		pnlBACantidad.add(txtBACantidad01);
+
+		txtBACantidad10 = new JTextField();
+		txtBACantidad10.setColumns(10);
+		pnlBACantidad.add(txtBACantidad10);
+
+		txtBACantidad11 = new JTextField();
+		txtBACantidad11.setColumns(10);
+		pnlBACantidad.add(txtBACantidad11);
+
+		txtBACantidad20 = new JTextField();
+		txtBACantidad20.setColumns(10);
+		pnlBACantidad.add(txtBACantidad20);
+
+		txtBACantidad21 = new JTextField();
+		txtBACantidad21.setColumns(10);
+		pnlBACantidad.add(txtBACantidad21);
+
+		pnlBAObsRef = new JPanel();
+		pnlBAObsRef.setBounds(267, 17, 143, 73);
+		pnlBA.add(pnlBAObsRef);
+		pnlBAObsRef.setLayout(new GridLayout(3, 0, 0, 0));
+
+		txtBAObsRef0 = new JTextField();
+		txtBAObsRef0.setColumns(10);
+		pnlBAObsRef.add(txtBAObsRef0);
+
+		txtBAObsRef1 = new JTextField();
+		txtBAObsRef1.setColumns(10);
+		pnlBAObsRef.add(txtBAObsRef1);
+
+		txtBAObsRef2 = new JTextField();
+		txtBAObsRef2.setColumns(10);
+		pnlBAObsRef.add(txtBAObsRef2);
+
+		lblBACantidad = new JLabel("Cantidad");
+		lblBACantidad.setBounds(210, 1, 55, 14);
+		pnlBA.add(lblBACantidad);
+
+		lblBAObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		lblBAObsRef.setBounds(267, 1, 143, 14);
+		pnlBA.add(lblBAObsRef);
 
 		pnlT = new JPanel();
 		pnlT.setLayout(null);
@@ -1095,5 +997,12 @@ public class Ex1 extends JFrame {
 		JButton btnInsertarFoto = new JButton("Insertar FOTO");
 		btnInsertarFoto.setBounds(278, 100, 120, 35);
 		pnlInformacionObl.add(btnInsertarFoto);
+
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				new Menu().setVisible(true);
+				dispose();
+			}
+		});
 	}
 }

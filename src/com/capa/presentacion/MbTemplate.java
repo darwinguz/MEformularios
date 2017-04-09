@@ -13,6 +13,9 @@ import javax.swing.border.TitledBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.JTextField;
 import javax.swing.UIManager;
 import java.awt.Color;
@@ -223,6 +226,7 @@ public class MbTemplate extends JFrame {
 
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
+		setTitle("MB");
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 126, 1286, 586);
@@ -1219,5 +1223,11 @@ public class MbTemplate extends JFrame {
 		InformacionObligatoriaV pnlInformacionOblig = new InformacionObligatoriaV(865, 325);
 
 		panel.add(pnlInformacionOblig.getPnlInformacionObl());
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				new Menu().setVisible(true);
+				dispose();
+			}
+		});
 	}
 }

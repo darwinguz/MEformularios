@@ -3,6 +3,8 @@ package com.capa.presentacion;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -12,6 +14,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import static com.capa.util.Utilitarios.*;
+import static com.capa.util.Validaciones.*;
 
 public class MtTemplate extends JFrame {
 
@@ -227,7 +232,7 @@ public class MtTemplate extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MtTemplate frame = new MtTemplate();
+					MtTemplate frame = new MtTemplate("");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -239,25 +244,28 @@ public class MtTemplate extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MtTemplate() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public MtTemplate(String nombre) {
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		setLocationRelativeTo(null);
-
 		contentPane.setLayout(null);
+
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		setTitle(nombre);
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
+		llenarCabecera(cabecera);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
 		contentPane.add(tabbedPane);
 
 		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("1-MT Lab. Tecnolñgico-1", null, pnlPestaña1, null);
+		tabbedPane.addTab("1-" + nombre, null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
 
 		JPanel pnlKitElectrico = new JPanel();
@@ -1175,6 +1183,13 @@ public class MtTemplate extends JFrame {
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(860, 312);
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
+
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				new Menu().setVisible(true);
+				dispose();
+			}
+		});
 	}
 
 	public JTextField getTxtTECantidad01() {

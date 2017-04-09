@@ -89,12 +89,14 @@ public class AlInicio extends JFrame {
 		btnReporteAct.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
 				if (tCabecera == null) {
 					JOptionPane.showMessageDialog(null, "ERROR: Proyecto no ingresado", "Mensaje de Error",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
 				new Menu().setVisible(true);
+				dispose();
 			}
 		});
 		pnlBotones.add(btnReporteAct);
@@ -112,6 +114,7 @@ public class AlInicio extends JFrame {
 				}
 				FichaD fichaD = new FichaD();
 				fichaD.setVisible(true);
+				dispose();
 			}
 		});
 		pnlBotones.add(btnReporteInsp);
@@ -119,6 +122,7 @@ public class AlInicio extends JFrame {
 		textField = new JTextField();
 		textField.setBounds(105, 27, 199, 21);
 		textField.setText("Buscar proyecto");
+		textField.setEditable(false);
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
 		contentPane.add(textField);
 		textField.setColumns(10);
@@ -162,6 +166,7 @@ public class AlInicio extends JFrame {
 		this.tCabecera = null;
 		this.textField.setText("");
 		this.textField.setEditable(true);
+		this.textField.requestFocus();
 	}
 
 	public TCabecera gettCabecera() {

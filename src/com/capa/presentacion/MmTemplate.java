@@ -5,6 +5,8 @@ import static com.capa.util.Utilitarios.llenarCabecera;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -2034,5 +2036,12 @@ public class MmTemplate extends JFrame {
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(860, 300);
 		panelLab2.add(infoObligatoria.getPnlInformacionObl());
+
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				new Menu().setVisible(true);
+				dispose();
+			}
+		});
 	}
 }

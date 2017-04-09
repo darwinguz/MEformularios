@@ -8,6 +8,9 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTabbedPane;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -2213,6 +2216,13 @@ public class PGTemplate extends JFrame {
 
 		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(865, 325);
 		panel2.add(informacionObligatoriaV.getPnlInformacionObl());
+
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				new Menu().setVisible(true);
+				dispose();
+			}
+		});
 	}
 
 	public JTextField getTxtKECantidad41() {

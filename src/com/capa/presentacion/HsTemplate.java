@@ -1,9 +1,13 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.llenarCabecera;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -18,7 +22,7 @@ import javax.swing.border.TitledBorder;
 
 import com.capa.util.Utilitarios;
 
-public class Hs1 extends JFrame {
+public class HsTemplate extends JFrame {
 
 	/**
 	 * 
@@ -269,7 +273,7 @@ public class Hs1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Hs1 frame = new Hs1();
+					HsTemplate frame = new HsTemplate();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -281,123 +285,24 @@ public class Hs1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Hs1() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public HsTemplate() {
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1318, 740);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JPanel pnlSuperior = new JPanel();
-		pnlSuperior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlSuperior.setBounds(127, 4, 1052, 103);
-		contentPane.add(pnlSuperior);
-		pnlSuperior.setLayout(null);
+		JPcabecera cabecera = new JPcabecera();
+		contentPane.add(cabecera.getCabecera());
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
 
-		JLabel lblLogoMinEdu = new JLabel("");
-		lblLogoMinEdu.setIcon(Utilitarios.getImagenIcon("logoMinEdu.png", 160, 80, 100));
-		lblLogoMinEdu.setBounds(0, 11, 160, 81);
-		pnlSuperior.add(lblLogoMinEdu);
+		llenarCabecera(cabecera);
 
-		txtAmie = new JTextField();
-		txtAmie.setBounds(391, 24, 86, 20);
-		pnlSuperior.add(txtAmie);
-		txtAmie.setColumns(10);
-
-		JComboBox cmbDistrito = new JComboBox();
-		cmbDistrito.setBounds(512, 24, 160, 20);
-		pnlSuperior.add(cmbDistrito);
-
-		JComboBox cmbZona = new JComboBox();
-		cmbZona.setBounds(160, 72, 50, 20);
-		pnlSuperior.add(cmbZona);
-
-		JComboBox cmbProvincia = new JComboBox();
-		cmbProvincia.setBounds(234, 72, 125, 20);
-		pnlSuperior.add(cmbProvincia);
-
-		JComboBox cmbCanton = new JComboBox();
-		cmbCanton.setBounds(391, 72, 125, 20);
-		pnlSuperior.add(cmbCanton);
-
-		txtCircuito = new JTextField();
-		txtCircuito.setBounds(717, 24, 86, 20);
-		pnlSuperior.add(txtCircuito);
-		txtCircuito.setColumns(10);
-
-		txtFechaEntrega = new JTextField();
-		txtFechaEntrega.setColumns(10);
-		txtFechaEntrega.setBounds(813, 24, 86, 20);
-		pnlSuperior.add(txtFechaEntrega);
-
-		txtFechaInicioTrabajo = new JTextField();
-		txtFechaInicioTrabajo.setColumns(10);
-		txtFechaInicioTrabajo.setBounds(912, 24, 86, 20);
-		pnlSuperior.add(txtFechaInicioTrabajo);
-
-		txtSector = new JTextField();
-		txtSector.setColumns(10);
-		txtSector.setBounds(705, 72, 208, 20);
-		pnlSuperior.add(txtSector);
-
-		JLabel lblProyecto = new JLabel("Proyecto");
-		lblProyecto.setBounds(164, 11, 57, 14);
-		pnlSuperior.add(lblProyecto);
-
-		JLabel lblZona = new JLabel("Zona");
-		lblZona.setBounds(160, 55, 40, 14);
-		pnlSuperior.add(lblZona);
-
-		JLabel lblProvincia = new JLabel("Provincia");
-		lblProvincia.setBounds(234, 55, 57, 14);
-		pnlSuperior.add(lblProvincia);
-
-		JLabel lblCanton = new JLabel("Cant\u00F3n");
-		lblCanton.setBounds(391, 55, 40, 14);
-		pnlSuperior.add(lblCanton);
-
-		JLabel lblParroquia = new JLabel("Parroquia");
-		lblParroquia.setBounds(545, 55, 57, 14);
-		pnlSuperior.add(lblParroquia);
-
-		JLabel lblSector = new JLabel("Sector");
-		lblSector.setBounds(705, 55, 57, 14);
-		pnlSuperior.add(lblSector);
-
-		JLabel lblAmie = new JLabel("AMIE");
-		lblAmie.setBounds(391, 11, 40, 14);
-		pnlSuperior.add(lblAmie);
-
-		JLabel lblDistrito = new JLabel("Distrito");
-		lblDistrito.setBounds(512, 11, 64, 14);
-		pnlSuperior.add(lblDistrito);
-
-		JLabel lblCircuito = new JLabel("Circuito");
-		lblCircuito.setBounds(717, 11, 57, 14);
-		pnlSuperior.add(lblCircuito);
-
-		JLabel lblFechaEntrega = new JLabel("Fecha Entrega");
-		lblFechaEntrega.setBounds(813, 11, 84, 14);
-		pnlSuperior.add(lblFechaEntrega);
-
-		JLabel lblFechaInicioTrabajo = new JLabel("Fecha Inicio Trabajo");
-		lblFechaInicioTrabajo.setBounds(911, 11, 114, 14);
-		pnlSuperior.add(lblFechaInicioTrabajo);
-
-		JButton btnRegistrar = new JButton("Registrar");
-		btnRegistrar.setBounds(938, 60, 98, 32);
-		pnlSuperior.add(btnRegistrar);
-
-		txtProyecto = new JTextField();
-		txtProyecto.setBounds(160, 24, 199, 20);
-		pnlSuperior.add(txtProyecto);
-		txtProyecto.setColumns(10);
-
-		txtParroquia = new JTextField();
-		txtParroquia.setColumns(10);
-		txtParroquia.setBounds(545, 72, 114, 20);
-		pnlSuperior.add(txtParroquia);
+		setTitle("HS");
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 110, 1286, 586);
@@ -1462,5 +1367,12 @@ public class Hs1 extends JFrame {
 		JButton btnInsertarFoto = new JButton("Insertar FOTO");
 		btnInsertarFoto.setBounds(166, 201, 120, 35);
 		pnlInformacionObl.add(btnInsertarFoto);
+
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				new Menu().setVisible(true);
+				dispose();
+			}
+		});
 	}
 }

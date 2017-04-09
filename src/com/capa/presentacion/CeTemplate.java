@@ -9,62 +9,70 @@ import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.JTextField;
 
-public class Ce1 extends JFrame {
+import static com.capa.util.Utilitarios.*;
+import static com.capa.util.Validaciones.*;
 
+public class CeTemplate extends JFrame {
 
 	private static final long serialVersionUID = 4781774484295539711L;
 	private JPanel panelPrincipal;
-	private JTextField textField00;
-	private JTextField textField01;
-	private JTextField textField10;
-	private JTextField textField11;
-	private JTextField textField20;
-	private JTextField textField21;
-	private JTextField textField30;
-	private JTextField textField31;
-	private JTextField textField40;
-	private JTextField textField41;
-	private JTextField textField0;
-	private JTextField textField1;
-	private JTextField textField2;
-	private JTextField textField3;
-	private JTextField textField4;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
+	private JTextField txtCECantidad00;
+	private JTextField txtCECantidad01;
+	private JTextField txtCECantidad10;
+	private JTextField txtCECantidad11;
+	private JTextField txtCECantidad20;
+	private JTextField txtCECantidad21;
+	private JTextField txtCECantidad30;
+	private JTextField txtCECantidad31;
+	private JTextField txtCECantidad40;
+	private JTextField txtCECantidad41;
+	private JTextField txtCEObs0;
+	private JTextField txtCEObs01;
+	private JTextField txtCEObs2;
+	private JTextField txtCEObs3;
+	private JTextField txtCEObs4;
+	private JTextField txtWPCantidad01;
+	private JTextField txtWPObs0;
+	private JTextField txtWPCantidad00;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Ce1 frame = new Ce1();
-					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// CeTemplate frame = new CeTemplate();
+	// frame.setVisible(true);
+	// frame.setLocationRelativeTo(null);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
 	 */
-	public Ce1() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public CeTemplate() {
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		panelPrincipal = new JPanel();
 		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		panelPrincipal.setLayout(new BorderLayout(0, 0));
 		setContentPane(panelPrincipal);
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		this.setTitle("CE");
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
@@ -76,8 +84,9 @@ public class Ce1 extends JFrame {
 
 		JPcabecera cabecera = new JPcabecera();
 		panelPrincipal.add(cabecera.getCabecera());
+		llenarCabecera(cabecera);
 
-		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(434, 377);
+		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(533, 50);
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 
 		JPanel pnlModuloWPC = new JPanel();
@@ -113,22 +122,23 @@ public class Ce1 extends JFrame {
 		pnlModuloWPC.add(panel_6);
 		panel_6.setLayout(new GridLayout(1, 2, 0, 0));
 
-		textField_17 = new JTextField();
-		textField_17.setColumns(10);
-		panel_6.add(textField_17);
+		txtWPCantidad00 = new JTextField();
+		txtWPCantidad00.setEditable(false);
+		txtWPCantidad00.setColumns(10);
+		panel_6.add(txtWPCantidad00);
 
-		textField_15 = new JTextField();
-		textField_15.setColumns(10);
-		panel_6.add(textField_15);
+		txtWPCantidad01 = new JTextField();
+		txtWPCantidad01.setColumns(10);
+		panel_6.add(txtWPCantidad01);
 
 		JPanel panel_7 = new JPanel();
 		panel_7.setBounds(267, 17, 143, 29);
 		pnlModuloWPC.add(panel_7);
 		panel_7.setLayout(new GridLayout(1, 0, 0, 0));
 
-		textField_16 = new JTextField();
-		textField_16.setColumns(10);
-		panel_7.add(textField_16);
+		txtWPObs0 = new JTextField();
+		txtWPObs0.setColumns(10);
+		panel_7.add(txtWPObs0);
 
 		JPanel pnlCompEstructural = new JPanel();
 		pnlCompEstructural.setLayout(null);
@@ -179,70 +189,82 @@ public class Ce1 extends JFrame {
 		pnlCompEstructural.add(panel_2);
 		panel_2.setLayout(new GridLayout(5, 2, 0, 0));
 
-		textField00 = new JTextField();
-		textField00.setColumns(10);
-		panel_2.add(textField00);
+		txtCECantidad00 = new JTextField();
+		txtCECantidad00.setEditable(false);
+		txtCECantidad00.setColumns(10);
+		panel_2.add(txtCECantidad00);
 
-		textField01 = new JTextField();
-		textField01.setColumns(10);
-		panel_2.add(textField01);
+		txtCECantidad01 = new JTextField();
+		txtCECantidad01.setColumns(10);
+		panel_2.add(txtCECantidad01);
 
-		textField10 = new JTextField();
-		textField10.setColumns(10);
-		panel_2.add(textField10);
+		txtCECantidad10 = new JTextField();
+		txtCECantidad10.setEditable(false);
+		txtCECantidad10.setColumns(10);
+		panel_2.add(txtCECantidad10);
 
-		textField11 = new JTextField();
-		textField11.setColumns(10);
-		panel_2.add(textField11);
+		txtCECantidad11 = new JTextField();
+		txtCECantidad11.setColumns(10);
+		panel_2.add(txtCECantidad11);
 
-		textField20 = new JTextField();
-		textField20.setColumns(10);
-		panel_2.add(textField20);
+		txtCECantidad20 = new JTextField();
+		txtCECantidad20.setEditable(false);
+		txtCECantidad20.setColumns(10);
+		panel_2.add(txtCECantidad20);
 
-		textField21 = new JTextField();
-		textField21.setColumns(10);
-		panel_2.add(textField21);
+		txtCECantidad21 = new JTextField();
+		txtCECantidad21.setColumns(10);
+		panel_2.add(txtCECantidad21);
 
-		textField30 = new JTextField();
-		textField30.setColumns(10);
-		panel_2.add(textField30);
+		txtCECantidad30 = new JTextField();
+		txtCECantidad30.setEditable(false);
+		txtCECantidad30.setColumns(10);
+		panel_2.add(txtCECantidad30);
 
-		textField31 = new JTextField();
-		textField31.setColumns(10);
-		panel_2.add(textField31);
+		txtCECantidad31 = new JTextField();
+		txtCECantidad31.setColumns(10);
+		panel_2.add(txtCECantidad31);
 
-		textField40 = new JTextField();
-		textField40.setColumns(10);
-		panel_2.add(textField40);
+		txtCECantidad40 = new JTextField();
+		txtCECantidad40.setEditable(false);
+		txtCECantidad40.setColumns(10);
+		panel_2.add(txtCECantidad40);
 
-		textField41 = new JTextField();
-		textField41.setColumns(10);
-		panel_2.add(textField41);
+		txtCECantidad41 = new JTextField();
+		txtCECantidad41.setColumns(10);
+		panel_2.add(txtCECantidad41);
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(267, 17, 143, 144);
 		pnlCompEstructural.add(panel_3);
 		panel_3.setLayout(new GridLayout(5, 0, 0, 0));
 
-		textField0 = new JTextField();
-		textField0.setColumns(10);
-		panel_3.add(textField0);
+		txtCEObs0 = new JTextField();
+		txtCEObs0.setColumns(10);
+		panel_3.add(txtCEObs0);
 
-		textField1 = new JTextField();
-		textField1.setColumns(10);
-		panel_3.add(textField1);
+		txtCEObs01 = new JTextField();
+		txtCEObs01.setColumns(10);
+		panel_3.add(txtCEObs01);
 
-		textField2 = new JTextField();
-		textField2.setColumns(10);
-		panel_3.add(textField2);
+		txtCEObs2 = new JTextField();
+		txtCEObs2.setColumns(10);
+		panel_3.add(txtCEObs2);
 
-		textField3 = new JTextField();
-		textField3.setColumns(10);
-		panel_3.add(textField3);
+		txtCEObs3 = new JTextField();
+		txtCEObs3.setColumns(10);
+		panel_3.add(txtCEObs3);
 
-		textField4 = new JTextField();
-		textField4.setColumns(10);
-		panel_3.add(textField4);
+		txtCEObs4 = new JTextField();
+		txtCEObs4.setColumns(10);
+		panel_3.add(txtCEObs4);
+
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				new Menu().setVisible(true);
+				dispose();
+			}
+		});
 
 	}
 
