@@ -8,9 +8,19 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import com.capa.datos.TAula;
+import com.capa.datos.TFicha;
+import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
+import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ServicioFichaMA;
+
 import java.awt.GridLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.LinkedList;
 
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
@@ -123,6 +133,8 @@ public class CeTemplate extends JFrame {
 		panel_6.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtWPCantidad00 = new JTextField();
+		txtWPCantidad00.setFont(new Font("Arial", Font.PLAIN, 9));
+		txtWPCantidad00.setText("1800");
 		txtWPCantidad00.setEditable(false);
 		txtWPCantidad00.setColumns(10);
 		panel_6.add(txtWPCantidad00);
@@ -190,6 +202,7 @@ public class CeTemplate extends JFrame {
 		panel_2.setLayout(new GridLayout(5, 2, 0, 0));
 
 		txtCECantidad00 = new JTextField();
+		txtCECantidad00.setText("120");
 		txtCECantidad00.setEditable(false);
 		txtCECantidad00.setColumns(10);
 		panel_2.add(txtCECantidad00);
@@ -199,6 +212,7 @@ public class CeTemplate extends JFrame {
 		panel_2.add(txtCECantidad01);
 
 		txtCECantidad10 = new JTextField();
+		txtCECantidad10.setText("120");
 		txtCECantidad10.setEditable(false);
 		txtCECantidad10.setColumns(10);
 		panel_2.add(txtCECantidad10);
@@ -208,6 +222,7 @@ public class CeTemplate extends JFrame {
 		panel_2.add(txtCECantidad11);
 
 		txtCECantidad20 = new JTextField();
+		txtCECantidad20.setText("480");
 		txtCECantidad20.setEditable(false);
 		txtCECantidad20.setColumns(10);
 		panel_2.add(txtCECantidad20);
@@ -217,6 +232,7 @@ public class CeTemplate extends JFrame {
 		panel_2.add(txtCECantidad21);
 
 		txtCECantidad30 = new JTextField();
+		txtCECantidad30.setText("120");
 		txtCECantidad30.setEditable(false);
 		txtCECantidad30.setColumns(10);
 		panel_2.add(txtCECantidad30);
@@ -226,6 +242,7 @@ public class CeTemplate extends JFrame {
 		panel_2.add(txtCECantidad31);
 
 		txtCECantidad40 = new JTextField();
+		txtCECantidad40.setText("120");
 		txtCECantidad40.setEditable(false);
 		txtCECantidad40.setColumns(10);
 		panel_2.add(txtCECantidad40);
@@ -265,7 +282,38 @@ public class CeTemplate extends JFrame {
 				dispose();
 			}
 		});
+	}
 
+	public LinkedList<LinkedList<TdetalleFicha>> cargarListas(InformacionObligatoriaV inforV) {
+		LinkedList<TdetalleFicha> listaModulo = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
+		ServicioFichaMA servFicha = new ComponenteFichaMA();
+		TInformacionObligatoria infor = cargarInfoObligatoria(inforV);
+
+		TAula aula = servFicha.buscarAula("CE");
+		Integer updateFicha = servFicha.buscarUpdateFicha();
+		TFicha ficha = null;
+		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC");
+		listaModulo.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtWPCantidad01.getText()), txtWPObs0.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Componente estructural");
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtCECantidad01.getText()), txtCEObs0.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtCECantidad11.getText()), txtCEObs01.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtCECantidad21.getText()), txtCEObs2.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtCECantidad31.getText()), txtCEObs3.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtCECantidad41.getText()), txtCEObs4.getText(), updateFicha));
+
+		LinkedList<LinkedList<TdetalleFicha>> listaFormulario = new LinkedList<LinkedList<TdetalleFicha>>();
+		listaFormulario.add(listaModulo);
+		listaFormulario.add(listaEstructural);
+		listaFormulario.add(listaEstructural);
+		return listaFormulario;
 	}
 
 }

@@ -10,10 +10,19 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.LinkedList;
 
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
+
+import com.capa.datos.TAula;
+import com.capa.datos.TFicha;
+import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
+import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ServicioFichaMA;
 
 import static com.capa.util.Utilitarios.*;
 import static com.capa.util.Validaciones.*;
@@ -140,18 +149,24 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblRouterWirelessTipo);
 
 		txtVDCantidad20 = new JTextField();
+		txtVDCantidad20.setHorizontalAlignment(SwingConstants.CENTER);
+		txtVDCantidad20.setText("1");
 		txtVDCantidad20.setEditable(false);
 		txtVDCantidad20.setColumns(10);
 		txtVDCantidad20.setBounds(314, 94, 35, 20);
 		panel_1.add(txtVDCantidad20);
 
 		txtVDCantidad10 = new JTextField();
+		txtVDCantidad10.setHorizontalAlignment(SwingConstants.CENTER);
+		txtVDCantidad10.setText("1");
 		txtVDCantidad10.setEditable(false);
 		txtVDCantidad10.setColumns(10);
 		txtVDCantidad10.setBounds(314, 72, 35, 20);
 		panel_1.add(txtVDCantidad10);
 
 		txtVDCantidad00 = new JTextField();
+		txtVDCantidad00.setHorizontalAlignment(SwingConstants.CENTER);
+		txtVDCantidad00.setText("3");
 		txtVDCantidad00.setEditable(false);
 		txtVDCantidad00.setColumns(10);
 		txtVDCantidad00.setBounds(314, 50, 35, 20);
@@ -206,6 +221,8 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblAccessPointTipo);
 
 		txtVDCantidad30 = new JTextField();
+		txtVDCantidad30.setHorizontalAlignment(SwingConstants.CENTER);
+		txtVDCantidad30.setText("2");
 		txtVDCantidad30.setEditable(false);
 		txtVDCantidad30.setColumns(10);
 		txtVDCantidad30.setBounds(314, 116, 35, 20);
@@ -252,24 +269,32 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblBandejaParaMontaje);
 
 		txtIVCantidad30 = new JTextField();
+		txtIVCantidad30.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad30.setText("2");
 		txtIVCantidad30.setEditable(false);
 		txtIVCantidad30.setColumns(10);
 		txtIVCantidad30.setBounds(314, 243, 35, 20);
 		panel_1.add(txtIVCantidad30);
 
 		txtIVCantidad20 = new JTextField();
+		txtIVCantidad20.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad20.setText("2");
 		txtIVCantidad20.setEditable(false);
 		txtIVCantidad20.setColumns(10);
 		txtIVCantidad20.setBounds(314, 221, 35, 20);
 		panel_1.add(txtIVCantidad20);
 
 		txtIVCantidad10 = new JTextField();
+		txtIVCantidad10.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad10.setText("20");
 		txtIVCantidad10.setEditable(false);
 		txtIVCantidad10.setColumns(10);
 		txtIVCantidad10.setBounds(314, 199, 35, 20);
 		panel_1.add(txtIVCantidad10);
 
 		txtIVCantidad00 = new JTextField();
+		txtIVCantidad00.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad00.setText("3");
 		txtIVCantidad00.setEditable(false);
 		txtIVCantidad00.setColumns(10);
 		txtIVCantidad00.setBounds(314, 177, 35, 20);
@@ -334,6 +359,8 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblPatchcordftCat);
 
 		txtIVCantidad40 = new JTextField();
+		txtIVCantidad40.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad40.setText("6");
 		txtIVCantidad40.setEditable(false);
 		txtIVCantidad40.setColumns(10);
 		txtIVCantidad40.setBounds(314, 265, 35, 20);
@@ -356,6 +383,8 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblPatchcordftCat_1);
 
 		txtIVCantidad50 = new JTextField();
+		txtIVCantidad50.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad50.setText("4");
 		txtIVCantidad50.setEditable(false);
 		txtIVCantidad50.setColumns(10);
 		txtIVCantidad50.setBounds(314, 287, 35, 20);
@@ -378,6 +407,8 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblRackCerradoTipo);
 
 		txtIVCantidad60 = new JTextField();
+		txtIVCantidad60.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad60.setText("1");
 		txtIVCantidad60.setEditable(false);
 		txtIVCantidad60.setColumns(10);
 		txtIVCantidad60.setBounds(314, 309, 35, 20);
@@ -394,6 +425,8 @@ public class WFTemplate extends JFrame {
 		panel_1.add(txtIVObs6);
 
 		txtIVCantidad70 = new JTextField();
+		txtIVCantidad70.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad70.setText("1");
 		txtIVCantidad70.setEditable(false);
 		txtIVCantidad70.setColumns(10);
 		txtIVCantidad70.setBounds(314, 340, 35, 20);
@@ -416,6 +449,8 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblConversorDeMedia);
 
 		txtIVCantidad80 = new JTextField();
+		txtIVCantidad80.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad80.setText("2");
 		txtIVCantidad80.setEditable(false);
 		txtIVCantidad80.setColumns(10);
 		txtIVCantidad80.setBounds(314, 377, 35, 20);
@@ -438,6 +473,8 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblCajaDeConexin);
 
 		txtIVCantidad90 = new JTextField();
+		txtIVCantidad90.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad90.setText("3");
 		txtIVCantidad90.setEditable(false);
 		txtIVCantidad90.setColumns(10);
 		txtIVCantidad90.setBounds(314, 399, 35, 20);
@@ -460,6 +497,8 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblTuberaPvc_1);
 
 		txtIVCantidad100 = new JTextField();
+		txtIVCantidad100.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad100.setText("10");
 		txtIVCantidad100.setEditable(false);
 		txtIVCantidad100.setColumns(10);
 		txtIVCantidad100.setBounds(314, 421, 35, 20);
@@ -483,6 +522,8 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblmangueraNegraTipo);
 
 		txtIVCantidad110 = new JTextField();
+		txtIVCantidad110.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad110.setText("1");
 		txtIVCantidad110.setEditable(false);
 		txtIVCantidad110.setColumns(10);
 		txtIVCantidad110.setBounds(314, 453, 35, 20);
@@ -505,6 +546,8 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblTableroxx);
 
 		txtIVCantidad120 = new JTextField();
+		txtIVCantidad120.setHorizontalAlignment(SwingConstants.CENTER);
+		txtIVCantidad120.setText("1");
 		txtIVCantidad120.setEditable(false);
 		txtIVCantidad120.setColumns(10);
 		txtIVCantidad120.setBounds(314, 484, 35, 20);
@@ -537,4 +580,56 @@ public class WFTemplate extends JFrame {
 		});
 	}
 
+	public LinkedList<LinkedList<TdetalleFicha>> cargarListas(InformacionObligatoriaV inforV) {
+		LinkedList<TdetalleFicha> listaDatos = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaInterconexion = new LinkedList<>();
+		ServicioFichaMA servFicha = new ComponenteFichaMA();
+		TInformacionObligatoria infor = cargarInfoObligatoria(inforV);
+
+		TAula aula = servFicha.buscarAula("WF");
+		TGrupo grupoTmp = servFicha.buscarGrupo("Kit voz y datos WF");
+		Integer updateFicha = servFicha.buscarUpdateFicha();
+		TFicha ficha = null;
+		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtVDCantidad01.getText()), txtVDObs0.getText(), updateFicha));
+		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtVDCantidad11.getText()), txtVDObs1.getText(), updateFicha));
+		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtVDCantidad21.getText()), txtVDObs2.getText(), updateFicha));
+		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtVDCantidad31.getText()), txtVDObs3.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Kit de interconexion voz y datos");
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad01.getText()), txtIVObs0.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad11.getText()), txtIVObs1.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad21.getText()), txtIVObs2.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad31.getText()), txtIVObs3.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad41.getText()), txtIVObs4.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad51.getText()), txtIVObs5.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad61.getText()), txtIVObs6.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad71.getText()), txtIVObs7.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad81.getText()), txtIVObs8.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad91.getText()), txtIVObs9.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad101.getText()), txtIVObs10.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad111.getText()), txtIVObs11.getText(), updateFicha));
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtIVCantidad121.getText()), txtIVObs12.getText(), updateFicha));
+
+		LinkedList<LinkedList<TdetalleFicha>> listaFormulario = new LinkedList<LinkedList<TdetalleFicha>>();
+		listaFormulario.add(listaDatos);
+		listaFormulario.add(listaInterconexion);
+		return listaFormulario;
+	}
 }
