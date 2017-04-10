@@ -16,6 +16,10 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import com.capa.datos.TAula;
+import com.capa.datos.TFicha;
+import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFichaMA;
 import com.capa.negocios.ServicioFichaMA;
@@ -152,10 +156,10 @@ public class MdTemplate extends JFrame {
 	private JLabel lblKitDeAccesorios;
 	private JLabel label_6;
 	private JPanel panel_21;
-	private JTextField txtFLCantidad00;
-	private JTextField txtFLCantidad01;
+	private JTextField txtAPCantidad80;
+	private JTextField txtAPCantidad81;
 	private JPanel panel_22;
-	private JTextField txtFLObs0;
+	private JTextField txAPLObs8;
 	private JLabel label_11;
 	private JLabel label_12;
 	private JPanel panel_23;
@@ -1019,7 +1023,7 @@ public class MdTemplate extends JFrame {
 		lblKitDeAccesorios.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_20.add(lblKitDeAccesorios);
 
-		label_6 = new JLabel("FACHADA LATERAL");
+		label_6 = new JLabel("KIT AGUA POTABLE");
 		label_6.setFont(new Font("Tahoma", Font.BOLD, 11));
 		label_6.setBounds(3, 1, 176, 14);
 		panel_19.add(label_6);
@@ -1029,23 +1033,23 @@ public class MdTemplate extends JFrame {
 		panel_19.add(panel_21);
 		panel_21.setLayout(new GridLayout(1, 1, 0, 0));
 
-		txtFLCantidad00 = new JTextField();
-		txtFLCantidad00.setEditable(false);
-		txtFLCantidad00.setColumns(10);
-		panel_21.add(txtFLCantidad00);
+		txtAPCantidad80 = new JTextField();
+		txtAPCantidad80.setEditable(false);
+		txtAPCantidad80.setColumns(10);
+		panel_21.add(txtAPCantidad80);
 
-		txtFLCantidad01 = new JTextField();
-		txtFLCantidad01.setColumns(10);
-		panel_21.add(txtFLCantidad01);
+		txtAPCantidad81 = new JTextField();
+		txtAPCantidad81.setColumns(10);
+		panel_21.add(txtAPCantidad81);
 
 		panel_22 = new JPanel();
 		panel_22.setBounds(267, 43, 143, 25);
 		panel_19.add(panel_22);
 		panel_22.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtFLObs0 = new JTextField();
-		txtFLObs0.setColumns(10);
-		panel_22.add(txtFLObs0);
+		txAPLObs8 = new JTextField();
+		txAPLObs8.setColumns(10);
+		panel_22.add(txAPLObs8);
 
 		label_11 = new JLabel("Cantidad");
 		label_11.setBounds(210, 1, 55, 14);
@@ -1715,7 +1719,7 @@ public class MdTemplate extends JFrame {
 		panel_125.setBounds(858, 259, 414, 167);
 		panel.add(panel_125);
 
-		lblComponente = new JLabel("COMPONENTE");
+		lblComponente = new JLabel("COMPONENTE ARQUITECTÓNICO");
 		lblComponente.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblComponente.setBounds(3, 1, 176, 14);
 		panel_125.add(lblComponente);
@@ -2961,7 +2965,7 @@ public class MdTemplate extends JFrame {
 		});
 	}
 
-	public LinkedList<LinkedList<TdetalleFicha>> cargarListas() {
+	public LinkedList<LinkedList<TdetalleFicha>> cargarListas(InformacionObligatoriaV inforV) {
 		LinkedList<TdetalleFicha> listaElectrico = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaAL = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaSanitario = new LinkedList<>();
@@ -2975,8 +2979,119 @@ public class MdTemplate extends JFrame {
 		LinkedList<TdetalleFicha> listaArquitectonico2 = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
 		ServicioFichaMA servFicha = new ComponenteFichaMA();
-		
-		
+		TInformacionObligatoria infor = cargarInfoObligatoria(inforV);
+
+		TAula aula = servFicha.buscarAula("MD");
+		TGrupo grupoTmp = servFicha.buscarGrupo("Kit eléctrico");
+		Integer updateFicha = servFicha.buscarUpdateFicha();
+		TFicha ficha = null;
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKECantidad01.getText()), txtKEObs0.getText(), updateFicha));
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKECantidad11.getText()), txtKEObs1.getText(), updateFicha));
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKECantidad21.getText()), txtKEObs2.getText(), updateFicha));
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKECantidad31.getText()), txtKEObs3.getText(), updateFicha));
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKECantidad41.getText()), txtKEObs4.getText(), updateFicha));
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKECantidad51.getText()), txtKEObs5.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Kit agua lluvia");
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKACantidad01.getText()), txtKAObs0.getText(), updateFicha));
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKACantidad11.getText()), txtKAObs1.getText(), updateFicha));
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKACantidad21.getText()), txtKAObs2.getText(), updateFicha));
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKACantidad31.getText()), txtKAObs3.getText(), updateFicha));
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKACantidad41.getText()), txtKAObs4.getText(), updateFicha));
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKACantidad51.getText()), txtKAObs5.getText(), updateFicha));
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKACantidad51.getText()), txtKAObs5.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Kit hidrosanitario");
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKHCantidad01.getText()), txtKHObs0.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKHCantidad11.getText()), txtKHObs1.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtKHCantidad21.getText()), txtKHObs2.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Kit agua potable");
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtAPCantidad01.getText()), txtAPObs0.getText(), updateFicha));
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtAPCantidad11.getText()), txtAPObs1.getText(), updateFicha));
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtAPCantidad21.getText()), txtAPObs2.getText(), updateFicha));
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtAPCantidad31.getText()), txtAPObs3.getText(), updateFicha));
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtAPCantidad41.getText()), txtAPObs4.getText(), updateFicha));
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtAPCantidad51.getText()), txtAPObs5.getText(), updateFicha));
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtAPCantidad61.getText()), txtAPObs6.getText(), updateFicha));
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtAPCantidad71.getText()), txtAPObs7.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Kit agua residual");
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad01.getText()), txtASObs0.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad11.getText()), txtASObs1.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad21.getText()), txtASObs2.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad31.getText()), txtASObs3.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad41.getText()), txtASObs4.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad51.getText()), txtASObs5.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad61.getText()), txtASObs6.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad71.getText()), txtASObs7.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad81.getText()), txtASObs8.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad91.getText()), txtASObs9.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad101.getText()), txtASObs10.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad111.getText()), txtASObs11.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Componente arquitectònico");
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad01.getText()), txtASObs0.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad11.getText()), txtASObs1.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad21.getText()), txtASObs2.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad31.getText()), txtASObs3.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad41.getText()), txtASObs4.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad51.getText()), txtASObs5.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad61.getText()), txtASObs6.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad71.getText()), txtASObs7.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad81.getText()), txtASObs8.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad91.getText()), txtASObs9.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad101.getText()), txtASObs10.getText(), updateFicha));
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+				Integer.parseInt(txtASCantidad111.getText()), txtASObs11.getText(), updateFicha));
+
 	}
 
 	public JTextField getTxtKACantidad31() {
@@ -3268,11 +3383,11 @@ public class MdTemplate extends JFrame {
 	}
 
 	public JTextField getTxtFLCantidad01() {
-		return txtFLCantidad01;
+		return txtAPCantidad81;
 	}
 
 	public void setTxtFLCantidad01(JTextField txtFLCantidad01) {
-		this.txtFLCantidad01 = txtFLCantidad01;
+		this.txtAPCantidad81 = txtFLCantidad01;
 	}
 
 	public JTextField getTxtAPCantidad01() {
@@ -4028,11 +4143,11 @@ public class MdTemplate extends JFrame {
 	}
 
 	public JTextField getTxtFLObs0() {
-		return txtFLObs0;
+		return txAPLObs8;
 	}
 
 	public void setTxtFLObs0(JTextField txtFLObs0) {
-		this.txtFLObs0 = txtFLObs0;
+		this.txAPLObs8 = txtFLObs0;
 	}
 
 	public JTextField getTxtAPObs0() {

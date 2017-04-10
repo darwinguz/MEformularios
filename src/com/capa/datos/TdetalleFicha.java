@@ -18,13 +18,17 @@ public class TdetalleFicha implements Serializable {
 	private String detObsRef;
 	private Integer detActualizacionN;
 
-	public TdetalleFicha(TCabecera cabecera, TInformacionObligatoria infor, TAula aula, TGrupo grupo, TFicha ficha) {
+	public TdetalleFicha(TCabecera cabecera, TInformacionObligatoria infor, TAula aula, TGrupo grupo, TFicha ficha,
+			Integer cantidadEjecutada, String observacion, Integer actualiza) {
 		// TODO Auto-generated constructor stub
 		this.TCabecera = cabecera;
 		this.InfoObligatoria = infor;
 		this.TAula = aula;
 		this.TGrupo = grupo;
 		this.TFicha = ficha;
+		this.detCantidadEjecutada = cantidadEjecutada;
+		this.detObsRef = observacion;
+		this.detActualizacionN = actualiza;
 	}
 
 	public Integer getDetFichaSerial() {
