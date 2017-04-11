@@ -1,6 +1,8 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -14,6 +16,7 @@ import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
@@ -32,8 +35,6 @@ import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
-import com.capa.presentacion.InformacionObligatoriaV;
-import com.capa.presentacion.JPcabecera;
 
 public class HsTemplate extends JFrame {
 
@@ -216,8 +217,22 @@ public class HsTemplate extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Hola mundo");
-				getListaGrupos();
+
+				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
+				if (validarInfo(infoObl)) {
+					ServicioFicha srvFicha = new ComponenteFicha();
+					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+					ServicioCabecera srvTempCabecera = new ComponenteCabecera();
+
+					infoObl.settCabe(srvTempCabecera.buscarProyecto(gettCabecera().getCNombreProyecto()));
+					srvInfoObl.crear(infoObl);
+					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
+					// pendiente guardar la lista
+
+					getListaGrupos(infoObl);
+				} else {
+					JOptionPane.showMessageDialog(null, "Datos obligatorios");
+				}
 			}
 
 		});
@@ -351,92 +366,122 @@ public class HsTemplate extends JFrame {
 		pnlCantidad10CA.setLayout(new GridLayout(10, 2, 0, 0));
 
 		txtCA00 = new JTextField();
+		txtCA00.setText("35");
+		txtCA00.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA00.setEditable(false);
 		txtCA00.setColumns(10);
 		pnlCantidad10CA.add(txtCA00);
 
 		txtCA01 = new JTextField();
+		txtCA01.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA01.setColumns(10);
 		pnlCantidad10CA.add(txtCA01);
 
 		txtCA10 = new JTextField();
+		txtCA10.setText("76");
+		txtCA10.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA10.setEditable(false);
 		txtCA10.setColumns(10);
 		pnlCantidad10CA.add(txtCA10);
 
 		txtCA11 = new JTextField();
+		txtCA11.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA11.setColumns(10);
 		pnlCantidad10CA.add(txtCA11);
 
 		txtCA20 = new JTextField();
+		txtCA20.setText("41");
+		txtCA20.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA20.setEditable(false);
 		txtCA20.setColumns(10);
 		pnlCantidad10CA.add(txtCA20);
 
 		txtCA21 = new JTextField();
+		txtCA21.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA21.setColumns(10);
 		pnlCantidad10CA.add(txtCA21);
 
 		txtCA30 = new JTextField();
+		txtCA30.setText("1");
+		txtCA30.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA30.setEditable(false);
 		txtCA30.setColumns(10);
 		pnlCantidad10CA.add(txtCA30);
 
 		txtCA31 = new JTextField();
+		txtCA31.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA31.setColumns(10);
 		pnlCantidad10CA.add(txtCA31);
 
 		txtCA40 = new JTextField();
+		txtCA40.setText("3");
+		txtCA40.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA40.setEditable(false);
 		txtCA40.setColumns(10);
 		pnlCantidad10CA.add(txtCA40);
 
 		txtCA41 = new JTextField();
+		txtCA41.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA41.setColumns(10);
 		pnlCantidad10CA.add(txtCA41);
 
 		txtCA50 = new JTextField();
+		txtCA50.setText("9");
+		txtCA50.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA50.setEditable(false);
 		txtCA50.setColumns(10);
 		pnlCantidad10CA.add(txtCA50);
 
 		txtCA51 = new JTextField();
+		txtCA51.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA51.setColumns(10);
 		pnlCantidad10CA.add(txtCA51);
 
 		txtCA60 = new JTextField();
+		txtCA60.setText("1");
+		txtCA60.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA60.setEditable(false);
 		txtCA60.setColumns(10);
 		pnlCantidad10CA.add(txtCA60);
 
 		txtCA61 = new JTextField();
+		txtCA61.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA61.setColumns(10);
 		pnlCantidad10CA.add(txtCA61);
 
 		txtCA70 = new JTextField();
+		txtCA70.setText("4");
+		txtCA70.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA70.setEditable(false);
 		txtCA70.setColumns(10);
 		pnlCantidad10CA.add(txtCA70);
 
 		txtCA71 = new JTextField();
+		txtCA71.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA71.setColumns(10);
 		pnlCantidad10CA.add(txtCA71);
 
 		txtCA80 = new JTextField();
+		txtCA80.setText("1");
+		txtCA80.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA80.setEditable(false);
 		txtCA80.setColumns(10);
 		pnlCantidad10CA.add(txtCA80);
 
 		txtCA81 = new JTextField();
+		txtCA81.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA81.setColumns(10);
 		pnlCantidad10CA.add(txtCA81);
 
 		txtCA90 = new JTextField();
+		txtCA90.setText("1");
+		txtCA90.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA90.setEditable(false);
 		txtCA90.setColumns(10);
 		pnlCantidad10CA.add(txtCA90);
 
 		txtCA91 = new JTextField();
+		txtCA91.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA91.setColumns(10);
 		pnlCantidad10CA.add(txtCA91);
 
@@ -446,11 +491,14 @@ public class HsTemplate extends JFrame {
 		pnlCantidad11CA.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtCA100 = new JTextField();
+		txtCA100.setText("1");
+		txtCA100.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA100.setEditable(false);
 		txtCA100.setColumns(10);
 		pnlCantidad11CA.add(txtCA100);
 
 		txtCA101 = new JTextField();
+		txtCA101.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA101.setColumns(10);
 		pnlCantidad11CA.add(txtCA101);
 
@@ -460,11 +508,14 @@ public class HsTemplate extends JFrame {
 		pnlCantidad12CA.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtCA110 = new JTextField();
+		txtCA110.setText("1");
+		txtCA110.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA110.setEditable(false);
 		txtCA110.setColumns(10);
 		pnlCantidad12CA.add(txtCA110);
 
 		txtCA111 = new JTextField();
+		txtCA111.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA111.setColumns(10);
 		pnlCantidad12CA.add(txtCA111);
 
@@ -474,11 +525,14 @@ public class HsTemplate extends JFrame {
 		pnlCantidad13CA.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtCA120 = new JTextField();
+		txtCA120.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCA120.setText("1");
 		txtCA120.setEditable(false);
 		txtCA120.setColumns(10);
 		pnlCantidad13CA.add(txtCA120);
 
 		txtCA121 = new JTextField();
+		txtCA121.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA121.setColumns(10);
 		pnlCantidad13CA.add(txtCA121);
 
@@ -488,11 +542,14 @@ public class HsTemplate extends JFrame {
 		pnlCantidad14CA.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtCA130 = new JTextField();
+		txtCA130.setText("1");
+		txtCA130.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA130.setEditable(false);
 		txtCA130.setColumns(10);
 		pnlCantidad14CA.add(txtCA130);
 
 		txtCA131 = new JTextField();
+		txtCA131.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCA131.setColumns(10);
 		pnlCantidad14CA.add(txtCA131);
 
@@ -622,29 +679,38 @@ public class HsTemplate extends JFrame {
 		pnlEDCantidad.setLayout(new GridLayout(3, 2, 0, 0));
 
 		txtKARCantLim00 = new JTextField();
+		txtKARCantLim00.setHorizontalAlignment(SwingConstants.CENTER);
+		txtKARCantLim00.setText("15");
 		txtKARCantLim00.setEditable(false);
 		txtKARCantLim00.setColumns(10);
 		pnlEDCantidad.add(txtKARCantLim00);
 
 		txtKARCantLim01 = new JTextField();
+		txtKARCantLim01.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim01.setColumns(10);
 		pnlEDCantidad.add(txtKARCantLim01);
 
 		txtKARCantLim10 = new JTextField();
+		txtKARCantLim10.setText("1");
+		txtKARCantLim10.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim10.setEditable(false);
 		txtKARCantLim10.setColumns(10);
 		pnlEDCantidad.add(txtKARCantLim10);
 
 		txtKARCantLim11 = new JTextField();
+		txtKARCantLim11.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim11.setColumns(10);
 		pnlEDCantidad.add(txtKARCantLim11);
 
 		txtKARCantLim20 = new JTextField();
+		txtKARCantLim20.setHorizontalAlignment(SwingConstants.CENTER);
+		txtKARCantLim20.setText("64");
 		txtKARCantLim20.setEditable(false);
 		txtKARCantLim20.setColumns(10);
 		pnlEDCantidad.add(txtKARCantLim20);
 
 		txtKARCantLim21 = new JTextField();
+		txtKARCantLim21.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim21.setColumns(10);
 		pnlEDCantidad.add(txtKARCantLim21);
 
@@ -695,47 +761,62 @@ public class HsTemplate extends JFrame {
 		panel_12.setLayout(new GridLayout(0, 2, 0, 0));
 
 		txtKARCantLim30 = new JTextField();
+		txtKARCantLim30.setHorizontalAlignment(SwingConstants.CENTER);
+		txtKARCantLim30.setText("1");
 		txtKARCantLim30.setEditable(false);
 		txtKARCantLim30.setColumns(10);
 		panel_12.add(txtKARCantLim30);
 
 		txtKARCantLim31 = new JTextField();
+		txtKARCantLim31.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim31.setColumns(10);
 		panel_12.add(txtKARCantLim31);
 
 		txtKARCantLim40 = new JTextField();
+		txtKARCantLim40.setText("23");
+		txtKARCantLim40.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim40.setEditable(false);
 		txtKARCantLim40.setColumns(10);
 		panel_12.add(txtKARCantLim40);
 
 		txtKARCantLim41 = new JTextField();
+		txtKARCantLim41.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim41.setColumns(10);
 		panel_12.add(txtKARCantLim41);
 
 		txtKARCantLim50 = new JTextField();
+		txtKARCantLim50.setText("1");
+		txtKARCantLim50.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim50.setEditable(false);
 		txtKARCantLim50.setColumns(10);
 		panel_12.add(txtKARCantLim50);
 
 		txtKARCantLim51 = new JTextField();
+		txtKARCantLim51.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim51.setColumns(10);
 		panel_12.add(txtKARCantLim51);
 
 		txtKARCantLim60 = new JTextField();
+		txtKARCantLim60.setHorizontalAlignment(SwingConstants.CENTER);
+		txtKARCantLim60.setText("22");
 		txtKARCantLim60.setEditable(false);
 		txtKARCantLim60.setColumns(10);
 		panel_12.add(txtKARCantLim60);
 
 		txtKARCantLim61 = new JTextField();
+		txtKARCantLim61.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim61.setColumns(10);
 		panel_12.add(txtKARCantLim61);
 
 		txtKARCantLim70 = new JTextField();
+		txtKARCantLim70.setText("1");
+		txtKARCantLim70.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim70.setEditable(false);
 		txtKARCantLim70.setColumns(10);
 		panel_12.add(txtKARCantLim70);
 
 		txtKARCantLim71 = new JTextField();
+		txtKARCantLim71.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim71.setColumns(10);
 		panel_12.add(txtKARCantLim71);
 
@@ -841,11 +922,14 @@ public class HsTemplate extends JFrame {
 		panel_18.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtKARCantLim80 = new JTextField();
+		txtKARCantLim80.setText("7");
+		txtKARCantLim80.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim80.setEditable(false);
 		txtKARCantLim80.setColumns(10);
 		panel_18.add(txtKARCantLim80);
 
 		txtKARCantLim81 = new JTextField();
+		txtKARCantLim81.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim81.setColumns(10);
 		panel_18.add(txtKARCantLim81);
 
@@ -864,11 +948,14 @@ public class HsTemplate extends JFrame {
 		panel_37.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtKARCantLim90 = new JTextField();
+		txtKARCantLim90.setText("5");
+		txtKARCantLim90.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim90.setEditable(false);
 		txtKARCantLim90.setColumns(10);
 		panel_37.add(txtKARCantLim90);
 
 		txtKARCantLim91 = new JTextField();
+		txtKARCantLim91.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim91.setColumns(10);
 		panel_37.add(txtKARCantLim91);
 
@@ -887,11 +974,14 @@ public class HsTemplate extends JFrame {
 		panel_13.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtKARCantLim100 = new JTextField();
+		txtKARCantLim100.setText("1");
+		txtKARCantLim100.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim100.setEditable(false);
 		txtKARCantLim100.setColumns(10);
 		panel_13.add(txtKARCantLim100);
 
 		txtKARCantLim101 = new JTextField();
+		txtKARCantLim101.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim101.setColumns(10);
 		panel_13.add(txtKARCantLim101);
 
@@ -910,11 +1000,14 @@ public class HsTemplate extends JFrame {
 		panel_31.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtKARCantLim110 = new JTextField();
+		txtKARCantLim110.setText("1");
+		txtKARCantLim110.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim110.setEditable(false);
 		txtKARCantLim110.setColumns(10);
 		panel_31.add(txtKARCantLim110);
 
 		txtKARCantLim111 = new JTextField();
+		txtKARCantLim111.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim111.setColumns(10);
 		panel_31.add(txtKARCantLim111);
 
@@ -933,11 +1026,14 @@ public class HsTemplate extends JFrame {
 		panel_33.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtKARCantLim120 = new JTextField();
+		txtKARCantLim120.setHorizontalAlignment(SwingConstants.CENTER);
+		txtKARCantLim120.setText("1");
 		txtKARCantLim120.setEditable(false);
 		txtKARCantLim120.setColumns(10);
 		panel_33.add(txtKARCantLim120);
 
 		txtKARCantLim121 = new JTextField();
+		txtKARCantLim121.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim121.setColumns(10);
 		panel_33.add(txtKARCantLim121);
 
@@ -956,11 +1052,14 @@ public class HsTemplate extends JFrame {
 		panel_35.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtKARCantLim130 = new JTextField();
+		txtKARCantLim130.setText("1");
+		txtKARCantLim130.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim130.setEditable(false);
 		txtKARCantLim130.setColumns(10);
 		panel_35.add(txtKARCantLim130);
 
 		txtKARCantLim131 = new JTextField();
+		txtKARCantLim131.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKARCantLim131.setColumns(10);
 		panel_35.add(txtKARCantLim131);
 
@@ -1029,38 +1128,50 @@ public class HsTemplate extends JFrame {
 		panel_8.setLayout(new GridLayout(0, 2, 0, 0));
 
 		txtKAPCantidad00 = new JTextField();
+		txtKAPCantidad00.setText("18");
+		txtKAPCantidad00.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKAPCantidad00.setEditable(false);
 		txtKAPCantidad00.setColumns(10);
 		panel_8.add(txtKAPCantidad00);
 
 		textField_31 = new JTextField();
+		textField_31.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_31.setColumns(10);
 		panel_8.add(textField_31);
 
 		txtKAPCantidad10 = new JTextField();
+		txtKAPCantidad10.setText("36");
+		txtKAPCantidad10.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKAPCantidad10.setEditable(false);
 		txtKAPCantidad10.setColumns(10);
 		panel_8.add(txtKAPCantidad10);
 
 		textField_33 = new JTextField();
+		textField_33.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_33.setColumns(10);
 		panel_8.add(textField_33);
 
 		txtKAPCantidad20 = new JTextField();
+		txtKAPCantidad20.setText("32");
+		txtKAPCantidad20.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKAPCantidad20.setEditable(false);
 		txtKAPCantidad20.setColumns(10);
 		panel_8.add(txtKAPCantidad20);
 
 		textField_35 = new JTextField();
+		textField_35.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_35.setColumns(10);
 		panel_8.add(textField_35);
 
 		txtKAPCantidad30 = new JTextField();
+		txtKAPCantidad30.setText("4");
+		txtKAPCantidad30.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKAPCantidad30.setEditable(false);
 		txtKAPCantidad30.setColumns(10);
 		panel_8.add(txtKAPCantidad30);
 
 		textField_37 = new JTextField();
+		textField_37.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_37.setColumns(10);
 		panel_8.add(textField_37);
 
@@ -1091,11 +1202,14 @@ public class HsTemplate extends JFrame {
 		panel_39.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtKAPCantidad40 = new JTextField();
+		txtKAPCantidad40.setText("9");
+		txtKAPCantidad40.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKAPCantidad40.setEditable(false);
 		txtKAPCantidad40.setColumns(10);
 		panel_39.add(txtKAPCantidad40);
 
 		textField_73 = new JTextField();
+		textField_73.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_73.setColumns(10);
 		panel_39.add(textField_73);
 
@@ -1171,47 +1285,62 @@ public class HsTemplate extends JFrame {
 		panel_21.setLayout(new GridLayout(0, 2, 0, 14));
 
 		txtKAPCantidad60 = new JTextField();
+		txtKAPCantidad60.setHorizontalAlignment(SwingConstants.CENTER);
+		txtKAPCantidad60.setText("5");
 		txtKAPCantidad60.setEditable(false);
 		txtKAPCantidad60.setColumns(10);
 		panel_21.add(txtKAPCantidad60);
 
 		textField_76 = new JTextField();
+		textField_76.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_76.setColumns(10);
 		panel_21.add(textField_76);
 
 		txtKAPCantidad70 = new JTextField();
+		txtKAPCantidad70.setText("1");
+		txtKAPCantidad70.setHorizontalAlignment(SwingConstants.CENTER);
 		txtKAPCantidad70.setEditable(false);
 		txtKAPCantidad70.setColumns(10);
 		panel_21.add(txtKAPCantidad70);
 
 		textField_78 = new JTextField();
+		textField_78.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_78.setColumns(10);
 		panel_21.add(textField_78);
 
 		txtKAPCantidad80 = new JTextField();
+		txtKAPCantidad80.setHorizontalAlignment(SwingConstants.CENTER);
+		txtKAPCantidad80.setText("1");
 		txtKAPCantidad80.setEditable(false);
 		txtKAPCantidad80.setColumns(10);
 		panel_21.add(txtKAPCantidad80);
 
 		textField_80 = new JTextField();
+		textField_80.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_80.setColumns(10);
 		panel_21.add(textField_80);
 
 		txtKAPCantidad90 = new JTextField();
+		txtKAPCantidad90.setHorizontalAlignment(SwingConstants.CENTER);
+		txtKAPCantidad90.setText("1");
 		txtKAPCantidad90.setEditable(false);
 		txtKAPCantidad90.setColumns(10);
 		panel_21.add(txtKAPCantidad90);
 
 		textField_82 = new JTextField();
+		textField_82.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_82.setColumns(10);
 		panel_21.add(textField_82);
 
 		txtKAPCantidad100 = new JTextField();
+		txtKAPCantidad100.setHorizontalAlignment(SwingConstants.CENTER);
+		txtKAPCantidad100.setText("1");
 		txtKAPCantidad100.setEditable(false);
 		txtKAPCantidad100.setColumns(10);
 		panel_21.add(txtKAPCantidad100);
 
 		textField_84 = new JTextField();
+		textField_84.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_84.setColumns(10);
 		panel_21.add(textField_84);
 
@@ -1246,11 +1375,14 @@ public class HsTemplate extends JFrame {
 		panel_23.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtKAPCantidad50 = new JTextField();
+		txtKAPCantidad50.setHorizontalAlignment(SwingConstants.CENTER);
+		txtKAPCantidad50.setText("8");
 		txtKAPCantidad50.setEditable(false);
 		txtKAPCantidad50.setColumns(10);
 		panel_23.add(txtKAPCantidad50);
 
 		textField_91 = new JTextField();
+		textField_91.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_91.setColumns(10);
 		panel_23.add(textField_91);
 
@@ -1308,29 +1440,38 @@ public class HsTemplate extends JFrame {
 		panel_42.setLayout(new GridLayout(0, 2, 0, 0));
 
 		textField_95 = new JTextField();
+		textField_95.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_95.setText("1");
 		textField_95.setEditable(false);
 		textField_95.setColumns(10);
 		panel_42.add(textField_95);
 
 		textField_96 = new JTextField();
+		textField_96.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_96.setColumns(10);
 		panel_42.add(textField_96);
 
 		textField_93 = new JTextField();
+		textField_93.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_93.setText("1");
 		textField_93.setEditable(false);
 		textField_93.setColumns(10);
 		panel_42.add(textField_93);
 
 		textField_94 = new JTextField();
+		textField_94.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_94.setColumns(10);
 		panel_42.add(textField_94);
 
 		textField_99 = new JTextField();
+		textField_99.setHorizontalAlignment(SwingConstants.CENTER);
+		textField_99.setText("1");
 		textField_99.setEditable(false);
 		textField_99.setColumns(10);
 		panel_42.add(textField_99);
 
 		textField_100 = new JTextField();
+		textField_100.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_100.setColumns(10);
 		panel_42.add(textField_100);
 
@@ -1359,14 +1500,13 @@ public class HsTemplate extends JFrame {
 		});
 	}
 
-	private void getListaGrupos() {
+	private void getListaGrupos(TInformacionObligatoria infoObligatoria) {
 		ServicioCabecera srvCabecera = new ComponenteCabecera();
 		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 		ServicioFicha servicioFicha = new ComponenteFicha();
 
 		TCabecera cabecera = srvCabecera.buscarProyecto(gettCabecera().getCNombreProyecto());
 		Integer updateFicha = servicioFicha.buscarUpdateFicha();
-		TInformacionObligatoria infoObligatoria = srvInfoObl.getInfoObl();
 
 		TGrupo grupo1 = servicioFicha.buscarGrupo("Componente arquitectónico");
 		List<TdetalleFicha> compArq = new LinkedList<>();
