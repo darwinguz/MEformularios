@@ -18,6 +18,6 @@ public interface ServicioFicha {
 
 	public Integer buscarUpdateFicha();
 
-	public void insertarFormulario(LinkedList<LinkedList<TdetalleFicha>> cargarListas)
+	public void insertarFormulario(LinkedList<LinkedList<TdetalleFicha>> cargarListas);
 
 }
