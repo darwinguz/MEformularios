@@ -1,7 +1,9 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
+import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -13,6 +15,7 @@ import java.util.LinkedList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
@@ -25,8 +28,10 @@ import com.capa.datos.TFicha;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteFichaMA;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFichaMA;
 import com.capa.negocios.ServicioInfoObligatoria;
 
@@ -217,21 +222,6 @@ public class MmTemplate extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-
-		JPcabecera cabecera = new JPcabecera();
-		contentPane.add(cabecera.getCabecera());
-		contentPane.setLayout(null);
-		setTitle("MM-" + ficha.getFiNombre());
-
-		llenarCabecera(cabecera);
-		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				cargarFicha();
-			}
-
-		});
 
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
@@ -2066,18 +2056,45 @@ public class MmTemplate extends JFrame {
 				dispose();
 			}
 		});
+
+		JPcabecera cabecera = new JPcabecera();
+		contentPane.add(cabecera.getCabecera());
+		contentPane.setLayout(null);
+		setTitle("MM-" + ficha.getFiNombre());
+
+		llenarCabecera(cabecera);
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
+				if (validarInfo(infoObl)) {
+					ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
+					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+					ServicioCabecera srvTempCabecera = new ComponenteCabecera();
+
+					infoObl.settCabe(srvTempCabecera.buscarProyecto(gettCabecera().getCNombreProyecto()));
+					srvInfoObl.crear(infoObl);
+					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
+
+					srvFichaMA.insertarFormulario(cargarFicha(infoObl));
+				} else {
+					JOptionPane.showMessageDialog(null, "Datos obligatorios");
+				}
+			}
+
+		});
+
 	}
 
-	private LinkedList<LinkedList<TdetalleFicha>> cargarFicha() {
+	private LinkedList<LinkedList<TdetalleFicha>> cargarFicha(TInformacionObligatoria infoObligatoria) {
 		ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
-		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 
 		TCabecera cabecera = gettCabecera();
-		TGrupo grupoTmp = srvFichaMA.buscarGrupo("Kit eléctrico");
 		Integer updateFicha = srvFichaMA.buscarUpdateFicha();
-		TInformacionObligatoria infoObligatoria = srvInfoObl.getInfoObl();
 
 		LinkedList<TdetalleFicha> listaKE = new LinkedList<>();
+		TGrupo grupoTmp = srvFichaMA.buscarGrupo("Kit eléctrico");
 		listaKE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
 				Integer.parseInt(txtKECantidad00.getText()), Integer.parseInt(txtKECantidad01.getText()),
 				txtKEObsRef0.getText(), updateFicha));
