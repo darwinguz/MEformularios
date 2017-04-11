@@ -8,8 +8,10 @@ public class TFicha implements Serializable {
 	private Integer fiSerial;
 	private String fiNombre;
 
+	public TFicha() {
+		super();
+	}
 
-	
 	public TFicha(Integer fiSerial, String fiNombre) {
 		super();
 		this.fiSerial = fiSerial;
