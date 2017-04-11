@@ -18,9 +18,13 @@ public class TdetalleFicha implements Serializable {
 	private String detObsRef;
 	private Integer detActualizacionN;
 
-	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria,
-			com.capa.datos.TAula tAula, com.capa.datos.TGrupo tGrupo, com.capa.datos.TFicha tFicha, String detEtiqueta,
-			Integer detCantidadLimite, Integer detCantidadEjecutada, String detObsRef, Integer detActualizacionN) {
+	public TdetalleFicha() {
+		super();
+	}
+
+	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria, com.capa.datos.TAula tAula,
+			com.capa.datos.TGrupo tGrupo, com.capa.datos.TFicha tFicha, String detEtiqueta, Integer detCantidadLimite,
+			Integer detCantidadEjecutada, String detObsRef, Integer detActualizacionN) {
 		super();
 		TCabecera = tCabecera;
 		InfoObligatoria = infoObligatoria;
@@ -121,7 +125,6 @@ public class TdetalleFicha implements Serializable {
 	public void setDetActualizacionN(Integer detActualizacionN) {
 		this.detActualizacionN = detActualizacionN;
 	}
-
 
 	@Override
 	public String toString() {
