@@ -20,18 +20,6 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ServicioFicha;
-import com.capa.presentacion.AlInicio;
-import com.capa.presentacion.CeTemplate;
-import com.capa.presentacion.ExTemplate;
-import com.capa.presentacion.MSTemplate;
-import com.capa.presentacion.MaTemplate;
-import com.capa.presentacion.MbTemplate;
-import com.capa.presentacion.MdTemplate;
-import com.capa.presentacion.MexTemplate;
-import com.capa.presentacion.MmTemplate;
-import com.capa.presentacion.MtTemplate;
-import com.capa.presentacion.PGTemplate;
-import com.capa.presentacion.WFTemplate;
 
 public class Menu extends JFrame {
 
@@ -508,7 +496,7 @@ public class Menu extends JFrame {
 				"<html><body><p align=\"center\">MS<br>Salón<br>uso<br>público<br>1</body></html>");
 		btnMSsalon1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MSTemplate("MS Salón de Uso Múltiple-1").setVisible(true);
+				new MsTemplate("MS Salón de Uso Múltiple-1").setVisible(true);
 				dispose();
 			}
 		});
@@ -523,7 +511,7 @@ public class Menu extends JFrame {
 				"<html><body><p align=\"center\">MS<br>Salón<br>uso<br>público<br>2</body></html>");
 		btnMSsalon2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MSTemplate("MS Salón de Uso Múltiple-2").setVisible(true);
+				new MsTemplate("MS Salón de Uso Múltiple-2").setVisible(true);
 				dispose();
 			}
 		});
