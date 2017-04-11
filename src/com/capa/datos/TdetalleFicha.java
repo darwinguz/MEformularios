@@ -18,17 +18,20 @@ public class TdetalleFicha implements Serializable {
 	private String detObsRef;
 	private Integer detActualizacionN;
 
-	public TdetalleFicha(TCabecera cabecera, TInformacionObligatoria infor, TAula aula, TGrupo grupo, TFicha ficha,
-			Integer cantidadEjecutada, String observacion, Integer actualiza) {
-		// TODO Auto-generated constructor stub
-		this.TCabecera = cabecera;
-		this.InfoObligatoria = infor;
-		this.TAula = aula;
-		this.TGrupo = grupo;
-		this.TFicha = ficha;
-		this.detCantidadEjecutada = cantidadEjecutada;
-		this.detObsRef = observacion;
-		this.detActualizacionN = actualiza;
+	public TdetalleFicha(com.capa.datos.TCabecera tCabecera, TInformacionObligatoria infoObligatoria,
+			com.capa.datos.TAula tAula, com.capa.datos.TGrupo tGrupo, com.capa.datos.TFicha tFicha, String detEtiqueta,
+			Integer detCantidadLimite, Integer detCantidadEjecutada, String detObsRef, Integer detActualizacionN) {
+		super();
+		TCabecera = tCabecera;
+		InfoObligatoria = infoObligatoria;
+		TAula = tAula;
+		TGrupo = tGrupo;
+		TFicha = tFicha;
+		this.detEtiqueta = detEtiqueta;
+		this.detCantidadLimite = detCantidadLimite;
+		this.detCantidadEjecutada = detCantidadEjecutada;
+		this.detObsRef = detObsRef;
+		this.detActualizacionN = detActualizacionN;
 	}
 
 	public Integer getDetFichaSerial() {
