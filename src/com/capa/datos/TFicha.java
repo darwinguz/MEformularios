@@ -9,6 +9,7 @@ public class TFicha implements Serializable {
 	private String fiNombre;
 
 
+	
 	public TFicha(Integer fiSerial, String fiNombre) {
 		super();
 		this.fiSerial = fiSerial;

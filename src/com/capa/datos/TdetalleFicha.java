@@ -8,7 +8,6 @@ public class TdetalleFicha implements Serializable {
 	private Integer detFichaSerial;
 	private TCabecera TCabecera;
 	private TInformacionObligatoria InfoObligatoria;
-	private TAula TAula;
 	private TGrupo TGrupo;
 	private TFicha TFicha;
 
@@ -22,13 +21,12 @@ public class TdetalleFicha implements Serializable {
 		super();
 	}
 
-	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria, com.capa.datos.TAula tAula,
-			com.capa.datos.TGrupo tGrupo, com.capa.datos.TFicha tFicha, String detEtiqueta, Integer detCantidadLimite,
-			Integer detCantidadEjecutada, String detObsRef, Integer detActualizacionN) {
+	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria, com.capa.datos.TGrupo tGrupo,
+			com.capa.datos.TFicha tFicha, String detEtiqueta, Integer detCantidadLimite, Integer detCantidadEjecutada,
+			String detObsRef, Integer detActualizacionN) {
 		super();
 		TCabecera = tCabecera;
 		InfoObligatoria = infoObligatoria;
-		TAula = tAula;
 		TGrupo = tGrupo;
 		TFicha = tFicha;
 		this.detEtiqueta = detEtiqueta;
@@ -60,14 +58,6 @@ public class TdetalleFicha implements Serializable {
 
 	public void setInfoObligatoria(TInformacionObligatoria infoObligatoria) {
 		InfoObligatoria = infoObligatoria;
-	}
-
-	public TAula getTAula() {
-		return TAula;
-	}
-
-	public void setTAula(TAula tAula) {
-		TAula = tAula;
 	}
 
 	public TGrupo getTGrupo() {
@@ -129,9 +119,9 @@ public class TdetalleFicha implements Serializable {
 	@Override
 	public String toString() {
 		return "TdetalleFicha [detFichaSerial=" + detFichaSerial + ", TCabecera=" + TCabecera + ", InfoObligatoria="
-				+ InfoObligatoria + ", TAula=" + TAula + ", TGrupo=" + TGrupo + ", TFicha=" + TFicha + ", detEtiqueta="
-				+ detEtiqueta + ", detCantidadLimite=" + detCantidadLimite + ", detCantidadEjecutada="
-				+ detCantidadEjecutada + ", detObsRef=" + detObsRef + ", detActualizacionN=" + detActualizacionN + "]";
+				+ InfoObligatoria + ", TGrupo=" + TGrupo + ", TFicha=" + TFicha + ", detEtiqueta=" + detEtiqueta
+				+ ", detCantidadLimite=" + detCantidadLimite + ", detCantidadEjecutada=" + detCantidadEjecutada
+				+ ", detObsRef=" + detObsRef + ", detActualizacionN=" + detActualizacionN + "]";
 	}
 
 }
