@@ -7,6 +7,7 @@ public class TFicha implements Serializable {
 	private static final long serialVersionUID = -1853985387239258718L;
 	private Integer fiSerial;
 	private String fiNombre;
+	private String fiDescripcion;
 
 	public TFicha() {
 		super();
@@ -34,9 +35,17 @@ public class TFicha implements Serializable {
 		this.fiNombre = fiNombre;
 	}
 
+	public String getFiDescripcion() {
+		return fiDescripcion;
+	}
+
+	public void setFiDescripcion(String fiDescripcion) {
+		this.fiDescripcion = fiDescripcion;
+	}
+
 	@Override
 	public String toString() {
-		return "TFicha [fiSerial=" + fiSerial + ", fiNombre=" + fiNombre + "]";
+		return "TFicha [fiSerial=" + fiSerial + ", fiNombre=" + fiNombre + ", fiDescripcion=" + fiDescripcion + "]";
 	}
 
 }
