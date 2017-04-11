@@ -1,26 +1,39 @@
 package com.capa.presentacion;
 
-import static com.capa.util.Utilitarios.llenarCabecera;
+import static com.capa.util.Utilitarios.gettCabecera;
 
-import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.LinkedList;
+import java.util.List;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import com.capa.util.Utilitarios;
+import com.capa.datos.TCabecera;
+import com.capa.datos.TFicha;
+import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
+import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteCabecera;
+import com.capa.negocios.ComponenteFicha;
+import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.ServicioCabecera;
+import com.capa.negocios.ServicioFicha;
+import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.presentacion.InformacionObligatoriaV;
+import com.capa.presentacion.JPcabecera;
 
 public class HsTemplate extends JFrame {
 
@@ -29,242 +42,134 @@ public class HsTemplate extends JFrame {
 	 */
 	private static final long serialVersionUID = 2991536081432510517L;
 	private JPanel contentPane;
-	private JTextField txtAmie;
-	private JTextField txtCircuito;
-	private JTextField txtFechaEntrega;
-	private JTextField txtFechaInicioTrabajo;
-	private JTextField txtSector;
-	private JTextField txtProyecto;
-	private JTextField txtParroquia;
-	private JTextField txtCACantidad00;
-	private JTextField txtCACantidad01;
-	private JTextField txtCACantidad10;
-	private JTextField txtCACantidad11;
-	private JTextField txtCACantidad20;
-	private JTextField txtCACantidad21;
-	private JTextField txtCACantidad30;
-	private JTextField txtCACantidad31;
-	private JTextField txtCACantidad40;
-	private JTextField txtCACantidad41;
-	private JTextField txtCACantidad50;
-	private JTextField txtCACantidad51;
-	private JTextField txtCACantidad60;
-	private JTextField txtCACantidad61;
-	private JTextField txtCACantidad70;
-	private JTextField txtCACantidad71;
-	private JTextField txtCACantidad80;
-	private JTextField txtCACantidad81;
-	private JTextField txtCAObsRef1;
-	private JTextField txtCAObsRef0;
-	private JTextField txtCAObsRef2;
-	private JTextField txtCAObsRef3;
-	private JTextField txtCAObsRef4;
-	private JTextField txtCAObsRef5;
-	private JTextField txtCAObsRef6;
-	private JTextField txtCAObsRef7;
-	private JTextField txtCAObsRef8;
-	private JLabel lblCACantidad;
-	private JLabel lblCAObsRef;
-	private JPanel pnlKAR1;
-	private JPanel pnlEDEtiquetas;
-	private JLabel lblKAR1TuberiaPVC75_3;
-	private JLabel lblKAR1TuberiaPVC75_2;
-	private JLabel lblKAR1TuberiaPVC110_3;
-	private JLabel lblKitAguaRes1;
-	private JPanel pnlEDCantidad;
-	private JTextField txtKAR1Cantidad00;
-	private JTextField txtKAR1Cantidad01;
-	private JTextField txtKAR1Cantidad10;
-	private JTextField txtKAR1Cantidad11;
-	private JTextField txtKAR1Cantidad20;
-	private JTextField txtKAR1Cantidad21;
-	private JPanel pnlEDObsRef;
+	private JTextField txtKARCantLim00;
+	private JTextField txtKARCantLim01;
+	private JTextField txtKARCantLim10;
+	private JTextField txtKARCantLim11;
+	private JTextField txtKARCantLim20;
+	private JTextField txtKARCantLim21;
 	private JTextField txtKAR1ObsRef0;
 	private JTextField txtKAR1ObsRef1;
 	private JTextField txtKAR1ObsRef2;
-	private JLabel lblKAR1Cantidad;
-	private JLabel lblKAR1ObsRef;
-	private JPanel pnlKAP2;
-	private JPanel pnlTEtiquetas;
-	private JLabel lblKAP2TomaRiego;
-	private JLabel lblKAP2KitConexion05;
-	private JLabel lblKAP2KitConexion1;
-	private JLabel lblKAP2KitConexion34;
-	private JLabel lblKitAguaPot2;
-	private JPanel pnlTCantidad;
-	private JTextField txtKAP2Cantidad10;
-	private JTextField txtKAP2Cantidad11;
-	private JTextField txtKAP2Cantidad20;
-	private JTextField txtKAP2Cantidad21;
-	private JTextField txtKAP2Cantidad30;
-	private JTextField txtKAP2Cantidad31;
-	private JTextField txtKAP2Cantidad40;
-	private JTextField txtKAP2Cantidad41;
-	private JTextField txtKAP2Cantidad50;
-	private JTextField txtKAP2Cantidad51;
-	private JPanel pnlTObsRef;
-	private JTextField txtKAP2ObsRef1;
-	private JTextField txtKAP2ObsRef2;
-	private JTextField txtKAP2ObsRef3;
-	private JTextField txtKAP2ObsRef4;
-	private JTextField txtKAP2ObsRef5;
-	private JLabel lblKAP2Cantidad;
-	private JLabel lblKAP2ObsRef;
-	private JPanel pnlKH;
-	private JPanel pnlBAEtiquetas;
-	private JLabel lblKHBomba3hp;
-	private JLabel lblKHSetAccesorios;
-	private JLabel lblKHTanque55gl;
-	private JLabel lblKitHidroneumatico;
-	private JPanel pnlBACantidad;
-	private JTextField txtKHCantidad00;
-	private JTextField txtKHCantidad01;
-	private JTextField txtKHCantidad10;
-	private JTextField txtKHCantidad11;
-	private JTextField txtKHCantidad20;
-	private JTextField txtKHCantidad21;
-	private JPanel pnlBAObsRef;
-	private JTextField txtKHObsRef0;
-	private JTextField txtKHObsRef1;
-	private JTextField txtKHObsRef2;
-	private JLabel lblKHCantidad;
-	private JLabel lblKAHObsRef;
-	private JPanel pnlInformacionObl;
-	private JPanel pnlIOTexts2;
-	private JTextField txtObsGenDer;
-	private JTextField txtResponsableContratista;
-	private JTextField txtCargoDer;
-	private JTextField txtFecha;
-	private JPanel pnlIOTexts1;
-	private JTextField txtObsGenIzq;
-	private JTextField txtResponsableMineduc;
-	private JTextField txtCargoIzq;
-	private JPanel pnlIOEtiquetas1;
-	private JLabel lblObsGenIzq;
-	private JLabel lblResponsableMineduc;
-	private JLabel lblCargoIzq;
-	private JPanel pnlIOEtiquetas2;
-	private JLabel lblObsGenDer;
-	private JLabel lblResponsableContratista;
-	private JLabel lblCargoDer;
-	private JLabel lblFecha;
-	private JTextField txtCAObsRef9;
-	private JTextField txtCACantidad90;
-	private JTextField txtCACantidad91;
-	private JLabel lblElementosRevision90x90;
-	private JPanel panel;
-	private JLabel lblCAKitConexionTuberia200;
-	private JLabel lblCAKitConexionTuberia74;
-	private JLabel lblCAKitConexionTuberia110;
-	private JLabel lblCAKitConexionTuberia400;
-	private JTextField txtCAObsRef10;
-	private JTextField txtCAObsRef11;
-	private JTextField txtCAObsRef12;
-	private JTextField txtCAObsRef13;
-	private JPanel panel_2;
-	private JTextField txtCACantidad100;
-	private JTextField txtCACantidad101;
-	private JTextField txtCACantidad110;
-	private JTextField txtCACantidad111;
-	private JTextField txtCACantidad120;
-	private JTextField txtCACantidad121;
-	private JTextField txtCACantidad130;
-	private JTextField txtCACantidad131;
-	private JPanel panel_3;
-	private JPanel panel_4;
-	private JPanel panel_5;
-	private JPanel pnlKAP1;
-	private JPanel panel_7;
-	private JLabel lblKAP1TuberiaPVC05_3;
-	private JLabel lblKAP1TuberiaPVC34_3;
-	private JLabel lblKAP1TuberiaPVC1_3;
-	private JLabel lblKAP1TuberiaPVC1_05_3;
-	private JLabel lblKAP1CajasConexion60x60;
-	private JLabel lblKitAguaPot1;
-	private JPanel panel_8;
-	private JTextField txtKAP1Cantidad00;
-	private JTextField txtKAP1Cantidad01;
-	private JTextField txtKAP1Cantidad10;
-	private JTextField txtKAP1Cantidad11;
-	private JTextField txtKAP1Cantidad20;
-	private JTextField txtKAP1Cantidad21;
-	private JTextField txtKAP1Cantidad30;
-	private JTextField txtKAP1Cantidad31;
-	private JTextField txtKAP1Cantidad40;
-	private JTextField txtKAP1Cantidad41;
-	private JPanel panel_9;
-	private JTextField txtKAP1ObsRef0;
-	private JTextField txtKAP1ObsRef1;
-	private JTextField txtKAP1ObsRef2;
-	private JTextField txtKAP1ObsRef3;
-	private JTextField txtKAP1ObsRef4;
-	private JLabel lblKAP1Cantidad;
-	private JLabel lblKAP1ObsRef;
-	private JPanel pnlKAR2;
-	private JLabel lblKitAguaRes2;
-	private JLabel lblKAR2Cantidad;
-	private JLabel lblKAR2ObsRef;
-	private JPanel panel_11;
-	private JPanel panel_12;
-	private JTextField txtKAR2Cantidad00;
-	private JTextField txtKAR2Cantidad01;
-	private JTextField txtKAR2Cantidad10;
-	private JTextField txtKAR2Cantidad11;
-	private JTextField txtKAR2Cantidad20;
-	private JTextField txtKAR2Cantidad21;
-	private JTextField txtKAR2Cantidad30;
-	private JTextField txtKAR2Cantidad31;
-	private JTextField txtKAR2Cantidad40;
-	private JTextField txtKAR2Cantidad41;
-	private JTextField txtKAR2Cantidad50;
-	private JTextField txtKAR2Cantidad51;
-	private JTextField txtKAR2Cantidad60;
-	private JTextField txtKAR2Cantidad61;
-	private JPanel panel_13;
-	private JTextField txtKAR2Cantidad70;
-	private JTextField txtKAR2Cantidad71;
-	private JTextField txtKAR2Cantidad80;
-	private JTextField txtKAR2Cantidad81;
-	private JTextField txtKAR2Cantidad90;
-	private JTextField txtKAR2Cantidad91;
-	private JTextField txtKAR2Cantidad100;
-	private JTextField txtKAR2Cantidad101;
-	private JPanel panel_14;
-	private JPanel panel_15;
-	private JTextField txtKAR2ObsRef0;
-	private JTextField txtKAR2ObsRef1;
-	private JTextField txtKAR2ObsRef2;
-	private JTextField txtKAR2ObsRef3;
-	private JTextField txtKAR2ObsRef4;
-	private JTextField txtKAR2ObsRef5;
-	private JTextField txtKAR2ObsRef6;
-	private JPanel panel_16;
-	private JTextField txtKAR2ObsRef7;
-	private JTextField txtKAR2ObsRef8;
-	private JTextField txtKAR2ObsRef9;
-	private JTextField txtKAR2ObsRef10;
-	private JPanel panel_17;
-	private JPanel panel_18;
-	private JLabel lblKAR2TuberiaPVC110_2;
-	private JLabel lblKAR2TuberiaPVC160_3;
-	private JLabel lblKAR2TuberiaPVC160_2;
-	private JLabel lblKAR2TuberiaPVC200_3;
-	private JLabel lblKAR2TuberiaPVC200_2;
-	private JLabel lblCajaConexion60x60;
-	private JLabel lblPozoInspeccion;
-	private JPanel panel_19;
-	private JLabel lblKAR2KitConexion200;
-	private JLabel lblKAR2KitConexion75;
-	private JLabel lblKAR2KitConexion110;
-	private JLabel lblKAR2KitConexion160;
-	private JLabel lblKAP2KitConexion1_05;
-	private JPanel panel_20;
-	private JPanel panel_21;
-	private JPanel panel_22;
-	private JPanel panel_23;
-	private JTextField txtKAP2Cantidad00;
-	private JTextField txtKAP2Cantidad01;
-	private JTextField txtKAP2ObsRef0;
+	private JTextField txtKARCantLim30;
+	private JTextField txtKARCantLim31;
+	private JTextField txtKARCantLim40;
+	private JTextField txtKARCantLim41;
+	private JTextField txtKARCantLim50;
+	private JTextField txtKARCantLim51;
+	private JTextField txtKARCantLim60;
+	private JTextField txtKARCantLim61;
+	private JTextField txtKARCantLim70;
+	private JTextField txtKARCantLim71;
+	private JTextField txtKAR1ObsRef3;
+	private JTextField txtKAR1ObsRef4;
+	private JTextField txtKAR1ObsRef5;
+	private JTextField txtKAR1ObsRef6;
+	private JTextField txtKAR1ObsRef7;
+	private JTextField txtCA00;
+	private JTextField txtCA01;
+	private JTextField txtCA10;
+	private JTextField txtCA11;
+	private JTextField txtCA20;
+	private JTextField txtCA21;
+	private JTextField txtCA30;
+	private JTextField txtCA31;
+	private JTextField txtCA40;
+	private JTextField txtCA41;
+	private JTextField txtCA50;
+	private JTextField txtCA51;
+	private JTextField txtCA60;
+	private JTextField txtCA61;
+	private JTextField txtCA70;
+	private JTextField txtCA71;
+	private JTextField txtCA80;
+	private JTextField txtCA81;
+	private JTextField txtCA90;
+	private JTextField txtCA91;
+	private JTextField txtOR0;
+	private JTextField txtOR1;
+	private JTextField txtOR2;
+	private JTextField txtOR3;
+	private JTextField txtOR4;
+	private JTextField txtOR5;
+	private JTextField txtOR6;
+	private JTextField txtOR7;
+	private JTextField txtOR8;
+	private JTextField txtOR9;
+	private JTextField txtCA100;
+	private JTextField txtCA101;
+	private JTextField txtOR10;
+	private JTextField txtCA110;
+	private JTextField txtCA111;
+	private JTextField txtOR11;
+	private JTextField txtCA120;
+	private JTextField txtCA121;
+	private JTextField txtOR12;
+	private JTextField txtCA131;
+	private JTextField txtOR13;
+	private JTextField txtKARCantLim80;
+	private JTextField txtKARCantLim81;
+	private JTextField txtKAR1ObsRef8;
+	private JTextField txtKARCantLim90;
+	private JTextField txtKARCantLim91;
+	private JTextField txtKAR1ObsRef9;
+	private JTextField txtKARCantLim100;
+	private JTextField txtKARCantLim101;
+	private JTextField txtKAR1ObsRef10;
+	private JTextField txtKARCantLim110;
+	private JTextField txtKARCantLim111;
+	private JTextField txtKAR1ObsRef11;
+	private JTextField txtKARCantLim120;
+	private JTextField txtKARCantLim121;
+	private JTextField txtKAR1ObsRef12;
+	private JTextField txtKARCantLim130;
+	private JTextField txtKARCantLim131;
+	private JTextField txtKAR1ObsRef13;
+	private JTextField txtKAPCantidad00;
+	private JTextField textField_31;
+	private JTextField txtKAPCantidad10;
+	private JTextField textField_33;
+	private JTextField txtKAPCantidad20;
+	private JTextField textField_35;
+	private JTextField txtKAPCantidad30;
+	private JTextField textField_37;
+	private JTextField textField_38;
+	private JTextField textField_39;
+	private JTextField textField_40;
+	private JTextField textField_41;
+	private JTextField txtKAPCantidad40;
+	private JTextField textField_73;
+	private JTextField textField_74;
+	private JTextField txtKAPCantidad60;
+	private JTextField textField_76;
+	private JTextField txtKAPCantidad70;
+	private JTextField textField_78;
+	private JTextField txtKAPCantidad80;
+	private JTextField textField_80;
+	private JTextField txtKAPCantidad90;
+	private JTextField textField_82;
+	private JTextField txtKAPCantidad100;
+	private JTextField textField_84;
+	private JTextField textField_85;
+	private JTextField textField_86;
+	private JTextField textField_87;
+	private JTextField textField_88;
+	private JTextField textField_89;
+	private JTextField txtKAPCantidad50;
+	private JTextField textField_91;
+	private JTextField textField_92;
+	private JTextField textField_93;
+	private JTextField textField_94;
+	private JTextField textField_99;
+	private JTextField textField_100;
+	private JTextField textField_95;
+	private JTextField textField_96;
+	private JTextField textField_97;
+	private JTextField textField_98;
+	private JTextField textField_101;
+
+	private TFicha ficha;
+	private JTextField txtCA130;
 
 	/**
 	 * Launch the application.
@@ -273,8 +178,11 @@ public class HsTemplate extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					HsTemplate frame = new HsTemplate();
+					ServicioFicha servicioFicha = new ComponenteFicha();
+
+					HsTemplate frame = new HsTemplate(servicioFicha.buscarFormulario("HS-1"));
 					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -285,31 +193,41 @@ public class HsTemplate extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public HsTemplate() {
+	public HsTemplate(TFicha ficha) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1318, 740);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		this.setTitle(ficha.getFiNombre());
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
+		this.ficha = ficha;
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
 
-		llenarCabecera(cabecera);
+		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(870, 482);
+		contentPane.add(infoObligatoria.getPnlInformacionObl());
 
-		setTitle("HS");
-		this.setResizable(false);
-		this.setLocationRelativeTo(null);
+		// llenarCabecera(cabecera);
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Hola mundo");
+				getListaGrupos();
+			}
+
+		});
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(10, 110, 1286, 586);
+		tabbedPane.setBounds(10, 110, 1286, 594);
 		contentPane.add(tabbedPane);
 
 		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("1.-HS-KIT HIDROSANITARIO", null, pnlPestaña1, null);
+		tabbedPane.addTab("1.- " + ficha.getFiDescripcion(), null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
 
 		JPanel pnlCA = new JPanel();
@@ -318,353 +236,420 @@ public class HsTemplate extends JFrame {
 		pnlPestaña1.add(pnlCA);
 		pnlCA.setLayout(null);
 
-		JLabel lblComponenteArq = new JLabel("COMPONENTE ARQUITECT\u00D3NICO");
+		JLabel lblComponenteArq = new JLabel("COMPONENTE ARQUITECTÓNICO");
 		lblComponenteArq.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblComponenteArq.setBounds(3, 1, 176, 14);
+		lblComponenteArq.setBounds(5, 1, 176, 14);
 		pnlCA.add(lblComponenteArq);
 
-		lblCACantidad = new JLabel("Cantidad");
+		JLabel lblCACantidad = new JLabel("Cantidad");
 		lblCACantidad.setBounds(210, 1, 55, 14);
 		pnlCA.add(lblCACantidad);
 
-		lblCAObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		JLabel lblCAObsRef = new JLabel("Observaci\u00F3n/Referencia");
 		lblCAObsRef.setBounds(267, 1, 143, 14);
 		pnlCA.add(lblCAObsRef);
 
-		panel_3 = new JPanel();
-		panel_3.setBounds(210, 17, 56, 442);
-		pnlCA.add(panel_3);
-		panel_3.setLayout(null);
-
-		JPanel pnlTECantidad = new JPanel();
-		pnlTECantidad.setBounds(0, 0, 55, 206);
-		panel_3.add(pnlTECantidad);
-		pnlTECantidad.setLayout(new GridLayout(10, 2, 0, 0));
-
-		txtCACantidad00 = new JTextField();
-		pnlTECantidad.add(txtCACantidad00);
-		txtCACantidad00.setColumns(10);
-
-		txtCACantidad01 = new JTextField();
-		txtCACantidad01.setColumns(10);
-		pnlTECantidad.add(txtCACantidad01);
-
-		txtCACantidad10 = new JTextField();
-		txtCACantidad10.setColumns(10);
-		pnlTECantidad.add(txtCACantidad10);
-
-		txtCACantidad11 = new JTextField();
-		txtCACantidad11.setColumns(10);
-		pnlTECantidad.add(txtCACantidad11);
-
-		txtCACantidad20 = new JTextField();
-		txtCACantidad20.setColumns(10);
-		pnlTECantidad.add(txtCACantidad20);
-
-		txtCACantidad21 = new JTextField();
-		txtCACantidad21.setColumns(10);
-		pnlTECantidad.add(txtCACantidad21);
-
-		txtCACantidad30 = new JTextField();
-		txtCACantidad30.setColumns(10);
-		pnlTECantidad.add(txtCACantidad30);
-
-		txtCACantidad31 = new JTextField();
-		txtCACantidad31.setColumns(10);
-		pnlTECantidad.add(txtCACantidad31);
-
-		txtCACantidad40 = new JTextField();
-		txtCACantidad40.setColumns(10);
-		pnlTECantidad.add(txtCACantidad40);
-
-		txtCACantidad41 = new JTextField();
-		txtCACantidad41.setColumns(10);
-		pnlTECantidad.add(txtCACantidad41);
-
-		txtCACantidad50 = new JTextField();
-		txtCACantidad50.setColumns(10);
-		pnlTECantidad.add(txtCACantidad50);
-
-		txtCACantidad51 = new JTextField();
-		txtCACantidad51.setColumns(10);
-		pnlTECantidad.add(txtCACantidad51);
-
-		txtCACantidad60 = new JTextField();
-		txtCACantidad60.setColumns(10);
-		pnlTECantidad.add(txtCACantidad60);
-
-		txtCACantidad61 = new JTextField();
-		txtCACantidad61.setColumns(10);
-		pnlTECantidad.add(txtCACantidad61);
-
-		txtCACantidad70 = new JTextField();
-		txtCACantidad70.setColumns(10);
-		pnlTECantidad.add(txtCACantidad70);
-
-		txtCACantidad71 = new JTextField();
-		txtCACantidad71.setColumns(10);
-		pnlTECantidad.add(txtCACantidad71);
-
-		txtCACantidad80 = new JTextField();
-		txtCACantidad80.setColumns(10);
-		pnlTECantidad.add(txtCACantidad80);
-
-		txtCACantidad81 = new JTextField();
-		txtCACantidad81.setColumns(10);
-		pnlTECantidad.add(txtCACantidad81);
-
-		txtCACantidad90 = new JTextField();
-		txtCACantidad90.setColumns(10);
-		pnlTECantidad.add(txtCACantidad90);
-
-		txtCACantidad91 = new JTextField();
-		txtCACantidad91.setColumns(10);
-		pnlTECantidad.add(txtCACantidad91);
-
-		panel_2 = new JPanel();
-		panel_2.setBounds(0, 217, 55, 205);
-		panel_3.add(panel_2);
-		panel_2.setLayout(new GridLayout(4, 2, 0, 41));
-
-		txtCACantidad100 = new JTextField();
-		txtCACantidad100.setColumns(10);
-		panel_2.add(txtCACantidad100);
-
-		txtCACantidad101 = new JTextField();
-		txtCACantidad101.setColumns(10);
-		panel_2.add(txtCACantidad101);
-
-		txtCACantidad110 = new JTextField();
-		txtCACantidad110.setColumns(10);
-		panel_2.add(txtCACantidad110);
-
-		txtCACantidad111 = new JTextField();
-		txtCACantidad111.setColumns(10);
-		panel_2.add(txtCACantidad111);
-
-		txtCACantidad120 = new JTextField();
-		txtCACantidad120.setColumns(10);
-		panel_2.add(txtCACantidad120);
-
-		txtCACantidad121 = new JTextField();
-		txtCACantidad121.setColumns(10);
-		panel_2.add(txtCACantidad121);
-
-		txtCACantidad130 = new JTextField();
-		txtCACantidad130.setColumns(10);
-		panel_2.add(txtCACantidad130);
-
-		txtCACantidad131 = new JTextField();
-		txtCACantidad131.setColumns(10);
-		panel_2.add(txtCACantidad131);
-
-		panel_4 = new JPanel();
-		panel_4.setBounds(267, 17, 143, 442);
-		pnlCA.add(panel_4);
-		panel_4.setLayout(null);
-
-		JPanel pnlTEObsRef = new JPanel();
-		pnlTEObsRef.setBounds(0, 0, 143, 206);
-		panel_4.add(pnlTEObsRef);
-		pnlTEObsRef.setLayout(new GridLayout(10, 0, 0, 0));
-
-		txtCAObsRef0 = new JTextField();
-		pnlTEObsRef.add(txtCAObsRef0);
-		txtCAObsRef0.setColumns(10);
-
-		txtCAObsRef1 = new JTextField();
-		pnlTEObsRef.add(txtCAObsRef1);
-		txtCAObsRef1.setColumns(10);
-
-		txtCAObsRef2 = new JTextField();
-		txtCAObsRef2.setColumns(10);
-		pnlTEObsRef.add(txtCAObsRef2);
-
-		txtCAObsRef3 = new JTextField();
-		txtCAObsRef3.setColumns(10);
-		pnlTEObsRef.add(txtCAObsRef3);
-
-		txtCAObsRef4 = new JTextField();
-		txtCAObsRef4.setColumns(10);
-		pnlTEObsRef.add(txtCAObsRef4);
-
-		txtCAObsRef5 = new JTextField();
-		txtCAObsRef5.setColumns(10);
-		pnlTEObsRef.add(txtCAObsRef5);
-
-		txtCAObsRef6 = new JTextField();
-		txtCAObsRef6.setColumns(10);
-		pnlTEObsRef.add(txtCAObsRef6);
-
-		txtCAObsRef7 = new JTextField();
-		txtCAObsRef7.setColumns(10);
-		pnlTEObsRef.add(txtCAObsRef7);
-
-		txtCAObsRef8 = new JTextField();
-		txtCAObsRef8.setColumns(10);
-		pnlTEObsRef.add(txtCAObsRef8);
-
-		txtCAObsRef9 = new JTextField();
-		txtCAObsRef9.setColumns(10);
-		pnlTEObsRef.add(txtCAObsRef9);
-
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(0, 217, 143, 205);
-		panel_4.add(panel_1);
-		panel_1.setLayout(new GridLayout(4, 0, 0, 41));
-
-		txtCAObsRef10 = new JTextField();
-		txtCAObsRef10.setColumns(10);
-		panel_1.add(txtCAObsRef10);
-
-		txtCAObsRef11 = new JTextField();
-		txtCAObsRef11.setColumns(10);
-		panel_1.add(txtCAObsRef11);
-
-		txtCAObsRef12 = new JTextField();
-		txtCAObsRef12.setColumns(10);
-		panel_1.add(txtCAObsRef12);
-
-		txtCAObsRef13 = new JTextField();
-		txtCAObsRef13.setColumns(10);
-		panel_1.add(txtCAObsRef13);
-
-		panel_5 = new JPanel();
-		panel_5.setBounds(3, 17, 199, 442);
-		pnlCA.add(panel_5);
-		panel_5.setLayout(null);
-
-		JPanel pnlTEEtiquetas = new JPanel();
-		pnlTEEtiquetas.setBounds(0, 0, 199, 206);
-		panel_5.add(pnlTEEtiquetas);
-		pnlTEEtiquetas.setLayout(new GridLayout(10, 0, 0, 0));
-
-		JLabel lblCanalAguasLH = new JLabel("Canal de Aguas de Lluvia de Hormig\u00F3n ");
-		lblCanalAguasLH.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEEtiquetas.add(lblCanalAguasLH);
-
-		JLabel lblCATuberiaPVC75_3 = new JLabel("Tuber\u00EDa de PVC  75mm y L=3m");
-		lblCATuberiaPVC75_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEEtiquetas.add(lblCATuberiaPVC75_3);
-
-		JLabel lblCATuberiaPVC110_3 = new JLabel("Tuber\u00EDa de PVC  110mm y L=3m");
-		lblCATuberiaPVC110_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEEtiquetas.add(lblCATuberiaPVC110_3);
-
-		JLabel lblCATuberiaPVC110_2_1 = new JLabel("Tuber\u00EDa de PVC  110mm y L=2.1m");
-		lblCATuberiaPVC110_2_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEEtiquetas.add(lblCATuberiaPVC110_2_1);
-
-		JLabel lblCATuberiaPVC200_3 = new JLabel("Tuber\u00EDa de PVC  200mm y L=3m");
-		lblCATuberiaPVC200_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEEtiquetas.add(lblCATuberiaPVC200_3);
-
-		JLabel lblCATuberiaPVC400_3 = new JLabel("Tuber\u00EDa de PVC  400mm y L=3m");
-		lblCATuberiaPVC400_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEEtiquetas.add(lblCATuberiaPVC400_3);
-
-		JLabel lblCATuberiaPVC400_1 = new JLabel("Tuber\u00EDa de PVC  400mm y L=1m");
-		lblCATuberiaPVC400_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEEtiquetas.add(lblCATuberiaPVC400_1);
-
-		JLabel lblCATrampasArenas = new JLabel("Trampas de Arenas");
-		lblCATrampasArenas.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEEtiquetas.add(lblCATrampasArenas);
-
-		JLabel lblElementosRevision60x60 = new JLabel("Elementos de revisi\u00F3n 60x60");
-		lblElementosRevision60x60.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEEtiquetas.add(lblElementosRevision60x60);
-
-		lblElementosRevision90x90 = new JLabel("Elementos de revisi\u00F3n 90x90");
-		lblElementosRevision90x90.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEEtiquetas.add(lblElementosRevision90x90);
-
-		panel = new JPanel();
-		panel.setBounds(0, 205, 199, 235);
-		panel_5.add(panel);
-		panel.setLayout(new GridLayout(4, 1, 0, 0));
-
-		lblCAKitConexionTuberia200 = new JLabel("<html><body>Kit para conexiñn de tuberña 200 mm. "
-				+ "(lija  un pliego, polipega 1/4 gal, 1/4 gl suelda lñquida, 2 "
-				+ "uniones, cama de arena, anclajes)</body></html>");
-		lblCAKitConexionTuberia200.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel.add(lblCAKitConexionTuberia200);
-
-		lblCAKitConexionTuberia74 = new JLabel("<html><body>Kit para conexiñn de tuberña 75 mm. (lija "
-				+ "pliego, polipega 1/2gal,1/2 gl suelda lñquida, 20 uniones,18codo 90ñ,8codo45ñ)</body></html>");
-		lblCAKitConexionTuberia74.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel.add(lblCAKitConexionTuberia74);
-
-		lblCAKitConexionTuberia110 = new JLabel("<html><body>Kit para conexi\u00F3n de tuber\u00EDa 110 mm. "
-				+ "(lija pliego, polipega 1/2gal, 1/4 gl suelda l\u00EDquida , 2 uniones,2codo 90\u00B0,2codo 45\u00B0)</body></html>");
-		lblCAKitConexionTuberia110.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel.add(lblCAKitConexionTuberia110);
-
-		lblCAKitConexionTuberia400 = new JLabel(
-				"<html><body>Kit para conexi\u00F3n de tuber\u00EDa 400 mm. (lija pliego, "
-						+ "polipega 1/2gal, 1/4 gl suelda l\u00EDquida, cama de arena, anclajes )</body></html>");
-		lblCAKitConexionTuberia400.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel.add(lblCAKitConexionTuberia400);
-
-		pnlKAR1 = new JPanel();
+		JPanel pnlCA10lbls = new JPanel();
+		pnlCA10lbls.setBounds(5, 20, 200, 200);
+		pnlCA.add(pnlCA10lbls);
+		pnlCA10lbls.setLayout(new GridLayout(10, 1, 0, 0));
+
+		JLabel label_17 = new JLabel("Canal de Aguas de Lluvia de Hormigón ");
+		label_17.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_17.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA10lbls.add(label_17);
+
+		JLabel label_18 = new JLabel("Tubería de PVC  75mm y L=3m");
+		label_18.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_18.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA10lbls.add(label_18);
+
+		JLabel label_19 = new JLabel("Tubería de PVC  110mm y L=3m");
+		label_19.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_19.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA10lbls.add(label_19);
+
+		JLabel label_20 = new JLabel("Tubería de PVC  110mm y L=2.1m");
+		label_20.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_20.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA10lbls.add(label_20);
+
+		JLabel label_21 = new JLabel("Tubería de PVC  200mm y L=3m");
+		label_21.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_21.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA10lbls.add(label_21);
+
+		JLabel label_22 = new JLabel("Tubería de PVC  400mm y L=3m");
+		label_22.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_22.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA10lbls.add(label_22);
+
+		JLabel label_23 = new JLabel("Tubería de PVC  400mm y L=1m");
+		label_23.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_23.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA10lbls.add(label_23);
+
+		JLabel label_24 = new JLabel("Trampas de Arenas");
+		label_24.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_24.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA10lbls.add(label_24);
+
+		JLabel label_25 = new JLabel("Elementos de revisión 60x60");
+		label_25.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_25.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA10lbls.add(label_25);
+
+		JLabel label_26 = new JLabel("Elementos de revisión 90x90");
+		label_26.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_26.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA10lbls.add(label_26);
+
+		JPanel pnlCA11lbls = new JPanel();
+		pnlCA11lbls.setBounds(5, 222, 199, 65);
+		pnlCA.add(pnlCA11lbls);
+		pnlCA11lbls.setLayout(new GridLayout(1, 1, 0, 0));
+
+		JLabel lblKitParaConexin = new JLabel(
+				"<html><body><p align=\"right\"> Kit para conexiñn de tuberña 200 mm. (lija  un pliego, polipega 1/4 gal, 1/4 gl suelda lñquida, 2 uniones, cama de arena, anclajes)</p></body></html>");
+		lblKitParaConexin.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblKitParaConexin.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA11lbls.add(lblKitParaConexin);
+
+		JPanel pnlCA12lbls = new JPanel();
+		pnlCA12lbls.setBounds(6, 290, 199, 65);
+		pnlCA.add(pnlCA12lbls);
+		pnlCA12lbls.setLayout(new GridLayout(1, 1, 0, 0));
+
+		JLabel lblkitParaConexin = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexiñn de tuberña 75 mm. (lija pliego, polipega 1/2gal,1/2 gl suelda lñquida, 20 uniones,18codo 90ñ,8codo45ñ)</p></body></html>");
+		lblkitParaConexin.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA12lbls.add(lblkitParaConexin);
+
+		JPanel pnlCA13lbls = new JPanel();
+		pnlCA13lbls.setBounds(5, 358, 199, 50);
+		pnlCA.add(pnlCA13lbls);
+		pnlCA13lbls.setLayout(new GridLayout(1, 1, 0, 0));
+
+		JLabel lblkitParaConexin_1 = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexión de tubería 110 mm. (lija pliego, polipega 1/2gal, 1/4 gl suelda líquida , 2 uniones,2codo 90°,2codo 45°)</p></body></html>");
+		lblkitParaConexin_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA13lbls.add(lblkitParaConexin_1);
+
+		JPanel pnlCA14lbls = new JPanel();
+		pnlCA14lbls.setBounds(5, 410, 199, 50);
+		pnlCA.add(pnlCA14lbls);
+		pnlCA14lbls.setLayout(new GridLayout(1, 1, 0, 0));
+
+		JLabel lblkitParaConexin_2 = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexión de tubería 400 mm. (lija pliego, polipega 1/2gal, 1/4 gl suelda líquida, cama de arena, anclajes )</p></body></html>");
+		lblkitParaConexin_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlCA14lbls.add(lblkitParaConexin_2);
+
+		JPanel pnlCantidad10CA = new JPanel();
+		pnlCantidad10CA.setBounds(210, 20, 55, 200);
+		pnlCA.add(pnlCantidad10CA);
+		pnlCantidad10CA.setLayout(new GridLayout(10, 2, 0, 0));
+
+		txtCA00 = new JTextField();
+		txtCA00.setEditable(false);
+		txtCA00.setColumns(10);
+		pnlCantidad10CA.add(txtCA00);
+
+		txtCA01 = new JTextField();
+		txtCA01.setColumns(10);
+		pnlCantidad10CA.add(txtCA01);
+
+		txtCA10 = new JTextField();
+		txtCA10.setEditable(false);
+		txtCA10.setColumns(10);
+		pnlCantidad10CA.add(txtCA10);
+
+		txtCA11 = new JTextField();
+		txtCA11.setColumns(10);
+		pnlCantidad10CA.add(txtCA11);
+
+		txtCA20 = new JTextField();
+		txtCA20.setEditable(false);
+		txtCA20.setColumns(10);
+		pnlCantidad10CA.add(txtCA20);
+
+		txtCA21 = new JTextField();
+		txtCA21.setColumns(10);
+		pnlCantidad10CA.add(txtCA21);
+
+		txtCA30 = new JTextField();
+		txtCA30.setEditable(false);
+		txtCA30.setColumns(10);
+		pnlCantidad10CA.add(txtCA30);
+
+		txtCA31 = new JTextField();
+		txtCA31.setColumns(10);
+		pnlCantidad10CA.add(txtCA31);
+
+		txtCA40 = new JTextField();
+		txtCA40.setEditable(false);
+		txtCA40.setColumns(10);
+		pnlCantidad10CA.add(txtCA40);
+
+		txtCA41 = new JTextField();
+		txtCA41.setColumns(10);
+		pnlCantidad10CA.add(txtCA41);
+
+		txtCA50 = new JTextField();
+		txtCA50.setEditable(false);
+		txtCA50.setColumns(10);
+		pnlCantidad10CA.add(txtCA50);
+
+		txtCA51 = new JTextField();
+		txtCA51.setColumns(10);
+		pnlCantidad10CA.add(txtCA51);
+
+		txtCA60 = new JTextField();
+		txtCA60.setEditable(false);
+		txtCA60.setColumns(10);
+		pnlCantidad10CA.add(txtCA60);
+
+		txtCA61 = new JTextField();
+		txtCA61.setColumns(10);
+		pnlCantidad10CA.add(txtCA61);
+
+		txtCA70 = new JTextField();
+		txtCA70.setEditable(false);
+		txtCA70.setColumns(10);
+		pnlCantidad10CA.add(txtCA70);
+
+		txtCA71 = new JTextField();
+		txtCA71.setColumns(10);
+		pnlCantidad10CA.add(txtCA71);
+
+		txtCA80 = new JTextField();
+		txtCA80.setEditable(false);
+		txtCA80.setColumns(10);
+		pnlCantidad10CA.add(txtCA80);
+
+		txtCA81 = new JTextField();
+		txtCA81.setColumns(10);
+		pnlCantidad10CA.add(txtCA81);
+
+		txtCA90 = new JTextField();
+		txtCA90.setEditable(false);
+		txtCA90.setColumns(10);
+		pnlCantidad10CA.add(txtCA90);
+
+		txtCA91 = new JTextField();
+		txtCA91.setColumns(10);
+		pnlCantidad10CA.add(txtCA91);
+
+		JPanel pnlCantidad11CA = new JPanel();
+		pnlCantidad11CA.setBounds(210, 247, 55, 20);
+		pnlCA.add(pnlCantidad11CA);
+		pnlCantidad11CA.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtCA100 = new JTextField();
+		txtCA100.setEditable(false);
+		txtCA100.setColumns(10);
+		pnlCantidad11CA.add(txtCA100);
+
+		txtCA101 = new JTextField();
+		txtCA101.setColumns(10);
+		pnlCantidad11CA.add(txtCA101);
+
+		JPanel pnlCantidad12CA = new JPanel();
+		pnlCantidad12CA.setBounds(210, 308, 55, 20);
+		pnlCA.add(pnlCantidad12CA);
+		pnlCantidad12CA.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtCA110 = new JTextField();
+		txtCA110.setEditable(false);
+		txtCA110.setColumns(10);
+		pnlCantidad12CA.add(txtCA110);
+
+		txtCA111 = new JTextField();
+		txtCA111.setColumns(10);
+		pnlCantidad12CA.add(txtCA111);
+
+		JPanel pnlCantidad13CA = new JPanel();
+		pnlCantidad13CA.setBounds(210, 371, 55, 20);
+		pnlCA.add(pnlCantidad13CA);
+		pnlCantidad13CA.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtCA120 = new JTextField();
+		txtCA120.setEditable(false);
+		txtCA120.setColumns(10);
+		pnlCantidad13CA.add(txtCA120);
+
+		txtCA121 = new JTextField();
+		txtCA121.setColumns(10);
+		pnlCantidad13CA.add(txtCA121);
+
+		JPanel pnlCantidad14CA = new JPanel();
+		pnlCantidad14CA.setBounds(210, 419, 55, 20);
+		pnlCA.add(pnlCantidad14CA);
+		pnlCantidad14CA.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtCA130 = new JTextField();
+		txtCA130.setEditable(false);
+		txtCA130.setColumns(10);
+		pnlCantidad14CA.add(txtCA130);
+
+		txtCA131 = new JTextField();
+		txtCA131.setColumns(10);
+		pnlCantidad14CA.add(txtCA131);
+
+		JPanel pnlOR10CA = new JPanel();
+		pnlOR10CA.setBounds(267, 20, 143, 200);
+		pnlCA.add(pnlOR10CA);
+		pnlOR10CA.setLayout(new GridLayout(10, 0, 0, 0));
+
+		txtOR0 = new JTextField();
+		txtOR0.setColumns(10);
+		pnlOR10CA.add(txtOR0);
+
+		txtOR1 = new JTextField();
+		txtOR1.setColumns(10);
+		pnlOR10CA.add(txtOR1);
+
+		txtOR2 = new JTextField();
+		txtOR2.setColumns(10);
+		pnlOR10CA.add(txtOR2);
+
+		txtOR3 = new JTextField();
+		txtOR3.setColumns(10);
+		pnlOR10CA.add(txtOR3);
+
+		txtOR4 = new JTextField();
+		txtOR4.setColumns(10);
+		pnlOR10CA.add(txtOR4);
+
+		txtOR5 = new JTextField();
+		txtOR5.setColumns(10);
+		pnlOR10CA.add(txtOR5);
+
+		txtOR6 = new JTextField();
+		txtOR6.setColumns(10);
+		pnlOR10CA.add(txtOR6);
+
+		txtOR7 = new JTextField();
+		txtOR7.setColumns(10);
+		pnlOR10CA.add(txtOR7);
+
+		txtOR8 = new JTextField();
+		txtOR8.setColumns(10);
+		pnlOR10CA.add(txtOR8);
+
+		txtOR9 = new JTextField();
+		txtOR9.setColumns(10);
+		pnlOR10CA.add(txtOR9);
+
+		JPanel pnlOR11CA = new JPanel();
+		pnlOR11CA.setBounds(267, 247, 143, 20);
+		pnlCA.add(pnlOR11CA);
+		pnlOR11CA.setLayout(new GridLayout(0, 1, 0, 0));
+
+		txtOR10 = new JTextField();
+		txtOR10.setColumns(10);
+		pnlOR11CA.add(txtOR10);
+
+		JPanel pnlOR12CA = new JPanel();
+		pnlOR12CA.setBounds(267, 308, 143, 20);
+		pnlCA.add(pnlOR12CA);
+		pnlOR12CA.setLayout(new GridLayout(0, 1, 0, 0));
+
+		txtOR11 = new JTextField();
+		txtOR11.setColumns(10);
+		pnlOR12CA.add(txtOR11);
+
+		JPanel pnlOR13CA = new JPanel();
+		pnlOR13CA.setBounds(267, 371, 143, 20);
+		pnlCA.add(pnlOR13CA);
+		pnlOR13CA.setLayout(new GridLayout(0, 1, 0, 0));
+
+		txtOR12 = new JTextField();
+		txtOR12.setColumns(10);
+		pnlOR13CA.add(txtOR12);
+
+		JPanel pnlOR14CA = new JPanel();
+		pnlOR14CA.setBounds(267, 419, 143, 20);
+		pnlCA.add(pnlOR14CA);
+		pnlOR14CA.setLayout(new GridLayout(0, 1, 0, 0));
+
+		txtOR13 = new JTextField();
+		txtOR13.setColumns(10);
+		pnlOR14CA.add(txtOR13);
+
+		JPanel pnlKAR1 = new JPanel();
 		pnlKAR1.setLayout(null);
 		pnlKAR1.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlKAR1.setBounds(10, 469, 414, 85);
 		pnlPestaña1.add(pnlKAR1);
 
-		pnlEDEtiquetas = new JPanel();
-		pnlEDEtiquetas.setBounds(3, 17, 199, 67);
-		pnlKAR1.add(pnlEDEtiquetas);
-		pnlEDEtiquetas.setLayout(new GridLayout(3, 0, 0, 0));
-
-		lblKAR1TuberiaPVC75_3 = new JLabel("Tuber\u00EDa de PVC  75mm PVC y L=3m");
-		lblKAR1TuberiaPVC75_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlEDEtiquetas.add(lblKAR1TuberiaPVC75_3);
-
-		lblKAR1TuberiaPVC75_2 = new JLabel("Tuber\u00EDa de PVC  75mm PVC y L=2m");
-		lblKAR1TuberiaPVC75_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlEDEtiquetas.add(lblKAR1TuberiaPVC75_2);
-
-		lblKAR1TuberiaPVC110_3 = new JLabel("Tuber\u00EDa de PVC  110mm PVC y L=3m");
-		lblKAR1TuberiaPVC110_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlEDEtiquetas.add(lblKAR1TuberiaPVC110_3);
-
-		lblKitAguaRes1 = new JLabel("KIT AGUA RESIDUAL");
+		JLabel lblKitAguaRes1 = new JLabel("KIT AGUA RESIDUAL");
 		lblKitAguaRes1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblKitAguaRes1.setBounds(3, 1, 211, 14);
 		pnlKAR1.add(lblKitAguaRes1);
 
-		pnlEDCantidad = new JPanel();
-		pnlEDCantidad.setBounds(210, 17, 55, 67);
+		JLabel lblKAR1Cantidad = new JLabel("Cantidad");
+		lblKAR1Cantidad.setBounds(210, 1, 55, 14);
+		pnlKAR1.add(lblKAR1Cantidad);
+
+		JLabel lblKAR1ObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		lblKAR1ObsRef.setBounds(267, 1, 143, 14);
+		pnlKAR1.add(lblKAR1ObsRef);
+
+		JPanel pnlEDEtiquetas = new JPanel();
+		pnlEDEtiquetas.setBounds(3, 17, 199, 60);
+		pnlKAR1.add(pnlEDEtiquetas);
+		pnlEDEtiquetas.setLayout(new GridLayout(3, 0, 0, 0));
+
+		JLabel lblKAR1TuberiaPVC75_3 = new JLabel("Tuber\u00EDa de PVC  75mm PVC y L=3m");
+		lblKAR1TuberiaPVC75_3.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblKAR1TuberiaPVC75_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlEDEtiquetas.add(lblKAR1TuberiaPVC75_3);
+
+		JLabel lblKAR1TuberiaPVC75_2 = new JLabel("Tuber\u00EDa de PVC  75mm PVC y L=2m");
+		lblKAR1TuberiaPVC75_2.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblKAR1TuberiaPVC75_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlEDEtiquetas.add(lblKAR1TuberiaPVC75_2);
+
+		JLabel lblKAR1TuberiaPVC110_3 = new JLabel("Tuber\u00EDa de PVC  110mm PVC y L=3m");
+		lblKAR1TuberiaPVC110_3.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblKAR1TuberiaPVC110_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		pnlEDEtiquetas.add(lblKAR1TuberiaPVC110_3);
+
+		JPanel pnlEDCantidad = new JPanel();
+		pnlEDCantidad.setBounds(210, 17, 55, 60);
 		pnlKAR1.add(pnlEDCantidad);
 		pnlEDCantidad.setLayout(new GridLayout(3, 2, 0, 0));
 
-		txtKAR1Cantidad00 = new JTextField();
-		txtKAR1Cantidad00.setColumns(10);
-		pnlEDCantidad.add(txtKAR1Cantidad00);
+		txtKARCantLim00 = new JTextField();
+		txtKARCantLim00.setEditable(false);
+		txtKARCantLim00.setColumns(10);
+		pnlEDCantidad.add(txtKARCantLim00);
 
-		txtKAR1Cantidad01 = new JTextField();
-		txtKAR1Cantidad01.setColumns(10);
-		pnlEDCantidad.add(txtKAR1Cantidad01);
+		txtKARCantLim01 = new JTextField();
+		txtKARCantLim01.setColumns(10);
+		pnlEDCantidad.add(txtKARCantLim01);
 
-		txtKAR1Cantidad10 = new JTextField();
-		txtKAR1Cantidad10.setColumns(10);
-		pnlEDCantidad.add(txtKAR1Cantidad10);
+		txtKARCantLim10 = new JTextField();
+		txtKARCantLim10.setEditable(false);
+		txtKARCantLim10.setColumns(10);
+		pnlEDCantidad.add(txtKARCantLim10);
 
-		txtKAR1Cantidad11 = new JTextField();
-		txtKAR1Cantidad11.setColumns(10);
-		pnlEDCantidad.add(txtKAR1Cantidad11);
+		txtKARCantLim11 = new JTextField();
+		txtKARCantLim11.setColumns(10);
+		pnlEDCantidad.add(txtKARCantLim11);
 
-		txtKAR1Cantidad20 = new JTextField();
-		txtKAR1Cantidad20.setColumns(10);
-		pnlEDCantidad.add(txtKAR1Cantidad20);
+		txtKARCantLim20 = new JTextField();
+		txtKARCantLim20.setEditable(false);
+		txtKARCantLim20.setColumns(10);
+		pnlEDCantidad.add(txtKARCantLim20);
 
-		txtKAR1Cantidad21 = new JTextField();
-		txtKAR1Cantidad21.setColumns(10);
-		pnlEDCantidad.add(txtKAR1Cantidad21);
+		txtKARCantLim21 = new JTextField();
+		txtKARCantLim21.setColumns(10);
+		pnlEDCantidad.add(txtKARCantLim21);
 
-		pnlEDObsRef = new JPanel();
-		pnlEDObsRef.setBounds(267, 17, 143, 67);
+		JPanel pnlEDObsRef = new JPanel();
+		pnlEDObsRef.setBounds(267, 17, 143, 60);
 		pnlKAR1.add(pnlEDObsRef);
 		pnlEDObsRef.setLayout(new GridLayout(3, 0, 0, 0));
 
@@ -680,693 +665,691 @@ public class HsTemplate extends JFrame {
 		txtKAR1ObsRef2.setColumns(10);
 		pnlEDObsRef.add(txtKAR1ObsRef2);
 
-		lblKAR1Cantidad = new JLabel("Cantidad");
-		lblKAR1Cantidad.setBounds(210, 1, 55, 14);
-		pnlKAR1.add(lblKAR1Cantidad);
-
-		lblKAR1ObsRef = new JLabel("Observaci\u00F3n/Referencia");
-		lblKAR1ObsRef.setBounds(267, 1, 143, 14);
-		pnlKAR1.add(lblKAR1ObsRef);
-
-		pnlKAR2 = new JPanel();
+		JPanel pnlKAR2 = new JPanel();
 		pnlKAR2.setLayout(null);
 		pnlKAR2.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlKAR2.setBounds(434, 4, 414, 413);
+		pnlKAR2.setBounds(434, 4, 414, 412);
 		pnlPestaña1.add(pnlKAR2);
 
-		lblKitAguaRes2 = new JLabel("KIT AGUA RESIDUAL");
+		JLabel lblKitAguaRes2 = new JLabel("KIT AGUA RESIDUAL");
 		lblKitAguaRes2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblKitAguaRes2.setBounds(3, 1, 176, 14);
 		pnlKAR2.add(lblKitAguaRes2);
 
-		lblKAR2Cantidad = new JLabel("Cantidad");
+		JLabel lblKAR2Cantidad = new JLabel("Cantidad");
 		lblKAR2Cantidad.setBounds(210, 1, 55, 14);
 		pnlKAR2.add(lblKAR2Cantidad);
 
-		lblKAR2ObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		JLabel lblKAR2ObsRef = new JLabel("Observaci\u00F3n/Referencia");
 		lblKAR2ObsRef.setBounds(267, 1, 143, 14);
 		pnlKAR2.add(lblKAR2ObsRef);
 
-		panel_11 = new JPanel();
+		JPanel panel_11 = new JPanel();
 		panel_11.setLayout(null);
-		panel_11.setBounds(210, 17, 56, 395);
+		panel_11.setBounds(210, 17, 56, 100);
 		pnlKAR2.add(panel_11);
 
-		panel_12 = new JPanel();
-		panel_12.setBounds(0, 0, 55, 176);
+		JPanel panel_12 = new JPanel();
+		panel_12.setBounds(0, 0, 55, 100);
 		panel_11.add(panel_12);
-		panel_12.setLayout(new GridLayout(7, 2, 0, 2));
+		panel_12.setLayout(new GridLayout(0, 2, 0, 0));
 
-		txtKAR2Cantidad00 = new JTextField();
-		txtKAR2Cantidad00.setColumns(10);
-		panel_12.add(txtKAR2Cantidad00);
+		txtKARCantLim30 = new JTextField();
+		txtKARCantLim30.setEditable(false);
+		txtKARCantLim30.setColumns(10);
+		panel_12.add(txtKARCantLim30);
 
-		txtKAR2Cantidad01 = new JTextField();
-		txtKAR2Cantidad01.setColumns(10);
-		panel_12.add(txtKAR2Cantidad01);
+		txtKARCantLim31 = new JTextField();
+		txtKARCantLim31.setColumns(10);
+		panel_12.add(txtKARCantLim31);
 
-		txtKAR2Cantidad10 = new JTextField();
-		txtKAR2Cantidad10.setColumns(10);
-		panel_12.add(txtKAR2Cantidad10);
+		txtKARCantLim40 = new JTextField();
+		txtKARCantLim40.setEditable(false);
+		txtKARCantLim40.setColumns(10);
+		panel_12.add(txtKARCantLim40);
 
-		txtKAR2Cantidad11 = new JTextField();
-		txtKAR2Cantidad11.setColumns(10);
-		panel_12.add(txtKAR2Cantidad11);
+		txtKARCantLim41 = new JTextField();
+		txtKARCantLim41.setColumns(10);
+		panel_12.add(txtKARCantLim41);
 
-		txtKAR2Cantidad20 = new JTextField();
-		txtKAR2Cantidad20.setColumns(10);
-		panel_12.add(txtKAR2Cantidad20);
+		txtKARCantLim50 = new JTextField();
+		txtKARCantLim50.setEditable(false);
+		txtKARCantLim50.setColumns(10);
+		panel_12.add(txtKARCantLim50);
 
-		txtKAR2Cantidad21 = new JTextField();
-		txtKAR2Cantidad21.setColumns(10);
-		panel_12.add(txtKAR2Cantidad21);
+		txtKARCantLim51 = new JTextField();
+		txtKARCantLim51.setColumns(10);
+		panel_12.add(txtKARCantLim51);
 
-		txtKAR2Cantidad30 = new JTextField();
-		txtKAR2Cantidad30.setColumns(10);
-		panel_12.add(txtKAR2Cantidad30);
+		txtKARCantLim60 = new JTextField();
+		txtKARCantLim60.setEditable(false);
+		txtKARCantLim60.setColumns(10);
+		panel_12.add(txtKARCantLim60);
 
-		txtKAR2Cantidad31 = new JTextField();
-		txtKAR2Cantidad31.setColumns(10);
-		panel_12.add(txtKAR2Cantidad31);
+		txtKARCantLim61 = new JTextField();
+		txtKARCantLim61.setColumns(10);
+		panel_12.add(txtKARCantLim61);
 
-		txtKAR2Cantidad40 = new JTextField();
-		txtKAR2Cantidad40.setColumns(10);
-		panel_12.add(txtKAR2Cantidad40);
+		txtKARCantLim70 = new JTextField();
+		txtKARCantLim70.setEditable(false);
+		txtKARCantLim70.setColumns(10);
+		panel_12.add(txtKARCantLim70);
 
-		txtKAR2Cantidad41 = new JTextField();
-		txtKAR2Cantidad41.setColumns(10);
-		panel_12.add(txtKAR2Cantidad41);
+		txtKARCantLim71 = new JTextField();
+		txtKARCantLim71.setColumns(10);
+		panel_12.add(txtKARCantLim71);
 
-		txtKAR2Cantidad50 = new JTextField();
-		txtKAR2Cantidad50.setColumns(10);
-		panel_12.add(txtKAR2Cantidad50);
-
-		txtKAR2Cantidad51 = new JTextField();
-		txtKAR2Cantidad51.setColumns(10);
-		panel_12.add(txtKAR2Cantidad51);
-
-		txtKAR2Cantidad60 = new JTextField();
-		txtKAR2Cantidad60.setColumns(10);
-		panel_12.add(txtKAR2Cantidad60);
-
-		txtKAR2Cantidad61 = new JTextField();
-		txtKAR2Cantidad61.setColumns(10);
-		panel_12.add(txtKAR2Cantidad61);
-
-		panel_13 = new JPanel();
-		panel_13.setBounds(0, 184, 55, 191);
-		panel_11.add(panel_13);
-		panel_13.setLayout(new GridLayout(4, 2, 0, 32));
-
-		txtKAR2Cantidad70 = new JTextField();
-		txtKAR2Cantidad70.setColumns(10);
-		panel_13.add(txtKAR2Cantidad70);
-
-		txtKAR2Cantidad71 = new JTextField();
-		txtKAR2Cantidad71.setColumns(10);
-		panel_13.add(txtKAR2Cantidad71);
-
-		txtKAR2Cantidad80 = new JTextField();
-		txtKAR2Cantidad80.setColumns(10);
-		panel_13.add(txtKAR2Cantidad80);
-
-		txtKAR2Cantidad81 = new JTextField();
-		txtKAR2Cantidad81.setColumns(10);
-		panel_13.add(txtKAR2Cantidad81);
-
-		txtKAR2Cantidad90 = new JTextField();
-		txtKAR2Cantidad90.setColumns(10);
-		panel_13.add(txtKAR2Cantidad90);
-
-		txtKAR2Cantidad91 = new JTextField();
-		txtKAR2Cantidad91.setColumns(10);
-		panel_13.add(txtKAR2Cantidad91);
-
-		txtKAR2Cantidad100 = new JTextField();
-		txtKAR2Cantidad100.setColumns(10);
-		panel_13.add(txtKAR2Cantidad100);
-
-		txtKAR2Cantidad101 = new JTextField();
-		txtKAR2Cantidad101.setColumns(10);
-		panel_13.add(txtKAR2Cantidad101);
-
-		panel_14 = new JPanel();
+		JPanel panel_14 = new JPanel();
 		panel_14.setLayout(null);
-		panel_14.setBounds(267, 17, 143, 395);
+		panel_14.setBounds(267, 17, 143, 100);
 		pnlKAR2.add(panel_14);
 
-		panel_15 = new JPanel();
-		panel_15.setBounds(0, 0, 143, 176);
+		JPanel panel_15 = new JPanel();
+		panel_15.setBounds(0, 0, 143, 100);
 		panel_14.add(panel_15);
-		panel_15.setLayout(new GridLayout(7, 0, 0, 2));
+		panel_15.setLayout(new GridLayout(5, 0, 0, 0));
 
-		txtKAR2ObsRef0 = new JTextField();
-		txtKAR2ObsRef0.setColumns(10);
-		panel_15.add(txtKAR2ObsRef0);
+		txtKAR1ObsRef3 = new JTextField();
+		txtKAR1ObsRef3.setColumns(10);
+		panel_15.add(txtKAR1ObsRef3);
 
-		txtKAR2ObsRef1 = new JTextField();
-		txtKAR2ObsRef1.setColumns(10);
-		panel_15.add(txtKAR2ObsRef1);
+		txtKAR1ObsRef4 = new JTextField();
+		txtKAR1ObsRef4.setColumns(10);
+		panel_15.add(txtKAR1ObsRef4);
 
-		txtKAR2ObsRef2 = new JTextField();
-		txtKAR2ObsRef2.setColumns(10);
-		panel_15.add(txtKAR2ObsRef2);
+		txtKAR1ObsRef5 = new JTextField();
+		txtKAR1ObsRef5.setColumns(10);
+		panel_15.add(txtKAR1ObsRef5);
 
-		txtKAR2ObsRef3 = new JTextField();
-		txtKAR2ObsRef3.setColumns(10);
-		panel_15.add(txtKAR2ObsRef3);
+		txtKAR1ObsRef6 = new JTextField();
+		txtKAR1ObsRef6.setColumns(10);
+		panel_15.add(txtKAR1ObsRef6);
 
-		txtKAR2ObsRef4 = new JTextField();
-		txtKAR2ObsRef4.setColumns(10);
-		panel_15.add(txtKAR2ObsRef4);
+		txtKAR1ObsRef7 = new JTextField();
+		txtKAR1ObsRef7.setColumns(10);
+		panel_15.add(txtKAR1ObsRef7);
 
-		txtKAR2ObsRef5 = new JTextField();
-		txtKAR2ObsRef5.setColumns(10);
-		panel_15.add(txtKAR2ObsRef5);
-
-		txtKAR2ObsRef6 = new JTextField();
-		txtKAR2ObsRef6.setColumns(10);
-		panel_15.add(txtKAR2ObsRef6);
-
-		panel_16 = new JPanel();
-		panel_16.setBounds(0, 184, 143, 191);
-		panel_14.add(panel_16);
-		panel_16.setLayout(new GridLayout(4, 0, 0, 32));
-
-		txtKAR2ObsRef7 = new JTextField();
-		txtKAR2ObsRef7.setColumns(10);
-		panel_16.add(txtKAR2ObsRef7);
-
-		txtKAR2ObsRef8 = new JTextField();
-		txtKAR2ObsRef8.setColumns(10);
-		panel_16.add(txtKAR2ObsRef8);
-
-		txtKAR2ObsRef9 = new JTextField();
-		txtKAR2ObsRef9.setColumns(10);
-		panel_16.add(txtKAR2ObsRef9);
-
-		txtKAR2ObsRef10 = new JTextField();
-		txtKAR2ObsRef10.setColumns(10);
-		panel_16.add(txtKAR2ObsRef10);
-
-		panel_17 = new JPanel();
-		panel_17.setLayout(null);
-		panel_17.setBounds(3, 17, 204, 395);
-		pnlKAR2.add(panel_17);
-
-		panel_18 = new JPanel();
-		panel_18.setBounds(0, 0, 204, 180);
-		panel_17.add(panel_18);
-		panel_18.setLayout(new GridLayout(7, 0, 0, 0));
-
-		lblKAR2TuberiaPVC110_2 = new JLabel("Tuber\u00EDa de PVC  110mm PVC y L=2m");
-		lblKAR2TuberiaPVC110_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_18.add(lblKAR2TuberiaPVC110_2);
-
-		lblKAR2TuberiaPVC160_3 = new JLabel("Tuber\u00EDa de PVC  160mm PVC y L=3m");
-		lblKAR2TuberiaPVC160_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_18.add(lblKAR2TuberiaPVC160_3);
-
-		lblKAR2TuberiaPVC160_2 = new JLabel("Tuber\u00EDa de PVC  160mm PVC y L=2m");
-		lblKAR2TuberiaPVC160_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_18.add(lblKAR2TuberiaPVC160_2);
-
-		lblKAR2TuberiaPVC200_3 = new JLabel("Tuber\u00EDa de PVC  200mm PVC y L=3m");
-		lblKAR2TuberiaPVC200_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_18.add(lblKAR2TuberiaPVC200_3);
-
-		lblKAR2TuberiaPVC200_2 = new JLabel("Tuber\u00EDa de PVC  200mm PVC y L=2m");
-		lblKAR2TuberiaPVC200_2.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_18.add(lblKAR2TuberiaPVC200_2);
-
-		lblCajaConexion60x60 = new JLabel(
-				"<html><body>Caja de Conexi\u00F3n 60x60( tapas con cerco met\u00E1lico)</body></html>");
-		lblCajaConexion60x60.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_18.add(lblCajaConexion60x60);
-
-		lblPozoInspeccion = new JLabel("<html><body>Pozo de Inspecci\u00F3n (tapas de hierro fundido)</body></html>");
-		lblPozoInspeccion.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_18.add(lblPozoInspeccion);
-
-		panel_19 = new JPanel();
-		panel_19.setBounds(0, 179, 204, 215);
-		panel_17.add(panel_19);
-		panel_19.setLayout(new GridLayout(4, 1, 0, 0));
-
-		lblKAR2KitConexion200 = new JLabel(
-				"<html><body>Kit para conexi\u00F3n de tuber\u00EDa 200 mm. (lija  un pliego, polipega 2 gal, 2 gl suelda l\u00EDquida, 15 uniones, cama de arena, anclajes)</body></html>");
-		lblKAR2KitConexion200.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_19.add(lblKAR2KitConexion200);
-
-		lblKAR2KitConexion75 = new JLabel(
-				"<html><body>Kit para conexi\u00F3n de tuber\u00EDa 75 mm. (lija pliego, polipega 1gal,1gl suelda l\u00EDquida, 6 uniones,4codo 90\u00B0,3codo45\u00B0,cama de arena, anclajes)</body></html>");
-		lblKAR2KitConexion75.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_19.add(lblKAR2KitConexion75);
-
-		lblKAR2KitConexion110 = new JLabel(
-				"<html><body>Kit para conexi\u00F3n de tuber\u00EDa 110 mm. (lija pliego, polipega 1gal, 1 gl suelda l\u00EDquida , 18 uniones,6codo 90\u00B0,5codo 45\u00B0,cama de arena, anclajes)</body></html>");
-		lblKAR2KitConexion110.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_19.add(lblKAR2KitConexion110);
-
-		lblKAR2KitConexion160 = new JLabel(
-				"<html><body>Kit para conexi\u00F3n de tuber\u00EDa 160 mm. (lija pliego, polipega 1/2gal, 1/4 gl suelda l\u00EDquida, cama de arena, anclajes )</body></html>");
+		JLabel lblKAR2KitConexion160 = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexión de tubería 160 mm. (lija pliego, polipega 1/2gal, 1/4 gl suelda líquida, cama de arena, anclajes )</p></body></html>");
+		lblKAR2KitConexion160.setBounds(3, 355, 204, 50);
+		pnlKAR2.add(lblKAR2KitConexion160);
 		lblKAR2KitConexion160.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_19.add(lblKAR2KitConexion160);
 
-		pnlKAP1 = new JPanel();
+		JLabel lblKAR2KitConexion110 = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexión de tubería 110 mm. (lija pliego, polipega 1gal, 1 gl suelda líquida , 18 uniones,6codo 90°,5codo 45°,cama de arena, anclajes)</p></body></html>");
+		lblKAR2KitConexion110.setBounds(3, 293, 204, 60);
+		pnlKAR2.add(lblKAR2KitConexion110);
+		lblKAR2KitConexion110.setFont(new Font("Tahoma", Font.PLAIN, 11));
+
+		JLabel lblKAR2KitConexion75 = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexión de tubería 75 mm. (lija pliego, polipega 1gal,1gl suelda líquida, 6 uniones,4codo 90°,3codo45°,cama de arena, anclajes)</p></body></html>");
+		lblKAR2KitConexion75.setBounds(3, 235, 204, 60);
+		pnlKAR2.add(lblKAR2KitConexion75);
+		lblKAR2KitConexion75.setFont(new Font("Tahoma", Font.PLAIN, 11));
+
+		JLabel lblKAR2KitConexion200 = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexión de tubería 200 mm. (lija  un pliego, polipega 2 gal, 2 gl suelda líquida, 15 uniones, cama de arena, anclajes)</p></body></html>");
+		lblKAR2KitConexion200.setBounds(3, 176, 204, 60);
+		pnlKAR2.add(lblKAR2KitConexion200);
+		lblKAR2KitConexion200.setFont(new Font("Tahoma", Font.PLAIN, 11));
+
+		JPanel panel_17 = new JPanel();
+		panel_17.setBounds(3, 17, 204, 100);
+		pnlKAR2.add(panel_17);
+		panel_17.setLayout(new GridLayout(5, 0, 0, 0));
+
+		JLabel label_4 = new JLabel("Tubería de PVC  110mm PVC y L=2m");
+		label_4.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_4.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		panel_17.add(label_4);
+
+		JLabel label_5 = new JLabel("Tubería de PVC  160mm PVC y L=3m");
+		label_5.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_5.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		panel_17.add(label_5);
+
+		JLabel label_6 = new JLabel("Tubería de PVC  160mm PVC y L=2m");
+		label_6.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_6.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		panel_17.add(label_6);
+
+		JLabel label_7 = new JLabel("Tubería de PVC  200mm PVC y L=3m");
+		label_7.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_7.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		panel_17.add(label_7);
+
+		JLabel label_8 = new JLabel("Tubería de PVC  200mm PVC y L=2m");
+		label_8.setHorizontalAlignment(SwingConstants.RIGHT);
+		label_8.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		panel_17.add(label_8);
+
+		JLabel lblcajaDeConexin = new JLabel(
+				"<html><body><p align=\"right\">Caja de Conexión 60x60( tapas con cerco metálico)</p></body></html>");
+		lblcajaDeConexin.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblcajaDeConexin.setBounds(3, 118, 204, 30);
+		pnlKAR2.add(lblcajaDeConexin);
+
+		JLabel lblpozoDeInspeccin = new JLabel(
+				"<html><body><p align=\"right\">Pozo de Inspección (tapas de hierro fundido)</p></body></html>");
+		lblpozoDeInspeccin.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblpozoDeInspeccin.setBounds(3, 148, 204, 30);
+		pnlKAR2.add(lblpozoDeInspeccin);
+
+		JPanel panel_18 = new JPanel();
+		panel_18.setBounds(210, 120, 55, 20);
+		pnlKAR2.add(panel_18);
+		panel_18.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtKARCantLim80 = new JTextField();
+		txtKARCantLim80.setEditable(false);
+		txtKARCantLim80.setColumns(10);
+		panel_18.add(txtKARCantLim80);
+
+		txtKARCantLim81 = new JTextField();
+		txtKARCantLim81.setColumns(10);
+		panel_18.add(txtKARCantLim81);
+
+		JPanel panel_19 = new JPanel();
+		panel_19.setBounds(267, 120, 143, 20);
+		pnlKAR2.add(panel_19);
+		panel_19.setLayout(new GridLayout(0, 1, 0, 0));
+
+		txtKAR1ObsRef8 = new JTextField();
+		txtKAR1ObsRef8.setColumns(10);
+		panel_19.add(txtKAR1ObsRef8);
+
+		JPanel panel_37 = new JPanel();
+		panel_37.setBounds(210, 145, 55, 20);
+		pnlKAR2.add(panel_37);
+		panel_37.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtKARCantLim90 = new JTextField();
+		txtKARCantLim90.setEditable(false);
+		txtKARCantLim90.setColumns(10);
+		panel_37.add(txtKARCantLim90);
+
+		txtKARCantLim91 = new JTextField();
+		txtKARCantLim91.setColumns(10);
+		panel_37.add(txtKARCantLim91);
+
+		JPanel panel_38 = new JPanel();
+		panel_38.setBounds(267, 145, 143, 20);
+		pnlKAR2.add(panel_38);
+		panel_38.setLayout(new GridLayout(0, 1, 0, 0));
+
+		txtKAR1ObsRef9 = new JTextField();
+		txtKAR1ObsRef9.setColumns(10);
+		panel_38.add(txtKAR1ObsRef9);
+
+		JPanel panel_13 = new JPanel();
+		panel_13.setBounds(210, 189, 55, 20);
+		pnlKAR2.add(panel_13);
+		panel_13.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtKARCantLim100 = new JTextField();
+		txtKARCantLim100.setEditable(false);
+		txtKARCantLim100.setColumns(10);
+		panel_13.add(txtKARCantLim100);
+
+		txtKARCantLim101 = new JTextField();
+		txtKARCantLim101.setColumns(10);
+		panel_13.add(txtKARCantLim101);
+
+		JPanel panel_16 = new JPanel();
+		panel_16.setBounds(267, 189, 143, 20);
+		pnlKAR2.add(panel_16);
+		panel_16.setLayout(new GridLayout(0, 1, 0, 0));
+
+		txtKAR1ObsRef10 = new JTextField();
+		txtKAR1ObsRef10.setColumns(10);
+		panel_16.add(txtKAR1ObsRef10);
+
+		JPanel panel_31 = new JPanel();
+		panel_31.setBounds(210, 247, 55, 20);
+		pnlKAR2.add(panel_31);
+		panel_31.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtKARCantLim110 = new JTextField();
+		txtKARCantLim110.setEditable(false);
+		txtKARCantLim110.setColumns(10);
+		panel_31.add(txtKARCantLim110);
+
+		txtKARCantLim111 = new JTextField();
+		txtKARCantLim111.setColumns(10);
+		panel_31.add(txtKARCantLim111);
+
+		JPanel panel_32 = new JPanel();
+		panel_32.setBounds(267, 247, 143, 20);
+		pnlKAR2.add(panel_32);
+		panel_32.setLayout(new GridLayout(0, 1, 0, 0));
+
+		txtKAR1ObsRef11 = new JTextField();
+		txtKAR1ObsRef11.setColumns(10);
+		panel_32.add(txtKAR1ObsRef11);
+
+		JPanel panel_33 = new JPanel();
+		panel_33.setBounds(210, 306, 55, 20);
+		pnlKAR2.add(panel_33);
+		panel_33.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtKARCantLim120 = new JTextField();
+		txtKARCantLim120.setEditable(false);
+		txtKARCantLim120.setColumns(10);
+		panel_33.add(txtKARCantLim120);
+
+		txtKARCantLim121 = new JTextField();
+		txtKARCantLim121.setColumns(10);
+		panel_33.add(txtKARCantLim121);
+
+		JPanel panel_34 = new JPanel();
+		panel_34.setBounds(267, 306, 143, 20);
+		pnlKAR2.add(panel_34);
+		panel_34.setLayout(new GridLayout(0, 1, 0, 0));
+
+		txtKAR1ObsRef12 = new JTextField();
+		txtKAR1ObsRef12.setColumns(10);
+		panel_34.add(txtKAR1ObsRef12);
+
+		JPanel panel_35 = new JPanel();
+		panel_35.setBounds(210, 364, 55, 20);
+		pnlKAR2.add(panel_35);
+		panel_35.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtKARCantLim130 = new JTextField();
+		txtKARCantLim130.setEditable(false);
+		txtKARCantLim130.setColumns(10);
+		panel_35.add(txtKARCantLim130);
+
+		txtKARCantLim131 = new JTextField();
+		txtKARCantLim131.setColumns(10);
+		panel_35.add(txtKARCantLim131);
+
+		JPanel panel_36 = new JPanel();
+		panel_36.setBounds(267, 364, 143, 20);
+		pnlKAR2.add(panel_36);
+		panel_36.setLayout(new GridLayout(0, 1, 0, 0));
+
+		txtKAR1ObsRef13 = new JTextField();
+		txtKAR1ObsRef13.setColumns(10);
+		panel_36.add(txtKAR1ObsRef13);
+
+		JPanel pnlKAP1 = new JPanel();
 		pnlKAP1.setLayout(null);
 		pnlKAP1.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		pnlKAP1.setBounds(434, 420, 414, 134);
 		pnlPestaña1.add(pnlKAP1);
 
-		panel_7 = new JPanel();
-		panel_7.setBounds(3, 17, 199, 113);
+		JPanel panel_7 = new JPanel();
+		panel_7.setBounds(3, 17, 199, 80);
 		pnlKAP1.add(panel_7);
-		panel_7.setLayout(new GridLayout(5, 0, 0, 0));
+		panel_7.setLayout(new GridLayout(4, 0, 0, 0));
 
-		lblKAP1TuberiaPVC05_3 = new JLabel("Tuber\u00EDa de PVC  1/2\" y L=3m");
+		JLabel lblKAP1TuberiaPVC05_3 = new JLabel("Tuber\u00EDa de PVC  1/2\" y L=3m");
+		lblKAP1TuberiaPVC05_3.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblKAP1TuberiaPVC05_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_7.add(lblKAP1TuberiaPVC05_3);
 
-		lblKAP1TuberiaPVC34_3 = new JLabel("Tuber\u00EDa de PVC  3/4\" y L=3m");
+		JLabel lblKAP1TuberiaPVC34_3 = new JLabel("Tuber\u00EDa de PVC  3/4\" y L=3m");
+		lblKAP1TuberiaPVC34_3.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblKAP1TuberiaPVC34_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_7.add(lblKAP1TuberiaPVC34_3);
 
-		lblKAP1TuberiaPVC1_3 = new JLabel("Tuber\u00EDa de PVC  1\" y L=3m");
+		JLabel lblKAP1TuberiaPVC1_3 = new JLabel("Tuber\u00EDa de PVC  1\" y L=3m");
+		lblKAP1TuberiaPVC1_3.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblKAP1TuberiaPVC1_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_7.add(lblKAP1TuberiaPVC1_3);
 
-		lblKAP1TuberiaPVC1_05_3 = new JLabel("Tuber\u00EDa de PVC  1-1/2\" y L=3m");
+		JLabel lblKAP1TuberiaPVC1_05_3 = new JLabel("Tuber\u00EDa de PVC  1-1/2\" y L=3m");
+		lblKAP1TuberiaPVC1_05_3.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblKAP1TuberiaPVC1_05_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_7.add(lblKAP1TuberiaPVC1_05_3);
 
-		lblKAP1CajasConexion60x60 = new JLabel(
-				"<html><body>Cajas de conexi\u00F3n 60x60(tapas cerco met\u00E1lico)</body></html>");
-		lblKAP1CajasConexion60x60.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		panel_7.add(lblKAP1CajasConexion60x60);
-
-		lblKitAguaPot1 = new JLabel("KIT AGUA POTABLE");
+		JLabel lblKitAguaPot1 = new JLabel("KIT AGUA POTABLE");
 		lblKitAguaPot1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblKitAguaPot1.setBounds(3, 1, 176, 14);
 		pnlKAP1.add(lblKitAguaPot1);
 
-		panel_8 = new JPanel();
-		panel_8.setBounds(210, 17, 55, 113);
-		pnlKAP1.add(panel_8);
-		panel_8.setLayout(new GridLayout(5, 2, 0, 0));
-
-		txtKAP1Cantidad00 = new JTextField();
-		txtKAP1Cantidad00.setColumns(10);
-		panel_8.add(txtKAP1Cantidad00);
-
-		txtKAP1Cantidad01 = new JTextField();
-		txtKAP1Cantidad01.setColumns(10);
-		panel_8.add(txtKAP1Cantidad01);
-
-		txtKAP1Cantidad10 = new JTextField();
-		txtKAP1Cantidad10.setColumns(10);
-		panel_8.add(txtKAP1Cantidad10);
-
-		txtKAP1Cantidad11 = new JTextField();
-		txtKAP1Cantidad11.setColumns(10);
-		panel_8.add(txtKAP1Cantidad11);
-
-		txtKAP1Cantidad20 = new JTextField();
-		txtKAP1Cantidad20.setColumns(10);
-		panel_8.add(txtKAP1Cantidad20);
-
-		txtKAP1Cantidad21 = new JTextField();
-		txtKAP1Cantidad21.setColumns(10);
-		panel_8.add(txtKAP1Cantidad21);
-
-		txtKAP1Cantidad30 = new JTextField();
-		txtKAP1Cantidad30.setColumns(10);
-		panel_8.add(txtKAP1Cantidad30);
-
-		txtKAP1Cantidad31 = new JTextField();
-		txtKAP1Cantidad31.setColumns(10);
-		panel_8.add(txtKAP1Cantidad31);
-
-		txtKAP1Cantidad40 = new JTextField();
-		txtKAP1Cantidad40.setColumns(10);
-		panel_8.add(txtKAP1Cantidad40);
-
-		txtKAP1Cantidad41 = new JTextField();
-		txtKAP1Cantidad41.setColumns(10);
-		panel_8.add(txtKAP1Cantidad41);
-
-		panel_9 = new JPanel();
-		panel_9.setBounds(267, 17, 143, 113);
-		pnlKAP1.add(panel_9);
-		panel_9.setLayout(new GridLayout(5, 0, 0, 0));
-
-		txtKAP1ObsRef0 = new JTextField();
-		txtKAP1ObsRef0.setColumns(10);
-		panel_9.add(txtKAP1ObsRef0);
-
-		txtKAP1ObsRef1 = new JTextField();
-		txtKAP1ObsRef1.setColumns(10);
-		panel_9.add(txtKAP1ObsRef1);
-
-		txtKAP1ObsRef2 = new JTextField();
-		txtKAP1ObsRef2.setColumns(10);
-		panel_9.add(txtKAP1ObsRef2);
-
-		txtKAP1ObsRef3 = new JTextField();
-		txtKAP1ObsRef3.setColumns(10);
-		panel_9.add(txtKAP1ObsRef3);
-
-		txtKAP1ObsRef4 = new JTextField();
-		txtKAP1ObsRef4.setColumns(10);
-		panel_9.add(txtKAP1ObsRef4);
-
-		lblKAP1Cantidad = new JLabel("Cantidad");
+		JLabel lblKAP1Cantidad = new JLabel("Cantidad");
 		lblKAP1Cantidad.setBounds(210, 1, 55, 14);
 		pnlKAP1.add(lblKAP1Cantidad);
 
-		lblKAP1ObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		JLabel lblKAP1ObsRef = new JLabel("Observaci\u00F3n/Referencia");
 		lblKAP1ObsRef.setBounds(267, 1, 143, 14);
 		pnlKAP1.add(lblKAP1ObsRef);
 
-		pnlKAP2 = new JPanel();
+		JLabel lblcajasDeConexin = new JLabel(
+				"<html><body><p align=\"right\">Cajas de conexión 60x60(tapas cerco metálico)</p></body></html>");
+		lblcajasDeConexin.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblcajasDeConexin.setBounds(3, 100, 199, 30);
+		pnlKAP1.add(lblcajasDeConexin);
+
+		JPanel panel_8 = new JPanel();
+		panel_8.setBounds(208, 17, 55, 80);
+		pnlKAP1.add(panel_8);
+		panel_8.setLayout(new GridLayout(0, 2, 0, 0));
+
+		txtKAPCantidad00 = new JTextField();
+		txtKAPCantidad00.setEditable(false);
+		txtKAPCantidad00.setColumns(10);
+		panel_8.add(txtKAPCantidad00);
+
+		textField_31 = new JTextField();
+		textField_31.setColumns(10);
+		panel_8.add(textField_31);
+
+		txtKAPCantidad10 = new JTextField();
+		txtKAPCantidad10.setEditable(false);
+		txtKAPCantidad10.setColumns(10);
+		panel_8.add(txtKAPCantidad10);
+
+		textField_33 = new JTextField();
+		textField_33.setColumns(10);
+		panel_8.add(textField_33);
+
+		txtKAPCantidad20 = new JTextField();
+		txtKAPCantidad20.setEditable(false);
+		txtKAPCantidad20.setColumns(10);
+		panel_8.add(txtKAPCantidad20);
+
+		textField_35 = new JTextField();
+		textField_35.setColumns(10);
+		panel_8.add(textField_35);
+
+		txtKAPCantidad30 = new JTextField();
+		txtKAPCantidad30.setEditable(false);
+		txtKAPCantidad30.setColumns(10);
+		panel_8.add(txtKAPCantidad30);
+
+		textField_37 = new JTextField();
+		textField_37.setColumns(10);
+		panel_8.add(textField_37);
+
+		JPanel panel_9 = new JPanel();
+		panel_9.setBounds(266, 17, 143, 80);
+		pnlKAP1.add(panel_9);
+		panel_9.setLayout(new GridLayout(4, 0, 0, 0));
+
+		textField_38 = new JTextField();
+		textField_38.setColumns(10);
+		panel_9.add(textField_38);
+
+		textField_39 = new JTextField();
+		textField_39.setColumns(10);
+		panel_9.add(textField_39);
+
+		textField_40 = new JTextField();
+		textField_40.setColumns(10);
+		panel_9.add(textField_40);
+
+		textField_41 = new JTextField();
+		textField_41.setColumns(10);
+		panel_9.add(textField_41);
+
+		JPanel panel_39 = new JPanel();
+		panel_39.setBounds(208, 103, 55, 20);
+		pnlKAP1.add(panel_39);
+		panel_39.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtKAPCantidad40 = new JTextField();
+		txtKAPCantidad40.setEditable(false);
+		txtKAPCantidad40.setColumns(10);
+		panel_39.add(txtKAPCantidad40);
+
+		textField_73 = new JTextField();
+		textField_73.setColumns(10);
+		panel_39.add(textField_73);
+
+		JPanel panel_40 = new JPanel();
+		panel_40.setBounds(265, 103, 143, 20);
+		pnlKAP1.add(panel_40);
+		panel_40.setLayout(new GridLayout(0, 1, 0, 0));
+
+		textField_74 = new JTextField();
+		textField_74.setColumns(10);
+		panel_40.add(textField_74);
+
+		JPanel pnlKAP2 = new JPanel();
 		pnlKAP2.setLayout(null);
 		pnlKAP2.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlKAP2.setBounds(858, 4, 414, 215);
+		pnlKAP2.setBounds(858, 4, 414, 242);
 		pnlPestaña1.add(pnlKAP2);
 
-		lblKitAguaPot2 = new JLabel("KIT AGUA POTABLE");
+		JLabel lblKitAguaPot2 = new JLabel("KIT AGUA POTABLE");
 		lblKitAguaPot2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblKitAguaPot2.setBounds(3, 1, 176, 14);
 		pnlKAP2.add(lblKitAguaPot2);
 
-		lblKAP2Cantidad = new JLabel("Cantidad");
+		JLabel lblKAP2Cantidad = new JLabel("Cantidad");
 		lblKAP2Cantidad.setBounds(210, 1, 55, 14);
 		pnlKAP2.add(lblKAP2Cantidad);
 
-		lblKAP2ObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		JLabel lblKAP2ObsRef = new JLabel("Observaci\u00F3n/Referencia");
 		lblKAP2ObsRef.setBounds(267, 1, 143, 14);
 		pnlKAP2.add(lblKAP2ObsRef);
 
-		panel_20 = new JPanel();
-		panel_20.setBounds(210, 17, 55, 194);
+		JLabel lblbebederosLlavesLlave = new JLabel(
+				"<html><body><p align=\"right\">Bebederos(8 llaves,1 llave de paso,8 te 1/2\",1 unión Universal, teflón 2 rollos, pasta sellante)</p></body></html>");
+		lblbebederosLlavesLlave.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblbebederosLlavesLlave.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblbebederosLlavesLlave.setBounds(3, 20, 205, 44);
+		pnlKAP2.add(lblbebederosLlavesLlave);
+
+		JPanel panel_20 = new JPanel();
+		panel_20.setBounds(3, 68, 205, 170);
 		pnlKAP2.add(panel_20);
-		panel_20.setLayout(null);
+		panel_20.setLayout(new GridLayout(5, 0, 0, 0));
 
-		pnlTCantidad = new JPanel();
-		pnlTCantidad.setBounds(0, 44, 55, 150);
-		panel_20.add(pnlTCantidad);
-		pnlTCantidad.setLayout(new GridLayout(5, 2, 0, 1));
+		JLabel lbltomaDeRiego = new JLabel(
+				"<html><body><p align=\"right\">Toma de Riego (5llave de paso,5uniones, 1 rollo de teflón, pasta selladora)</p></body></html>");
+		lbltomaDeRiego.setHorizontalAlignment(SwingConstants.RIGHT);
+		lbltomaDeRiego.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		panel_20.add(lbltomaDeRiego);
 
-		txtKAP2Cantidad10 = new JTextField();
-		txtKAP2Cantidad10.setColumns(10);
-		pnlTCantidad.add(txtKAP2Cantidad10);
+		JLabel lblkitParaConexin_3 = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexión de tubería 1/2\". (lija pliego, polipega 1/4gal,6 uniones)</p></body></html>");
+		lblkitParaConexin_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		panel_20.add(lblkitParaConexin_3);
 
-		txtKAP2Cantidad11 = new JTextField();
-		txtKAP2Cantidad11.setColumns(10);
-		pnlTCantidad.add(txtKAP2Cantidad11);
+		JLabel lblkitParaConexin_4 = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexión de tubería 1\". (lija pliego, polipega 1/4gal,14 uniones)</p></body></html>");
+		lblkitParaConexin_4.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		panel_20.add(lblkitParaConexin_4);
 
-		txtKAP2Cantidad20 = new JTextField();
-		txtKAP2Cantidad20.setColumns(10);
-		pnlTCantidad.add(txtKAP2Cantidad20);
+		JLabel lblkitParaConexin_5 = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexión de tubería 3/4\". (lija pliego, polipega 1/4gal,10 uniones)</p></body></html>");
+		lblkitParaConexin_5.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		panel_20.add(lblkitParaConexin_5);
 
-		txtKAP2Cantidad21 = new JTextField();
-		txtKAP2Cantidad21.setColumns(10);
-		pnlTCantidad.add(txtKAP2Cantidad21);
+		JLabel lblkitParaConexin_6 = new JLabel(
+				"<html><body><p align=\"right\">Kit para conexión de tubería 1- 1/2\". (lija pliego, polipega 1/4gal,8 uniones)</p></body></html>");
+		lblkitParaConexin_6.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		panel_20.add(lblkitParaConexin_6);
 
-		txtKAP2Cantidad30 = new JTextField();
-		txtKAP2Cantidad30.setColumns(10);
-		pnlTCantidad.add(txtKAP2Cantidad30);
+		JPanel panel_21 = new JPanel();
+		panel_21.setBounds(210, 68, 55, 170);
+		pnlKAP2.add(panel_21);
+		panel_21.setLayout(new GridLayout(0, 2, 0, 14));
 
-		txtKAP2Cantidad31 = new JTextField();
-		txtKAP2Cantidad31.setColumns(10);
-		pnlTCantidad.add(txtKAP2Cantidad31);
+		txtKAPCantidad60 = new JTextField();
+		txtKAPCantidad60.setEditable(false);
+		txtKAPCantidad60.setColumns(10);
+		panel_21.add(txtKAPCantidad60);
 
-		txtKAP2Cantidad40 = new JTextField();
-		txtKAP2Cantidad40.setColumns(10);
-		pnlTCantidad.add(txtKAP2Cantidad40);
+		textField_76 = new JTextField();
+		textField_76.setColumns(10);
+		panel_21.add(textField_76);
 
-		txtKAP2Cantidad41 = new JTextField();
-		txtKAP2Cantidad41.setColumns(10);
-		pnlTCantidad.add(txtKAP2Cantidad41);
+		txtKAPCantidad70 = new JTextField();
+		txtKAPCantidad70.setEditable(false);
+		txtKAPCantidad70.setColumns(10);
+		panel_21.add(txtKAPCantidad70);
 
-		txtKAP2Cantidad50 = new JTextField();
-		txtKAP2Cantidad50.setColumns(10);
-		pnlTCantidad.add(txtKAP2Cantidad50);
+		textField_78 = new JTextField();
+		textField_78.setColumns(10);
+		panel_21.add(textField_78);
 
-		txtKAP2Cantidad51 = new JTextField();
-		txtKAP2Cantidad51.setColumns(10);
-		pnlTCantidad.add(txtKAP2Cantidad51);
+		txtKAPCantidad80 = new JTextField();
+		txtKAPCantidad80.setEditable(false);
+		txtKAPCantidad80.setColumns(10);
+		panel_21.add(txtKAPCantidad80);
 
-		panel_23 = new JPanel();
-		panel_23.setBounds(0, 8, 55, 29);
-		panel_20.add(panel_23);
+		textField_80 = new JTextField();
+		textField_80.setColumns(10);
+		panel_21.add(textField_80);
+
+		txtKAPCantidad90 = new JTextField();
+		txtKAPCantidad90.setEditable(false);
+		txtKAPCantidad90.setColumns(10);
+		panel_21.add(txtKAPCantidad90);
+
+		textField_82 = new JTextField();
+		textField_82.setColumns(10);
+		panel_21.add(textField_82);
+
+		txtKAPCantidad100 = new JTextField();
+		txtKAPCantidad100.setEditable(false);
+		txtKAPCantidad100.setColumns(10);
+		panel_21.add(txtKAPCantidad100);
+
+		textField_84 = new JTextField();
+		textField_84.setColumns(10);
+		panel_21.add(textField_84);
+
+		JPanel panel_22 = new JPanel();
+		panel_22.setBounds(267, 68, 143, 170);
+		pnlKAP2.add(panel_22);
+		panel_22.setLayout(new GridLayout(5, 0, 0, 14));
+
+		textField_85 = new JTextField();
+		textField_85.setColumns(10);
+		panel_22.add(textField_85);
+
+		textField_86 = new JTextField();
+		textField_86.setColumns(10);
+		panel_22.add(textField_86);
+
+		textField_87 = new JTextField();
+		textField_87.setColumns(10);
+		panel_22.add(textField_87);
+
+		textField_88 = new JTextField();
+		textField_88.setColumns(10);
+		panel_22.add(textField_88);
+
+		textField_89 = new JTextField();
+		textField_89.setColumns(10);
+		panel_22.add(textField_89);
+
+		JPanel panel_23 = new JPanel();
+		panel_23.setBounds(210, 26, 55, 20);
+		pnlKAP2.add(panel_23);
 		panel_23.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtKAP2Cantidad00 = new JTextField();
-		txtKAP2Cantidad00.setColumns(10);
-		panel_23.add(txtKAP2Cantidad00);
+		txtKAPCantidad50 = new JTextField();
+		txtKAPCantidad50.setEditable(false);
+		txtKAPCantidad50.setColumns(10);
+		panel_23.add(txtKAPCantidad50);
 
-		txtKAP2Cantidad01 = new JTextField();
-		txtKAP2Cantidad01.setColumns(10);
-		panel_23.add(txtKAP2Cantidad01);
+		textField_91 = new JTextField();
+		textField_91.setColumns(10);
+		panel_23.add(textField_91);
 
-		panel_21 = new JPanel();
-		panel_21.setBounds(267, 17, 143, 194);
-		pnlKAP2.add(panel_21);
-		panel_21.setLayout(null);
+		JPanel panel_41 = new JPanel();
+		panel_41.setBounds(267, 26, 143, 20);
+		pnlKAP2.add(panel_41);
+		panel_41.setLayout(new GridLayout(0, 1, 0, 0));
 
-		pnlTObsRef = new JPanel();
-		pnlTObsRef.setBounds(0, 44, 143, 150);
-		panel_21.add(pnlTObsRef);
-		pnlTObsRef.setLayout(new GridLayout(5, 0, 0, 1));
+		textField_92 = new JTextField();
+		textField_92.setColumns(10);
+		panel_41.add(textField_92);
 
-		txtKAP2ObsRef1 = new JTextField();
-		txtKAP2ObsRef1.setColumns(10);
-		pnlTObsRef.add(txtKAP2ObsRef1);
-
-		txtKAP2ObsRef2 = new JTextField();
-		txtKAP2ObsRef2.setColumns(10);
-		pnlTObsRef.add(txtKAP2ObsRef2);
-
-		txtKAP2ObsRef3 = new JTextField();
-		txtKAP2ObsRef3.setColumns(10);
-		pnlTObsRef.add(txtKAP2ObsRef3);
-
-		txtKAP2ObsRef4 = new JTextField();
-		txtKAP2ObsRef4.setColumns(10);
-		pnlTObsRef.add(txtKAP2ObsRef4);
-
-		txtKAP2ObsRef5 = new JTextField();
-		txtKAP2ObsRef5.setColumns(10);
-		pnlTObsRef.add(txtKAP2ObsRef5);
-
-		txtKAP2ObsRef0 = new JTextField();
-		txtKAP2ObsRef0.setBounds(0, 8, 143, 29);
-		panel_21.add(txtKAP2ObsRef0);
-		txtKAP2ObsRef0.setColumns(10);
-
-		panel_22 = new JPanel();
-		panel_22.setBounds(3, 17, 205, 194);
-		pnlKAP2.add(panel_22);
-		panel_22.setLayout(null);
-
-		JLabel lblKAP2Bebederos = new JLabel(
-				"<html><body>Bebederos(8 llaves,1 llave de paso,8 te 1/2\",1 uni\u00F3n Universal, tefl\u00F3n 2 rollos, pasta sellante)</body></html>");
-		lblKAP2Bebederos.setBounds(0, 0, 205, 44);
-		panel_22.add(lblKAP2Bebederos);
-		lblKAP2Bebederos.setFont(new Font("Tahoma", Font.PLAIN, 11));
-
-		pnlTEtiquetas = new JPanel();
-		pnlTEtiquetas.setBounds(0, 44, 205, 150);
-		panel_22.add(pnlTEtiquetas);
-		pnlTEtiquetas.setLayout(new GridLayout(5, 0, 0, 0));
-
-		lblKAP2TomaRiego = new JLabel(
-				"<html><body>Toma de Riego (5llave de paso,5uniones, 1 rollo de tefl\u00F3n, pasta selladora)</body></html>");
-		lblKAP2TomaRiego.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEtiquetas.add(lblKAP2TomaRiego);
-
-		lblKAP2KitConexion05 = new JLabel(
-				"<html><body>Kit para conexi\u00F3n de tuber\u00EDa 1/2\". (lija pliego, polipega 1/4gal,6 uniones)</body></html>");
-		lblKAP2KitConexion05.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEtiquetas.add(lblKAP2KitConexion05);
-
-		lblKAP2KitConexion1 = new JLabel(
-				"<html><body>Kit para conexi\u00F3n de tuber\u00EDa 1\". (lija pliego, polipega 1/4gal,14 uniones)</body></html>");
-		lblKAP2KitConexion1.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEtiquetas.add(lblKAP2KitConexion1);
-
-		lblKAP2KitConexion34 = new JLabel(
-				"<html><body>Kit para conexi\u00F3n de tuber\u00EDa 3/4\". (lija pliego, polipega 1/4gal,10 uniones)</body></html>");
-		lblKAP2KitConexion34.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEtiquetas.add(lblKAP2KitConexion34);
-
-		lblKAP2KitConexion1_05 = new JLabel(
-				"<html><body>Kit para conexi\u00F3n de tuber\u00EDa 1- 1/2\". (lija pliego, polipega 1/4gal,8 uniones)</body></html>");
-		lblKAP2KitConexion1_05.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		pnlTEtiquetas.add(lblKAP2KitConexion1_05);
-
-		pnlKH = new JPanel();
+		JPanel pnlKH = new JPanel();
 		pnlKH.setLayout(null);
 		pnlKH.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlKH.setBounds(858, 225, 414, 84);
+		pnlKH.setBounds(858, 257, 414, 84);
 		pnlPestaña1.add(pnlKH);
 
-		pnlBAEtiquetas = new JPanel();
-		pnlBAEtiquetas.setBounds(3, 17, 199, 64);
+		JPanel pnlBAEtiquetas = new JPanel();
+		pnlBAEtiquetas.setBounds(3, 17, 205, 60);
 		pnlKH.add(pnlBAEtiquetas);
 		pnlBAEtiquetas.setLayout(new GridLayout(3, 0, 0, 0));
 
-		lblKHBomba3hp = new JLabel("Bomba de 3 hp instalada");
+		JLabel lblKHBomba3hp = new JLabel("Bomba de 3 hp instalada");
+		lblKHBomba3hp.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblKHBomba3hp.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		pnlBAEtiquetas.add(lblKHBomba3hp);
 
-		lblKHSetAccesorios = new JLabel("1 set accesorios");
+		JLabel lblKHSetAccesorios = new JLabel("1 set accesorios");
+		lblKHSetAccesorios.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblKHSetAccesorios.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		pnlBAEtiquetas.add(lblKHSetAccesorios);
 
-		lblKHTanque55gl = new JLabel("Tanque de 55 gl y Cisterna 30 m3");
+		JLabel lblKHTanque55gl = new JLabel("Tanque de 55 gl y Cisterna 30 m3");
+		lblKHTanque55gl.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblKHTanque55gl.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		pnlBAEtiquetas.add(lblKHTanque55gl);
 
-		lblKitHidroneumatico = new JLabel("KIT HIDRONEUM\u00C1TICO");
+		JLabel lblKitHidroneumatico = new JLabel("KIT HIDRONEUM\u00C1TICO");
 		lblKitHidroneumatico.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblKitHidroneumatico.setBounds(3, 1, 176, 14);
 		pnlKH.add(lblKitHidroneumatico);
 
-		pnlBACantidad = new JPanel();
-		pnlBACantidad.setBounds(210, 17, 55, 64);
-		pnlKH.add(pnlBACantidad);
-		pnlBACantidad.setLayout(new GridLayout(3, 2, 0, 0));
-
-		txtKHCantidad00 = new JTextField();
-		txtKHCantidad00.setColumns(10);
-		pnlBACantidad.add(txtKHCantidad00);
-
-		txtKHCantidad01 = new JTextField();
-		txtKHCantidad01.setColumns(10);
-		pnlBACantidad.add(txtKHCantidad01);
-
-		txtKHCantidad10 = new JTextField();
-		txtKHCantidad10.setColumns(10);
-		pnlBACantidad.add(txtKHCantidad10);
-
-		txtKHCantidad11 = new JTextField();
-		txtKHCantidad11.setColumns(10);
-		pnlBACantidad.add(txtKHCantidad11);
-
-		txtKHCantidad20 = new JTextField();
-		txtKHCantidad20.setColumns(10);
-		pnlBACantidad.add(txtKHCantidad20);
-
-		txtKHCantidad21 = new JTextField();
-		txtKHCantidad21.setColumns(10);
-		pnlBACantidad.add(txtKHCantidad21);
-
-		pnlBAObsRef = new JPanel();
-		pnlBAObsRef.setBounds(267, 17, 143, 64);
-		pnlKH.add(pnlBAObsRef);
-		pnlBAObsRef.setLayout(new GridLayout(3, 0, 0, 0));
-
-		txtKHObsRef0 = new JTextField();
-		txtKHObsRef0.setColumns(10);
-		pnlBAObsRef.add(txtKHObsRef0);
-
-		txtKHObsRef1 = new JTextField();
-		txtKHObsRef1.setColumns(10);
-		pnlBAObsRef.add(txtKHObsRef1);
-
-		txtKHObsRef2 = new JTextField();
-		txtKHObsRef2.setColumns(10);
-		pnlBAObsRef.add(txtKHObsRef2);
-
-		lblKHCantidad = new JLabel("Cantidad");
+		JLabel lblKHCantidad = new JLabel("Cantidad");
 		lblKHCantidad.setBounds(210, 1, 55, 14);
 		pnlKH.add(lblKHCantidad);
 
-		lblKAHObsRef = new JLabel("Observaci\u00F3n/Referencia");
+		JLabel lblKAHObsRef = new JLabel("Observaci\u00F3n/Referencia");
 		lblKAHObsRef.setBounds(267, 1, 143, 14);
 		pnlKH.add(lblKAHObsRef);
 
-		pnlInformacionObl = new JPanel();
-		pnlInformacionObl.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"),
-				"Informaci\u00F3n Obligatoria", TitledBorder.LEADING, TitledBorder.TOP, null, Color.RED));
-		pnlInformacionObl.setBounds(858, 310, 414, 244);
-		pnlPestaña1.add(pnlInformacionObl);
-		pnlInformacionObl.setLayout(null);
+		JPanel panel_42 = new JPanel();
+		panel_42.setBounds(212, 17, 55, 60);
+		pnlKH.add(panel_42);
+		panel_42.setLayout(new GridLayout(0, 2, 0, 0));
 
-		pnlIOEtiquetas1 = new JPanel();
-		pnlIOEtiquetas1.setBounds(10, 22, 157, 73);
-		pnlInformacionObl.add(pnlIOEtiquetas1);
-		pnlIOEtiquetas1.setLayout(new GridLayout(3, 0, 0, 0));
+		textField_95 = new JTextField();
+		textField_95.setEditable(false);
+		textField_95.setColumns(10);
+		panel_42.add(textField_95);
 
-		lblObsGenIzq = new JLabel("Observaciones Generales:");
-		pnlIOEtiquetas1.add(lblObsGenIzq);
+		textField_96 = new JTextField();
+		textField_96.setColumns(10);
+		panel_42.add(textField_96);
 
-		lblResponsableMineduc = new JLabel("Responsable MinEduc:");
-		pnlIOEtiquetas1.add(lblResponsableMineduc);
+		textField_93 = new JTextField();
+		textField_93.setEditable(false);
+		textField_93.setColumns(10);
+		panel_42.add(textField_93);
 
-		lblCargoIzq = new JLabel("Cargo:");
-		pnlIOEtiquetas1.add(lblCargoIzq);
+		textField_94 = new JTextField();
+		textField_94.setColumns(10);
+		panel_42.add(textField_94);
 
-		pnlIOTexts1 = new JPanel();
-		pnlIOTexts1.setBounds(166, 22, 238, 73);
-		pnlInformacionObl.add(pnlIOTexts1);
-		pnlIOTexts1.setLayout(new GridLayout(3, 0, 0, 0));
+		textField_99 = new JTextField();
+		textField_99.setEditable(false);
+		textField_99.setColumns(10);
+		panel_42.add(textField_99);
 
-		txtObsGenIzq = new JTextField();
-		txtObsGenIzq.setColumns(10);
-		pnlIOTexts1.add(txtObsGenIzq);
+		textField_100 = new JTextField();
+		textField_100.setColumns(10);
+		panel_42.add(textField_100);
 
-		txtResponsableMineduc = new JTextField();
-		txtResponsableMineduc.setColumns(10);
-		pnlIOTexts1.add(txtResponsableMineduc);
+		JPanel panel_43 = new JPanel();
+		panel_43.setBounds(267, 17, 143, 60);
+		pnlKH.add(panel_43);
+		panel_43.setLayout(new GridLayout(0, 1, 0, 0));
 
-		txtCargoIzq = new JTextField();
-		txtCargoIzq.setColumns(10);
-		pnlIOTexts1.add(txtCargoIzq);
+		textField_97 = new JTextField();
+		textField_97.setColumns(10);
+		panel_43.add(textField_97);
 
-		pnlIOEtiquetas2 = new JPanel();
-		pnlIOEtiquetas2.setBounds(10, 102, 157, 97);
-		pnlInformacionObl.add(pnlIOEtiquetas2);
-		pnlIOEtiquetas2.setLayout(new GridLayout(4, 0, 0, 0));
+		textField_98 = new JTextField();
+		textField_98.setColumns(10);
+		panel_43.add(textField_98);
 
-		lblObsGenDer = new JLabel("Observaciones Generales:");
-		pnlIOEtiquetas2.add(lblObsGenDer);
-
-		lblResponsableContratista = new JLabel("Responsable Contratista:");
-		pnlIOEtiquetas2.add(lblResponsableContratista);
-
-		lblCargoDer = new JLabel("Cargo:");
-		pnlIOEtiquetas2.add(lblCargoDer);
-
-		lblFecha = new JLabel("Fecha:");
-		pnlIOEtiquetas2.add(lblFecha);
-
-		pnlIOTexts2 = new JPanel();
-		pnlIOTexts2.setBounds(166, 102, 238, 97);
-		pnlInformacionObl.add(pnlIOTexts2);
-		pnlIOTexts2.setLayout(new GridLayout(4, 0, 0, 0));
-
-		txtObsGenDer = new JTextField();
-		txtObsGenDer.setColumns(10);
-		pnlIOTexts2.add(txtObsGenDer);
-
-		txtResponsableContratista = new JTextField();
-		txtResponsableContratista.setColumns(10);
-		pnlIOTexts2.add(txtResponsableContratista);
-
-		txtCargoDer = new JTextField();
-		txtCargoDer.setColumns(10);
-		pnlIOTexts2.add(txtCargoDer);
-
-		txtFecha = new JTextField();
-		txtFecha.setColumns(10);
-		pnlIOTexts2.add(txtFecha);
-
-		JButton btnInsertarFoto = new JButton("Insertar FOTO");
-		btnInsertarFoto.setBounds(166, 201, 120, 35);
-		pnlInformacionObl.add(btnInsertarFoto);
+		textField_101 = new JTextField();
+		textField_101.setColumns(10);
+		panel_43.add(textField_101);
 
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -1374,5 +1357,107 @@ public class HsTemplate extends JFrame {
 				dispose();
 			}
 		});
+	}
+
+	private void getListaGrupos() {
+		ServicioCabecera srvCabecera = new ComponenteCabecera();
+		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+		ServicioFicha servicioFicha = new ComponenteFicha();
+
+		TCabecera cabecera = srvCabecera.buscarProyecto(gettCabecera().getCNombreProyecto());
+		Integer updateFicha = servicioFicha.buscarUpdateFicha();
+		TInformacionObligatoria infoObligatoria = srvInfoObl.getInfoObl();
+
+		TGrupo grupo1 = servicioFicha.buscarGrupo("Componente arquitectónico");
+		List<TdetalleFicha> compArq = new LinkedList<>();
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA00.getText()),
+						Integer.parseInt(txtCA01.getText()), txtOR0.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA10.getText()),
+						Integer.parseInt(txtCA11.getText()), txtOR1.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA20.getText()),
+						Integer.parseInt(txtCA21.getText()), txtOR2.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA30.getText()),
+						Integer.parseInt(txtCA31.getText()), txtOR3.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA40.getText()),
+						Integer.parseInt(txtCA41.getText()), txtOR4.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA50.getText()),
+						Integer.parseInt(txtCA51.getText()), txtOR5.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA60.getText()),
+						Integer.parseInt(txtCA61.getText()), txtOR6.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA70.getText()),
+						Integer.parseInt(txtCA71.getText()), txtOR7.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA80.getText()),
+						Integer.parseInt(txtCA81.getText()), txtOR8.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA90.getText()),
+						Integer.parseInt(txtCA91.getText()), txtOR9.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA100.getText()),
+						Integer.parseInt(txtCA101.getText()), txtOR10.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA110.getText()),
+						Integer.parseInt(txtCA111.getText()), txtOR11.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA120.getText()),
+						Integer.parseInt(txtCA121.getText()), txtOR12.getText(), updateFicha));
+		compArq.add(
+				new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null, Integer.parseInt(txtCA130.getText()),
+						Integer.parseInt(txtCA131.getText()), txtOR13.getText(), updateFicha));
+
+		TGrupo grupo2 = servicioFicha.buscarGrupo("Componente arquitectónico");
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim00.getText()), Integer.parseInt(txtKARCantLim01.getText()),
+				txtKAR1ObsRef0.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim10.getText()), Integer.parseInt(txtKARCantLim11.getText()),
+				txtKAR1ObsRef1.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim20.getText()), Integer.parseInt(txtKARCantLim21.getText()),
+				txtKAR1ObsRef2.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim30.getText()), Integer.parseInt(txtKARCantLim31.getText()),
+				txtKAR1ObsRef3.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim40.getText()), Integer.parseInt(txtKARCantLim41.getText()),
+				txtKAR1ObsRef4.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim50.getText()), Integer.parseInt(txtKARCantLim51.getText()),
+				txtKAR1ObsRef5.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim60.getText()), Integer.parseInt(txtKARCantLim61.getText()),
+				txtKAR1ObsRef6.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim70.getText()), Integer.parseInt(txtKARCantLim71.getText()),
+				txtKAR1ObsRef7.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim80.getText()), Integer.parseInt(txtKARCantLim81.getText()),
+				txtKAR1ObsRef8.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim90.getText()), Integer.parseInt(txtKARCantLim91.getText()),
+				txtKAR1ObsRef9.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim100.getText()), Integer.parseInt(txtKARCantLim101.getText()),
+				txtKAR1ObsRef10.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim110.getText()), Integer.parseInt(txtKARCantLim111.getText()),
+				txtKAR1ObsRef11.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim120.getText()), Integer.parseInt(txtKARCantLim121.getText()),
+				txtKAR1ObsRef12.getText(), updateFicha));
+		compArq.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, null,
+				Integer.parseInt(txtKARCantLim130.getText()), Integer.parseInt(txtKARCantLim131.getText()),
+				txtKAR1ObsRef13.getText(), updateFicha));
+
+		TGrupo grupo3 = servicioFicha.buscarGrupo("Kit agua residual");
+
 	}
 }

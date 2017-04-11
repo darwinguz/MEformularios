@@ -20,7 +20,18 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ServicioFicha;
-import com.capa.templates.HsTemplate;
+import com.capa.presentacion.AlInicio;
+import com.capa.presentacion.CeTemplate;
+import com.capa.presentacion.ExTemplate;
+import com.capa.presentacion.MSTemplate;
+import com.capa.presentacion.MaTemplate;
+import com.capa.presentacion.MbTemplate;
+import com.capa.presentacion.MdTemplate;
+import com.capa.presentacion.MexTemplate;
+import com.capa.presentacion.MmTemplate;
+import com.capa.presentacion.MtTemplate;
+import com.capa.presentacion.PGTemplate;
+import com.capa.presentacion.WFTemplate;
 
 public class Menu extends JFrame {
 
