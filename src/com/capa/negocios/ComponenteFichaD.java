@@ -13,4 +13,10 @@ public class ComponenteFichaD implements ServicioFichaD {
 			System.out.println("Error al INSERTAR: " + e.getMessage());
 		}
 	}
+
+	@Override
+	public int actualizacionFichaN() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
