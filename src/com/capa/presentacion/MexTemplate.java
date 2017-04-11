@@ -1,5 +1,10 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Utilitarios.llenarCabecera;
+import static com.capa.util.Validaciones.validarInfo;
+
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -22,13 +27,10 @@ import com.capa.datos.TFicha;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
-import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
-import com.capa.negocios.ServicioFichaMA;
+import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
-
-import static com.capa.util.Utilitarios.*;
-import static com.capa.util.Validaciones.*;
 
 public class MexTemplate extends JFrame {
 
@@ -759,7 +761,7 @@ public class MexTemplate extends JFrame {
 		LinkedList<TdetalleFicha> listaTipoE = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEsparcimiento = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaAreasVerdes = new LinkedList<>();
-		ServicioFichaMA servFicha = new ComponenteFichaMA();
+		ServicioFicha servFicha = new ComponenteFicha();
 		// infor = cargarInfoObligatoria(inforV);
 
 		TGrupo grupoTmp = servFicha.buscarGrupo("MODULO WPC TIPO A - 180x105 cm");

@@ -1,6 +1,10 @@
 package com.capa.presentacion;
 
-import java.awt.EventQueue;
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Utilitarios.llenarCabecera;
+import static com.capa.util.Validaciones.validarInfo;
+
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -9,29 +13,24 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.LinkedList;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 import com.capa.datos.TFicha;
-import com.capa.datos.TFichaMa;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
-import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
-import com.capa.negocios.ServicioFichaMA;
+import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
-
-import static com.capa.util.Utilitarios.*;
-import static com.capa.util.Validaciones.*;
-import javax.swing.SwingConstants;
 
 public class MdTemplate extends JFrame {
 
@@ -3191,7 +3190,7 @@ public class MdTemplate extends JFrame {
 		LinkedList<TdetalleFicha> listaLateral = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaArquitectonico2 = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
-		ServicioFichaMA servFicha = new ComponenteFichaMA();
+		ServicioFicha servFicha = new ComponenteFicha();
 		// infor = cargarInfoObligatoria(inforV);
 
 		TGrupo grupoTmp = servFicha.buscarGrupo("Kit eléctrico");

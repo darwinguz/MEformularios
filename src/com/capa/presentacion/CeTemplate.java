@@ -28,9 +28,9 @@ import com.capa.datos.TFicha;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
-import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
-import com.capa.negocios.ServicioFichaMA;
+import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
 
 public class CeTemplate extends JFrame {
@@ -307,7 +307,7 @@ public class CeTemplate extends JFrame {
 	public LinkedList<LinkedList<TdetalleFicha>> cargarListas(InformacionObligatoriaV inforV) {
 		LinkedList<TdetalleFicha> listaModulo = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
-		ServicioFichaMA servFicha = new ComponenteFichaMA();
+		ServicioFicha servFicha = new ComponenteFicha();
 		// TInformacionObligatoria infor = cargarInfoObligatoria(inforV);
 
 		Integer updateFicha = servFicha.buscarUpdateFicha();
