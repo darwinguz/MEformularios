@@ -21,8 +21,8 @@ public class TdetalleFicha implements Serializable {
 		super();
 	}
 
-	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria, com.capa.datos.TGrupo tGrupo,
-			com.capa.datos.TFicha tFicha, String detEtiqueta, Integer detCantidadLimite, Integer detCantidadEjecutada,
+	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria, TGrupo tGrupo,
+			TFicha tFicha, String detEtiqueta, Integer detCantidadLimite, Integer detCantidadEjecutada,
 			String detObsRef, Integer detActualizacionN) {
 		super();
 		TCabecera = tCabecera;
