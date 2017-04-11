@@ -15,13 +15,14 @@ public class ComponenteFicha implements ServicioFicha {
 		ResultSet rs = Query.seleccionar(sql);
 		try {
 			while (rs.next()) {
-detalle.get
+				ficha.setFiSerial(rs.getInt("fi_serial"));
+				ficha.setFiNombre(rs.getString("fi_nombre"));
+				ficha.setFiDescripcion(rs.getString("fi_descripcion"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return aula;
-		return null;
+		return ficha;
 	}
 
 }
