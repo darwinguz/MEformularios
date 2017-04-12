@@ -1561,11 +1561,10 @@ public class MaTemplate extends JFrame {
 
 	private LinkedList<LinkedList<TdetalleFicha>> cargarFicha() {
 		ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
-		ServicioCabecera srvCabecera = new ComponenteCabecera();
 		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 
 		LinkedList<TdetalleFicha> listaKE = new LinkedList<>();
-		TCabecera cabecera = srvCabecera.buscarProyecto(gettCabecera().getCNombreProyecto());
+		TCabecera cabecera = gettCabecera();
 
 		TGrupo grupoTmp = srvFichaMA.buscarGrupo("Kit eléctrico");
 		Integer updateFicha = srvFichaMA.buscarUpdateFicha();
