@@ -3,9 +3,11 @@ package com.capa.negocios;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.LinkedList;
+import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import com.capa.datos.TCabecera;
 import com.capa.datos.TFicha;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TdetalleFicha;
@@ -49,23 +51,6 @@ public class ComponenteFicha implements ServicioFicha {
 		return false;
 	}
 
-	// falta editar el where
-	@Override
-	public LinkedList<String[]> extraerFormulario() {
-		LinkedList<String[]> camposFormularios = new LinkedList<>();
-		String query = "SELECT * FROM t_detalle_ficha WHERE c_serial=" + Utilitarios.gettCabecera().getCSerial() + ";";
-		ResultSet rs = Query.seleccionar(query);
-		try {
-			while (rs.next()) {
-				camposFormularios
-						.add(new String[] { rs.getString("df_cantidad_ejecutada"), rs.getString("df_obs_ref") });
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return camposFormularios;
-	}
-
 	@Override
 	public TGrupo buscarGrupo(String nombre) {
 		TGrupo grupo = new TGrupo();
@@ -106,19 +91,39 @@ public class ComponenteFicha implements ServicioFicha {
 	}
 
 	@Override
-	public Integer buscarUpdateFicha() {
-		// Pendiente OJO!
-		Integer maxima = null;
-		String query = "SELECT MAX(c_serial) FROM t_cabecera;";
+	public int nActualizacionFicha(TCabecera serialC, TFicha serialF) {
+		String query = "select max(df_actualizacion_n) from t_detalle_ficha where fi_serial = " + serialF.getFiSerial()
+				+ " and c_serial = " + serialC.getCSerial() + ";";
+		int maximo = -1;
 		try {
 			ResultSet rs = Query.seleccionar(query);
+
 			while (rs.next()) {
-				maxima = new Integer(rs.getInt("MAX(c_serial)"));
+				maximo = rs.getInt("max(df_actualizacion_n)");
 			}
 		} catch (Exception e) {
 			System.out.println("Error al BUSCAR: " + e.getMessage());
 		}
-		return 3;
+		return maximo;
+	}
+
+	@Override
+	public LinkedList<TdetalleFicha> detallesFicha(TCabecera serialC, TFicha serialF) {
+		LinkedList<TdetalleFicha> camposFormularios = new LinkedList<>();
+		String query = "SELECT * FROM t_detalle_ficha WHERE fi_serial = " + serialF.getFiSerial() + " and c_serial = "
+				+ serialC.getCSerial()
+				+ " and df_actualizacion_n = (select max(df_actualizacion_n) from t_detalle_ficha where fi_serial = "
+				+ serialF.getFiSerial() + " and c_serial = " + serialC.getCSerial() + ");";
+
+		try {
+			ResultSet rs = Query.seleccionar(query);
+			while (rs.next()) {
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return camposFormularios;
 	}
 
 }
