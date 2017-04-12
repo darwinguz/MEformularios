@@ -31,7 +31,7 @@ public class ComponenteFicha implements ServicioFicha {
 		return ficha;
 	}
 
-	// por confirmar
+	// metodo revisado!
 	@Override
 	public boolean existeFicha() {
 		String query = "SELECT * FROM t_detalle_ficha WHERE c_serial=" + Utilitarios.gettCabecera().getCSerial() + ";";
@@ -39,7 +39,7 @@ public class ComponenteFicha implements ServicioFicha {
 		int temp = -1;
 		try {
 			while (rs.next()) {
-				temp = rs.getInt("fma_serial");
+				temp = rs.getInt("df_serial");
 				if (temp != -1)
 					return true;
 			}
@@ -49,16 +49,16 @@ public class ComponenteFicha implements ServicioFicha {
 		return false;
 	}
 
-	// por confirmar
+	// falta editar el where
 	@Override
 	public LinkedList<String[]> extraerFormulario() {
 		LinkedList<String[]> camposFormularios = new LinkedList<>();
-		String query = "SELECT * FROM t_ficha_ma WHERE c_serial=" + Utilitarios.gettCabecera().getCSerial() + ";";
+		String query = "SELECT * FROM t_detalle_ficha WHERE c_serial=" + Utilitarios.gettCabecera().getCSerial() + ";";
 		ResultSet rs = Query.seleccionar(query);
 		try {
 			while (rs.next()) {
-				camposFormularios.add(new String[] { rs.getString("fma_cantidad_ejecutada"),
-						rs.getString("f_observacion_referencia") });
+				camposFormularios
+						.add(new String[] { rs.getString("df_cantidad_ejecutada"), rs.getString("df_obs_ref") });
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
