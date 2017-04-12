@@ -3,11 +3,9 @@ package com.capa.presentacion;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
-import static com.capa.util.Utilitarios.settCabecera;
 import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -26,10 +24,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import com.capa.datos.TAula;
-import com.capa.datos.TCabecera;
+import com.capa.datos.TFicha;
 import com.capa.datos.TFichaMa;
-import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteFichaMA;
@@ -152,7 +148,6 @@ public class MaTemplate extends JFrame {
 	protected JTextField txtKECantidad20;
 	protected JTextField txtKECantidad30;
 	protected JTextField txtKALCantidad00;
-	protected String nombreAula;
 	private JTextField txtCECantidad01;
 	private JTextField txtCECantidad11;
 	private JTextField txtCECantidad21;
@@ -168,28 +163,13 @@ public class MaTemplate extends JFrame {
 	private JTextField txtCECantidad121;
 
 	LinkedList<JTextField[]> textFields;
+	TFicha ficha;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MaTemplate frame = new MaTemplate("Ma-Template");
-					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	public MaTemplate(TFicha ficha) {
 
-	/**
-	 * Create the frame.
-	 */
-	public MaTemplate(String nombreAula) {
-
+		this.ficha = ficha;
 		textFields = new LinkedList<JTextField[]>();
-		this.nombreAula = nombreAula;
+
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		contentPane = new JPanel();
@@ -197,7 +177,7 @@ public class MaTemplate extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		this.setTitle(nombreAula);
+		this.setTitle(ficha.getFiNombre());
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 
@@ -206,7 +186,7 @@ public class MaTemplate extends JFrame {
 		contentPane.add(tabbedPane);
 
 		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab(nombreAula, null, pnlPestaña1, null);
+		tabbedPane.addTab(ficha.getFiDescripcion(), null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
 
 		JPanel pnlKitElectrico = new JPanel();
@@ -1558,10 +1538,11 @@ public class MaTemplate extends JFrame {
 				if (validarInfo(infoObl)) {
 					ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
 					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-					srvFichaMA.insertarFormulario(cargarListas());
 					ServicioCabecera srvTempCabecera = new ComponenteCabecera();
+
 					infoObl.settCabe(srvTempCabecera.buscarProyecto(gettCabecera().getCNombreProyecto()));
 					srvInfoObl.crear(infoObl);
+					srvFichaMA.insertarFormulario(cargarListas());
 				} else {
 					JOptionPane.showMessageDialog(null, "Datos obligatorios");
 				}
@@ -1577,162 +1558,162 @@ public class MaTemplate extends JFrame {
 	}
 
 	private LinkedList<LinkedList<TFichaMa>> cargarListas() {
-
+/*
 		ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
 		ServicioCabecera srvCabecera = new ComponenteCabecera();
 
 		LinkedList<TFichaMa> listaKE = new LinkedList<TFichaMa>();
-		settCabecera(new TCabecera(5, "proyecto test"));
 		TCabecera cabecera = srvCabecera.buscarProyecto(gettCabecera().getCNombreProyecto());
 
-		nombreAula = "Aula 1";
-		TAula aula = srvFichaMA.buscarAula(nombreAula);
+
 		TGrupo grupoTmp = srvFichaMA.buscarGrupo("Kit eléctrico");
 		Integer updateFicha = srvFichaMA.buscarUpdateFicha();
 
-		listaKE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKECantidad00.getText()),
+		TdetalleFicha detalle = new TdetalleFicha(tCabecera, infoObligatoria, tGrupo, tFicha, detEtiqueta, detCantidadLimite, detCantidadEjecutada, detObsRef, detActualizacionN)
+		
+				listaKE.add(
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtKECantidad00.getText()),
 						Integer.parseInt(txtKECantidad01.getText()), txtKEObsRef0.getText(), updateFicha));
 		listaKE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKECantidad10.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtKECantidad10.getText()),
 						Integer.parseInt(txtKECantidad11.getText()), txtKEObsRef1.getText(), updateFicha));
 		listaKE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKECantidad20.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtKECantidad20.getText()),
 						Integer.parseInt(txtKECantidad21.getText()), txtKEObsRef2.getText(), updateFicha));
 		listaKE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKECantidad30.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtKECantidad30.getText()),
 						Integer.parseInt(txtKECantidad31.getText()), txtKEObsRef3.getText(), updateFicha));
 		listaKE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKECantidad40.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtKECantidad40.getText()),
 						Integer.parseInt(txtKECantidad41.getText()), txtKEObsRef4.getText(), updateFicha));
 
 		LinkedList<TFichaMa> listaKAL = new LinkedList<TFichaMa>();
 		grupoTmp = srvFichaMA.buscarGrupo("Kit agua lluvia");
 		listaKAL.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKALCantidad00.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtKALCantidad00.getText()),
 						Integer.parseInt(txtKALCantidad01.getText()), txtKALObsRef0.getText(), updateFicha));
 		listaKAL.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKALCantidad10.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtKALCantidad10.getText()),
 						Integer.parseInt(txtKALCantidad11.getText()), txtKALObsRef1.getText(), updateFicha));
 		listaKAL.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKALCantidad20.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtKALCantidad20.getText()),
 						Integer.parseInt(txtKALCantidad21.getText()), txtKALObsRef2.getText(), updateFicha));
 		listaKAL.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKALCantidad30.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtKALCantidad30.getText()),
 						Integer.parseInt(txtKALCantidad31.getText()), txtKALObsRef3.getText(), updateFicha));
 		listaKAL.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtKALCantidad40.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtKALCantidad40.getText()),
 						Integer.parseInt(txtKALCantidad41.getText()), txtKALObsRef4.getText(), updateFicha));
 
 		LinkedList<TFichaMa> listaCA = new LinkedList<TFichaMa>();
 		grupoTmp = srvFichaMA.buscarGrupo("Componente arquitectónico");
 		listaCA.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCACantidad00.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCACantidad00.getText()),
 						Integer.parseInt(txtCACantidad01.getText()), txtCAObsRef0.getText(), updateFicha));
 		listaCA.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCACantidad10.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCACantidad10.getText()),
 						Integer.parseInt(txtCACantidad11.getText()), txtCAObsRef1.getText(), updateFicha));
 		listaCA.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCACantidad20.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCACantidad20.getText()),
 						Integer.parseInt(txtCACantidad21.getText()), txtCAObsRef2.getText(), updateFicha));
 		listaCA.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCACantidad30.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCACantidad30.getText()),
 						Integer.parseInt(txtCACantidad31.getText()), txtCAObsRef3.getText(), updateFicha));
 		listaCA.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCACantidad40.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCACantidad40.getText()),
 						Integer.parseInt(txtCACantidad41.getText()), txtCAObsRef4.getText(), updateFicha));
 
 		LinkedList<TFichaMa> listaFF = new LinkedList<TFichaMa>();
 		grupoTmp = srvFichaMA.buscarGrupo("Fachada frontal");
 		listaFF.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtFFCantidad00.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtFFCantidad00.getText()),
 						Integer.parseInt(txtFFCantidad01.getText()), txtFFObsRef0.getText(), updateFicha));
 		listaFF.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtFFCantidad10.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtFFCantidad10.getText()),
 						Integer.parseInt(txtFFCantidad11.getText()), txtFFObsRef1.getText(), updateFicha));
 		listaFF.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtFFCantidad20.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtFFCantidad20.getText()),
 						Integer.parseInt(txtFFCantidad21.getText()), txtFFObsRef2.getText(), updateFicha));
 		listaFF.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtFFCantidad30.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtFFCantidad30.getText()),
 						Integer.parseInt(txtFFCantidad31.getText()), txtFFObsRef3.getText(), updateFicha));
 
 		LinkedList<TFichaMa> listaFP = new LinkedList<TFichaMa>();
 		grupoTmp = srvFichaMA.buscarGrupo("Fachada posterior");
 		listaFP.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtFPCantidad00.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtFPCantidad00.getText()),
 						Integer.parseInt(txtFPCantidad01.getText()), txtFPObsRef0.getText(), updateFicha));
 		listaFP.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtFPCantidad10.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtFPCantidad10.getText()),
 						Integer.parseInt(txtFPCantidad11.getText()), txtFPObsRef1.getText(), updateFicha));
 		listaFP.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtFPCantidad20.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtFPCantidad20.getText()),
 						Integer.parseInt(txtFPCantidad21.getText()), txtFPObsRef2.getText(), updateFicha));
 
 		LinkedList<TFichaMa> listaFL = new LinkedList<TFichaMa>();
 		grupoTmp = srvFichaMA.buscarGrupo("Fachada lateral");
 		listaFL.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtFLCantidad00.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtFLCantidad00.getText()),
 						Integer.parseInt(txtFLCantidad01.getText()), txtFLObsRef0.getText(), updateFicha));
 		listaFL.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtFLCantidad10.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtFLCantidad10.getText()),
 						Integer.parseInt(txtFLCantidad11.getText()), txtFLObsRef1.getText(), updateFicha));
 
 		LinkedList<TFichaMa> listaI = new LinkedList<TFichaMa>();
 		grupoTmp = srvFichaMA.buscarGrupo("Interior");
 		listaI.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtICantidad00.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtICantidad00.getText()),
 						Integer.parseInt(txtICantidad01.getText()), txtIObsRef0.getText(), updateFicha));
 		listaI.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtICantidad10.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtICantidad10.getText()),
 						Integer.parseInt(txtICantidad11.getText()), txtIObsRef1.getText(), updateFicha));
 
 		LinkedList<TFichaMa> listaC = new LinkedList<TFichaMa>();
 		grupoTmp = srvFichaMA.buscarGrupo("Cubierta");
 		listaC.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCCantidad00.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCCantidad00.getText()),
 						Integer.parseInt(txtCCantidad01.getText()), txtCObsRef0.getText(), updateFicha));
 
 		LinkedList<TFichaMa> listaCE = new LinkedList<TFichaMa>();
 		grupoTmp = srvFichaMA.buscarGrupo("Componente estructural");
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad00.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad00.getText()),
 						Integer.parseInt(txtCECantidad01.getText()), txtCEObsRef0.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad10.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad10.getText()),
 						Integer.parseInt(txtCECantidad11.getText()), txtCEObsRef1.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad20.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad20.getText()),
 						Integer.parseInt(txtCECantidad21.getText()), txtCEObsRef2.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad30.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad30.getText()),
 						Integer.parseInt(txtCECantidad31.getText()), txtCEObsRef3.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad40.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad40.getText()),
 						Integer.parseInt(txtCECantidad41.getText()), txtCEObsRef4.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad50.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad50.getText()),
 						Integer.parseInt(txtCECantidad51.getText()), txtCEObsRef5.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad60.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad60.getText()),
 						Integer.parseInt(txtCECantidad61.getText()), txtCEObsRef6.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad70.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad70.getText()),
 						Integer.parseInt(txtCECantidad71.getText()), txtCEObsRef7.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad80.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad80.getText()),
 						Integer.parseInt(txtCECantidad81.getText()), txtCEObsRef8.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad90.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad90.getText()),
 						Integer.parseInt(txtCECantidad91.getText()), txtCEObsRef9.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad100.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad100.getText()),
 						Integer.parseInt(txtCECantidad101.getText()), txtCEObsRef10.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad110.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad110.getText()),
 						Integer.parseInt(txtCECantidad111.getText()), txtCEObsRef11.getText(), updateFicha));
 		listaCE.add(
-				new TFichaMa(aula, cabecera, grupoTmp, null/* etiqueta */, Integer.parseInt(txtCECantidad120.getText()),
+				new TFichaMa(aula, cabecera, grupoTmp, null, Integer.parseInt(txtCECantidad120.getText()),
 						Integer.parseInt(txtCECantidad121.getText()), txtCEObsRef12.getText(), updateFicha));
 
 		LinkedList<LinkedList<TFichaMa>> listaFormulario = new LinkedList<LinkedList<TFichaMa>>();
@@ -1747,6 +1728,8 @@ public class MaTemplate extends JFrame {
 		listaFormulario.add(listaCE);
 
 		return listaFormulario;
+		*/
+		return null;
 	}
 
 	public LinkedList<JTextField[]> getTextFields() {
