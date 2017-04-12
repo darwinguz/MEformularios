@@ -5,26 +5,7 @@ import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
 import static com.capa.util.Validaciones.validarInfo;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.border.TitledBorder;
-
-import com.capa.datos.TFicha;
-import com.capa.datos.TGrupo;
-import com.capa.datos.TInformacionObligatoria;
-import com.capa.datos.TdetalleFicha;
-import com.capa.negocios.ComponenteFichaMA;
-import com.capa.negocios.ComponenteInfoObligatoria;
-import com.capa.negocios.ServicioFichaMA;
-import com.capa.negocios.ServicioInfoObligatoria;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,8 +13,23 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.LinkedList;
 
-import javax.swing.SwingConstants;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.TitledBorder;
+
+import com.capa.datos.TFicha;
+import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
+import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteFicha;
+import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.ServicioFicha;
+import com.capa.negocios.ServicioInfoObligatoria;
 
 public class MSTemplate extends JFrame {
 
@@ -1330,7 +1326,7 @@ public class MSTemplate extends JFrame {
 		LinkedList<TdetalleFicha> listaPosterior = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaLateral = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
-		ServicioFichaMA servFicha = new ComponenteFichaMA();
+		ServicioFicha servFicha = new ComponenteFicha();
 		// infor = cargarInfoObligatoria(inforV);
 
 		TGrupo grupoTmp = servFicha.buscarGrupo("KIT ELÉCTRICO");
