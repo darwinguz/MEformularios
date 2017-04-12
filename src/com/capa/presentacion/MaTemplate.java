@@ -30,10 +30,10 @@ import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteCabecera;
-import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioCabecera;
-import com.capa.negocios.ServicioFichaMA;
+import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.util.Validaciones;
 
@@ -1538,7 +1538,7 @@ public class MaTemplate extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
 				if (validarInfo(infoObl)) {
-					ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
+					ServicioFicha srvFicha = new ComponenteFicha();
 					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 					ServicioCabecera srvTempCabecera = new ComponenteCabecera();
 
@@ -1546,7 +1546,7 @@ public class MaTemplate extends JFrame {
 					srvInfoObl.crear(infoObl);
 					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
 
-					srvFichaMA.insertarFormulario(cargarFicha(infoObl));
+					srvFicha.insertarFormulario(cargarFicha(infoObl));
 				} else {
 					JOptionPane.showMessageDialog(null, "Datos obligatorios");
 				}
@@ -1562,13 +1562,13 @@ public class MaTemplate extends JFrame {
 	}
 
 	private LinkedList<LinkedList<TdetalleFicha>> cargarFicha(TInformacionObligatoria infoObligatoria) {
-		ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
+		ServicioFicha srvFicha = new ComponenteFicha();
 
 		TCabecera cabecera = gettCabecera();
-		Integer updateFicha = srvFichaMA.buscarUpdateFicha();
+		Integer updateFicha = srvFicha.buscarUpdateFicha();
 
 		LinkedList<TdetalleFicha> listaKE = new LinkedList<>();
-		TGrupo grupoTmp = srvFichaMA.buscarGrupo("Kit eléctrico");
+		TGrupo grupoTmp = srvFicha.buscarGrupo("Kit eléctrico");
 		listaKE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
 				Integer.parseInt(txtKECantidad00.getText()), Integer.parseInt(txtKECantidad01.getText()),
 				txtKEObsRef0.getText(), updateFicha));
@@ -1586,7 +1586,7 @@ public class MaTemplate extends JFrame {
 				txtKEObsRef4.getText(), updateFicha));
 
 		LinkedList<TdetalleFicha> listaKAL = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFichaMA.buscarGrupo("Kit agua lluvia");
+		grupoTmp = srvFicha.buscarGrupo("Kit agua lluvia");
 		listaKAL.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
 				Integer.parseInt(txtKALCantidad00.getText()), Integer.parseInt(txtKALCantidad01.getText()),
 				txtKALObsRef0.getText(), updateFicha));
@@ -1604,7 +1604,7 @@ public class MaTemplate extends JFrame {
 				txtKALObsRef4.getText(), updateFicha));
 
 		LinkedList<TdetalleFicha> listaCA = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFichaMA.buscarGrupo("Componente arquitectónico");
+		grupoTmp = srvFicha.buscarGrupo("Componente arquitectónico");
 		listaCA.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
 				Integer.parseInt(txtCACantidad00.getText()), Integer.parseInt(txtCACantidad01.getText()),
 				txtCAObsRef0.getText(), updateFicha));
@@ -1622,7 +1622,7 @@ public class MaTemplate extends JFrame {
 				txtCAObsRef4.getText(), updateFicha));
 
 		LinkedList<TdetalleFicha> listaFF = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFichaMA.buscarGrupo("Fachada frontal");
+		grupoTmp = srvFicha.buscarGrupo("Fachada frontal");
 		listaFF.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
 				Integer.parseInt(txtFFCantidad00.getText()), Integer.parseInt(txtFFCantidad01.getText()),
 				txtFFObsRef0.getText(), updateFicha));
@@ -1637,7 +1637,7 @@ public class MaTemplate extends JFrame {
 				txtFFObsRef3.getText(), updateFicha));
 
 		LinkedList<TdetalleFicha> listaFP = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFichaMA.buscarGrupo("Fachada posterior");
+		grupoTmp = srvFicha.buscarGrupo("Fachada posterior");
 		listaFP.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
 				Integer.parseInt(txtFPCantidad00.getText()), Integer.parseInt(txtFPCantidad01.getText()),
 				txtFPObsRef0.getText(), updateFicha));
@@ -1649,7 +1649,7 @@ public class MaTemplate extends JFrame {
 				txtFPObsRef2.getText(), updateFicha));
 
 		LinkedList<TdetalleFicha> listaFL = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFichaMA.buscarGrupo("Fachada lateral");
+		grupoTmp = srvFicha.buscarGrupo("Fachada lateral");
 		listaFL.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
 				Integer.parseInt(txtFLCantidad00.getText()), Integer.parseInt(txtFLCantidad01.getText()),
 				txtFLObsRef0.getText(), updateFicha));
@@ -1658,7 +1658,7 @@ public class MaTemplate extends JFrame {
 				txtFLObsRef1.getText(), updateFicha));
 
 		LinkedList<TdetalleFicha> listaI = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFichaMA.buscarGrupo("Interior");
+		grupoTmp = srvFicha.buscarGrupo("Interior");
 		listaI.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
 				Integer.parseInt(txtICantidad00.getText()), Integer.parseInt(txtICantidad01.getText()),
 				txtIObsRef0.getText(), updateFicha));
@@ -1667,13 +1667,13 @@ public class MaTemplate extends JFrame {
 				txtIObsRef1.getText(), updateFicha));
 
 		LinkedList<TdetalleFicha> listaC = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFichaMA.buscarGrupo("Cubierta");
+		grupoTmp = srvFicha.buscarGrupo("Cubierta");
 		listaC.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
 				Integer.parseInt(txtCCantidad00.getText()), Integer.parseInt(txtCCantidad01.getText()),
 				txtCObsRef0.getText(), updateFicha));
 
 		LinkedList<TdetalleFicha> listaCE = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFichaMA.buscarGrupo("Componente estructural");
+		grupoTmp = srvFicha.buscarGrupo("Componente estructural");
 		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
 				Integer.parseInt(txtCECantidad00.getText()), Integer.parseInt(txtCECantidad01.getText()),
 				txtCEObsRef0.getText(), updateFicha));
