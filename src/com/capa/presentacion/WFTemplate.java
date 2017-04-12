@@ -5,7 +5,6 @@ import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
 import static com.capa.util.Validaciones.validarInfo;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -33,6 +32,10 @@ import com.capa.negocios.ServicioInfoObligatoria;
 
 public class WFTemplate extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4051441821505906861L;
 	private JPanel contentPane;
 	private JTextField txtVDCantidad20;
 	private JTextField txtVDCantidad10;
@@ -87,27 +90,30 @@ public class WFTemplate extends JFrame {
 	private JTextField txtIVObs12;
 
 	TInformacionObligatoria infor;
+	TFicha ficha;
+	ServicioFicha servFicha;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					WFTemplate frame = new WFTemplate();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// WFTemplate frame = new WFTemplate();
+	// frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
 	 */
-	public WFTemplate() {
+	public WFTemplate(TFicha ficha) {
+		this.ficha = ficha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		contentPane = new JPanel();
@@ -115,7 +121,7 @@ public class WFTemplate extends JFrame {
 		setContentPane(contentPane);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		setTitle("WF-1");
+		setTitle(ficha.getFiNombre());
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
@@ -582,10 +588,12 @@ public class WFTemplate extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+				servFicha = new ComponenteFicha();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
 
 				if (validarInfo(infor)) {
 					srvInfoOblig.crear(infor);
+					servFicha.insertarFormulario(cargarListas());
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
 				}
@@ -600,15 +608,16 @@ public class WFTemplate extends JFrame {
 		});
 	}
 
-	public LinkedList<LinkedList<TdetalleFicha>> cargarListas(InformacionObligatoriaV inforV) {
+	public LinkedList<LinkedList<TdetalleFicha>> cargarListas() {
 		LinkedList<TdetalleFicha> listaDatos = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaInterconexion = new LinkedList<>();
 		ServicioFicha servFicha = new ComponenteFicha();
-		// infor = cargarInfoObligatoria(inforV);
+
+		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
 		TGrupo grupoTmp = servFicha.buscarGrupo("Kit voz y datos WF");
 		Integer updateFicha = servFicha.buscarUpdateFicha();
-		TFicha ficha = null;
 		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtVDCantidad01.getText()), txtVDObs0.getText(), updateFicha));
 		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,

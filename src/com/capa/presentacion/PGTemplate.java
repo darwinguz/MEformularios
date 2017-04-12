@@ -1,15 +1,28 @@
 package com.capa.presentacion;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.capa.datos.TFicha;
+import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
+import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteFicha;
+import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.ServicioFicha;
+import com.capa.negocios.ServicioInfoObligatoria;
+
 import javax.swing.JTabbedPane;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.LinkedList;
 
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -323,31 +336,38 @@ public class PGTemplate extends JFrame {
 	private JTextField txtCE2Obs2;
 	private JTextField txtKEObs2;
 
+	TInformacionObligatoria infor;
+	TFicha ficha;
+	ServicioFicha servFicha;
+
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					PGTemplate frame = new PGTemplate();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// PGTemplate frame = new PGTemplate();
+	// frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
 	 */
-	public PGTemplate() {
-		setTitle("PG_1");
+	public PGTemplate(TFicha ficha) {
+		this.ficha = ficha;
+		setTitle(ficha.getFiNombre());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		this.setTitle(ficha.getFiNombre());
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
@@ -2217,6 +2237,24 @@ public class PGTemplate extends JFrame {
 		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(865, 325);
 		panel2.add(informacionObligatoriaV.getPnlInformacionObl());
 
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+				servFicha = new ComponenteFicha();
+				infor = cargarInfoObligatoria(informacionObligatoriaV);
+				// System.out.println(infor.gettCabe().getCNombreProyecto());
+
+				if (validarInfo(infor)) {
+					srvInfoOblig.crear(infor);
+					servFicha.insertarFormulario(cargarListas());
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
+				}
+			}
+		});
+
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				new Menu().setVisible(true);
@@ -2225,1172 +2263,216 @@ public class PGTemplate extends JFrame {
 		});
 	}
 
-	public JTextField getTxtKECantidad41() {
-		return txtKECantidad41;
+	public LinkedList<LinkedList<TdetalleFicha>> cargarListas() {
+		LinkedList<TdetalleFicha> listaElectrico = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaAL = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaFrontal = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaPosterior = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaLateralIzquierdo = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaLateralDerecha = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaElectrico2 = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaHidro = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaAP = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaAR = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaPorton = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaArquitectonico = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaEstructural2 = new LinkedList<>();
+
+		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
+
+		TGrupo grupoTmp = servFicha.buscarGrupo("Kit eléctrico");
+		Integer updateFicha = servFicha.buscarUpdateFicha();
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKECantidad01.getText()), txtKEObs0.getText(), updateFicha));
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKECantidad11.getText()), txtKEObs1.getText(), updateFicha));
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKECantidad21.getText()), txtKEObs2.getText(), updateFicha));
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKECantidad31.getText()), txtKEObs3.getText(), updateFicha));
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKECantidad41.getText()), txtKEObs4.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Kit agua lluvia");
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtALCantidad01.getText()), txtALObs0.getText(), updateFicha));
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtALCantidad11.getText()), txtALObs1.getText(), updateFicha));
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtALCantidad21.getText()), txtALObs2.getText(), updateFicha));
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtALCantidad31.getText()), txtALObs3.getText(), updateFicha));
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtALCantidad41.getText()), txtALObs4.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Fachada frontal");
+		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFFCantidad01.getText()), txtFFObs0.getText(), updateFicha));
+		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFFCantidad11.getText()), txtFFObs1.getText(), updateFicha));
+		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFFCantidad21.getText()), txtFFObs2.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Fachada posterior");
+		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFPCantidad01.getText()), txtFPObs0.getText(), updateFicha));
+		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFPCantidad11.getText()), txtFPObs1.getText(), updateFicha));
+		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFPCantidad21.getText()), txtFPObs2.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Fachada lateral izquierda");
+		listaLateralIzquierdo.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFLCantidad01.getText()), txtFLObs0.getText(), updateFicha));
+		listaLateralIzquierdo.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFLCantidad11.getText()), txtFLObs1.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Fachada Lateral derecha");
+		listaLateralDerecha.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFLDCantidad01.getText()), txtFLDObs0.getText(), updateFicha));
+		listaLateralDerecha.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFLDCantidad11.getText()), txtFLDObs1.getText(), updateFicha));
+		listaLateralDerecha.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFLDCantidad21.getText()), txtFLDObs2.getText(), updateFicha));
+		listaLateralDerecha.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFLDCantidad31.getText()), txtFLDObs3.getText(), updateFicha));
+		listaLateralDerecha.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFLDCantidad41.getText()), txtFLDObs5.getText(), updateFicha));
+		listaLateralDerecha.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFLDCantidad51.getText()), txtFLDObs6.getText(), updateFicha));
+		listaLateralDerecha.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtFLDCantidad61.getText()), txtFLDObs7.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Kit eléctrico");
+		listaElectrico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKE2Cantidad01.getText()), txtKE2Obs0.getText(), updateFicha));
+		listaElectrico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKE2Cantidad11.getText()), txtKE2Obs1.getText(), updateFicha));
+		listaElectrico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKE2Cantidad21.getText()), txtKE2Obs2.getText(), updateFicha));
+		listaElectrico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKE2Cantidad31.getText()), txtKE2Obs3.getText(), updateFicha));
+		listaElectrico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKE2Cantidad41.getText()), txtKE2Obs4.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Kit hidrosanitario");
+		listaHidro.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKHCantidad01.getText()), txtKHObs0.getText(), updateFicha));
+		listaHidro.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtKHCantidad11.getText()), txtKHObs1.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Kit agua potable");
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtAPCantidad01.getText()), txtAPObs0.getText(), updateFicha));
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtAPCantidad11.getText()), txtAPObs1.getText(), updateFicha));
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtAPCantidad21.getText()), txtAPObs2.getText(), updateFicha));
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtAPCantidad31.getText()), txtAPObs3.getText(), updateFicha));
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtAPCantidad41.getText()), txtAPObs4.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Kit agua residual");
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtARCantidad01.getText()), txtARObs0.getText(), updateFicha));
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtARCantidad11.getText()), txtARObs1.getText(), updateFicha));
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtARCantidad21.getText()), txtARObs2.getText(), updateFicha));
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtARCantidad31.getText()), txtARObs3.getText(), updateFicha));
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtARCantidad41.getText()), txtARObs4.getText(), updateFicha));
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtARCantidad51.getText()), txtARObs5.getText(), updateFicha));
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtARCantidad61.getText()), txtARObs6.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Componente estructural");
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCECantidad01.getText()), txtCEObs0.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCECantidad11.getText()), txtCEObs1.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCECantidad21.getText()), txtCEObs3.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCECantidad31.getText()), txtCEObs4.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCECantidad41.getText()), txtCEObs5.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCECantidad51.getText()), txtCEObs6.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCECantidad61.getText()), txtCEObs7.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCECantidad71.getText()), txtCEObs8.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCECantidad81.getText()), txtCEObs9.getText(), updateFicha));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCECantidad91.getText()), txtCEObs10.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Portón");
+		listaPorton.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtPCantidad01.getText()), txtPObs0.getText(), updateFicha));
+		listaPorton.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtPCantidad11.getText()), txtPObs1.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Componente arquitectónico");
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad01.getText()), txtCAObs0.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad11.getText()), txtCAObs1.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad21.getText()), txtCAObs2.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad31.getText()), txtCAObs3.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad41.getText()), txtCAObs4.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad51.getText()), txtCAObs5.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad61.getText()), txtCAObs6.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad71.getText()), txtCAObs7.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad81.getText()), txtCAObs8.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad91.getText()), txtCAObs9.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad101.getText()), txtCAObs10.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad111.getText()), txtCAObs11.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad121.getText()), txtCAObs12.getText(), updateFicha));
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCACantidad131.getText()), txtCAObs13.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("Componente estructural");
+		listaEstructural2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCE2Cantidad01.getText()), txtCE2Obs0.getText(), updateFicha));
+		listaEstructural2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCE2Cantidad11.getText()), txtCE2Obs1.getText(), updateFicha));
+		listaEstructural2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtCE2Cantidad21.getText()), txtCE2Obs2.getText(), updateFicha));
+
+		LinkedList<LinkedList<TdetalleFicha>> listaFormulario = new LinkedList<LinkedList<TdetalleFicha>>();
+		listaFormulario.add(listaElectrico);
+		listaFormulario.add(listaAL);
+		listaFormulario.add(listaFrontal);
+		listaFormulario.add(listaPosterior);
+		listaFormulario.add(listaLateralIzquierdo);
+		listaFormulario.add(listaLateralDerecha);
+		listaFormulario.add(listaElectrico2);
+		listaFormulario.add(listaHidro);
+		listaFormulario.add(listaAP);
+		listaFormulario.add(listaAR);
+		listaFormulario.add(listaEstructural);
+		listaFormulario.add(listaPorton);
+		listaFormulario.add(listaArquitectonico);
+		listaFormulario.add(listaEstructural2);
+
+		return listaFormulario;
 	}
-
-	public void setTxtKECantidad41(JTextField txtKECantidad41) {
-		this.txtKECantidad41 = txtKECantidad41;
-	}
-
-	public JTextField getTxtKECantidad31() {
-		return txtKECantidad31;
-	}
-
-	public void setTxtKECantidad31(JTextField txtKECantidad31) {
-		this.txtKECantidad31 = txtKECantidad31;
-	}
-
-	public JTextField getTxtKECantidad21() {
-		return txtKECantidad21;
-	}
-
-	public void setTxtKECantidad21(JTextField txtKECantidad21) {
-		this.txtKECantidad21 = txtKECantidad21;
-	}
-
-	public JTextField getTxtKECantidad11() {
-		return txtKECantidad11;
-	}
-
-	public void setTxtKECantidad11(JTextField txtKECantidad11) {
-		this.txtKECantidad11 = txtKECantidad11;
-	}
-
-	public JTextField getTxtKECantidad01() {
-		return txtKECantidad01;
-	}
-
-	public void setTxtKECantidad01(JTextField txtKECantidad01) {
-		this.txtKECantidad01 = txtKECantidad01;
-	}
-
-	public JTextField getTxtKEObs0() {
-		return txtKEObs0;
-	}
-
-	public void setTxtKEObs0(JTextField txtKEObs0) {
-		this.txtKEObs0 = txtKEObs0;
-	}
-
-	public JTextField getTxtKEObs1() {
-		return txtKEObs1;
-	}
-
-	public void setTxtKEObs1(JTextField txtKEObs1) {
-		this.txtKEObs1 = txtKEObs1;
-	}
-
-	public JTextField getTxtKEObs3() {
-		return txtKEObs3;
-	}
-
-	public void setTxtKEObs3(JTextField txtKEObs3) {
-		this.txtKEObs3 = txtKEObs3;
-	}
-
-	public JTextField getTxtKEObs4() {
-		return txtKEObs4;
-	}
-
-	public void setTxtKEObs4(JTextField txtKEObs4) {
-		this.txtKEObs4 = txtKEObs4;
-	}
-
-	public JTextField getTxtALCantidad41() {
-		return txtALCantidad41;
-	}
-
-	public void setTxtALCantidad41(JTextField txtALCantidad41) {
-		this.txtALCantidad41 = txtALCantidad41;
-	}
-
-	public JTextField getTxtALCantidad31() {
-		return txtALCantidad31;
-	}
-
-	public void setTxtALCantidad31(JTextField txtALCantidad31) {
-		this.txtALCantidad31 = txtALCantidad31;
-	}
-
-	public JTextField getTxtALCantidad21() {
-		return txtALCantidad21;
-	}
-
-	public void setTxtALCantidad21(JTextField txtALCantidad21) {
-		this.txtALCantidad21 = txtALCantidad21;
-	}
-
-	public JTextField getTxtALCantidad11() {
-		return txtALCantidad11;
-	}
-
-	public void setTxtALCantidad11(JTextField txtALCantidad11) {
-		this.txtALCantidad11 = txtALCantidad11;
-	}
-
-	public JTextField getTxtALCantidad01() {
-		return txtALCantidad01;
-	}
-
-	public void setTxtALCantidad01(JTextField txtALCantidad01) {
-		this.txtALCantidad01 = txtALCantidad01;
-	}
-
-	public JTextField getTxtFFCantidad01() {
-		return txtFFCantidad01;
-	}
-
-	public void setTxtFFCantidad01(JTextField txtFFCantidad01) {
-		this.txtFFCantidad01 = txtFFCantidad01;
-	}
-
-	public JTextField getTxtFFCantidad11() {
-		return txtFFCantidad11;
-	}
-
-	public void setTxtFFCantidad11(JTextField txtFFCantidad11) {
-		this.txtFFCantidad11 = txtFFCantidad11;
-	}
-
-	public JTextField getTxtFFObs1() {
-		return txtFFObs1;
-	}
-
-	public void setTxtFFObs1(JTextField txtFFObs1) {
-		this.txtFFObs1 = txtFFObs1;
-	}
-
-	public JTextField getTxtFFObs0() {
-		return txtFFObs0;
-	}
-
-	public void setTxtFFObs0(JTextField txtFFObs0) {
-		this.txtFFObs0 = txtFFObs0;
-	}
-
-	public JTextField getTxtFFCantidad21() {
-		return txtFFCantidad21;
-	}
-
-	public void setTxtFFCantidad21(JTextField txtFFCantidad21) {
-		this.txtFFCantidad21 = txtFFCantidad21;
-	}
-
-	public JTextField getTxtFFObs2() {
-		return txtFFObs2;
-	}
-
-	public void setTxtFFObs2(JTextField txtFFObs2) {
-		this.txtFFObs2 = txtFFObs2;
-	}
-
-	public JTextField getTxtFPCantidad01() {
-		return txtFPCantidad01;
-	}
-
-	public void setTxtFPCantidad01(JTextField txtFPCantidad01) {
-		this.txtFPCantidad01 = txtFPCantidad01;
-	}
-
-	public JTextField getTxtFPCantidad11() {
-		return txtFPCantidad11;
-	}
-
-	public void setTxtFPCantidad11(JTextField txtFPCantidad11) {
-		this.txtFPCantidad11 = txtFPCantidad11;
-	}
-
-	public JTextField getTxtFPCantidad21() {
-		return txtFPCantidad21;
-	}
-
-	public void setTxtFPCantidad21(JTextField txtFPCantidad21) {
-		this.txtFPCantidad21 = txtFPCantidad21;
-	}
-
-	public JTextField getTxtFPObs2() {
-		return txtFPObs2;
-	}
-
-	public void setTxtFPObs2(JTextField txtFPObs2) {
-		this.txtFPObs2 = txtFPObs2;
-	}
-
-	public JTextField getTxtFPObs1() {
-		return txtFPObs1;
-	}
-
-	public void setTxtFPObs1(JTextField txtFPObs1) {
-		this.txtFPObs1 = txtFPObs1;
-	}
-
-	public JTextField getTxtFPObs0() {
-		return txtFPObs0;
-	}
-
-	public void setTxtFPObs0(JTextField txtFPObs0) {
-		this.txtFPObs0 = txtFPObs0;
-	}
-
-	public JTextField getTxtFLDCantidad61() {
-		return txtFLDCantidad61;
-	}
-
-	public void setTxtFLDCantidad61(JTextField txtFLDCantidad61) {
-		this.txtFLDCantidad61 = txtFLDCantidad61;
-	}
-
-	public JTextField getTxtFLDCantidad51() {
-		return txtFLDCantidad51;
-	}
-
-	public void setTxtFLDCantidad51(JTextField txtFLDCantidad51) {
-		this.txtFLDCantidad51 = txtFLDCantidad51;
-	}
-
-	public JTextField getTxtFLDCantidad41() {
-		return txtFLDCantidad41;
-	}
-
-	public void setTxtFLDCantidad41(JTextField txtFLDCantidad41) {
-		this.txtFLDCantidad41 = txtFLDCantidad41;
-	}
-
-	public JTextField getTxtFLDCantidad31() {
-		return txtFLDCantidad31;
-	}
-
-	public void setTxtFLDCantidad31(JTextField txtFLDCantidad31) {
-		this.txtFLDCantidad31 = txtFLDCantidad31;
-	}
-
-	public JTextField getTxtFLDCantidad01() {
-		return txtFLDCantidad01;
-	}
-
-	public void setTxtFLDCantidad01(JTextField txtFLDCantidad01) {
-		this.txtFLDCantidad01 = txtFLDCantidad01;
-	}
-
-	public JTextField getTxtFLDCantidad11() {
-		return txtFLDCantidad11;
-	}
-
-	public void setTxtFLDCantidad11(JTextField txtFLDCantidad11) {
-		this.txtFLDCantidad11 = txtFLDCantidad11;
-	}
-
-	public JTextField getTxtFLDCantidad21() {
-		return txtFLDCantidad21;
-	}
-
-	public void setTxtFLDCantidad21(JTextField txtFLDCantidad21) {
-		this.txtFLDCantidad21 = txtFLDCantidad21;
-	}
-
-	public JTextField getTxtFLDObs0() {
-		return txtFLDObs0;
-	}
-
-	public void setTxtFLDObs0(JTextField txtFLDObs0) {
-		this.txtFLDObs0 = txtFLDObs0;
-	}
-
-	public JTextField getTxtFLDObs1() {
-		return txtFLDObs1;
-	}
-
-	public void setTxtFLDObs1(JTextField txtFLDObs1) {
-		this.txtFLDObs1 = txtFLDObs1;
-	}
-
-	public JTextField getTxtFLDObs2() {
-		return txtFLDObs2;
-	}
-
-	public void setTxtFLDObs2(JTextField txtFLDObs2) {
-		this.txtFLDObs2 = txtFLDObs2;
-	}
-
-	public JTextField getTxtFLDObs3() {
-		return txtFLDObs3;
-	}
-
-	public void setTxtFLDObs3(JTextField txtFLDObs3) {
-		this.txtFLDObs3 = txtFLDObs3;
-	}
-
-	public JTextField getTxtFLDObs5() {
-		return txtFLDObs5;
-	}
-
-	public void setTxtFLDObs5(JTextField txtFLDObs5) {
-		this.txtFLDObs5 = txtFLDObs5;
-	}
-
-	public JTextField getTxtFLDObs6() {
-		return txtFLDObs6;
-	}
-
-	public void setTxtFLDObs6(JTextField txtFLDObs6) {
-		this.txtFLDObs6 = txtFLDObs6;
-	}
-
-	public JTextField getTxtFLDObs7() {
-		return txtFLDObs7;
-	}
-
-	public void setTxtFLDObs7(JTextField txtFLDObs7) {
-		this.txtFLDObs7 = txtFLDObs7;
-	}
-
-	public JTextField getTxtFLCantidad01() {
-		return txtFLCantidad01;
-	}
-
-	public void setTxtFLCantidad01(JTextField txtFLCantidad01) {
-		this.txtFLCantidad01 = txtFLCantidad01;
-	}
-
-	public JTextField getTxtFLCantidad11() {
-		return txtFLCantidad11;
-	}
-
-	public void setTxtFLCantidad11(JTextField txtFLCantidad11) {
-		this.txtFLCantidad11 = txtFLCantidad11;
-	}
-
-	public JTextField getTxtFLObs1() {
-		return txtFLObs1;
-	}
-
-	public void setTxtFLObs1(JTextField txtFLObs1) {
-		this.txtFLObs1 = txtFLObs1;
-	}
-
-	public JTextField getTxtFLObs0() {
-		return txtFLObs0;
-	}
-
-	public void setTxtFLObs0(JTextField txtFLObs0) {
-		this.txtFLObs0 = txtFLObs0;
-	}
-
-	public JTextField getTxtKE2Cantidad01() {
-		return txtKE2Cantidad01;
-	}
-
-	public void setTxtKE2Cantidad01(JTextField txtKE2Cantidad01) {
-		this.txtKE2Cantidad01 = txtKE2Cantidad01;
-	}
-
-	public JTextField getTxtKE2Cantidad11() {
-		return txtKE2Cantidad11;
-	}
-
-	public void setTxtKE2Cantidad11(JTextField txtKE2Cantidad11) {
-		this.txtKE2Cantidad11 = txtKE2Cantidad11;
-	}
-
-	public JTextField getTxtKE2Cantidad21() {
-		return txtKE2Cantidad21;
-	}
-
-	public void setTxtKE2Cantidad21(JTextField txtKE2Cantidad21) {
-		this.txtKE2Cantidad21 = txtKE2Cantidad21;
-	}
-
-	public JTextField getTxtKE2Cantidad31() {
-		return txtKE2Cantidad31;
-	}
-
-	public void setTxtKE2Cantidad31(JTextField txtKE2Cantidad31) {
-		this.txtKE2Cantidad31 = txtKE2Cantidad31;
-	}
-
-	public JTextField getTxtKE2Cantidad41() {
-		return txtKE2Cantidad41;
-	}
-
-	public void setTxtKE2Cantidad41(JTextField txtKE2Cantidad41) {
-		this.txtKE2Cantidad41 = txtKE2Cantidad41;
-	}
-
-	public JTextField getTxtKE2Obs4() {
-		return txtKE2Obs4;
-	}
-
-	public void setTxtKE2Obs4(JTextField txtKE2Obs4) {
-		this.txtKE2Obs4 = txtKE2Obs4;
-	}
-
-	public JTextField getTxtKE2Obs3() {
-		return txtKE2Obs3;
-	}
-
-	public void setTxtKE2Obs3(JTextField txtKE2Obs3) {
-		this.txtKE2Obs3 = txtKE2Obs3;
-	}
-
-	public JTextField getTxtKE2Obs2() {
-		return txtKE2Obs2;
-	}
-
-	public void setTxtKE2Obs2(JTextField txtKE2Obs2) {
-		this.txtKE2Obs2 = txtKE2Obs2;
-	}
-
-	public JTextField getTxtKE2Obs1() {
-		return txtKE2Obs1;
-	}
-
-	public void setTxtKE2Obs1(JTextField txtKE2Obs1) {
-		this.txtKE2Obs1 = txtKE2Obs1;
-	}
-
-	public JTextField getTxtKE2Obs0() {
-		return txtKE2Obs0;
-	}
-
-	public void setTxtKE2Obs0(JTextField txtKE2Obs0) {
-		this.txtKE2Obs0 = txtKE2Obs0;
-	}
-
-	public JTextField getTxtKHCantidad01() {
-		return txtKHCantidad01;
-	}
-
-	public void setTxtKHCantidad01(JTextField txtKHCantidad01) {
-		this.txtKHCantidad01 = txtKHCantidad01;
-	}
-
-	public JTextField getTxtKHCantidad11() {
-		return txtKHCantidad11;
-	}
-
-	public void setTxtKHCantidad11(JTextField txtKHCantidad11) {
-		this.txtKHCantidad11 = txtKHCantidad11;
-	}
-
-	public JTextField getTxtKHObs1() {
-		return txtKHObs1;
-	}
-
-	public void setTxtKHObs1(JTextField txtKHObs1) {
-		this.txtKHObs1 = txtKHObs1;
-	}
-
-	public JTextField getTxtKHObs0() {
-		return txtKHObs0;
-	}
-
-	public void setTxtKHObs0(JTextField txtKHObs0) {
-		this.txtKHObs0 = txtKHObs0;
-	}
-
-	public JTextField getTxtAPCantidad01() {
-		return txtAPCantidad01;
-	}
-
-	public void setTxtAPCantidad01(JTextField txtAPCantidad01) {
-		this.txtAPCantidad01 = txtAPCantidad01;
-	}
-
-	public JTextField getTxtAPCantidad11() {
-		return txtAPCantidad11;
-	}
-
-	public void setTxtAPCantidad11(JTextField txtAPCantidad11) {
-		this.txtAPCantidad11 = txtAPCantidad11;
-	}
-
-	public JTextField getTxtAPCantidad21() {
-		return txtAPCantidad21;
-	}
-
-	public void setTxtAPCantidad21(JTextField txtAPCantidad21) {
-		this.txtAPCantidad21 = txtAPCantidad21;
-	}
-
-	public JTextField getTxtAPCantidad31() {
-		return txtAPCantidad31;
-	}
-
-	public void setTxtAPCantidad31(JTextField txtAPCantidad31) {
-		this.txtAPCantidad31 = txtAPCantidad31;
-	}
-
-	public JTextField getTxtAPCantidad41() {
-		return txtAPCantidad41;
-	}
-
-	public void setTxtAPCantidad41(JTextField txtAPCantidad41) {
-		this.txtAPCantidad41 = txtAPCantidad41;
-	}
-
-	public JTextField getTxtARCantidad61() {
-		return txtARCantidad61;
-	}
-
-	public void setTxtARCantidad61(JTextField txtARCantidad61) {
-		this.txtARCantidad61 = txtARCantidad61;
-	}
-
-	public JTextField getTxtARCantidad51() {
-		return txtARCantidad51;
-	}
-
-	public void setTxtARCantidad51(JTextField txtARCantidad51) {
-		this.txtARCantidad51 = txtARCantidad51;
-	}
-
-	public JTextField getTxtARCantidad41() {
-		return txtARCantidad41;
-	}
-
-	public void setTxtARCantidad41(JTextField txtARCantidad41) {
-		this.txtARCantidad41 = txtARCantidad41;
-	}
-
-	public JTextField getTxtARCantidad31() {
-		return txtARCantidad31;
-	}
-
-	public void setTxtARCantidad31(JTextField txtARCantidad31) {
-		this.txtARCantidad31 = txtARCantidad31;
-	}
-
-	public JTextField getTxtARCantidad21() {
-		return txtARCantidad21;
-	}
-
-	public void setTxtARCantidad21(JTextField txtARCantidad21) {
-		this.txtARCantidad21 = txtARCantidad21;
-	}
-
-	public JTextField getTxtARCantidad01() {
-		return txtARCantidad01;
-	}
-
-	public void setTxtARCantidad01(JTextField txtARCantidad01) {
-		this.txtARCantidad01 = txtARCantidad01;
-	}
-
-	public JTextField getTxtARCantidad11() {
-		return txtARCantidad11;
-	}
-
-	public void setTxtARCantidad11(JTextField txtARCantidad11) {
-		this.txtARCantidad11 = txtARCantidad11;
-	}
-
-	public JTextField getTxtCECantidad01() {
-		return txtCECantidad01;
-	}
-
-	public void setTxtCECantidad01(JTextField txtCECantidad01) {
-		this.txtCECantidad01 = txtCECantidad01;
-	}
-
-	public JTextField getTxtCECantidad11() {
-		return txtCECantidad11;
-	}
-
-	public void setTxtCECantidad11(JTextField txtCECantidad11) {
-		this.txtCECantidad11 = txtCECantidad11;
-	}
-
-	public JTextField getTxtCECantidad21() {
-		return txtCECantidad21;
-	}
-
-	public void setTxtCECantidad21(JTextField txtCECantidad21) {
-		this.txtCECantidad21 = txtCECantidad21;
-	}
-
-	public JTextField getTxtCECantidad31() {
-		return txtCECantidad31;
-	}
-
-	public void setTxtCECantidad31(JTextField txtCECantidad31) {
-		this.txtCECantidad31 = txtCECantidad31;
-	}
-
-	public JTextField getTxtCECantidad41() {
-		return txtCECantidad41;
-	}
-
-	public void setTxtCECantidad41(JTextField txtCECantidad41) {
-		this.txtCECantidad41 = txtCECantidad41;
-	}
-
-	public JTextField getTxtCECantidad51() {
-		return txtCECantidad51;
-	}
-
-	public void setTxtCECantidad51(JTextField txtCECantidad51) {
-		this.txtCECantidad51 = txtCECantidad51;
-	}
-
-	public JTextField getTxtCECantidad61() {
-		return txtCECantidad61;
-	}
-
-	public void setTxtCECantidad61(JTextField txtCECantidad61) {
-		this.txtCECantidad61 = txtCECantidad61;
-	}
-
-	public JTextField getTxtCECantidad71() {
-		return txtCECantidad71;
-	}
-
-	public void setTxtCECantidad71(JTextField txtCECantidad71) {
-		this.txtCECantidad71 = txtCECantidad71;
-	}
-
-	public JTextField getTxtCECantidad81() {
-		return txtCECantidad81;
-	}
-
-	public void setTxtCECantidad81(JTextField txtCECantidad81) {
-		this.txtCECantidad81 = txtCECantidad81;
-	}
-
-	public JTextField getTxtCECantidad91() {
-		return txtCECantidad91;
-	}
-
-	public void setTxtCECantidad91(JTextField txtCECantidad91) {
-		this.txtCECantidad91 = txtCECantidad91;
-	}
-
-	public JTextField getTxtCEObs10() {
-		return txtCEObs10;
-	}
-
-	public void setTxtCEObs10(JTextField txtCEObs10) {
-		this.txtCEObs10 = txtCEObs10;
-	}
-
-	public JTextField getTxtCEObs9() {
-		return txtCEObs9;
-	}
-
-	public void setTxtCEObs9(JTextField txtCEObs9) {
-		this.txtCEObs9 = txtCEObs9;
-	}
-
-	public JTextField getTxtCEObs8() {
-		return txtCEObs8;
-	}
-
-	public void setTxtCEObs8(JTextField txtCEObs8) {
-		this.txtCEObs8 = txtCEObs8;
-	}
-
-	public JTextField getTxtCEObs7() {
-		return txtCEObs7;
-	}
-
-	public void setTxtCEObs7(JTextField txtCEObs7) {
-		this.txtCEObs7 = txtCEObs7;
-	}
-
-	public JTextField getTxtCEObs6() {
-		return txtCEObs6;
-	}
-
-	public void setTxtCEObs6(JTextField txtCEObs6) {
-		this.txtCEObs6 = txtCEObs6;
-	}
-
-	public JTextField getTxtCEObs5() {
-		return txtCEObs5;
-	}
-
-	public void setTxtCEObs5(JTextField txtCEObs5) {
-		this.txtCEObs5 = txtCEObs5;
-	}
-
-	public JTextField getTxtCEObs4() {
-		return txtCEObs4;
-	}
-
-	public void setTxtCEObs4(JTextField txtCEObs4) {
-		this.txtCEObs4 = txtCEObs4;
-	}
-
-	public JTextField getTxtCEObs3() {
-		return txtCEObs3;
-	}
-
-	public void setTxtCEObs3(JTextField txtCEObs3) {
-		this.txtCEObs3 = txtCEObs3;
-	}
-
-	public JTextField getTxtCEObs1() {
-		return txtCEObs1;
-	}
-
-	public void setTxtCEObs1(JTextField txtCEObs1) {
-		this.txtCEObs1 = txtCEObs1;
-	}
-
-	public JTextField getTxtCEObs0() {
-		return txtCEObs0;
-	}
-
-	public void setTxtCEObs0(JTextField txtCEObs0) {
-		this.txtCEObs0 = txtCEObs0;
-	}
-
-	public JTextField getTxtPCantidad01() {
-		return txtPCantidad01;
-	}
-
-	public void setTxtPCantidad01(JTextField txtPCantidad01) {
-		this.txtPCantidad01 = txtPCantidad01;
-	}
-
-	public JTextField getTxtPObs0() {
-		return txtPObs0;
-	}
-
-	public void setTxtPObs0(JTextField txtPObs0) {
-		this.txtPObs0 = txtPObs0;
-	}
-
-	public JTextField getTxtPCantidad11() {
-		return txtPCantidad11;
-	}
-
-	public void setTxtPCantidad11(JTextField txtPCantidad11) {
-		this.txtPCantidad11 = txtPCantidad11;
-	}
-
-	public JTextField getTxtPObs1() {
-		return txtPObs1;
-	}
-
-	public void setTxtPObs1(JTextField txtPObs1) {
-		this.txtPObs1 = txtPObs1;
-	}
-
-	public JTextField getTxtCACantidad01() {
-		return txtCACantidad01;
-	}
-
-	public void setTxtCACantidad01(JTextField txtCACantidad01) {
-		this.txtCACantidad01 = txtCACantidad01;
-	}
-
-	public JTextField getTxtCACantidad11() {
-		return txtCACantidad11;
-	}
-
-	public void setTxtCACantidad11(JTextField txtCACantidad11) {
-		this.txtCACantidad11 = txtCACantidad11;
-	}
-
-	public JTextField getTxtCACantidad21() {
-		return txtCACantidad21;
-	}
-
-	public void setTxtCACantidad21(JTextField txtCACantidad21) {
-		this.txtCACantidad21 = txtCACantidad21;
-	}
-
-	public JTextField getTxtCACantidad31() {
-		return txtCACantidad31;
-	}
-
-	public void setTxtCACantidad31(JTextField txtCACantidad31) {
-		this.txtCACantidad31 = txtCACantidad31;
-	}
-
-	public JTextField getTxtCACantidad41() {
-		return txtCACantidad41;
-	}
-
-	public void setTxtCACantidad41(JTextField txtCACantidad41) {
-		this.txtCACantidad41 = txtCACantidad41;
-	}
-
-	public JTextField getTxtCACantidad51() {
-		return txtCACantidad51;
-	}
-
-	public void setTxtCACantidad51(JTextField txtCACantidad51) {
-		this.txtCACantidad51 = txtCACantidad51;
-	}
-
-	public JTextField getTxtCACantidad61() {
-		return txtCACantidad61;
-	}
-
-	public void setTxtCACantidad61(JTextField txtCACantidad61) {
-		this.txtCACantidad61 = txtCACantidad61;
-	}
-
-	public JTextField getTxtCACantidad71() {
-		return txtCACantidad71;
-	}
-
-	public void setTxtCACantidad71(JTextField txtCACantidad71) {
-		this.txtCACantidad71 = txtCACantidad71;
-	}
-
-	public JTextField getTxtCACantidad81() {
-		return txtCACantidad81;
-	}
-
-	public void setTxtCACantidad81(JTextField txtCACantidad81) {
-		this.txtCACantidad81 = txtCACantidad81;
-	}
-
-	public JTextField getTxtCACantidad91() {
-		return txtCACantidad91;
-	}
-
-	public void setTxtCACantidad91(JTextField txtCACantidad91) {
-		this.txtCACantidad91 = txtCACantidad91;
-	}
-
-	public JTextField getTxtCACantidad101() {
-		return txtCACantidad101;
-	}
-
-	public void setTxtCACantidad101(JTextField txtCACantidad101) {
-		this.txtCACantidad101 = txtCACantidad101;
-	}
-
-	public JTextField getTxtCACantidad111() {
-		return txtCACantidad111;
-	}
-
-	public void setTxtCACantidad111(JTextField txtCACantidad111) {
-		this.txtCACantidad111 = txtCACantidad111;
-	}
-
-	public JTextField getTxtCAObs11() {
-		return txtCAObs11;
-	}
-
-	public void setTxtCAObs11(JTextField txtCAObs11) {
-		this.txtCAObs11 = txtCAObs11;
-	}
-
-	public JTextField getTxtCAObs10() {
-		return txtCAObs10;
-	}
-
-	public void setTxtCAObs10(JTextField txtCAObs10) {
-		this.txtCAObs10 = txtCAObs10;
-	}
-
-	public JTextField getTxtCAObs9() {
-		return txtCAObs9;
-	}
-
-	public void setTxtCAObs9(JTextField txtCAObs9) {
-		this.txtCAObs9 = txtCAObs9;
-	}
-
-	public JTextField getTxtCAObs8() {
-		return txtCAObs8;
-	}
-
-	public void setTxtCAObs8(JTextField txtCAObs8) {
-		this.txtCAObs8 = txtCAObs8;
-	}
-
-	public JTextField getTxtCAObs7() {
-		return txtCAObs7;
-	}
-
-	public void setTxtCAObs7(JTextField txtCAObs7) {
-		this.txtCAObs7 = txtCAObs7;
-	}
-
-	public JTextField getTxtCAObs6() {
-		return txtCAObs6;
-	}
-
-	public void setTxtCAObs6(JTextField txtCAObs6) {
-		this.txtCAObs6 = txtCAObs6;
-	}
-
-	public JTextField getTxtCAObs5() {
-		return txtCAObs5;
-	}
-
-	public void setTxtCAObs5(JTextField txtCAObs5) {
-		this.txtCAObs5 = txtCAObs5;
-	}
-
-	public JTextField getTxtCAObs4() {
-		return txtCAObs4;
-	}
-
-	public void setTxtCAObs4(JTextField txtCAObs4) {
-		this.txtCAObs4 = txtCAObs4;
-	}
-
-	public JTextField getTxtCAObs3() {
-		return txtCAObs3;
-	}
-
-	public void setTxtCAObs3(JTextField txtCAObs3) {
-		this.txtCAObs3 = txtCAObs3;
-	}
-
-	public JTextField getTxtCAObs2() {
-		return txtCAObs2;
-	}
-
-	public void setTxtCAObs2(JTextField txtCAObs2) {
-		this.txtCAObs2 = txtCAObs2;
-	}
-
-	public JTextField getTxtCAObs1() {
-		return txtCAObs1;
-	}
-
-	public void setTxtCAObs1(JTextField txtCAObs1) {
-		this.txtCAObs1 = txtCAObs1;
-	}
-
-	public JTextField getTxtCAObs0() {
-		return txtCAObs0;
-	}
-
-	public void setTxtCAObs0(JTextField txtCAObs0) {
-		this.txtCAObs0 = txtCAObs0;
-	}
-
-	public JTextField getTxtCACantidad121() {
-		return txtCACantidad121;
-	}
-
-	public void setTxtCACantidad121(JTextField txtCACantidad121) {
-		this.txtCACantidad121 = txtCACantidad121;
-	}
-
-	public JTextField getTxtCAObs12() {
-		return txtCAObs12;
-	}
-
-	public void setTxtCAObs12(JTextField txtCAObs12) {
-		this.txtCAObs12 = txtCAObs12;
-	}
-
-	public JTextField getTxtCACantidad131() {
-		return txtCACantidad131;
-	}
-
-	public void setTxtCACantidad131(JTextField txtCACantidad131) {
-		this.txtCACantidad131 = txtCACantidad131;
-	}
-
-	public JTextField getTxtCAObs13() {
-		return txtCAObs13;
-	}
-
-	public void setTxtCAObs13(JTextField txtCAObs13) {
-		this.txtCAObs13 = txtCAObs13;
-	}
-
-	public JTextField getTxtCE2Cantidad01() {
-		return txtCE2Cantidad01;
-	}
-
-	public void setTxtCE2Cantidad01(JTextField txtCE2Cantidad01) {
-		this.txtCE2Cantidad01 = txtCE2Cantidad01;
-	}
-
-	public JTextField getTxtCE2Cantidad11() {
-		return txtCE2Cantidad11;
-	}
-
-	public void setTxtCE2Cantidad11(JTextField txtCE2Cantidad11) {
-		this.txtCE2Cantidad11 = txtCE2Cantidad11;
-	}
-
-	public JTextField getTxtCE2Obs1() {
-		return txtCE2Obs1;
-	}
-
-	public void setTxtCE2Obs1(JTextField txtCE2Obs1) {
-		this.txtCE2Obs1 = txtCE2Obs1;
-	}
-
-	public JTextField getTxtCE2Obs0() {
-		return txtCE2Obs0;
-	}
-
-	public void setTxtCE2Obs0(JTextField txtCE2Obs0) {
-		this.txtCE2Obs0 = txtCE2Obs0;
-	}
-
-	public JTextField getTxtCE2Cantidad21() {
-		return txtCE2Cantidad21;
-	}
-
-	public void setTxtCE2Cantidad21(JTextField txtCE2Cantidad21) {
-		this.txtCE2Cantidad21 = txtCE2Cantidad21;
-	}
-
-	public JTextField getTxtCE2Obs2() {
-		return txtCE2Obs2;
-	}
-
-	public void setTxtCE2Obs2(JTextField txtCE2Obs2) {
-		this.txtCE2Obs2 = txtCE2Obs2;
-	}
-
-	public JTextField getTxtKEObs2() {
-		return txtKEObs2;
-	}
-
-	public void setTxtKEObs2(JTextField txtKEObs2) {
-		this.txtKEObs2 = txtKEObs2;
-	}
-
-	public JTextField getTxtALObs4() {
-		return txtALObs4;
-	}
-
-	public void setTxtALObs4(JTextField txtALObs4) {
-		this.txtALObs4 = txtALObs4;
-	}
-
-	public JTextField getTxtALObs3() {
-		return txtALObs3;
-	}
-
-	public void setTxtALObs3(JTextField txtALObs3) {
-		this.txtALObs3 = txtALObs3;
-	}
-
-	public JTextField getTxtALObs0() {
-		return txtALObs0;
-	}
-
-	public void setTxtALObs0(JTextField txtALObs0) {
-		this.txtALObs0 = txtALObs0;
-	}
-
-	public JTextField getTxtALObs1() {
-		return txtALObs1;
-	}
-
-	public void setTxtALObs1(JTextField txtALObs1) {
-		this.txtALObs1 = txtALObs1;
-	}
-
-	public JTextField getTxtALObs2() {
-		return txtALObs2;
-	}
-
-	public void setTxtALObs2(JTextField txtALObs2) {
-		this.txtALObs2 = txtALObs2;
-	}
-
-	public JTextField getTxtAPObs0() {
-		return txtAPObs0;
-	}
-
-	public void setTxtAPObs0(JTextField txtAPObs0) {
-		this.txtAPObs0 = txtAPObs0;
-	}
-
-	public JTextField getTxtAPObs1() {
-		return txtAPObs1;
-	}
-
-	public void setTxtAPObs1(JTextField txtAPObs1) {
-		this.txtAPObs1 = txtAPObs1;
-	}
-
-	public JTextField getTxtAPObs2() {
-		return txtAPObs2;
-	}
-
-	public void setTxtAPObs2(JTextField txtAPObs2) {
-		this.txtAPObs2 = txtAPObs2;
-	}
-
-	public JTextField getTxtAPObs3() {
-		return txtAPObs3;
-	}
-
-	public void setTxtAPObs3(JTextField txtAPObs3) {
-		this.txtAPObs3 = txtAPObs3;
-	}
-
-	public JTextField getTxtAPObs4() {
-		return txtAPObs4;
-	}
-
-	public void setTxtAPObs4(JTextField txtAPObs4) {
-		this.txtAPObs4 = txtAPObs4;
-	}
-
-	public JTextField getTxtARObs0() {
-		return txtARObs0;
-	}
-
-	public void setTxtARObs0(JTextField txtARObs0) {
-		this.txtARObs0 = txtARObs0;
-	}
-
-	public JTextField getTxtARObs1() {
-		return txtARObs1;
-	}
-
-	public void setTxtARObs1(JTextField txtARObs1) {
-		this.txtARObs1 = txtARObs1;
-	}
-
-	public JTextField getTxtARObs2() {
-		return txtARObs2;
-	}
-
-	public void setTxtARObs2(JTextField txtARObs2) {
-		this.txtARObs2 = txtARObs2;
-	}
-
-	public JTextField getTxtARObs3() {
-		return txtARObs3;
-	}
-
-	public void setTxtARObs3(JTextField txtARObs3) {
-		this.txtARObs3 = txtARObs3;
-	}
-
-	public JTextField getTxtARObs4() {
-		return txtARObs4;
-	}
-
-	public void setTxtARObs4(JTextField txtARObs4) {
-		this.txtARObs4 = txtARObs4;
-	}
-
-	public JTextField getTxtARObs5() {
-		return txtARObs5;
-	}
-
-	public void setTxtARObs5(JTextField txtARObs5) {
-		this.txtARObs5 = txtARObs5;
-	}
-
-	public JTextField getTxtARObs6() {
-		return txtARObs6;
-	}
-
-	public void setTxtARObs6(JTextField txtARObs6) {
-		this.txtARObs6 = txtARObs6;
-	}
-
 }

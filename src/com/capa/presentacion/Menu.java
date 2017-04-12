@@ -496,7 +496,7 @@ public class Menu extends JFrame {
 				"<html><body><p align=\"center\">MS<br>Salón<br>uso<br>público<br>1</body></html>");
 		btnMSsalon1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MsTemplate("MS Salón de Uso Múltiple-1").setVisible(true);
+				new MsTemplate(servicioFicha.buscarFormulario("MS-1")).setVisible(true);
 				dispose();
 			}
 		});
@@ -511,7 +511,7 @@ public class Menu extends JFrame {
 				"<html><body><p align=\"center\">MS<br>Salón<br>uso<br>público<br>2</body></html>");
 		btnMSsalon2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MsTemplate("MS Salón de Uso Múltiple-2").setVisible(true);
+				new MsTemplate(servicioFicha.buscarFormulario("MS-2")).setVisible(true);
 				dispose();
 			}
 		});
@@ -525,7 +525,7 @@ public class Menu extends JFrame {
 		JButton btnMBbiblio1 = new JButton("<html><body><p align=\"left\">MB<br>Biblioteca<br>1</body></html>");
 		btnMBbiblio1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MbTemplate().setVisible(true);
+				new MbTemplate(servicioFicha.buscarFormulario("MB-1")).setVisible(true);
 				dispose();
 			}
 		});
@@ -567,7 +567,7 @@ public class Menu extends JFrame {
 				"<html><body><p align=\"left\">MT Lab<br>Tecnólogico<br>1</body></html>");
 		btnMTtecnlogico1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MtTemplate("MT Lab. Tecnológico-1").setVisible(true);
+				new MtTemplate(servicioFicha.buscarFormulario("MT-1")).setVisible(true);
 				dispose();
 			}
 		});
@@ -580,7 +580,7 @@ public class Menu extends JFrame {
 				"<html><body><p align=\"left\">MT Lab<br>Tecnólogico<br>1</body></html>");
 		btnMTtecnlogico2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MtTemplate("MT Lab. Tecnológico-2").setVisible(true);
+				new MtTemplate(servicioFicha.buscarFormulario("MT-2")).setVisible(true);
 				dispose();
 			}
 		});
@@ -631,7 +631,7 @@ public class Menu extends JFrame {
 		JButton btnMDadmin1 = new JButton("<html><body><p align=\"left\">MD<br>Administrativo</body></html>");
 		btnMDadmin1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MdTemplate().setVisible(true);
+				new MdTemplate(servicioFicha.buscarFormulario("MD-1")).setVisible(true);
 				dispose();
 			}
 		});
@@ -645,7 +645,7 @@ public class Menu extends JFrame {
 		JButton btnPortonGarita = new JButton("<html><body><p align=\"center\">Portón y Garita</body></html>");
 		btnPortonGarita.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new PGTemplate().setVisible(true);
+				new PGTemplate(servicioFicha.buscarFormulario("CE-1")).setVisible(true);
 				dispose();
 			}
 		});
@@ -682,7 +682,7 @@ public class Menu extends JFrame {
 		JButton btnWFvozDatos = new JButton("<html><body><p align=\"center\">WF<br>Voz-Datos</body></html>");
 		btnWFvozDatos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new WFTemplate().setVisible(true);
+				new WFTemplate(servicioFicha.buscarFormulario("WF-1")).setVisible(true);
 				dispose();
 			}
 		});
@@ -694,7 +694,7 @@ public class Menu extends JFrame {
 		JButton btnMEXexterior = new JButton("<html><body><p align=\"center\">MEX<br>Exterior</body></html>");
 		btnMEXexterior.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new MexTemplate().setVisible(true);
+				new MexTemplate(servicioFicha.buscarFormulario("MEX-1")).setVisible(true);
 				dispose();
 			}
 		});
@@ -706,7 +706,7 @@ public class Menu extends JFrame {
 		JButton btnCEcerramiento = new JButton("<html><body><p align=\"center\">CE1<br>Cerramiento</body></html>");
 		btnCEcerramiento.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new CeTemplate().setVisible(true);
+				new CeTemplate(servicioFicha.buscarFormulario("CE-1")).setVisible(true);
 				dispose();
 			}
 		});

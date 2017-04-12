@@ -33,7 +33,6 @@ import com.capa.negocios.ServicioInfoObligatoria;
 
 public class MsTemplate extends JFrame {
 
-
 	private static final long serialVersionUID = 596544013936639490L;
 	private JPanel contentPane;
 	private JTextField txtKECantidad40;
@@ -212,38 +211,42 @@ public class MsTemplate extends JFrame {
 	private JTextField txtCECantidad121;
 	private JTextField txtCEObs12;
 	private JTextField txtFPCantidad10;
-
-	TInformacionObligatoria infor;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 
+	TInformacionObligatoria infor;
+	TFicha ficha;
+	ServicioFicha servFicha;
+
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MsTemplate frame = new MsTemplate("");
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// MsTemplate frame = new MsTemplate("");
+	// frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
 	 */
-	public MsTemplate(String nombre) {
-		setTitle(nombre);
+	public MsTemplate(TFicha ficha) {
+		this.ficha = ficha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1378, 730);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+
+		setTitle(ficha.getFiNombre());
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
@@ -255,7 +258,8 @@ public class MsTemplate extends JFrame {
 		this.setLocationRelativeTo(null);
 
 		JPanel panel1 = new JPanel();
-		panel1.setBorder(new TitledBorder(null, nombre, TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel1.setBorder(
+				new TitledBorder(null, ficha.getFiDescripcion(), TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		panel1.setBounds(10, 127, 1344, 650);
 		contentPane.add(panel1);
 		panel1.setLayout(null);
@@ -269,10 +273,12 @@ public class MsTemplate extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+				servFicha = new ComponenteFicha();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
 
 				if (validarInfo(infor)) {
 					srvInfoOblig.crear(infor);
+					servFicha.insertarFormulario(cargarListas());
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
 				}
@@ -1424,10 +1430,11 @@ public class MsTemplate extends JFrame {
 		LinkedList<TdetalleFicha> listaPosterior = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaLateral = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
-		ServicioFicha servFicha = new ComponenteFicha();
-		// infor = cargarInfoObligatoria(inforV);
 
-		TGrupo grupoTmp = servFicha.buscarGrupo("KIT ELÉCTRICO");
+		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
+
+		TGrupo grupoTmp = servFicha.buscarGrupo("Kit eléctrico");
 		Integer updateFicha = servFicha.buscarUpdateFicha();
 		TFicha ficha = null;
 		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -1441,7 +1448,7 @@ public class MsTemplate extends JFrame {
 		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKECantidad41.getText()), txtKEObs4.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("KIT AGUA LLUVIA");
+		grupoTmp = servFicha.buscarGrupo("Kit agua lluvia");
 		listaLluvia.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtALCantidad01.getText()), txtALObs0.getText(), updateFicha));
 		listaLluvia.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -1453,7 +1460,7 @@ public class MsTemplate extends JFrame {
 		listaLluvia.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtALCantidad41.getText()), txtALObs4.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("COMPONENTE ARQUITECTÓNICO");
+		grupoTmp = servFicha.buscarGrupo("Componente arquitectónico");
 		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad01.getText()), txtCAObs0.getText(), updateFicha));
 		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -1473,7 +1480,7 @@ public class MsTemplate extends JFrame {
 		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad81.getText()), txtCAObs8.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("FACHADA FRONTAL");
+		grupoTmp = servFicha.buscarGrupo("Fachada frontal");
 		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFFCantidad01.getText()), txtFFObs0.getText(), updateFicha));
 		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -1483,7 +1490,7 @@ public class MsTemplate extends JFrame {
 		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFFCantidad31.getText()), txtFFObs3.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("FACHADA POSTERIOR");
+		grupoTmp = servFicha.buscarGrupo("Fachada posterior");
 		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFPCantidad01.getText()), txtFPObs0.getText(), updateFicha));
 		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -1491,11 +1498,11 @@ public class MsTemplate extends JFrame {
 		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFPCantidad21.getText()), txtFPObs2.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("FACHADA LATERAL");
+		grupoTmp = servFicha.buscarGrupo("Fachada lateral");
 		listaLateral.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFLCantidad01.getText()), txtFLObs0.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("COMPONENTE ESTRUCTURAL");
+		grupoTmp = servFicha.buscarGrupo("Componente estructural");
 		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad01.getText()), txtCEObs0.getText(), updateFicha));
 		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,

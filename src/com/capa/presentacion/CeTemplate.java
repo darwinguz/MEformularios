@@ -57,6 +57,8 @@ public class CeTemplate extends JFrame {
 	private JTextField txtWPCantidad00;
 
 	TInformacionObligatoria infor;
+	TFicha ficha;
+	ServicioFicha servFicha;
 
 	/**
 	 * Launch the application.
@@ -78,7 +80,8 @@ public class CeTemplate extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public CeTemplate() {
+	public CeTemplate(TFicha ficha) {
+		this.ficha = ficha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		panelPrincipal = new JPanel();
@@ -87,7 +90,7 @@ public class CeTemplate extends JFrame {
 		setContentPane(panelPrincipal);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		this.setTitle("CE");
+		this.setTitle(ficha.getFiNombre());
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
@@ -109,10 +112,13 @@ public class CeTemplate extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+				servFicha = new ComponenteFicha();
 				infor = cargarInfoObligatoria(infoObligatoria);
+				// System.out.println(infor.gettCabe().getCNombreProyecto());
 
 				if (validarInfo(infor)) {
 					srvInfoOblig.crear(infor);
+					servFicha.insertarFormulario(cargarListas());
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
 				}
@@ -304,17 +310,16 @@ public class CeTemplate extends JFrame {
 		});
 	}
 
-	public LinkedList<LinkedList<TdetalleFicha>> cargarListas(InformacionObligatoriaV inforV) {
+	public LinkedList<LinkedList<TdetalleFicha>> cargarListas() {
 		LinkedList<TdetalleFicha> listaModulo = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
-		ServicioFicha servFicha = new ComponenteFicha();
+
 		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-		// TInformacionObligatoria infor = cargarInfoObligatoria(inforV);
 		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
 		Integer updateFicha = servFicha.buscarUpdateFicha();
-		TFicha ficha = null;
-		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC");
+
+		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo A - 180x105");
 		listaModulo.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPCantidad01.getText()), txtWPObs0.getText(), updateFicha));
 

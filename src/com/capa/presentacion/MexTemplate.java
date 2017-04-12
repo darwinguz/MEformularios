@@ -5,7 +5,6 @@ import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
 import static com.capa.util.Validaciones.validarInfo;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -132,34 +131,37 @@ public class MexTemplate extends JFrame {
 	private JTextField txtWPEObs1;
 
 	TInformacionObligatoria infor;
+	TFicha ficha;
+	ServicioFicha servFicha;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MexTemplate frame = new MexTemplate();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// MexTemplate frame = new MexTemplate();
+	// frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
 	 */
-	public MexTemplate() {
+	public MexTemplate(TFicha ficha) {
+		this.ficha = ficha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1321, 742);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		this.setTitle("MEX");
+		this.setTitle(ficha.getFiNombre());
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 
@@ -735,10 +737,12 @@ public class MexTemplate extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+				servFicha = new ComponenteFicha();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
 
 				if (validarInfo(infor)) {
 					srvInfoOblig.crear(infor);
+					servFicha.insertarFormulario(cargarListas());
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
 				}
@@ -761,12 +765,11 @@ public class MexTemplate extends JFrame {
 		LinkedList<TdetalleFicha> listaTipoE = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEsparcimiento = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaAreasVerdes = new LinkedList<>();
-		ServicioFicha servFicha = new ComponenteFicha();
-		// infor = cargarInfoObligatoria(inforV);
+		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
-		TGrupo grupoTmp = servFicha.buscarGrupo("MODULO WPC TIPO A - 180x105 cm");
+		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo A - 180x105");
 		Integer updateFicha = servFicha.buscarUpdateFicha();
-		TFicha ficha = null;
 		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPACantidad01.getText()), txtWPAObs0.getText(), updateFicha));
 		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -774,7 +777,7 @@ public class MexTemplate extends JFrame {
 		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPACantidad21.getText()), txtWPAObs2.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("MODULO WPC TIPO B 250X105 cm");
+		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo B - 250x105");
 		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPBCantidad01.getText()), txtWPBObs0.getText(), updateFicha));
 		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -782,7 +785,7 @@ public class MexTemplate extends JFrame {
 		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPBCantidad21.getText()), txtWPBObs2.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("MODULO WPC TIPO C 240X105 cm");
+		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo C - 240x105");
 		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPCCantidad01.getText()), txtWPCObs0.getText(), updateFicha));
 		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -790,7 +793,7 @@ public class MexTemplate extends JFrame {
 		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPCCantidad21.getText()), txtWPCObs2.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("MODULO WPC TIPO D 135X105 cm");
+		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo D - 135x105");
 		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPDCantidad01.getText()), txtWPDObs0.getText(), updateFicha));
 		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -798,7 +801,7 @@ public class MexTemplate extends JFrame {
 		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPDCantidad21.getText()), txtWPDObs2.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("MODULO WPC TIPO E 204X105 cm");
+		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo E - 204x105");
 		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPECantidad01.getText()), txtWPEObs0.getText(), updateFicha));
 		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -806,11 +809,11 @@ public class MexTemplate extends JFrame {
 		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPECantidad21.getText()), txtWPEObs2.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("MÓDULO DE ESPARCIMIENTO DEPORTIVO");
+		grupoTmp = servFicha.buscarGrupo("Módulo de esparcimiento deportivo");
 		listaEsparcimiento.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtEDCantidad01.getText()), txtEDObs0.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("KIT  DE ÁREAS VERDES");
+		grupoTmp = servFicha.buscarGrupo("Kit de áreas verdes");
 		listaAreasVerdes.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtAVCantidad01.getText()), txtAVObs0.getText(), updateFicha));
 		listaAreasVerdes.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,

@@ -481,6 +481,8 @@ public class MdTemplate extends JFrame {
 	private JTextField txtAPCantidad31;
 
 	TInformacionObligatoria infor;
+	TFicha ficha;
+	ServicioFicha servFicha;
 
 	/**
 	 * Launch the application.
@@ -501,7 +503,8 @@ public class MdTemplate extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public MdTemplate() {
+	public MdTemplate(TFicha ficha) {
+		this.ficha = ficha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		contentPane = new JPanel();
@@ -515,7 +518,7 @@ public class MdTemplate extends JFrame {
 
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		setTitle("MD");
+		setTitle(ficha.getFiNombre());
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 126, 1286, 575);
@@ -3159,10 +3162,12 @@ public class MdTemplate extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+				servFicha = new ComponenteFicha();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
 
 				if (validarInfo(infor)) {
 					srvInfoOblig.crear(infor);
+					servFicha.insertarFormulario(cargarListas());
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
 				}
@@ -3177,7 +3182,7 @@ public class MdTemplate extends JFrame {
 		});
 	}
 
-	public LinkedList<LinkedList<TdetalleFicha>> cargarListas(InformacionObligatoriaV inforV) {
+	public LinkedList<LinkedList<TdetalleFicha>> cargarListas() {
 		LinkedList<TdetalleFicha> listaElectrico = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaAL = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaSanitario = new LinkedList<>();
@@ -3190,13 +3195,14 @@ public class MdTemplate extends JFrame {
 		LinkedList<TdetalleFicha> listaLateral = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaArquitectonico2 = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
-		ServicioFicha servFicha = new ComponenteFicha();
+
 		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-		// infor = cargarInfoObligatoria(inforV);
+
 		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
+
 		TGrupo grupoTmp = servFicha.buscarGrupo("Kit eléctrico");
 		Integer updateFicha = servFicha.buscarUpdateFicha();
-		TFicha ficha = null;
+
 		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKECantidad01.getText()), txtKEObs0.getText(), updateFicha));
 		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -3278,7 +3284,7 @@ public class MdTemplate extends JFrame {
 		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad111.getText()), txtASObs11.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("Componente arquitectònico");
+		grupoTmp = servFicha.buscarGrupo("Componente arquitectónico");
 		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtComCantidad01.getText()), txtComObs0.getText(), updateFicha));
 		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
@@ -3326,7 +3332,7 @@ public class MdTemplate extends JFrame {
 		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFPCantidad41.getText()), txtFPObs4.getText(), updateFicha));
 
-		grupoTmp = servFicha.buscarGrupo("Componente arquitect�nico");
+		grupoTmp = servFicha.buscarGrupo("Componente arquitectónico");
 		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad01.getText()), txtCAObs0.getText(), updateFicha));
 		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
