@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import com.capa.datos.TAula;
 import com.capa.datos.TFichaMa;
 import com.capa.datos.TGrupo;
+import com.capa.datos.TdetalleFicha;
 import com.capa.util.Utilitarios;
 
 public class ComponenteFichaMA implements ServicioFichaMA {
@@ -49,7 +50,7 @@ public class ComponenteFichaMA implements ServicioFichaMA {
 
 	@Override
 	public Integer buscarUpdateFicha() {
-		//Pendiente OJO!
+		// Pendiente OJO!
 		Integer maxima = null;
 		String query = "SELECT MAX(c_serial) FROM t_cabecera;";
 		try {
@@ -63,26 +64,27 @@ public class ComponenteFichaMA implements ServicioFichaMA {
 		return maxima;
 	}
 
+	
 	@Override
-	public void insertarFormulario(LinkedList<LinkedList<TFichaMa>> cargarListas) {
+	public void insertarFormulario(LinkedList<LinkedList<TdetalleFicha>> datosFicha) {
 
 		String query;
 
-		for (LinkedList<TFichaMa> lista : cargarListas) {
-			for (TFichaMa fichaMa : lista) {
+		datosFicha.forEach(lista -> {
+			lista.forEach(item -> {
 				try {
 					query = "INSERT INTO t_ficha_ma (au_serial, c_serial, g_serial, fma_etiqueta, fma_cantidad_limite, fma_cantidad_ejecutada, fma_actualizacion_n, f_observacion_referencia) VALUES ('"
-							+ fichaMa.getTAula().getAuSerial() + "', '" + fichaMa.getTCabecera().getCSerial() + "', '"
-							+ fichaMa.getTGrupo().getGSerial() + "', 'sin etiqueta', '" + fichaMa.getFmaCantidadLimite()
-							+ "', '" + fichaMa.getFmaCantidadEjecutada() + "', '" + fichaMa.getFmaActualizacionN()
-							+ "', '" + fichaMa.getFmaObsRef() + "');";
+							+ item.getTAula().getAuSerial() + "', '" + item.getTCabecera().getCSerial() + "', '"
+							+ item.getTGrupo().getGSerial() + "', 'sin etiqueta', '" + item.getFmaCantidadLimite()
+							+ "', '" + item.getFmaCantidadEjecutada() + "', '" + item.getFmaActualizacionN() + "', '"
+							+ item.getFmaObsRef() + "');";
 					Query.insertar(query);
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null, "Error al insertar datos del formulario MA " + e.getMessage(),
 							"ERROR", JOptionPane.ERROR_MESSAGE);
 				}
-			}
-		}
+			});
+		});
 
 	}
 

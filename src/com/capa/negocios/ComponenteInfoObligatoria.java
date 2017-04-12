@@ -23,4 +23,10 @@ public class ComponenteInfoObligatoria implements ServicioInfoObligatoria {
 		}
 	}
 
+	@Override
+	public TInformacionObligatoria getInfoObl() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
