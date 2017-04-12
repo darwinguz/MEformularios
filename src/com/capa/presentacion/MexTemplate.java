@@ -7,14 +7,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.LinkedList;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import com.capa.datos.TFicha;
+import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
+import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.ServicioFichaMA;
+import com.capa.negocios.ServicioInfoObligatoria;
 
 import static com.capa.util.Utilitarios.*;
 import static com.capa.util.Validaciones.*;
@@ -49,8 +60,8 @@ public class MexTemplate extends JFrame {
 	private JTextField txtWPACantidad21;
 	private JPanel panel_18;
 	private JTextField txtWPAObs0;
+	private JTextField txtWPAObs1;
 	private JTextField txtWPAObs2;
-	private JTextField txtWPAObs3;
 	private JLabel label_17;
 	private JLabel label_18;
 	private JTextField txtWPBCantidad00;
@@ -118,6 +129,8 @@ public class MexTemplate extends JFrame {
 	private JLabel label_11;
 	private JTextField txtWPEObs1;
 
+	TInformacionObligatoria infor;
+
 	/**
 	 * Launch the application.
 	 */
@@ -152,14 +165,6 @@ public class MexTemplate extends JFrame {
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
 		llenarCabecera(cabecera);
-		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				System.out.println("EVENTO BOTON REGISTRAR");
-			}
-		});
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 126, 1286, 575);
@@ -325,13 +330,13 @@ public class MexTemplate extends JFrame {
 		txtWPAObs0.setColumns(10);
 		panel_18.add(txtWPAObs0);
 
+		txtWPAObs1 = new JTextField();
+		txtWPAObs1.setColumns(10);
+		panel_18.add(txtWPAObs1);
+
 		txtWPAObs2 = new JTextField();
 		txtWPAObs2.setColumns(10);
 		panel_18.add(txtWPAObs2);
-
-		txtWPAObs3 = new JTextField();
-		txtWPAObs3.setColumns(10);
-		panel_18.add(txtWPAObs3);
 
 		label_17 = new JLabel("Cantidad");
 		label_17.setBounds(210, 1, 55, 14);
@@ -618,7 +623,7 @@ public class MexTemplate extends JFrame {
 		lblGravillaSaquillosDe.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_14.add(lblGravillaSaquillosDe);
 
-		lblKitDereas = new JLabel("KIT  DE \u00C1REAS VERDES");
+		lblKitDereas = new JLabel("KIT DE \u00C1REAS VERDES");
 		lblKitDereas.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblKitDereas.setBounds(3, 1, 211, 14);
 		panel_13.add(lblKitDereas);
@@ -722,6 +727,22 @@ public class MexTemplate extends JFrame {
 		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(858, 295);
 		panel.add(informacionObligatoriaV.getPnlInformacionObl());
 
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+				infor = cargarInfoObligatoria(informacionObligatoriaV);
+
+				if (validarInfo(infor)) {
+					srvInfoOblig.crear(infor);
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
+				}
+			}
+		});
+
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				new Menu().setVisible(true);
@@ -730,292 +751,77 @@ public class MexTemplate extends JFrame {
 		});
 	}
 
-	public JTextField getTxtWPECantidad01() {
-		return txtWPECantidad01;
+	public LinkedList<LinkedList<TdetalleFicha>> cargarListas() {
+		LinkedList<TdetalleFicha> listaTipoA = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaTipoB = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaTipoC = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaTipoD = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaTipoE = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaEsparcimiento = new LinkedList<>();
+		LinkedList<TdetalleFicha> listaAreasVerdes = new LinkedList<>();
+		ServicioFichaMA servFicha = new ComponenteFichaMA();
+		// infor = cargarInfoObligatoria(inforV);
+
+		TGrupo grupoTmp = servFicha.buscarGrupo("MODULO WPC TIPO A - 180x105 cm");
+		Integer updateFicha = servFicha.buscarUpdateFicha();
+		TFicha ficha = null;
+		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPACantidad01.getText()), txtWPAObs0.getText(), updateFicha));
+		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPCAantidad11.getText()), txtWPAObs1.getText(), updateFicha));
+		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPACantidad21.getText()), txtWPAObs2.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("MODULO WPC TIPO B 250X105 cm");
+		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPBCantidad01.getText()), txtWPBObs0.getText(), updateFicha));
+		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPBCantidad11.getText()), txtWPBObs1.getText(), updateFicha));
+		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPBCantidad21.getText()), txtWPBObs2.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("MODULO WPC TIPO C 240X105 cm");
+		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPCCantidad01.getText()), txtWPCObs0.getText(), updateFicha));
+		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPCCantidad11.getText()), txtWPCObs1.getText(), updateFicha));
+		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPCCantidad21.getText()), txtWPCObs2.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("MODULO WPC TIPO D 135X105 cm");
+		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPDCantidad01.getText()), txtWPDObs0.getText(), updateFicha));
+		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPDCantidad11.getText()), txtWPDObs1.getText(), updateFicha));
+		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPDCantidad21.getText()), txtWPDObs2.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("MODULO WPC TIPO E 204X105 cm");
+		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPECantidad01.getText()), txtWPEObs0.getText(), updateFicha));
+		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPECantidad11.getText()), txtWPEObs1.getText(), updateFicha));
+		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtWPECantidad21.getText()), txtWPEObs2.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("MÓDULO DE ESPARCIMIENTO DEPORTIVO");
+		listaEsparcimiento.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtEDCantidad01.getText()), txtEDObs0.getText(), updateFicha));
+
+		grupoTmp = servFicha.buscarGrupo("KIT  DE ÁREAS VERDES");
+		listaAreasVerdes.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtAVCantidad01.getText()), txtAVObs0.getText(), updateFicha));
+		listaAreasVerdes.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
+				Integer.parseInt(txtAVCantidad11.getText()), txtAVObs1.getText(), updateFicha));
+
+		LinkedList<LinkedList<TdetalleFicha>> listaFormulario = new LinkedList<LinkedList<TdetalleFicha>>();
+		listaFormulario.add(listaTipoA);
+		listaFormulario.add(listaTipoB);
+		listaFormulario.add(listaTipoC);
+		listaFormulario.add(listaTipoD);
+		listaFormulario.add(listaTipoE);
+		listaFormulario.add(listaEsparcimiento);
+		listaFormulario.add(listaAreasVerdes);
+		return listaFormulario;
 	}
-
-	public void setTxtWPECantidad01(JTextField txtWPECantidad01) {
-		this.txtWPECantidad01 = txtWPECantidad01;
-	}
-
-	public JTextField getTxtWPECantidad11() {
-		return txtWPECantidad11;
-	}
-
-	public void setTxtWPECantidad11(JTextField txtWPECantidad11) {
-		this.txtWPECantidad11 = txtWPECantidad11;
-	}
-
-	public JTextField getTxtWPECantidad21() {
-		return txtWPECantidad21;
-	}
-
-	public void setTxtWPECantidad21(JTextField txtWPECantidad21) {
-		this.txtWPECantidad21 = txtWPECantidad21;
-	}
-
-	public JTextField getTxtWPEObs0() {
-		return txtWPEObs0;
-	}
-
-	public void setTxtWPEObs0(JTextField txtWPEObs0) {
-		this.txtWPEObs0 = txtWPEObs0;
-	}
-
-	public JTextField getTxtWPEObs2() {
-		return txtWPEObs2;
-	}
-
-	public void setTxtWPEObs2(JTextField txtWPEObs2) {
-		this.txtWPEObs2 = txtWPEObs2;
-	}
-
-	public JTextField getTxtWPACantidad01() {
-		return txtWPACantidad01;
-	}
-
-	public void setTxtWPACantidad01(JTextField txtWPACantidad01) {
-		this.txtWPACantidad01 = txtWPACantidad01;
-	}
-
-	public JTextField getTxtWPCAantidad11() {
-		return txtWPCAantidad11;
-	}
-
-	public void setTxtWPCAantidad11(JTextField txtWPCAantidad11) {
-		this.txtWPCAantidad11 = txtWPCAantidad11;
-	}
-
-	public JTextField getTxtWPACantidad21() {
-		return txtWPACantidad21;
-	}
-
-	public void setTxtWPACantidad21(JTextField txtWPACantidad21) {
-		this.txtWPACantidad21 = txtWPACantidad21;
-	}
-
-	public JTextField getTxtWPAObs0() {
-		return txtWPAObs0;
-	}
-
-	public void setTxtWPAObs0(JTextField txtWPAObs0) {
-		this.txtWPAObs0 = txtWPAObs0;
-	}
-
-	public JTextField getTxtWPAObs2() {
-		return txtWPAObs2;
-	}
-
-	public void setTxtWPAObs2(JTextField txtWPAObs2) {
-		this.txtWPAObs2 = txtWPAObs2;
-	}
-
-	public JTextField getTxtWPAObs3() {
-		return txtWPAObs3;
-	}
-
-	public void setTxtWPAObs3(JTextField txtWPAObs3) {
-		this.txtWPAObs3 = txtWPAObs3;
-	}
-
-	public JTextField getTxtWPBCantidad01() {
-		return txtWPBCantidad01;
-	}
-
-	public void setTxtWPBCantidad01(JTextField txtWPBCantidad01) {
-		this.txtWPBCantidad01 = txtWPBCantidad01;
-	}
-
-	public JTextField getTxtWPBCantidad11() {
-		return txtWPBCantidad11;
-	}
-
-	public void setTxtWPBCantidad11(JTextField txtWPBCantidad11) {
-		this.txtWPBCantidad11 = txtWPBCantidad11;
-	}
-
-	public JTextField getTxtWPBCantidad21() {
-		return txtWPBCantidad21;
-	}
-
-	public void setTxtWPBCantidad21(JTextField txtWPBCantidad21) {
-		this.txtWPBCantidad21 = txtWPBCantidad21;
-	}
-
-	public JTextField getTxtWPBObs0() {
-		return txtWPBObs0;
-	}
-
-	public void setTxtWPBObs0(JTextField txtWPBObs0) {
-		this.txtWPBObs0 = txtWPBObs0;
-	}
-
-	public JTextField getTxtWPBObs1() {
-		return txtWPBObs1;
-	}
-
-	public void setTxtWPBObs1(JTextField txtWPBObs1) {
-		this.txtWPBObs1 = txtWPBObs1;
-	}
-
-	public JTextField getTxtWPBObs2() {
-		return txtWPBObs2;
-	}
-
-	public void setTxtWPBObs2(JTextField txtWPBObs2) {
-		this.txtWPBObs2 = txtWPBObs2;
-	}
-
-	public JTextField getTxtWPCCantidad01() {
-		return txtWPCCantidad01;
-	}
-
-	public void setTxtWPCCantidad01(JTextField txtWPCCantidad01) {
-		this.txtWPCCantidad01 = txtWPCCantidad01;
-	}
-
-	public JTextField getTxtWPCCantidad11() {
-		return txtWPCCantidad11;
-	}
-
-	public void setTxtWPCCantidad11(JTextField txtWPCCantidad11) {
-		this.txtWPCCantidad11 = txtWPCCantidad11;
-	}
-
-	public JTextField getTxtWPCCantidad21() {
-		return txtWPCCantidad21;
-	}
-
-	public void setTxtWPCCantidad21(JTextField txtWPCCantidad21) {
-		this.txtWPCCantidad21 = txtWPCCantidad21;
-	}
-
-	public JTextField getTxtWPCObs0() {
-		return txtWPCObs0;
-	}
-
-	public void setTxtWPCObs0(JTextField txtWPCObs0) {
-		this.txtWPCObs0 = txtWPCObs0;
-	}
-
-	public JTextField getTxtWPCObs1() {
-		return txtWPCObs1;
-	}
-
-	public void setTxtWPCObs1(JTextField txtWPCObs1) {
-		this.txtWPCObs1 = txtWPCObs1;
-	}
-
-	public JTextField getTxtWPCObs2() {
-		return txtWPCObs2;
-	}
-
-	public void setTxtWPCObs2(JTextField txtWPCObs2) {
-		this.txtWPCObs2 = txtWPCObs2;
-	}
-
-	public JTextField getTxtWPDCantidad01() {
-		return txtWPDCantidad01;
-	}
-
-	public void setTxtWPDCantidad01(JTextField txtWPDCantidad01) {
-		this.txtWPDCantidad01 = txtWPDCantidad01;
-	}
-
-	public JTextField getTxtWPDCantidad11() {
-		return txtWPDCantidad11;
-	}
-
-	public void setTxtWPDCantidad11(JTextField txtWPDCantidad11) {
-		this.txtWPDCantidad11 = txtWPDCantidad11;
-	}
-
-	public JTextField getTxtWPDCantidad21() {
-		return txtWPDCantidad21;
-	}
-
-	public void setTxtWPDCantidad21(JTextField txtWPDCantidad21) {
-		this.txtWPDCantidad21 = txtWPDCantidad21;
-	}
-
-	public JTextField getTxtWPDObs0() {
-		return txtWPDObs0;
-	}
-
-	public void setTxtWPDObs0(JTextField txtWPDObs0) {
-		this.txtWPDObs0 = txtWPDObs0;
-	}
-
-	public JTextField getTxtWPDObs1() {
-		return txtWPDObs1;
-	}
-
-	public void setTxtWPDObs1(JTextField txtWPDObs1) {
-		this.txtWPDObs1 = txtWPDObs1;
-	}
-
-	public JTextField getTxtWPDObs2() {
-		return txtWPDObs2;
-	}
-
-	public void setTxtWPDObs2(JTextField txtWPDObs2) {
-		this.txtWPDObs2 = txtWPDObs2;
-	}
-
-	public JTextField getTxtAVCantidad01() {
-		return txtAVCantidad01;
-	}
-
-	public void setTxtAVCantidad01(JTextField txtAVCantidad01) {
-		this.txtAVCantidad01 = txtAVCantidad01;
-	}
-
-	public JTextField getTxtAVCantidad11() {
-		return txtAVCantidad11;
-	}
-
-	public void setTxtAVCantidad11(JTextField txtAVCantidad11) {
-		this.txtAVCantidad11 = txtAVCantidad11;
-	}
-
-	public JTextField getTxtAVObs0() {
-		return txtAVObs0;
-	}
-
-	public void setTxtAVObs0(JTextField txtAVObs0) {
-		this.txtAVObs0 = txtAVObs0;
-	}
-
-	public JTextField getTxtAVObs1() {
-		return txtAVObs1;
-	}
-
-	public void setTxtAVObs1(JTextField txtAVObs1) {
-		this.txtAVObs1 = txtAVObs1;
-	}
-
-	public JTextField getTxtEDCantidad01() {
-		return txtEDCantidad01;
-	}
-
-	public void setTxtEDCantidad01(JTextField txtEDCantidad01) {
-		this.txtEDCantidad01 = txtEDCantidad01;
-	}
-
-	public JTextField getTxtEDObs0() {
-		return txtEDObs0;
-	}
-
-	public void setTxtEDObs0(JTextField txtEDObs0) {
-		this.txtEDObs0 = txtEDObs0;
-	}
-
-	public JTextField getTxtWPEObs1() {
-		return txtWPEObs1;
-	}
-
-	public void setTxtWPEObs1(JTextField txtWPEObs1) {
-		this.txtWPEObs1 = txtWPEObs1;
-	}
-
 }
