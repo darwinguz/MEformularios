@@ -29,10 +29,8 @@ import com.capa.datos.TFicha;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
-import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
-import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.util.Validaciones;
@@ -1540,9 +1538,8 @@ public class MaTemplate extends JFrame {
 				if (validarInfo(infoObl)) {
 					ServicioFicha srvFicha = new ComponenteFicha();
 					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-					ServicioCabecera srvTempCabecera = new ComponenteCabecera();
 
-					infoObl.settCabe(srvTempCabecera.buscarProyecto(gettCabecera().getCNombreProyecto()));
+					infoObl.settCabe(gettCabecera());
 					srvInfoObl.crear(infoObl);
 					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
 
