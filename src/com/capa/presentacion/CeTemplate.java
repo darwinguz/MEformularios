@@ -1,34 +1,37 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Utilitarios.llenarCabecera;
+import static com.capa.util.Validaciones.validarInfo;
+
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.LinkedList;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import com.capa.datos.TAula;
 import com.capa.datos.TFicha;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioFichaMA;
-
-import java.awt.GridLayout;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.util.LinkedList;
-
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import java.awt.Font;
-import javax.swing.JTextField;
-
-import static com.capa.util.Utilitarios.*;
-import static com.capa.util.Validaciones.*;
+import com.capa.negocios.ServicioInfoObligatoria;
 
 public class CeTemplate extends JFrame {
 
@@ -52,6 +55,8 @@ public class CeTemplate extends JFrame {
 	private JTextField txtWPCantidad01;
 	private JTextField txtWPObs0;
 	private JTextField txtWPCantidad00;
+
+	TInformacionObligatoria infor;
 
 	/**
 	 * Launch the application.
@@ -98,6 +103,21 @@ public class CeTemplate extends JFrame {
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(533, 50);
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
+
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+				infor = cargarInfoObligatoria(infoObligatoria);
+
+				if (validarInfo(infor)) {
+					srvInfoOblig.crear(infor);
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
+				}
+			}
+		});
 
 		JPanel pnlModuloWPC = new JPanel();
 		pnlModuloWPC.setLayout(null);
@@ -288,25 +308,24 @@ public class CeTemplate extends JFrame {
 		LinkedList<TdetalleFicha> listaModulo = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
 		ServicioFichaMA servFicha = new ComponenteFichaMA();
-		TInformacionObligatoria infor = cargarInfoObligatoria(inforV);
+		// TInformacionObligatoria infor = cargarInfoObligatoria(inforV);
 
-		TAula aula = servFicha.buscarAula("CE");
 		Integer updateFicha = servFicha.buscarUpdateFicha();
 		TFicha ficha = null;
 		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC");
-		listaModulo.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaModulo.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPCantidad01.getText()), txtWPObs0.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Componente estructural");
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad01.getText()), txtCEObs0.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad11.getText()), txtCEObs01.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad21.getText()), txtCEObs2.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad31.getText()), txtCEObs3.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad41.getText()), txtCEObs4.getText(), updateFicha));
 
 		LinkedList<LinkedList<TdetalleFicha>> listaFormulario = new LinkedList<LinkedList<TdetalleFicha>>();

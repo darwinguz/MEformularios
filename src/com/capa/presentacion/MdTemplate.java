@@ -3,6 +3,8 @@ package com.capa.presentacion;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.LinkedList;
@@ -10,20 +12,22 @@ import java.util.LinkedList;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import com.capa.datos.TAula;
 import com.capa.datos.TFicha;
 import com.capa.datos.TFichaMa;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioFichaMA;
+import com.capa.negocios.ServicioInfoObligatoria;
 
 import static com.capa.util.Utilitarios.*;
 import static com.capa.util.Validaciones.*;
@@ -476,6 +480,8 @@ public class MdTemplate extends JFrame {
 	private JLabel lblPuertasingresoBaos;
 	private JLabel lblBisagras_1;
 	private JTextField txtAPCantidad31;
+
+	TInformacionObligatoria infor;
 
 	/**
 	 * Launch the application.
@@ -3149,6 +3155,21 @@ public class MdTemplate extends JFrame {
 		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(858, 335);
 		panel_44.add(informacionObligatoriaV.getPnlInformacionObl());
 
+		pnlCabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+				infor = cargarInfoObligatoria(informacionObligatoriaV);
+
+				if (validarInfo(infor)) {
+					srvInfoOblig.crear(infor);
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
+				}
+			}
+		});
+
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				new Menu().setVisible(true);
@@ -3171,211 +3192,210 @@ public class MdTemplate extends JFrame {
 		LinkedList<TdetalleFicha> listaArquitectonico2 = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
 		ServicioFichaMA servFicha = new ComponenteFichaMA();
-		TInformacionObligatoria infor = cargarInfoObligatoria(inforV);
+		// infor = cargarInfoObligatoria(inforV);
 
-		TAula aula = servFicha.buscarAula("MD");
 		TGrupo grupoTmp = servFicha.buscarGrupo("Kit eléctrico");
 		Integer updateFicha = servFicha.buscarUpdateFicha();
 		TFicha ficha = null;
-		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKECantidad01.getText()), txtKEObs0.getText(), updateFicha));
-		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKECantidad11.getText()), txtKEObs1.getText(), updateFicha));
-		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKECantidad21.getText()), txtKEObs2.getText(), updateFicha));
-		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKECantidad31.getText()), txtKEObs3.getText(), updateFicha));
-		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKECantidad41.getText()), txtKEObs4.getText(), updateFicha));
-		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaElectrico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKECantidad51.getText()), txtKEObs5.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Kit agua lluvia");
-		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKACantidad01.getText()), txtKAObs0.getText(), updateFicha));
-		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKACantidad11.getText()), txtKAObs1.getText(), updateFicha));
-		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKACantidad21.getText()), txtKAObs2.getText(), updateFicha));
-		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKACantidad31.getText()), txtKAObs3.getText(), updateFicha));
-		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKACantidad41.getText()), txtKAObs4.getText(), updateFicha));
-		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKACantidad51.getText()), txtKAObs5.getText(), updateFicha));
-		listaAL.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAL.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKACantidad51.getText()), txtKAObs5.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Kit hidrosanitario");
-		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKHCantidad01.getText()), txtKHObs0.getText(), updateFicha));
-		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKHCantidad11.getText()), txtKHObs1.getText(), updateFicha));
-		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaSanitario.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtKHCantidad21.getText()), txtKHObs2.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Kit agua potable");
-		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtAPCantidad01.getText()), txtAPObs0.getText(), updateFicha));
-		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtAPCantidad11.getText()), txtAPObs1.getText(), updateFicha));
-		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtAPCantidad21.getText()), txtAPObs2.getText(), updateFicha));
-		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtAPCantidad31.getText()), txtAPObs3.getText(), updateFicha));
-		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtAPCantidad41.getText()), txtAPObs4.getText(), updateFicha));
-		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtAPCantidad51.getText()), txtAPObs5.getText(), updateFicha));
-		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtAPCantidad61.getText()), txtAPObs6.getText(), updateFicha));
-		listaAP.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAP.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtAPCantidad71.getText()), txtAPObs7.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Kit agua residual");
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad01.getText()), txtASObs0.getText(), updateFicha));
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad11.getText()), txtASObs1.getText(), updateFicha));
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad21.getText()), txtASObs2.getText(), updateFicha));
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad31.getText()), txtASObs3.getText(), updateFicha));
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad41.getText()), txtASObs4.getText(), updateFicha));
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad51.getText()), txtASObs5.getText(), updateFicha));
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad61.getText()), txtASObs6.getText(), updateFicha));
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad71.getText()), txtASObs7.getText(), updateFicha));
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad81.getText()), txtASObs8.getText(), updateFicha));
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad91.getText()), txtASObs9.getText(), updateFicha));
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad101.getText()), txtASObs10.getText(), updateFicha));
-		listaAR.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaAR.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtASCantidad111.getText()), txtASObs11.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Componente arquitectònico");
-		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtComCantidad01.getText()), txtComObs0.getText(), updateFicha));
-		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtComCantidad11.getText()), txtComObs1.getText(), updateFicha));
-		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtComCantidad21.getText()), txtComObs2.getText(), updateFicha));
-		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtComCantidad31.getText()), txtComObs3.getText(), updateFicha));
-		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtComCantidad41.getText()), txtComObs4.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Paredes internas");
-		listaParedes.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaParedes.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtPICantidad01.getText()), txtPIObs0.getText(), updateFicha));
-		listaParedes.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaParedes.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtPICantidad11.getText()), txtPIObs1.getText(), updateFicha));
-		listaParedes.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaParedes.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtPICantidad21.getText()), txtPIObs2.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Fachada frontal");
-		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFFCantidad01.getText()), txtFFObs0.getText(), updateFicha));
-		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFFCantidad11.getText()), txtFFObs1.getText(), updateFicha));
-		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFFCantidad21.getText()), txtFFObs2.getText(), updateFicha));
-		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFFCantidad31.getText()), txtFFObs3.getText(), updateFicha));
-		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFFCantidad41.getText()), txtFFObs4.getText(), updateFicha));
-		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFFCantidad51.getText()), txtFFObs5.getText(), updateFicha));
-		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaFrontal.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFFCantidad61.getText()), txtFFObs6.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Fachada posterior");
-		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFPCantidad01.getText()), txtFPObs0.getText(), updateFicha));
-		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFPCantidad11.getText()), txtFPObs1.getText(), updateFicha));
-		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFPCantidad21.getText()), txtFPObs2.getText(), updateFicha));
-		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFPCantidad31.getText()), txtFPObs3.getText(), updateFicha));
-		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaPosterior.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtFPCantidad41.getText()), txtFPObs4.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Componente arquitect�nico");
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad01.getText()), txtCAObs0.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad11.getText()), txtCAObs1.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad21.getText()), txtCAObs2.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad31.getText()), txtCAObs3.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad41.getText()), txtCAObs4.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad51.getText()), txtCAObs5.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad61.getText()), txtCAObs6.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad71.getText()), txtCAObs7.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad81.getText()), txtCAObs8.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad91.getText()), txtCAObs9.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad101.getText()), txtCAObs10.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad111.getText()), txtCAObs11.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad121.getText()), txtCAObs12.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad131.getText()), txtCAObs13.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad141.getText()), txtCAObs14.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad151.getText()), txtCAObs15.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad161.getText()), txtCAObs16.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad171.getText()), txtCAObs17.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad181.getText()), txtCAObs18.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad191.getText()), txtCAObs19.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad201.getText()), txtCAObs20.getText(), updateFicha));
-		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaArquitectonico2.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCACantidad211.getText()), txtCAObs21.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Componente estructural");
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad01.getText()), txtCEObs0.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad11.getText()), txtCEObs1.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad21.getText()), txtCEObs2.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad31.getText()), txtCEObs3.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad41.getText()), txtCEObs4.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad51.getText()), txtCEObs5.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad61.getText()), txtCEObs6.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad71.getText()), txtCEObs7.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad81.getText()), txtCEObs8.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad91.getText()), txtCEObs9.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad101.getText()), txtCEObs10.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtCECantidad111.getText()), txtCEObs11.getText(), updateFicha));
 
 		LinkedList<LinkedList<TdetalleFicha>> listaFormulario = new LinkedList<LinkedList<TdetalleFicha>>();

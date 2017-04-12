@@ -7,7 +7,11 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.LinkedList;
@@ -16,13 +20,14 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
-import com.capa.datos.TAula;
 import com.capa.datos.TFicha;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFichaMA;
+import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioFichaMA;
+import com.capa.negocios.ServicioInfoObligatoria;
 
 import static com.capa.util.Utilitarios.*;
 import static com.capa.util.Validaciones.*;
@@ -81,6 +86,8 @@ public class WFTemplate extends JFrame {
 	private JTextField txtIVCantidad120;
 	private JTextField txtIVCantidad121;
 	private JTextField txtIVObs12;
+
+	TInformacionObligatoria infor;
 
 	/**
 	 * Launch the application.
@@ -572,6 +579,20 @@ public class WFTemplate extends JFrame {
 		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(865, 325);
 		panel_1.add(informacionObligatoriaV.getPnlInformacionObl());
 
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+				infor = cargarInfoObligatoria(informacionObligatoriaV);
+
+				if (validarInfo(infor)) {
+					srvInfoOblig.crear(infor);
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
+				}
+			}
+		});
+
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				new Menu().setVisible(true);
@@ -584,47 +605,46 @@ public class WFTemplate extends JFrame {
 		LinkedList<TdetalleFicha> listaDatos = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaInterconexion = new LinkedList<>();
 		ServicioFichaMA servFicha = new ComponenteFichaMA();
-		TInformacionObligatoria infor = cargarInfoObligatoria(inforV);
+		// infor = cargarInfoObligatoria(inforV);
 
-		TAula aula = servFicha.buscarAula("WF");
 		TGrupo grupoTmp = servFicha.buscarGrupo("Kit voz y datos WF");
 		Integer updateFicha = servFicha.buscarUpdateFicha();
 		TFicha ficha = null;
-		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtVDCantidad01.getText()), txtVDObs0.getText(), updateFicha));
-		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtVDCantidad11.getText()), txtVDObs1.getText(), updateFicha));
-		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtVDCantidad21.getText()), txtVDObs2.getText(), updateFicha));
-		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaDatos.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtVDCantidad31.getText()), txtVDObs3.getText(), updateFicha));
 
 		grupoTmp = servFicha.buscarGrupo("Kit de interconexion voz y datos");
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad01.getText()), txtIVObs0.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad11.getText()), txtIVObs1.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad21.getText()), txtIVObs2.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad31.getText()), txtIVObs3.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad41.getText()), txtIVObs4.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad51.getText()), txtIVObs5.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad61.getText()), txtIVObs6.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad71.getText()), txtIVObs7.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad81.getText()), txtIVObs8.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad91.getText()), txtIVObs9.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad101.getText()), txtIVObs10.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad111.getText()), txtIVObs11.getText(), updateFicha));
-		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, aula, grupoTmp, ficha,
+		listaInterconexion.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtIVCantidad121.getText()), txtIVObs12.getText(), updateFicha));
 
 		LinkedList<LinkedList<TdetalleFicha>> listaFormulario = new LinkedList<LinkedList<TdetalleFicha>>();
