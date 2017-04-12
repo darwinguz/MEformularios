@@ -3,7 +3,6 @@ package com.capa.presentacion;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -22,6 +21,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 import com.capa.datos.TCabecera;
+import com.capa.datos.TFicha;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteFichaMA;
@@ -205,22 +205,11 @@ public class MmTemplate extends JFrame {
 	private JTextField txtFF2ObsRef1;
 	private JTextField txtFF2ObsRef2;
 	private JTextField txtFF2ObsRef3;
+	private TFicha ficha;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MmTemplate frame = new MmTemplate("Template");
-					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	public MmTemplate(TFicha ficha) {
 
-	public MmTemplate(String laboratorio) {
+		this.ficha = ficha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1311, 706);
 		contentPane = new JPanel();
@@ -230,7 +219,7 @@ public class MmTemplate extends JFrame {
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
-		setTitle("MM-" + laboratorio);
+		setTitle("MM-" + ficha.getFiNombre());
 
 		llenarCabecera(cabecera);
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
@@ -2085,10 +2074,12 @@ public class MmTemplate extends JFrame {
 		// settCabecera(new TCabecera(5, "proyecto test"));
 		TCabecera cabecera = srvCabecera.buscarProyecto(gettCabecera().getCNombreProyecto());
 
-//		TAula aula = srvFichaMA.buscarAula(nombreAula);
-//		TGrupo grupoTmp = srvFichaMA.buscarGrupo("Kit eléctrico");
-//		Integer updateFicha = srvFichaMA.buscarUpdateFicha();
-//
-//		listaKE.add(new TdetalleFicha(cabecera, infoObligatoria, tAula, tGrupo, tFicha, detEtiqueta, detCantidadLimite, detCantidadEjecutada, detObsRef, detActualizacionN))
+		// TAula aula = srvFichaMA.buscarAula(nombreAula);
+		// TGrupo grupoTmp = srvFichaMA.buscarGrupo("Kit eléctrico");
+		// Integer updateFicha = srvFichaMA.buscarUpdateFicha();
+		//
+		// listaKE.add(new TdetalleFicha(cabecera, infoObligatoria, tAula,
+		// tGrupo, tFicha, detEtiqueta, detCantidadLimite, detCantidadEjecutada,
+		// detObsRef, detActualizacionN))
 	}
 }
