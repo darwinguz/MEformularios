@@ -308,7 +308,9 @@ public class CeTemplate extends JFrame {
 		LinkedList<TdetalleFicha> listaModulo = new LinkedList<>();
 		LinkedList<TdetalleFicha> listaEstructural = new LinkedList<>();
 		ServicioFicha servFicha = new ComponenteFicha();
+		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 		// TInformacionObligatoria infor = cargarInfoObligatoria(inforV);
+		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
 		Integer updateFicha = servFicha.buscarUpdateFicha();
 		TFicha ficha = null;
