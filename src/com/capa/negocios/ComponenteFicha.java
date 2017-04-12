@@ -74,7 +74,7 @@ public class ComponenteFicha implements ServicioFicha {
 		ResultSet rs = Query.seleccionar(sql);
 		try {
 			while (rs.next()) {
-				grupo.setGSerial(rs.getInt("fi_serial"));
+				grupo.setGSerial(rs.getInt("g_serial"));
 				grupo.setGNombre(rs.getString("g_nombre"));
 			}
 		} catch (SQLException e) {
@@ -118,7 +118,7 @@ public class ComponenteFicha implements ServicioFicha {
 		} catch (Exception e) {
 			System.out.println("Error al BUSCAR: " + e.getMessage());
 		}
-		return maxima;
+		return 3;
 	}
 
 }
