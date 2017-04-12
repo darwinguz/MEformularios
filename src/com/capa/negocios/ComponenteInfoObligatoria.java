@@ -1,5 +1,7 @@
 package com.capa.negocios;
 
+import java.sql.ResultSet;
+
 import javax.swing.JOptionPane;
 
 import com.capa.datos.TInformacionObligatoria;
@@ -24,9 +26,18 @@ public class ComponenteInfoObligatoria implements ServicioInfoObligatoria {
 	}
 
 	@Override
-	public TInformacionObligatoria getInfoObl() {
-		// TODO Auto-generated method stub
-		return null;
+	public Integer serialInfoOblMax() {
+		String query = "SELECT MAX(io_serial) FROM t_informacion_obligatoria;";
+		Integer maxima = null;
+		try {
+			ResultSet rs = Query.seleccionar(query);
+			while (rs.next()) {
+				maxima = new Integer(rs.getInt("MAX(io_serial)"));
+			}
+		} catch (Exception e) {
+			System.out.println("Error al BUSCAR: " + e.getMessage());
+		}
+		return maxima;
 	}
 
 }

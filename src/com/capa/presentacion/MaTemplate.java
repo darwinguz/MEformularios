@@ -1544,7 +1544,9 @@ public class MaTemplate extends JFrame {
 
 					infoObl.settCabe(srvTempCabecera.buscarProyecto(gettCabecera().getCNombreProyecto()));
 					srvInfoObl.crear(infoObl);
-					srvFichaMA.insertarFormulario(cargarFicha());
+					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
+
+					srvFichaMA.insertarFormulario(cargarFicha(infoObl));
 				} else {
 					JOptionPane.showMessageDialog(null, "Datos obligatorios");
 				}
@@ -1559,17 +1561,14 @@ public class MaTemplate extends JFrame {
 		});
 	}
 
-	private LinkedList<LinkedList<TdetalleFicha>> cargarFicha() {
+	private LinkedList<LinkedList<TdetalleFicha>> cargarFicha(TInformacionObligatoria infoObligatoria) {
 		ServicioFichaMA srvFichaMA = new ComponenteFichaMA();
-		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+
+		TCabecera cabecera = gettCabecera();
+		Integer updateFicha = srvFichaMA.buscarUpdateFicha();
 
 		LinkedList<TdetalleFicha> listaKE = new LinkedList<>();
-		TCabecera cabecera = gettCabecera();
-
 		TGrupo grupoTmp = srvFichaMA.buscarGrupo("Kit eléctrico");
-		Integer updateFicha = srvFichaMA.buscarUpdateFicha();
-		TInformacionObligatoria infoObligatoria = srvInfoObl.getInfoObl();
-
 		listaKE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
 				Integer.parseInt(txtKECantidad00.getText()), Integer.parseInt(txtKECantidad01.getText()),
 				txtKEObsRef0.getText(), updateFicha));
