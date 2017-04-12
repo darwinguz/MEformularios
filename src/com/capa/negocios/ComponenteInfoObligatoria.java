@@ -1,12 +1,10 @@
 package com.capa.negocios;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
 import com.capa.datos.TInformacionObligatoria;
-import com.capa.datos.TLugarGeografico;
 import com.capa.util.Utilitarios;
 
 public class ComponenteInfoObligatoria implements ServicioInfoObligatoria {
