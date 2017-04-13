@@ -9,6 +9,11 @@ public class TGrupo implements java.io.Serializable {
 	public TGrupo() {
 	}
 
+	public TGrupo(Integer gSerial) {
+		super();
+		GSerial = gSerial;
+	}
+
 	public TGrupo(String GNombre) {
 		this.GNombre = GNombre;
 

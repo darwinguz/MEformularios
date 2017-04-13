@@ -2,6 +2,7 @@ package com.capa.negocios;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import javax.swing.JOptionPane;
 import com.capa.datos.TCabecera;
 import com.capa.datos.TFicha;
 import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.util.Utilitarios;
 
@@ -108,8 +110,8 @@ public class ComponenteFicha implements ServicioFicha {
 	}
 
 	@Override
-	public LinkedList<TdetalleFicha> detallesFicha(TCabecera serialC, TFicha serialF) {
-		LinkedList<TdetalleFicha> camposFormularios = new LinkedList<>();
+	public List<TdetalleFicha> detallesFicha(TCabecera serialC, TFicha serialF) {
+		List<TdetalleFicha> detallesFicha = new ArrayList<>();
 		String query = "SELECT * FROM t_detalle_ficha WHERE fi_serial = " + serialF.getFiSerial() + " and c_serial = "
 				+ serialC.getCSerial()
 				+ " and df_actualizacion_n = (select max(df_actualizacion_n) from t_detalle_ficha where fi_serial = "
@@ -119,11 +121,16 @@ public class ComponenteFicha implements ServicioFicha {
 			ResultSet rs = Query.seleccionar(query);
 			while (rs.next()) {
 
+				detallesFicha.add(new TdetalleFicha(new Integer(rs.getInt(1)), new TCabecera(rs.getInt(2)),
+						new TInformacionObligatoria(rs.getInt(3)), new TGrupo(rs.getInt(4)), new TFicha(rs.getInt(5)),
+						new String(), new Integer(rs.getInt(7)), new Integer(rs.getInt(8)), new String(),
+						new Integer(rs.getInt(10))));
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return camposFormularios;
+		return detallesFicha;
 	}
 
 }

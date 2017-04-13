@@ -26,6 +26,6 @@ public interface ServicioFicha {
 	 * @param serialF -> Serial de la Ficha 
 	 * @return Lista de detalles de una Ficha -  Ultima actualización
 	 */
-	public LinkedList<TdetalleFicha> detallesFicha(TCabecera serialC, TFicha serialF);
+	public List<TdetalleFicha> detallesFicha(TCabecera serialC, TFicha serialF);
 
 }

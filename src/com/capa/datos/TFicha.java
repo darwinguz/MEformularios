@@ -13,6 +13,11 @@ public class TFicha implements Serializable {
 		super();
 	}
 
+	public TFicha(Integer fiSerial) {
+		super();
+		this.fiSerial = fiSerial;
+	}
+
 	public TFicha(Integer fiSerial, String fiNombre) {
 		super();
 		this.fiSerial = fiSerial;

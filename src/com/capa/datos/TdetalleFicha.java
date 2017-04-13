@@ -21,9 +21,26 @@ public class TdetalleFicha implements Serializable {
 		super();
 	}
 
-	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria, TGrupo tGrupo,
-			TFicha tFicha, String detEtiqueta, Integer detCantidadLimite, Integer detCantidadEjecutada,
-			String detObsRef, Integer detActualizacionN) {
+	public TdetalleFicha(Integer detFichaSerial, com.capa.datos.TCabecera tCabecera,
+			TInformacionObligatoria infoObligatoria, com.capa.datos.TGrupo tGrupo, com.capa.datos.TFicha tFicha,
+			String detEtiqueta, Integer detCantidadLimite, Integer detCantidadEjecutada, String detObsRef,
+			Integer detActualizacionN) {
+		super();
+		this.detFichaSerial = detFichaSerial;
+		TCabecera = tCabecera;
+		InfoObligatoria = infoObligatoria;
+		TGrupo = tGrupo;
+		TFicha = tFicha;
+		this.detEtiqueta = detEtiqueta;
+		this.detCantidadLimite = detCantidadLimite;
+		this.detCantidadEjecutada = detCantidadEjecutada;
+		this.detObsRef = detObsRef;
+		this.detActualizacionN = detActualizacionN;
+	}
+
+	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria, TGrupo tGrupo, TFicha tFicha,
+			String detEtiqueta, Integer detCantidadLimite, Integer detCantidadEjecutada, String detObsRef,
+			Integer detActualizacionN) {
 		super();
 		TCabecera = tCabecera;
 		InfoObligatoria = infoObligatoria;
