@@ -783,50 +783,98 @@ public class MexTemplate extends JFrame {
 		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
 				Integer.parseInt(txtWPACantidad10.getText()), Integer.parseInt(txtWPCAantidad11.getText()),
 				txtWPAObs1.getText(), updateFicha, porcentajeAvance));
-		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPACantidad21.getText()), txtWPAObs2.getText(), updateFicha));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPACantidad20.getText()),
+				Integer.parseInt(txtWPACantidad21.getText()));
+		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPACantidad20.getText()), Integer.parseInt(txtWPACantidad21.getText()),
+				txtWPAObs2.getText(), updateFicha, porcentajeAvance));
 
 		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo B - 250x105");
-		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPBCantidad01.getText()), txtWPBObs0.getText(), updateFicha));
-		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPBCantidad11.getText()), txtWPBObs1.getText(), updateFicha));
-		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPBCantidad21.getText()), txtWPBObs2.getText(), updateFicha));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPBCantidad00.getText()),
+				Integer.parseInt(txtWPBCantidad01.getText()));
+		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPBCantidad00.getText()), Integer.parseInt(txtWPBCantidad01.getText()),
+				txtWPBObs0.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPBCantidad10.getText()),
+				Integer.parseInt(txtWPBCantidad11.getText()));
+		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPBCantidad10.getText()), Integer.parseInt(txtWPBCantidad11.getText()),
+				txtWPBObs1.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPBCantidad20.getText()),
+				Integer.parseInt(txtWPBCantidad21.getText()));
+		listaTipoB.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPBCantidad20.getText()), Integer.parseInt(txtWPBCantidad21.getText()),
+				txtWPBObs2.getText(), updateFicha, porcentajeAvance));
 
 		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo C - 240x105");
-		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPCCantidad01.getText()), txtWPCObs0.getText(), updateFicha));
-		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPCCantidad11.getText()), txtWPCObs1.getText(), updateFicha));
-		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPCCantidad21.getText()), txtWPCObs2.getText(), updateFicha));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPCCantidad00.getText()),
+				Integer.parseInt(txtWPCCantidad01.getText()));
+		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPCCantidad00.getText()), Integer.parseInt(txtWPCCantidad01.getText()),
+				txtWPCObs0.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPCCantidad10.getText()),
+				Integer.parseInt(txtWPCCantidad11.getText()));
+		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPCCantidad10.getText()), Integer.parseInt(txtWPCCantidad11.getText()),
+				txtWPCObs1.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPCCantidad20.getText()),
+				Integer.parseInt(txtWPCCantidad21.getText()));
+		listaTipoC.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPCCantidad20.getText()), Integer.parseInt(txtWPCCantidad21.getText()),
+				txtWPCObs2.getText(), updateFicha, porcentajeAvance));
 
 		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo D - 135x105");
-		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPDCantidad01.getText()), txtWPDObs0.getText(), updateFicha));
-		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPDCantidad11.getText()), txtWPDObs1.getText(), updateFicha));
-		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPDCantidad21.getText()), txtWPDObs2.getText(), updateFicha));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPDCantidad00.getText()),
+				Integer.parseInt(txtWPDCantidad01.getText()));
+		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPDCantidad00.getText()), Integer.parseInt(txtWPDCantidad01.getText()),
+				txtWPDObs0.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPDCantidad10.getText()),
+				Integer.parseInt(txtWPDCantidad11.getText()));
+		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPDCantidad10.getText()), Integer.parseInt(txtWPDCantidad11.getText()),
+				txtWPDObs1.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPDCantidad20.getText()),
+				Integer.parseInt(txtWPDCantidad21.getText()));
+		listaTipoD.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPDCantidad20.getText()), Integer.parseInt(txtWPDCantidad21.getText()),
+				txtWPDObs2.getText(), updateFicha, porcentajeAvance));
 
 		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo E - 204x105");
-		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPECantidad01.getText()), txtWPEObs0.getText(), updateFicha));
-		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPECantidad11.getText()), txtWPEObs1.getText(), updateFicha));
-		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPECantidad21.getText()), txtWPEObs2.getText(), updateFicha));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPECantidad00.getText()),
+				Integer.parseInt(txtWPECantidad01.getText()));
+		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPECantidad00.getText()), Integer.parseInt(txtWPECantidad01.getText()),
+				txtWPEObs0.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPECantidad10.getText()),
+				Integer.parseInt(txtWPECantidad11.getText()));
+		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPECantidad10.getText()), Integer.parseInt(txtWPECantidad11.getText()),
+				txtWPEObs1.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPECantidad20.getText()),
+				Integer.parseInt(txtWPECantidad21.getText()));
+		listaTipoE.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPECantidad20.getText()), Integer.parseInt(txtWPECantidad21.getText()),
+				txtWPEObs2.getText(), updateFicha, porcentajeAvance));
 
 		grupoTmp = servFicha.buscarGrupo("Módulo de esparcimiento deportivo");
-		listaEsparcimiento.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtEDCantidad01.getText()), txtEDObs0.getText(), updateFicha));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtEDCantidad00.getText()),
+				Integer.parseInt(txtEDCantidad01.getText()));
+		listaEsparcimiento.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtEDCantidad00.getText()), Integer.parseInt(txtEDCantidad01.getText()),
+				txtEDObs0.getText(), updateFicha, porcentajeAvance));
 
 		grupoTmp = servFicha.buscarGrupo("Kit de áreas verdes");
-		listaAreasVerdes.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtAVCantidad01.getText()), txtAVObs0.getText(), updateFicha));
-		listaAreasVerdes.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtAVCantidad11.getText()), txtAVObs1.getText(), updateFicha));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtAVCantidad00.getText()),
+				Integer.parseInt(txtAVCantidad01.getText()));
+		listaAreasVerdes.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtAVCantidad00.getText()), Integer.parseInt(txtAVCantidad01.getText()),
+				txtAVObs0.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtAVCantidad10.getText()),
+				Integer.parseInt(txtAVCantidad11.getText()));
+		listaAreasVerdes.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtAVCantidad10.getText()), Integer.parseInt(txtAVCantidad11.getText()),
+				txtAVObs1.getText(), updateFicha, porcentajeAvance));
 
 		LinkedList<LinkedList<TdetalleFicha>> listaFormulario = new LinkedList<LinkedList<TdetalleFicha>>();
 		listaFormulario.add(listaTipoA);
