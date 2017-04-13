@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,8 +18,11 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import com.capa.datos.TFicha;
+import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ServicioFicha;
+import com.capa.util.Utilitarios;
 
 public class Menu extends JFrame {
 
@@ -64,18 +67,20 @@ public class Menu extends JFrame {
 			}
 
 			private void llenarFicha(MaTemplate maTemplate) {
-				LinkedList<String[]> camposFormularios = servicioFicha.extraerFormulario();
+				List<TdetalleFicha> camposFormularios = servicioFicha.detallesFicha(Utilitarios.gettCabecera(),
+						new TFicha());
+				
 				if (camposFormularios.size() != maTemplate.getTextFields().size()) {
 					System.err.println("ERROR: String=" + camposFormularios.size() + " JTextField="
 							+ maTemplate.getTextFields().size());
 					return;
 				}
 
-				Iterator<String[]> it = camposFormularios.iterator();
+				Iterator<TdetalleFicha> it = camposFormularios.iterator();
 				maTemplate.getTextFields().forEach((item) -> {
-					String[] temp = it.next();
-					item[0].setText(temp[0]);
-					item[1].setText(temp[1]);
+					TdetalleFicha temp = it.next();
+					// item[0].setText(temp);
+					// item[1].setText(temp);
 				});
 			}
 		});

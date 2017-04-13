@@ -21,8 +21,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import com.capa.datos.TCabecera;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TLugarGeografico;
-import com.capa.negocios.ComponenteLugarGeo;
-import com.capa.negocios.ServicioLugarGeo;
+import com.capa.negocios.ComponenteLGeografico;
+import com.capa.negocios.ServicioLGeografico;
 import com.capa.presentacion.InformacionObligatoriaV;
 import com.capa.presentacion.JPcabecera;
 
@@ -110,7 +110,7 @@ public class Utilitarios {
 	}
 
 	public static void llenarCabecera(JPcabecera jCabecera) {
-		ServicioLugarGeo geo = new ComponenteLugarGeo();
+		ServicioLGeografico geo = new ComponenteLGeografico();
 		TLugarGeografico lugar;
 		jCabecera.getTxtProyecto().setText(gettCabecera().getCNombreProyecto());
 		lugar = geo.buscarProvincia(gettCabecera().getTLugarGeografico().getLgCodigo());
