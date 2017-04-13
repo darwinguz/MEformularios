@@ -26,7 +26,7 @@ import javax.swing.border.EmptyBorder;
 import com.capa.datos.TCabecera;
 import com.capa.datos.TLugarGeografico;
 import com.capa.negocios.ComponenteCabecera;
-import com.capa.negocios.ComponenteLugarGeo;
+import com.capa.negocios.ComponenteLGeografico;
 import com.capa.negocios.ServicioCabecera;
 import com.capa.util.Utilitarios;
 import com.toedter.calendar.JDateChooser;
@@ -341,7 +341,7 @@ public class AdatosReferenciales extends JFrame {
 
 	public void rellenarComboCanton(String busca) {
 		List<TLugarGeografico> listaLugares;
-		listaLugares = new ComponenteLugarGeo().buscarPorId(busca);
+		listaLugares = new ComponenteLGeografico().buscarPorId(busca);
 		cbxCanton.removeAllItems();
 		for (TLugarGeografico l : listaLugares) {
 			cbxCanton.addItem(l);
@@ -350,7 +350,7 @@ public class AdatosReferenciales extends JFrame {
 
 	public void rellenarComboParroquia(String busca) {
 		List<TLugarGeografico> listaLugares;
-		listaLugares = new ComponenteLugarGeo().buscarPorId(busca);
+		listaLugares = new ComponenteLGeografico().buscarPorId(busca);
 		cbxParroquia.removeAllItems();
 		for (TLugarGeografico l : listaLugares) {
 			cbxParroquia.addItem(l);
@@ -358,7 +358,7 @@ public class AdatosReferenciales extends JFrame {
 	}
 
 	public List<TLugarGeografico> provincias() {
-		return new ComponenteLugarGeo().buscarProvincia();
+		return new ComponenteLGeografico().buscarProvincia();
 	}
 
 	public void rrellenarComboDistrito() {

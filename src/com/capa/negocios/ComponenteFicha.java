@@ -133,4 +133,21 @@ public class ComponenteFicha implements ServicioFicha {
 		return detallesFicha;
 	}
 
+	@Override
+	public TGrupo buscarGrupo(int serial) {
+		TGrupo grupo = new TGrupo();
+
+		String sql = "SELECT * FROM t_grupo WHERE g_serial = '" + serial + "'";
+		ResultSet rs = Query.seleccionar(sql);
+		try {
+			while (rs.next()) {
+				grupo.setGSerial(rs.getInt("g_serial"));
+				grupo.setGNombre(rs.getString("g_nombre"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return grupo;
+	}
+
 }

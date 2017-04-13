@@ -14,6 +14,8 @@ public interface ServicioFicha {
 
 	public TGrupo buscarGrupo(String nombre);
 
+	public TGrupo buscarGrupo(int serial);
+
 	public boolean existeFicha();
 
 	public void insertarFormulario(LinkedList<LinkedList<TdetalleFicha>> cargarListas);
@@ -22,9 +24,12 @@ public interface ServicioFicha {
 
 	/**
 	 * Método que retorna una lista de detalles en funcion al Proyecto y Ficha
-	 * @param serialC -> Serial del Proyecto - Cabecera
-	 * @param serialF -> Serial de la Ficha 
-	 * @return Lista de detalles de una Ficha -  Ultima actualización
+	 * 
+	 * @param serialC
+	 *            -> Serial del Proyecto - Cabecera
+	 * @param serialF
+	 *            -> Serial de la Ficha
+	 * @return Lista de detalles de una Ficha - Ultima actualización
 	 */
 	public List<TdetalleFicha> detallesFicha(TCabecera serialC, TFicha serialF);
 
