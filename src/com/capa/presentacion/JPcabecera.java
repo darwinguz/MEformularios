@@ -44,7 +44,7 @@ public class JPcabecera {
 		pnlSuperior.add(lblProyecto);
 
 		txtProyecto = new JTextField();
-		txtProyecto.setBounds(170, 28, 296, 20);
+		txtProyecto.setBounds(170, 28, 310, 20);
 		txtProyecto.setEditable(false);
 		pnlSuperior.add(txtProyecto);
 		txtProyecto.setColumns(10);
@@ -55,81 +55,82 @@ public class JPcabecera {
 		pnlSuperior.add(lblZona);
 
 		txtZona = new JTextField();
-		txtZona.setBounds(170, 72, 86, 20);
+		txtZona.setHorizontalAlignment(SwingConstants.CENTER);
+		txtZona.setBounds(170, 72, 30, 20);
 		txtZona.setEditable(false);
 		pnlSuperior.add(txtZona);
 
 		JLabel lblProvincia = new JLabel(" Provincia");
-		lblProvincia.setBounds(289, 55, 57, 14);
+		lblProvincia.setBounds(220, 55, 57, 14);
 		lblProvincia.setFont(new Font("Arial", Font.PLAIN, 11));
 		pnlSuperior.add(lblProvincia);
 
 		txtProvincia = new JTextField();
-		txtProvincia.setBounds(289, 72, 160, 20);
+		txtProvincia.setBounds(220, 72, 206, 20);
 		txtProvincia.setEditable(false);
 		pnlSuperior.add(txtProvincia);
 
 		JLabel lblCanton = new JLabel(" Cant\u00F3n");
-		lblCanton.setBounds(472, 55, 40, 14);
+		lblCanton.setBounds(440, 59, 40, 14);
 		lblCanton.setFont(new Font("Arial", Font.PLAIN, 11));
 		pnlSuperior.add(lblCanton);
 
 		txtCanton = new JTextField();
-		txtCanton.setBounds(472, 72, 160, 20);
+		txtCanton.setBounds(440, 72, 144, 20);
 		txtCanton.setEditable(false);
 		pnlSuperior.add(txtCanton);
 
 		JLabel lblParroquia = new JLabel(" Parroquia");
-		lblParroquia.setBounds(661, 55, 57, 14);
+		lblParroquia.setBounds(594, 55, 57, 14);
 		lblParroquia.setFont(new Font("Arial", Font.PLAIN, 11));
 		pnlSuperior.add(lblParroquia);
 
 		txtParroquia = new JTextField();
 		txtParroquia.setColumns(10);
-		txtParroquia.setBounds(661, 72, 125, 20);
+		txtParroquia.setBounds(594, 72, 192, 20);
 		txtParroquia.setEditable(false);
 		pnlSuperior.add(txtParroquia);
 
 		JLabel lblSector = new JLabel(" Sector");
-		lblSector.setBounds(823, 55, 57, 14);
+		lblSector.setBounds(796, 55, 57, 14);
 		lblSector.setFont(new Font("Arial", Font.PLAIN, 11));
 		pnlSuperior.add(lblSector);
 
 		txtSector = new JTextField();
 		txtSector.setColumns(10);
-		txtSector.setBounds(823, 72, 318, 20);
+		txtSector.setBounds(796, 72, 345, 20);
 		txtSector.setEditable(false);
 		pnlSuperior.add(txtSector);
 
 		JLabel lblAmie = new JLabel(" AMIE");
-		lblAmie.setBounds(506, 11, 40, 14);
+		lblAmie.setBounds(500, 11, 40, 14);
 		lblAmie.setFont(new Font("Arial", Font.PLAIN, 11));
 		pnlSuperior.add(lblAmie);
 
 		txtAmie = new JTextField();
-		txtAmie.setBounds(506, 28, 86, 20);
+		txtAmie.setBounds(500, 28, 92, 20);
 		txtAmie.setEditable(false);
 		pnlSuperior.add(txtAmie);
 		txtAmie.setColumns(10);
 
 		JLabel lblDistrito = new JLabel(" Distrito");
-		lblDistrito.setBounds(626, 11, 64, 14);
+		lblDistrito.setBounds(610, 11, 64, 14);
 		lblDistrito.setFont(new Font("Arial", Font.PLAIN, 11));
 		pnlSuperior.add(lblDistrito);
 
 		txtDistrito = new JTextField();
-		txtDistrito.setBounds(626, 28, 160, 20);
+		txtDistrito.setBounds(610, 28, 192, 20);
 		txtDistrito.setEditable(false);
 		pnlSuperior.add(txtDistrito);
 
 		JLabel lblCircuito = new JLabel(" Circuito");
 		lblCircuito.setHorizontalAlignment(SwingConstants.LEFT);
-		lblCircuito.setBounds(823, 11, 100, 14);
+		lblCircuito.setBounds(817, 11, 100, 14);
 		lblCircuito.setFont(new Font("Arial", Font.PLAIN, 11));
 		pnlSuperior.add(lblCircuito);
 
 		txtCircuito = new JTextField();
-		txtCircuito.setBounds(823, 28, 100, 20);
+		txtCircuito.setBounds(817, 28, 106, 20);
 		txtCircuito.setEditable(false);
 		pnlSuperior.add(txtCircuito);
 		txtCircuito.setColumns(10);
