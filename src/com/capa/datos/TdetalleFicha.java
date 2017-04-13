@@ -1,6 +1,7 @@
 package com.capa.datos;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 public class TdetalleFicha implements Serializable {
 
@@ -16,9 +17,26 @@ public class TdetalleFicha implements Serializable {
 	private Integer detCantidadEjecutada;
 	private String detObsRef;
 	private Integer detActualizacionN;
+	private BigDecimal porcentajeAvance;
 
 	public TdetalleFicha() {
 		super();
+	}
+
+	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria, TGrupo tGrupo, TFicha tFicha,
+			String detEtiqueta, Integer detCantidadLimite, Integer detCantidadEjecutada, String detObsRef,
+			Integer detActualizacionN, BigDecimal porcentaje) {
+		super();
+		TCabecera = tCabecera;
+		InfoObligatoria = infoObligatoria;
+		TGrupo = tGrupo;
+		TFicha = tFicha;
+		this.detEtiqueta = detEtiqueta;
+		this.detCantidadLimite = detCantidadLimite;
+		this.detCantidadEjecutada = detCantidadEjecutada;
+		this.detObsRef = detObsRef;
+		this.detActualizacionN = detActualizacionN;
+		this.porcentajeAvance = porcentaje;
 	}
 
 	public TdetalleFicha(Integer detFichaSerial, com.capa.datos.TCabecera tCabecera,
@@ -131,6 +149,14 @@ public class TdetalleFicha implements Serializable {
 
 	public void setDetActualizacionN(Integer detActualizacionN) {
 		this.detActualizacionN = detActualizacionN;
+	}
+
+	public BigDecimal getPorcentajeAvance() {
+		return porcentajeAvance;
+	}
+
+	public void setPorcentajeAvance(BigDecimal porcentajeAvance) {
+		this.porcentajeAvance = porcentajeAvance;
 	}
 
 	@Override

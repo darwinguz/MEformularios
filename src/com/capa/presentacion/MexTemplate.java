@@ -1,5 +1,6 @@
 package com.capa.presentacion;
 
+import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
@@ -11,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.math.BigDecimal;
 import java.util.LinkedList;
 
 import javax.swing.JFrame;
@@ -768,12 +770,19 @@ public class MexTemplate extends JFrame {
 		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
+		BigDecimal porcentajeAvance;
 		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo A - 180x105");
-		Integer updateFicha = servFicha.buscarUpdateFicha();
-		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPACantidad01.getText()), txtWPAObs0.getText(), updateFicha));
-		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPCAantidad11.getText()), txtWPAObs1.getText(), updateFicha));
+		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPACantidad00.getText()),
+				Integer.parseInt(txtWPACantidad01.getText()));
+		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPACantidad00.getText()), Integer.parseInt(txtWPACantidad01.getText()),
+				txtWPAObs0.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPACantidad10.getText()),
+				Integer.parseInt(txtWPCAantidad11.getText()));
+		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPACantidad10.getText()), Integer.parseInt(txtWPCAantidad11.getText()),
+				txtWPAObs1.getText(), updateFicha, porcentajeAvance));
 		listaTipoA.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
 				Integer.parseInt(txtWPACantidad21.getText()), txtWPAObs2.getText(), updateFicha));
 

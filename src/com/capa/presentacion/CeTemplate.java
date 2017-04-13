@@ -1,5 +1,6 @@
 package com.capa.presentacion;
 
+import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
@@ -12,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.math.BigDecimal;
 import java.util.LinkedList;
 
 import javax.swing.JFrame;
@@ -317,23 +319,43 @@ public class CeTemplate extends JFrame {
 		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
-		Integer updateFicha = servFicha.buscarUpdateFicha();
+		BigDecimal porcentajeAvance;
+
+		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
 
 		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo A - 180x105");
-		listaModulo.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtWPCantidad01.getText()), txtWPObs0.getText(), updateFicha));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPCantidad00.getText()),
+				Integer.parseInt(txtWPCantidad01.getText()));
+		listaModulo.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtWPCantidad00.getText()), Integer.parseInt(txtWPCantidad01.getText()),
+				txtWPObs0.getText(), updateFicha, porcentajeAvance));
 
 		grupoTmp = servFicha.buscarGrupo("Componente estructural");
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtCECantidad01.getText()), txtCEObs0.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtCECantidad11.getText()), txtCEObs01.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtCECantidad21.getText()), txtCEObs2.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtCECantidad31.getText()), txtCEObs3.getText(), updateFicha));
-		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null, 0,
-				Integer.parseInt(txtCECantidad41.getText()), txtCEObs4.getText(), updateFicha));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCECantidad00.getText()),
+				Integer.parseInt(txtCECantidad01.getText()));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtCECantidad00.getText()), Integer.parseInt(txtCECantidad01.getText()),
+				txtCEObs0.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCECantidad10.getText()),
+				Integer.parseInt(txtCECantidad11.getText()));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtCECantidad10.getText()), Integer.parseInt(txtCECantidad11.getText()),
+				txtCEObs01.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCECantidad20.getText()),
+				Integer.parseInt(txtCECantidad21.getText()));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtCECantidad20.getText()), Integer.parseInt(txtCECantidad21.getText()),
+				txtCEObs2.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCECantidad30.getText()),
+				Integer.parseInt(txtCECantidad31.getText()));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtCECantidad30.getText()), Integer.parseInt(txtCECantidad31.getText()),
+				txtCEObs3.getText(), updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCECantidad40.getText()),
+				Integer.parseInt(txtCECantidad41.getText()));
+		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtCECantidad40.getText()), Integer.parseInt(txtCECantidad41.getText()),
+				txtCEObs4.getText(), updateFicha, porcentajeAvance));
 
 		LinkedList<LinkedList<TdetalleFicha>> listaFormulario = new LinkedList<LinkedList<TdetalleFicha>>();
 		listaFormulario.add(listaModulo);

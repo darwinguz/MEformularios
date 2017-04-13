@@ -322,7 +322,7 @@ public class AdatosReferenciales extends JFrame {
 				proyecto.crear(cabecera);
 				alInicio.settCabecera(cabecera);
 				Utilitarios.settCabecera(cabecera);
-				JOptionPane.showMessageDialog(null, "Proyecto registrado con Oxito!", "Mensaje de ConfirmaciOn",
+				JOptionPane.showMessageDialog(null, "Proyecto registrado con Exito!", "Mensaje de ConfirmaciOn",
 						JOptionPane.INFORMATION_MESSAGE);
 				alInicio.setVisible(true);
 				temp.dispose();
