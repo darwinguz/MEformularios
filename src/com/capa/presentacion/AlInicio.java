@@ -1,5 +1,6 @@
 package com.capa.presentacion;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -24,7 +25,7 @@ public class AlInicio extends JFrame {
 
 	private static final long serialVersionUID = -2063817460198744409L;
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField txtBuscar;
 	private TCabecera tCabecera;
 
 	public static void main(String[] args) {
@@ -119,31 +120,35 @@ public class AlInicio extends JFrame {
 		});
 		pnlBotones.add(btnReporteInsp);
 
-		textField = new JTextField();
-		textField.setBounds(105, 27, 199, 21);
-		textField.setText("Buscar proyecto");
-		textField.setEditable(false);
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		textField.addKeyListener(new KeyAdapter() {
+		txtBuscar = new JTextField();
+		txtBuscar.setBounds(105, 27, 199, 21);
+		txtBuscar.setText("Buscar proyecto");
+		txtBuscar.setHorizontalAlignment(SwingConstants.CENTER);
+		txtBuscar.setForeground(Color.LIGHT_GRAY);
+		contentPane.add(txtBuscar);
+		txtBuscar.setColumns(10);
+		txtBuscar.addKeyListener(new KeyAdapter() {
 			public void keyPressed(final KeyEvent e) {
 				int key = e.getKeyCode();
+				if (txtBuscar.getText().equals("Buscar proyecto")) {
+					txtBuscar.setText("");
+					txtBuscar.setForeground(Color.BLACK);
+				}
 
 				if (key == KeyEvent.VK_ENTER) {
 					try {
-						tCabecera = comProyecto.buscarProyecto(textField.getText());
+						tCabecera = comProyecto.buscarProyecto(txtBuscar.getText());
 						Utilitarios.settCabecera(tCabecera);
 						System.out.println(tCabecera.getTLugarGeografico().getLgCodigo());
 						System.out.println(tCabecera.getCircuito());
 						JOptionPane.showMessageDialog(null, "Proyecto cargado", "Proyecto",
 								JOptionPane.INFORMATION_MESSAGE);
-						textField.setEditable(false);
+						txtBuscar.setEditable(false);
 					} catch (NullPointerException np) {
 						// TODO: handle exception
 						JOptionPane.showMessageDialog(null, "No existe el proyecto", "ERROR",
 								JOptionPane.ERROR_MESSAGE);
-						textField.setEnabled(true);
+						txtBuscar.setEnabled(true);
 					}
 				}
 			}
@@ -160,13 +165,20 @@ public class AlInicio extends JFrame {
 
 		});
 		contentPane.add(btnLimpiar);
+
+		if (Utilitarios.gettCabecera() != null) {
+			txtBuscar.setForeground(Color.BLACK);
+			txtBuscar.setEditable(false);
+			txtBuscar.setText(Utilitarios.gettCabecera().getCNombreProyecto());
+			tCabecera = Utilitarios.gettCabecera();
+		}
 	}
 
 	private void setDefaults() {
 		this.tCabecera = null;
-		this.textField.setText("");
-		this.textField.setEditable(true);
-		this.textField.requestFocus();
+		this.txtBuscar.setText("");
+		this.txtBuscar.setEditable(true);
+		this.txtBuscar.requestFocus();
 	}
 
 	public TCabecera gettCabecera() {
@@ -174,8 +186,8 @@ public class AlInicio extends JFrame {
 	}
 
 	public void settCabecera(TCabecera tCabecera) {
-		textField.setText(tCabecera.getCNombreProyecto());
-		textField.setEnabled(false);
+		txtBuscar.setText(tCabecera.getCNombreProyecto());
+		txtBuscar.setEnabled(false);
 		this.tCabecera = tCabecera;
 	}
 }

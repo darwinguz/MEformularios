@@ -1529,6 +1529,13 @@ public class MaTemplate extends JFrame {
 		llenarCabecera(cabecera);
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(860, 312);
+		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("INSERTAR FOTO");
+			}
+		});
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
