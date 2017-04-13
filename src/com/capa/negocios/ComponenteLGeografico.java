@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 import com.capa.datos.TLugarGeografico;
 
-public class ComponenteLugarGeo implements ServicioLugarGeo {
+public class ComponenteLGeografico implements ServicioLGeografico {
 
 	@Override
 	public void crear(TLugarGeografico lugar) {
@@ -150,6 +150,25 @@ public class ComponenteLugarGeo implements ServicioLugarGeo {
 			e.printStackTrace();
 		}
 		return lugarGeo;
+	}
+
+	@Override
+	public String[] loadNombreProvCantParr(String codParr) {
+		String sql = "SELECT lgProvinvia.lg_nombre prov, lgCanton.lg_nombre canton, lgParroquia.lg_nombre prrq FROM t_lugar_geografico lgProvinvia left join t_lugar_geografico lgCanton on lgProvinvia.lg_codigo = lgCanton.lg_fk_codigo left join t_lugar_geografico lgParroquia on lgCanton.lg_codigo = lgParroquia.lg_fk_codigo WHERE lgParroquia.lg_codigo LIKE '"
+				+ codParr + "'";
+		// String[3] nombres
+		// try {
+		// ResultSet rs = Query.seleccionar(sql);
+		// while (rs.next()) {
+		// lugarGeo.setLgCodigo(rs.getString("lg_fk_codigo"));
+		// lugarGeo.setLgNombre(rs.getString("lg_nombre"));
+		// }
+		//
+		// } catch (SQLException e) {
+		// // TODO Auto-generated catch block
+		// e.printStackTrace();
+		// }
+		return null;
 	}
 
 }

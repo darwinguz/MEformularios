@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.capa.datos.TLugarGeografico;
 
-public interface ServicioLugarGeo {
+public interface ServicioLGeografico {
 	void crear(TLugarGeografico lugar);
 
 	List<TLugarGeografico> lugares();
@@ -18,4 +18,6 @@ public interface ServicioLugarGeo {
 	TLugarGeografico buscarProvincia(String codigo);
 
 	TLugarGeografico buscarParroquia(String codigo);
+
+	String[] loadNombreProvCantParr(String codParr);
 }
