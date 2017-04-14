@@ -57,8 +57,11 @@ public class Menu extends JFrame {
 
 		JButton btnAula1 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>1</body></html>");
 		btnAula1.addActionListener(new ActionListener() {
+
+			TFicha ficha = servicioFicha.buscarFormulario("MA-1");
+
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-1"));
+				MaTemplate maTemplate = new MaTemplate(ficha);
 				maTemplate.setVisible(true);
 				if (servicioFicha.existeFicha()) {
 					llenarFicha(maTemplate);
@@ -66,9 +69,8 @@ public class Menu extends JFrame {
 			}
 
 			private void llenarFicha(MaTemplate maTemplate) {
-				List<TdetalleFicha> camposFormularios = servicioFicha.detallesFicha(Utilitarios.gettCabecera(),
-						new TFicha());
-				
+				List<TdetalleFicha> camposFormularios = servicioFicha.detallesFicha(Utilitarios.gettCabecera(), ficha);
+
 				if (camposFormularios.size() != maTemplate.getTextFields().size()) {
 					System.err.println("ERROR: String=" + camposFormularios.size() + " JTextField="
 							+ maTemplate.getTextFields().size());
@@ -78,8 +80,8 @@ public class Menu extends JFrame {
 				Iterator<TdetalleFicha> it = camposFormularios.iterator();
 				maTemplate.getTextFields().forEach((item) -> {
 					TdetalleFicha temp = it.next();
-					// item[0].setText(temp);
-					// item[1].setText(temp);
+					item[0].setText(temp.getDetCantidadEjecutada().toString());
+					item[1].setText(temp.getDetObsRef());
 				});
 			}
 		});
