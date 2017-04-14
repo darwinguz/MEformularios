@@ -63,7 +63,6 @@ public class Menu extends JFrame {
 				if (servicioFicha.existeFicha()) {
 					llenarFicha(maTemplate);
 				}
-
 			}
 
 			private void llenarFicha(MaTemplate maTemplate) {
