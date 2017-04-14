@@ -154,12 +154,14 @@ public class ComponenteFicha implements ServicioFicha {
 	public void guardarFormulario(List<TdetalleFicha> detallesFicha) {
 		detallesFicha.forEach(item -> {
 			try {
-				String query = "INSERT INTO t_detalle_ficha (io_serial, fi_serial, c_serial, g_serial, df_etiqueta, df_cantidad_limite, df_cantidad_ejecutada, df_obs_ref, df_actualizacion_n, df_porcentaje_avance) VALUES ('"
-						+ item.getInfoObligatoria().getIoSerial() + "', '" + item.getTFicha().getFiSerial() + "', '"
-						+ item.getTCabecera().getCSerial() + "', '" + item.getTGrupo().getGSerial() + "', '"
-						+ item.getDetEtiqueta() + "', '" + item.getDetCantidadLimite() + "', '"
-						+ item.getDetCantidadEjecutada() + "', '" + item.getDetObsRef() + "', '" + "', '"
-						+ item.getDetActualizacionN() + "', '" + item.getPorcentajeAvance() + "');";
+				String query = "INSERT INTO t_detalle_ficha (io_serial, fi_serial, c_serial, "
+						+ "g_serial, df_etiqueta, df_cantidad_limite, df_cantidad_ejecutada, "
+						+ "df_obs_ref, df_actualizacion_n, df_porcentaje_avance) VALUES ("
+						+ item.getInfoObligatoria().getIoSerial() + ", " + item.getTFicha().getFiSerial() + ", "
+						+ item.getTCabecera().getCSerial() + ", " + item.getTGrupo().getGSerial() + ", '"
+						+ item.getDetEtiqueta() + "', " + item.getDetCantidadLimite() + ", "
+						+ item.getDetCantidadEjecutada() + ", '" + item.getDetObsRef() + "', "
+						+ item.getDetActualizacionN() + ", " + item.getPorcentajeAvance() + ");";
 				Query.insertar(query);
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "Error al insertar datos del formulario MA " + e.getMessage(),
