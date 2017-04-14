@@ -17,6 +17,10 @@ import com.capa.util.Utilitarios;
 
 public class ComponenteFicha implements ServicioFicha {
 
+	String mensaje = null;
+	String titulo = null;
+	int tipoMensaje = 0;
+
 	@Override
 	public TFicha buscarFormulario(String titulo) {
 		TFicha ficha = new TFicha();
@@ -76,7 +80,8 @@ public class ComponenteFicha implements ServicioFicha {
 		datosFicha.forEach(lista -> {
 			lista.forEach(item -> {
 				try {
-					String query = "INSERT INTO t_detalle_ficha (io_serial, fi_serial, c_serial, g_serial, df_etiqueta, df_cantidad_limite, df_cantidad_ejecutada, df_obs_ref, df_actualizacion_n) VALUES ('"
+					String query = "INSERT INTO t_detalle_ficha (io_serial, fi_serial, c_serial, g_serial, df_etiqueta, "
+							+ "df_cantidad_limite, df_cantidad_ejecutada, df_obs_ref, df_actualizacion_n) VALUES ('"
 							+ item.getInfoObligatoria().getIoSerial() + "', '" + item.getTFicha().getFiSerial() + "', '"
 							+ item.getTCabecera().getCSerial() + "', '" + item.getTGrupo().getGSerial() + "', '"
 							+ item.getDetEtiqueta() + "', '" + item.getDetCantidadLimite() + "', '"
@@ -163,12 +168,14 @@ public class ComponenteFicha implements ServicioFicha {
 						+ item.getDetCantidadEjecutada() + ", '" + item.getDetObsRef() + "', "
 						+ item.getDetActualizacionN() + ", " + item.getPorcentajeAvance() + ");";
 				Query.insertar(query);
+				mensaje = "Ingreso exitoso";
+				titulo = "INGRESO";
+				tipoMensaje = 1;
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "Error al insertar datos del formulario MA " + e.getMessage(),
-						"ERROR", JOptionPane.ERROR_MESSAGE);
+				mensaje = "Error al insertar datos del formulario MA " + e.getMessage();
 			}
 		});
-
+		JOptionPane.showMessageDialog(null, mensaje, titulo, tipoMensaje);
 	}
 
 }

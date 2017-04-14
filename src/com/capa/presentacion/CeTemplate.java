@@ -15,6 +15,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
 import java.util.LinkedList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -39,24 +40,24 @@ public class CeTemplate extends JFrame {
 
 	private static final long serialVersionUID = 4781774484295539711L;
 	private JPanel panelPrincipal;
-	private JTextField txtCECantidad00;
-	private JTextField txtCECantidad01;
-	private JTextField txtCECantidad10;
-	private JTextField txtCECantidad11;
-	private JTextField txtCECantidad20;
-	private JTextField txtCECantidad21;
-	private JTextField txtCECantidad30;
-	private JTextField txtCECantidad31;
-	private JTextField txtCECantidad40;
-	private JTextField txtCECantidad41;
-	private JTextField txtCEObs0;
-	private JTextField txtCEObs01;
-	private JTextField txtCEObs2;
-	private JTextField txtCEObs3;
-	private JTextField txtCEObs4;
-	private JTextField txtWPCantidad01;
-	private JTextField txtWPObs0;
-	private JTextField txtWPCantidad00;
+	private JTextField txtCantidad10;
+	private JTextField txtCantidad11;
+	private JTextField txtCantidad20;
+	private JTextField txtCantidad21;
+	private JTextField txtCantidad30;
+	private JTextField txtCantidad31;
+	private JTextField txtCantidad40;
+	private JTextField txtCantidad41;
+	private JTextField txtCantidad50;
+	private JTextField txtCantidad51;
+	private JTextField txtObs1;
+	private JTextField txtObs2;
+	private JTextField txtObs3;
+	private JTextField txtObs4;
+	private JTextField txtObs5;
+	private JTextField txtCantidad01;
+	private JTextField txtObs0;
+	private JTextField txtCantidad00;
 
 	TInformacionObligatoria infor;
 	TFicha ficha;
@@ -93,6 +94,7 @@ public class CeTemplate extends JFrame {
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.setTitle(ficha.getFiNombre());
+		servFicha = new ComponenteFicha();
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
@@ -108,24 +110,6 @@ public class CeTemplate extends JFrame {
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(533, 50);
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
-
-		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
-				servFicha = new ComponenteFicha();
-				infor = cargarInfoObligatoria(infoObligatoria);
-				// System.out.println(infor.gettCabe().getCNombreProyecto());
-
-				if (validarInfo(infor)) {
-					srvInfoOblig.crear(infor);
-					servFicha.insertarFormulario(cargarListas());
-				} else {
-					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
-				}
-			}
-		});
 
 		JPanel pnlModuloWPC = new JPanel();
 		pnlModuloWPC.setLayout(null);
@@ -160,25 +144,25 @@ public class CeTemplate extends JFrame {
 		pnlModuloWPC.add(panel_6);
 		panel_6.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtWPCantidad00 = new JTextField();
-		txtWPCantidad00.setFont(new Font("Arial", Font.PLAIN, 9));
-		txtWPCantidad00.setText("1800");
-		txtWPCantidad00.setEditable(false);
-		txtWPCantidad00.setColumns(10);
-		panel_6.add(txtWPCantidad00);
+		txtCantidad00 = new JTextField();
+		txtCantidad00.setFont(new Font("Arial", Font.PLAIN, 9));
+		txtCantidad00.setText("1800");
+		txtCantidad00.setEditable(false);
+		txtCantidad00.setColumns(10);
+		panel_6.add(txtCantidad00);
 
-		txtWPCantidad01 = new JTextField();
-		txtWPCantidad01.setColumns(10);
-		panel_6.add(txtWPCantidad01);
+		txtCantidad01 = new JTextField();
+		txtCantidad01.setColumns(10);
+		panel_6.add(txtCantidad01);
 
 		JPanel panel_7 = new JPanel();
 		panel_7.setBounds(267, 17, 143, 29);
 		pnlModuloWPC.add(panel_7);
 		panel_7.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtWPObs0 = new JTextField();
-		txtWPObs0.setColumns(10);
-		panel_7.add(txtWPObs0);
+		txtObs0 = new JTextField();
+		txtObs0.setColumns(10);
+		panel_7.add(txtObs0);
 
 		JPanel pnlCompEstructural = new JPanel();
 		pnlCompEstructural.setLayout(null);
@@ -229,80 +213,96 @@ public class CeTemplate extends JFrame {
 		pnlCompEstructural.add(panel_2);
 		panel_2.setLayout(new GridLayout(5, 2, 0, 0));
 
-		txtCECantidad00 = new JTextField();
-		txtCECantidad00.setText("120");
-		txtCECantidad00.setEditable(false);
-		txtCECantidad00.setColumns(10);
-		panel_2.add(txtCECantidad00);
+		txtCantidad10 = new JTextField();
+		txtCantidad10.setText("120");
+		txtCantidad10.setEditable(false);
+		txtCantidad10.setColumns(10);
+		panel_2.add(txtCantidad10);
 
-		txtCECantidad01 = new JTextField();
-		txtCECantidad01.setColumns(10);
-		panel_2.add(txtCECantidad01);
+		txtCantidad11 = new JTextField();
+		txtCantidad11.setColumns(10);
+		panel_2.add(txtCantidad11);
 
-		txtCECantidad10 = new JTextField();
-		txtCECantidad10.setText("120");
-		txtCECantidad10.setEditable(false);
-		txtCECantidad10.setColumns(10);
-		panel_2.add(txtCECantidad10);
+		txtCantidad20 = new JTextField();
+		txtCantidad20.setText("120");
+		txtCantidad20.setEditable(false);
+		txtCantidad20.setColumns(10);
+		panel_2.add(txtCantidad20);
 
-		txtCECantidad11 = new JTextField();
-		txtCECantidad11.setColumns(10);
-		panel_2.add(txtCECantidad11);
+		txtCantidad21 = new JTextField();
+		txtCantidad21.setColumns(10);
+		panel_2.add(txtCantidad21);
 
-		txtCECantidad20 = new JTextField();
-		txtCECantidad20.setText("480");
-		txtCECantidad20.setEditable(false);
-		txtCECantidad20.setColumns(10);
-		panel_2.add(txtCECantidad20);
+		txtCantidad30 = new JTextField();
+		txtCantidad30.setText("480");
+		txtCantidad30.setEditable(false);
+		txtCantidad30.setColumns(10);
+		panel_2.add(txtCantidad30);
 
-		txtCECantidad21 = new JTextField();
-		txtCECantidad21.setColumns(10);
-		panel_2.add(txtCECantidad21);
+		txtCantidad31 = new JTextField();
+		txtCantidad31.setColumns(10);
+		panel_2.add(txtCantidad31);
 
-		txtCECantidad30 = new JTextField();
-		txtCECantidad30.setText("120");
-		txtCECantidad30.setEditable(false);
-		txtCECantidad30.setColumns(10);
-		panel_2.add(txtCECantidad30);
+		txtCantidad40 = new JTextField();
+		txtCantidad40.setText("120");
+		txtCantidad40.setEditable(false);
+		txtCantidad40.setColumns(10);
+		panel_2.add(txtCantidad40);
 
-		txtCECantidad31 = new JTextField();
-		txtCECantidad31.setColumns(10);
-		panel_2.add(txtCECantidad31);
+		txtCantidad41 = new JTextField();
+		txtCantidad41.setColumns(10);
+		panel_2.add(txtCantidad41);
 
-		txtCECantidad40 = new JTextField();
-		txtCECantidad40.setText("120");
-		txtCECantidad40.setEditable(false);
-		txtCECantidad40.setColumns(10);
-		panel_2.add(txtCECantidad40);
+		txtCantidad50 = new JTextField();
+		txtCantidad50.setText("120");
+		txtCantidad50.setEditable(false);
+		txtCantidad50.setColumns(10);
+		panel_2.add(txtCantidad50);
 
-		txtCECantidad41 = new JTextField();
-		txtCECantidad41.setColumns(10);
-		panel_2.add(txtCECantidad41);
+		txtCantidad51 = new JTextField();
+		txtCantidad51.setColumns(10);
+		panel_2.add(txtCantidad51);
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(267, 17, 143, 144);
 		pnlCompEstructural.add(panel_3);
 		panel_3.setLayout(new GridLayout(5, 0, 0, 0));
 
-		txtCEObs0 = new JTextField();
-		txtCEObs0.setColumns(10);
-		panel_3.add(txtCEObs0);
+		txtObs1 = new JTextField();
+		txtObs1.setColumns(10);
+		panel_3.add(txtObs1);
 
-		txtCEObs01 = new JTextField();
-		txtCEObs01.setColumns(10);
-		panel_3.add(txtCEObs01);
+		txtObs2 = new JTextField();
+		txtObs2.setColumns(10);
+		panel_3.add(txtObs2);
 
-		txtCEObs2 = new JTextField();
-		txtCEObs2.setColumns(10);
-		panel_3.add(txtCEObs2);
+		txtObs3 = new JTextField();
+		txtObs3.setColumns(10);
+		panel_3.add(txtObs3);
 
-		txtCEObs3 = new JTextField();
-		txtCEObs3.setColumns(10);
-		panel_3.add(txtCEObs3);
+		txtObs4 = new JTextField();
+		txtObs4.setColumns(10);
+		panel_3.add(txtObs4);
 
-		txtCEObs4 = new JTextField();
-		txtCEObs4.setColumns(10);
-		panel_3.add(txtCEObs4);
+		txtObs5 = new JTextField();
+		txtObs5.setColumns(10);
+		panel_3.add(txtObs5);
+
+		llenarFicha();
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+				infor = cargarInfoObligatoria(infoObligatoria);
+				if (validarInfo(infor)) {
+					srvInfoOblig.crear(infor);
+					servFicha.insertarFormulario(cargarListas());
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
+				}
+			}
+		});
 
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -323,39 +323,44 @@ public class CeTemplate extends JFrame {
 
 		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
 
-		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo A - 180x105");
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtWPCantidad00.getText()),
-				Integer.parseInt(txtWPCantidad01.getText()));
-		listaModulo.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
-				Integer.parseInt(txtWPCantidad00.getText()), Integer.parseInt(txtWPCantidad01.getText()),
-				txtWPObs0.getText(), updateFicha, porcentajeAvance));
+		if (updateFicha == -1) {
+			updateFicha = 0;
+		} else {
+			updateFicha++;
+		}
 
+		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo A - 180x105");
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad00.getText()),
+				Integer.parseInt(txtCantidad01.getText()));
+		listaModulo.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
+				Integer.parseInt(txtCantidad00.getText()), Integer.parseInt(txtCantidad01.getText()), txtObs0.getText(),
+				updateFicha, porcentajeAvance));
 		grupoTmp = servFicha.buscarGrupo("Componente estructural");
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCECantidad00.getText()),
-				Integer.parseInt(txtCECantidad01.getText()));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad10.getText()),
+				Integer.parseInt(txtCantidad11.getText()));
 		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
-				Integer.parseInt(txtCECantidad00.getText()), Integer.parseInt(txtCECantidad01.getText()),
-				txtCEObs0.getText(), updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCECantidad10.getText()),
-				Integer.parseInt(txtCECantidad11.getText()));
+				Integer.parseInt(txtCantidad10.getText()), Integer.parseInt(txtCantidad11.getText()), txtObs1.getText(),
+				updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad20.getText()),
+				Integer.parseInt(txtCantidad21.getText()));
 		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
-				Integer.parseInt(txtCECantidad10.getText()), Integer.parseInt(txtCECantidad11.getText()),
-				txtCEObs01.getText(), updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCECantidad20.getText()),
-				Integer.parseInt(txtCECantidad21.getText()));
+				Integer.parseInt(txtCantidad20.getText()), Integer.parseInt(txtCantidad21.getText()), txtObs2.getText(),
+				updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad30.getText()),
+				Integer.parseInt(txtCantidad31.getText()));
 		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
-				Integer.parseInt(txtCECantidad20.getText()), Integer.parseInt(txtCECantidad21.getText()),
-				txtCEObs2.getText(), updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCECantidad30.getText()),
-				Integer.parseInt(txtCECantidad31.getText()));
+				Integer.parseInt(txtCantidad30.getText()), Integer.parseInt(txtCantidad31.getText()), txtObs3.getText(),
+				updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad40.getText()),
+				Integer.parseInt(txtCantidad41.getText()));
 		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
-				Integer.parseInt(txtCECantidad30.getText()), Integer.parseInt(txtCECantidad31.getText()),
-				txtCEObs3.getText(), updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCECantidad40.getText()),
-				Integer.parseInt(txtCECantidad41.getText()));
+				Integer.parseInt(txtCantidad40.getText()), Integer.parseInt(txtCantidad41.getText()), txtObs4.getText(),
+				updateFicha, porcentajeAvance));
+		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad50.getText()),
+				Integer.parseInt(txtCantidad51.getText()));
 		listaEstructural.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, null,
-				Integer.parseInt(txtCECantidad40.getText()), Integer.parseInt(txtCECantidad41.getText()),
-				txtCEObs4.getText(), updateFicha, porcentajeAvance));
+				Integer.parseInt(txtCantidad50.getText()), Integer.parseInt(txtCantidad51.getText()), txtObs5.getText(),
+				updateFicha, porcentajeAvance));
 
 		LinkedList<LinkedList<TdetalleFicha>> listaFormulario = new LinkedList<LinkedList<TdetalleFicha>>();
 		listaFormulario.add(listaModulo);
@@ -364,4 +369,39 @@ public class CeTemplate extends JFrame {
 		return listaFormulario;
 	}
 
+	public void llenarFicha() {
+		List<TdetalleFicha> listaDetalles = servFicha.detallesFicha(gettCabecera(), ficha);
+		try {
+			txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
+			txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
+			txtCantidad11.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
+			txtCantidad21.setText(String.valueOf(listaDetalles.get(2).getDetCantidadEjecutada()));
+			txtCantidad31.setText(String.valueOf(listaDetalles.get(3).getDetCantidadEjecutada()));
+			txtCantidad41.setText(String.valueOf(listaDetalles.get(4).getDetCantidadEjecutada()));
+			txtCantidad51.setText(String.valueOf(listaDetalles.get(5).getDetCantidadEjecutada()));
+
+			txtObs0.setText(listaDetalles.get(0).getDetObsRef());
+			txtObs1.setText(listaDetalles.get(1).getDetObsRef());
+			txtObs2.setText(listaDetalles.get(2).getDetObsRef());
+			txtObs3.setText(listaDetalles.get(3).getDetObsRef());
+			txtObs4.setText(listaDetalles.get(4).getDetObsRef());
+			txtObs5.setText(listaDetalles.get(5).getDetObsRef());
+		} catch (IndexOutOfBoundsException e) {
+			// TODO: handle exception
+			txtCantidad01.setText(String.valueOf(0));
+			txtCantidad01.setText(String.valueOf(0));
+			txtCantidad11.setText(String.valueOf(0));
+			txtCantidad21.setText(String.valueOf(0));
+			txtCantidad31.setText(String.valueOf(0));
+			txtCantidad41.setText(String.valueOf(0));
+			txtCantidad51.setText(String.valueOf(0));
+
+			txtObs0.setText("");
+			txtObs1.setText("");
+			txtObs2.setText("");
+			txtObs3.setText("");
+			txtObs4.setText("");
+			txtObs5.setText("");
+		}
+	}
 }
