@@ -1,9 +1,8 @@
 package com.capa.presentacion;
 
-import static com.capa.util.Utilitarios.cargarInfoObligatoria;
-import static com.capa.util.Utilitarios.gettCabecera;
-import static com.capa.util.Utilitarios.llenarCabecera;
-import static com.capa.util.Validaciones.validarInfo;
+import static com.capa.util.Utilitarios.*;
+import static com.capa.util.Validaciones.*;
+import static com.capa.util.Constantes.*;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -13,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.LinkedList;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -33,6 +33,7 @@ import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.presentacion.InformacionObligatoriaV;
 import com.capa.util.Validaciones;
 
 public class MaTemplate extends JFrame {
@@ -213,27 +214,27 @@ public class MaTemplate extends JFrame {
 		pnlKitElectrico.add(pnlTEEtiquetas);
 		pnlTEEtiquetas.setLayout(new GridLayout(5, 0, 0, 0));
 
-		JLabel lblTableroElectricoA = new JLabel("Luminarias LED  60w-5000 lum  ");
+		JLabel lblTableroElectricoA = new JLabel(LBL_MA_0);
 		lblTableroElectricoA.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblTableroElectricoA.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlTEEtiquetas.add(lblTableroElectricoA);
 
-		JLabel lblTableroElectricoB = new JLabel("Tomacorrientes  ");
+		JLabel lblTableroElectricoB = new JLabel(LBL_MA_1);
 		lblTableroElectricoB.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblTableroElectricoB.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlTEEtiquetas.add(lblTableroElectricoB);
 
-		JLabel lblTableroElectricoC = new JLabel("Interruptor  ");
+		JLabel lblTableroElectricoC = new JLabel(LBL_MA_2);
 		lblTableroElectricoC.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblTableroElectricoC.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlTEEtiquetas.add(lblTableroElectricoC);
 
-		JLabel lblTableroElectricoD = new JLabel("Kit cable el\u00E9ctrico  ");
+		JLabel lblTableroElectricoD = new JLabel(LBL_MA_3);
 		lblTableroElectricoD.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblTableroElectricoD.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlTEEtiquetas.add(lblTableroElectricoD);
 
-		JLabel lblDetectorDeHumo = new JLabel("Detector de Humo  ");
+		JLabel lblDetectorDeHumo = new JLabel(LBL_MA_4);
 		lblDetectorDeHumo.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblDetectorDeHumo.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEEtiquetas.add(lblDetectorDeHumo);
@@ -246,7 +247,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad00 = new JTextField();
 		txtCantidad00.setEditable(false);
 		txtCantidad00.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad00.setText("9");
+		txtCantidad00.setText(TXT_MA_0);
 		pnlTECantidad.add(txtCantidad00);
 		txtCantidad00.setColumns(10);
 		Validaciones.validarDigitos(txtCantidad00);
@@ -258,7 +259,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad10 = new JTextField();
 		txtCantidad10.setEditable(false);
-		txtCantidad10.setText("2");
+		txtCantidad10.setText(TXT_MA_1);
 		txtCantidad10.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad10.setColumns(10);
 		pnlTECantidad.add(txtCantidad10);
@@ -271,7 +272,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad20 = new JTextField();
 		txtCantidad20.setEditable(false);
-		txtCantidad20.setText("1");
+		txtCantidad20.setText(TXT_MA_2);
 		txtCantidad20.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad20.setColumns(10);
 		pnlTECantidad.add(txtCantidad20);
@@ -284,7 +285,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad30 = new JTextField();
 		txtCantidad30.setEditable(false);
-		txtCantidad30.setText("1");
+		txtCantidad30.setText(TXT_MA_3);
 		txtCantidad30.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad30.setColumns(10);
 		pnlTECantidad.add(txtCantidad30);
@@ -297,7 +298,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad40 = new JTextField();
 		txtCantidad40.setEditable(false);
-		txtCantidad40.setText("1");
+		txtCantidad40.setText(TXT_MA_4);
 		txtCantidad40.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad40.setColumns(10);
 		pnlTECantidad.add(txtCantidad40);
@@ -363,7 +364,7 @@ public class MaTemplate extends JFrame {
 		pnlKitAguaLluvia.add(pnlEDEtiquetas1);
 		pnlEDEtiquetas1.setLayout(new GridLayout(1, 1, 0, 0));
 
-		JLabel lblDadosCimentacionBXB = new JLabel("Canal pl\u00E1stico PVC de L=3m  ");
+		JLabel lblDadosCimentacionBXB = new JLabel(LBL_MA_5);
 		lblDadosCimentacionBXB.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblDadosCimentacionBXB.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlEDEtiquetas1.add(lblDadosCimentacionBXB);
@@ -376,7 +377,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad50 = new JTextField();
 		txtCantidad50.setEditable(false);
 		txtCantidad50.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad50.setText("3");
+		txtCantidad50.setText(TXT_MA_5);
 		txtCantidad50.setColumns(10);
 		pnlEDCantidad1.add(txtCantidad50);
 		Validaciones.validarDigitos(txtCantidad50);
@@ -400,8 +401,7 @@ public class MaTemplate extends JFrame {
 		pnlKitAguaLluvia.add(pnlEDEtiquetas2);
 		pnlEDEtiquetas2.setLayout(new GridLayout(1, 1, 0, 0));
 
-		JLabel lblkitDeAccesorios = new JLabel(
-				"<html><body><p align=\"right\">Kit de accesorios de conexión Agua de Lluvia (2 rejila, 4 codos 90°, 1/4 gl polipega, tornillos, abrazaderas)</p></html></body>");
+		JLabel lblkitDeAccesorios = new JLabel(LBL_MA_6);
 		lblkitDeAccesorios.setVerticalAlignment(SwingConstants.TOP);
 		lblkitDeAccesorios.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblkitDeAccesorios.setFont(new Font("Arial", Font.PLAIN, 10));
@@ -414,7 +414,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad60 = new JTextField();
 		txtCantidad60.setEditable(false);
-		txtCantidad60.setText("2");
+		txtCantidad60.setText(TXT_MA_6);
 		txtCantidad60.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad60.setColumns(10);
 		pnlEDCantidad2.add(txtCantidad60);
@@ -439,15 +439,15 @@ public class MaTemplate extends JFrame {
 		pnlKitAguaLluvia.add(pnlEDEtiquetas3);
 		pnlEDEtiquetas3.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel label_32 = new JLabel("Tubería de PVC 75mm L=3m  ");
-		label_32.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_32.setFont(new Font("Arial", Font.PLAIN, 10));
-		pnlEDEtiquetas3.add(label_32);
+		JLabel lblLblma_12 = new JLabel(LBL_MA_7);
+		lblLblma_12.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLblma_12.setFont(new Font("Arial", Font.PLAIN, 10));
+		pnlEDEtiquetas3.add(lblLblma_12);
 
-		JLabel label_33 = new JLabel("Tubería de PVC 75mm L=0.6m  ");
-		label_33.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_33.setFont(new Font("Arial", Font.PLAIN, 10));
-		pnlEDEtiquetas3.add(label_33);
+		JLabel lblLblma = new JLabel(LBL_MA_8);
+		lblLblma.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLblma.setFont(new Font("Arial", Font.PLAIN, 10));
+		pnlEDEtiquetas3.add(lblLblma);
 
 		JPanel pnlEDCantidad3 = new JPanel();
 		pnlEDCantidad3.setBounds(210, 86, 55, 40);
@@ -456,7 +456,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad70 = new JTextField();
 		txtCantidad70.setEditable(false);
-		txtCantidad70.setText("2");
+		txtCantidad70.setText(TXT_MA_7);
 		txtCantidad70.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad70.setColumns(10);
 		pnlEDCantidad3.add(txtCantidad70);
@@ -469,7 +469,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad80 = new JTextField();
 		txtCantidad80.setEditable(false);
-		txtCantidad80.setText("1");
+		txtCantidad80.setText(TXT_MA_8);
 		txtCantidad80.setColumns(10);
 		txtCantidad80.setHorizontalAlignment(SwingConstants.CENTER);
 		pnlEDCantidad3.add(txtCantidad80);
@@ -498,11 +498,10 @@ public class MaTemplate extends JFrame {
 		pnlKitAguaLluvia.add(pnlEDEtiquetas4);
 		pnlEDEtiquetas4.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel label_25 = new JLabel(
-				"<html><body><p align=\"justify\">Kit para conexión de tubería 75 mm. (lija pliego, polipega 1/4 gal, 1 codo 90°) </p></body></html>");
-		label_25.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_25.setFont(new Font("Arial", Font.PLAIN, 10));
-		pnlEDEtiquetas4.add(label_25);
+		JLabel lblLblma_1 = new JLabel(LBL_MA_9);
+		lblLblma_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLblma_1.setFont(new Font("Arial", Font.PLAIN, 10));
+		pnlEDEtiquetas4.add(lblLblma_1);
 
 		JPanel pnlEDCantidad4 = new JPanel();
 		pnlEDCantidad4.setBounds(210, 137, 55, 20);
@@ -511,7 +510,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad90 = new JTextField();
 		txtCantidad90.setEditable(false);
-		txtCantidad90.setText("1");
+		txtCantidad90.setText(TXT_MA_9);
 		txtCantidad90.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad90.setColumns(10);
 		pnlEDCantidad4.add(txtCantidad90);
@@ -561,12 +560,12 @@ public class MaTemplate extends JFrame {
 		pnlCompArquitect.add(pnlEtiquetasCompArq0);
 		pnlEtiquetasCompArq0.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel lblPuertas = new JLabel("Puertas  ");
+		JLabel lblPuertas = new JLabel(LBL_MA_10);
 		lblPuertas.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblPuertas.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlEtiquetasCompArq0.add(lblPuertas);
 
-		JLabel lblBisagras = new JLabel("Bisagras  ");
+		JLabel lblBisagras = new JLabel(LBL_MA_11);
 		lblBisagras.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblBisagras.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlEtiquetasCompArq0.add(lblBisagras);
@@ -576,19 +575,17 @@ public class MaTemplate extends JFrame {
 		pnlCompArquitect.add(pnlEtiquetasCompArq1);
 		pnlEtiquetasCompArq1.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel label_27 = new JLabel(
-				"<html><body><p align=\"right\">Perfil SF Tipo 12 MA-SF-12 para puerta y Tipo 12 MS-SF 12 paredes</p></body></html>");
-		label_27.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_27.setFont(new Font("Arial", Font.PLAIN, 10));
-		pnlEtiquetasCompArq1.add(label_27);
+		JLabel lblLblma_10 = new JLabel(LBL_MA_12);
+		lblLblma_10.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLblma_10.setFont(new Font("Arial", Font.PLAIN, 10));
+		pnlEtiquetasCompArq1.add(lblLblma_10);
 
 		JPanel pnlEtiquetasCompArq2 = new JPanel();
 		pnlEtiquetasCompArq2.setBounds(3, 104, 199, 40);
 		pnlCompArquitect.add(pnlEtiquetasCompArq2);
 		pnlEtiquetasCompArq2.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblventanaCorrederaCompuesta = new JLabel(
-				"<html><body><p align=\"right\">Ventana corredera, compuesta por tres hojas y dos carriles. UPVC con vidrio flotado de 3 mm de 3x1,10 </p></body></html>");
+		JLabel lblventanaCorrederaCompuesta = new JLabel(LBL_MA_13);
 		lblventanaCorrederaCompuesta.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblventanaCorrederaCompuesta.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlEtiquetasCompArq2.add(lblventanaCorrederaCompuesta);
@@ -598,10 +595,10 @@ public class MaTemplate extends JFrame {
 		pnlCompArquitect.add(pnlEtiquetasCompArq3);
 		pnlEtiquetasCompArq3.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel label_22 = new JLabel("Perfil SF Tipo 12 MA-SF-12 para ventana  ");
-		label_22.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_22.setFont(new Font("Arial", Font.PLAIN, 10));
-		pnlEtiquetasCompArq3.add(label_22);
+		JLabel lblLblma_11 = new JLabel(LBL_MA_14);
+		lblLblma_11.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLblma_11.setFont(new Font("Arial", Font.PLAIN, 10));
+		pnlEtiquetasCompArq3.add(lblLblma_11);
 
 		JPanel pnlCantidad0 = new JPanel();
 		pnlCantidad0.setBounds(210, 17, 55, 40);
@@ -610,7 +607,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad100 = new JTextField();
 		txtCantidad100.setEditable(false);
-		txtCantidad100.setText("1");
+		txtCantidad100.setText(TXT_MA_10);
 		txtCantidad100.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad100.setColumns(10);
 		pnlCantidad0.add(txtCantidad100);
@@ -623,7 +620,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad110 = new JTextField();
 		txtCantidad110.setEditable(false);
-		txtCantidad110.setText("3");
+		txtCantidad110.setText(TXT_MA_11);
 		txtCantidad110.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad110.setColumns(10);
 		pnlCantidad0.add(txtCantidad110);
@@ -641,7 +638,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad120 = new JTextField();
 		txtCantidad120.setEditable(false);
-		txtCantidad120.setText("11");
+		txtCantidad120.setText(TXT_MA_12);
 		txtCantidad120.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad120.setColumns(10);
 		pnlCantidad1.add(txtCantidad120);
@@ -659,7 +656,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad130 = new JTextField();
 		txtCantidad130.setEditable(false);
-		txtCantidad130.setText("3");
+		txtCantidad130.setText(TXT_MA_13);
 		txtCantidad130.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad130.setColumns(10);
 		pnlCantidad2.add(txtCantidad130);
@@ -678,7 +675,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad140 = new JTextField();
 		txtCantidad140.setEditable(false);
 		txtCantidad140.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad140.setText("3");
+		txtCantidad140.setText(TXT_MA_14);
 		txtCantidad140.setColumns(10);
 		pnlCantidad3.add(txtCantidad140);
 		Validaciones.validarDigitos(txtCantidad140);
@@ -758,22 +755,22 @@ public class MaTemplate extends JFrame {
 		pnlFachadaFrontal.add(pnlAEEtiquetas);
 		pnlAEEtiquetas.setLayout(new GridLayout(4, 0, 0, 0));
 
-		JLabel lblDadosCimentacionAXA = new JLabel("Dados de cimentaci\u00F3n de postes AXAcm");
+		JLabel lblDadosCimentacionAXA = new JLabel(LBL_MA_15);
 		lblDadosCimentacionAXA.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblDadosCimentacionAXA.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlAEEtiquetas.add(lblDadosCimentacionAXA);
 
-		JLabel lblLuminariasLed = new JLabel("Luminarias LED 120 W - 12000 lum");
+		JLabel lblLuminariasLed = new JLabel(LBL_MA_16);
 		lblLuminariasLed.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLuminariasLed.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlAEEtiquetas.add(lblLuminariasLed);
 
-		JLabel lblPostesSimples = new JLabel("Postes de 6 mts simples");
+		JLabel lblPostesSimples = new JLabel(LBL_MA_17);
 		lblPostesSimples.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblPostesSimples.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlAEEtiquetas.add(lblPostesSimples);
 
-		JLabel lblAEKitCableadoElectrico = new JLabel("Kit cableado el\u00E9ctrico AE");
+		JLabel lblAEKitCableadoElectrico = new JLabel(LBL_MA_18);
 		lblAEKitCableadoElectrico.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblAEKitCableadoElectrico.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlAEEtiquetas.add(lblAEKitCableadoElectrico);
@@ -785,7 +782,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad150 = new JTextField();
 		txtCantidad150.setEditable(false);
-		txtCantidad150.setText("5");
+		txtCantidad150.setText(TXT_MA_15);
 		txtCantidad150.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad150.setColumns(10);
 		pnlAECantidad.add(txtCantidad150);
@@ -798,7 +795,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad160 = new JTextField();
 		txtCantidad160.setEditable(false);
-		txtCantidad160.setText("1");
+		txtCantidad160.setText(TXT_MA_16);
 		txtCantidad160.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad160.setColumns(10);
 		pnlAECantidad.add(txtCantidad160);
@@ -811,7 +808,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad170 = new JTextField();
 		txtCantidad170.setEditable(false);
-		txtCantidad170.setText("1");
+		txtCantidad170.setText(TXT_MA_17);
 		txtCantidad170.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad170.setColumns(10);
 		pnlAECantidad.add(txtCantidad170);
@@ -824,7 +821,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad180 = new JTextField();
 		txtCantidad180.setEditable(false);
-		txtCantidad180.setText("3");
+		txtCantidad180.setText(TXT_MA_18);
 		txtCantidad180.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad180.setColumns(10);
 		pnlAECantidad.add(txtCantidad180);
@@ -885,20 +882,20 @@ public class MaTemplate extends JFrame {
 		pnlFachadaPosterior.add(pnlEtiquetasFP);
 		pnlEtiquetasFP.setLayout(new GridLayout(3, 0, 0, 0));
 
-		JLabel label_1 = new JLabel("Kit de cableado el\u00E9ctrico BA");
-		label_1.setFont(new Font("Arial", Font.PLAIN, 10));
-		label_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		pnlEtiquetasFP.add(label_1);
+		JLabel lblLblma_2 = new JLabel(LBL_MA_19);
+		lblLblma_2.setFont(new Font("Arial", Font.PLAIN, 10));
+		lblLblma_2.setHorizontalAlignment(SwingConstants.RIGHT);
+		pnlEtiquetasFP.add(lblLblma_2);
 
-		JLabel label_2 = new JLabel("Tuber\u00EDa PVC 2\u00B4para cableado l=6m");
-		label_2.setFont(new Font("Arial", Font.PLAIN, 10));
-		label_2.setHorizontalAlignment(SwingConstants.RIGHT);
-		pnlEtiquetasFP.add(label_2);
+		JLabel lblLblma_3 = new JLabel(LBL_MA_20);
+		lblLblma_3.setFont(new Font("Arial", Font.PLAIN, 10));
+		lblLblma_3.setHorizontalAlignment(SwingConstants.RIGHT);
+		pnlEtiquetasFP.add(lblLblma_3);
 
-		JLabel label_3 = new JLabel("Cajas de Conexi\u00F3n  0,60x0,60 mt");
-		label_3.setFont(new Font("Arial", Font.PLAIN, 10));
-		label_3.setHorizontalAlignment(SwingConstants.RIGHT);
-		pnlEtiquetasFP.add(label_3);
+		JLabel lblLblma_4 = new JLabel(LBL_MA_21);
+		lblLblma_4.setFont(new Font("Arial", Font.PLAIN, 10));
+		lblLblma_4.setHorizontalAlignment(SwingConstants.RIGHT);
+		pnlEtiquetasFP.add(lblLblma_4);
 
 		JPanel pnlCantidadFP = new JPanel();
 		pnlCantidadFP.setBounds(210, 17, 55, 60);
@@ -908,7 +905,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad190 = new JTextField();
 		txtCantidad190.setEditable(false);
 		txtCantidad190.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad190.setText("3");
+		txtCantidad190.setText(TXT_MA_19);
 
 		txtCantidad190.setColumns(10);
 		pnlCantidadFP.add(txtCantidad190);
@@ -921,7 +918,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad200 = new JTextField();
 		txtCantidad200.setEditable(false);
-		txtCantidad200.setText("6");
+		txtCantidad200.setText(TXT_MA_20);
 		txtCantidad200.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad200.setColumns(10);
 		pnlCantidadFP.add(txtCantidad200);
@@ -935,7 +932,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad210 = new JTextField();
 		txtCantidad210.setEditable(false);
 		txtCantidad210.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad210.setText("6");
+		txtCantidad210.setText(TXT_MA_21);
 		txtCantidad210.setColumns(10);
 		pnlCantidadFP.add(txtCantidad210);
 		Validaciones.validarDigitos(txtCantidad191);
@@ -990,15 +987,15 @@ public class MaTemplate extends JFrame {
 		pnlFachadaLateral.add(pnlEtiquetasFL);
 		pnlEtiquetasFL.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel label = new JLabel("Paneles vynil piso (0,15x1,93 m)  ");
-		label.setHorizontalAlignment(SwingConstants.RIGHT);
-		label.setFont(new Font("Arial", Font.PLAIN, 10));
-		pnlEtiquetasFL.add(label);
+		JLabel lblLblma_5 = new JLabel(LBL_MA_22);
+		lblLblma_5.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLblma_5.setFont(new Font("Arial", Font.PLAIN, 10));
+		pnlEtiquetasFL.add(lblLblma_5);
 
-		JLabel label_4 = new JLabel("Paneles EPS para cubierta I=7, a= 1 m  ");
-		label_4.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_4.setFont(new Font("Arial", Font.PLAIN, 10));
-		pnlEtiquetasFL.add(label_4);
+		JLabel lblLblma_6 = new JLabel(LBL_MA_23);
+		lblLblma_6.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLblma_6.setFont(new Font("Arial", Font.PLAIN, 10));
+		pnlEtiquetasFL.add(lblLblma_6);
 
 		JPanel pnlCantidadFL = new JPanel();
 		pnlCantidadFL.setBounds(210, 17, 55, 40);
@@ -1008,7 +1005,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad220 = new JTextField();
 		txtCantidad220.setEditable(false);
 		txtCantidad220.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad220.setText("6");
+		txtCantidad220.setText(TXT_MA_22);
 		txtCantidad220.setColumns(10);
 		pnlCantidadFL.add(txtCantidad220);
 		Validaciones.validarDigitos(txtCantidad220);
@@ -1021,7 +1018,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad230 = new JTextField();
 		txtCantidad230.setEditable(false);
 		txtCantidad230.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad230.setText("6");
+		txtCantidad230.setText(TXT_MA_23);
 		txtCantidad230.setColumns(10);
 		pnlCantidadFL.add(txtCantidad230);
 		Validaciones.validarDigitos(txtCantidad230);
@@ -1071,15 +1068,15 @@ public class MaTemplate extends JFrame {
 		pnlInterior.add(pnlEtiquetasI);
 		pnlEtiquetasI.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel label_10 = new JLabel("Paneles vynil piso (0,15x1,93 m)  ");
-		label_10.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_10.setFont(new Font("Arial", Font.PLAIN, 10));
-		pnlEtiquetasI.add(label_10);
+		JLabel lblLblma_7 = new JLabel(LBL_MA_24);
+		lblLblma_7.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLblma_7.setFont(new Font("Arial", Font.PLAIN, 10));
+		pnlEtiquetasI.add(lblLblma_7);
 
-		JLabel label_11 = new JLabel("Paneles EPS para cubierta I=7, a= 1 m  ");
-		label_11.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_11.setFont(new Font("Arial", Font.PLAIN, 10));
-		pnlEtiquetasI.add(label_11);
+		JLabel lblLblma_8 = new JLabel(LBL_MA_25);
+		lblLblma_8.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLblma_8.setFont(new Font("Arial", Font.PLAIN, 10));
+		pnlEtiquetasI.add(lblLblma_8);
 
 		JPanel pnlCantidadI = new JPanel();
 		pnlCantidadI.setBounds(210, 17, 55, 40);
@@ -1088,7 +1085,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad240 = new JTextField();
 		txtCantidad240.setEditable(false);
-		txtCantidad240.setText("1");
+		txtCantidad240.setText(TXT_MA_24);
 		txtCantidad240.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad240.setColumns(10);
 		pnlCantidadI.add(txtCantidad240);
@@ -1101,7 +1098,7 @@ public class MaTemplate extends JFrame {
 
 		txtCantidad250 = new JTextField();
 		txtCantidad250.setEditable(false);
-		txtCantidad250.setText("177");
+		txtCantidad250.setText(TXT_MA_25);
 		txtCantidad250.setColumns(10);
 		pnlCantidadI.add(txtCantidad250);
 		Validaciones.validarDigitos(txtCantidad250);
@@ -1151,10 +1148,10 @@ public class MaTemplate extends JFrame {
 		pnlCubierta.add(pnlEtiquetasC);
 		pnlEtiquetasC.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel label_9 = new JLabel("Kit de cableado el\u00E9ctrico BA");
-		label_9.setFont(new Font("Arial", Font.PLAIN, 10));
-		label_9.setHorizontalAlignment(SwingConstants.RIGHT);
-		pnlEtiquetasC.add(label_9);
+		JLabel lblLblma_9 = new JLabel(LBL_MA_26);
+		lblLblma_9.setFont(new Font("Arial", Font.PLAIN, 10));
+		lblLblma_9.setHorizontalAlignment(SwingConstants.RIGHT);
+		pnlEtiquetasC.add(lblLblma_9);
 
 		JPanel pnlCantidadC = new JPanel();
 		pnlCantidadC.setBounds(210, 17, 55, 20);
@@ -1164,7 +1161,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad260 = new JTextField();
 		txtCantidad260.setEditable(false);
 		txtCantidad260.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad260.setText("9");
+		txtCantidad260.setText(TXT_MA_26);
 		txtCantidad260.setColumns(10);
 		pnlCantidadC.add(txtCantidad260);
 		Validaciones.validarDigitos(txtCantidad260);
@@ -1209,67 +1206,67 @@ public class MaTemplate extends JFrame {
 		pnlComponenteEst.add(pnlTEtiquetas);
 		pnlTEtiquetas.setLayout(new GridLayout(13, 0, 0, 0));
 
-		JLabel lblTKitCableadoTR = new JLabel("Dados cimentaci\u00F3n  ");
+		JLabel lblTKitCableadoTR = new JLabel(LBL_MA_27);
 		lblTKitCableadoTR.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblTKitCableadoTR.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlTEtiquetas.add(lblTKitCableadoTR);
 
-		JLabel lbl_pst1 = new JLabel("Perfil SF Tipo 1  ");
+		JLabel lbl_pst1 = new JLabel(LBL_MA_28);
 		lbl_pst1.setFont(new Font("Arial", Font.PLAIN, 10));
 		lbl_pst1.setHorizontalAlignment(SwingConstants.RIGHT);
 		pnlTEtiquetas.add(lbl_pst1);
 
-		JLabel lbl_pst2 = new JLabel("Perfil SF Tipo 2  ");
+		JLabel lbl_pst2 = new JLabel(LBL_MA_29);
 		lbl_pst2.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_pst2.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEtiquetas.add(lbl_pst2);
 
-		JLabel lbl_pst3 = new JLabel("Perfil SF Tipo 3  ");
+		JLabel lbl_pst3 = new JLabel(LBL_MA_30);
 		lbl_pst3.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_pst3.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEtiquetas.add(lbl_pst3);
 
-		JLabel lbl_pst4 = new JLabel("Perfil SF Tipo 4  ");
+		JLabel lbl_pst4 = new JLabel(LBL_MA_31);
 		lbl_pst4.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_pst4.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEtiquetas.add(lbl_pst4);
 
-		JLabel lbl_pst5 = new JLabel("Perfil SF Tipo 5  ");
+		JLabel lbl_pst5 = new JLabel(LBL_MA_32);
 		lbl_pst5.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_pst5.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEtiquetas.add(lbl_pst5);
 
-		JLabel lbl_pst6 = new JLabel("Perfil SF Tipo 6  ");
+		JLabel lbl_pst6 = new JLabel(LBL_MA_33);
 		lbl_pst6.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_pst6.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEtiquetas.add(lbl_pst6);
 
-		JLabel lbl_pst7 = new JLabel("Perfil SF Tipo 7  ");
+		JLabel lbl_pst7 = new JLabel(LBL_MA_34);
 		lbl_pst7.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_pst7.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEtiquetas.add(lbl_pst7);
 
-		JLabel lbl_pst8 = new JLabel("Perfil SF Tipo 8  ");
+		JLabel lbl_pst8 = new JLabel(LBL_MA_35);
 		lbl_pst8.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_pst8.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEtiquetas.add(lbl_pst8);
 
-		JLabel lbl_pst9 = new JLabel("Perfil SF Tipo 9  ");
+		JLabel lbl_pst9 = new JLabel(LBL_MA_36);
 		lbl_pst9.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_pst9.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEtiquetas.add(lbl_pst9);
 
-		JLabel lbl_pst10 = new JLabel("Perfil SF Tipo 10  ");
+		JLabel lbl_pst10 = new JLabel(LBL_MA_37);
 		lbl_pst10.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_pst10.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEtiquetas.add(lbl_pst10);
 
-		JLabel lbl_pst11 = new JLabel("Perfil SF Tipo 11  ");
+		JLabel lbl_pst11 = new JLabel(LBL_MA_38);
 		lbl_pst11.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_pst11.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEtiquetas.add(lbl_pst11);
 
-		JLabel lbl_pst12 = new JLabel("Perfil SF Tipo 12  ");
+		JLabel lbl_pst12 = new JLabel(LBL_MA_39);
 		lbl_pst12.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_pst12.setFont(new Font("Arial", Font.PLAIN, 10));
 		pnlTEtiquetas.add(lbl_pst12);
@@ -1282,7 +1279,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad270 = new JTextField();
 		txtCantidad270.setEditable(false);
 		txtCantidad270.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad270.setText("15");
+		txtCantidad270.setText(TXT_MA_27);
 		txtCantidad270.setColumns(10);
 		pnlTCantidad.add(txtCantidad270);
 		Validaciones.validarDigitos(txtCantidad270);
@@ -1290,7 +1287,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad280 = new JTextField();
 		txtCantidad280.setEditable(false);
 		txtCantidad280.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad280.setText("2");
+		txtCantidad280.setText(TXT_MA_28);
 		txtCantidad280.setColumns(10);
 		pnlTCantidad.add(txtCantidad280);
 		Validaciones.validarDigitos(txtCantidad280);
@@ -1298,7 +1295,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad290 = new JTextField();
 		txtCantidad290.setEditable(false);
 		txtCantidad290.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad290.setText("2");
+		txtCantidad290.setText(TXT_MA_29);
 		txtCantidad290.setColumns(10);
 		pnlTCantidad.add(txtCantidad290);
 		Validaciones.validarDigitos(txtCantidad290);
@@ -1306,7 +1303,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad300 = new JTextField();
 		txtCantidad300.setEditable(false);
 		txtCantidad300.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad300.setText("20");
+		txtCantidad300.setText(TXT_MA_30);
 		txtCantidad300.setColumns(10);
 		pnlTCantidad.add(txtCantidad300);
 		Validaciones.validarDigitos(txtCantidad300);
@@ -1314,7 +1311,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad310 = new JTextField();
 		txtCantidad310.setEditable(false);
 		txtCantidad310.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad310.setText("6");
+		txtCantidad310.setText(TXT_MA_31);
 		txtCantidad310.setColumns(10);
 		pnlTCantidad.add(txtCantidad310);
 		Validaciones.validarDigitos(txtCantidad310);
@@ -1322,7 +1319,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad320 = new JTextField();
 		txtCantidad320.setEditable(false);
 		txtCantidad320.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad320.setText("40");
+		txtCantidad320.setText(TXT_MA_32);
 		txtCantidad320.setColumns(10);
 		pnlTCantidad.add(txtCantidad320);
 		Validaciones.validarDigitos(txtCantidad320);
@@ -1330,7 +1327,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad330 = new JTextField();
 		txtCantidad330.setEditable(false);
 		txtCantidad330.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad330.setText("40");
+		txtCantidad330.setText(TXT_MA_33);
 		txtCantidad330.setColumns(10);
 		pnlTCantidad.add(txtCantidad330);
 		Validaciones.validarDigitos(txtCantidad330);
@@ -1338,7 +1335,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad340 = new JTextField();
 		txtCantidad340.setEditable(false);
 		txtCantidad340.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad340.setText("2");
+		txtCantidad340.setText(TXT_MA_34);
 		txtCantidad340.setColumns(10);
 		pnlTCantidad.add(txtCantidad340);
 		Validaciones.validarDigitos(txtCantidad340);
@@ -1346,7 +1343,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad350 = new JTextField();
 		txtCantidad350.setEditable(false);
 		txtCantidad350.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad350.setText("2");
+		txtCantidad350.setText(TXT_MA_35);
 		txtCantidad350.setColumns(10);
 		pnlTCantidad.add(txtCantidad350);
 		Validaciones.validarDigitos(txtCantidad350);
@@ -1354,7 +1351,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad360 = new JTextField();
 		txtCantidad360.setEditable(false);
 		txtCantidad360.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad360.setText("20");
+		txtCantidad360.setText(TXT_MA_36);
 		txtCantidad360.setColumns(10);
 		pnlTCantidad.add(txtCantidad360);
 		Validaciones.validarDigitos(txtCantidad360);
@@ -1362,7 +1359,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad370 = new JTextField();
 		txtCantidad370.setEditable(false);
 		txtCantidad370.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad370.setText("6");
+		txtCantidad370.setText(TXT_MA_37);
 		txtCantidad370.setColumns(10);
 		pnlTCantidad.add(txtCantidad370);
 		Validaciones.validarDigitos(txtCantidad370);
@@ -1370,7 +1367,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad380 = new JTextField();
 		txtCantidad380.setEditable(false);
 		txtCantidad380.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad380.setText("40");
+		txtCantidad380.setText(TXT_MA_38);
 		txtCantidad380.setColumns(10);
 		pnlTCantidad.add(txtCantidad380);
 		Validaciones.validarDigitos(txtCantidad380);
@@ -1378,7 +1375,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad390 = new JTextField();
 		txtCantidad390.setEditable(false);
 		txtCantidad390.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad390.setText("32");
+		txtCantidad390.setText(TXT_MA_39);
 		txtCantidad390.setColumns(10);
 		pnlTCantidad.add(txtCantidad390);
 		Validaciones.validarDigitos(txtCantidad390);
@@ -1526,7 +1523,7 @@ public class MaTemplate extends JFrame {
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
-		llenarCabecera(cabecera);
+		// llenarCabecera(cabecera);
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(860, 312);
 		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
@@ -1550,7 +1547,7 @@ public class MaTemplate extends JFrame {
 					srvInfoObl.crear(infoObl);
 					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
 
-					srvFicha.insertarFormulario(cargarFicha(infoObl));
+					srvFicha.guardarFormulario(getRegistrosDetalle(infoObl));
 				} else {
 					JOptionPane.showMessageDialog(null, "Datos obligatorios");
 				}
@@ -1565,179 +1562,25 @@ public class MaTemplate extends JFrame {
 		});
 	}
 
-	private LinkedList<LinkedList<TdetalleFicha>> cargarFicha(TInformacionObligatoria infoObligatoria) {
+	private List<TdetalleFicha> getRegistrosDetalle(TInformacionObligatoria infoObligatoria) {
 		ServicioFicha srvFicha = new ComponenteFicha();
 
 		TCabecera cabecera = gettCabecera();
 		Integer updateFicha = srvFicha.nActualizacionFicha(gettCabecera(), ficha);
 
-		LinkedList<TdetalleFicha> listaKE = new LinkedList<>();
-		TGrupo grupoTmp = srvFicha.buscarGrupo("Kit eléctrico");
-		listaKE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad00.getText()), Integer.parseInt(txtCantidad01.getText()), txtObs0.getText(),
-				updateFicha));
-		listaKE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad10.getText()), Integer.parseInt(txtCantidad11.getText()), txtObs1.getText(),
-				updateFicha));
-		listaKE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad20.getText()), Integer.parseInt(txtCantidad21.getText()), txtObs2.getText(),
-				updateFicha));
-		listaKE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad30.getText()), Integer.parseInt(txtCantidad31.getText()), txtObs3.getText(),
-				updateFicha));
-		listaKE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad40.getText()), Integer.parseInt(txtCantidad41.getText()), txtObs4.getText(),
-				updateFicha));
+		List<TdetalleFicha> detallesFicha = new LinkedList<>();
 
-		LinkedList<TdetalleFicha> listaKAL = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFicha.buscarGrupo("Kit agua lluvia");
-		listaKAL.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad50.getText()), Integer.parseInt(txtCantidad51.getText()), txtObs5.getText(),
-				updateFicha));
-		listaKAL.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad60.getText()), Integer.parseInt(txtCantidad61.getText()), txtObs6.getText(),
-				updateFicha));
-		listaKAL.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad70.getText()), Integer.parseInt(txtCantidad71.getText()), txtObs7.getText(),
-				updateFicha));
-		listaKAL.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad80.getText()), Integer.parseInt(txtCantidad81.getText()), txtObs8.getText(),
-				updateFicha));
-		listaKAL.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad90.getText()), Integer.parseInt(txtCantidad91.getText()), txtObs9.getText(),
-				updateFicha));
+		TGrupo grupo1 = srvFicha.buscarGrupo("Kit eléctrico");
+		TGrupo grupo2 = srvFicha.buscarGrupo("Kit agua lluvia");
+		TGrupo grupo3 = srvFicha.buscarGrupo("Componente arquitectónico");
+		TGrupo grupo4 = srvFicha.buscarGrupo("Fachada frontal");
+		TGrupo grupo5 = srvFicha.buscarGrupo("Fachada posterior");
+		TGrupo grupo6 = srvFicha.buscarGrupo("Fachada lateral");
+		TGrupo grupo7 = srvFicha.buscarGrupo("Interior");
+		TGrupo grupo8 = srvFicha.buscarGrupo("Cubierta");
+		TGrupo grupo9 = srvFicha.buscarGrupo("Componente estructural");
 
-		LinkedList<TdetalleFicha> listaCA = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFicha.buscarGrupo("Componente arquitectónico");
-		listaCA.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad100.getText()), Integer.parseInt(txtCantidad101.getText()),
-				txtObs10.getText(), updateFicha));
-		listaCA.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad110.getText()), Integer.parseInt(txtCantidad111.getText()),
-				txtObs11.getText(), updateFicha));
-		listaCA.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad120.getText()), Integer.parseInt(txtCantidad121.getText()),
-				txtObs12.getText(), updateFicha));
-		listaCA.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad130.getText()), Integer.parseInt(txtCantidad131.getText()),
-				txtObs13.getText(), updateFicha));
-		listaCA.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad140.getText()), Integer.parseInt(txtCantidad141.getText()),
-				txtObs14.getText(), updateFicha));
-
-		LinkedList<TdetalleFicha> listaFF = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFicha.buscarGrupo("Fachada frontal");
-		listaFF.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad150.getText()), Integer.parseInt(txtCantidad151.getText()),
-				txtObs15.getText(), updateFicha));
-		listaFF.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad160.getText()), Integer.parseInt(txtCantidad161.getText()),
-				txtObs16.getText(), updateFicha));
-		listaFF.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad170.getText()), Integer.parseInt(txtCantidad171.getText()),
-				txtObs17.getText(), updateFicha));
-		listaFF.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad180.getText()), Integer.parseInt(txtCantidad181.getText()),
-				txtObs18.getText(), updateFicha));
-
-		LinkedList<TdetalleFicha> listaFP = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFicha.buscarGrupo("Fachada posterior");
-		listaFP.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad190.getText()), Integer.parseInt(txtCantidad191.getText()),
-				txtObs19.getText(), updateFicha));
-		listaFP.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad200.getText()), Integer.parseInt(txtCantidad201.getText()),
-				txtObs20.getText(), updateFicha));
-		listaFP.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad210.getText()), Integer.parseInt(txtCantidad211.getText()),
-				txtObs21.getText(), updateFicha));
-
-		LinkedList<TdetalleFicha> listaFL = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFicha.buscarGrupo("Fachada lateral");
-		listaFL.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad220.getText()), Integer.parseInt(txtCantidad221.getText()),
-				txtObs22.getText(), updateFicha));
-		listaFL.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad230.getText()), Integer.parseInt(txtCantidad231.getText()),
-				txtObs23.getText(), updateFicha));
-
-		LinkedList<TdetalleFicha> listaI = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFicha.buscarGrupo("Interior");
-		listaI.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad240.getText()), Integer.parseInt(txtCantidad241.getText()),
-				txtObs24.getText(), updateFicha));
-		listaI.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad250.getText()), Integer.parseInt(txtCantidad251.getText()),
-				txtObs25.getText(), updateFicha));
-
-		LinkedList<TdetalleFicha> listaC = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFicha.buscarGrupo("Cubierta");
-		listaC.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad260.getText()), Integer.parseInt(txtCantidad261.getText()),
-				txtObs26.getText(), updateFicha));
-
-		LinkedList<TdetalleFicha> listaCE = new LinkedList<TdetalleFicha>();
-		grupoTmp = srvFicha.buscarGrupo("Componente estructural");
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad270.getText()), Integer.parseInt(txtCantidad271.getText()),
-				txtObs27.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad280.getText()), Integer.parseInt(txtCantidad281.getText()),
-				txtObs28.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad290.getText()), Integer.parseInt(txtCantidad291.getText()),
-				txtObs29.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad300.getText()), Integer.parseInt(txtCantidad301.getText()),
-				txtObs30.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad310.getText()), Integer.parseInt(txtCantidad311.getText()),
-				txtObs31.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad320.getText()), Integer.parseInt(txtCantidad321.getText()),
-				txtObs32.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad330.getText()), Integer.parseInt(txtCantidad331.getText()),
-				txtObs33.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad340.getText()), Integer.parseInt(txtCantidad341.getText()),
-				txtObs34.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad350.getText()), Integer.parseInt(txtCantidad351.getText()),
-				txtObs35.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad360.getText()), Integer.parseInt(txtCantidad361.getText()),
-				txtObs36.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad370.getText()), Integer.parseInt(txtCantidad371.getText()),
-				txtObs37.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad380.getText()), Integer.parseInt(txtCantidad381.getText()),
-				txtObs38.getText(), updateFicha));
-		listaCE.add(new TdetalleFicha(cabecera, infoObligatoria, grupoTmp, ficha, null,
-				Integer.parseInt(txtCantidad390.getText()), Integer.parseInt(txtCantidad391.getText()),
-				txtObs39.getText(), updateFicha));
-
-		LinkedList<LinkedList<TdetalleFicha>> listaFormulario = new LinkedList<LinkedList<TdetalleFicha>>();
-		listaFormulario.add(listaKE);
-		listaFormulario.add(listaKAL);
-		listaFormulario.add(listaCA);
-		listaFormulario.add(listaFF);
-		listaFormulario.add(listaFP);
-		listaFormulario.add(listaFL);
-		listaFormulario.add(listaI);
-		listaFormulario.add(listaC);
-		listaFormulario.add(listaCE);
-
-		return listaFormulario;
-	}
-
-	public LinkedList<JTextField[]> getTextFields() {
-		return textFields;
-	}
-
-	public void setTextFields(LinkedList<JTextField[]> textFields) {
-		this.textFields = textFields;
+		return detallesFicha;
 	}
 
 }
