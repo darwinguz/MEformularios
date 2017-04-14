@@ -123,7 +123,7 @@ public class ComponenteFicha implements ServicioFicha {
 
 				detallesFicha.add(new TdetalleFicha(new Integer(rs.getInt(1)), new TCabecera(rs.getInt(2)),
 						new TInformacionObligatoria(rs.getInt(3)), new TGrupo(rs.getInt(4)), new TFicha(rs.getInt(5)),
-						new String(), new Integer(rs.getInt(7)), new Integer(rs.getInt(8)), new String(),
+						new String(), new Integer(rs.getInt(7)), new Integer(rs.getInt(8)), new String(rs.getString(9)),
 						new Integer(rs.getInt(10))));
 
 			}
