@@ -1,8 +1,88 @@
 package com.capa.presentacion;
 
-import static com.capa.util.Utilitarios.*;
-import static com.capa.util.Validaciones.*;
-import static com.capa.util.Constantes.*;
+import static com.capa.util.Constantes.LBL_MA_0;
+import static com.capa.util.Constantes.LBL_MA_1;
+import static com.capa.util.Constantes.LBL_MA_10;
+import static com.capa.util.Constantes.LBL_MA_11;
+import static com.capa.util.Constantes.LBL_MA_12;
+import static com.capa.util.Constantes.LBL_MA_13;
+import static com.capa.util.Constantes.LBL_MA_14;
+import static com.capa.util.Constantes.LBL_MA_15;
+import static com.capa.util.Constantes.LBL_MA_16;
+import static com.capa.util.Constantes.LBL_MA_17;
+import static com.capa.util.Constantes.LBL_MA_18;
+import static com.capa.util.Constantes.LBL_MA_19;
+import static com.capa.util.Constantes.LBL_MA_2;
+import static com.capa.util.Constantes.LBL_MA_20;
+import static com.capa.util.Constantes.LBL_MA_21;
+import static com.capa.util.Constantes.LBL_MA_22;
+import static com.capa.util.Constantes.LBL_MA_23;
+import static com.capa.util.Constantes.LBL_MA_24;
+import static com.capa.util.Constantes.LBL_MA_25;
+import static com.capa.util.Constantes.LBL_MA_26;
+import static com.capa.util.Constantes.LBL_MA_27;
+import static com.capa.util.Constantes.LBL_MA_28;
+import static com.capa.util.Constantes.LBL_MA_29;
+import static com.capa.util.Constantes.LBL_MA_3;
+import static com.capa.util.Constantes.LBL_MA_30;
+import static com.capa.util.Constantes.LBL_MA_31;
+import static com.capa.util.Constantes.LBL_MA_32;
+import static com.capa.util.Constantes.LBL_MA_33;
+import static com.capa.util.Constantes.LBL_MA_34;
+import static com.capa.util.Constantes.LBL_MA_35;
+import static com.capa.util.Constantes.LBL_MA_36;
+import static com.capa.util.Constantes.LBL_MA_37;
+import static com.capa.util.Constantes.LBL_MA_38;
+import static com.capa.util.Constantes.LBL_MA_39;
+import static com.capa.util.Constantes.LBL_MA_4;
+import static com.capa.util.Constantes.LBL_MA_5;
+import static com.capa.util.Constantes.LBL_MA_6;
+import static com.capa.util.Constantes.LBL_MA_7;
+import static com.capa.util.Constantes.LBL_MA_8;
+import static com.capa.util.Constantes.LBL_MA_9;
+import static com.capa.util.Constantes.TXT_MA_0;
+import static com.capa.util.Constantes.TXT_MA_1;
+import static com.capa.util.Constantes.TXT_MA_10;
+import static com.capa.util.Constantes.TXT_MA_11;
+import static com.capa.util.Constantes.TXT_MA_12;
+import static com.capa.util.Constantes.TXT_MA_13;
+import static com.capa.util.Constantes.TXT_MA_14;
+import static com.capa.util.Constantes.TXT_MA_15;
+import static com.capa.util.Constantes.TXT_MA_16;
+import static com.capa.util.Constantes.TXT_MA_17;
+import static com.capa.util.Constantes.TXT_MA_18;
+import static com.capa.util.Constantes.TXT_MA_19;
+import static com.capa.util.Constantes.TXT_MA_2;
+import static com.capa.util.Constantes.TXT_MA_20;
+import static com.capa.util.Constantes.TXT_MA_21;
+import static com.capa.util.Constantes.TXT_MA_22;
+import static com.capa.util.Constantes.TXT_MA_23;
+import static com.capa.util.Constantes.TXT_MA_24;
+import static com.capa.util.Constantes.TXT_MA_25;
+import static com.capa.util.Constantes.TXT_MA_26;
+import static com.capa.util.Constantes.TXT_MA_27;
+import static com.capa.util.Constantes.TXT_MA_28;
+import static com.capa.util.Constantes.TXT_MA_29;
+import static com.capa.util.Constantes.TXT_MA_3;
+import static com.capa.util.Constantes.TXT_MA_30;
+import static com.capa.util.Constantes.TXT_MA_31;
+import static com.capa.util.Constantes.TXT_MA_32;
+import static com.capa.util.Constantes.TXT_MA_33;
+import static com.capa.util.Constantes.TXT_MA_34;
+import static com.capa.util.Constantes.TXT_MA_35;
+import static com.capa.util.Constantes.TXT_MA_36;
+import static com.capa.util.Constantes.TXT_MA_37;
+import static com.capa.util.Constantes.TXT_MA_38;
+import static com.capa.util.Constantes.TXT_MA_39;
+import static com.capa.util.Constantes.TXT_MA_4;
+import static com.capa.util.Constantes.TXT_MA_5;
+import static com.capa.util.Constantes.TXT_MA_6;
+import static com.capa.util.Constantes.TXT_MA_7;
+import static com.capa.util.Constantes.TXT_MA_8;
+import static com.capa.util.Constantes.TXT_MA_9;
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -11,6 +91,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -33,7 +114,6 @@ import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
-import com.capa.presentacion.InformacionObligatoriaV;
 import com.capa.util.Validaciones;
 
 public class MaTemplate extends JFrame {
@@ -1579,6 +1659,16 @@ public class MaTemplate extends JFrame {
 		TGrupo grupo7 = srvFicha.buscarGrupo("Interior");
 		TGrupo grupo8 = srvFicha.buscarGrupo("Cubierta");
 		TGrupo grupo9 = srvFicha.buscarGrupo("Componente estructural");
+
+		int update = srvFicha.nActualizacionFicha(cabecera, ficha);
+		if (update == -1) {
+			update = 0;
+		}
+
+		detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, LBL_MA_0,
+				Integer.parseInt(txtCantidad00.getText()), Integer.parseInt(txtCantidad01.getText()), txtObs0.getText(),
+				update,
+				new BigDecimal(Integer.parseInt(txtCantidad01.getText()) / Integer.parseInt(txtCantidad00.getText()))));
 
 		return detallesFicha;
 	}
