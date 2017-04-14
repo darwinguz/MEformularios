@@ -89,7 +89,6 @@ import static com.capa.util.Utilitarios.llenarCabecera;
 import static com.capa.util.Validaciones.validarInfo;
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -293,6 +292,7 @@ public class HsTemplate extends JFrame {
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.ficha = ficha;
+		srvFicha = new ComponenteFicha();
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
@@ -301,6 +301,7 @@ public class HsTemplate extends JFrame {
 		contentPane.add(infoObligatoria.getPnlInformacionObl());
 
 		llenarCabecera(cabecera);
+
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 
 			@Override
@@ -308,7 +309,7 @@ public class HsTemplate extends JFrame {
 
 				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
 				if (validarInfo(infoObl)) {
-					srvFicha = new ComponenteFicha();
+
 					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 					ServicioCabecera srvTempCabecera = new ComponenteCabecera();
 
@@ -1563,6 +1564,8 @@ public class HsTemplate extends JFrame {
 		txtObs41.setColumns(10);
 		panel_43.add(txtObs41);
 
+		llenarFicha();
+
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				new Menu().setVisible(true);
@@ -1799,6 +1802,10 @@ public class HsTemplate extends JFrame {
 	}
 
 	public void llenarFicha() {
-
+		List<TdetalleFicha> listaDetalles = srvFicha.detallesFicha(gettCabecera(), ficha);
+		txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
+		txtObs0.setText(listaDetalles.get(0).getDetObsRef());
+		txtCantidad11.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
+		txtObs1.setText(listaDetalles.get(1).getDetObsRef());
 	}
 }
