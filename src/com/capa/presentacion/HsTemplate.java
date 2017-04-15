@@ -1612,7 +1612,7 @@ public class HsTemplate extends JFrame {
 
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad00.getText()),
 				Integer.parseInt(txtCantidad01.getText()));
-		detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, null,
+		detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, "LBL_HS_0",
 				Integer.parseInt(txtCantidad00.getText()), Integer.parseInt(txtCantidad01.getText()), txtObs0.getText(),
 				updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad10.getText()),
