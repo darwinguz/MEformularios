@@ -1995,7 +1995,6 @@ public class MmTemplate extends JFrame {
 					if (registrosValidados(detallesFicha)) {
 						srvInfoObl.crear(infoObl);
 						infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
-
 						srvFicha.guardarFormulario(detallesFicha);
 						new Menu().setVisible(true);
 						dispose();
