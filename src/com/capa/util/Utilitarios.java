@@ -16,6 +16,7 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.capa.datos.TCabecera;
@@ -144,6 +145,11 @@ public class Utilitarios {
 		tInfor = new TInformacionObligatoria(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
 				cargoDer, fecha, tCabecera);
 		return tInfor;
+	}
+
+	public static JTextField txtCantidad(int i, int constante) {
+		String concatenar = i + "" + constante;
+		return new JTextField(Integer.valueOf(concatenar));
 	}
 
 }
