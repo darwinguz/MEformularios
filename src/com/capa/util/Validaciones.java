@@ -2,10 +2,13 @@ package com.capa.util;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.List;
 
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import com.capa.datos.TInformacionObligatoria;
+import com.capa.datos.TdetalleFicha;
 
 public class Validaciones {
 
@@ -31,4 +34,18 @@ public class Validaciones {
 		return valida;
 	}
 
+	public static boolean registrosValidados(List<TdetalleFicha> detallesFicha) {
+		for (int i = 0; i < detallesFicha.size(); i++) {
+			if (detallesFicha.get(i).getDetCantidadEjecutada() > detallesFicha.get(i).getDetCantidadLimite()
+					|| detallesFicha.get(i).getDetCantidadEjecutada() < 0) {
+				JOptionPane.showMessageDialog(null,
+						"ERROR: Verificar que las Cantidades Ingresadas sean menores o iguales a las Cantidades Limite!\n"
+								+ "ETIQUETA:" + detallesFicha.get(i).getDetEtiqueta() + "",
+						"Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+				return false;
+			}
+		}
+
+		return true;
+	}
 }

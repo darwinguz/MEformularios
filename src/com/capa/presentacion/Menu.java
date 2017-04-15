@@ -7,8 +7,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.Iterator;
-import java.util.List;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,11 +16,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import com.capa.datos.TFicha;
-import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ServicioFicha;
-import com.capa.util.Utilitarios;
 
 public class Menu extends JFrame {
 
@@ -55,90 +50,64 @@ public class Menu extends JFrame {
 
 		ServicioFicha servicioFicha = new ComponenteFicha();
 
-		JButton btnAula1 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>1</body></html>");
-		btnAula1.addActionListener(new ActionListener() {
-
-			TFicha ficha = servicioFicha.buscarFormulario("MA-1");
-
+		JButton btnMA1 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>1</body></html>");
+		btnMA1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(ficha);
-				maTemplate.setVisible(true);
-				if (servicioFicha.existeFicha()) {
-					llenarFicha(maTemplate);
-				}
-			}
-
-			private void llenarFicha(MaTemplate maTemplate) {
-				List<TdetalleFicha> camposFormularios = servicioFicha.detallesFicha(Utilitarios.gettCabecera(), ficha);
-
-				if (camposFormularios.size() != maTemplate.getTextFields().size()) {
-					System.err.println("ERROR: String=" + camposFormularios.size() + " JTextField="
-							+ maTemplate.getTextFields().size());
-					return;
-				}
-
-				Iterator<TdetalleFicha> it = camposFormularios.iterator();
-				maTemplate.getTextFields().forEach((item) -> {
-					TdetalleFicha temp = it.next();
-					item[0].setText(temp.getDetCantidadEjecutada().toString());
-					item[1].setText(temp.getDetObsRef());
-				});
-			}
-		});
-		btnAula1.setHorizontalAlignment(SwingConstants.LEFT);
-		btnAula1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnAula1.setBounds(57, 64, 64, 72);
-		btnAula1.setBackground(Color.cyan);
-		contentPane.add(btnAula1);
-
-		JButton btnAula2 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>2</body></html>");
-		btnAula2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-2"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-1")).setVisible(true);
 				dispose();
 			}
 		});
-		btnAula2.setHorizontalAlignment(SwingConstants.LEFT);
-		btnAula2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnAula2.setBackground((Color) null);
-		btnAula2.setBounds(57, 136, 64, 73);
-		btnAula2.setBackground(Color.cyan);
-		contentPane.add(btnAula2);
 
-		JButton btnAula3 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>3</body></html>");
-		btnAula3.addActionListener(new ActionListener() {
+		btnMA1.setHorizontalAlignment(SwingConstants.LEFT);
+		btnMA1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnMA1.setBounds(57, 64, 64, 72);
+		btnMA1.setBackground(Color.cyan);
+		contentPane.add(btnMA1);
+
+		JButton btnMA2 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>2</body></html>");
+		btnMA2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-3"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-2")).setVisible(true);
 				dispose();
 			}
 		});
-		btnAula3.setHorizontalAlignment(SwingConstants.LEFT);
-		btnAula3.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnAula3.setBackground(Color.CYAN);
-		btnAula3.setBounds(57, 209, 64, 72);
-		contentPane.add(btnAula3);
+		btnMA2.setHorizontalAlignment(SwingConstants.LEFT);
+		btnMA2.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnMA2.setBackground((Color) null);
+		btnMA2.setBounds(57, 136, 64, 73);
+		btnMA2.setBackground(Color.cyan);
+		contentPane.add(btnMA2);
 
-		JButton btnAula17 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>17</body></html>");
-		btnAula17.addActionListener(new ActionListener() {
+		JButton btnMA3 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>3</body></html>");
+		btnMA3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-17"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-3")).setVisible(true);
 				dispose();
 			}
 		});
-		btnAula17.setHorizontalAlignment(SwingConstants.LEFT);
-		btnAula17.setFont(new Font("Tahoma", Font.BOLD, 11));
-		btnAula17.setBackground(Color.CYAN);
-		btnAula17.setBounds(57, 314, 64, 72);
-		contentPane.add(btnAula17);
+		btnMA3.setHorizontalAlignment(SwingConstants.LEFT);
+		btnMA3.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnMA3.setBackground(Color.CYAN);
+		btnMA3.setBounds(57, 209, 64, 72);
+		contentPane.add(btnMA3);
+
+		JButton btnMA17 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>17</body></html>");
+		btnMA17.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new MaTemplate(servicioFicha.buscarFormulario("MA-17")).setVisible(true);
+				dispose();
+			}
+		});
+		btnMA17.setHorizontalAlignment(SwingConstants.LEFT);
+		btnMA17.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnMA17.setBackground(Color.CYAN);
+		btnMA17.setBounds(57, 314, 64, 72);
+		contentPane.add(btnMA17);
 
 		JButton btnAula18 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>18</body></html>");
 		btnAula18.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-18"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-18")).setVisible(true);
 				dispose();
 			}
 		});
@@ -150,8 +119,7 @@ public class Menu extends JFrame {
 		JButton btnAula19 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>19</body></html>");
 		btnAula19.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-19"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-19")).setVisible(true);
 				dispose();
 			}
 		});
@@ -163,8 +131,7 @@ public class Menu extends JFrame {
 		JButton btnAula20 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>20</body></html>");
 		btnAula20.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-20"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-20")).setVisible(true);
 				dispose();
 			}
 		});
@@ -177,8 +144,7 @@ public class Menu extends JFrame {
 		JButton btnAula4 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>4</body></html>");
 		btnAula4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-4"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-4")).setVisible(true);
 				dispose();
 			}
 		});
@@ -190,8 +156,7 @@ public class Menu extends JFrame {
 		JButton btnAula5 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>5</body></html>");
 		btnAula5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-5"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-5")).setVisible(true);
 				dispose();
 			}
 		});
@@ -203,8 +168,7 @@ public class Menu extends JFrame {
 		JButton btnAula6 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>6</body></html>");
 		btnAula6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-6"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-6")).setVisible(true);
 				dispose();
 			}
 		});
@@ -216,8 +180,7 @@ public class Menu extends JFrame {
 		JButton btnAula21 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>21</body></html>");
 		btnAula21.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-21"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-21")).setVisible(true);
 				dispose();
 			}
 		});
@@ -230,8 +193,7 @@ public class Menu extends JFrame {
 		JButton btnAula22 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>22</body></html>");
 		btnAula22.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-22"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-22")).setVisible(true);
 				dispose();
 			}
 		});
@@ -244,8 +206,7 @@ public class Menu extends JFrame {
 		JButton btnAula23 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>23</body></html>");
 		btnAula23.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-23"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-23")).setVisible(true);
 				dispose();
 			}
 		});
@@ -258,8 +219,7 @@ public class Menu extends JFrame {
 		JButton btnAula7 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>7</body></html>");
 		btnAula7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-7"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-7")).setVisible(true);
 				dispose();
 			}
 		});
@@ -271,8 +231,7 @@ public class Menu extends JFrame {
 		JButton btnAula9 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>9</body></html>");
 		btnAula9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-9"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-9")).setVisible(true);
 				dispose();
 			}
 		});
@@ -284,8 +243,7 @@ public class Menu extends JFrame {
 		JButton btnAula8 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>8</body></html>");
 		btnAula8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-8"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-8")).setVisible(true);
 				dispose();
 			}
 		});
@@ -298,8 +256,7 @@ public class Menu extends JFrame {
 		JButton btnAula10 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>10</body></html>");
 		btnAula10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-10"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-10")).setVisible(true);
 				dispose();
 			}
 		});
@@ -312,8 +269,7 @@ public class Menu extends JFrame {
 		JButton btnAula11 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>11</body></html>");
 		btnAula11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-11"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-11")).setVisible(true);
 				dispose();
 			}
 		});
@@ -326,8 +282,7 @@ public class Menu extends JFrame {
 		JButton btnAula12 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>12</body></html>");
 		btnAula12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-12"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-12")).setVisible(true);
 				dispose();
 			}
 		});
@@ -340,8 +295,7 @@ public class Menu extends JFrame {
 		JButton btnAula13 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>13</body></html>");
 		btnAula13.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-13"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-13")).setVisible(true);
 				dispose();
 			}
 		});
@@ -354,8 +308,7 @@ public class Menu extends JFrame {
 		JButton btnAula24 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>24</body></html>");
 		btnAula24.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-24"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-24")).setVisible(true);
 				dispose();
 			}
 		});
@@ -367,8 +320,7 @@ public class Menu extends JFrame {
 		JButton btnAula25 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>25</body></html>");
 		btnAula25.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-25"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-25")).setVisible(true);
 				dispose();
 			}
 		});
@@ -380,8 +332,7 @@ public class Menu extends JFrame {
 		JButton btnAula26 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>26</body></html>");
 		btnAula26.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-26"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-26")).setVisible(true);
 				dispose();
 			}
 		});
@@ -393,8 +344,7 @@ public class Menu extends JFrame {
 		JButton btnAula14 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>14</body></html>");
 		btnAula14.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-14"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-14")).setVisible(true);
 				dispose();
 			}
 		});
@@ -407,8 +357,7 @@ public class Menu extends JFrame {
 		JButton btnAula15 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>15</body></html>");
 		btnAula15.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-15"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-15")).setVisible(true);
 				dispose();
 			}
 		});
@@ -421,8 +370,7 @@ public class Menu extends JFrame {
 		JButton btnAula16 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>16</body></html>");
 		btnAula16.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-16"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-16")).setVisible(true);
 				dispose();
 			}
 		});
@@ -435,8 +383,7 @@ public class Menu extends JFrame {
 		JButton btnAula27 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>27</body></html>");
 		btnAula27.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-27"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-27")).setVisible(true);
 				dispose();
 			}
 		});
@@ -449,8 +396,7 @@ public class Menu extends JFrame {
 		JButton btnAula28 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>28</body></html>");
 		btnAula28.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-28"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-28")).setVisible(true);
 				dispose();
 			}
 		});
@@ -462,8 +408,7 @@ public class Menu extends JFrame {
 		JButton btnAula29 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>29</body></html>");
 		btnAula29.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-29"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-29")).setVisible(true);
 				dispose();
 			}
 		});
@@ -475,8 +420,7 @@ public class Menu extends JFrame {
 		JButton btnAula30 = new JButton("<html><body><p align=\"center\">MA<br>aulas<br>30</body></html>");
 		btnAula30.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				MaTemplate maTemplate = new MaTemplate(servicioFicha.buscarFormulario("MA-30"));
-				maTemplate.setVisible(true);
+				new MaTemplate(servicioFicha.buscarFormulario("MA-30")).setVisible(true);
 				dispose();
 			}
 		});
@@ -673,17 +617,17 @@ public class Menu extends JFrame {
 		btnEXkitElec.setBounds(668, 176, 62, 36);
 		contentPane.add(btnEXkitElec);
 
-		JButton btnhlKithidrosa = new JButton("<html><body><p align=\"center\">HL kit<br>Hidrosa</body></html>");
-		btnhlKithidrosa.addActionListener(new ActionListener() {
+		JButton btnHS1 = new JButton("<html><body><p align=\"center\">HL kit<br>Hidrosa</body></html>");
+		btnHS1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new HsTemplate(servicioFicha.buscarFormulario("HS-1")).setVisible(true);
 				dispose();
 			}
 		});
-		btnhlKithidrosa.setFont(new Font("Tahoma", Font.BOLD, 8));
-		btnhlKithidrosa.setBackground(new Color(50, 205, 50));
-		btnhlKithidrosa.setBounds(729, 176, 62, 36);
-		contentPane.add(btnhlKithidrosa);
+		btnHS1.setFont(new Font("Tahoma", Font.BOLD, 8));
+		btnHS1.setBackground(new Color(50, 205, 50));
+		btnHS1.setBounds(729, 176, 62, 36);
+		contentPane.add(btnHS1);
 
 		JButton btnWFvozDatos = new JButton("<html><body><p align=\"center\">WF<br>Voz-Datos</body></html>");
 		btnWFvozDatos.addActionListener(new ActionListener() {
