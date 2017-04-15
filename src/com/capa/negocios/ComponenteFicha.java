@@ -176,6 +176,7 @@ public class ComponenteFicha implements ServicioFicha {
 			}
 		});
 		JOptionPane.showMessageDialog(null, mensaje, titulo, tipoMensaje);
+		
 	}
 
 }

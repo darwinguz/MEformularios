@@ -18,7 +18,6 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ServicioFicha;
-import com.capa.templates.BsTemplate;
 
 public class Menu extends JFrame {
 
