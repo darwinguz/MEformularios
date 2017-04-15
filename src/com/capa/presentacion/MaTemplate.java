@@ -1,5 +1,6 @@
 package com.capa.presentacion;
 
+import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Constantes.LBL_MA_0;
 import static com.capa.util.Constantes.LBL_MA_1;
 import static com.capa.util.Constantes.LBL_MA_10;
@@ -80,7 +81,9 @@ import static com.capa.util.Constantes.TXT_MA_6;
 import static com.capa.util.Constantes.TXT_MA_7;
 import static com.capa.util.Constantes.TXT_MA_8;
 import static com.capa.util.Constantes.TXT_MA_9;
-import static com.capa.util.Utilitarios.*;
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Utilitarios.llenarCabecera;
 import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.BorderLayout;
@@ -90,7 +93,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -109,8 +111,10 @@ import com.capa.datos.TFicha;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.util.Validaciones;
@@ -120,6 +124,8 @@ public class MaTemplate extends JFrame {
 	private static final long serialVersionUID = 8480152059626754031L;
 
 	protected JPanel contentPane;
+	public ServicioFicha srvFicha = new ComponenteFicha();
+	public ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 
 	protected JTextField txtCantidad01;
 	protected JTextField txtCantidad11;
@@ -242,13 +248,9 @@ public class MaTemplate extends JFrame {
 	private JTextField txtCantidad381;
 	private JTextField txtCantidad391;
 
-	LinkedList<JTextField[]> textFields;
-	TFicha ficha;
+	private TFicha ficha;
 
 	public MaTemplate(TFicha ficha) {
-
-		this.ficha = ficha;
-		textFields = new LinkedList<JTextField[]>();
 
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
@@ -260,6 +262,7 @@ public class MaTemplate extends JFrame {
 		this.setTitle(ficha.getFiNombre());
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
+		this.ficha = ficha;
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1284, 560);
@@ -412,12 +415,6 @@ public class MaTemplate extends JFrame {
 		txtObs4 = new JTextField();
 		txtObs4.setColumns(10);
 		pnlTEObsRef.add(txtObs4);
-
-		textFields.add(new JTextField[] { txtCantidad01, txtObs0 });
-		textFields.add(new JTextField[] { txtCantidad11, txtObs1 });
-		textFields.add(new JTextField[] { txtCantidad21, txtObs2 });
-		textFields.add(new JTextField[] { txtCantidad31, txtObs3 });
-		textFields.add(new JTextField[] { txtCantidad41, txtObs4 });
 
 		JPanel pnlKitAguaLluvia = new JPanel();
 		pnlKitAguaLluvia.setLayout(null);
@@ -609,12 +606,6 @@ public class MaTemplate extends JFrame {
 		txtObs9.setColumns(10);
 		pnlEDObsRef4.add(txtObs9);
 
-		textFields.add(new JTextField[] { txtCantidad51, txtObs5 });
-		textFields.add(new JTextField[] { txtCantidad61, txtObs6 });
-		textFields.add(new JTextField[] { txtCantidad71, txtObs7 });
-		textFields.add(new JTextField[] { txtCantidad81, txtObs8 });
-		textFields.add(new JTextField[] { txtCantidad91, txtObs9 });
-
 		JPanel pnlCompArquitect = new JPanel();
 		pnlCompArquitect.setLayout(null);
 		pnlCompArquitect.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -804,12 +795,6 @@ public class MaTemplate extends JFrame {
 		txtObs14.setColumns(10);
 		pnlOR3.add(txtObs14);
 
-		textFields.add(new JTextField[] { txtCantidad101, txtObs10 });
-		textFields.add(new JTextField[] { txtCantidad111, txtObs11 });
-		textFields.add(new JTextField[] { txtCantidad121, txtObs12 });
-		textFields.add(new JTextField[] { txtCantidad131, txtObs13 });
-		textFields.add(new JTextField[] { txtCantidad141, txtObs14 });
-
 		JPanel pnlFachadaFrontal = new JPanel();
 		pnlFachadaFrontal.setLayout(null);
 		pnlFachadaFrontal.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -932,11 +917,6 @@ public class MaTemplate extends JFrame {
 		txtObs18.setColumns(10);
 		pnlAEObsRef.add(txtObs18);
 
-		textFields.add(new JTextField[] { txtCantidad151, txtObs15 });
-		textFields.add(new JTextField[] { txtCantidad161, txtObs16 });
-		textFields.add(new JTextField[] { txtCantidad171, txtObs17 });
-		textFields.add(new JTextField[] { txtCantidad181, txtObs18 });
-
 		JPanel pnlFachadaPosterior = new JPanel();
 		pnlFachadaPosterior.setLayout(null);
 		pnlFachadaPosterior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -1038,10 +1018,6 @@ public class MaTemplate extends JFrame {
 		txtObs21.setColumns(10);
 		pnlObsRefFP.add(txtObs21);
 
-		textFields.add(new JTextField[] { txtCantidad191, txtObs19 });
-		textFields.add(new JTextField[] { txtCantidad201, txtObs20 });
-		textFields.add(new JTextField[] { txtCantidad211, txtObs21 });
-
 		JPanel pnlFachadaLateral = new JPanel();
 		pnlFachadaLateral.setLayout(null);
 		pnlFachadaLateral.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -1120,9 +1096,6 @@ public class MaTemplate extends JFrame {
 		txtObs23.setColumns(10);
 		pnlObsRefFL.add(txtObs23);
 
-		textFields.add(new JTextField[] { txtCantidad221, txtObs22 });
-		textFields.add(new JTextField[] { txtCantidad231, txtObs23 });
-
 		JPanel pnlInterior = new JPanel();
 		pnlInterior.setLayout(null);
 		pnlInterior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -1200,9 +1173,6 @@ public class MaTemplate extends JFrame {
 		txtObs25.setColumns(10);
 		pnlObsRefI.add(txtObs25);
 
-		textFields.add(new JTextField[] { txtCantidad241, txtObs24 });
-		textFields.add(new JTextField[] { txtCantidad251, txtObs25 });
-
 		JPanel pnlCubierta = new JPanel();
 		pnlCubierta.setLayout(null);
 		pnlCubierta.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -1258,8 +1228,6 @@ public class MaTemplate extends JFrame {
 		txtObs26 = new JTextField();
 		txtObs26.setColumns(10);
 		pnlObsRefC.add(txtObs26);
-
-		textFields.add(new JTextField[] { txtCantidad261, txtObs26 });
 
 		JPanel pnlComponenteEst = new JPanel();
 		pnlComponenteEst.setLayout(null);
@@ -1586,20 +1554,6 @@ public class MaTemplate extends JFrame {
 		txtCantidad391.setColumns(10);
 		panel.add(txtCantidad391);
 
-		textFields.add(new JTextField[] { txtCantidad271, txtObs27 });
-		textFields.add(new JTextField[] { txtCantidad281, txtObs28 });
-		textFields.add(new JTextField[] { txtCantidad291, txtObs29 });
-		textFields.add(new JTextField[] { txtCantidad301, txtObs30 });
-		textFields.add(new JTextField[] { txtCantidad311, txtObs31 });
-		textFields.add(new JTextField[] { txtCantidad321, txtObs32 });
-		textFields.add(new JTextField[] { txtCantidad331, txtObs33 });
-		textFields.add(new JTextField[] { txtCantidad341, txtObs34 });
-		textFields.add(new JTextField[] { txtCantidad351, txtObs35 });
-		textFields.add(new JTextField[] { txtCantidad361, txtObs36 });
-		textFields.add(new JTextField[] { txtCantidad371, txtObs37 });
-		textFields.add(new JTextField[] { txtCantidad381, txtObs38 });
-		textFields.add(new JTextField[] { txtCantidad391, txtObs39 });
-
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
 		llenarCabecera(cabecera);
@@ -1614,14 +1568,15 @@ public class MaTemplate extends JFrame {
 		});
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 
+		llenarFicha();
+
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
-				if (validarInfo(infoObl)) {
-					ServicioFicha srvFicha = new ComponenteFicha();
-					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 
+				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
+
+				if (validarInfo(infoObl)) {
 					infoObl.settCabe(gettCabecera());
 					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
 
@@ -1629,31 +1584,24 @@ public class MaTemplate extends JFrame {
 
 					if (detallesFicha == null) {
 						JOptionPane.showMessageDialog(null,
-								"ERROR: Verificar que se haya ingresado solo digitios en la cantidad ejecutada!",
-								"Mensaje de Error", JOptionPane.ERROR_MESSAGE);
+								"ERROR: Verificar que los registros no se encuentren VACÍOS", "Mensaje de Error",
+								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
 
-					if (registrosValidados(detallesFicha)) {
+					if (Validaciones.registrosValidados(detallesFicha)) {
 						srvInfoObl.crear(infoObl);
-						srvFicha.guardarFormulario(detallesFicha);
-					} else {
-						JOptionPane.showMessageDialog(null, "ERROR: Verificar valores ejecutados!", "Mensaje de Error",
-								JOptionPane.ERROR_MESSAGE);
-					}
-				} else {
-					JOptionPane.showMessageDialog(null, "Datos obligatorios");
-				}
-			}
+						infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
 
-			private boolean registrosValidados(List<TdetalleFicha> detallesFicha) {
-				for (TdetalleFicha detalle : detallesFicha) {
-					if (detalle.getDetCantidadEjecutada() > detalle.getDetCantidadLimite()
-							|| detalle.getDetCantidadEjecutada() < 0) {
-						return false;
+						srvFicha.guardarFormulario(getRegistrosDetalle(infoObl));
+
+						new Menu().setVisible(true);
+						dispose();
 					}
+
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar Información Obligatoria");
 				}
-				return true;
 			}
 		});
 
@@ -1666,10 +1614,17 @@ public class MaTemplate extends JFrame {
 	}
 
 	private List<TdetalleFicha> getRegistrosDetalle(TInformacionObligatoria infoObligatoria) {
-		ServicioFicha srvFicha = new ComponenteFicha();
 
-		TCabecera cabecera = gettCabecera();
+		ServicioCabecera srvCabecera = new ComponenteCabecera();
+
+		TCabecera cabecera = srvCabecera.buscarProyecto(gettCabecera().getCNombreProyecto());
 		Integer updateFicha = srvFicha.nActualizacionFicha(gettCabecera(), ficha);
+
+		if (updateFicha == -1) {
+			updateFicha = 0;
+		} else {
+			updateFicha++;
+		}
 
 		List<TdetalleFicha> detallesFicha = new LinkedList<>();
 
@@ -1683,173 +1638,168 @@ public class MaTemplate extends JFrame {
 		TGrupo grupo8 = srvFicha.buscarGrupo("Cubierta");
 		TGrupo grupo9 = srvFicha.buscarGrupo("Componente estructural");
 
-		int update = srvFicha.nActualizacionFicha(cabecera, ficha);
-		if (update == -1) {
-			update = 0;
-		}
-
 		try {
-
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, "LBL_MA_0",
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, LBL_MA_0,
 					Integer.parseInt(txtCantidad00.getText()), Integer.parseInt(txtCantidad01.getText()),
-					txtObs0.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad01.getText()) / Integer.parseInt(txtCantidad00.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, "LBL_MA_1",
+					txtObs0.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad00.getText()),
+							Integer.parseInt(txtCantidad01.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, LBL_MA_1,
 					Integer.parseInt(txtCantidad10.getText()), Integer.parseInt(txtCantidad11.getText()),
-					txtObs1.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad11.getText()) / Integer.parseInt(txtCantidad10.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, "LBL_MA_2",
+					txtObs1.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad10.getText()),
+							Integer.parseInt(txtCantidad11.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, LBL_MA_2,
 					Integer.parseInt(txtCantidad20.getText()), Integer.parseInt(txtCantidad21.getText()),
-					txtObs2.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad21.getText()) / Integer.parseInt(txtCantidad20.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, "LBL_MA_3",
+					txtObs2.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad20.getText()),
+							Integer.parseInt(txtCantidad21.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, LBL_MA_3,
 					Integer.parseInt(txtCantidad30.getText()), Integer.parseInt(txtCantidad31.getText()),
-					txtObs3.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad31.getText()) / Integer.parseInt(txtCantidad30.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, "LBL_MA_4",
+					txtObs3.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad30.getText()),
+							Integer.parseInt(txtCantidad31.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, LBL_MA_4,
 					Integer.parseInt(txtCantidad40.getText()), Integer.parseInt(txtCantidad41.getText()),
-					txtObs4.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad41.getText()) / Integer.parseInt(txtCantidad40.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, "LBL_MA_5",
+					txtObs4.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad40.getText()),
+							Integer.parseInt(txtCantidad41.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, LBL_MA_5,
 					Integer.parseInt(txtCantidad50.getText()), Integer.parseInt(txtCantidad51.getText()),
-					txtObs5.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad51.getText()) / Integer.parseInt(txtCantidad50.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, "LBL_MA_6",
+					txtObs5.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad50.getText()),
+							Integer.parseInt(txtCantidad51.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, LBL_MA_6,
 					Integer.parseInt(txtCantidad60.getText()), Integer.parseInt(txtCantidad61.getText()),
-					txtObs6.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad61.getText()) / Integer.parseInt(txtCantidad60.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, "LBL_MA_7",
+					txtObs6.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad60.getText()),
+							Integer.parseInt(txtCantidad61.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, LBL_MA_7,
 					Integer.parseInt(txtCantidad70.getText()), Integer.parseInt(txtCantidad71.getText()),
-					txtObs7.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad71.getText()) / Integer.parseInt(txtCantidad70.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, "LBL_MA_8",
+					txtObs7.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad70.getText()),
+							Integer.parseInt(txtCantidad71.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, LBL_MA_8,
 					Integer.parseInt(txtCantidad80.getText()), Integer.parseInt(txtCantidad81.getText()),
-					txtObs8.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad81.getText()) / Integer.parseInt(txtCantidad80.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, "LBL_MA_9",
+					txtObs8.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad80.getText()),
+							Integer.parseInt(txtCantidad81.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, LBL_MA_9,
 					Integer.parseInt(txtCantidad90.getText()), Integer.parseInt(txtCantidad91.getText()),
-					txtObs9.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad91.getText()) / Integer.parseInt(txtCantidad90.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha, "LBL_MA_10",
+					txtObs9.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad90.getText()),
+							Integer.parseInt(txtCantidad91.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha, LBL_MA_10,
 					Integer.parseInt(txtCantidad100.getText()), Integer.parseInt(txtCantidad101.getText()),
-					txtObs10.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad101.getText()) / Integer.parseInt(txtCantidad100.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha, "LBL_MA_11",
+					txtObs10.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad100.getText()), Integer.parseInt(txtCantidad101.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha, LBL_MA_11,
 					Integer.parseInt(txtCantidad110.getText()), Integer.parseInt(txtCantidad111.getText()),
-					txtObs11.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad111.getText()) / Integer.parseInt(txtCantidad110.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha, "LBL_MA_12",
+					txtObs11.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad110.getText()), Integer.parseInt(txtCantidad111.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha, LBL_MA_12,
 					Integer.parseInt(txtCantidad120.getText()), Integer.parseInt(txtCantidad121.getText()),
-					txtObs12.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad121.getText()) / Integer.parseInt(txtCantidad120.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha, "LBL_MA_13",
+					txtObs12.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad120.getText()), Integer.parseInt(txtCantidad121.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha, LBL_MA_13,
 					Integer.parseInt(txtCantidad130.getText()), Integer.parseInt(txtCantidad131.getText()),
-					txtObs13.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad131.getText()) / Integer.parseInt(txtCantidad130.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha, "LBL_MA_14",
+					txtObs13.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad130.getText()), Integer.parseInt(txtCantidad131.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha, LBL_MA_14,
 					Integer.parseInt(txtCantidad140.getText()), Integer.parseInt(txtCantidad141.getText()),
-					txtObs14.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad141.getText()) / Integer.parseInt(txtCantidad140.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha, "LBL_MA_15",
+					txtObs14.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad140.getText()), Integer.parseInt(txtCantidad141.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha, LBL_MA_15,
 					Integer.parseInt(txtCantidad150.getText()), Integer.parseInt(txtCantidad151.getText()),
-					txtObs15.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad151.getText()) / Integer.parseInt(txtCantidad150.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha, "LBL_MA_16",
+					txtObs15.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad150.getText()), Integer.parseInt(txtCantidad151.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha, LBL_MA_16,
 					Integer.parseInt(txtCantidad160.getText()), Integer.parseInt(txtCantidad161.getText()),
-					txtObs16.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad161.getText()) / Integer.parseInt(txtCantidad160.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha, "LBL_MA_17",
+					txtObs16.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad160.getText()), Integer.parseInt(txtCantidad161.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha, LBL_MA_17,
 					Integer.parseInt(txtCantidad170.getText()), Integer.parseInt(txtCantidad171.getText()),
-					txtObs17.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad171.getText()) / Integer.parseInt(txtCantidad170.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha, "LBL_MA_18",
+					txtObs17.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad170.getText()), Integer.parseInt(txtCantidad171.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha, LBL_MA_18,
 					Integer.parseInt(txtCantidad180.getText()), Integer.parseInt(txtCantidad181.getText()),
-					txtObs18.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad181.getText()) / Integer.parseInt(txtCantidad180.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha, "LBL_MA_19",
+					txtObs18.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad180.getText()), Integer.parseInt(txtCantidad181.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha, LBL_MA_19,
 					Integer.parseInt(txtCantidad190.getText()), Integer.parseInt(txtCantidad191.getText()),
-					txtObs19.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad191.getText()) / Integer.parseInt(txtCantidad190.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha, "LBL_MA_20",
+					txtObs19.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad190.getText()), Integer.parseInt(txtCantidad191.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha, LBL_MA_20,
 					Integer.parseInt(txtCantidad200.getText()), Integer.parseInt(txtCantidad201.getText()),
-					txtObs20.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad201.getText()) / Integer.parseInt(txtCantidad200.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha, "LBL_MA_21",
+					txtObs20.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad200.getText()), Integer.parseInt(txtCantidad201.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha, LBL_MA_21,
 					Integer.parseInt(txtCantidad210.getText()), Integer.parseInt(txtCantidad211.getText()),
-					txtObs21.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad211.getText()) / Integer.parseInt(txtCantidad210.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha, "LBL_MA_22",
+					txtObs21.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad210.getText()), Integer.parseInt(txtCantidad211.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha, LBL_MA_22,
 					Integer.parseInt(txtCantidad220.getText()), Integer.parseInt(txtCantidad221.getText()),
-					txtObs22.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad221.getText()) / Integer.parseInt(txtCantidad220.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha, "LBL_MA_23",
+					txtObs22.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad220.getText()), Integer.parseInt(txtCantidad221.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha, LBL_MA_23,
 					Integer.parseInt(txtCantidad230.getText()), Integer.parseInt(txtCantidad231.getText()),
-					txtObs23.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad231.getText()) / Integer.parseInt(txtCantidad230.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha, "LBL_MA_24",
+					txtObs23.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad230.getText()), Integer.parseInt(txtCantidad231.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha, LBL_MA_24,
 					Integer.parseInt(txtCantidad240.getText()), Integer.parseInt(txtCantidad241.getText()),
-					txtObs24.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad241.getText()) / Integer.parseInt(txtCantidad240.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha, "LBL_MA_25",
+					txtObs24.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad240.getText()), Integer.parseInt(txtCantidad241.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha, LBL_MA_25,
 					Integer.parseInt(txtCantidad250.getText()), Integer.parseInt(txtCantidad251.getText()),
-					txtObs25.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad251.getText()) / Integer.parseInt(txtCantidad250.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo8, ficha, "LBL_MA_26",
+					txtObs25.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad250.getText()), Integer.parseInt(txtCantidad251.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo8, ficha, LBL_MA_26,
 					Integer.parseInt(txtCantidad260.getText()), Integer.parseInt(txtCantidad261.getText()),
-					txtObs26.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad261.getText()) / Integer.parseInt(txtCantidad260.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_27",
+					txtObs26.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad260.getText()), Integer.parseInt(txtCantidad261.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_27,
 					Integer.parseInt(txtCantidad270.getText()), Integer.parseInt(txtCantidad271.getText()),
-					txtObs27.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad271.getText()) / Integer.parseInt(txtCantidad270.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_28",
+					txtObs27.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad270.getText()), Integer.parseInt(txtCantidad271.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_28,
 					Integer.parseInt(txtCantidad280.getText()), Integer.parseInt(txtCantidad281.getText()),
-					txtObs28.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad281.getText()) / Integer.parseInt(txtCantidad280.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_29",
+					txtObs28.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad280.getText()), Integer.parseInt(txtCantidad281.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_29,
 					Integer.parseInt(txtCantidad290.getText()), Integer.parseInt(txtCantidad291.getText()),
-					txtObs29.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad291.getText()) / Integer.parseInt(txtCantidad290.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_30",
+					txtObs29.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad290.getText()), Integer.parseInt(txtCantidad291.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_30,
 					Integer.parseInt(txtCantidad300.getText()), Integer.parseInt(txtCantidad301.getText()),
-					txtObs30.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad301.getText()) / Integer.parseInt(txtCantidad300.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_31",
+					txtObs30.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad300.getText()), Integer.parseInt(txtCantidad301.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_31,
 					Integer.parseInt(txtCantidad310.getText()), Integer.parseInt(txtCantidad311.getText()),
-					txtObs31.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad311.getText()) / Integer.parseInt(txtCantidad310.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_32",
+					txtObs31.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad310.getText()), Integer.parseInt(txtCantidad311.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_32,
 					Integer.parseInt(txtCantidad320.getText()), Integer.parseInt(txtCantidad321.getText()),
-					txtObs32.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad321.getText()) / Integer.parseInt(txtCantidad320.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_33",
+					txtObs32.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad320.getText()), Integer.parseInt(txtCantidad321.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_33,
 					Integer.parseInt(txtCantidad330.getText()), Integer.parseInt(txtCantidad331.getText()),
-					txtObs33.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad331.getText()) / Integer.parseInt(txtCantidad330.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_34",
+					txtObs33.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad330.getText()), Integer.parseInt(txtCantidad331.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_34,
 					Integer.parseInt(txtCantidad340.getText()), Integer.parseInt(txtCantidad341.getText()),
-					txtObs34.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad341.getText()) / Integer.parseInt(txtCantidad340.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_35",
+					txtObs34.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad340.getText()), Integer.parseInt(txtCantidad341.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_35,
 					Integer.parseInt(txtCantidad350.getText()), Integer.parseInt(txtCantidad351.getText()),
-					txtObs35.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad351.getText()) / Integer.parseInt(txtCantidad350.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_36",
+					txtObs35.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad350.getText()), Integer.parseInt(txtCantidad351.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_36,
 					Integer.parseInt(txtCantidad360.getText()), Integer.parseInt(txtCantidad361.getText()),
-					txtObs36.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad361.getText()) / Integer.parseInt(txtCantidad360.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_37",
+					txtObs36.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad360.getText()), Integer.parseInt(txtCantidad361.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_37,
 					Integer.parseInt(txtCantidad370.getText()), Integer.parseInt(txtCantidad371.getText()),
-					txtObs37.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad371.getText()) / Integer.parseInt(txtCantidad370.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_38",
+					txtObs37.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad370.getText()), Integer.parseInt(txtCantidad371.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_38,
 					Integer.parseInt(txtCantidad380.getText()), Integer.parseInt(txtCantidad381.getText()),
-					txtObs38.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad381.getText()) / Integer.parseInt(txtCantidad380.getText()))));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, "LBL_MA_39",
+					txtObs38.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad380.getText()), Integer.parseInt(txtCantidad381.getText()))));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha, LBL_MA_39,
 					Integer.parseInt(txtCantidad390.getText()), Integer.parseInt(txtCantidad391.getText()),
-					txtObs39.getText(), update, new BigDecimal(
-							Integer.parseInt(txtCantidad391.getText()) / Integer.parseInt(txtCantidad390.getText()))));
+					txtObs39.getText(), updateFicha, calcularPorcentajeAvance(
+							Integer.parseInt(txtCantidad390.getText()), Integer.parseInt(txtCantidad391.getText()))));
+
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 			return null;
@@ -1857,12 +1807,175 @@ public class MaTemplate extends JFrame {
 		return detallesFicha;
 	}
 
-	public LinkedList<JTextField[]> getTextFields() {
-		return textFields;
-	}
+	public void llenarFicha() {
 
-	public void setTextFields(LinkedList<JTextField[]> textFields) {
-		this.textFields = textFields;
+		List<TdetalleFicha> listaDetalles = srvFicha.detallesFicha(gettCabecera(), ficha);
+		try {
+			txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
+			txtCantidad11.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
+			txtCantidad21.setText(String.valueOf(listaDetalles.get(2).getDetCantidadEjecutada()));
+			txtCantidad31.setText(String.valueOf(listaDetalles.get(3).getDetCantidadEjecutada()));
+			txtCantidad41.setText(String.valueOf(listaDetalles.get(4).getDetCantidadEjecutada()));
+			txtCantidad51.setText(String.valueOf(listaDetalles.get(5).getDetCantidadEjecutada()));
+			txtCantidad61.setText(String.valueOf(listaDetalles.get(6).getDetCantidadEjecutada()));
+			txtCantidad71.setText(String.valueOf(listaDetalles.get(7).getDetCantidadEjecutada()));
+			txtCantidad81.setText(String.valueOf(listaDetalles.get(8).getDetCantidadEjecutada()));
+			txtCantidad91.setText(String.valueOf(listaDetalles.get(9).getDetCantidadEjecutada()));
+			txtCantidad101.setText(String.valueOf(listaDetalles.get(10).getDetCantidadEjecutada()));
+			txtCantidad111.setText(String.valueOf(listaDetalles.get(11).getDetCantidadEjecutada()));
+			txtCantidad121.setText(String.valueOf(listaDetalles.get(12).getDetCantidadEjecutada()));
+			txtCantidad131.setText(String.valueOf(listaDetalles.get(13).getDetCantidadEjecutada()));
+			txtCantidad141.setText(String.valueOf(listaDetalles.get(14).getDetCantidadEjecutada()));
+			txtCantidad151.setText(String.valueOf(listaDetalles.get(15).getDetCantidadEjecutada()));
+			txtCantidad161.setText(String.valueOf(listaDetalles.get(16).getDetCantidadEjecutada()));
+			txtCantidad171.setText(String.valueOf(listaDetalles.get(17).getDetCantidadEjecutada()));
+			txtCantidad181.setText(String.valueOf(listaDetalles.get(18).getDetCantidadEjecutada()));
+			txtCantidad191.setText(String.valueOf(listaDetalles.get(19).getDetCantidadEjecutada()));
+			txtCantidad201.setText(String.valueOf(listaDetalles.get(20).getDetCantidadEjecutada()));
+			txtCantidad211.setText(String.valueOf(listaDetalles.get(21).getDetCantidadEjecutada()));
+			txtCantidad221.setText(String.valueOf(listaDetalles.get(22).getDetCantidadEjecutada()));
+			txtCantidad231.setText(String.valueOf(listaDetalles.get(23).getDetCantidadEjecutada()));
+			txtCantidad241.setText(String.valueOf(listaDetalles.get(24).getDetCantidadEjecutada()));
+			txtCantidad251.setText(String.valueOf(listaDetalles.get(25).getDetCantidadEjecutada()));
+			txtCantidad261.setText(String.valueOf(listaDetalles.get(26).getDetCantidadEjecutada()));
+			txtCantidad271.setText(String.valueOf(listaDetalles.get(27).getDetCantidadEjecutada()));
+			txtCantidad281.setText(String.valueOf(listaDetalles.get(28).getDetCantidadEjecutada()));
+			txtCantidad291.setText(String.valueOf(listaDetalles.get(29).getDetCantidadEjecutada()));
+			txtCantidad301.setText(String.valueOf(listaDetalles.get(30).getDetCantidadEjecutada()));
+			txtCantidad311.setText(String.valueOf(listaDetalles.get(31).getDetCantidadEjecutada()));
+			txtCantidad321.setText(String.valueOf(listaDetalles.get(32).getDetCantidadEjecutada()));
+			txtCantidad331.setText(String.valueOf(listaDetalles.get(33).getDetCantidadEjecutada()));
+			txtCantidad341.setText(String.valueOf(listaDetalles.get(34).getDetCantidadEjecutada()));
+			txtCantidad351.setText(String.valueOf(listaDetalles.get(35).getDetCantidadEjecutada()));
+			txtCantidad361.setText(String.valueOf(listaDetalles.get(36).getDetCantidadEjecutada()));
+			txtCantidad371.setText(String.valueOf(listaDetalles.get(37).getDetCantidadEjecutada()));
+			txtCantidad381.setText(String.valueOf(listaDetalles.get(38).getDetCantidadEjecutada()));
+			txtCantidad391.setText(String.valueOf(listaDetalles.get(39).getDetCantidadEjecutada()));
+
+			txtObs0.setText(listaDetalles.get(0).getDetObsRef());
+			txtObs1.setText(listaDetalles.get(1).getDetObsRef());
+			txtObs2.setText(listaDetalles.get(2).getDetObsRef());
+			txtObs3.setText(listaDetalles.get(3).getDetObsRef());
+			txtObs4.setText(listaDetalles.get(4).getDetObsRef());
+			txtObs5.setText(listaDetalles.get(5).getDetObsRef());
+			txtObs6.setText(listaDetalles.get(6).getDetObsRef());
+			txtObs7.setText(listaDetalles.get(7).getDetObsRef());
+			txtObs8.setText(listaDetalles.get(8).getDetObsRef());
+			txtObs9.setText(listaDetalles.get(9).getDetObsRef());
+			txtObs10.setText(listaDetalles.get(10).getDetObsRef());
+			txtObs11.setText(listaDetalles.get(11).getDetObsRef());
+			txtObs12.setText(listaDetalles.get(12).getDetObsRef());
+			txtObs13.setText(listaDetalles.get(13).getDetObsRef());
+			txtObs14.setText(listaDetalles.get(14).getDetObsRef());
+			txtObs15.setText(listaDetalles.get(15).getDetObsRef());
+			txtObs16.setText(listaDetalles.get(16).getDetObsRef());
+			txtObs17.setText(listaDetalles.get(17).getDetObsRef());
+			txtObs18.setText(listaDetalles.get(18).getDetObsRef());
+			txtObs19.setText(listaDetalles.get(19).getDetObsRef());
+			txtObs20.setText(listaDetalles.get(20).getDetObsRef());
+			txtObs21.setText(listaDetalles.get(21).getDetObsRef());
+			txtObs22.setText(listaDetalles.get(22).getDetObsRef());
+			txtObs23.setText(listaDetalles.get(23).getDetObsRef());
+			txtObs24.setText(listaDetalles.get(24).getDetObsRef());
+			txtObs25.setText(listaDetalles.get(25).getDetObsRef());
+			txtObs26.setText(listaDetalles.get(26).getDetObsRef());
+			txtObs27.setText(listaDetalles.get(27).getDetObsRef());
+			txtObs28.setText(listaDetalles.get(28).getDetObsRef());
+			txtObs29.setText(listaDetalles.get(29).getDetObsRef());
+			txtObs30.setText(listaDetalles.get(30).getDetObsRef());
+			txtObs31.setText(listaDetalles.get(31).getDetObsRef());
+			txtObs32.setText(listaDetalles.get(32).getDetObsRef());
+			txtObs33.setText(listaDetalles.get(33).getDetObsRef());
+			txtObs34.setText(listaDetalles.get(34).getDetObsRef());
+			txtObs35.setText(listaDetalles.get(35).getDetObsRef());
+			txtObs36.setText(listaDetalles.get(36).getDetObsRef());
+			txtObs37.setText(listaDetalles.get(37).getDetObsRef());
+			txtObs38.setText(listaDetalles.get(38).getDetObsRef());
+			txtObs39.setText(listaDetalles.get(39).getDetObsRef());
+		} catch (IndexOutOfBoundsException e) {
+			txtCantidad01.setText(String.valueOf(0));
+			txtCantidad01.setText(String.valueOf(0));
+			txtCantidad11.setText(String.valueOf(0));
+			txtCantidad21.setText(String.valueOf(0));
+			txtCantidad31.setText(String.valueOf(0));
+			txtCantidad41.setText(String.valueOf(0));
+			txtCantidad51.setText(String.valueOf(0));
+			txtCantidad61.setText(String.valueOf(0));
+			txtCantidad71.setText(String.valueOf(0));
+			txtCantidad81.setText(String.valueOf(0));
+			txtCantidad91.setText(String.valueOf(0));
+			txtCantidad101.setText(String.valueOf(0));
+			txtCantidad111.setText(String.valueOf(0));
+			txtCantidad121.setText(String.valueOf(0));
+			txtCantidad131.setText(String.valueOf(0));
+			txtCantidad141.setText(String.valueOf(0));
+			txtCantidad151.setText(String.valueOf(0));
+			txtCantidad161.setText(String.valueOf(0));
+			txtCantidad171.setText(String.valueOf(0));
+			txtCantidad181.setText(String.valueOf(0));
+			txtCantidad191.setText(String.valueOf(0));
+			txtCantidad201.setText(String.valueOf(0));
+			txtCantidad211.setText(String.valueOf(0));
+			txtCantidad221.setText(String.valueOf(0));
+			txtCantidad231.setText(String.valueOf(0));
+			txtCantidad241.setText(String.valueOf(0));
+			txtCantidad251.setText(String.valueOf(0));
+			txtCantidad261.setText(String.valueOf(0));
+			txtCantidad271.setText(String.valueOf(0));
+			txtCantidad281.setText(String.valueOf(0));
+			txtCantidad291.setText(String.valueOf(0));
+			txtCantidad301.setText(String.valueOf(0));
+			txtCantidad311.setText(String.valueOf(0));
+			txtCantidad321.setText(String.valueOf(0));
+			txtCantidad331.setText(String.valueOf(0));
+			txtCantidad341.setText(String.valueOf(0));
+			txtCantidad351.setText(String.valueOf(0));
+			txtCantidad361.setText(String.valueOf(0));
+			txtCantidad371.setText(String.valueOf(0));
+			txtCantidad381.setText(String.valueOf(0));
+			txtCantidad391.setText(String.valueOf(0));
+
+			txtObs0.setText("");
+			txtObs1.setText("");
+			txtObs2.setText("");
+			txtObs3.setText("");
+			txtObs4.setText("");
+			txtObs5.setText("");
+			txtObs6.setText("");
+			txtObs7.setText("");
+			txtObs8.setText("");
+			txtObs9.setText("");
+			txtObs10.setText("");
+			txtObs11.setText("");
+			txtObs12.setText("");
+			txtObs13.setText("");
+			txtObs14.setText("");
+			txtObs15.setText("");
+			txtObs16.setText("");
+			txtObs17.setText("");
+			txtObs18.setText("");
+			txtObs19.setText("");
+			txtObs20.setText("");
+			txtObs21.setText("");
+			txtObs22.setText("");
+			txtObs23.setText("");
+			txtObs24.setText("");
+			txtObs25.setText("");
+			txtObs26.setText("");
+			txtObs27.setText("");
+			txtObs28.setText("");
+			txtObs29.setText("");
+			txtObs30.setText("");
+			txtObs31.setText("");
+			txtObs32.setText("");
+			txtObs33.setText("");
+			txtObs34.setText("");
+			txtObs35.setText("");
+			txtObs36.setText("");
+			txtObs37.setText("");
+			txtObs38.setText("");
+			txtObs39.setText("");
+		}
 	}
 
 }

@@ -120,6 +120,7 @@ import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.util.Validaciones;
 
 public class HsTemplate extends JFrame {
 
@@ -1556,7 +1557,15 @@ public class HsTemplate extends JFrame {
 					ServicioCabecera srvTempCabecera = new ComponenteCabecera();
 
 					infoObl.settCabe(srvTempCabecera.buscarProyecto(gettCabecera().getCNombreProyecto()));
-					if (registrosValidados(detallesFicha)) {
+
+					if (detallesFicha == null) {
+						JOptionPane.showMessageDialog(null,
+								"ERROR: Verificar que los registros no se encuentren VACÍOS", "Mensaje de Error",
+								JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+
+					if (Validaciones.registrosValidados(detallesFicha)) {
 						srvInfoObl.crear(infoObl);
 						infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
 						srvFicha.guardarFormulario(getListaGrupos(infoObl));
@@ -1570,17 +1579,6 @@ public class HsTemplate extends JFrame {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria");
 				}
 			}
-
-			private boolean registrosValidados(List<TdetalleFicha> detallesFicha) {
-				for (TdetalleFicha detalle : detallesFicha) {
-					if (detalle.getDetCantidadEjecutada() > detalle.getDetCantidadLimite()
-							|| detalle.getDetCantidadEjecutada() < 0) {
-						return false;
-					}
-				}
-				return true;
-			}
-
 		});
 
 		addWindowListener(new WindowAdapter() {

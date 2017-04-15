@@ -147,9 +147,16 @@ public class Utilitarios {
 		return tInfor;
 	}
 
-	public static JTextField txtCantidad(int i, int constante) {
+	public static JTextField txtCantidad(int i, int constante, int cantidadEjecutada) {
 		String concatenar = i + "" + constante;
-		return new JTextField(Integer.valueOf(concatenar));
+		JTextField txtCantidad = new JTextField(Integer.valueOf(concatenar));
+		txtCantidad.setText(String.valueOf(cantidadEjecutada));
+		return txtCantidad;
 	}
+
+	public static JTextField txtObs(int i) {
+		return new JTextField(Integer.valueOf(i));
+	}
+	
 
 }
