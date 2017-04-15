@@ -80,6 +80,20 @@ public class AlInicio extends JFrame {
 		JButton btnRevisionCaract = new JButton("   3.- Revisión Características Técnicas (B)");
 		btnRevisionCaract.setHorizontalAlignment(SwingConstants.LEFT);
 		pnlBotones.add(btnRevisionCaract);
+		btnRevisionCaract.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if (tCabecera == null) {
+					JOptionPane.showMessageDialog(null, "ERROR: Proyecto no ingresado", "Mensaje de Error",
+							JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				new FichaB().setVisible(true);
+				dispose();
+			}
+		});
 
 		JButton btnCuantifComp = new JButton("   4.- Cuantificación Componentes (C)");
 		btnCuantifComp.setHorizontalAlignment(SwingConstants.LEFT);

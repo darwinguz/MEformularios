@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -84,13 +86,14 @@ public class FichaBRevisionBloques extends JFrame {
 	 * Create the frame.
 	 */
 	public FichaBRevisionBloques() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1318, 659);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
+		setLocationRelativeTo(null);
+		
 		JPanel pnlSuperior = new JPanel();
 		pnlSuperior.setLayout(null);
 		pnlSuperior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -854,5 +857,14 @@ public class FichaBRevisionBloques extends JFrame {
 		btnInsertarFoto.setBounds(166, 198, 120, 35);
 		pnlInformacionObl.add(btnInsertarFoto);
 
+		addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				// TODO Auto-generated method stub
+				new FichaB().setVisible(true);
+				dispose();
+			}
+		});
 	}
 }

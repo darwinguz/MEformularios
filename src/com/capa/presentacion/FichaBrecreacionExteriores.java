@@ -12,6 +12,9 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
@@ -41,12 +44,13 @@ public class FichaBrecreacionExteriores extends JFrame {
 	 * Create the frame.
 	 */
 	public FichaBrecreacionExteriores() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		panelPrincipal = new JPanel();
 		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		panelPrincipal.setLayout(new BorderLayout(0, 0));
 		setContentPane(panelPrincipal);
+		setLocationRelativeTo(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
@@ -196,6 +200,16 @@ public class FichaBrecreacionExteriores extends JFrame {
 		textField_2.setColumns(10);
 		textField_2.setBounds(8, 71, 123, 20);
 		panel_5.add(textField_2);
+
+		addWindowListener(new WindowAdapter() {
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				// TODO Auto-generated method stub
+				new FichaB().setVisible(true);
+				dispose();
+			}
+		});
 
 	}
 
