@@ -93,6 +93,80 @@ public class Constantes {
 	public static final String LBL_MA_39 = "<html><body><p align='right'>Perfil SF Tipo 12  </p></body></html>";
 
 	/*
+	 * Labels BStemplates
+	 */
+	public static final String LBL_BS_0 = "<html><body><p align='right'>Luminarias LED 60 w - 5000 lum</p></body></html>";
+	public static final String LBL_BS_1 = "<html><body><p align='right'>Tomacorrientes</p></body></html>";
+	public static final String LBL_BS_2 = "<html><body><p align='right'>Interruptor</p></body></html>";
+	public static final String LBL_BS_3 = "<html><body><p align='right'>Kit cable eléctrico</p></body></html>";
+	public static final String LBL_BS_4 = "<html><body><p align='right'>Detector de humo</p></body></html>";
+	public static final String LBL_BS_5 = "<html><body><p align='right'>Inodoros(incluye accesorios)</p></body></html>";
+	public static final String LBL_BS_6 = "<html><body><p align='right'>Urinarios(incluye accesorios)</p></body></html>";
+	public static final String LBL_BS_7 = "<html><body><p align='right'>Lavabos(incluye accesorios)</p></body></html>";
+	public static final String LBL_BS_8 = "<html><body><p align='right'>Canal Plástico de PVC L=3m </p></body></html>";
+	public static final String LBL_BS_9 = "<html><body><p align='right'>Canal Plástico de PVC L=1.6m</p></body></html>";
+	public static final String LBL_BS_10 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua de Lluvia (rejilla,2 codos 90°,1/4 gl polipega, tornillos, abrazaderas)</p></body></html>";
+	public static final String LBL_BS_11 = "<html><body><p align='right'>Tubería de PVC 75 mm L=3m</p></body></html>";
+	public static final String LBL_BS_12 = "<html><body><p align='right'>Tubería de PVC 75 mm L=0.6m</p></body></html>";
+	public static final String LBL_BS_13 = "<html><body><p align='right'>Kit para conexión de tubería 75 mm. (lija pliego, polipega 1/4gal,1codo 90°)</p></body></html>";
+	public static final String LBL_BS_14 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua Potable (Inodoros)(5  te reducciones 1-1/2  ,  5 neplos,10 uniones de 1/2,10 codos de 90°,5 mangueras de abasto,5 llave de paso , 1 rollo teflón, 2 tubos de pasta selladora)</p></body></html>";
+	public static final String LBL_BS_15 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua Potable (Lavabos)(4  te reducciones 1-1/2  ,  4 neplos,8 uniones de 1/2,8 codos de 90°,4 mangueras de abasto,4 llave de paso, teflón, pasta selladora)</p></body></html>";
+	public static final String LBL_BS_16 = "<html><body><p align='right'>Tubería de PVC 1/2 y L=3 m</p></body></html>";
+	public static final String LBL_BS_17 = "<html><body><p align='right'>Tubería de PVC 1/2 y L=2.65 m</p></body></html>";
+	public static final String LBL_BS_18 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua Potable (Urinarios)(2  te reducciones 1-1/2  ,  2 neplos,2 uniones de 1/2,   2codos de 90°,2 mangueras de abasto,2 llave de paso, teflón, pasta selladora)</p></body></html>";
+	public static final String LBL_BS_19 = "<html><body><p align='right'>Tubería de PVC 1	y L=3 m</p></body></html>";
+	public static final String LBL_BS_20 = "<html><body><p align='right'>Kit para conexión de tubería 1/2.(lija pliego, polipega 1/4 gal,2 uniones)</p></body></html>";
+	public static final String LBL_BS_21 = "<html><body><p align='right'>Kit para conexión de tubería 1.(	lija pliego, polipega 1/4 gal,2 uniones)</p></body></html>";
+	public static final String LBL_BS_22 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua Residual (CP)(2 codo 90°, 2 rejilla, 2 ye 75-110,1/4gl polipega)</p></body></html>";
+	public static final String LBL_BS_23 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua Residual (Lavabos)( 4codo 90°,1/4 gl polipega , 4 yee 50-110)</p></body></html>";
+	public static final String LBL_BS_24 = "<html><body><p align='right'>Tubería de 50mm PVC y L=3m</p></body></html>";
+	public static final String LBL_BS_25 = "<html><body><p align='right'>Tubería de 50mm PVC y L=1.6m</p></body></html>";
+	public static final String LBL_BS_26 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua Residual (Urinarios)((2codo 90°, 1/4 gl polipega , yee 50-110)</p></body></html>";
+	public static final String LBL_BS_27 = "<html><body><p align='right'>Tubería de 75mm PVC y L=3m</p></body></html>";
+	public static final String LBL_BS_28 = "<html><body><p align='right'>Tubería de 75mm PVC y L=0.40m</p></body></html>";
+	public static final String LBL_BS_29 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua Residual (Inodoros)(1/4 gl polipega ,5 yee 110)</p></body></html>";
+	public static final String LBL_BS_30 = "<html><body><p align='right'>Tubería de 110mm PVC y L=3m</p></body></html>";
+	public static final String LBL_BS_31 = "<html><body><p align='right'>Tubería de 110mm PVC y L=1.70</p></body></html>";
+	public static final String LBL_BS_32 = "<html><body><p align='right'>Kit para conexión de tubería 50 mm. (lija  un pliego, polipega 1/4 gal, 1/4 gl suelda líquida, 2 uniones, 2codo 90°, 2codo 45°)</p></body></html>";
+	public static final String LBL_BS_33 = "<html><body><p align='right'>Kit para conexión de tubería 75 mm. (lija pliego, polipega 1/2gal,1/4 gl suelda líquida, 2 uniones, 2codo 90°, 2codo 45°)</p></body></html>";
+	public static final String LBL_BS_34 = "<html><body><p align='right'>kit para conexión de tubería 110 mm. (lija pliego, polipega 1/2gal, 1/4 gl suelda líquida , 2 uniones, 2 codo 90°, 2codo 45°)</p></body></html>";
+	public static final String LBL_BS_35 = "<html><body><p align='right'>Puerta</p></body></html>";
+	public static final String LBL_BS_36 = "<html><body><p align='right'>Bisagras</p></body></html>";
+	public static final String LBL_BS_37 = "<html><body><p align='right'>Set perfil metálico SF-12 para puerta</p></body></html>";
+	public static final String LBL_BS_38 = "<html><body><p align='right'>Ventanas UPVC con vidrio flotado de 3 mm de 0.45x1 mt (  posterior)</p></body></html>";
+	public static final String LBL_BS_39 = "<html><body><p align='right'>Ventanas UPVC con vidrio flotado de 3 mm de 0.45x2 mt (  lateral)</p></body></html>";
+	public static final String LBL_BS_40 = "<html><body><p align='right'>Perfil metálico sf-12 para ventana</p></body></html>";
+	public static final String LBL_BS_41 = "<html><body><p align='right'>Perfil SF Tipo 12 MA-SF-12 para paneles</p></body></html>";
+	public static final String LBL_BS_42 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x3x0,09 m)</p></body></html>";
+	public static final String LBL_BS_43 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,90x0,90 m)</p></body></html>";
+	public static final String LBL_BS_44 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,60x0,09 m)</p></body></html>";
+	public static final String LBL_BS_45 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x2,70 x0,90  m)</p></body></html>";
+	public static final String LBL_BS_46 = "<html><body><p align='right'>Paneles EPS pared - ( 0,60x2,70 x0,90  m)</p></body></html>";
+	public static final String LBL_BS_47 = "<html><body><p align='right'>Paneles EPS pared -   ( 1,0x1,80 x0,90  m)</p></body></html>";
+	public static final String LBL_BS_48 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,45 x0,90  m)</p></body></html>";
+	public static final String LBL_BS_49 = "<html><body><p align='right'>Panel altura variable – fachada lateral izquierda</p></body></html>";
+	public static final String LBL_BS_50 = "<html><body><p align='right'>Panel altura variable – fachada lateral derecha</p></body></html>";
+	public static final String LBL_BS_51 = "<html><body><p align='right'>Paneles TCB piso (4.30x5.70)</p></body></html>";
+	public static final String LBL_BS_52 = "<html><body><p align='right'>Paneles EPS para cubierta l=7, a= 1mt</p></body></html>";
+	public static final String LBL_BS_53 = "<html><body><p align='right'>Paneles EPS para cubierta l=0.60, a= 1mt</p></body></html>";
+	public static final String LBL_BS_54 = "<html><body><p align='right'>Paneles divisores baterias Sanitarias</p></body></html>";
+	public static final String LBL_BS_55 = "<html><body><p align='right'>Paneles divisores urinarios</p></body></html>";
+	public static final String LBL_BS_56 = "<html><body><p align='right'>Set puertas interiores baterías sanitarias</p></body></html>";
+	public static final String LBL_BS_57 = "<html><body><p align='right'>Set mesón para lavamanos (hombre y mujer)</p></body></html>";
+	public static final String LBL_BS_58 = "<html><body><p align='right'>Dados cimentación</p></body></html>";
+	public static final String LBL_BS_59 = "<html><body><p align='right'>Perfil SF Tipo 1</p></body></html>";
+	public static final String LBL_BS_60 = "<html><body><p align='right'>Perfil SF Tipo 2</p></body></html>";
+	public static final String LBL_BS_61 = "<html><body><p align='right'>Perfil SF Tipo 3</p></body></html>";
+	public static final String LBL_BS_62 = "<html><body><p align='right'>Perfil SF Tipo 4</p></body></html>";
+	public static final String LBL_BS_63 = "<html><body><p align='right'>Perfil SF Tipo 5</p></body></html>";
+	public static final String LBL_BS_64 = "<html><body><p align='right'>Perfil SF Tipo 6</p></body></html>";
+	public static final String LBL_BS_65 = "<html><body><p align='right'>Perfil SF Tipo 7</p></body></html>";
+	public static final String LBL_BS_66 = "<html><body><p align='right'>Perfil SF Tipo 8</p></body></html>";
+	public static final String LBL_BS_67 = "<html><body><p align='right'>Perfil SF Tipo 9</p></body></html>";
+	public static final String LBL_BS_68 = "<html><body><p align='right'>Perfil SF Tipo 10</p></body></html>";
+	public static final String LBL_BS_69 = "<html><body><p align='right'>Perfil SF Tipo 11</p></body></html>";
+
+	/*
 	 * TxtCantidadLimite HSTemplate
 	 */
 	public static final String TXT_HS_0 = "35";
@@ -181,5 +255,79 @@ public class Constantes {
 	public static final String TXT_MA_37 = "6";
 	public static final String TXT_MA_38 = "40";
 	public static final String TXT_MA_39 = "32";
+
+	/*
+	 * TxtCantidadLimite BsTemplate
+	 */
+	public static final String TXT_BS_0 = "4";
+	public static final String TXT_BS_1 = "2";
+	public static final String TXT_BS_2 = "2";
+	public static final String TXT_BS_3 = "1";
+	public static final String TXT_BS_4 = "2";
+	public static final String TXT_BS_5 = "5";
+	public static final String TXT_BS_6 = "2";
+	public static final String TXT_BS_7 = "4";
+	public static final String TXT_BS_8 = "1";
+	public static final String TXT_BS_9 = "1";
+	public static final String TXT_BS_10 = "2";
+	public static final String TXT_BS_11 = "2";
+	public static final String TXT_BS_12 = "1";
+	public static final String TXT_BS_13 = "1";
+	public static final String TXT_BS_14 = "5";
+	public static final String TXT_BS_15 = "4";
+	public static final String TXT_BS_16 = "1";
+	public static final String TXT_BS_17 = "1";
+	public static final String TXT_BS_18 = "2";
+	public static final String TXT_BS_19 = "2";
+	public static final String TXT_BS_20 = "1";
+	public static final String TXT_BS_21 = "1";
+	public static final String TXT_BS_22 = "2";
+	public static final String TXT_BS_23 = "4";
+	public static final String TXT_BS_24 = "4";
+	public static final String TXT_BS_25 = "1";
+	public static final String TXT_BS_26 = "3";
+	public static final String TXT_BS_27 = "3";
+	public static final String TXT_BS_28 = "1";
+	public static final String TXT_BS_29 = "5";
+	public static final String TXT_BS_30 = "7";
+	public static final String TXT_BS_31 = "1";
+	public static final String TXT_BS_32 = "1";
+	public static final String TXT_BS_33 = "1";
+	public static final String TXT_BS_34 = "1";
+	public static final String TXT_BS_35 = "2";
+	public static final String TXT_BS_36 = "21";
+	public static final String TXT_BS_37 = "6";
+	public static final String TXT_BS_38 = "2";
+	public static final String TXT_BS_39 = "2";
+	public static final String TXT_BS_40 = "16";
+	public static final String TXT_BS_41 = "8";
+	public static final String TXT_BS_42 = "2";
+	public static final String TXT_BS_43 = "2";
+	public static final String TXT_BS_44 = "3";
+	public static final String TXT_BS_45 = "2";
+	public static final String TXT_BS_46 = "1";
+	public static final String TXT_BS_47 = "2";
+	public static final String TXT_BS_48 = "2";
+	public static final String TXT_BS_49 = "6";
+	public static final String TXT_BS_50 = "6";
+	public static final String TXT_BS_51 = "1";
+	public static final String TXT_BS_52 = "4";
+	public static final String TXT_BS_53 = "1";
+	public static final String TXT_BS_54 = "5";
+	public static final String TXT_BS_55 = "3";
+	public static final String TXT_BS_56 = "5";
+	public static final String TXT_BS_57 = "2";
+	public static final String TXT_BS_58 = "12";
+	public static final String TXT_BS_59 = "2";
+	public static final String TXT_BS_60 = "2";
+	public static final String TXT_BS_61 = "12";
+	public static final String TXT_BS_62 = "4";
+	public static final String TXT_BS_63 = "30";
+	public static final String TXT_BS_64 = "30";
+	public static final String TXT_BS_65 = "2";
+	public static final String TXT_BS_66 = "2";
+	public static final String TXT_BS_67 = "12";
+	public static final String TXT_BS_68 = "6";
+	public static final String TXT_BS_69 = "30";
 
 }
