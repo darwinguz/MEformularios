@@ -25,13 +25,12 @@ public class Validaciones {
 	}
 
 	public static boolean validarInfo(TInformacionObligatoria inf) {
-		boolean valida = true;
-		if (inf.getIoCargoCont().equals("") && inf.getIoCargoMin().equals("") && inf.getIoObsGenCont().equals("")
-				&& inf.getIoObsGeneral().equals("") && inf.getIoResponsableCont().equals("")
-				&& inf.getIoResponsableMin().equals("")) {
-			valida = false;
+		if (inf.getIoCargoCont().equals("") || inf.getIoCargoMin().equals("") || inf.getIoObsGenCont().equals("")
+				|| inf.getIoObsGeneral().equals("") || inf.getIoResponsableCont().equals("")
+				|| inf.getIoResponsableMin().equals("") || inf.getIoFotoPath() == null) {
+			return false;
 		}
-		return valida;
+		return true;
 	}
 
 	public static boolean registrosValidados(List<TdetalleFicha> detallesFicha) {

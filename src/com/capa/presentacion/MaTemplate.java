@@ -82,6 +82,7 @@ import static com.capa.util.Constantes.TXT_MA_7;
 import static com.capa.util.Constantes.TXT_MA_8;
 import static com.capa.util.Constantes.TXT_MA_9;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
 import static com.capa.util.Validaciones.validarInfo;
@@ -248,6 +249,7 @@ public class MaTemplate extends JFrame {
 	private JTextField txtCantidad381;
 	private JTextField txtCantidad391;
 
+	private String fotoInfoObl;
 	private TFicha ficha;
 
 	public MaTemplate(TFicha ficha) {
@@ -1563,7 +1565,7 @@ public class MaTemplate extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("INSERTAR FOTO");
+				fotoInfoObl = getPathImagen();
 			}
 		});
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
@@ -1575,7 +1577,7 @@ public class MaTemplate extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
-
+				infoObl.setIoFotoPath(fotoInfoObl);
 				if (validarInfo(infoObl)) {
 					infoObl.settCabe(gettCabecera());
 					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
