@@ -3,6 +3,8 @@ package com.capa.presentacion;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,6 +18,10 @@ import javax.swing.border.TitledBorder;
 
 public class FichaBAcom extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6514846288661849531L;
 	private JPanel contentPane;
 	private JTextField txtObsPVC;
 	private JTextField txtObsAP;
@@ -54,7 +60,7 @@ public class FichaBAcom extends JFrame {
 	 */
 	public FichaBAcom() {
 		setTitle("FICHA ACOMETIDA");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1571, 804);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -368,7 +374,7 @@ public class FichaBAcom extends JFrame {
 
 		String textoIlum = "<html><body>Todo el cableado es soterrado, colocado<br>en tuber\u00EDa de PVC.<br>Se utilizan LED  con temperatura de color<br>"
 				+ "de 2700K a 6500K, con voltaje de 110V a<br>220V, como m\u00EDnimo.<br>Eficiencia de luminosidad de 100 Lm/W con<br>"
-				+ "un IP65 y de 120W.<br>La vida útil de la luminaria LED, es de al<br>menos 50000 horas en \u00F3ptimas condiciones</body></html>";
+				+ "un IP65 y de 120W.<br>La vida ï¿½til de la luminaria LED, es de al<br>menos 50000 horas en \u00F3ptimas condiciones</body></html>";
 		JLabel lblDescIlum = new JLabel();
 		lblDescIlum.setVerticalAlignment(SwingConstants.TOP);
 		lblDescIlum.setText(textoIlum);
@@ -490,5 +496,14 @@ public class FichaBAcom extends JFrame {
 		btnInsertarFoto.setFont(new Font("Arial", Font.BOLD, 14));
 		btnInsertarFoto.setBounds(222, 226, 149, 23);
 		panelInfoObli.add(btnInsertarFoto);
+
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				// TODO Auto-generated method stub
+				new FichaB().setVisible(true);
+				dispose();
+			}
+		});
 	}
 }
