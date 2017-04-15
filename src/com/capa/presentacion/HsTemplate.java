@@ -1567,7 +1567,7 @@ public class HsTemplate extends JFrame {
 								JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
-					JOptionPane.showMessageDialog(null, "Datos obligatorios");
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria");
 				}
 			}
 

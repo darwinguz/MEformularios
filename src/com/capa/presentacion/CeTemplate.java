@@ -307,7 +307,7 @@ public class CeTemplate extends JFrame {
 								JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
-					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria");
 				}
 			}
 
