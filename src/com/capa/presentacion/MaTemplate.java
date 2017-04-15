@@ -1568,7 +1568,7 @@ public class MaTemplate extends JFrame {
 		});
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 
-		llenarFicha();
+		setFichaNuevaUpdate();
 
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 			@Override
@@ -1807,7 +1807,7 @@ public class MaTemplate extends JFrame {
 		return detallesFicha;
 	}
 
-	public void llenarFicha() {
+	public void setFichaNuevaUpdate() {
 
 		List<TdetalleFicha> listaDetalles = srvFicha.detallesFicha(gettCabecera(), ficha);
 		try {

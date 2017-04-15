@@ -18,6 +18,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ServicioFicha;
+import com.capa.templates.BsTemplate;
 
 public class Menu extends JFrame {
 
@@ -430,16 +431,30 @@ public class Menu extends JFrame {
 		contentPane.add(btnAula30);
 
 		JButton btnBañosAd1 = new JButton("<html><body><p align=\"center\">BS2<br>baños<br>adultos<br>1</body></html>");
-
 		btnBañosAd1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnBañosAd1.setBackground(new Color(240, 230, 140));
 		btnBañosAd1.setBounds(186, 312, 64, 78);
+		btnBañosAd1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new BsTemplate(servicioFicha.buscarFormulario("BS2-1")).setVisible(true);
+				dispose();
+
+			}
+		});
+
 		contentPane.add(btnBañosAd1);
 
 		JButton btnBañosAd2 = new JButton("<html><body><p align=\"center\">BS2<br>baños<br>adultos<br>2</body></html>");
 		btnBañosAd2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnBañosAd2.setBackground(new Color(240, 230, 140));
 		btnBañosAd2.setBounds(938, 314, 64, 76);
+		btnBañosAd2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new BsTemplate(servicioFicha.buscarFormulario("BS2-2")).setVisible(true);
+				dispose();
+
+			}
+		});
 		contentPane.add(btnBañosAd2);
 
 		JButton btnMSsalon1 = new JButton(
@@ -490,6 +505,13 @@ public class Menu extends JFrame {
 		btnBS1bañosNiñ1.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnBS1bañosNiñ1.setBackground(new Color(199, 21, 133));
 		btnBS1bañosNiñ1.setBounds(291, 136, 35, 40);
+		btnBS1bañosNiñ1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new BsTemplate(servicioFicha.buscarFormulario("BS1-1")).setVisible(true);
+				dispose();
+
+			}
+		});
 		contentPane.add(btnBS1bañosNiñ1);
 
 		JButton btnBS1bañosNiñ2 = new JButton(
@@ -497,6 +519,13 @@ public class Menu extends JFrame {
 		btnBS1bañosNiñ2.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnBS1bañosNiñ2.setBackground(new Color(199, 21, 133));
 		btnBS1bañosNiñ2.setBounds(326, 136, 37, 40);
+		btnBS1bañosNiñ2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new BsTemplate(servicioFicha.buscarFormulario("BS1-2")).setVisible(true);
+				dispose();
+
+			}
+		});
 		contentPane.add(btnBS1bañosNiñ2);
 
 		JButton btnBS1bañosNiñ3 = new JButton(
@@ -504,6 +533,13 @@ public class Menu extends JFrame {
 		btnBS1bañosNiñ3.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnBS1bañosNiñ3.setBackground(new Color(199, 21, 133));
 		btnBS1bañosNiñ3.setBounds(449, 136, 37, 40);
+		btnBS1bañosNiñ3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new BsTemplate(servicioFicha.buscarFormulario("BS1-3")).setVisible(true);
+				dispose();
+
+			}
+		});
 		contentPane.add(btnBS1bañosNiñ3);
 
 		JButton btnBS1bañosNiñ4 = new JButton(
@@ -511,6 +547,13 @@ public class Menu extends JFrame {
 		btnBS1bañosNiñ4.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnBS1bañosNiñ4.setBackground(new Color(199, 21, 133));
 		btnBS1bañosNiñ4.setBounds(486, 136, 35, 40);
+		btnBS1bañosNiñ4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new BsTemplate(servicioFicha.buscarFormulario("BS1-4")).setVisible(true);
+				dispose();
+
+			}
+		});
 		contentPane.add(btnBS1bañosNiñ4);
 
 		JButton btnMTtecnlogico1 = new JButton(
@@ -569,6 +612,13 @@ public class Menu extends JFrame {
 		btnBS3bañosAdo1.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnBS3bañosAdo1.setBackground(new Color(250, 128, 114));
 		btnBS3bañosAdo1.setBounds(579, 202, 62, 36);
+		btnBS3bañosAdo1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new BsTemplate(servicioFicha.buscarFormulario("BS3-1")).setVisible(true);
+				dispose();
+
+			}
+		});
 		contentPane.add(btnBS3bañosAdo1);
 
 		JButton btnBS3bañosAdo2 = new JButton(
@@ -576,6 +626,13 @@ public class Menu extends JFrame {
 		btnBS3bañosAdo2.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnBS3bañosAdo2.setBackground(new Color(250, 128, 114));
 		btnBS3bañosAdo2.setBounds(579, 242, 62, 36);
+		btnBS3bañosAdo2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new BsTemplate(servicioFicha.buscarFormulario("BS3-2")).setVisible(true);
+				dispose();
+
+			}
+		});
 		contentPane.add(btnBS3bañosAdo2);
 
 		JButton btnMDadmin1 = new JButton("<html><body><p align=\"left\">MD<br>Administrativo</body></html>");
