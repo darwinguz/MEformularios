@@ -1548,20 +1548,37 @@ public class HsTemplate extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
+
 				if (validarInfo(infoObl)) {
 
+					List<TdetalleFicha> detallesFicha = getListaGrupos(infoObl);
 					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 					ServicioCabecera srvTempCabecera = new ComponenteCabecera();
 
 					infoObl.settCabe(srvTempCabecera.buscarProyecto(gettCabecera().getCNombreProyecto()));
-					srvInfoObl.crear(infoObl);
-					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
-
-					srvFicha.guardarFormulario(getListaGrupos(infoObl));
-
+					if (registrosValidados(detallesFicha)) {
+						srvInfoObl.crear(infoObl);
+						infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
+						srvFicha.guardarFormulario(getListaGrupos(infoObl));
+						new Menu().setVisible(true);
+						dispose();
+					} else {
+						JOptionPane.showMessageDialog(null, "ERROR: Verificar valores ejecutados!", "Mensaje de Error",
+								JOptionPane.ERROR_MESSAGE);
+					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Datos obligatorios");
 				}
+			}
+
+			private boolean registrosValidados(List<TdetalleFicha> detallesFicha) {
+				for (TdetalleFicha detalle : detallesFicha) {
+					if (detalle.getDetCantidadEjecutada() > detalle.getDetCantidadLimite()
+							|| detalle.getDetCantidadEjecutada() < 0) {
+						return false;
+					}
+				}
+				return true;
 			}
 
 		});
