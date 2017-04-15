@@ -92,7 +92,8 @@ public class FichaBRevisionBloques extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
+		setLocationRelativeTo(null);
+		
 		JPanel pnlSuperior = new JPanel();
 		pnlSuperior.setLayout(null);
 		pnlSuperior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));

@@ -68,6 +68,7 @@ public class FichaBAcom extends JFrame {
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 
 		JLabel lblTituloPVC = new JLabel("Tuber\u00EDa de PVC");
 		lblTituloPVC.setFont(new Font("Arial", Font.BOLD, 11));
