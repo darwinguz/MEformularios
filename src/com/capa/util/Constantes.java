@@ -166,6 +166,49 @@ public class Constantes {
 	public static final String LBL_BS_68 = "<html><body><p align=right>Perfil SF Tipo 10</p></body></html>";
 	public static final String LBL_BS_69 = "<html><body><p align=right>Perfil SF Tipo 11</p></body></html>";
 
+	/**
+	 * MTtemplate LBLs
+	 */
+
+	public static final String LBL_MT_0 = "<html><body><p align='right'>Luminarias LED 60 w - 5000 lum</p></body></html>";
+	public static final String LBL_MT_1 = "<html><body><p align='right'>Tomacorrientes</p></body></html>";
+	public static final String LBL_MT_2 = "<html><body><p align='right'>Interruptor</p></body></html>";
+	public static final String LBL_MT_3 = "<html><body><p align='right'>Kit cable eléctrico</p></body></html>";
+	public static final String LBL_MT_4 = "<html><body><p align='right'>Canal Plástico PVC de L=3m</p></body></html>";
+	public static final String LBL_MT_5 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua de Lluvia (2 rejilla,4 codos 90°,1/4 gl polipega, tornillos, abrazaderas)</p></body></html>";
+	public static final String LBL_MT_6 = "<html><body><p align='right'>Tubería de PVC 75 mm L=3m</p></body></html>";
+	public static final String LBL_MT_7 = "<html><body><p align='right'>Tubería de PVC 75 mm L=0.6m</p></body></html>";
+	public static final String LBL_MT_8 = "<html><body><p align='right'>Kit para conexión de tubería 75 mm. (lija pliego, polipega 1/4gal,1codo 90°)</p></body></html>";
+	public static final String LBL_MT_9 = "<html><body><p align='right'>Puerta</p></body></html>";
+	public static final String LBL_MT_10 = "<html><body><p align='right'>Bisagras</p></body></html>";
+	public static final String LBL_MT_11 = "<html><body><p align='right'>Perfil SF Tipo 12 MA-SF-12 para puerta</p></body></html>";
+	public static final String LBL_MT_12 = "<html><body><p align='right'>Ventana corredera, compuesta por tres hojas y dos carriles. UPVC con vidrio flotado de 3 mm de 3x1,10</p></body></html>";
+	public static final String LBL_MT_13 = "<html><body><p align='right'>Perfil SF Tipo 12 MA-SF-12 para ventana</p></body></html>";
+	public static final String LBL_MT_14 = "<html><body><p align='right'>Paneles TCB (8.8x5.8 m)</p></body></html>";
+	public static final String LBL_MT_15 = "<html><body><p align='right'>Paneles vynil piso (0,15x1,93 m)</p></body></html>";
+	public static final String LBL_MT_16 = "<html><body><p align='right'>Paneles EPS para cubierta I=7, a= 1 m</p></body></html>";
+	public static final String LBL_MT_17 = "<html><body><p align='right'>Perfil SF Tipo 12 m-SF-12 para paredes</p></body></html>";
+	public static final String LBL_MT_18 = "<html><body><p align='right'>Paneles EPS pared - (1x3x0,09 m)</p></body></html>";
+	public static final String LBL_MT_19 = "<html><body><p align='right'>Paneles EPS pared - (1x0,90x0,90 m)</p></body></html>";
+	public static final String LBL_MT_20 = "<html><body><p align='right'>Paneles EPS pared - (1x1,10x0,09 m)</p></body></html>";
+	public static final String LBL_MT_21 = "<html><body><p align='right'>Paneles EPS pared - (1x0,80x0,09 m)</p></body></html>";
+	public static final String LBL_MT_22 = "<html><body><p align='right'>Paneles EPS pared - (1x2,70 x0,90  m)</p></body></html>";
+	public static final String LBL_MT_23 = "<html><body><p align='right'>Paneles EPS pared - (1x1,10 x0,90  m)</p></body></html>";
+	public static final String LBL_MT_24 = "<html><body><p align='right'>Paneles EPS pared - (1x0,50 x0,90  m)</p></body></html>";
+	public static final String LBL_MT_25 = "<html><body><p align='right'>Panel EPS Hvar- pared lateral izq (libre)</p></body></html>";
+	public static final String LBL_MT_26 = "<html><body><p align='right'>Dados cimentación</p></body></html>";
+	public static final String LBL_MT_27 = "<html><body><p align='right'>Perfil SF Tipo 1</p></body></html>";
+	public static final String LBL_MT_28 = "<html><body><p align='right'>Perfil SF Tipo 2</p></body></html>";
+	public static final String LBL_MT_29 = "<html><body><p align='right'>Perfil SF Tipo 3</p></body></html>";
+	public static final String LBL_MT_30 = "<html><body><p align='right'>Perfil SF Tipo 4</p></body></html>";
+	public static final String LBL_MT_31 = "<html><body><p align='right'>Perfil SF Tipo 5</p></body></html>";
+	public static final String LBL_MT_32 = "<html><body><p align='right'>Perfil SF Tipo 6</p></body></html>";
+	public static final String LBL_MT_33 = "<html><body><p align='right'>Perfil SF Tipo 7</p></body></html>";
+	public static final String LBL_MT_34 = "<html><body><p align='right'>Perfil SF Tipo 8</p></body></html>";
+	public static final String LBL_MT_35 = "<html><body><p align='right'>Perfil SF Tipo 9</p></body></html>";
+	public static final String LBL_MT_36 = "<html><body><p align='right'>Perfil SF Tipo 10</p></body></html>";
+	public static final String LBL_MT_37 = "<html><body><p align='right'>Perfil SF Tipo 11</p></body></html>";
+
 	/*
 	 * TxtCantidadLimite HSTemplate
 	 */
@@ -329,5 +372,48 @@ public class Constantes {
 	public static final String TXT_BS_67 = "12";
 	public static final String TXT_BS_68 = "6";
 	public static final String TXT_BS_69 = "30";
+
+	/**
+	 * MtTemplate TXTs
+	 */
+
+	public static final String TXT_MT_0 = "9";
+	public static final String TXT_MT_1 = "40";
+	public static final String TXT_MT_2 = "1";
+	public static final String TXT_MT_3 = "1";
+	public static final String TXT_MT_4 = "3";
+	public static final String TXT_MT_5 = "2";
+	public static final String TXT_MT_6 = "2";
+	public static final String TXT_MT_7 = "1";
+	public static final String TXT_MT_8 = "1";
+	public static final String TXT_MT_9 = "1";
+	public static final String TXT_MT_10 = "3";
+	public static final String TXT_MT_11 = "3";
+	public static final String TXT_MT_12 = "6";
+	public static final String TXT_MT_13 = "12";
+	public static final String TXT_MT_14 = "1";
+	public static final String TXT_MT_15 = "177";
+	public static final String TXT_MT_16 = "9";
+	public static final String TXT_MT_17 = "8";
+	public static final String TXT_MT_18 = "5";
+	public static final String TXT_MT_19 = "1";
+	public static final String TXT_MT_20 = "1";
+	public static final String TXT_MT_21 = "3";
+	public static final String TXT_MT_22 = "3";
+	public static final String TXT_MT_23 = "6";
+	public static final String TXT_MT_24 = "6";
+	public static final String TXT_MT_25 = "6";
+	public static final String TXT_MT_26 = "15";
+	public static final String TXT_MT_27 = "2";
+	public static final String TXT_MT_28 = "2";
+	public static final String TXT_MT_29 = "20";
+	public static final String TXT_MT_30 = "6";
+	public static final String TXT_MT_31 = "40";
+	public static final String TXT_MT_32 = "40";
+	public static final String TXT_MT_33 = "2";
+	public static final String TXT_MT_34 = "2";
+	public static final String TXT_MT_35 = "2";
+	public static final String TXT_MT_36 = "6";
+	public static final String TXT_MT_37 = "40";
 
 }
