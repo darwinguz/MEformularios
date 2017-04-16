@@ -2,9 +2,10 @@ package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
-import static com.capa.util.Validaciones.validarInfo;
+import static com.capa.util.Validaciones.*;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -14,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -33,8 +35,11 @@ import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.util.Utilitarios;
 
 public class CeTemplate extends JFrame {
 
@@ -62,6 +67,8 @@ public class CeTemplate extends JFrame {
 	TInformacionObligatoria infor;
 	TFicha ficha;
 	ServicioFicha servFicha;
+
+	private String fotoInfoObl;
 
 	/**
 	 * Launch the application.
@@ -109,6 +116,12 @@ public class CeTemplate extends JFrame {
 		llenarCabecera(cabecera);
 
 		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(533, 50);
+		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				fotoInfoObl = getPathImagen();
+			}
+		});
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 
 		JPanel pnlModuloWPC = new JPanel();
@@ -154,6 +167,7 @@ public class CeTemplate extends JFrame {
 		txtCantidad01 = new JTextField();
 		txtCantidad01.setColumns(10);
 		panel_6.add(txtCantidad01);
+		validarDigitos(txtCantidad01);
 
 		JPanel panel_7 = new JPanel();
 		panel_7.setBounds(267, 17, 143, 29);
@@ -222,6 +236,7 @@ public class CeTemplate extends JFrame {
 		txtCantidad11 = new JTextField();
 		txtCantidad11.setColumns(10);
 		panel_2.add(txtCantidad11);
+		validarDigitos(txtCantidad11);
 
 		txtCantidad20 = new JTextField();
 		txtCantidad20.setText("120");
@@ -232,6 +247,7 @@ public class CeTemplate extends JFrame {
 		txtCantidad21 = new JTextField();
 		txtCantidad21.setColumns(10);
 		panel_2.add(txtCantidad21);
+		validarDigitos(txtCantidad21);
 
 		txtCantidad30 = new JTextField();
 		txtCantidad30.setText("480");
@@ -242,6 +258,7 @@ public class CeTemplate extends JFrame {
 		txtCantidad31 = new JTextField();
 		txtCantidad31.setColumns(10);
 		panel_2.add(txtCantidad31);
+		validarDigitos(txtCantidad31);
 
 		txtCantidad40 = new JTextField();
 		txtCantidad40.setText("120");
@@ -252,6 +269,7 @@ public class CeTemplate extends JFrame {
 		txtCantidad41 = new JTextField();
 		txtCantidad41.setColumns(10);
 		panel_2.add(txtCantidad41);
+		validarDigitos(txtCantidad41);
 
 		txtCantidad50 = new JTextField();
 		txtCantidad50.setText("120");
@@ -262,6 +280,7 @@ public class CeTemplate extends JFrame {
 		txtCantidad51 = new JTextField();
 		txtCantidad51.setColumns(10);
 		panel_2.add(txtCantidad51);
+		validarDigitos(txtCantidad51);
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(267, 17, 143, 144);
@@ -295,11 +314,26 @@ public class CeTemplate extends JFrame {
 
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
 				infor = cargarInfoObligatoria(infoObligatoria);
+				infor.setIoFotoPath(fotoInfoObl);
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
+					if (detallesFicha == null) {
+						JOptionPane.showMessageDialog(null,
+								"ERROR: Verificar que los registros no se encuentren VACÍOS", "Mensaje de Error",
+								JOptionPane.ERROR_MESSAGE);
+						return;
+					}
 					if (registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
 						servFicha.guardarFormulario(cargarListas());
+						HashMap<String, Object> parametros = new HashMap<String, Object>();
+						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+						parametros.put("serial_ficha", ficha.getFiSerial());
+
+						Reporte reporte = new Reporte("Reporte MB", 280, 10, 850, 750);
+						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
+								Query.getMysql().getConexion());
+						reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
 					} else {

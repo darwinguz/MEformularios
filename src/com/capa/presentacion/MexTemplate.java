@@ -2,9 +2,10 @@ package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
-import static com.capa.util.Validaciones.validarInfo;
+import static com.capa.util.Validaciones.*;
 
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -13,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,8 +33,11 @@ import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.util.Utilitarios;
 
 public class MexTemplate extends JFrame {
 
@@ -137,6 +142,8 @@ public class MexTemplate extends JFrame {
 	TFicha ficha;
 	ServicioFicha servFicha;
 
+	private String fotoInfoObl;
+
 	/**
 	 * Launch the application.
 	 */
@@ -225,6 +232,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad121 = new JTextField();
 		txtCantidad121.setColumns(10);
 		panel_26.add(txtCantidad121);
+		validarDigitos(txtCantidad121);
 
 		txtCantidad130 = new JTextField();
 		txtCantidad130.setEditable(false);
@@ -234,6 +242,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad131 = new JTextField();
 		txtCantidad131.setColumns(10);
 		panel_26.add(txtCantidad131);
+		validarDigitos(txtCantidad131);
 
 		txtCantidad140 = new JTextField();
 		txtCantidad140.setEditable(false);
@@ -243,6 +252,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad141 = new JTextField();
 		txtCantidad141.setColumns(10);
 		panel_26.add(txtCantidad141);
+		validarDigitos(txtCantidad141);
 
 		JPanel panel_27 = new JPanel();
 		panel_27.setBounds(267, 17, 143, 80);
@@ -310,6 +320,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad01 = new JTextField();
 		txtCantidad01.setColumns(10);
 		panel_17.add(txtCantidad01);
+		validarDigitos(txtCantidad01);
 
 		txtCantidad10 = new JTextField();
 		txtCantidad10.setEditable(false);
@@ -319,6 +330,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad11 = new JTextField();
 		txtCantidad11.setColumns(10);
 		panel_17.add(txtCantidad11);
+		validarDigitos(txtCantidad11);
 
 		txtCantidad20 = new JTextField();
 		txtCantidad20.setEditable(false);
@@ -328,6 +340,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad21 = new JTextField();
 		txtCantidad21.setColumns(10);
 		panel_17.add(txtCantidad21);
+		validarDigitos(txtCantidad21);
 
 		panel_18 = new JPanel();
 		panel_18.setBounds(267, 17, 143, 80);
@@ -396,6 +409,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad31 = new JTextField();
 		txtCantidad31.setColumns(10);
 		panel_3.add(txtCantidad31);
+		validarDigitos(txtCantidad31);
 
 		txtCantidad40 = new JTextField();
 		txtCantidad40.setEditable(false);
@@ -405,6 +419,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad41 = new JTextField();
 		txtCantidad41.setColumns(10);
 		panel_3.add(txtCantidad41);
+		validarDigitos(txtCantidad41);
 
 		txtCantidad50 = new JTextField();
 		txtCantidad50.setEditable(false);
@@ -414,6 +429,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad51 = new JTextField();
 		txtCantidad51.setColumns(10);
 		panel_3.add(txtCantidad51);
+		validarDigitos(txtCantidad51);
 
 		JPanel panel_4 = new JPanel();
 		panel_4.setBounds(267, 17, 143, 80);
@@ -483,6 +499,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad61 = new JTextField();
 		txtCantidad61.setColumns(10);
 		panel_7.add(txtCantidad61);
+		validarDigitos(txtCantidad61);
 
 		txtCantidad70 = new JTextField();
 		txtCantidad70.setEditable(false);
@@ -492,6 +509,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad71 = new JTextField();
 		txtCantidad71.setColumns(10);
 		panel_7.add(txtCantidad71);
+		validarDigitos(txtCantidad71);
 
 		txtCantidad80 = new JTextField();
 		txtCantidad80.setEditable(false);
@@ -501,6 +519,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad81 = new JTextField();
 		txtCantidad81.setColumns(10);
 		panel_7.add(txtCantidad81);
+		validarDigitos(txtCantidad81);
 
 		JPanel panel_8 = new JPanel();
 		panel_8.setBounds(267, 17, 143, 80);
@@ -568,6 +587,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad91 = new JTextField();
 		txtCantidad91.setColumns(10);
 		panel_11.add(txtCantidad91);
+		validarDigitos(txtCantidad91);
 
 		txtCantidad100 = new JTextField();
 		txtCantidad100.setEditable(false);
@@ -577,6 +597,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad101 = new JTextField();
 		txtCantidad101.setColumns(10);
 		panel_11.add(txtCantidad101);
+		validarDigitos(txtCantidad101);
 
 		txtCantidad110 = new JTextField();
 		txtCantidad110.setEditable(false);
@@ -586,6 +607,8 @@ public class MexTemplate extends JFrame {
 		txtCantidad111 = new JTextField();
 		txtCantidad111.setColumns(10);
 		panel_11.add(txtCantidad111);
+		validarDigitos(txtCantidad111);
+		validarDigitos(txtCantidad111);
 
 		panel_12 = new JPanel();
 		panel_12.setBounds(267, 17, 143, 80);
@@ -649,6 +672,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad161 = new JTextField();
 		txtCantidad161.setColumns(10);
 		panel_23.add(txtCantidad161);
+		validarDigitos(txtCantidad161);
 
 		txtCantidad170 = new JTextField();
 		txtCantidad170.setEditable(false);
@@ -658,6 +682,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad171 = new JTextField();
 		txtCantidad171.setColumns(10);
 		panel_23.add(txtCantidad171);
+		validarDigitos(txtCantidad171);
 
 		panel_28 = new JPanel();
 		panel_28.setBounds(267, 17, 143, 46);
@@ -714,6 +739,7 @@ public class MexTemplate extends JFrame {
 		txtCantidad151 = new JTextField();
 		txtCantidad151.setColumns(10);
 		panel_21.add(txtCantidad151);
+		validarDigitos(txtCantidad151);
 
 		panel_22 = new JPanel();
 		panel_22.setBounds(267, 30, 143, 25);
@@ -733,6 +759,12 @@ public class MexTemplate extends JFrame {
 		panel_19.add(label_11);
 
 		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(858, 295);
+		informacionObligatoriaV.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				fotoInfoObl = getPathImagen();
+			}
+		});
 		panel.add(informacionObligatoriaV.getPnlInformacionObl());
 
 		llenarFicha();
@@ -743,12 +775,27 @@ public class MexTemplate extends JFrame {
 				// TODO Auto-generated method stub
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
+				infor.setIoFotoPath(fotoInfoObl);
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
+					if (detallesFicha == null) {
+						JOptionPane.showMessageDialog(null,
+								"ERROR: Verificar que los registros no se encuentren VACÍOS", "Mensaje de Error",
+								JOptionPane.ERROR_MESSAGE);
+						return;
+					}
 					if (registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
 						servFicha.guardarFormulario(cargarListas());
+						HashMap<String, Object> parametros = new HashMap<String, Object>();
+						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+						parametros.put("serial_ficha", ficha.getFiSerial());
+
+						Reporte reporte = new Reporte("Reporte MB", 280, 10, 850, 750);
+						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
+								Query.getMysql().getConexion());
+						reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
 					} else {

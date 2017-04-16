@@ -2,9 +2,10 @@ package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
-import static com.capa.util.Validaciones.validarInfo;
+import static com.capa.util.Validaciones.*;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -12,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -30,8 +32,11 @@ import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.util.Utilitarios;
 
 public class WFTemplate extends JFrame {
 
@@ -95,6 +100,8 @@ public class WFTemplate extends JFrame {
 	TInformacionObligatoria infor;
 	TFicha ficha;
 	ServicioFicha servFicha;
+
+	private String fotoInfoObl;
 
 	/**
 	 * Launch the application.
@@ -198,11 +205,13 @@ public class WFTemplate extends JFrame {
 		txtCantidad01.setColumns(10);
 		txtCantidad01.setBounds(351, 50, 35, 20);
 		panel_1.add(txtCantidad01);
+		validarDigitos(txtCantidad01);
 
 		txtCantidad11 = new JTextField();
 		txtCantidad11.setColumns(10);
 		txtCantidad11.setBounds(351, 72, 35, 20);
 		panel_1.add(txtCantidad11);
+		validarDigitos(txtCantidad11);
 
 		txtCantidad21 = new JTextField();
 		txtCantidad21.setColumns(10);
@@ -248,6 +257,7 @@ public class WFTemplate extends JFrame {
 		txtCantidad31.setColumns(10);
 		txtCantidad31.setBounds(351, 116, 35, 20);
 		panel_1.add(txtCantidad31);
+		validarDigitos(txtCantidad31);
 
 		txtObs3 = new JTextField();
 		txtObs3.setColumns(10);
@@ -326,21 +336,25 @@ public class WFTemplate extends JFrame {
 		txtCantidad41.setColumns(10);
 		txtCantidad41.setBounds(351, 177, 35, 20);
 		panel_1.add(txtCantidad41);
+		validarDigitos(txtCantidad41);
 
 		txtCantidad51 = new JTextField();
 		txtCantidad51.setColumns(10);
 		txtCantidad51.setBounds(351, 199, 35, 20);
 		panel_1.add(txtCantidad51);
+		validarDigitos(txtCantidad51);
 
 		txtCantidad61 = new JTextField();
 		txtCantidad61.setColumns(10);
 		txtCantidad61.setBounds(351, 221, 35, 20);
 		panel_1.add(txtCantidad61);
+		validarDigitos(txtCantidad61);
 
 		txtCantidad71 = new JTextField();
 		txtCantidad71.setColumns(10);
 		txtCantidad71.setBounds(351, 243, 35, 20);
 		panel_1.add(txtCantidad71);
+		validarDigitos(txtCantidad71);
 
 		txtObs7 = new JTextField();
 		txtObs7.setColumns(10);
@@ -386,6 +400,7 @@ public class WFTemplate extends JFrame {
 		txtCantidad81.setColumns(10);
 		txtCantidad81.setBounds(351, 265, 35, 20);
 		panel_1.add(txtCantidad81);
+		validarDigitos(txtCantidad81);
 
 		txtObs8 = new JTextField();
 		txtObs8.setColumns(10);
@@ -410,6 +425,7 @@ public class WFTemplate extends JFrame {
 		txtCantidad91.setColumns(10);
 		txtCantidad91.setBounds(351, 287, 35, 20);
 		panel_1.add(txtCantidad91);
+		validarDigitos(txtCantidad91);
 
 		txtObs9 = new JTextField();
 		txtObs9.setColumns(10);
@@ -434,6 +450,7 @@ public class WFTemplate extends JFrame {
 		txtCantidad101.setColumns(10);
 		txtCantidad101.setBounds(351, 309, 35, 20);
 		panel_1.add(txtCantidad101);
+		validarDigitos(txtCantidad101);
 
 		txtObs10 = new JTextField();
 		txtObs10.setColumns(10);
@@ -452,6 +469,7 @@ public class WFTemplate extends JFrame {
 		txtCantidad111.setColumns(10);
 		txtCantidad111.setBounds(351, 340, 35, 20);
 		panel_1.add(txtCantidad111);
+		validarDigitos(txtCantidad111);
 
 		txtObs11 = new JTextField();
 		txtObs11.setColumns(10);
@@ -476,6 +494,7 @@ public class WFTemplate extends JFrame {
 		txtCantidad121.setColumns(10);
 		txtCantidad121.setBounds(351, 377, 35, 20);
 		panel_1.add(txtCantidad121);
+		validarDigitos(txtCantidad121);
 
 		txtObs12 = new JTextField();
 		txtObs12.setColumns(10);
@@ -500,6 +519,7 @@ public class WFTemplate extends JFrame {
 		txtCantidad131.setColumns(10);
 		txtCantidad131.setBounds(351, 399, 35, 20);
 		panel_1.add(txtCantidad131);
+		validarDigitos(txtCantidad131);
 
 		txtObs13 = new JTextField();
 		txtObs13.setColumns(10);
@@ -524,6 +544,7 @@ public class WFTemplate extends JFrame {
 		txtCantidad141.setColumns(10);
 		txtCantidad141.setBounds(351, 421, 35, 20);
 		panel_1.add(txtCantidad141);
+		validarDigitos(txtCantidad141);
 
 		txtObs14 = new JTextField();
 		txtObs14.setColumns(10);
@@ -549,6 +570,7 @@ public class WFTemplate extends JFrame {
 		txtCantidad151.setColumns(10);
 		txtCantidad151.setBounds(351, 453, 35, 20);
 		panel_1.add(txtCantidad151);
+		validarDigitos(txtCantidad151);
 
 		txtObs15 = new JTextField();
 		txtObs15.setColumns(10);
@@ -573,6 +595,7 @@ public class WFTemplate extends JFrame {
 		txtCantidad161.setColumns(10);
 		txtCantidad161.setBounds(351, 484, 35, 20);
 		panel_1.add(txtCantidad161);
+		validarDigitos(txtCantidad161);
 
 		txtObs16 = new JTextField();
 		txtObs16.setColumns(10);
@@ -586,6 +609,12 @@ public class WFTemplate extends JFrame {
 		panel_1.add(lblpatchPanel);
 
 		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(865, 325);
+		informacionObligatoriaV.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				fotoInfoObl = getPathImagen();
+			}
+		});
 		panel_1.add(informacionObligatoriaV.getPnlInformacionObl());
 
 		llenarFicha();
@@ -594,12 +623,27 @@ public class WFTemplate extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
+				infor.setIoFotoPath(fotoInfoObl);
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
+					if (detallesFicha == null) {
+						JOptionPane.showMessageDialog(null,
+								"ERROR: Verificar que los registros no se encuentren VACÍOS", "Mensaje de Error",
+								JOptionPane.ERROR_MESSAGE);
+						return;
+					}
 					if (registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
 						servFicha.guardarFormulario(detallesFicha);
+						HashMap<String, Object> parametros = new HashMap<String, Object>();
+						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+						parametros.put("serial_ficha", ficha.getFiSerial());
+
+						Reporte reporte = new Reporte("Reporte MB", 280, 10, 850, 750);
+						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
+								Query.getMysql().getConexion());
+						reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
 					} else {
