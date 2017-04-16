@@ -130,6 +130,16 @@ public class Utilitarios {
 		jCabecera.getTxtSector().setText(Utilitarios.gettCabecera().getSector());
 	}
 
+	public static double redondearDecimales(double valorInicial, int numeroDecimales) {
+		double parteEntera, resultado;
+		resultado = valorInicial;
+		parteEntera = Math.floor(resultado);
+		resultado = (resultado - parteEntera) * Math.pow(10, numeroDecimales);
+		resultado = Math.round(resultado);
+		resultado = (resultado / Math.pow(10, numeroDecimales)) + parteEntera;
+		return resultado;
+	}
+
 	public static TInformacionObligatoria cargarInfoObligatoria(InformacionObligatoriaV jpInfo) {
 		return new TInformacionObligatoria(jpInfo.getTxtObsGenMin().getText(), jpInfo.getTxtRespMinisterio().getText(),
 				jpInfo.getTxtCargoMin().getText(), jpInfo.getTxtObsGenCont().getText(),
