@@ -18,13 +18,15 @@ public class InformacionObligatoriaV {
 
 	private JPanel pnlInformacionObl;
 
-	private JTextField txtObsGenDer;
-	private JTextField txtResponsableContratista;
-	private JTextField txtCargoDer;
+	private JTextField txtObsGenMin;
+	private JTextField txtObsGenCont;
+	private JTextField txtRespMinisterio;
+	private JTextField txtRespContratista;
+	private JTextField txtCargoMin;
+	private JTextField txtCargoCont;
+	private String pathFotoIO;
+
 	private JDateChooser dateFechaIO;
-	private JTextField txtObsGenIzq;
-	private JTextField txtResponsableMineduc;
-	private JTextField txtCargoIzq;
 
 	private JButton btnInsertarFoto;
 
@@ -60,15 +62,15 @@ public class InformacionObligatoriaV {
 		lblObsGenIzq.setOpaque(true);
 		lblObsGenIzq.setBackground(new Color(176, 196, 222));
 		pnlIOEtiquetas1.add(lblObsGenIzq);
-		txtResponsableMineduc = new JTextField();
-		txtResponsableMineduc.setColumns(10);
-		pnlIOTexts1.add(txtResponsableMineduc);
-		txtCargoIzq = new JTextField();
-		txtCargoIzq.setColumns(10);
-		pnlIOTexts1.add(txtCargoIzq);
-		txtObsGenIzq = new JTextField();
-		txtObsGenIzq.setColumns(10);
-		pnlIOTexts1.add(txtObsGenIzq);
+		txtRespMinisterio = new JTextField();
+		txtRespMinisterio.setColumns(10);
+		pnlIOTexts1.add(txtRespMinisterio);
+		txtCargoCont = new JTextField();
+		txtCargoCont.setColumns(10);
+		pnlIOTexts1.add(txtCargoCont);
+		txtObsGenCont = new JTextField();
+		txtObsGenCont.setColumns(10);
+		pnlIOTexts1.add(txtObsGenCont);
 
 		JPanel pnlIOEtiquetas2 = new JPanel();
 		pnlIOEtiquetas2.setBounds(10, 85, 157, 60);
@@ -95,15 +97,15 @@ public class InformacionObligatoriaV {
 		lblObsGenDer.setBackground(new Color(176, 196, 222));
 		pnlIOEtiquetas2.add(lblObsGenDer);
 
-		txtResponsableContratista = new JTextField();
-		txtResponsableContratista.setColumns(10);
-		pnlIOTexts2.add(txtResponsableContratista);
-		txtCargoDer = new JTextField();
-		txtCargoDer.setColumns(10);
-		pnlIOTexts2.add(txtCargoDer);
-		txtObsGenDer = new JTextField();
-		txtObsGenDer.setColumns(10);
-		pnlIOTexts2.add(txtObsGenDer);
+		txtRespContratista = new JTextField();
+		txtRespContratista.setColumns(10);
+		pnlIOTexts2.add(txtRespContratista);
+		txtCargoMin = new JTextField();
+		txtCargoMin.setColumns(10);
+		pnlIOTexts2.add(txtCargoMin);
+		txtObsGenMin = new JTextField();
+		txtObsGenMin.setColumns(10);
+		pnlIOTexts2.add(txtObsGenMin);
 
 		JPanel pnlIOfechaLBL = new JPanel();
 		pnlIOfechaLBL.setBounds(10, 150, 157, 20);
@@ -120,7 +122,6 @@ public class InformacionObligatoriaV {
 		lblFecha.setBackground(new Color(211, 211, 211));
 		pnlIOfechaLBL.add(lblFecha);
 		dateFechaIO = new JDateChooser();
-		// dateFechaIO.setBounds(37, 280, 180, 20);
 		dateFechaIO.setDateFormatString("yyyy-MM-dd");
 		dateFechaIO.setDate(new Date());
 
@@ -131,28 +132,28 @@ public class InformacionObligatoriaV {
 		pnlInformacionObl.add(btnInsertarFoto);
 	}
 
-	public JTextField getTxtObsGenDer() {
-		return txtObsGenDer;
+	public JTextField getTxtObsGenMin() {
+		return txtObsGenMin;
 	}
 
-	public void setTxtObsGenDer(JTextField txtObsGenDer) {
-		this.txtObsGenDer = txtObsGenDer;
+	public void setTxtObsGenMin(JTextField txtObsGenDer) {
+		this.txtObsGenMin = txtObsGenDer;
 	}
 
 	public JTextField getTxtResponsableContratista() {
-		return txtResponsableContratista;
+		return txtRespContratista;
 	}
 
 	public void setTxtResponsableContratista(JTextField txtResponsableContratista) {
-		this.txtResponsableContratista = txtResponsableContratista;
+		this.txtRespContratista = txtResponsableContratista;
 	}
 
-	public JTextField getTxtCargoDer() {
-		return txtCargoDer;
+	public JTextField getTxtCargoMin() {
+		return txtCargoMin;
 	}
 
-	public void setTxtCargoDer(JTextField txtCargoDer) {
-		this.txtCargoDer = txtCargoDer;
+	public void setTxtCargoMin(JTextField txtCargoDer) {
+		this.txtCargoMin = txtCargoDer;
 	}
 
 	public JDateChooser getDateFechaIO() {
@@ -163,28 +164,28 @@ public class InformacionObligatoriaV {
 		this.dateFechaIO = dateFechaIO;
 	}
 
-	public JTextField getTxtObsGenIzq() {
-		return txtObsGenIzq;
+	public JTextField getTxtObsGenCont() {
+		return txtObsGenCont;
 	}
 
-	public void setTxtObsGenIzq(JTextField txtObsGenIzq) {
-		this.txtObsGenIzq = txtObsGenIzq;
+	public void setTxtObsGenCont(JTextField txtObsGenIzq) {
+		this.txtObsGenCont = txtObsGenIzq;
 	}
 
 	public JTextField getTxtResponsableMineduc() {
-		return txtResponsableMineduc;
+		return txtRespMinisterio;
 	}
 
 	public void setTxtResponsableMineduc(JTextField txtResponsableMineduc) {
-		this.txtResponsableMineduc = txtResponsableMineduc;
+		this.txtRespMinisterio = txtResponsableMineduc;
 	}
 
 	public JTextField getTxtCargoIzq() {
-		return txtCargoIzq;
+		return txtCargoCont;
 	}
 
 	public void setTxtCargoIzq(JTextField txtCargoIzq) {
-		this.txtCargoIzq = txtCargoIzq;
+		this.txtCargoCont = txtCargoIzq;
 	}
 
 	public JPanel getPnlInformacionObl() {
@@ -201,6 +202,14 @@ public class InformacionObligatoriaV {
 
 	public void setBtnInsertarFoto(JButton btnInsertarFoto) {
 		this.btnInsertarFoto = btnInsertarFoto;
+	}
+
+	public String getPathFotoIO() {
+		return pathFotoIO;
+	}
+
+	public void setPathFotoIO(String pathFotoIO) {
+		this.pathFotoIO = pathFotoIO;
 	}
 
 }

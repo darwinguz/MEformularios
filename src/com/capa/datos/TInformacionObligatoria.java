@@ -17,21 +17,22 @@ public class TInformacionObligatoria implements java.io.Serializable {
 	private Date ioFechaIo;
 	private String ioFotoPath;
 	private Image ioFotoImage;
-	private TCabecera tCabe;
 
 	public TInformacionObligatoria() {
 	}
 
-	public TInformacionObligatoria(String ioObsGeneral, String ioResponsableMin, String ioCargoMin, String ioObsGenCont,
-			String ioResponsableCont, String ioCargoCont, Date ioFechaIo, TCabecera tC) {
-		this.ioObsGeneral = ioObsGeneral;
-		this.ioResponsableMin = ioResponsableMin;
-		this.ioCargoMin = ioCargoMin;
-		this.ioObsGenCont = ioObsGenCont;
-		this.ioResponsableCont = ioResponsableCont;
-		this.ioCargoCont = ioCargoCont;
+	public TInformacionObligatoria(String ioOGMinisterio, String ioResMinisterio, String ioCargoMinisterio,
+			String ioOGContratista, String ioResContratista, String ioCargoContratista, Date ioFechaIo,
+			String ioFotoPath) {
+		super();
+		this.ioObsGeneral = ioOGMinisterio;
+		this.ioResponsableMin = ioResMinisterio;
+		this.ioCargoMin = ioCargoMinisterio;
+		this.ioObsGenCont = ioOGContratista;
+		this.ioResponsableCont = ioResContratista;
+		this.ioCargoCont = ioCargoContratista;
 		this.ioFechaIo = ioFechaIo;
-		this.tCabe = tC;
+		this.ioFotoPath = ioFotoPath;
 	}
 
 	public TInformacionObligatoria(Integer ioSerial) {
@@ -103,14 +104,6 @@ public class TInformacionObligatoria implements java.io.Serializable {
 		this.ioFechaIo = ioFechaIo;
 	}
 
-	public TCabecera gettCabe() {
-		return tCabe;
-	}
-
-	public void settCabe(TCabecera tCabe) {
-		this.tCabe = tCabe;
-	}
-
 	public String getIoFotoPath() {
 		return ioFotoPath;
 	}
@@ -132,8 +125,7 @@ public class TInformacionObligatoria implements java.io.Serializable {
 		return "TInformacionObligatoria [ioSerial=" + ioSerial + ", ioObsGeneral=" + ioObsGeneral
 				+ ", ioResponsableMin=" + ioResponsableMin + ", ioCargoMin=" + ioCargoMin + ", ioObsGenCont="
 				+ ioObsGenCont + ", ioResponsableCont=" + ioResponsableCont + ", ioCargoCont=" + ioCargoCont
-				+ ", ioFechaIo=" + ioFechaIo + ", ioFotoPath=" + ioFotoPath + ", ioFotoImage=" + ioFotoImage
-				+ ", tCabe=" + tCabe + "]";
+				+ ", ioFechaIo=" + ioFechaIo + ", ioFotoPath=" + ioFotoPath + "]";
 	}
 
 }

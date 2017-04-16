@@ -97,6 +97,7 @@ import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.util.Utilitarios;
 import com.capa.util.Validaciones;
 
 public class MtTemplate extends JFrame {
@@ -257,7 +258,7 @@ public class MtTemplate extends JFrame {
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
-		// llenarCabecera(cabecera);
+		Utilitarios.llenarCabecera(cabecera);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
@@ -1415,7 +1416,6 @@ public class MtTemplate extends JFrame {
 				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
 				infoObl.setIoFotoPath(fotoInfoObl);
 				if (validarInfo(infoObl)) {
-					infoObl.settCabe(gettCabecera());
 					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
 
 					List<TdetalleFicha> detallesFicha = getRegistrosDetalle(infoObl);

@@ -1583,7 +1583,6 @@ public class MaTemplate extends JFrame {
 				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
 				infoObl.setIoFotoPath(fotoInfoObl);
 				if (validarInfo(infoObl)) {
-					infoObl.settCabe(gettCabecera());
 					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
 
 					List<TdetalleFicha> detallesFicha = getRegistrosDetalle(infoObl);

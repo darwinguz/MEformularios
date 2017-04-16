@@ -1991,7 +1991,6 @@ public class MmTemplate extends JFrame {
 				if (validarInfo(infoObl)) {
 					List<TdetalleFicha> detallesFicha = getRegistrosFicha(infoObl);
 					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-					infoObl.settCabe(gettCabecera());
 					if (registrosValidados(detallesFicha)) {
 						srvInfoObl.crear(infoObl);
 						infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());

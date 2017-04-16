@@ -1556,8 +1556,6 @@ public class HsTemplate extends JFrame {
 					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 					ServicioCabecera srvTempCabecera = new ComponenteCabecera();
 
-					infoObl.settCabe(srvTempCabecera.buscarProyecto(gettCabecera().getCNombreProyecto()));
-
 					if (detallesFicha == null) {
 						JOptionPane.showMessageDialog(null,
 								"ERROR: Verificar que los registros no se encuentren VACÍOS", "Mensaje de Error",

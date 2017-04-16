@@ -11,14 +11,12 @@ public class ComponenteInfoObligatoria implements ServicioInfoObligatoria {
 
 	@Override
 	public void crear(TInformacionObligatoria inforObl) {
-		String query = "INSERT INTO t_informacion_obligatoria (c_serial, "
-				+ "io_obs_general, io_responsable_min, io_cargo_min, io_obs_gen_cont, io_responsable_cont, io_cargo_cont, "
-				+ "io_fecha_io, io_foto_io) VALUES (?,?,?,?,?,?,?,?,?);";
+		String query = "INSERT INTO t_informacion_obligatoria (io_obs_general, io_responsable_min, io_cargo_min, io_obs_gen_cont, io_responsable_cont, io_cargo_cont, "
+				+ "io_fecha_io, io_foto_io) VALUES (?,?,?,?,?,?,?,?);";
 		try {
 			Query.insertarGenerico(query,
-					new Object[] { inforObl.gettCabe().getCSerial(), inforObl.getIoObsGeneral(),
-							inforObl.getIoResponsableMin(), inforObl.getIoCargoMin(), inforObl.getIoObsGenCont(),
-							inforObl.getIoResponsableCont(), inforObl.getIoCargoCont(),
+					new Object[] { inforObl.getIoObsGeneral(), inforObl.getIoResponsableMin(), inforObl.getIoCargoMin(),
+							inforObl.getIoObsGenCont(), inforObl.getIoResponsableCont(), inforObl.getIoCargoCont(),
 							Utilitarios.getFechaString(inforObl.getIoFechaIo()), inforObl.getIoFotoPath() });
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Error al insertar Datos " + e.getMessage(), "ERROR",

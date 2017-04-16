@@ -4,6 +4,7 @@ import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
+import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -19,6 +20,7 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -26,17 +28,16 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.datos.TFichaD;
 import com.capa.datos.TInformacionObligatoria;
+import com.capa.negocios.ComponenteFichaD;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.ServicioFichaD;
 import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.util.Utilitarios;
 
 public class FichaD extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2522828583385937960L;
 	private JPanel contentPane;
-	private JPcabecera cabecera;
 
 	private JTextField txtDescripcion1;
 	private JTextField txtDescripcion2;
@@ -49,15 +50,6 @@ public class FichaD extends JFrame {
 	private JTextField txtDescripcion9;
 	private JTextField txtDescripcion10;
 
-	private JTextField txtObsGenD;
-	private JTextField txtResponsableD;
-	private JTextField txtCargoD;
-	private JTextField txtObsGen2D;
-	private JTextField txtResponsableContraD;
-	private JTextField txtCargo2D;
-	private JTextField txtFechaD;
-
-	private String pathInfoOblig;
 	private String pathFoto1;
 	private String pathFoto2;
 	private String pathFoto3;
@@ -69,23 +61,10 @@ public class FichaD extends JFrame {
 	private String pathFoto9;
 	private String pathFoto10;
 
-	// public static void main(String[] args) {
-	// EventQueue.invokeLater(new Runnable() {
-	// public void run() {
-	// try {
-	// FichaD frame = new FichaD();
-	// frame.setVisible(true);
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// });
-	// }
+	ServicioFichaD srvFicha = new ComponenteFichaD();
+	ServicioInfoObligatoria srvInfoOb = new ComponenteInfoObligatoria();
 
 	public FichaD() {
-
-		JPcabecera cabecera = new JPcabecera();
-
 		setTitle("EVALUACIÓN D");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1310, 730);
@@ -94,38 +73,12 @@ public class FichaD extends JFrame {
 		setContentPane(contentPane);
 		setResizable(false);
 		setLocationRelativeTo(null);
-		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
 
+		JPcabecera cabecera = new JPcabecera();
+		contentPane.add(cabecera.getCabecera());
+
 		llenarCabecera(cabecera);
-
-		InformacionObligatoriaV infoOblig = new InformacionObligatoriaV(165, 280);
-
-		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-
-				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
-				TInformacionObligatoria infOblig = cargarInfoObligatoria(infoOblig);
-
-				// if (validarInfo(infOblig)) {
-				// srvInfoOblig.crear(infOblig);
-				// } else {
-				// JOptionPane.showMessageDialog(null, "Ingresar datos en
-				// Información Obligatoria ");
-				// }
-
-				getListaFichaD(infOblig);
-				System.out.println("Registrar cabecera!  " + getListaFichaD(infOblig));
-			}
-		});
-
-		infoOblig.getBtnInsertarFoto().addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				pathInfoOblig = getPathImagen();
-			}
-		});
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(10, 144, 640, 354);
@@ -438,7 +391,42 @@ public class FichaD extends JFrame {
 		panel_2.setBounds(703, 186, 582, 489);
 		contentPane.add(panel_2);
 
-		panel_2.add(infoOblig.getPnlInformacionObl());
+		InformacionObligatoriaV jpIObligatoria = new InformacionObligatoriaV(165, 280);
+		jpIObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jpIObligatoria.setPathFotoIO(Utilitarios.getPathImagen());
+			}
+		});
+
+		TInformacionObligatoria infoObl = cargarInfoObligatoria(jpIObligatoria);
+
+		panel_2.add(jpIObligatoria.getPnlInformacionObl());
+
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				srvInfoOb.crear(infoObl);
+				infoObl.setIoSerial(srvInfoOb.serialInfoOblMax());
+
+				if (validarInfo(infoObl)) {
+					System.out.println(infoObl);
+					
+					srvInfoOb.crear(infoObl);
+					infoObl.setIoSerial(srvInfoOb.serialInfoOblMax());
+
+					List<TFichaD> detallesFicha = getListaFichaD(infoObl);
+
+					for (TFichaD tFichaD : detallesFicha) {
+						srvFicha.crear(tFichaD);
+					}
+					new AlInicio().setVisible(true);
+					dispose();
+
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar Información Obligatoria");
+				}
+			}
+
+		});
 
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -449,28 +437,26 @@ public class FichaD extends JFrame {
 
 	}
 
-	public List<TFichaD> getListaFichaD(TInformacionObligatoria infOblig) {
+	public List<TFichaD> getListaFichaD(TInformacionObligatoria iObligatoria) {
+		Integer updateFicha = srvFicha.actualizacionFichaN(gettCabecera());
+
+		if (updateFicha == -1) {
+			updateFicha = 1;
+		} else {
+			updateFicha++;
+		}
+
 		List<TFichaD> listasD = new ArrayList<TFichaD>();
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion1.getText(),
-				/* traer desde db */0, pathFoto1, infOblig));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion2.getText(),
-				/* traer desde db */0, pathFoto2, infOblig));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion3.getText(),
-				/* traer desde db */0, pathFoto3, infOblig));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion4.getText(),
-				/* traer desde db */0, pathFoto4, infOblig));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion5.getText(),
-				/* traer desde db */0, pathFoto5, infOblig));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion6.getText(),
-				/* traer desde db */0, pathFoto6, infOblig));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion7.getText(),
-				/* traer desde db */0, pathFoto7, infOblig));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion8.getText(),
-				/* traer desde db */0, pathFoto8, infOblig));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion9.getText(),
-				/* traer desde db */0, pathFoto9, infOblig));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion10.getText(),
-				/* traer desde db */0, pathFoto10, infOblig));
+		listasD.add(new TFichaD(gettCabecera(), txtDescripcion1.getText(), updateFicha, pathFoto1, iObligatoria));
+		listasD.add(new TFichaD(gettCabecera(), txtDescripcion2.getText(), updateFicha, pathFoto2, iObligatoria));
+		listasD.add(new TFichaD(gettCabecera(), txtDescripcion3.getText(), updateFicha, pathFoto3, iObligatoria));
+		listasD.add(new TFichaD(gettCabecera(), txtDescripcion4.getText(), updateFicha, pathFoto4, iObligatoria));
+		listasD.add(new TFichaD(gettCabecera(), txtDescripcion5.getText(), updateFicha, pathFoto5, iObligatoria));
+		listasD.add(new TFichaD(gettCabecera(), txtDescripcion6.getText(), updateFicha, pathFoto6, iObligatoria));
+		listasD.add(new TFichaD(gettCabecera(), txtDescripcion7.getText(), updateFicha, pathFoto7, iObligatoria));
+		listasD.add(new TFichaD(gettCabecera(), txtDescripcion8.getText(), updateFicha, pathFoto8, iObligatoria));
+		listasD.add(new TFichaD(gettCabecera(), txtDescripcion9.getText(), updateFicha, pathFoto9, iObligatoria));
+		listasD.add(new TFichaD(gettCabecera(), txtDescripcion10.getText(), updateFicha, pathFoto10, iObligatoria));
 		return listasD;
 	}
 

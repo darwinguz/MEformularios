@@ -130,21 +130,11 @@ public class Utilitarios {
 		jCabecera.getTxtSector().setText(Utilitarios.gettCabecera().getSector());
 	}
 
-	public static TInformacionObligatoria cargarInfoObligatoria(InformacionObligatoriaV infor) {
-		TInformacionObligatoria tInfor;
-		String responsableMinEduc, cargoIzq, obsGenIz;
-		String responsableContrat, cargoDer, obsGenDer;
-		Date fecha;
-		responsableMinEduc = infor.getTxtResponsableMineduc().getText();
-		cargoIzq = infor.getTxtCargoIzq().getText();
-		obsGenIz = infor.getTxtObsGenIzq().getText();
-		responsableContrat = infor.getTxtResponsableContratista().getText();
-		cargoDer = infor.getTxtCargoDer().getText();
-		obsGenDer = infor.getTxtObsGenDer().getText();
-		fecha = infor.getDateFechaIO().getDate();
-		tInfor = new TInformacionObligatoria(obsGenIz, responsableMinEduc, cargoIzq, obsGenDer, responsableContrat,
-				cargoDer, fecha, tCabecera);
-		return tInfor;
+	public static TInformacionObligatoria cargarInfoObligatoria(InformacionObligatoriaV jpInfo) {
+		return new TInformacionObligatoria(jpInfo.getTxtObsGenMin().getText(),
+				jpInfo.getTxtResponsableMineduc().getText(), jpInfo.getTxtCargoMin().getText(),
+				jpInfo.getTxtObsGenCont().getText(), jpInfo.getTxtResponsableContratista().getText(),
+				jpInfo.getTxtCargoIzq().getText(), jpInfo.getDateFechaIO().getDate(), jpInfo.getPathFotoIO());
 	}
 
 	public static JTextField txtCantidad(int i, int constante, int cantidadEjecutada) {
@@ -157,6 +147,5 @@ public class Utilitarios {
 	public static JTextField txtObs(int i) {
 		return new JTextField(Integer.valueOf(i));
 	}
-	
 
 }

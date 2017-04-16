@@ -186,6 +186,7 @@ public class Query {
 			ps.setString(2, fichaD.getfDescripcion());
 			ps.setBinaryStream(3, fis1, (long) file1.length());
 			ps.setInt(4, fichaD.getfDactualizacionN());
+			ps.setInt(5, fichaD.gettInformacionObl().getIoSerial());
 
 			ps.executeUpdate();
 			mysql.getConexion().commit();

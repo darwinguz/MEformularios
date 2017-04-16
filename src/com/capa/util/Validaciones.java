@@ -27,7 +27,7 @@ public class Validaciones {
 	public static boolean validarInfo(TInformacionObligatoria inf) {
 		if (inf.getIoCargoCont().equals("") || inf.getIoCargoMin().equals("") || inf.getIoObsGenCont().equals("")
 				|| inf.getIoObsGeneral().equals("") || inf.getIoResponsableCont().equals("")
-				|| inf.getIoResponsableMin().equals("") || inf.getIoFotoPath() == null) {
+				|| inf.getIoResponsableMin().equals("") || inf.getIoFotoPath().equals("")) {
 			return false;
 		}
 		return true;
