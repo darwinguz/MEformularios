@@ -172,6 +172,8 @@ public class Query {
 	}
 
 	public static void insertar(String insert, TFichaD fichaD) {
+
+		System.out.println("FichaD>>>>" + fichaD + "\n");
 		FileInputStream fis1 = null;
 		PreparedStatement ps = null;
 

@@ -15,9 +15,10 @@ public class ComponenteInfoObligatoria implements ServicioInfoObligatoria {
 				+ "io_fecha_io, io_foto_io) VALUES (?,?,?,?,?,?,?,?);";
 		try {
 			Query.insertarGenerico(query,
-					new Object[] { inforObl.getIoObsGeneral(), inforObl.getIoResponsableMin(), inforObl.getIoCargoMin(),
-							inforObl.getIoObsGenCont(), inforObl.getIoResponsableCont(), inforObl.getIoCargoCont(),
-							Utilitarios.getFechaString(inforObl.getIoFechaIo()), inforObl.getIoFotoPath() });
+					new Object[] { inforObl.getIoObsGeneralMin(), inforObl.getIoResponsableMin(),
+							inforObl.getIoCargoMin(), inforObl.getIoObsGenCont(), inforObl.getIoResponsableCont(),
+							inforObl.getIoCargoCont(), Utilitarios.getFechaString(inforObl.getIoFechaIo()),
+							inforObl.getIoFotoPath() });
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "Error al insertar Datos " + e.getMessage(), "ERROR",
 					JOptionPane.ERROR_MESSAGE);

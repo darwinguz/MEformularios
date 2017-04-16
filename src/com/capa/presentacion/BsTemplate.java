@@ -106,7 +106,7 @@ import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
-import com.capa.presentacion.InformacionObligatoriaV;
+import com.capa.presentacion.JPinformacionObligatoria;
 import com.capa.presentacion.JPcabecera;
 import com.capa.util.Utilitarios;
 import com.capa.util.Validaciones;
@@ -546,7 +546,7 @@ public class BsTemplate extends JFrame {
 		tabbedPane.addTab("2.- " + ficha.getFiDescripcion(), null, pnlPestaña2, null);
 		pnlPestaña2.setLayout(null);
 
-		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(859, 348);
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(859, 348);
 		pnlPestaña2.add(infoObligatoria.getPnlInformacionObl());
 
 		panel5 = new JPanel();

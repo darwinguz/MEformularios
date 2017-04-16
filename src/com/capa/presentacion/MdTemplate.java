@@ -3254,7 +3254,7 @@ public class MdTemplate extends JFrame {
 		validarDigitos(txtCantidad931);
 		validarDigitos(txtCantidad941);
 
-		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(858, 335);
+		JPinformacionObligatoria informacionObligatoriaV = new JPinformacionObligatoria(858, 335);
 		panel_44.add(informacionObligatoriaV.getPnlInformacionObl());
 
 		llenarFicha();

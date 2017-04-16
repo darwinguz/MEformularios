@@ -8,7 +8,7 @@ public class TInformacionObligatoria implements java.io.Serializable {
 
 	private static final long serialVersionUID = 3163892045407791730L;
 	private Integer ioSerial;
-	private String ioObsGeneral;
+	private String ioObsGeneralMin;
 	private String ioResponsableMin;
 	private String ioCargoMin;
 	private String ioObsGenCont;
@@ -25,7 +25,7 @@ public class TInformacionObligatoria implements java.io.Serializable {
 			String ioOGContratista, String ioResContratista, String ioCargoContratista, Date ioFechaIo,
 			String ioFotoPath) {
 		super();
-		this.ioObsGeneral = ioOGMinisterio;
+		this.ioObsGeneralMin = ioOGMinisterio;
 		this.ioResponsableMin = ioResMinisterio;
 		this.ioCargoMin = ioCargoMinisterio;
 		this.ioObsGenCont = ioOGContratista;
@@ -41,23 +41,23 @@ public class TInformacionObligatoria implements java.io.Serializable {
 	}
 
 	public Integer getIoSerial() {
-		return this.ioSerial;
+		return ioSerial;
 	}
 
 	public void setIoSerial(Integer ioSerial) {
 		this.ioSerial = ioSerial;
 	}
 
-	public String getIoObsGeneral() {
-		return this.ioObsGeneral;
+	public String getIoObsGeneralMin() {
+		return ioObsGeneralMin;
 	}
 
-	public void setIoObsGeneral(String ioObsGeneral) {
-		this.ioObsGeneral = ioObsGeneral;
+	public void setIoObsGeneralMin(String ioObsGeneralMin) {
+		this.ioObsGeneralMin = ioObsGeneralMin;
 	}
 
 	public String getIoResponsableMin() {
-		return this.ioResponsableMin;
+		return ioResponsableMin;
 	}
 
 	public void setIoResponsableMin(String ioResponsableMin) {
@@ -65,7 +65,7 @@ public class TInformacionObligatoria implements java.io.Serializable {
 	}
 
 	public String getIoCargoMin() {
-		return this.ioCargoMin;
+		return ioCargoMin;
 	}
 
 	public void setIoCargoMin(String ioCargoMin) {
@@ -73,7 +73,7 @@ public class TInformacionObligatoria implements java.io.Serializable {
 	}
 
 	public String getIoObsGenCont() {
-		return this.ioObsGenCont;
+		return ioObsGenCont;
 	}
 
 	public void setIoObsGenCont(String ioObsGenCont) {
@@ -81,7 +81,7 @@ public class TInformacionObligatoria implements java.io.Serializable {
 	}
 
 	public String getIoResponsableCont() {
-		return this.ioResponsableCont;
+		return ioResponsableCont;
 	}
 
 	public void setIoResponsableCont(String ioResponsableCont) {
@@ -89,7 +89,7 @@ public class TInformacionObligatoria implements java.io.Serializable {
 	}
 
 	public String getIoCargoCont() {
-		return this.ioCargoCont;
+		return ioCargoCont;
 	}
 
 	public void setIoCargoCont(String ioCargoCont) {
@@ -97,7 +97,7 @@ public class TInformacionObligatoria implements java.io.Serializable {
 	}
 
 	public Date getIoFechaIo() {
-		return this.ioFechaIo;
+		return ioFechaIo;
 	}
 
 	public void setIoFechaIo(Date ioFechaIo) {
@@ -122,7 +122,7 @@ public class TInformacionObligatoria implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "TInformacionObligatoria [ioSerial=" + ioSerial + ", ioObsGeneral=" + ioObsGeneral
+		return "TInformacionObligatoria [ioSerial=" + ioSerial + ", ioObsGeneralMin=" + ioObsGeneralMin
 				+ ", ioResponsableMin=" + ioResponsableMin + ", ioCargoMin=" + ioCargoMin + ", ioObsGenCont="
 				+ ioObsGenCont + ", ioResponsableCont=" + ioResponsableCont + ", ioCargoCont=" + ioCargoCont
 				+ ", ioFechaIo=" + ioFechaIo + ", ioFotoPath=" + ioFotoPath + "]";

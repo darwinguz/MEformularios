@@ -115,7 +115,7 @@ public class CeTemplate extends JFrame {
 		panelPrincipal.add(cabecera.getCabecera());
 		llenarCabecera(cabecera);
 
-		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(533, 50);
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(533, 50);
 		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {

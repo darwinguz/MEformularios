@@ -24,7 +24,7 @@ import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TLugarGeografico;
 import com.capa.negocios.ComponenteLGeografico;
 import com.capa.negocios.ServicioLGeografico;
-import com.capa.presentacion.InformacionObligatoriaV;
+import com.capa.presentacion.JPinformacionObligatoria;
 import com.capa.presentacion.JPcabecera;
 
 public class Utilitarios {
@@ -140,7 +140,7 @@ public class Utilitarios {
 		return resultado;
 	}
 
-	public static TInformacionObligatoria cargarInfoObligatoria(InformacionObligatoriaV jpInfo) {
+	public static TInformacionObligatoria cargarInfoObligatoria(JPinformacionObligatoria jpInfo) {
 		return new TInformacionObligatoria(jpInfo.getTxtObsGenMin().getText(), jpInfo.getTxtRespMinisterio().getText(),
 				jpInfo.getTxtCargoMin().getText(), jpInfo.getTxtObsGenCont().getText(),
 				jpInfo.getTxtRespContratista().getText(), jpInfo.getTxtCargoCont().getText(),

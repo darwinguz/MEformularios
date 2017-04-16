@@ -608,7 +608,7 @@ public class WFTemplate extends JFrame {
 		lblpatchPanel.setBounds(101, 334, 203, 39);
 		panel_1.add(lblpatchPanel);
 
-		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(865, 325);
+		JPinformacionObligatoria informacionObligatoriaV = new JPinformacionObligatoria(865, 325);
 		informacionObligatoriaV.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {

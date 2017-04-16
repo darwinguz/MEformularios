@@ -1564,7 +1564,7 @@ public class MaTemplate extends JFrame {
 		contentPane.add(cabecera.getCabecera());
 		llenarCabecera(cabecera);
 
-		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(860, 312);
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(860, 312);
 		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
 
 			@Override

@@ -210,7 +210,7 @@ public class MtTemplate extends JFrame {
 		tabbedPane.addTab(ficha.getFiDescripcion(), null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
 
-		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(860, 312);
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(860, 312);
 		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
 
 			@Override

@@ -62,7 +62,7 @@ public class FichaD extends JFrame {
 	private String pathFoto10;
 
 	ServicioFichaD srvFicha = new ComponenteFichaD();
-	ServicioInfoObligatoria srvInfoOb = new ComponenteInfoObligatoria();
+	ServicioInfoObligatoria srvIObligatoria = new ComponenteInfoObligatoria();
 	private TInformacionObligatoria infoObl;
 
 	public FichaD() {
@@ -392,11 +392,10 @@ public class FichaD extends JFrame {
 		panel_2.setBounds(703, 186, 582, 489);
 		contentPane.add(panel_2);
 
-		InformacionObligatoriaV jpIObligatoria = new InformacionObligatoriaV(165, 280);
+		JPinformacionObligatoria jpIObligatoria = new JPinformacionObligatoria(165, 280);
 		jpIObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jpIObligatoria.setPathFotoIO(Utilitarios.getPathImagen());
-				System.out.println(jpIObligatoria.toString());
 				infoObl = cargarInfoObligatoria(jpIObligatoria);
 			}
 		});
@@ -405,8 +404,9 @@ public class FichaD extends JFrame {
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				srvInfoOb.crear(infoObl);
-
+				srvIObligatoria.crear(infoObl);
+				infoObl.setIoSerial(srvIObligatoria.serialInfoOblMax());
+			
 				if (validarInfo(infoObl)) {
 
 					List<TFichaD> detallesFicha = getListaFichaD(infoObl);
@@ -414,6 +414,7 @@ public class FichaD extends JFrame {
 					for (TFichaD tFichaD : detallesFicha) {
 						srvFicha.crear(tFichaD);
 					}
+
 					new AlInicio().setVisible(true);
 					dispose();
 

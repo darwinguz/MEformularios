@@ -14,7 +14,7 @@ import javax.swing.border.TitledBorder;
 
 import com.toedter.calendar.JDateChooser;
 
-public class InformacionObligatoriaV {
+public class JPinformacionObligatoria {
 
 	private JPanel pnlInformacionObl;
 
@@ -30,7 +30,7 @@ public class InformacionObligatoriaV {
 
 	private JButton btnInsertarFoto;
 
-	public InformacionObligatoriaV(int x, int y) {
+	public JPinformacionObligatoria(int x, int y) {
 		pnlInformacionObl = new JPanel();
 		pnlInformacionObl
 				.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Informaci\u00F3n Obligatoria",

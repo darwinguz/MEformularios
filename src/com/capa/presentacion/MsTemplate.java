@@ -266,7 +266,7 @@ public class MsTemplate extends JFrame {
 		contentPane.add(panel1);
 		panel1.setLayout(null);
 
-		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(858, 380);
+		JPinformacionObligatoria informacionObligatoriaV = new JPinformacionObligatoria(858, 380);
 		panel1.add(informacionObligatoriaV.getPnlInformacionObl());
 
 		JLabel lblKitElctrico = new JLabel("KIT EL\u00C9CTRICO");

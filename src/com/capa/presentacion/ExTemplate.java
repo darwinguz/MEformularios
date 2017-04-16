@@ -1044,7 +1044,7 @@ public class ExTemplate extends JFrame {
 		lblSMTObsRef.setBounds(267, 1, 143, 14);
 		pnlSMT.add(lblSMTObsRef);
 
-		InformacionObligatoriaV pnlInformacionOblig = new InformacionObligatoriaV(865, 325);
+		JPinformacionObligatoria pnlInformacionOblig = new JPinformacionObligatoria(865, 325);
 		pnlInformacionOblig.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {

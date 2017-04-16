@@ -1402,7 +1402,7 @@ public class MbTemplate extends JFrame {
 		label_9.setBounds(267, 1, 143, 14);
 		panel_31.add(label_9);
 
-		InformacionObligatoriaV pnlInformacionOblig = new InformacionObligatoriaV(865, 325);
+		JPinformacionObligatoria pnlInformacionOblig = new JPinformacionObligatoria(865, 325);
 		pnlInformacionOblig.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {

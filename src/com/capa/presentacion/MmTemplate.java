@@ -35,7 +35,7 @@ import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
-import com.capa.presentacion.InformacionObligatoriaV;
+import com.capa.presentacion.JPinformacionObligatoria;
 
 public class MmTemplate extends JFrame {
 	// public MMTemplate() {
@@ -2017,7 +2017,7 @@ public class MmTemplate extends JFrame {
 		validarDigitos(txtCantidad491);
 		validarDigitos(txtCantidad501);
 
-		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(860, 300);
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(860, 300);
 		panelLab2.add(infoObligatoria.getPnlInformacionObl());
 
 		addWindowListener(new WindowAdapter() {

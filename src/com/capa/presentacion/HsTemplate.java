@@ -298,7 +298,7 @@ public class HsTemplate extends JFrame {
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
 
-		InformacionObligatoriaV infoObligatoria = new InformacionObligatoriaV(870, 482);
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(870, 482);
 		contentPane.add(infoObligatoria.getPnlInformacionObl());
 
 		llenarCabecera(cabecera);

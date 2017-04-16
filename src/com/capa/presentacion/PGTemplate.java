@@ -2696,7 +2696,7 @@ public class PGTemplate extends JFrame {
 		txtObs72.setBounds(1146, 77, 133, 20);
 		panel2.add(txtObs72);
 
-		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(865, 325);
+		JPinformacionObligatoria informacionObligatoriaV = new JPinformacionObligatoria(865, 325);
 		panel2.add(informacionObligatoriaV.getPnlInformacionObl());
 
 		validarDigitos(txtCantidad01);

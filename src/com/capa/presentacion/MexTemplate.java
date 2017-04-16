@@ -758,7 +758,7 @@ public class MexTemplate extends JFrame {
 		label_11.setBounds(267, 1, 143, 14);
 		panel_19.add(label_11);
 
-		InformacionObligatoriaV informacionObligatoriaV = new InformacionObligatoriaV(858, 295);
+		JPinformacionObligatoria informacionObligatoriaV = new JPinformacionObligatoria(858, 295);
 		informacionObligatoriaV.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
