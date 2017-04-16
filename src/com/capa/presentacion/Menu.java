@@ -664,7 +664,7 @@ public class Menu extends JFrame {
 		JButton btnEXkitElec = new JButton("<html><body><p align=\"center\">EX kit<br>Elec</body></html>");
 		btnEXkitElec.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new ExTemplate().setVisible(true);
+				new ExTemplate(servicioFicha.buscarFormulario("EX-1")).setVisible(true);
 				dispose();
 			}
 		});
