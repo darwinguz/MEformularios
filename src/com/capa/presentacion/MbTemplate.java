@@ -2,9 +2,10 @@ package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
-import static com.capa.util.Validaciones.validarInfo;
+import static com.capa.util.Validaciones.*;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -18,8 +19,11 @@ import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.util.Utilitarios;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -31,6 +35,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -208,6 +213,8 @@ public class MbTemplate extends JFrame {
 	TFicha ficha;
 	ServicioFicha servFicha;
 
+	private String fotoInfoObl;
+
 	/**
 	 * Launch the application.
 	 */
@@ -295,6 +302,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad71.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad71.setColumns(10);
 		panel_3.add(txtCantidad71);
+		validarDigitos(txtCantidad71);
 
 		txtCantidad80 = new JTextField();
 		txtCantidad80.setText("1");
@@ -307,6 +315,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad81.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad81.setColumns(10);
 		panel_3.add(txtCantidad81);
+		validarDigitos(txtCantidad81);
 
 		txtCantidad90 = new JTextField();
 		txtCantidad90.setText("1");
@@ -319,6 +328,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad91.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad91.setColumns(10);
 		panel_3.add(txtCantidad91);
+		validarDigitos(txtCantidad91);
 
 		JPanel panel_4 = new JPanel();
 		panel_4.setBounds(0, 11, 55, 62);
@@ -336,6 +346,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad51.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad51.setColumns(10);
 		panel_4.add(txtCantidad51);
+		validarDigitos(txtCantidad51);
 
 		txtCantidad60 = new JTextField();
 		txtCantidad60.setText("2");
@@ -348,6 +359,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad61.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad61.setColumns(10);
 		panel_4.add(txtCantidad61);
+		validarDigitos(txtCantidad61);
 
 		JPanel panel_5 = new JPanel();
 		panel_5.setLayout(null);
@@ -473,6 +485,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad01.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad01.setColumns(10);
 		panel_27.add(txtCantidad01);
+		validarDigitos(txtCantidad01);
 
 		txtCantidad10 = new JTextField();
 		txtCantidad10.setText("2");
@@ -485,6 +498,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad11.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad11.setColumns(10);
 		panel_27.add(txtCantidad11);
+		validarDigitos(txtCantidad11);
 
 		txtCantidad20 = new JTextField();
 		txtCantidad20.setText("1");
@@ -497,6 +511,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad21.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad21.setColumns(10);
 		panel_27.add(txtCantidad21);
+		validarDigitos(txtCantidad21);
 
 		txtCantidad30 = new JTextField();
 		txtCantidad30.setText("1");
@@ -509,6 +524,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad31.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad31.setColumns(10);
 		panel_27.add(txtCantidad31);
+		validarDigitos(txtCantidad31);
 
 		txtCantidad40 = new JTextField();
 		txtCantidad40.setText("1");
@@ -521,6 +537,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad41.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad41.setColumns(10);
 		panel_27.add(txtCantidad41);
+		validarDigitos(txtCantidad41);
 
 		JPanel panel_28 = new JPanel();
 		panel_28.setBounds(267, 17, 143, 113);
@@ -595,6 +612,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad141.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad141.setColumns(10);
 		panel_49.add(txtCantidad141);
+		validarDigitos(txtCantidad141);
 
 		panel_48 = new JPanel();
 		panel_48.setBounds(0, 0, 55, 81);
@@ -612,6 +630,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad101.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad101.setColumns(10);
 		panel_48.add(txtCantidad101);
+		validarDigitos(txtCantidad101);
 
 		txtCantidad110 = new JTextField();
 		txtCantidad110.setText("3");
@@ -624,6 +643,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad111.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad111.setColumns(10);
 		panel_48.add(txtCantidad111);
+		validarDigitos(txtCantidad111);
 
 		txtCantidad120 = new JTextField();
 		txtCantidad120.setText("3");
@@ -636,6 +656,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad121.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad121.setColumns(10);
 		panel_48.add(txtCantidad121);
+		validarDigitos(txtCantidad121);
 
 		JPanel panel_54 = new JPanel();
 		panel_54.setBounds(0, 92, 55, 27);
@@ -653,6 +674,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad131.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad131.setColumns(10);
 		panel_54.add(txtCantidad131);
+		validarDigitos(txtCantidad131);
 
 		JPanel panel_50 = new JPanel();
 		panel_50.setLayout(null);
@@ -763,6 +785,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad231.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad231.setColumns(10);
 		panel_13.add(txtCantidad231);
+		validarDigitos(txtCantidad231);
 
 		txtCantida240 = new JTextField();
 		txtCantida240.setText("6");
@@ -775,6 +798,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad241.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad241.setColumns(10);
 		panel_13.add(txtCantidad241);
+		validarDigitos(txtCantidad241);
 
 		txtCantidad250 = new JTextField();
 		txtCantidad250.setText("6");
@@ -787,6 +811,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad251.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad251.setColumns(10);
 		panel_13.add(txtCantidad251);
+		validarDigitos(txtCantidad251);
 
 		JPanel panel_14 = new JPanel();
 		panel_14.setBounds(267, 17, 143, 67);
@@ -861,6 +886,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad151.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad151.setColumns(10);
 		panel_17.add(txtCantidad151);
+		validarDigitos(txtCantidad151);
 
 		txtCantidad160 = new JTextField();
 		txtCantidad160.setText("177");
@@ -873,6 +899,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad161.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad161.setColumns(10);
 		panel_17.add(txtCantidad161);
+		validarDigitos(txtCantidad161);
 
 		txtCantidad170 = new JTextField();
 		txtCantidad170.setText("9");
@@ -885,6 +912,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad171.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad171.setColumns(10);
 		panel_17.add(txtCantidad171);
+		validarDigitos(txtCantidad171);
 
 		txtCantidad180 = new JTextField();
 		txtCantidad180.setText("8");
@@ -897,6 +925,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad181.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad181.setColumns(10);
 		panel_17.add(txtCantidad181);
+		validarDigitos(txtCantidad181);
 
 		panel_18 = new JPanel();
 		panel_18.setBounds(267, 17, 143, 95);
@@ -975,6 +1004,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad191.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad191.setColumns(10);
 		panel_21.add(txtCantidad191);
+		validarDigitos(txtCantidad191);
 
 		txtCantidad200 = new JTextField();
 		txtCantidad200.setText("1");
@@ -987,6 +1017,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad201.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad201.setColumns(10);
 		panel_21.add(txtCantidad201);
+		validarDigitos(txtCantidad201);
 
 		txtCantidad210 = new JTextField();
 		txtCantidad210.setText("1");
@@ -999,6 +1030,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad211.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad211.setColumns(10);
 		panel_21.add(txtCantidad211);
+		validarDigitos(txtCantidad211);
 
 		txtCantidad220 = new JTextField();
 		txtCantidad220.setText("3");
@@ -1011,6 +1043,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad221.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad221.setColumns(10);
 		panel_21.add(txtCantidad221);
+		validarDigitos(txtCantidad221);
 
 		panel_22 = new JPanel();
 		panel_22.setBounds(267, 17, 143, 95);
@@ -1109,6 +1142,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad271.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad271.setColumns(10);
 		panel_29.add(txtCantidad271);
+		validarDigitos(txtCantidad271);
 
 		txtCantidad280 = new JTextField();
 		txtCantidad280.setText("2");
@@ -1121,6 +1155,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad281.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad281.setColumns(10);
 		panel_29.add(txtCantidad281);
+		validarDigitos(txtCantidad281);
 
 		txtCantidad290 = new JTextField();
 		txtCantidad290.setText("2");
@@ -1133,6 +1168,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad291.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad291.setColumns(10);
 		panel_29.add(txtCantidad291);
+		validarDigitos(txtCantidad291);
 
 		txtCantidad300 = new JTextField();
 		txtCantidad300.setText("20");
@@ -1145,6 +1181,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad301.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad301.setColumns(10);
 		panel_29.add(txtCantidad301);
+		validarDigitos(txtCantidad301);
 
 		txtCantidad310 = new JTextField();
 		txtCantidad310.setText("6");
@@ -1157,6 +1194,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad311.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad311.setColumns(10);
 		panel_29.add(txtCantidad311);
+		validarDigitos(txtCantidad311);
 
 		txtCantidad320 = new JTextField();
 		txtCantidad320.setText("40");
@@ -1169,6 +1207,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad321.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad321.setColumns(10);
 		panel_29.add(txtCantidad321);
+		validarDigitos(txtCantidad321);
 
 		txtCantidad330 = new JTextField();
 		txtCantidad330.setText("40");
@@ -1181,6 +1220,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad331.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad331.setColumns(10);
 		panel_29.add(txtCantidad331);
+		validarDigitos(txtCantidad331);
 
 		txtCantidad340 = new JTextField();
 		txtCantidad340.setText("2");
@@ -1193,6 +1233,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad341.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad341.setColumns(10);
 		panel_29.add(txtCantidad341);
+		validarDigitos(txtCantidad341);
 
 		txtCantidad350 = new JTextField();
 		txtCantidad350.setText("2");
@@ -1205,6 +1246,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad351.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad351.setColumns(10);
 		panel_29.add(txtCantidad351);
+		validarDigitos(txtCantidad351);
 
 		txtCantidad360 = new JTextField();
 		txtCantidad360.setText("20");
@@ -1217,6 +1259,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad361.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad361.setColumns(10);
 		panel_29.add(txtCantidad361);
+		validarDigitos(txtCantidad361);
 
 		txtCantidad370 = new JTextField();
 		txtCantidad370.setText("6");
@@ -1229,6 +1272,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad371.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad371.setColumns(10);
 		panel_29.add(txtCantidad371);
+		validarDigitos(txtCantidad371);
 
 		txtCantidad380 = new JTextField();
 		txtCantidad380.setText("40");
@@ -1241,6 +1285,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad381.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad381.setColumns(10);
 		panel_29.add(txtCantidad381);
+		validarDigitos(txtCantidad381);
 
 		panel_30 = new JPanel();
 		panel_30.setBounds(267, 17, 143, 250);
@@ -1338,6 +1383,7 @@ public class MbTemplate extends JFrame {
 		txtCantidad261.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad261.setColumns(10);
 		panel_33.add(txtCantidad261);
+		validarDigitos(txtCantidad261);
 
 		JPanel panel_34 = new JPanel();
 		panel_34.setBounds(267, 17, 143, 25);
@@ -1357,6 +1403,13 @@ public class MbTemplate extends JFrame {
 		panel_31.add(label_9);
 
 		InformacionObligatoriaV pnlInformacionOblig = new InformacionObligatoriaV(865, 325);
+		pnlInformacionOblig.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				fotoInfoObl = getPathImagen();
+			}
+		});
+		panel.add(pnlInformacionOblig.getPnlInformacionObl());
 
 		llenarFicha();
 		pnlCabecera.getBtnRegistrar().addActionListener(new ActionListener() {
@@ -1365,12 +1418,27 @@ public class MbTemplate extends JFrame {
 
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
 				infor = cargarInfoObligatoria(pnlInformacionOblig);
+				infor.setIoFotoPath(fotoInfoObl);
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
+					if (detallesFicha == null) {
+						JOptionPane.showMessageDialog(null,
+								"ERROR: Verificar que los registros no se encuentren VACÍOS", "Mensaje de Error",
+								JOptionPane.ERROR_MESSAGE);
+						return;
+					}
 					if (registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
 						servFicha.guardarFormulario(detallesFicha);
+						HashMap<String, Object> parametros = new HashMap<String, Object>();
+						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+						parametros.put("serial_ficha", ficha.getFiSerial());
+
+						Reporte reporte = new Reporte("Reporte MB", 280, 10, 850, 750);
+						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
+								Query.getMysql().getConexion());
+						reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
 					} else {
@@ -1392,8 +1460,6 @@ public class MbTemplate extends JFrame {
 				return true;
 			}
 		});
-
-		panel.add(pnlInformacionOblig.getPnlInformacionObl());
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				new Menu().setVisible(true);
