@@ -122,7 +122,6 @@ public class Query {
 	}
 
 	public static void insertarGenerico(String query, Object[] objects) {
-		FileInputStream fileIS = null;
 		PreparedStatement preparedStmt = null;
 
 		try {
@@ -132,16 +131,21 @@ public class Query {
 			for (int i = 0; i < objects.length; i++) {
 				if (objects[i] instanceof java.lang.String) {
 					String string = (String) objects[i];
-					String sub = string.substring(0, 3);
-					if (sub.equals("C:\\") || sub.equals("D:\\") || sub.equals("E:\\") || sub.equals("F:\\")
-							|| sub.equals("G:\\") || sub.equals("H:\\")) {
-						// System.out.println("foto");
-						File file = new File(string);
-						fileIS = new FileInputStream(file);
-						preparedStmt.setBinaryStream(i + 1, fileIS, (long) file.length());
-					} else {
-						// System.out.println("string");
+					if (string.length() < 3) {
+						// System.out.println("string<3");
 						preparedStmt.setString(i + 1, string);
+					} else {
+						String sub = string.substring(0, 3);
+						if (sub.equals("C:\\") || sub.equals("D:\\") || sub.equals("E:\\") || sub.equals("F:\\")
+								|| sub.equals("G:\\") || sub.equals("H:\\")) {
+							// System.out.println("foto");
+							File file = new File(string);
+							FileInputStream fileIS = new FileInputStream(file);
+							preparedStmt.setBinaryStream(i + 1, fileIS, (long) file.length());
+						} else {
+							// System.out.println("string");
+							preparedStmt.setString(i + 1, string);
+						}
 					}
 				} else if (objects[i] instanceof java.lang.Integer) {
 					Integer integer = (Integer) objects[i];
@@ -161,7 +165,6 @@ public class Query {
 		} finally {
 			try {
 				preparedStmt.close();
-				// fileIS.close();
 			} catch (Exception ex) {
 				Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
 			}
