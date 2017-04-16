@@ -1566,6 +1566,7 @@ public class MaTemplate extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				fotoInfoObl = getPathImagen();
+				System.out.println(fotoInfoObl);
 			}
 		});
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
