@@ -4,7 +4,6 @@ import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
-import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -20,7 +19,6 @@ import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -117,8 +115,8 @@ public class FichaD extends JFrame {
 				// Información Obligatoria ");
 				// }
 
-				getListaFichaD();
-				System.out.println("Registrar cabecera!  " + getListaFichaD());
+				getListaFichaD(infOblig);
+				System.out.println("Registrar cabecera!  " + getListaFichaD(infOblig));
 			}
 		});
 
@@ -451,28 +449,28 @@ public class FichaD extends JFrame {
 
 	}
 
-	public List<TFichaD> getListaFichaD() {
+	public List<TFichaD> getListaFichaD(TInformacionObligatoria infOblig) {
 		List<TFichaD> listasD = new ArrayList<TFichaD>();
 		listasD.add(new TFichaD(gettCabecera(), txtDescripcion1.getText(),
-				/* traer desde db */0, pathFoto1));
+				/* traer desde db */0, pathFoto1, infOblig));
 		listasD.add(new TFichaD(gettCabecera(), txtDescripcion2.getText(),
-				/* traer desde db */0, pathFoto2));
+				/* traer desde db */0, pathFoto2, infOblig));
 		listasD.add(new TFichaD(gettCabecera(), txtDescripcion3.getText(),
-				/* traer desde db */0, pathFoto3));
+				/* traer desde db */0, pathFoto3, infOblig));
 		listasD.add(new TFichaD(gettCabecera(), txtDescripcion4.getText(),
-				/* traer desde db */0, pathFoto4));
+				/* traer desde db */0, pathFoto4, infOblig));
 		listasD.add(new TFichaD(gettCabecera(), txtDescripcion5.getText(),
-				/* traer desde db */0, pathFoto5));
+				/* traer desde db */0, pathFoto5, infOblig));
 		listasD.add(new TFichaD(gettCabecera(), txtDescripcion6.getText(),
-				/* traer desde db */0, pathFoto6));
+				/* traer desde db */0, pathFoto6, infOblig));
 		listasD.add(new TFichaD(gettCabecera(), txtDescripcion7.getText(),
-				/* traer desde db */0, pathFoto7));
+				/* traer desde db */0, pathFoto7, infOblig));
 		listasD.add(new TFichaD(gettCabecera(), txtDescripcion8.getText(),
-				/* traer desde db */0, pathFoto8));
+				/* traer desde db */0, pathFoto8, infOblig));
 		listasD.add(new TFichaD(gettCabecera(), txtDescripcion9.getText(),
-				/* traer desde db */0, pathFoto9));
+				/* traer desde db */0, pathFoto9, infOblig));
 		listasD.add(new TFichaD(gettCabecera(), txtDescripcion10.getText(),
-				/* traer desde db */0, pathFoto10));
+				/* traer desde db */0, pathFoto10, infOblig));
 		return listasD;
 	}
 
