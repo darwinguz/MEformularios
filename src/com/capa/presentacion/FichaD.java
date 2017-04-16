@@ -63,6 +63,7 @@ public class FichaD extends JFrame {
 
 	ServicioFichaD srvFicha = new ComponenteFichaD();
 	ServicioInfoObligatoria srvInfoOb = new ComponenteInfoObligatoria();
+	private TInformacionObligatoria infoObl;
 
 	public FichaD() {
 		setTitle("EVALUACIÓN D");
@@ -395,23 +396,18 @@ public class FichaD extends JFrame {
 		jpIObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jpIObligatoria.setPathFotoIO(Utilitarios.getPathImagen());
+				System.out.println(jpIObligatoria.toString());
+				infoObl = cargarInfoObligatoria(jpIObligatoria);
 			}
 		});
-
-		TInformacionObligatoria infoObl = cargarInfoObligatoria(jpIObligatoria);
-
 		panel_2.add(jpIObligatoria.getPnlInformacionObl());
 
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				srvInfoOb.crear(infoObl);
-				infoObl.setIoSerial(srvInfoOb.serialInfoOblMax());
 
 				if (validarInfo(infoObl)) {
-					System.out.println(infoObl);
-					
-					srvInfoOb.crear(infoObl);
-					infoObl.setIoSerial(srvInfoOb.serialInfoOblMax());
 
 					List<TFichaD> detallesFicha = getListaFichaD(infoObl);
 

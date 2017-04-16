@@ -132,28 +132,68 @@ public class InformacionObligatoriaV {
 		pnlInformacionObl.add(btnInsertarFoto);
 	}
 
+	public JPanel getPnlInformacionObl() {
+		return pnlInformacionObl;
+	}
+
+	public void setPnlInformacionObl(JPanel pnlInformacionObl) {
+		this.pnlInformacionObl = pnlInformacionObl;
+	}
+
 	public JTextField getTxtObsGenMin() {
 		return txtObsGenMin;
 	}
 
-	public void setTxtObsGenMin(JTextField txtObsGenDer) {
-		this.txtObsGenMin = txtObsGenDer;
+	public void setTxtObsGenMin(JTextField txtObsGenMin) {
+		this.txtObsGenMin = txtObsGenMin;
 	}
 
-	public JTextField getTxtResponsableContratista() {
+	public JTextField getTxtObsGenCont() {
+		return txtObsGenCont;
+	}
+
+	public void setTxtObsGenCont(JTextField txtObsGenCont) {
+		this.txtObsGenCont = txtObsGenCont;
+	}
+
+	public JTextField getTxtRespMinisterio() {
+		return txtRespMinisterio;
+	}
+
+	public void setTxtRespMinisterio(JTextField txtRespMinisterio) {
+		this.txtRespMinisterio = txtRespMinisterio;
+	}
+
+	public JTextField getTxtRespContratista() {
 		return txtRespContratista;
 	}
 
-	public void setTxtResponsableContratista(JTextField txtResponsableContratista) {
-		this.txtRespContratista = txtResponsableContratista;
+	public void setTxtRespContratista(JTextField txtRespContratista) {
+		this.txtRespContratista = txtRespContratista;
 	}
 
 	public JTextField getTxtCargoMin() {
 		return txtCargoMin;
 	}
 
-	public void setTxtCargoMin(JTextField txtCargoDer) {
-		this.txtCargoMin = txtCargoDer;
+	public void setTxtCargoMin(JTextField txtCargoMin) {
+		this.txtCargoMin = txtCargoMin;
+	}
+
+	public JTextField getTxtCargoCont() {
+		return txtCargoCont;
+	}
+
+	public void setTxtCargoCont(JTextField txtCargoCont) {
+		this.txtCargoCont = txtCargoCont;
+	}
+
+	public String getPathFotoIO() {
+		return pathFotoIO;
+	}
+
+	public void setPathFotoIO(String pathFotoIO) {
+		this.pathFotoIO = pathFotoIO;
 	}
 
 	public JDateChooser getDateFechaIO() {
@@ -164,38 +204,6 @@ public class InformacionObligatoriaV {
 		this.dateFechaIO = dateFechaIO;
 	}
 
-	public JTextField getTxtObsGenCont() {
-		return txtObsGenCont;
-	}
-
-	public void setTxtObsGenCont(JTextField txtObsGenIzq) {
-		this.txtObsGenCont = txtObsGenIzq;
-	}
-
-	public JTextField getTxtResponsableMineduc() {
-		return txtRespMinisterio;
-	}
-
-	public void setTxtResponsableMineduc(JTextField txtResponsableMineduc) {
-		this.txtRespMinisterio = txtResponsableMineduc;
-	}
-
-	public JTextField getTxtCargoIzq() {
-		return txtCargoCont;
-	}
-
-	public void setTxtCargoIzq(JTextField txtCargoIzq) {
-		this.txtCargoCont = txtCargoIzq;
-	}
-
-	public JPanel getPnlInformacionObl() {
-		return pnlInformacionObl;
-	}
-
-	public void setPnlInformacionObl(JPanel pnlInformacionObl) {
-		this.pnlInformacionObl = pnlInformacionObl;
-	}
-
 	public JButton getBtnInsertarFoto() {
 		return btnInsertarFoto;
 	}
@@ -204,12 +212,17 @@ public class InformacionObligatoriaV {
 		this.btnInsertarFoto = btnInsertarFoto;
 	}
 
-	public String getPathFotoIO() {
-		return pathFotoIO;
-	}
-
-	public void setPathFotoIO(String pathFotoIO) {
-		this.pathFotoIO = pathFotoIO;
+	@Override
+	public String toString() {
+		try {
+			return "InformacionObligatoriaV [txtObsGenMin=" + txtObsGenMin.getText() + ", txtObsGenCont="
+					+ txtObsGenCont.getText() + ", txtRespMinisterio=" + txtRespMinisterio.getText()
+					+ ", txtRespContratista=" + txtRespContratista.getText() + ", txtCargoMin=" + txtCargoMin.getText()
+					+ ", txtCargoCont=" + txtCargoCont.getText() + ", pathFotoIO=" + pathFotoIO + ", dateFechaIO="
+					+ dateFechaIO.getDate() + "]";
+		} catch (Exception e) {
+			return "error";
+		}
 	}
 
 }
