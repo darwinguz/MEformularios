@@ -26,12 +26,29 @@ public class Calculos {
 		double valorEjecutado = 0.0, relacion = 0.0;
 		int sumaCantidadLimite = 0, sumaCantidadEjecutada = 0;
 		for (int i = 1; i < ficha.getCantidadTotal(); i++) {
-			objetoFicha = servicioFicha.buscarFormulario(nombreModulo + "-" + i);
-			listaDetalles = servicioFicha.detallesFicha(gettCabecera(), objetoFicha);
-			for (TdetalleFicha detalle : listaDetalles) {
-				sumaCantidadLimite += detalle.getDetCantidadLimite();
-				sumaCantidadEjecutada += detalle.getDetCantidadEjecutada();
+			try {
+				objetoFicha = servicioFicha.buscarFormulario(nombreModulo + "-" + i);
+				listaDetalles = servicioFicha.detallesFicha(gettCabecera(), objetoFicha);
+				for (TdetalleFicha detalle : listaDetalles) {
+					sumaCantidadLimite += detalle.getDetCantidadLimite();
+					sumaCantidadEjecutada += detalle.getDetCantidadEjecutada();
+				}
+				if (nombreModulo.equals("EX")) {
+					for (int k = 15; k <= 21; k++) {
+						sumaCantidadLimite -= listaDetalles.get(k).getDetCantidadLimite();
+						sumaCantidadEjecutada -= listaDetalles.get(k).getDetCantidadEjecutada();
+					}
+				}
+			} catch (Exception e) {
+				// TODO: handle exception
+				objetoFicha = servicioFicha.buscarFormulario("EX-1");
+				listaDetalles = servicioFicha.detallesFicha(gettCabecera(), objetoFicha);
+				for (int j = 15; j <= 21; j++) {
+					sumaCantidadLimite = listaDetalles.get(j).getDetCantidadLimite();
+					sumaCantidadEjecutada = listaDetalles.get(j).getDetCantidadEjecutada();
+				}
 			}
+
 			relacion = sumaCantidadEjecutada / sumaCantidadLimite;
 			valorEjecutado += relacion;
 		}
@@ -47,4 +64,7 @@ public class Calculos {
 		calculoPonderado = redondearDecimales(calculoPonderado, 2);
 		return 0.0;
 	}
+
+	// falta métodos para calcular avance total de ejecutadas a la fecha y % de
+	// avance
 }
