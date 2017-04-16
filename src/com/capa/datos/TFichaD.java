@@ -8,9 +8,10 @@ public class TFichaD implements java.io.Serializable {
 	private Integer fDserial;
 	private TCabecera tCabecera;
 	private String fDescripcion;
-	private int fDactualizacionN;
+	private Integer fDactualizacionN;
 	private String fDfotoPath;
 	private Image fDfotoImage;
+	private TInformacionObligatoria tInformacionObl;
 
 	public TFichaD() {
 	}
@@ -20,12 +21,14 @@ public class TFichaD implements java.io.Serializable {
 		this.fDfotoPath = path;
 	}
 
-	public TFichaD(TCabecera tCabecera, String fDescripcion, int fDactualizacionN, String fDfotoPath) {
+	public TFichaD(TCabecera tCabecera, String fDescripcion, int fDactualizacionN, String fDfotoPath,
+			TInformacionObligatoria tInformacionObl) {
 		super();
 		this.tCabecera = tCabecera;
 		this.fDescripcion = fDescripcion;
 		this.fDactualizacionN = fDactualizacionN;
 		this.fDfotoPath = fDfotoPath;
+		this.tInformacionObl = tInformacionObl;
 	}
 
 	public Integer getfDserial() {
@@ -74,6 +77,14 @@ public class TFichaD implements java.io.Serializable {
 
 	public void setfDfotoImage(Image fDfotoImage) {
 		this.fDfotoImage = fDfotoImage;
+	}
+
+	public TInformacionObligatoria gettInformacionObl() {
+		return tInformacionObl;
+	}
+
+	public void settInformacionObl(TInformacionObligatoria tInformacionObl) {
+		this.tInformacionObl = tInformacionObl;
 	}
 
 	@Override

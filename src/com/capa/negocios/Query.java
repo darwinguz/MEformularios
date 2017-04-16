@@ -121,6 +121,53 @@ public class Query {
 		}
 	}
 
+	public static void insertarGenerico(String query, Object[] objects) {
+		FileInputStream fileIS = null;
+		PreparedStatement preparedStmt = null;
+
+		try {
+			mysql.getConexion().setAutoCommit(false);
+			preparedStmt = mysql.getConexion().prepareStatement(query);
+
+			for (int i = 0; i < objects.length; i++) {
+				if (objects[i] instanceof java.lang.String) {
+					String string = (String) objects[i];
+					String sub = string.substring(0, 3);
+					if (sub.equals("C:\\") || sub.equals("D:\\") || sub.equals("E:\\") || sub.equals("F:\\")
+							|| sub.equals("G:\\") || sub.equals("H:\\")) {
+						// System.out.println("foto");
+						File file = new File(string);
+						fileIS = new FileInputStream(file);
+						preparedStmt.setBinaryStream(i + 1, fileIS, (long) file.length());
+					} else {
+						// System.out.println("string");
+						preparedStmt.setString(i + 1, string);
+					}
+				} else if (objects[i] instanceof java.lang.Integer) {
+					Integer integer = (Integer) objects[i];
+					// System.out.println("integer");
+					preparedStmt.setInt(i + 1, integer);
+				} else {
+					System.err.println("ERROR: Tipo de dato desconocido!");
+				}
+			}
+
+			preparedStmt.executeUpdate();
+			mysql.getConexion().commit();
+		} catch (
+
+		Exception ex) {
+			Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
+		} finally {
+			try {
+				preparedStmt.close();
+				// fileIS.close();
+			} catch (Exception ex) {
+				Logger.getLogger(Query.class.getName()).log(Level.SEVERE, null, ex);
+			}
+		}
+	}
+
 	public static void insertar(String insert, TFichaD fichaD) {
 		FileInputStream fis1 = null;
 		PreparedStatement ps = null;
