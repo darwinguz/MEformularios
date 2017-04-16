@@ -1,7 +1,5 @@
 package com.capa.presentacion;
 
-import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -9,30 +7,26 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import com.capa.datos.TFicha;
+import com.capa.datos.TInformacionObligatoria;
+import com.capa.negocios.ComponenteFicha;
+import com.capa.negocios.ServicioFicha;
+
 import static com.capa.util.Utilitarios.*;
+import javax.swing.SwingConstants;
 
 public class ExTemplate extends JFrame {
 
 	private static final long serialVersionUID = 2991536081432510517L;
 	private JPanel contentPane;
-	private JTextField txtAmie;
-	private JTextField txtCircuito;
-	private JTextField txtFechaEntrega;
-	private JTextField txtFechaInicioTrabajo;
-	private JTextField txtSector;
-	private JTextField txtProyecto;
-	private JTextField txtParroquia;
 	private JTextField txtTECantidad00;
 	private JTextField txtTECantidad01;
 	private JTextField txtTECantidad10;
@@ -185,68 +179,48 @@ public class ExTemplate extends JFrame {
 	private JTextField txtSMTObsRef0;
 	private JLabel lblSMTCantidad;
 	private JLabel lblSMTObsRef;
-	private JPanel pnlInformacionObl;
-	private JPanel pnlIOTexts2;
-	private JTextField txtObsGenDer;
-	private JTextField txtResponsableContratista;
-	private JTextField txtCargoDer;
-	private JTextField txtFecha;
-	private JPanel pnlIOTexts1;
-	private JTextField txtObsGenIzq;
-	private JTextField txtResponsableMineduc;
-	private JTextField txtCargoIzq;
-	private JPanel pnlIOEtiquetas1;
-	private JLabel lblObsGenIzq;
-	private JLabel lblResponsableMineduc;
-	private JLabel lblCargoIzq;
-	private JPanel pnlIOEtiquetas2;
-	private JLabel lblObsGenDer;
-	private JLabel lblResponsableContratista;
-	private JLabel lblCargoDer;
-	private JLabel lblFecha;
+
+	TInformacionObligatoria infor;
+	TFicha ficha;
+	ServicioFicha servFicha;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ExTemplate frame = new ExTemplate();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// ExTemplate frame = new ExTemplate();
+	// frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
 	 */
-	public ExTemplate() {
+	public ExTemplate(TFicha ficha) {
+		this.ficha = ficha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1318, 659);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
+		// setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		setTitle("EX");
+		setTitle(ficha.getFiNombre());
+		servFicha = new ComponenteFicha();
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
 		setContentPane(contentPane);
 		llenarCabecera(cabecera);
-		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("holis");
-			}
-		});
 
 		contentPane.setLayout(null);
 
@@ -307,74 +281,101 @@ public class ExTemplate extends JFrame {
 		pnlTECantidad.setLayout(new GridLayout(9, 2, 0, 0));
 
 		txtTECantidad00 = new JTextField();
+		txtTECantidad00.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTECantidad00.setEditable(false);
 		pnlTECantidad.add(txtTECantidad00);
 		txtTECantidad00.setColumns(10);
 
 		txtTECantidad01 = new JTextField();
+		txtTECantidad01.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTECantidad01.setColumns(10);
 		pnlTECantidad.add(txtTECantidad01);
 
 		txtTECantidad10 = new JTextField();
+		txtTECantidad10.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTECantidad10.setEditable(false);
 		txtTECantidad10.setColumns(10);
 		pnlTECantidad.add(txtTECantidad10);
 
 		txtTECantidad11 = new JTextField();
+		txtTECantidad11.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTECantidad11.setColumns(10);
 		pnlTECantidad.add(txtTECantidad11);
 
 		txtTECantidad20 = new JTextField();
+		txtTECantidad20.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTECantidad20.setEditable(false);
 		txtTECantidad20.setColumns(10);
 		pnlTECantidad.add(txtTECantidad20);
 
 		txtTECantidad21 = new JTextField();
+		txtTECantidad21.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTECantidad21.setColumns(10);
 		pnlTECantidad.add(txtTECantidad21);
 
 		txtTECantidad30 = new JTextField();
+		txtTECantidad30.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTECantidad30.setEditable(false);
 		txtTECantidad30.setColumns(10);
 		pnlTECantidad.add(txtTECantidad30);
 
 		txtTECantidad31 = new JTextField();
+		txtTECantidad31.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTECantidad31.setColumns(10);
 		pnlTECantidad.add(txtTECantidad31);
 
 		txtTECantidad40 = new JTextField();
+		txtTECantidad40.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTECantidad40.setEditable(false);
 		txtTECantidad40.setColumns(10);
 		pnlTECantidad.add(txtTECantidad40);
 
 		txtTECantidad41 = new JTextField();
+		txtTECantidad41.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTECantidad41.setColumns(10);
 		pnlTECantidad.add(txtTECantidad41);
 
 		txtTECantidad50 = new JTextField();
+		txtTECantidad50.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTECantidad50.setEditable(false);
 		txtTECantidad50.setColumns(10);
 		pnlTECantidad.add(txtTECantidad50);
 
 		txtTECantidad51 = new JTextField();
+		txtTECantidad51.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTECantidad51.setColumns(10);
 		pnlTECantidad.add(txtTECantidad51);
 
 		txtTECantidad60 = new JTextField();
+		txtTECantidad60.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTECantidad60.setEditable(false);
 		txtTECantidad60.setColumns(10);
 		pnlTECantidad.add(txtTECantidad60);
 
 		txtTECantidad61 = new JTextField();
+		txtTECantidad61.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTECantidad61.setColumns(10);
 		pnlTECantidad.add(txtTECantidad61);
 
 		txtTECantidad70 = new JTextField();
+		txtTECantidad70.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTECantidad70.setEditable(false);
 		txtTECantidad70.setColumns(10);
 		pnlTECantidad.add(txtTECantidad70);
 
 		txtTECantidad71 = new JTextField();
+		txtTECantidad71.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTECantidad71.setColumns(10);
 		pnlTECantidad.add(txtTECantidad71);
 
 		txtTECantidad80 = new JTextField();
+		txtTECantidad80.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTECantidad80.setEditable(false);
 		txtTECantidad80.setColumns(10);
 		pnlTECantidad.add(txtTECantidad80);
 
 		txtTECantidad81 = new JTextField();
+		txtTECantidad81.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTECantidad81.setColumns(10);
 		pnlTECantidad.add(txtTECantidad81);
 
@@ -467,50 +468,68 @@ public class ExTemplate extends JFrame {
 		pnlEDCantidad.setLayout(new GridLayout(6, 2, 0, 0));
 
 		txtEDCantidad00 = new JTextField();
+		txtEDCantidad00.setHorizontalAlignment(SwingConstants.CENTER);
+		txtEDCantidad00.setEditable(false);
 		txtEDCantidad00.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad00);
 
 		txtEDCantidad01 = new JTextField();
+		txtEDCantidad01.setHorizontalAlignment(SwingConstants.CENTER);
 		txtEDCantidad01.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad01);
 
 		txtEDCantidad10 = new JTextField();
+		txtEDCantidad10.setHorizontalAlignment(SwingConstants.CENTER);
+		txtEDCantidad10.setEditable(false);
 		txtEDCantidad10.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad10);
 
 		txtEDCantidad11 = new JTextField();
+		txtEDCantidad11.setHorizontalAlignment(SwingConstants.CENTER);
 		txtEDCantidad11.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad11);
 
 		txtEDCantidad20 = new JTextField();
+		txtEDCantidad20.setHorizontalAlignment(SwingConstants.CENTER);
+		txtEDCantidad20.setEditable(false);
 		txtEDCantidad20.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad20);
 
 		txtEDCantidad21 = new JTextField();
+		txtEDCantidad21.setHorizontalAlignment(SwingConstants.CENTER);
 		txtEDCantidad21.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad21);
 
 		txtEDCantidad30 = new JTextField();
+		txtEDCantidad30.setHorizontalAlignment(SwingConstants.CENTER);
+		txtEDCantidad30.setEditable(false);
 		txtEDCantidad30.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad30);
 
 		txtEDCantidad31 = new JTextField();
+		txtEDCantidad31.setHorizontalAlignment(SwingConstants.CENTER);
 		txtEDCantidad31.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad31);
 
 		txtEDCantidad40 = new JTextField();
+		txtEDCantidad40.setHorizontalAlignment(SwingConstants.CENTER);
+		txtEDCantidad40.setEditable(false);
 		txtEDCantidad40.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad40);
 
 		txtEDCantidad41 = new JTextField();
+		txtEDCantidad41.setHorizontalAlignment(SwingConstants.CENTER);
 		txtEDCantidad41.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad41);
 
 		txtEDCantidad50 = new JTextField();
+		txtEDCantidad50.setHorizontalAlignment(SwingConstants.CENTER);
+		txtEDCantidad50.setEditable(false);
 		txtEDCantidad50.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad50);
 
 		txtEDCantidad51 = new JTextField();
+		txtEDCantidad51.setHorizontalAlignment(SwingConstants.CENTER);
 		txtEDCantidad51.setColumns(10);
 		pnlEDCantidad.add(txtEDCantidad51);
 
@@ -594,58 +613,79 @@ public class ExTemplate extends JFrame {
 		pnlAECantidad.setLayout(new GridLayout(7, 2, 0, 0));
 
 		txtAECantidad00 = new JTextField();
+		txtAECantidad00.setHorizontalAlignment(SwingConstants.CENTER);
+		txtAECantidad00.setEditable(false);
 		txtAECantidad00.setColumns(10);
 		pnlAECantidad.add(txtAECantidad00);
 
 		txtAECantidad01 = new JTextField();
+		txtAECantidad01.setHorizontalAlignment(SwingConstants.CENTER);
 		txtAECantidad01.setColumns(10);
 		pnlAECantidad.add(txtAECantidad01);
 
 		txtAECantidad10 = new JTextField();
+		txtAECantidad10.setHorizontalAlignment(SwingConstants.CENTER);
+		txtAECantidad10.setEditable(false);
 		txtAECantidad10.setColumns(10);
 		pnlAECantidad.add(txtAECantidad10);
 
 		txtAECantidad11 = new JTextField();
+		txtAECantidad11.setHorizontalAlignment(SwingConstants.CENTER);
 		txtAECantidad11.setColumns(10);
 		pnlAECantidad.add(txtAECantidad11);
 
 		txtAECantidad20 = new JTextField();
+		txtAECantidad20.setHorizontalAlignment(SwingConstants.CENTER);
+		txtAECantidad20.setEditable(false);
 		txtAECantidad20.setColumns(10);
 		pnlAECantidad.add(txtAECantidad20);
 
 		txtAECantidad21 = new JTextField();
+		txtAECantidad21.setHorizontalAlignment(SwingConstants.CENTER);
 		txtAECantidad21.setColumns(10);
 		pnlAECantidad.add(txtAECantidad21);
 
 		txtAECantidad30 = new JTextField();
+		txtAECantidad30.setHorizontalAlignment(SwingConstants.CENTER);
+		txtAECantidad30.setEditable(false);
 		txtAECantidad30.setColumns(10);
 		pnlAECantidad.add(txtAECantidad30);
 
 		txtAECantidad31 = new JTextField();
+		txtAECantidad31.setHorizontalAlignment(SwingConstants.CENTER);
 		txtAECantidad31.setColumns(10);
 		pnlAECantidad.add(txtAECantidad31);
 
 		txtAECantidad40 = new JTextField();
+		txtAECantidad40.setHorizontalAlignment(SwingConstants.CENTER);
+		txtAECantidad40.setEditable(false);
 		txtAECantidad40.setColumns(10);
 		pnlAECantidad.add(txtAECantidad40);
 
 		txtAECantidad41 = new JTextField();
+		txtAECantidad41.setHorizontalAlignment(SwingConstants.CENTER);
 		txtAECantidad41.setColumns(10);
 		pnlAECantidad.add(txtAECantidad41);
 
 		txtAECantidad50 = new JTextField();
+		txtAECantidad50.setHorizontalAlignment(SwingConstants.CENTER);
+		txtAECantidad50.setEditable(false);
 		txtAECantidad50.setColumns(10);
 		pnlAECantidad.add(txtAECantidad50);
 
 		txtAECantidad51 = new JTextField();
+		txtAECantidad51.setHorizontalAlignment(SwingConstants.CENTER);
 		txtAECantidad51.setColumns(10);
 		pnlAECantidad.add(txtAECantidad51);
 
 		txtAECantidad60 = new JTextField();
+		txtAECantidad60.setHorizontalAlignment(SwingConstants.CENTER);
+		txtAECantidad60.setEditable(false);
 		txtAECantidad60.setColumns(10);
 		pnlAECantidad.add(txtAECantidad60);
 
 		txtAECantidad61 = new JTextField();
+		txtAECantidad61.setHorizontalAlignment(SwingConstants.CENTER);
 		txtAECantidad61.setColumns(10);
 		pnlAECantidad.add(txtAECantidad61);
 
@@ -721,26 +761,35 @@ public class ExTemplate extends JFrame {
 		pnlBACantidad.setLayout(new GridLayout(3, 2, 0, 0));
 
 		txtBACantidad00 = new JTextField();
+		txtBACantidad00.setHorizontalAlignment(SwingConstants.CENTER);
+		txtBACantidad00.setEditable(false);
 		txtBACantidad00.setColumns(10);
 		pnlBACantidad.add(txtBACantidad00);
 
 		txtBACantidad01 = new JTextField();
+		txtBACantidad01.setHorizontalAlignment(SwingConstants.CENTER);
 		txtBACantidad01.setColumns(10);
 		pnlBACantidad.add(txtBACantidad01);
 
 		txtBACantidad10 = new JTextField();
+		txtBACantidad10.setHorizontalAlignment(SwingConstants.CENTER);
+		txtBACantidad10.setEditable(false);
 		txtBACantidad10.setColumns(10);
 		pnlBACantidad.add(txtBACantidad10);
 
 		txtBACantidad11 = new JTextField();
+		txtBACantidad11.setHorizontalAlignment(SwingConstants.CENTER);
 		txtBACantidad11.setColumns(10);
 		pnlBACantidad.add(txtBACantidad11);
 
 		txtBACantidad20 = new JTextField();
+		txtBACantidad20.setHorizontalAlignment(SwingConstants.CENTER);
+		txtBACantidad20.setEditable(false);
 		txtBACantidad20.setColumns(10);
 		pnlBACantidad.add(txtBACantidad20);
 
 		txtBACantidad21 = new JTextField();
+		txtBACantidad21.setHorizontalAlignment(SwingConstants.CENTER);
 		txtBACantidad21.setColumns(10);
 		pnlBACantidad.add(txtBACantidad21);
 
@@ -806,42 +855,57 @@ public class ExTemplate extends JFrame {
 		pnlTCantidad.setLayout(new GridLayout(5, 2, 0, 0));
 
 		txtTCantidad00 = new JTextField();
+		txtTCantidad00.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTCantidad00.setEditable(false);
 		txtTCantidad00.setColumns(10);
 		pnlTCantidad.add(txtTCantidad00);
 
 		txtTCantidad01 = new JTextField();
+		txtTCantidad01.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTCantidad01.setColumns(10);
 		pnlTCantidad.add(txtTCantidad01);
 
 		txtTCantidad10 = new JTextField();
+		txtTCantidad10.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTCantidad10.setEditable(false);
 		txtTCantidad10.setColumns(10);
 		pnlTCantidad.add(txtTCantidad10);
 
 		txtTCantidad11 = new JTextField();
+		txtTCantidad11.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTCantidad11.setColumns(10);
 		pnlTCantidad.add(txtTCantidad11);
 
 		txtTCantidad20 = new JTextField();
+		txtTCantidad20.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTCantidad20.setEditable(false);
 		txtTCantidad20.setColumns(10);
 		pnlTCantidad.add(txtTCantidad20);
 
 		txtTCantidad21 = new JTextField();
+		txtTCantidad21.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTCantidad21.setColumns(10);
 		pnlTCantidad.add(txtTCantidad21);
 
 		txtTCantidad30 = new JTextField();
+		txtTCantidad30.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTCantidad30.setEditable(false);
 		txtTCantidad30.setColumns(10);
 		pnlTCantidad.add(txtTCantidad30);
 
 		txtTCantidad31 = new JTextField();
+		txtTCantidad31.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTCantidad31.setColumns(10);
 		pnlTCantidad.add(txtTCantidad31);
 
 		txtTCantidad40 = new JTextField();
+		txtTCantidad40.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTCantidad40.setEditable(false);
 		txtTCantidad40.setColumns(10);
 		pnlTCantidad.add(txtTCantidad40);
 
 		txtTCantidad41 = new JTextField();
+		txtTCantidad41.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTCantidad41.setColumns(10);
 		pnlTCantidad.add(txtTCantidad41);
 
@@ -903,10 +967,13 @@ public class ExTemplate extends JFrame {
 		pnlSMTCantidad.setLayout(new GridLayout(1, 1, 0, 0));
 
 		txtSMTCantidad00 = new JTextField();
+		txtSMTCantidad00.setHorizontalAlignment(SwingConstants.CENTER);
+		txtSMTCantidad00.setEditable(false);
 		txtSMTCantidad00.setColumns(10);
 		pnlSMTCantidad.add(txtSMTCantidad00);
 
 		txtSMTCantidad01 = new JTextField();
+		txtSMTCantidad01.setHorizontalAlignment(SwingConstants.CENTER);
 		txtSMTCantidad01.setColumns(10);
 		pnlSMTCantidad.add(txtSMTCantidad01);
 
@@ -927,85 +994,13 @@ public class ExTemplate extends JFrame {
 		lblSMTObsRef.setBounds(267, 1, 143, 14);
 		pnlSMT.add(lblSMTObsRef);
 
-		pnlInformacionObl = new JPanel();
-		pnlInformacionObl.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"),
-				"Informaci\u00F3n Obligatoria", TitledBorder.LEADING, TitledBorder.TOP, null, Color.RED));
-		pnlInformacionObl.setBounds(458, 313, 791, 141);
-		pnlPestaña1.add(pnlInformacionObl);
-		pnlInformacionObl.setLayout(null);
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 
-		pnlIOEtiquetas1 = new JPanel();
-		pnlIOEtiquetas1.setBounds(10, 22, 157, 73);
-		pnlInformacionObl.add(pnlIOEtiquetas1);
-		pnlIOEtiquetas1.setLayout(new GridLayout(3, 0, 0, 0));
-
-		lblObsGenIzq = new JLabel("Observaciones Generales:");
-		pnlIOEtiquetas1.add(lblObsGenIzq);
-
-		lblResponsableMineduc = new JLabel("Responsable MinEduc:");
-		pnlIOEtiquetas1.add(lblResponsableMineduc);
-
-		lblCargoIzq = new JLabel("Cargo:");
-		pnlIOEtiquetas1.add(lblCargoIzq);
-
-		pnlIOTexts1 = new JPanel();
-		pnlIOTexts1.setBounds(166, 22, 220, 73);
-		pnlInformacionObl.add(pnlIOTexts1);
-		pnlIOTexts1.setLayout(new GridLayout(3, 0, 0, 0));
-
-		txtObsGenIzq = new JTextField();
-		txtObsGenIzq.setColumns(10);
-		pnlIOTexts1.add(txtObsGenIzq);
-
-		txtResponsableMineduc = new JTextField();
-		txtResponsableMineduc.setColumns(10);
-		pnlIOTexts1.add(txtResponsableMineduc);
-
-		txtCargoIzq = new JTextField();
-		txtCargoIzq.setColumns(10);
-		pnlIOTexts1.add(txtCargoIzq);
-
-		pnlIOEtiquetas2 = new JPanel();
-		pnlIOEtiquetas2.setBounds(403, 11, 157, 97);
-		pnlInformacionObl.add(pnlIOEtiquetas2);
-		pnlIOEtiquetas2.setLayout(new GridLayout(4, 0, 0, 0));
-
-		lblObsGenDer = new JLabel("Observaciones Generales:");
-		pnlIOEtiquetas2.add(lblObsGenDer);
-
-		lblResponsableContratista = new JLabel("Responsable Contratista:");
-		pnlIOEtiquetas2.add(lblResponsableContratista);
-
-		lblCargoDer = new JLabel("Cargo:");
-		pnlIOEtiquetas2.add(lblCargoDer);
-
-		lblFecha = new JLabel("Fecha:");
-		pnlIOEtiquetas2.add(lblFecha);
-
-		pnlIOTexts2 = new JPanel();
-		pnlIOTexts2.setBounds(561, 11, 220, 97);
-		pnlInformacionObl.add(pnlIOTexts2);
-		pnlIOTexts2.setLayout(new GridLayout(4, 0, 0, 0));
-
-		txtObsGenDer = new JTextField();
-		txtObsGenDer.setColumns(10);
-		pnlIOTexts2.add(txtObsGenDer);
-
-		txtResponsableContratista = new JTextField();
-		txtResponsableContratista.setColumns(10);
-		pnlIOTexts2.add(txtResponsableContratista);
-
-		txtCargoDer = new JTextField();
-		txtCargoDer.setColumns(10);
-		pnlIOTexts2.add(txtCargoDer);
-
-		txtFecha = new JTextField();
-		txtFecha.setColumns(10);
-		pnlIOTexts2.add(txtFecha);
-
-		JButton btnInsertarFoto = new JButton("Insertar FOTO");
-		btnInsertarFoto.setBounds(278, 100, 120, 35);
-		pnlInformacionObl.add(btnInsertarFoto);
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("holis");
+			}
+		});
 
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
