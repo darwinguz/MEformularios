@@ -4,7 +4,7 @@ import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
-import static com.capa.util.Validaciones.validarInfo;
+import static com.capa.util.Validaciones.*;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -1397,6 +1397,48 @@ public class MsTemplate extends JFrame {
 		txtObs39.setColumns(10);
 		txtObs39.setBounds(1191, 318, 129, 20);
 		panel1.add(txtObs39);
+
+		validarDigitos(txtCantidad01);
+		validarDigitos(txtCantidad11);
+		validarDigitos(txtCantidad21);
+		validarDigitos(txtCantidad31);
+		validarDigitos(txtCantidad41);
+		validarDigitos(txtCantidad51);
+		validarDigitos(txtCantidad61);
+		validarDigitos(txtCantidad71);
+		validarDigitos(txtCantidad81);
+		validarDigitos(txtCantidad91);
+		validarDigitos(txtCantidad101);
+		validarDigitos(txtCantidad111);
+		validarDigitos(txtCantidad121);
+		validarDigitos(txtCantidad131);
+		validarDigitos(txtCantidad141);
+		validarDigitos(txtCantidad151);
+		validarDigitos(txtCantidad161);
+		validarDigitos(txtCantidad171);
+		validarDigitos(txtCantidad181);
+		validarDigitos(txtCantidad191);
+		validarDigitos(txtCantidad201);
+		validarDigitos(txtCantidad211);
+		validarDigitos(txtCantidad221);
+		validarDigitos(txtCantidad231);
+		validarDigitos(txtCantidad241);
+		validarDigitos(txtCantidad251);
+		validarDigitos(txtCantidad261);
+		validarDigitos(txtCantidad271);
+		validarDigitos(txtCantidad281);
+		validarDigitos(txtCantidad291);
+		validarDigitos(txtCantidad301);
+		validarDigitos(txtCantidad311);
+		validarDigitos(txtCantidad321);
+		validarDigitos(txtCantidad331);
+		validarDigitos(txtCantidad341);
+		validarDigitos(txtCantidad351);
+		validarDigitos(txtCantidad361);
+		validarDigitos(txtCantidad371);
+		validarDigitos(txtCantidad381);
+		validarDigitos(txtCantidad391);
+		validarDigitos(txtCantidad401);
 
 		llenarFicha();
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
