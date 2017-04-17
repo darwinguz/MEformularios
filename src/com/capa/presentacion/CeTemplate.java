@@ -1,12 +1,18 @@
 package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
+import static com.capa.util.Constantes.LBL_CE_0;
+import static com.capa.util.Constantes.LBL_CE_1;
+import static com.capa.util.Constantes.LBL_CE_2;
+import static com.capa.util.Constantes.LBL_CE_3;
+import static com.capa.util.Constantes.LBL_CE_4;
+import static com.capa.util.Constantes.LBL_CE_5;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
-import static com.capa.util.Validaciones.*;
-import static com.capa.util.Constantes.*;
+import static com.capa.util.Validaciones.validarDigitos;
+import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -16,6 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -313,8 +320,10 @@ public class CeTemplate extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+
 				infor = cargarInfoObligatoria(infoObligatoria);
 				infor.setIoFotoPath(fotoInfoObl);
+				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
 					if (detallesFicha == null) {
@@ -326,18 +335,14 @@ public class CeTemplate extends JFrame {
 					if (registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
 						servFicha.guardarFormulario(cargarListas());
-						// HashMap<String, Object> parametros = new
-						// HashMap<String, Object>();
-						// parametros.put("serial_cabecera",
-						// Utilitarios.gettCabecera().getCSerial());
-						// parametros.put("serial_ficha", ficha.getFiSerial());
-						//
-						// Reporte reporte = new Reporte("Reporte CE", 280, 10,
-						// 850, 750);
-						// reporte.cargarReporte("src/com/capa/templates/MA.jasper",
-						// parametros,
-						// Query.getMysql().getConexion());
-						// reporte.setVisible(true);
+						HashMap<String, Object> parametros = new HashMap<String, Object>();
+						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+						parametros.put("serial_ficha", ficha.getFiSerial());
+
+						Reporte reporte = new Reporte("Reporte CE", 280, 10, 850, 750);
+						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
+								Query.getMysql().getConexion());
+						reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
 					} else {
@@ -370,9 +375,6 @@ public class CeTemplate extends JFrame {
 
 	public List<TdetalleFicha> cargarListas() {
 		List<TdetalleFicha> listaDetalles = new LinkedList<>();
-
-		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
 		BigDecimal porcentajeAvance;
 

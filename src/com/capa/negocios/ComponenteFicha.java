@@ -150,7 +150,7 @@ public class ComponenteFicha implements ServicioFicha {
 				mensaje = "Ingreso exitoso";
 				titulo = "INGRESO";
 				tipoMensaje = 1;
-				System.out.println(query);
+//				System.out.println(query);
 			} catch (Exception e) {
 				mensaje = "Error al insertar datos del formulario MA " + e.getMessage();
 			}

@@ -17,7 +17,7 @@ import com.capa.datos.TFichaD;
 import com.capa.util.Utilitarios;
 
 public class Query {
-	private static MySql mysql = new MySql("localhost", "db_ministerio_ed", "root", "root");
+	private static MySql mysql = new MySql("localhost", "db_ministerio_ed", "root", "admin");
 
 	public static ResultSet seleccionar(String query) {
 		Statement comando;
@@ -38,8 +38,10 @@ public class Query {
 	public static void insertar(String query) {
 		Statement comando;
 		try {
+			mysql.getConexion().setAutoCommit(false);
 			comando = mysql.getConexion().createStatement();
 			comando.executeUpdate(query);
+			mysql.getConexion().commit();
 		} catch (SQLException error) {
 			String message = "<html><p><b>Error de Mysql-Insert: </b> " + error.getMessage() + "</p> "
 					+ "<p><b>Código de Error: </b>" + error.getErrorCode() + " </p></html>";
