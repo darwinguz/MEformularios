@@ -37,7 +37,6 @@ public class ComponenteLGeografico implements ServicioLGeografico {
 				listaLugares.add(lugarG);
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
 			JOptionPane.showMessageDialog(null, "Error al BUSCAR: " + e.getMessage(), "ERROR",
 					JOptionPane.ERROR_MESSAGE);
 		}
@@ -91,84 +90,40 @@ public class ComponenteLGeografico implements ServicioLGeografico {
 	}
 
 	@Override
-	public TLugarGeografico buscarCanton(String codigo) {
-		// TODO Auto-generated method stub
+	public TLugarGeografico buscarPadre(String hijo) {
 		TLugarGeografico lugarGeo = new TLugarGeografico();
 
-		String sql = "SELECT lg_fk_codigo, lg_nombre FROM t_lugar_geografico WHERE lg_codigo "
-				+ "LIKE (SELECT lg_fk_codigo FROM t_lugar_geografico WHERE lg_codigo LIKE '" + codigo + "')";
+		String sql = "SELECT * FROM t_lugar_geografico WHERE lg_codigo LIKE (SELECT lg_fk_codigo FROM t_lugar_geografico WHERE lg_codigo LIKE '"
+				+ hijo + "');";
 		ResultSet rs = Query.seleccionar(sql);
 		try {
 			while (rs.next()) {
-				lugarGeo.setLgCodigo(rs.getString("lg_fk_codigo"));
-				lugarGeo.setLgNombre(rs.getString("lg_nombre"));
+				lugarGeo.setLgCodigo(rs.getString(1));
+				lugarGeo.setTLugarGeografico(rs.getString(2));
+				lugarGeo.setLgNombre(rs.getString(3));
 			}
-
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return lugarGeo;
 	}
 
 	@Override
-	public TLugarGeografico buscarProvincia(String codigo) {
-		// TODO Auto-generated method stub
+	public TLugarGeografico buscarLGeo(String codigo) {
 		TLugarGeografico lugarGeo = new TLugarGeografico();
-		String sql = "SELECT lg_fk_codigo, lg_nombre FROM t_lugar_geografico WHERE lg_codigo "
-				+ "LIKE (SELECT lg_fk_codigo FROM t_lugar_geografico WHERE lg_codigo "
-				+ "LIKE (SELECT lg_fk_codigo FROM t_lugar_geografico WHERE lg_codigo LIKE '" + codigo + "'))";
+
+		String sql = "SELECT * FROM t_lugar_geografico WHERE lg_codigo LIKE '" + codigo + "';";
 		ResultSet rs = Query.seleccionar(sql);
 		try {
 			while (rs.next()) {
-				// nombreProvincia = rs.getString("lg_nombre");
-				lugarGeo.setLgCodigo(rs.getString("lg_fk_codigo"));
-				lugarGeo.setLgNombre(rs.getString("lg_nombre"));
+				lugarGeo.setLgCodigo(rs.getString(1));
+				lugarGeo.setTLugarGeografico(rs.getString(2));
+				lugarGeo.setLgNombre(rs.getString(3));
 			}
-
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return lugarGeo;
-	}
-
-	@Override
-	public TLugarGeografico buscarParroquia(String codigo) {
-		// TODO Auto-generated method stub
-		TLugarGeografico lugarGeo = new TLugarGeografico();
-		String sql = "SELECT lg_fk_codigo, lg_nombre FROM t_lugar_geografico where lg_codigo =  '" + codigo + "'";
-		ResultSet rs = Query.seleccionar(sql);
-		try {
-			while (rs.next()) {
-				lugarGeo.setLgCodigo(rs.getString("lg_fk_codigo"));
-				lugarGeo.setLgNombre(rs.getString("lg_nombre"));
-			}
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return lugarGeo;
-	}
-
-	@Override
-	public String[] loadNombreProvCantParr(String codParr) {
-		String sql = "SELECT lgProvinvia.lg_nombre prov, lgCanton.lg_nombre canton, lgParroquia.lg_nombre prrq FROM t_lugar_geografico lgProvinvia left join t_lugar_geografico lgCanton on lgProvinvia.lg_codigo = lgCanton.lg_fk_codigo left join t_lugar_geografico lgParroquia on lgCanton.lg_codigo = lgParroquia.lg_fk_codigo WHERE lgParroquia.lg_codigo LIKE '"
-				+ codParr + "'";
-		// String[3] nombres
-		// try {
-		// ResultSet rs = Query.seleccionar(sql);
-		// while (rs.next()) {
-		// lugarGeo.setLgCodigo(rs.getString("lg_fk_codigo"));
-		// lugarGeo.setLgNombre(rs.getString("lg_nombre"));
-		// }
-		//
-		// } catch (SQLException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
-		return null;
 	}
 
 }

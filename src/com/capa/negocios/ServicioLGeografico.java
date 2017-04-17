@@ -13,11 +13,8 @@ public interface ServicioLGeografico {
 
 	List<TLugarGeografico> buscarProvincia();
 
-	TLugarGeografico buscarCanton(String codigo);
+	TLugarGeografico buscarPadre(String hijo);
 
-	TLugarGeografico buscarProvincia(String codigo);
+	TLugarGeografico buscarLGeo(String codigo);
 
-	TLugarGeografico buscarParroquia(String codigo);
-
-	String[] loadNombreProvCantParr(String codParr);
 }

@@ -117,7 +117,9 @@ public class Utilitarios {
 	public static void llenarCabecera(JPcabecera jCabecera) {
 
 		ServicioLGeografico geo = new ComponenteLGeografico();
-		TLugarGeografico lugar;
+		TLugarGeografico parroquia = geo.buscarLGeo(tCabecera.getTLugarGeografico().getLgCodigo());
+		TLugarGeografico canton = geo.buscarPadre(tCabecera.getTLugarGeografico().getLgCodigo());
+		TLugarGeografico provincia = geo.buscarPadre(canton.getLgCodigo());
 
 		jCabecera.getTxtProyecto().setText(tCabecera.getCNombreProyecto());
 		jCabecera.getTxtAmie().setText(tCabecera.getCAmie());
@@ -126,9 +128,9 @@ public class Utilitarios {
 		jCabecera.getTxtFechaEntrega().setText("" + getFechaString(tCabecera.getCFechaEntrega()));
 		jCabecera.getTxtFechaInicioTrabajo().setText("" + getFechaString(tCabecera.getCFechaInicio()));
 		jCabecera.getTxtZona().setText(tCabecera.getCZona());
-		jCabecera.getTxtParroquia().setText(tCabecera.getTLugarGeografico().getLgCodigo());
-
-		// jCabecera.getTxtProvincia().setText(lugar.getLgNombre());
+		jCabecera.getTxtParroquia().setText(parroquia.getLgNombre());
+		jCabecera.getTxtCanton().setText(canton.getLgNombre());
+		jCabecera.getTxtProvincia().setText(provincia.getLgNombre());
 		jCabecera.getTxtSector().setText(tCabecera.getSector());
 	}
 
