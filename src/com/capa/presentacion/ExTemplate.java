@@ -70,6 +70,7 @@ import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.util.Utilitarios;
+import com.capa.util.Validaciones;
 
 public class ExTemplate extends JFrame {
 
@@ -232,34 +233,12 @@ public class ExTemplate extends JFrame {
 	TFicha ficha;
 	ServicioFicha servFicha;
 
-	private String fotoInfoObl;
-
-	/**
-	 * Launch the application.
-	 */
-	// public static void main(String[] args) {
-	// EventQueue.invokeLater(new Runnable() {
-	// public void run() {
-	// try {
-	// ExTemplate frame = new ExTemplate();
-	// frame.setVisible(true);
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// });
-	// }
-
-	/**
-	 * Create the frame.
-	 */
 	public ExTemplate(TFicha ficha) {
 		this.ficha = ficha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1318, 659);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		// setContentPane(contentPane);
 		contentPane.setLayout(null);
 
 		this.setResizable(false);
@@ -279,7 +258,7 @@ public class ExTemplate extends JFrame {
 		contentPane.add(tabbedPane);
 
 		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("1.-EX-KIT EL�CTRICA EXTERNA", null, pnlPestaña1, null);
+		tabbedPane.addTab("1.- " + ficha.getFiDescripcion(), null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
 
 		JPanel pnlTE = new JPanel();
@@ -331,6 +310,7 @@ public class ExTemplate extends JFrame {
 		pnlTECantidad.setLayout(new GridLayout(9, 2, 0, 0));
 
 		txtCantidad00 = new JTextField();
+		txtCantidad00.setText("3");
 		txtCantidad00.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad00.setEditable(false);
 		pnlTECantidad.add(txtCantidad00);
@@ -343,6 +323,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad01);
 
 		txtCantidad10 = new JTextField();
+		txtCantidad10.setText("2");
 		txtCantidad10.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad10.setEditable(false);
 		txtCantidad10.setColumns(10);
@@ -355,6 +336,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad11);
 
 		txtCantidad20 = new JTextField();
+		txtCantidad20.setText("2");
 		txtCantidad20.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad20.setEditable(false);
 		txtCantidad20.setColumns(10);
@@ -367,6 +349,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad21);
 
 		txtCantidad30 = new JTextField();
+		txtCantidad30.setText("1");
 		txtCantidad30.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad30.setEditable(false);
 		txtCantidad30.setColumns(10);
@@ -379,6 +362,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad31);
 
 		txtCantidad40 = new JTextField();
+		txtCantidad40.setText("1");
 		txtCantidad40.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad40.setEditable(false);
 		txtCantidad40.setColumns(10);
@@ -391,6 +375,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad41);
 
 		txtCantidad50 = new JTextField();
+		txtCantidad50.setText("1");
 		txtCantidad50.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad50.setEditable(false);
 		txtCantidad50.setColumns(10);
@@ -403,6 +388,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad51);
 
 		txtCantidad60 = new JTextField();
+		txtCantidad60.setText("9");
 		txtCantidad60.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad60.setEditable(false);
 		txtCantidad60.setColumns(10);
@@ -415,6 +401,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad61);
 
 		txtCantidad70 = new JTextField();
+		txtCantidad70.setText("89");
 		txtCantidad70.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad70.setEditable(false);
 		txtCantidad70.setColumns(10);
@@ -427,6 +414,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad71);
 
 		txtCantidad80 = new JTextField();
+		txtCantidad80.setText("22");
 		txtCantidad80.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad80.setEditable(false);
 		txtCantidad80.setColumns(10);
@@ -527,6 +515,7 @@ public class ExTemplate extends JFrame {
 		pnlEDCantidad.setLayout(new GridLayout(6, 2, 0, 0));
 
 		txtCantidad90 = new JTextField();
+		txtCantidad90.setText("8");
 		txtCantidad90.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad90.setEditable(false);
 		txtCantidad90.setColumns(10);
@@ -539,6 +528,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad91);
 
 		txtCantidad100 = new JTextField();
+		txtCantidad100.setText("8");
 		txtCantidad100.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad100.setEditable(false);
 		txtCantidad100.setColumns(10);
@@ -551,6 +541,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad101);
 
 		txtCantidad110 = new JTextField();
+		txtCantidad110.setText("8");
 		txtCantidad110.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad110.setEditable(false);
 		txtCantidad110.setColumns(10);
@@ -563,6 +554,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad111);
 
 		txtCantidad120 = new JTextField();
+		txtCantidad120.setText("10");
 		txtCantidad120.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad120.setEditable(false);
 		txtCantidad120.setColumns(10);
@@ -575,6 +567,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad121);
 
 		txtCantidad130 = new JTextField();
+		txtCantidad130.setText("1");
 		txtCantidad130.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad130.setEditable(false);
 		txtCantidad130.setColumns(10);
@@ -587,6 +580,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad131);
 
 		txtCantidad140 = new JTextField();
+		txtCantidad140.setText("30");
 		txtCantidad140.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad140.setEditable(false);
 		txtCantidad140.setColumns(10);
@@ -678,6 +672,7 @@ public class ExTemplate extends JFrame {
 		pnlAECantidad.setLayout(new GridLayout(7, 2, 0, 0));
 
 		txtCantidad150 = new JTextField();
+		txtCantidad150.setText("10");
 		txtCantidad150.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad150.setEditable(false);
 		txtCantidad150.setColumns(10);
@@ -690,6 +685,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad151);
 
 		txtCantidad160 = new JTextField();
+		txtCantidad160.setText("18");
 		txtCantidad160.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad160.setEditable(false);
 		txtCantidad160.setColumns(10);
@@ -702,6 +698,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad161);
 
 		txtCantidad170 = new JTextField();
+		txtCantidad170.setText("2");
 		txtCantidad170.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad170.setEditable(false);
 		txtCantidad170.setColumns(10);
@@ -714,6 +711,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad171);
 
 		txtCantidad180 = new JTextField();
+		txtCantidad180.setText("8");
 		txtCantidad180.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad180.setEditable(false);
 		txtCantidad180.setColumns(10);
@@ -726,6 +724,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad181);
 
 		txtCantidad190 = new JTextField();
+		txtCantidad190.setText("18");
 		txtCantidad190.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad190.setEditable(false);
 		txtCantidad190.setColumns(10);
@@ -738,6 +737,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad191);
 
 		txtCantidad200 = new JTextField();
+		txtCantidad200.setText("1");
 		txtCantidad200.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad200.setEditable(false);
 		txtCantidad200.setColumns(10);
@@ -750,6 +750,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad201);
 
 		txtCantidad210 = new JTextField();
+		txtCantidad210.setText("66");
 		txtCantidad210.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad210.setEditable(false);
 		txtCantidad210.setColumns(10);
@@ -833,6 +834,7 @@ public class ExTemplate extends JFrame {
 		pnlBACantidad.setLayout(new GridLayout(3, 2, 0, 0));
 
 		txtCantidad220 = new JTextField();
+		txtCantidad220.setText("1");
 		txtCantidad220.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad220.setEditable(false);
 		txtCantidad220.setColumns(10);
@@ -845,6 +847,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad221);
 
 		txtCantidad230 = new JTextField();
+		txtCantidad230.setText("10");
 		txtCantidad230.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad230.setEditable(false);
 		txtCantidad230.setColumns(10);
@@ -857,6 +860,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad231);
 
 		txtCantidad240 = new JTextField();
+		txtCantidad240.setText("1");
 		txtCantidad240.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad240.setEditable(false);
 		txtCantidad240.setColumns(10);
@@ -930,6 +934,7 @@ public class ExTemplate extends JFrame {
 		pnlTCantidad.setLayout(new GridLayout(5, 2, 0, 0));
 
 		txtCantidad250 = new JTextField();
+		txtCantidad250.setText("1");
 		txtCantidad250.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad250.setEditable(false);
 		txtCantidad250.setColumns(10);
@@ -942,6 +947,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad251);
 
 		txtCantidad260 = new JTextField();
+		txtCantidad260.setText("1");
 		txtCantidad260.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad260.setEditable(false);
 		txtCantidad260.setColumns(10);
@@ -954,6 +960,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad261);
 
 		txtCantidad270 = new JTextField();
+		txtCantidad270.setText("1");
 		txtCantidad270.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad270.setEditable(false);
 		txtCantidad270.setColumns(10);
@@ -966,6 +973,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad271);
 
 		txtCantidad280 = new JTextField();
+		txtCantidad280.setText("1");
 		txtCantidad280.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad280.setEditable(false);
 		txtCantidad280.setColumns(10);
@@ -978,6 +986,7 @@ public class ExTemplate extends JFrame {
 		validarDigitos(txtCantidad281);
 
 		txtCantidad290 = new JTextField();
+		txtCantidad290.setText("1");
 		txtCantidad290.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad290.setEditable(false);
 		txtCantidad290.setColumns(10);
@@ -1047,6 +1056,7 @@ public class ExTemplate extends JFrame {
 		pnlSMTCantidad.setLayout(new GridLayout(1, 1, 0, 0));
 
 		txtCantidad300 = new JTextField();
+		txtCantidad300.setText("1");
 		txtCantidad300.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad300.setEditable(false);
 		txtCantidad300.setColumns(10);
@@ -1075,14 +1085,14 @@ public class ExTemplate extends JFrame {
 		lblSMTObsRef.setBounds(267, 1, 143, 14);
 		pnlSMT.add(lblSMTObsRef);
 
-		JPinformacionObligatoria pnlInformacionOblig = new JPinformacionObligatoria(865, 325);
-		pnlInformacionOblig.getBtnInsertarFoto().addActionListener(new ActionListener() {
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(865, 325);
+		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				fotoInfoObl = getPathImagen();
+				infoObligatoria.setPathFotoIO(getPathImagen());
 			}
 		});
-		pnlPestaña1.add(pnlInformacionOblig.getPnlInformacionObl());
+		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 
 		llenarFicha();
 
@@ -1091,8 +1101,6 @@ public class ExTemplate extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
-				// infor = cargarInfoObligatoria(pnlInformacionOblig);
-				// infor.setIoFotoPath(fotoInfoObl);
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
@@ -1102,7 +1110,7 @@ public class ExTemplate extends JFrame {
 								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
-					if (registrosValidados(detallesFicha)) {
+					if (Validaciones.registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
 						servFicha.guardarFormulario(detallesFicha);
 						HashMap<String, Object> parametros = new HashMap<String, Object>();
@@ -1124,15 +1132,6 @@ public class ExTemplate extends JFrame {
 				}
 			}
 
-			private boolean registrosValidados(List<TdetalleFicha> detallesFicha) {
-				for (TdetalleFicha detalle : detallesFicha) {
-					if (detalle.getDetCantidadEjecutada() > detalle.getDetCantidadLimite()
-							|| detalle.getDetCantidadEjecutada() < 0) {
-						return false;
-					}
-				}
-				return true;
-			}
 		});
 
 		addWindowListener(new WindowAdapter() {
@@ -1394,7 +1393,6 @@ public class ExTemplate extends JFrame {
 			txtObs29.setText(listaDetalles.get(29).getDetObsRef());
 			txtObs30.setText(listaDetalles.get(30).getDetObsRef());
 		} catch (IndexOutOfBoundsException e) {
-			// TODO: handle exception
 			txtCantidad01.setText(String.valueOf(0));
 			txtCantidad11.setText(String.valueOf(0));
 			txtCantidad21.setText(String.valueOf(0));

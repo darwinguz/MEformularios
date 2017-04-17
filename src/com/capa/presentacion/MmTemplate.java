@@ -37,10 +37,9 @@ import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.presentacion.JPinformacionObligatoria;
+import com.capa.util.Utilitarios;
 
 public class MmTemplate extends JFrame {
-	// public MMTemplate() {
-	// }
 
 	private static final long serialVersionUID = -3891089127852241756L;
 	private JPanel contentPane;
@@ -2019,6 +2018,11 @@ public class MmTemplate extends JFrame {
 		validarDigitos(txtCantidad501);
 
 		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(860, 300);
+		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				infoObligatoria.setPathFotoIO(Utilitarios.getPathImagen());
+			}
+		});
 		panelLab2.add(infoObligatoria.getPnlInformacionObl());
 
 		addWindowListener(new WindowAdapter() {
@@ -2050,11 +2054,12 @@ public class MmTemplate extends JFrame {
 						new Menu().setVisible(true);
 						dispose();
 					} else {
-						JOptionPane.showMessageDialog(null, "ERROR: Verificar valores ejecutados!", "Mensaje de Error",
+						JOptionPane.showMessageDialog(null,
+								"ERROR: Verificar que los registros no se encuentren VACÍOS", "Mensaje de Error",
 								JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
-					JOptionPane.showMessageDialog(null, "Datos obligatorios");
+					JOptionPane.showMessageDialog(null, "Ingresar Información Obligatoria");
 				}
 			}
 
