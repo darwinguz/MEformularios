@@ -2,6 +2,109 @@ package com.capa.util;
 
 public class Constantes {
 	/*
+	 * MEXTemplate
+	 */
+	public static final String LBL_MEX_0="<html><body><p align='right'>Set deck WPC TIPO A - a=15 x l=180 cm</p></body></html>";
+	public static final String LBL_MEX_1="<html><body><p align='right'>Vigueta plástica con mortero de cemento a=4 x l=1,05</p></body></html>";
+	public static final String LBL_MEX_2="<html><body><p align='right'>Sub-base de piedra triturada tipo A saquillo 50lbs</p></body></html>";
+	public static final String LBL_MEX_3="<html><body><p align='right'>Set deck WPC TIPO B - a=15 x l=250 cm</p></body></html>";
+	public static final String LBL_MEX_4="<html><body><p align='right'>Vigueta plástica con mortero de cemento a=4 x l=1,05</p></body></html>";
+	public static final String LBL_MEX_5="<html><body><p align='right'>Sub-base de piedra triturada tipo A</p></body></html>";
+	public static final String LBL_MEX_6="<html><body><p align='right'>Set deck WPC TIPO C - a=15 x l=240 cm</p></body></html>";
+	public static final String LBL_MEX_7="<html><body><p align='right'>Vigueta plástica con mortero de cemento a=4 x l=1,05</p></body></html>";
+	public static final String LBL_MEX_8="<html><body><p align='right'>Sub-base de piedra triturada tipo A saquillo 50lbs</p></body></html>";
+	public static final String LBL_MEX_9="<html><body><p align='right'>Set deck WPC TIPO C - a=15 x l=135 cm</p></body></html>";
+	public static final String LBL_MEX_10="<html><body><p align='right'>Vigueta plástica con mortero de cemento a=4 x l=1,05</p></body></html>";
+	public static final String LBL_MEX_11="<html><body><p align='right'>Sub-base de piedra triturada tipo A saquillo 50lbs</p></body></html>";
+	public static final String LBL_MEX_12="<html><body><p align='right'>Set deck WPC TIPO C - a=15 x l=204 cm</p></body></html>";
+	public static final String LBL_MEX_13="<html><body><p align='right'>Vigueta plástica con mortero de cemento a=4 x l=1,05</p></body></html>";
+	public static final String LBL_MEX_14="<html><body><p align='right'>Sub-base de piedra triturada tipo A saquillo 50lbs</p></body></html>";
+	public static final String LBL_MEX_15="<html><body><p align='right'>Canchas deportivas compuesta de: loseta de contrapiso 7 cm cubierta de granulado de caucho reciclable 13 mm</p></body></html>";
+	public static final String LBL_MEX_16="<html><body><p align='right'>Plantas decorativas</p></body></html>";
+	public static final String LBL_MEX_17="<html><body><p align='right'>Gravilla saquillos de 50libras</p></body></html>";
+
+	/*
+	 * MMtemplates
+	 */
+	public static final String LBL_MM_0 = "<html><body><p align='right'>Luminarias LED 60 w - 5000 lum</p></body></html>";
+	public static final String LBL_MM_1 = "<html><body><p align='right'>Tomacorrientes</p></body></html>";
+	public static final String LBL_MM_2 = "<html><body><p align='right'>Interruptor</p></body></html>";
+	public static final String LBL_MM_3 = "<html><body><p align='right'>Kit cable eléctrico</p></body></html>";
+	public static final String LBL_MM_4 = "<html><body><p align='right'>Fregadero</p></body></html>";
+	public static final String LBL_MM_5 = "<html><body><p align='right'>Canal Plástico PVC de L=3m</p></body></html>";
+	public static final String LBL_MM_6 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua de Lluvia (2 rejilla, 4 codos 90°,1/4 gl polipega, tornillos, abrazaderas)</p></body></html>";
+	public static final String LBL_MM_7 = "<html><body><p align='right'>Tubería de PVC 75 mm L=3m</p></body></html>";
+	public static final String LBL_MM_8 = "<html><body><p align='right'>Tubería de PVC 75 mm L=0.6m</p></body></html>";
+	public static final String LBL_MM_9 = "<html><body><p align='right'>Kit para conexión de tubería 75 mm. (lija pliego, polipega 1/4gal,1 codo 90°)</p></body></html>";
+	public static final String LBL_MM_10 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua Potable (fregaderos)(2  te reducciones 3/4-1/2  ,  2 neplos,4 uniones de 1/2,4 codos de 90°,2 mangueras de abasto,2 llave de paso, teflón, pasta selladora)</p></body></html>";
+	public static final String LBL_MM_11 = "<html><body><p align='right'>Tubería de PVC  1/2 y L=1.5m</p></body></html>";
+	public static final String LBL_MM_12 = "<html><body><p align='right'>Tubería de PVC  3/4 y L=3m</p></body></html>";
+	public static final String LBL_MM_13 = "<html><body><p align='right'>Kit para conexión de tubería 1/2.(lija pliego, polipega 1/4gal,3 uniones)</p></body></html>";
+	public static final String LBL_MM_14 = "<html><body><p align='right'>Kit para conexión de tubería 3/4.(lija pliego, polipega 1/4gal,3 uniones)</p></body></html>";
+	public static final String LBL_MM_15 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua Residual (CP)(2 codo 90°,2 rejilla,2 ye 75-110,1/4gl polipega)</p></body></html>";
+	public static final String LBL_MM_16 = "<html><body><p align='right'>Tubería de 50mm PVC y L=2m</p></body></html>";
+	public static final String LBL_MM_17 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua Residual (Fregaderos)( 4codo 90°,1/4 gl polipega ,4 yee 50-110)</p></body></html>";
+	public static final String LBL_MM_18 = "<html><body><p align='right'>Tubería de 75mm PVC y L=3m</p></body></html>";
+	public static final String LBL_MM_19 = "<html><body><p align='right'>Tubería de 75mm PVC y L=2m</p></body></html>";
+	public static final String LBL_MM_20 = "<html><body><p align='right'>Kit para conexión de tubería 50 mm. (lija  un pliego, polipega 1/4 gal, 1/4 gl suelda líquida, 2 uniones,2codo 90°, 2 codo45°)</p></body></html>";
+	public static final String LBL_MM_21 = "<html><body><p align='right'>Kit para conexión de tubería 75 mm. (lija pliego, polipega 1/2gal,1/4 gl suelda líquida, 2 uniones,2codo 90°,2codo45°)</p></body></html>";
+	public static final String LBL_MM_22 = "<html><body><p align='right'>Puerta</p></body></html>";
+	public static final String LBL_MM_23 = "<html><body><p align='right'>Bisagras</p></body></html>";
+	public static final String LBL_MM_24 = "<html><body><p align='right'>Perfil SF Tipo 12 MA-SF-12 para puerta </p></body></html>";
+	public static final String LBL_MM_25 = "<html><body><p align='right'>Ventana corredera, compuesta por tres hojas y dos carriles. UPVC con vidrio flotado de 3 mm de 3x1,10</p></body></html>";
+	public static final String LBL_MM_26 = "<html><body><p align='right'>Perfil SF-12 para ventana</p></body></html>";
+	public static final String LBL_MM_27 = "<html><body><p align='right'>Perfil SF Tipo 12 MM-SF-12  para paneles</p></body></html>";
+	public static final String LBL_MM_28 = "<html><body><p align='right'>Paneles TCB (8.8x5.8 m)</p></body></html>";
+	public static final String LBL_MM_29 = "<html><body><p align='right'>Paneles vynil piso (0,15x1,93 m)</p></body></html>";
+	public static final String LBL_MM_30 = "<html><body><p align='right'>Paneles EPS para cubierta l=7, a= 1m</p></body></html>";
+
+	/*
+	 * MStemplates
+	 */
+
+	public static final String LBL_MS_0 = "<html><body><p align='right'>Luminarias LED 60 w - 5000 lum</p></body></html>";
+	public static final String LBL_MS_1 = "<html><body><p align='right'>Tomacorrientes</p></body></html>";
+	public static final String LBL_MS_2 = "<html><body><p align='right'>Interruptor</p></body></html>";
+	public static final String LBL_MS_3 = "<html><body><p align='right'>Kit cable eléctrico MA</p></body></html>";
+	public static final String LBL_MS_4 = "<html><body><p align='right'>Detector de humo</p></body></html>";
+	public static final String LBL_MS_5 = "<html><body><p align='right'>Canal Plástico PVC de L=3m</p></body></html>";
+	public static final String LBL_MS_6 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua de Lluvia (2 rejilla,4 codos 90°,1/4 gl polipega, tornillos, abrazaderas)</p></body></html>";
+	public static final String LBL_MS_7 = "<html><body><p align='right'>Tubería de PVC 75 mm L=3m</p></body></html>";
+	public static final String LBL_MS_8 = "<html><body><p align='right'>Tubería de PVC 75 mm L=0.6m</p></body></html>";
+	public static final String LBL_MS_9 = "<html><body><p align='right'>Kit para conexión de tubería 75 mm. (lija pliego, polipega 1/4gal,1codo 90°)</p></body></html>";
+	public static final String LBL_MS_10 = "<html><body><p align='right'>Puerta</p></body></html>";
+	public static final String LBL_MS_11 = "<html><body><p align='right'>Bisagras</p></body></html>";
+	public static final String LBL_MS_12 = "<html><body><p align='right'>Perfil SF Tipo 12 MA-SF-12 para puerta</p></body></html>";
+	public static final String LBL_MS_13 = "<html><body><p align='right'>Ventana corredera, compuesta por tres hojas y dos carriles. UPVC con vidrio flotado de 3 mm de 3x1,10</p></body></html>";
+	public static final String LBL_MS_14 = "<html><body><p align='right'>Perfil SF Tipo 12 MA-SF-12 para ventana</p></body></html>";
+	public static final String LBL_MS_15 = "<html><body><p align='right'>Perfil SF Tipo 12 MS-SF-12  para paneles</p></body></html>";
+	public static final String LBL_MS_16 = "<html><body><p align='right'>Paneles TCB (8.8x5.8 m)</p></body></html>";
+	public static final String LBL_MS_17 = "<html><body><p align='right'>Paneles vynil piso (0,15x1,93 m)</p></body></html>";
+	public static final String LBL_MS_18 = "<html><body><p align='right'>Paneles EPS para cubierta I=7, a= 1 m</p></body></html>";
+	public static final String LBL_MS_19 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x3x0,09x0,09 m)</p></body></html>";
+	public static final String LBL_MS_20 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,90x0,90 m)</p></body></html>";
+	public static final String LBL_MS_21 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x1,10x0,09 m)</p></body></html>";
+	public static final String LBL_MS_22 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,80x0,09 m)</p></body></html>";
+	public static final String LBL_MS_23 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x2,70 x0,90  m)</p></body></html>";
+	public static final String LBL_MS_24 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x1,10 x0,90  m)</p></body></html>";
+	public static final String LBL_MS_25 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,50 x0,90  m)</p></body></html>";
+	public static final String LBL_MS_26 = "<html><body><p align='right'>Panel EPS Hvar- pared lateral izq (libre)</p></body></html>";
+	public static final String LBL_MS_27 = "<html><body><p align='right'>Dados cimentación</p></body></html>";
+	public static final String LBL_MS_28 = "<html><body><p align='right'>Perfil SF Tipo 1</p></body></html>";
+	public static final String LBL_MS_29 = "<html><body><p align='right'>Perfil SF Tipo 2</p></body></html>";
+	public static final String LBL_MS_30 = "<html><body><p align='right'>Perfil SF Tipo 3</p></body></html>";
+	public static final String LBL_MS_31 = "<html><body><p align='right'>Perfil SF Tipo 4</p></body></html>";
+	public static final String LBL_MS_32 = "<html><body><p align='right'>Perfil SF Tipo 5</p></body></html>";
+	public static final String LBL_MS_33 = "<html><body><p align='right'>Perfil SF Tipo 6</p></body></html>";
+	public static final String LBL_MS_34 = "<html><body><p align='right'>Perfil SF Tipo 7</p></body></html>";
+	public static final String LBL_MS_35 = "<html><body><p align='right'>Perfil SF Tipo 8</p></body></html>";
+	public static final String LBL_MS_36 = "<html><body><p align='right'>Perfil SF Tipo 9</p></body></html>";
+	public static final String LBL_MS_37 = "<html><body><p align='right'>Perfil SF Tipo 10</p></body></html>";
+	public static final String LBL_MS_38 = "<html><body><p align='right'>Perfil SF Tipo 11</p></body></html>";
+	public static final String LBL_MS_39 = "<html><body><p align='right'>Perfil SF Tipo 12</p></body></html>";
+	public static final String LBL_MS_40 = "<html><body><p align='right'>Cercha</p></body></html>";
+
+	/*
 	 * PGtemplates
 	 */
 	public static final String LBL_PG_0 = "<html><body><p align='right'>Luminarias LED 60 w - 5000 lum</p></body></html>";
