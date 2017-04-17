@@ -22,10 +22,12 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import com.capa.datos.TCabecera;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TLugarGeografico;
+import com.capa.negocios.ComponenteFichaD;
 import com.capa.negocios.ComponenteLGeografico;
+import com.capa.negocios.ServicioFichaD;
 import com.capa.negocios.ServicioLGeografico;
-import com.capa.presentacion.JPinformacionObligatoria;
 import com.capa.presentacion.JPcabecera;
+import com.capa.presentacion.JPinformacionObligatoria;
 
 public class Utilitarios {
 
@@ -158,4 +160,15 @@ public class Utilitarios {
 		return new JTextField(Integer.valueOf(i));
 	}
 
+	public static Integer buscarNumeroUpdateFicha() {
+		ServicioFichaD srvFicha = new ComponenteFichaD();
+		Integer updateFicha = srvFicha.actualizacionFichaN(gettCabecera());
+
+		if (updateFicha == -1) {
+			updateFicha = 1;
+		} else {
+			updateFicha++;
+		}
+		return updateFicha;
+	}
 }

@@ -50,20 +50,11 @@ public class FichaD extends JFrame {
 	private JTextField txtDescripcion9;
 	private JTextField txtDescripcion10;
 
-	private String pathFoto1;
-	private String pathFoto2;
-	private String pathFoto3;
-	private String pathFoto4;
-	private String pathFoto5;
-	private String pathFoto6;
-	private String pathFoto7;
-	private String pathFoto8;
-	private String pathFoto9;
-	private String pathFoto10;
+	private TInformacionObligatoria infoObl;
+	private List<TFichaD> listasD = new ArrayList<TFichaD>();
 
 	ServicioFichaD srvFicha = new ComponenteFichaD();
 	ServicioInfoObligatoria srvIObligatoria = new ComponenteInfoObligatoria();
-	private TInformacionObligatoria infoObl;
 
 	public FichaD() {
 		setTitle("EVALUACIÓN D");
@@ -109,7 +100,8 @@ public class FichaD extends JFrame {
 		btnInsertarFoto1.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				pathFoto1 = getPathImagen();
+				listasD.add(new TFichaD(gettCabecera(), txtDescripcion1.getText(),
+						Utilitarios.buscarNumeroUpdateFicha(), getPathImagen(), infoObl));
 			}
 		});
 
@@ -121,7 +113,8 @@ public class FichaD extends JFrame {
 		btnInsertarFoto2.setEnabled(false);
 		btnInsertarFoto2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto2 = getPathImagen();
+				listasD.add(new TFichaD(gettCabecera(), txtDescripcion2.getText(),
+						Utilitarios.buscarNumeroUpdateFicha(), getPathImagen(), infoObl));
 			}
 		});
 
@@ -133,7 +126,8 @@ public class FichaD extends JFrame {
 		btnInsertarFoto3.setEnabled(false);
 		btnInsertarFoto3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto3 = getPathImagen();
+				listasD.add(new TFichaD(gettCabecera(), txtDescripcion3.getText(),
+						Utilitarios.buscarNumeroUpdateFicha(), getPathImagen(), infoObl));
 			}
 		});
 
@@ -145,7 +139,8 @@ public class FichaD extends JFrame {
 		btnInsertarFoto4.setEnabled(false);
 		btnInsertarFoto4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto4 = getPathImagen();
+				listasD.add(new TFichaD(gettCabecera(), txtDescripcion4.getText(),
+						Utilitarios.buscarNumeroUpdateFicha(), getPathImagen(), infoObl));
 			}
 		});
 		btnInsertarFoto4.setFont(new Font("Arial", Font.BOLD, 12));
@@ -156,7 +151,8 @@ public class FichaD extends JFrame {
 		btnInsertarFoto5.setEnabled(false);
 		btnInsertarFoto5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto5 = getPathImagen();
+				listasD.add(new TFichaD(gettCabecera(), txtDescripcion5.getText(),
+						Utilitarios.buscarNumeroUpdateFicha(), getPathImagen(), infoObl));
 			}
 		});
 		btnInsertarFoto5.setFont(new Font("Arial", Font.BOLD, 12));
@@ -166,7 +162,8 @@ public class FichaD extends JFrame {
 		btnInsertarFoto6.setEnabled(false);
 		btnInsertarFoto6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto6 = getPathImagen();
+				listasD.add(new TFichaD(gettCabecera(), txtDescripcion6.getText(),
+						Utilitarios.buscarNumeroUpdateFicha(), getPathImagen(), infoObl));
 			}
 		});
 		btnInsertarFoto6.setFont(new Font("Arial", Font.BOLD, 12));
@@ -176,7 +173,8 @@ public class FichaD extends JFrame {
 		btnInsertarFoto7.setEnabled(false);
 		btnInsertarFoto7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto7 = getPathImagen();
+				listasD.add(new TFichaD(gettCabecera(), txtDescripcion7.getText(),
+						Utilitarios.buscarNumeroUpdateFicha(), getPathImagen(), infoObl));
 			}
 		});
 		btnInsertarFoto7.setFont(new Font("Arial", Font.BOLD, 12));
@@ -187,7 +185,8 @@ public class FichaD extends JFrame {
 		btnInsertarFoto8.setEnabled(false);
 		btnInsertarFoto8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto8 = getPathImagen();
+				listasD.add(new TFichaD(gettCabecera(), txtDescripcion8.getText(),
+						Utilitarios.buscarNumeroUpdateFicha(), getPathImagen(), infoObl));
 			}
 		});
 		btnInsertarFoto8.setFont(new Font("Arial", Font.BOLD, 12));
@@ -198,7 +197,8 @@ public class FichaD extends JFrame {
 		btnInsertarFoto9.setEnabled(false);
 		btnInsertarFoto9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto9 = getPathImagen();
+				listasD.add(new TFichaD(gettCabecera(), txtDescripcion9.getText(),
+						Utilitarios.buscarNumeroUpdateFicha(), getPathImagen(), infoObl));
 			}
 		});
 		btnInsertarFoto9.setFont(new Font("Arial", Font.BOLD, 12));
@@ -209,7 +209,8 @@ public class FichaD extends JFrame {
 		btnInsertarFoto10.setEnabled(false);
 		btnInsertarFoto10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				pathFoto10 = getPathImagen();
+				listasD.add(new TFichaD(gettCabecera(), txtDescripcion10.getText(),
+						Utilitarios.buscarNumeroUpdateFicha(), getPathImagen(), infoObl));
 			}
 		});
 		btnInsertarFoto10.setFont(new Font("Arial", Font.BOLD, 12));
@@ -406,13 +407,15 @@ public class FichaD extends JFrame {
 
 				srvIObligatoria.crear(infoObl);
 				infoObl.setIoSerial(srvIObligatoria.serialInfoOblMax());
-			
+
 				if (validarInfo(infoObl)) {
 
-					List<TFichaD> detallesFicha = getListaFichaD(infoObl);
+					for (TFichaD it1 : getListasD()) {
+						it1.settInformacionObl(infoObl);
+					}
 
-					for (TFichaD tFichaD : detallesFicha) {
-						srvFicha.crear(tFichaD);
+					for (TFichaD it2 : getListasD()) {
+						srvFicha.crear(it2);
 					}
 
 					new AlInicio().setVisible(true);
@@ -434,27 +437,45 @@ public class FichaD extends JFrame {
 
 	}
 
-	public List<TFichaD> getListaFichaD(TInformacionObligatoria iObligatoria) {
-		Integer updateFicha = srvFicha.actualizacionFichaN(gettCabecera());
-
-		if (updateFicha == -1) {
-			updateFicha = 1;
-		} else {
-			updateFicha++;
-		}
-
-		List<TFichaD> listasD = new ArrayList<TFichaD>();
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion1.getText(), updateFicha, pathFoto1, iObligatoria));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion2.getText(), updateFicha, pathFoto2, iObligatoria));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion3.getText(), updateFicha, pathFoto3, iObligatoria));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion4.getText(), updateFicha, pathFoto4, iObligatoria));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion5.getText(), updateFicha, pathFoto5, iObligatoria));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion6.getText(), updateFicha, pathFoto6, iObligatoria));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion7.getText(), updateFicha, pathFoto7, iObligatoria));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion8.getText(), updateFicha, pathFoto8, iObligatoria));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion9.getText(), updateFicha, pathFoto9, iObligatoria));
-		listasD.add(new TFichaD(gettCabecera(), txtDescripcion10.getText(), updateFicha, pathFoto10, iObligatoria));
+	public List<TFichaD> getListasD() {
 		return listasD;
 	}
+
+	public void setListasD(List<TFichaD> listasD) {
+		this.listasD = listasD;
+	}
+
+	// public List<TFichaD> getListaFichaD(TInformacionObligatoria iObligatoria)
+	// {
+	// Integer updateFicha = srvFicha.actualizacionFichaN(gettCabecera());
+	//
+	// if (updateFicha == -1) {
+	// updateFicha = 1;
+	// } else {
+	// updateFicha++;
+	// }
+	//
+	// listasD.add(new TFichaD(gettCabecera(), txtDescripcion1.getText(),
+	// updateFicha, pathFoto1, iObligatoria));
+	// listasD.add(new TFichaD(gettCabecera(), txtDescripcion2.getText(),
+	// updateFicha, pathFoto2, iObligatoria));
+	// listasD.add(new TFichaD(gettCabecera(), txtDescripcion3.getText(),
+	// updateFicha, pathFoto3, iObligatoria));
+	// listasD.add(new TFichaD(gettCabecera(), txtDescripcion4.getText(),
+	// updateFicha, pathFoto4, iObligatoria));
+	// listasD.add(new TFichaD(gettCabecera(), txtDescripcion5.getText(),
+	// updateFicha, pathFoto5, iObligatoria));
+	// listasD.add(new TFichaD(gettCabecera(), txtDescripcion6.getText(),
+	// updateFicha, pathFoto6, iObligatoria));
+	// listasD.add(new TFichaD(gettCabecera(), txtDescripcion7.getText(),
+	// updateFicha, pathFoto7, iObligatoria));
+	// listasD.add(new TFichaD(gettCabecera(), txtDescripcion8.getText(),
+	// updateFicha, pathFoto8, iObligatoria));
+	// listasD.add(new TFichaD(gettCabecera(), txtDescripcion9.getText(),
+	// updateFicha, pathFoto9, iObligatoria));
+	// listasD.add(new TFichaD(gettCabecera(), txtDescripcion10.getText(),
+	// updateFicha, pathFoto10, iObligatoria));
+	// return listasD;
+	// }
 
 }
