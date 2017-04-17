@@ -11,7 +11,7 @@ public class ComponenteInfoObligatoria implements ServicioInfoObligatoria {
 
 	@Override
 	public void crear(TInformacionObligatoria inforObl) {
-		String query = "INSERT INTO t_informacion_obligatoria (io_obs_general, io_responsable_min, io_cargo_min, io_obs_gen_cont, io_responsable_cont, io_cargo_cont, "
+		String query = "INSERT INTO t_informacion_obligatoria (io_obs_general_min, io_responsable_min, io_cargo_min, io_obs_gen_cont, io_responsable_cont, io_cargo_cont, "
 				+ "io_fecha_io, io_foto_io) VALUES (?,?,?,?,?,?,?,?);";
 		try {
 			Query.insertarGenerico(query,

@@ -18,16 +18,16 @@ public class JPinformacionObligatoria {
 
 	private JPanel pnlInformacionObl;
 
-	private JTextField txtObsGenMin;
-	private JTextField txtObsGenCont;
-	private JTextField txtRespMinisterio;
-	private JTextField txtRespContratista;
-	private JTextField txtCargoMin;
-	private JTextField txtCargoCont;
+	private JTextField jtxtResponsableMin;
+	private JTextField jtxtCargoMin;
+	private JTextField jtxtObsGenMin;
+
+	private JTextField jtxtResponsableCont;
+	private JTextField jtxtCargoCont;
+	private JTextField jtxtObsGenCont;
+
 	private String pathFotoIO;
-
 	private JDateChooser dateFechaIO;
-
 	private JButton btnInsertarFoto;
 
 	public JPinformacionObligatoria(int x, int y) {
@@ -62,15 +62,15 @@ public class JPinformacionObligatoria {
 		lblObsGenIzq.setOpaque(true);
 		lblObsGenIzq.setBackground(new Color(176, 196, 222));
 		pnlIOEtiquetas1.add(lblObsGenIzq);
-		txtRespMinisterio = new JTextField();
-		txtRespMinisterio.setColumns(10);
-		pnlIOTexts1.add(txtRespMinisterio);
-		txtCargoCont = new JTextField();
-		txtCargoCont.setColumns(10);
-		pnlIOTexts1.add(txtCargoCont);
-		txtObsGenCont = new JTextField();
-		txtObsGenCont.setColumns(10);
-		pnlIOTexts1.add(txtObsGenCont);
+		jtxtResponsableMin = new JTextField();
+		jtxtResponsableMin.setColumns(10);
+		pnlIOTexts1.add(jtxtResponsableMin);
+		jtxtCargoMin = new JTextField();
+		jtxtCargoMin.setColumns(10);
+		pnlIOTexts1.add(jtxtCargoMin);
+		jtxtObsGenMin = new JTextField();
+		jtxtObsGenMin.setColumns(10);
+		pnlIOTexts1.add(jtxtObsGenMin);
 
 		JPanel pnlIOEtiquetas2 = new JPanel();
 		pnlIOEtiquetas2.setBounds(10, 85, 157, 60);
@@ -97,15 +97,15 @@ public class JPinformacionObligatoria {
 		lblObsGenDer.setBackground(new Color(176, 196, 222));
 		pnlIOEtiquetas2.add(lblObsGenDer);
 
-		txtRespContratista = new JTextField();
-		txtRespContratista.setColumns(10);
-		pnlIOTexts2.add(txtRespContratista);
-		txtCargoMin = new JTextField();
-		txtCargoMin.setColumns(10);
-		pnlIOTexts2.add(txtCargoMin);
-		txtObsGenMin = new JTextField();
-		txtObsGenMin.setColumns(10);
-		pnlIOTexts2.add(txtObsGenMin);
+		jtxtResponsableCont = new JTextField();
+		jtxtResponsableCont.setColumns(10);
+		pnlIOTexts2.add(jtxtResponsableCont);
+		jtxtCargoCont = new JTextField();
+		jtxtCargoCont.setColumns(10);
+		pnlIOTexts2.add(jtxtCargoCont);
+		jtxtObsGenCont = new JTextField();
+		jtxtObsGenCont.setColumns(10);
+		pnlIOTexts2.add(jtxtObsGenCont);
 
 		JPanel pnlIOfechaLBL = new JPanel();
 		pnlIOfechaLBL.setBounds(10, 150, 157, 20);
@@ -140,52 +140,52 @@ public class JPinformacionObligatoria {
 		this.pnlInformacionObl = pnlInformacionObl;
 	}
 
-	public JTextField getTxtObsGenMin() {
-		return txtObsGenMin;
+	public JTextField getJtxtResponsableMin() {
+		return jtxtResponsableMin;
 	}
 
-	public void setTxtObsGenMin(JTextField txtObsGenMin) {
-		this.txtObsGenMin = txtObsGenMin;
+	public void setJtxtResponsableMin(JTextField jtxtResponsableMin) {
+		this.jtxtResponsableMin = jtxtResponsableMin;
 	}
 
-	public JTextField getTxtObsGenCont() {
-		return txtObsGenCont;
+	public JTextField getJtxtCargoMin() {
+		return jtxtCargoMin;
 	}
 
-	public void setTxtObsGenCont(JTextField txtObsGenCont) {
-		this.txtObsGenCont = txtObsGenCont;
+	public void setJtxtCargoMin(JTextField jtxtCargoMin) {
+		this.jtxtCargoMin = jtxtCargoMin;
 	}
 
-	public JTextField getTxtRespMinisterio() {
-		return txtRespMinisterio;
+	public JTextField getJtxtObsGenMin() {
+		return jtxtObsGenMin;
 	}
 
-	public void setTxtRespMinisterio(JTextField txtRespMinisterio) {
-		this.txtRespMinisterio = txtRespMinisterio;
+	public void setJtxtObsGenMin(JTextField jtxtObsGenMin) {
+		this.jtxtObsGenMin = jtxtObsGenMin;
 	}
 
-	public JTextField getTxtRespContratista() {
-		return txtRespContratista;
+	public JTextField getJtxtResponsableCont() {
+		return jtxtResponsableCont;
 	}
 
-	public void setTxtRespContratista(JTextField txtRespContratista) {
-		this.txtRespContratista = txtRespContratista;
+	public void setJtxtResponsableCont(JTextField jtxtResponsableCont) {
+		this.jtxtResponsableCont = jtxtResponsableCont;
 	}
 
-	public JTextField getTxtCargoMin() {
-		return txtCargoMin;
+	public JTextField getJtxtCargoCont() {
+		return jtxtCargoCont;
 	}
 
-	public void setTxtCargoMin(JTextField txtCargoMin) {
-		this.txtCargoMin = txtCargoMin;
+	public void setJtxtCargoCont(JTextField jtxtCargoCont) {
+		this.jtxtCargoCont = jtxtCargoCont;
 	}
 
-	public JTextField getTxtCargoCont() {
-		return txtCargoCont;
+	public JTextField getJtxtObsGenCont() {
+		return jtxtObsGenCont;
 	}
 
-	public void setTxtCargoCont(JTextField txtCargoCont) {
-		this.txtCargoCont = txtCargoCont;
+	public void setJtxtObsGenCont(JTextField jtxtObsGenCont) {
+		this.jtxtObsGenCont = jtxtObsGenCont;
 	}
 
 	public String getPathFotoIO() {
@@ -214,15 +214,9 @@ public class JPinformacionObligatoria {
 
 	@Override
 	public String toString() {
-		try {
-			return "InformacionObligatoriaV [txtObsGenMin=" + txtObsGenMin.getText() + ", txtObsGenCont="
-					+ txtObsGenCont.getText() + ", txtRespMinisterio=" + txtRespMinisterio.getText()
-					+ ", txtRespContratista=" + txtRespContratista.getText() + ", txtCargoMin=" + txtCargoMin.getText()
-					+ ", txtCargoCont=" + txtCargoCont.getText() + ", pathFotoIO=" + pathFotoIO + ", dateFechaIO="
-					+ dateFechaIO.getDate() + "]";
-		} catch (Exception e) {
-			return "error";
-		}
+		return "JPinformacionObligatoria [jtxtResponsableMin=" + jtxtResponsableMin + ", jtxtCargoMin=" + jtxtCargoMin
+				+ ", jtxtObsGenMin=" + jtxtObsGenMin + ", jtxtResponsableCont=" + jtxtResponsableCont
+				+ ", jtxtCargoCont=" + jtxtCargoCont + ", jtxtObsGenCont=" + jtxtObsGenCont + "]";
 	}
 
 }
