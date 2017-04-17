@@ -25,13 +25,10 @@ public class Validaciones {
 	}
 
 	public static boolean validarInfo(TInformacionObligatoria inf) {
-		if (inf.getIoObsGeneralMin().equals("") 
-				|| inf.getIoResponsableMin().equals("")
-				|| inf.getIoCargoMin().equals("") 
-				|| inf.getIoObsGenCont().equals("")
-				|| inf.getIoResponsableCont().equals("") 
-				|| inf.getIoCargoCont().equals("")
-				|| inf.getIoFotoPath().equals("")) {
+		if (inf.getIoObsGeneralMin().equals("") || inf.getIoResponsableMin().equals("")
+				|| inf.getIoCargoMin().equals("") || inf.getIoObsGenCont().equals("")
+				|| inf.getIoResponsableCont().equals("") || inf.getIoCargoCont().equals("")
+				|| inf.getIoFotoPath() == null) {
 			return false;
 		}
 		return true;

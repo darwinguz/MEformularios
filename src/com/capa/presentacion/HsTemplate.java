@@ -84,6 +84,7 @@ import static com.capa.util.Constantes.TXT_HS_7;
 import static com.capa.util.Constantes.TXT_HS_8;
 import static com.capa.util.Constantes.TXT_HS_9;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
 import static com.capa.util.Validaciones.*;
@@ -257,7 +258,8 @@ public class HsTemplate extends JFrame {
 	private JTextField txtObs41;
 
 	private TFicha ficha;
-	ServicioFicha srvFicha;
+	private ServicioFicha srvFicha;
+	private String fotoInfoObl;
 
 	/**
 	 * Launch the application.
@@ -299,6 +301,12 @@ public class HsTemplate extends JFrame {
 		contentPane.add(cabecera.getCabecera());
 
 		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(870, 482);
+		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				fotoInfoObl = getPathImagen();
+			}
+		});
 		contentPane.add(infoObligatoria.getPnlInformacionObl());
 
 		llenarCabecera(cabecera);
@@ -1592,11 +1600,12 @@ public class HsTemplate extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 
 				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
+				infoObl.setIoFotoPath(fotoInfoObl);
 
 				if (validarInfo(infoObl)) {
-
-					List<TdetalleFicha> detallesFicha = getListaGrupos(infoObl);
 					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
+					List<TdetalleFicha> detallesFicha = getListaGrupos(infoObl);
 
 					if (detallesFicha == null) {
 						JOptionPane.showMessageDialog(null,
