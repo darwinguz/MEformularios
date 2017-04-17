@@ -2,6 +2,27 @@ package com.capa.util;
 
 public class Constantes {
 	/*
+	 * WFtemplates
+	 */
+	public static final String LBL_WF_0 = "<html><body><p align='right'>Toma RJ45 datos</p></body></html>";
+	public static final String LBL_WF_1 = "<html><body><p align='right'>Toma RJ45 voz</p></body></html>";
+	public static final String LBL_WF_2 = "<html><body><p align='right'>Router wireless Tipo N</p></body></html>";
+	public static final String LBL_WF_3 = "<html><body><p align='right'>Access point tipo N</p></body></html>";
+	public static final String LBL_WF_4 = "<html><body><p align='right'>Sockets de pared cat 6 RJ45</p></body></html>";
+	public static final String LBL_WF_5 = "<html><body><p align='right'>Tubería PVC 1/2' l=6 mt</p></body></html>";
+	public static final String LBL_WF_6 = "<html><body><p align='right'>Cable de red CAT6 l=150m</p></body></html>";
+	public static final String LBL_WF_7 = "<html><body><p align='right'>Bandeja para montaje access point</p></body></html>";
+	public static final String LBL_WF_8 = "<html><body><p align='right'>Patchcord 6ft cat6</p></body></html>";
+	public static final String LBL_WF_9 = "<html><body><p align='right'>Patchcord 3ft cat6</p></body></html>";
+	public static final String LBL_WF_10 = "<html><body><p align='right'>Rack cerrado tipo gabinete de 12 UR</p></body></html>";
+	public static final String LBL_WF_11 = "<html><body><p align='right'>Patch panel 12 puertos CAT 6 (incluye jacks)</p></body></html>";
+	public static final String LBL_WF_12 = "<html><body><p align='right'>Conversor de media de fibra óptica a UTP</p></body></html>";
+	public static final String LBL_WF_13 = "<html><body><p align='right'>Caja de conexión 60x60x70 cm</p></body></html>";
+	public static final String LBL_WF_14 = "<html><body><p align='right'>Tubería PVC 2” l=6 mt</p></body></html>";
+	public static final String LBL_WF_15 = "<html><body><p align='right'>Manguera negra tipo eléctrica de 2” l=6mt y 2 cajas de paso</p></body></html>";
+	public static final String LBL_WF_16 = "<html><body><p align='right'>Tablero 20x20x10</p></body></html>";
+
+	/*
 	 * MbTemplates
 	 */
 	public static final String LBL_MB_0 = "<html><body><p align='right'>Luminarias LED 60 w - 5000 lum</p></body></html>";
