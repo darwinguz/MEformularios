@@ -2,6 +2,116 @@ package com.capa.util;
 
 public class Constantes {
 	/*
+	 * MbTemplates
+	 */
+	public static final String LBL_MB_0 = "<html><body><p align='right'>Luminarias LED 60 w - 5000 lum</p></body></html>";
+	public static final String LBL_MB_1 = "<html><body><p align='right'>Tomacorrientes</p></body></html>";
+	public static final String LBL_MB_2 = "<html><body><p align='right'>Interruptor</p></body></html>";
+	public static final String LBL_MB_3 = "<html><body><p align='right'>Kit cable eléctrico MA</p></body></html>";
+	public static final String LBL_MB_4 = "<html><body><p align='right'>Detector de humo</p></body></html>";
+	public static final String LBL_MB_5 = "<html><body><p align='right'>Canal Plástico PVC de L=3m</p></body></html>";
+	public static final String LBL_MB_6 = "<html><body><p align='right'>Kit de Accesorios de Conexión Agua de Lluvia (2 rejilla,2 codos 90°,1/4 gl polipega, tornillos, abrazaderas)</p></body></html>";
+	public static final String LBL_MB_7 = "<html><body><p align='right'>Tubería de PVC 75 mm L=3m</p></body></html>";
+	public static final String LBL_MB_8 = "<html><body><p align='right'>Tubería de PVC 75 mm L=0.6m</p></body></html>";
+	public static final String LBL_MB_9 = "<html><body><p align='right'>Kit para conexión de tubería 75 mm. (lija pliego, polipega 1/4gal,1codo 90°)</p></body></html>";
+	public static final String LBL_MB_10 = "<html><body><p align='right'>Puerta</p></body></html>";
+	public static final String LBL_MB_11 = "<html><body><p align='right'>Bisagras</p></body></html>";
+	public static final String LBL_MB_12 = "<html><body><p align='right'>Perfil SF Tipo 12 MA-SF-12 para puerta</p></body></html>";
+	public static final String LBL_MB_13 = "<html><body><p align='right'>Ventana corredera, compuesta por tres hojas y dos carriles. UPVC con vidrio flotado de 3 mm de 3x1,10</p></body></html>";
+	public static final String LBL_MB_14 = "<html><body><p align='right'>Perfil SF Tipo 12 para ventana</p></body></html>";
+	public static final String LBL_MB_15 = "<html><body><p align='right'>Paneles TCB (8.8x5.8)mts</p></body></html>";
+	public static final String LBL_MB_16 = "<html><body><p align='right'>Paneles vinil piso (0,15x1,93mts)</p></body></html>";
+	public static final String LBL_MB_17 = "<html><body><p align='right'>Paneles EPS para cubierta l=7, a= 1mt</p></body></html>";
+	public static final String LBL_MB_18 = "<html><body><p align='right'>Perfil SF Tipo 12 MB-SF-12  para paneles</p></body></html>";
+	public static final String LBL_MB_19 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x3x0,09x0,09 m)</p></body></html>";
+	public static final String LBL_MB_20 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,90x0,90 m)</p></body></html>";
+	public static final String LBL_MB_21 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x1,10x0,09 m)</p></body></html>";
+	public static final String LBL_MB_22 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,80x0,09 m)</p></body></html>";
+	public static final String LBL_MB_23 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x2,70 x0,90  m)</p></body></html>";
+	public static final String LBL_MB_24 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x1,10 x0,90  m)</p></body></html>";
+	public static final String LBL_MB_25 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,50 x0,90  m)</p></body></html>";
+	public static final String LBL_MB_26 = "<html><body><p align='right'>Panel EPS Hvar- pared lateral izq (libre)</p></body></html>";
+	public static final String LBL_MB_27 = "<html><body><p align='right'>Dados cimentación</p></body></html>";
+	public static final String LBL_MB_28 = "<html><body><p align='right'>Perfil SF Tipo 1</p></body></html>";
+	public static final String LBL_MB_29 = "<html><body><p align='right'>Perfil SF Tipo 2</p></body></html>";
+	public static final String LBL_MB_30 = "<html><body><p align='right'>Perfil SF Tipo 3</p></body></html>";
+	public static final String LBL_MB_31 = "<html><body><p align='right'>Perfil SF Tipo 4</p></body></html>";
+	public static final String LBL_MB_32 = "<html><body><p align='right'>Perfil SF Tipo 5</p></body></html>";
+	public static final String LBL_MB_33 = "<html><body><p align='right'>Perfil SF Tipo 6</p></body></html>";
+	public static final String LBL_MB_34 = "<html><body><p align='right'>Perfil SF Tipo 7</p></body></html>";
+	public static final String LBL_MB_35 = "<html><body><p align='right'>Perfil SF Tipo 8</p></body></html>";
+	public static final String LBL_MB_36 = "<html><body><p align='right'>Perfil SF Tipo 9</p></body></html>";
+	public static final String LBL_MB_37 = "<html><body><p align='right'>Perfil SF Tipo 10</p></body></html>";
+	public static final String LBL_MB_38 = "<html><body><p align='right'>Perfil SF Tipo 11</p></body></html>";
+
+	/*
+	 * BaTemplates
+	 */
+	public static final String LBL_BA_0 = "<html><body><p align='right'>La tubería de PVC presión, unión roscable instalada cumple con las especificaciones:</p></body></html>";
+	public static final String LBL_BA_1 = "<html><body><p align='right'>ASTM D- 1785- 89, para tubería de agua fría.</p></body></html>";
+	public static final String LBL_BA_2 = "<html><body><p align='right'>La tubería instalada soporta una prueba de presión no menor a 100 psi.</p></body></html>";
+	public static final String LBL_BA_3 = "<html><body><p align='right'>La tubería instalada sirve para alcantarillado, desalojo de aguas servidas y aguas lluvias.</p></body></html>";
+	public static final String LBL_BA_4 = "<html><body><p align='right'>Se provee un sistema categoría 6 tipo inalámbrico para el servicio de al menos 110 usuarios, 50 por cada laboratorio y 10 para módulo de administración.</p></body></html>";
+	public static final String LBL_BA_5 = "<html><body><p align='right'>La interconexión entre equipos se realiza mediante cable estructurado siempre y cuando la distancia sea menor a 100 m, cumpliendo la Norma y será Categoría 6 o superior, en caso de ser soterrado y en caso de estar cercano a cables de energía eléctrica se utiliza conductor tipo SHIELDED para evitar interferencia electromagnética.</p></body></html>";
+	public static final String LBL_BA_6 = "<html><body><p align='right'>Se coloca al menos 1 router wireless Tipo N de 10/100/100 MB, y un Access point por laboratorio y módulo de administración.</p></body></html>";
+	public static final String LBL_BA_7 = "<html><body><p align='right'>El rack es ubicado en uno de los laboratorios de tecnología, y se provee de un conversor de media.</p></body></html>";
+	public static final String LBL_BA_8 = "<html><body><p align='right'>Se consideran cajas de conexión de 60X60X70 y tubería PVC y patch cord de FO.</p></body></html>";
+	public static final String LBL_BA_9 = "<html><body><p align='right'>En el cableado eléctrico se utilizan calibres:<br>THHN #8, #10, #12, #14<br>Cable AWG #14desnudo</p></body></html>";
+	public static final String LBL_BA_10 = "<html><body><p align='right'>Los conductores cumplen con las normas de fabricación NEMA ASTM-B3, ASTM-B8, UL62, UL83 y la UL-1581 y aprobados según el sistema de calidad del cable. Aislamiento: Cloruro de polietileno (PVC) de 90°C (194°F) resistente a la humedad, no propaga llama, voltaje de servicio 600V, el color de cada cable es de acuerdo a las especificaciones aprobadas en nuestro medio.</p></body></html>";
+	public static final String LBL_BA_11 = "<html><body><p align='right'>El tendido exterior se considera con tubería soterrada de PVC de 3(75 mm) y cajas de conexión de dimensiones de 60X60X70 cm.</p></body></html>";
+	public static final String LBL_BA_12 = "<html><body><p align='right'>Los postes son metálicos galvanizados de 6 m de altura, con un espesor de lámina mínimo de 3 mm, con placa base de mínimo 12 mm de espesor.</p></body></html>";
+	public static final String LBL_BA_13 = "<html><body><p align='right'>Se incluye un transformador tipo pad mount de 100 KVA para cada UEPTM, que incluye la base, cable de conexión con un tablero de distribución principal, malla a tierra y pruebas de funcionamiento.</p></body></html>";
+	public static final String LBL_BA_14 = "<html><body><p align='right'>Todo el cableado es soterrado, colocado en tubería de PVC.</p></body></html>";
+	public static final String LBL_BA_15 = "<html><body><p align='right'>Se utilizan LED  con temperatura de color de 2700K a 6500K, con voltaje de 110V a 220V, como mínimo.</p></body></html>";
+	public static final String LBL_BA_16 = "<html><body><p align='right'>Eficiencia de luminosidad de 100 Lm/W con un IP65 y de 120W.</p></body></html>";
+	public static final String LBL_BA_17 = "<html><body><p align='right'>La vida útil de la luminaria LED, es de al menos 50000 horas en óptimas condiciones.</p></body></html>";
+
+	/*
+	 * CEtemplates
+	 */
+	public static final String LBL_CE_0 = "<html><body><p align='right'>Paneles WPC 0,15x0,01x2,91 mts</p></body></html>";
+	public static final String LBL_CE_1 = "<html><body><p align='right'>Dados cimentación 0,30x0,30,0,30 mt</p></body></html>";
+	public static final String LBL_CE_2 = "<html><body><p align='right'>Perfil SF Tipo 1C</p></body></html>";
+	public static final String LBL_CE_3 = "<html><body><p align='right'>Perfil SF Tipo 2C</p></body></html>";
+	public static final String LBL_CE_4 = "<html><body><p align='right'>Perfil SF Tipo 3C</p></body></html>";
+	public static final String LBL_CE_5 = "<html><body><p align='right'>Platina SF 1C</p></body></html>";
+
+	/*
+	 * ExTemplates
+	 */
+	public static final String LBL_EX_0 = "<html><body><p align='right'>Tablero Eléctrico Tipo A</p></body></html>";
+	public static final String LBL_EX_1 = "<html><body><p align='right'>Tablero Eléctrico Tipo B</p></body></html>";
+	public static final String LBL_EX_2 = "<html><body><p align='right'>Tablero Eléctrico Tipo C</p></body></html>";
+	public static final String LBL_EX_3 = "<html><body><p align='right'>Tablero Eléctrico Tipo D</p></body></html>";
+	public static final String LBL_EX_4 = "<html><body><p align='right'>Tablero Eléctrico Tipo E</p></body></html>";
+	public static final String LBL_EX_5 = "<html><body><p align='right'>Tablero Eléctrico Tipo F</p></body></html>";
+	public static final String LBL_EX_6 = "<html><body><p align='right'>Kit Cableado Eléctrico TE</p></body></html>";
+	public static final String LBL_EX_7 = "<html><body><p align='right'>Tubería PVC 2´para cableado l=6m</p></body></html>";
+	public static final String LBL_EX_8 = "<html><body><p align='right'>Cajas de Conexión  .60x.60 mt</p></body></html>";
+	public static final String LBL_EX_9 = "<html><body><p align='right'>Dados de cimentación de postes BXBcm</p></body></html>";
+	public static final String LBL_EX_10 = "<html><body><p align='right'>Reflectores LED 400 w - 30000 lum</p></body></html>";
+	public static final String LBL_EX_11 = "<html><body><p align='right'>Postes de 6 mts simples</p></body></html>";
+	public static final String LBL_EX_12 = "<html><body><p align='right'>Cajas de Conexión  .60x.60 mt</p></body></html>";
+	public static final String LBL_EX_13 = "<html><body><p align='right'>Kit Cableado Eléctrico ED</p></body></html>";
+	public static final String LBL_EX_14 = "<html><body><p align='right'>Tubería PVC 1´para cableado l=6m</p></body></html>";
+	public static final String LBL_EX_15 = "<html><body><p align='right'>Dados de cimentación de postes AXAcm</p></body></html>";
+	public static final String LBL_EX_16 = "<html><body><p align='right'>Luminarias LED 120 W - 12000 lum</p></body></html>";
+	public static final String LBL_EX_17 = "<html><body><p align='right'>Postes de 6 mts simples</p></body></html>";
+	public static final String LBL_EX_18 = "<html><body><p align='right'>Postes de 6 mts dobles</p></body></html>";
+	public static final String LBL_EX_19 = "<html><body><p align='right'>Cajas de Conexión  0,60x0,60 mt</p></body></html>";
+	public static final String LBL_EX_20 = "<html><body><p align='right'>Kit cableado eléctrico AE</p></body></html>";
+	public static final String LBL_EX_21 = "<html><body><p align='right'>Tubería PVC 1´para cableado l=6m</p></body></html>";
+	public static final String LBL_EX_22 = "<html><body><p align='right'>Kit de cableado eléctrico BA</p></body></html>";
+	public static final String LBL_EX_23 = "<html><body><p align='right'>Tubería PVC 2´para cableado l=6m</p></body></html>";
+	public static final String LBL_EX_24 = "<html><body><p align='right'>Cajas de Conexión  0,60x0,60 mt</p></body></html>";
+	public static final String LBL_EX_25 = "<html><body><p align='right'>Kit de cableado eléctrico TR</p></body></html>";
+	public static final String LBL_EX_26 = "<html><body><p align='right'>Tubería PVC 3´para cableado l=6m</p></body></html>";
+	public static final String LBL_EX_27 = "<html><body><p align='right'>Transformador 100 Kva</p></body></html>";
+	public static final String LBL_EX_28 = "<html><body><p align='right'>Cimentación Transformador</p></body></html>";
+	public static final String LBL_EX_29 = "<html><body><p align='right'>Cajas de Conexión  0,60x0,60 mt</p></body></html>";
+	public static final String LBL_EX_30 = "<html><body><p align='right'>Kit de cableado eléctrico MT</p></body></html>";
+
+	/*
 	 * Labels HSTemplate
 	 */
 	public static final String LBL_HS_0 = "<html><body><p align=right>Canal de Aguas de Lluvia de Hormigón</p></body></html>";
