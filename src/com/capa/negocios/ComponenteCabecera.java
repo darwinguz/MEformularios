@@ -41,25 +41,24 @@ public class ComponenteCabecera implements ServicioCabecera {
 
 	@Override
 	public TCabecera buscarProyecto(String nombre) {
-		// TODO Auto-generated method stub
 		String sql = "SELECT * FROM t_cabecera WHERE c_nombre_proyecto='" + nombre + "'";
 		TCabecera cabecera = new TCabecera();
-		TLugarGeografico lugar = new TLugarGeografico();
 		try {
 			ResultSet rs = Query.seleccionar(sql);
 			while (rs.next()) {
 				cabecera.setCSerial(rs.getInt("c_serial"));
-				lugar.setLgCodigo(rs.getString("lg_codigo"));
-				cabecera.setTLugarGeografico(lugar);
+				cabecera.setTLugarGeografico(new TLugarGeografico(rs.getString("lg_codigo")));
 				cabecera.setCNombreProyecto(rs.getString("c_nombre_proyecto"));
 				cabecera.setCAmie(rs.getString("c_amie"));
 				cabecera.setCZona(rs.getString("c_zona"));
 				cabecera.setCircuito(rs.getString("c_circuito"));
 				cabecera.setSector(rs.getString("c_sector"));
+				cabecera.setDistrito(rs.getString("c_distrito"));
 				cabecera.setCFechaEntrega(rs.getDate("c_fecha_entrega"));
 				cabecera.setCFechaInicio(rs.getDate("c_fecha_inicio"));
 				cabecera.setCFechaElaboracionInforme(rs.getDate("c_fecha_elaboracion_informe"));
-
+				cabecera.setTipoFicha(rs.getString("c_tipo_ficha"));
+				System.out.println(cabecera);
 			}
 
 		} catch (Exception e) {

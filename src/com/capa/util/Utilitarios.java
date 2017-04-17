@@ -115,23 +115,21 @@ public class Utilitarios {
 	}
 
 	public static void llenarCabecera(JPcabecera jCabecera) {
+
 		ServicioLGeografico geo = new ComponenteLGeografico();
 		TLugarGeografico lugar;
-		jCabecera.getTxtProyecto().setText(gettCabecera().getCNombreProyecto());
-		lugar = geo.buscarProvincia(gettCabecera().getTLugarGeografico().getLgCodigo());
-		jCabecera.getTxtProvincia().setText(lugar.getLgNombre());
-		lugar = geo.buscarCanton(gettCabecera().getTLugarGeografico().getLgCodigo());
-		jCabecera.getTxtCanton().setText(lugar.getLgNombre());
-		lugar = geo.buscarParroquia(gettCabecera().getTLugarGeografico().getLgCodigo());
-		jCabecera.getTxtParroquia().setText(lugar.getLgNombre());
-		jCabecera.getTxtProyecto().setText(Utilitarios.gettCabecera().getCNombreProyecto());
-		jCabecera.getTxtAmie().setText(Utilitarios.gettCabecera().getCAmie());
-		jCabecera.getTxtDistrito().setText(Utilitarios.gettCabecera().getDistrito());
-		jCabecera.getTxtCircuito().setText(Utilitarios.gettCabecera().getCircuito());
-		jCabecera.getTxtFechaEntrega().setText("" + getFechaString(Utilitarios.gettCabecera().getCFechaEntrega()));
-		jCabecera.getTxtFechaInicioTrabajo().setText("" + getFechaString(Utilitarios.gettCabecera().getCFechaInicio()));
-		jCabecera.getTxtZona().setText(Utilitarios.gettCabecera().getCZona());
-		jCabecera.getTxtSector().setText(Utilitarios.gettCabecera().getSector());
+
+		jCabecera.getTxtProyecto().setText(tCabecera.getCNombreProyecto());
+		jCabecera.getTxtAmie().setText(tCabecera.getCAmie());
+		jCabecera.getTxtDistrito().setText(tCabecera.getDistrito());
+		jCabecera.getTxtCircuito().setText(tCabecera.getCircuito());
+		jCabecera.getTxtFechaEntrega().setText("" + getFechaString(tCabecera.getCFechaEntrega()));
+		jCabecera.getTxtFechaInicioTrabajo().setText("" + getFechaString(tCabecera.getCFechaInicio()));
+		jCabecera.getTxtZona().setText(tCabecera.getCZona());
+		jCabecera.getTxtParroquia().setText(tCabecera.getTLugarGeografico().getLgNombre());
+
+		// jCabecera.getTxtProvincia().setText(lugar.getLgNombre());
+		jCabecera.getTxtSector().setText(tCabecera.getSector());
 	}
 
 	public static double redondearDecimales(double valorInicial, int numeroDecimales) {

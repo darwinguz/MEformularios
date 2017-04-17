@@ -153,13 +153,10 @@ public class AlInicio extends JFrame {
 					try {
 						tCabecera = comProyecto.buscarProyecto(txtBuscar.getText());
 						Utilitarios.settCabecera(tCabecera);
-						System.out.println(tCabecera.getTLugarGeografico().getLgCodigo());
-						System.out.println(tCabecera.getCircuito());
 						JOptionPane.showMessageDialog(null, "Proyecto cargado", "Proyecto",
 								JOptionPane.INFORMATION_MESSAGE);
 						txtBuscar.setEditable(false);
 					} catch (NullPointerException np) {
-						// TODO: handle exception
 						JOptionPane.showMessageDialog(null, "No existe el proyecto", "ERROR",
 								JOptionPane.ERROR_MESSAGE);
 						txtBuscar.setEnabled(true);

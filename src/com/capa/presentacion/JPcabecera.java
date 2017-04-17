@@ -13,19 +13,20 @@ import com.capa.util.Utilitarios;
 
 public class JPcabecera {
 
-	private JTextField txtAmie;
-	private JTextField txtCircuito;
-	private JTextField txtFechaEntrega;
-	private JTextField txtSector;
-	private JTextField txtFechaInicioTrabajo;
-	private JTextField txtProyecto;
-	private JTextField txtParroquia;
 	private JPanel pnlSuperior;
 	private JButton btnRegistrar;
+
+	private JTextField txtProyecto;
+	private JTextField txtAmie;
 	private JTextField txtDistrito;
+	private JTextField txtCircuito;
+	private JTextField txtFechaEntrega;
+	private JTextField txtFechaInicioTrabajo;
 	private JTextField txtZona;
 	private JTextField txtProvincia;
 	private JTextField txtCanton;
+	private JTextField txtParroquia;
+	private JTextField txtSector;
 
 	public JPanel getCabecera() {
 		pnlSuperior = new JPanel();

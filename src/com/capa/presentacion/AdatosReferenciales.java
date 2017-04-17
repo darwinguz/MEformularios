@@ -304,11 +304,12 @@ public class AdatosReferenciales extends JFrame {
 
 				TCabecera cabecera = new TCabecera(proy, amie, zona, parroquia, distrito, circuito, sector,
 						fechaEntrega, fechaInicio, fechaFin, pathFotoGeneral, pathFotoCroquis, "D");
-				System.out.println(cabecera);
+
 				proyecto.crear(cabecera);
 				alInicio.settCabecera(cabecera);
 				Utilitarios.settCabecera(cabecera);
-				JOptionPane.showMessageDialog(null, "Proyecto registrado con Éxito!", "Mensaje de ConfirmaciÓn",
+
+				JOptionPane.showMessageDialog(null, "Proyecto registrado con Éxito!", "Mensaje de Confirmación",
 						JOptionPane.INFORMATION_MESSAGE);
 				alInicio.setVisible(true);
 				temp.dispose();
