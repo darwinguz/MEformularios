@@ -326,14 +326,18 @@ public class CeTemplate extends JFrame {
 					if (registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
 						servFicha.guardarFormulario(cargarListas());
-//						HashMap<String, Object> parametros = new HashMap<String, Object>();
-//						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
-//						parametros.put("serial_ficha", ficha.getFiSerial());
-//
-//						Reporte reporte = new Reporte("Reporte CE", 280, 10, 850, 750);
-//						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
-//								Query.getMysql().getConexion());
-//						reporte.setVisible(true);
+						// HashMap<String, Object> parametros = new
+						// HashMap<String, Object>();
+						// parametros.put("serial_cabecera",
+						// Utilitarios.gettCabecera().getCSerial());
+						// parametros.put("serial_ficha", ficha.getFiSerial());
+						//
+						// Reporte reporte = new Reporte("Reporte CE", 280, 10,
+						// 850, 750);
+						// reporte.cargarReporte("src/com/capa/templates/MA.jasper",
+						// parametros,
+						// Query.getMysql().getConexion());
+						// reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
 					} else {
