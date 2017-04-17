@@ -135,7 +135,7 @@ public class ComponenteFicha implements ServicioFicha {
 	public void guardarFormulario(List<TdetalleFicha> detallesFicha) {
 		detallesFicha.forEach(item -> {
 			try {
-				String aux = item.getDetEtiqueta().replaceAll("<html><body><p align=right>", "");
+				String aux = item.getDetEtiqueta().replaceAll("<html><body><p align='right'>", "");
 				aux = aux.replaceAll("</p></body></html>", "");
 				item.setDetEtiqueta(aux);
 				String query = "INSERT INTO t_detalle_ficha (io_serial, fi_serial, c_serial, "
@@ -150,6 +150,7 @@ public class ComponenteFicha implements ServicioFicha {
 				mensaje = "Ingreso exitoso";
 				titulo = "INGRESO";
 				tipoMensaje = 1;
+				System.out.println(query);
 			} catch (Exception e) {
 				mensaje = "Error al insertar datos del formulario MA " + e.getMessage();
 			}
