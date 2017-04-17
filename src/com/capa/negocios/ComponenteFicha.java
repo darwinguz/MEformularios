@@ -146,7 +146,6 @@ public class ComponenteFicha implements ServicioFicha {
 						+ item.getDetEtiqueta() + "', " + item.getDetCantidadLimite() + ", "
 						+ item.getDetCantidadEjecutada() + ", '" + item.getDetObsRef() + "', "
 						+ item.getDetActualizacionN() + ", " + item.getPorcentajeAvance() + ");";
-				Query.insertar(query);
 				mensaje = "Ingreso exitoso";
 				titulo = "INGRESO";
 				tipoMensaje = 1;
