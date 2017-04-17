@@ -1,6 +1,5 @@
 package com.capa.negocios;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import com.capa.datos.TCabecera;
@@ -18,8 +17,6 @@ public interface ServicioFicha {
 
 	public boolean existeFicha();
 
-	public void insertarFormulario(LinkedList<LinkedList<TdetalleFicha>> cargarListas);
-	
 	/**
 	 * 
 	 * @param detallesFicha
@@ -27,17 +24,23 @@ public interface ServicioFicha {
 	public void guardarFormulario(List<TdetalleFicha> detallesFicha);
 
 	/**
-	 * Busca la ultima actualizacion de la ficha x proyecto solicitada 
-	 * @param serialC:Serial del Proyecto - Cabecera
-	 * @param serialF:Serial de la Ficha
+	 * Busca la ultima actualizacion de la ficha x proyecto solicitada
+	 * 
+	 * @param serialC:Serial
+	 *            del Proyecto - Cabecera
+	 * @param serialF:Serial
+	 *            de la Ficha
 	 * @return entero correspondienteActualizacon de la Ficha
 	 */
 	public int nActualizacionFicha(TCabecera serialC, TFicha serialF);
 
 	/**
 	 * Método que retorna una lista de detalles en funcion al Proyecto y Ficha
-	 * @param serialC:Serial del Proyecto - Cabecera
-	 * @param serialF:Serial de la Ficha
+	 * 
+	 * @param serialC:Serial
+	 *            del Proyecto - Cabecera
+	 * @param serialF:Serial
+	 *            de la Ficha
 	 * @return Lista de detalles de una Ficha - Ultima actualización
 	 */
 	public List<TdetalleFicha> detallesFicha(TCabecera serialC, TFicha serialF);
