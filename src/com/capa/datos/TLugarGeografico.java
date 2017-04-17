@@ -2,7 +2,6 @@ package com.capa.datos;
 
 public class TLugarGeografico implements java.io.Serializable {
 
-
 	private static final long serialVersionUID = -2204081382540142509L;
 	private String lgCodigo;
 	private String TLugarGeografico;
@@ -10,8 +9,6 @@ public class TLugarGeografico implements java.io.Serializable {
 
 	public TLugarGeografico() {
 	}
-
-	
 
 	public TLugarGeografico(String lgCodigo) {
 		this.lgCodigo = lgCodigo;
@@ -49,7 +46,8 @@ public class TLugarGeografico implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return lgNombre;
+		return "TLugarGeografico [lgCodigo=" + lgCodigo + ", TLugarGeografico=" + TLugarGeografico + ", lgNombre="
+				+ lgNombre + "]";
 	}
+
 }

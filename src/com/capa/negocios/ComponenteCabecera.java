@@ -43,6 +43,7 @@ public class ComponenteCabecera implements ServicioCabecera {
 	public TCabecera buscarProyecto(String nombre) {
 		String sql = "SELECT * FROM t_cabecera WHERE c_nombre_proyecto='" + nombre + "'";
 		TCabecera cabecera = new TCabecera();
+
 		try {
 			ResultSet rs = Query.seleccionar(sql);
 			while (rs.next()) {

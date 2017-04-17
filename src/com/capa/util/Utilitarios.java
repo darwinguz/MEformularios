@@ -126,7 +126,7 @@ public class Utilitarios {
 		jCabecera.getTxtFechaEntrega().setText("" + getFechaString(tCabecera.getCFechaEntrega()));
 		jCabecera.getTxtFechaInicioTrabajo().setText("" + getFechaString(tCabecera.getCFechaInicio()));
 		jCabecera.getTxtZona().setText(tCabecera.getCZona());
-		jCabecera.getTxtParroquia().setText(tCabecera.getTLugarGeografico().getLgNombre());
+		jCabecera.getTxtParroquia().setText(tCabecera.getTLugarGeografico().getLgCodigo());
 
 		// jCabecera.getTxtProvincia().setText(lugar.getLgNombre());
 		jCabecera.getTxtSector().setText(tCabecera.getSector());
