@@ -3,7 +3,6 @@ package com.capa.negocios;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -75,29 +74,6 @@ public class ComponenteFicha implements ServicioFicha {
 	}
 
 	@Override
-	public void insertarFormulario(LinkedList<LinkedList<TdetalleFicha>> datosFicha) {
-
-		datosFicha.forEach(lista -> {
-			lista.forEach(item -> {
-				try {
-					String query = "INSERT INTO t_detalle_ficha (io_serial, fi_serial, c_serial, g_serial, df_etiqueta, "
-							+ "df_cantidad_limite, df_cantidad_ejecutada, df_obs_ref, df_actualizacion_n) VALUES ('"
-							+ item.getInfoObligatoria().getIoSerial() + "', '" + item.getTFicha().getFiSerial() + "', '"
-							+ item.getTCabecera().getCSerial() + "', '" + item.getTGrupo().getGSerial() + "', '"
-							+ item.getDetEtiqueta() + "', '" + item.getDetCantidadLimite() + "', '"
-							+ item.getDetCantidadEjecutada() + "', '" + item.getDetObsRef() + "', '"
-							+ item.getDetActualizacionN() + "');";
-					Query.insertar(query);
-				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "Error al insertar datos del formulario MA " + e.getMessage(),
-							"ERROR", JOptionPane.ERROR_MESSAGE);
-				}
-			});
-		});
-
-	}
-
-	@Override
 	public int nActualizacionFicha(TCabecera serialC, TFicha serialF) {
 		String query = "select max(df_actualizacion_n) from t_detalle_ficha where fi_serial = " + serialF.getFiSerial()
 				+ " and c_serial = " + serialC.getCSerial() + ";";
@@ -159,6 +135,9 @@ public class ComponenteFicha implements ServicioFicha {
 	public void guardarFormulario(List<TdetalleFicha> detallesFicha) {
 		detallesFicha.forEach(item -> {
 			try {
+				String aux = item.getDetEtiqueta().replaceAll("<html><body><p align=right>", "");
+				aux = aux.replaceAll("</p></body></html>", "");
+				item.setDetEtiqueta(aux);
 				String query = "INSERT INTO t_detalle_ficha (io_serial, fi_serial, c_serial, "
 						+ "g_serial, df_etiqueta, df_cantidad_limite, df_cantidad_ejecutada, "
 						+ "df_obs_ref, df_actualizacion_n, df_porcentaje_avance) VALUES ("
@@ -176,7 +155,7 @@ public class ComponenteFicha implements ServicioFicha {
 			}
 		});
 		JOptionPane.showMessageDialog(null, mensaje, titulo, tipoMensaje);
-		
+
 	}
 
 }
