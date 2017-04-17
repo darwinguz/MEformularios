@@ -1,12 +1,10 @@
 package com.capa.presentacion;
 
-import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -14,7 +12,6 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.TitledBorder;
 
 public class FichaBAcom extends JFrame {
 
@@ -31,13 +28,6 @@ public class FichaBAcom extends JFrame {
 	private JTextField txtObsPoste;
 	private JTextField txtObsTrans;
 	private JTextField txtObsIlum;
-	private JTextField txtObsGen;
-	private JTextField txtResponsable;
-	private JTextField txtCargo;
-	private JTextField txtObsGen2;
-	private JTextField txtResponsableContra;
-	private JTextField txtCargo2;
-	private JTextField txtFecha;
 
 	/**
 	 * Launch the application.
@@ -86,7 +76,7 @@ public class FichaBAcom extends JFrame {
 		contentPane.add(lblDescPvc);
 
 		JPanel panelPVC = new JPanel();
-		panelPVC.setBounds(261, 160, 252, 57);
+		panelPVC.setBounds(223, 160, 214, 57);
 		contentPane.add(panelPVC);
 		panelPVC.setLayout(null);
 
@@ -102,12 +92,12 @@ public class FichaBAcom extends JFrame {
 
 		JLabel lblObs = new JLabel("Observaciones/Referencia");
 		lblObs.setFont(new Font("Arial", Font.PLAIN, 11));
-		lblObs.setHorizontalAlignment(SwingConstants.CENTER);
-		lblObs.setBounds(78, 11, 174, 14);
+		lblObs.setHorizontalAlignment(SwingConstants.LEFT);
+		lblObs.setBounds(78, 11, 139, 14);
 		panelPVC.add(lblObs);
 
 		txtObsPVC = new JTextField();
-		txtObsPVC.setBounds(98, 25, 136, 20);
+		txtObsPVC.setBounds(98, 25, 108, 20);
 		panelPVC.add(txtObsPVC);
 		txtObsPVC.setColumns(10);
 
@@ -115,19 +105,19 @@ public class FichaBAcom extends JFrame {
 		lblTituloAP.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblTituloAP.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTituloAP.setFont(new Font("Arial", Font.BOLD, 11));
-		lblTituloAP.setBounds(61, 264, 93, 14);
+		lblTituloAP.setBounds(61, 244, 93, 14);
 		contentPane.add(lblTituloAP);
 
 		String textoAP = "<html><body>La tuber\u00EDa instalada soporta una prueba de<br>presi\u00F3n no menor a 100 psi.</body></html>";
 		JLabel lblDescAP = new JLabel(textoAP);
 		lblDescAP.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescAP.setVerticalAlignment(SwingConstants.TOP);
-		lblDescAP.setBounds(10, 288, 214, 36);
+		lblDescAP.setBounds(10, 268, 214, 36);
 		contentPane.add(lblDescAP);
 
 		JPanel panelAP = new JPanel();
 		panelAP.setLayout(null);
-		panelAP.setBounds(261, 264, 252, 57);
+		panelAP.setBounds(223, 244, 214, 57);
 		contentPane.add(panelAP);
 
 		JRadioButton rdbtnSiAP = new JRadioButton("SI");
@@ -142,32 +132,32 @@ public class FichaBAcom extends JFrame {
 
 		JLabel label = new JLabel("Observaciones/Referencia");
 		label.setFont(new Font("Arial", Font.PLAIN, 11));
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setBounds(78, 11, 174, 14);
+		label.setHorizontalAlignment(SwingConstants.LEFT);
+		label.setBounds(78, 11, 139, 14);
 		panelAP.add(label);
 
 		txtObsAP = new JTextField();
 		txtObsAP.setColumns(10);
-		txtObsAP.setBounds(98, 25, 136, 20);
+		txtObsAP.setBounds(98, 25, 108, 20);
 		panelAP.add(txtObsAP);
 
 		JLabel lblTituloAS = new JLabel("Tuber\u00EDas PVC aguas servidas");
 		lblTituloAS.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblTituloAS.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTituloAS.setFont(new Font("Arial", Font.BOLD, 11));
-		lblTituloAS.setBounds(20, 356, 181, 14);
+		lblTituloAS.setBounds(20, 336, 181, 14);
 		contentPane.add(lblTituloAS);
 
 		String textoAS = "<html><body>La tuber\u00EDa instalada sirve para <br>alcantarillado, desalojo de aguas servidas<br>y aguas lluvias.</body></html>";
 		JLabel lblDescAS = new JLabel(textoAS);
 		lblDescAS.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescAS.setVerticalAlignment(SwingConstants.TOP);
-		lblDescAS.setBounds(10, 378, 214, 50);
+		lblDescAS.setBounds(10, 358, 214, 50);
 		contentPane.add(lblDescAS);
 
 		JPanel panelAS = new JPanel();
 		panelAS.setLayout(null);
-		panelAS.setBounds(261, 356, 252, 57);
+		panelAS.setBounds(223, 336, 214, 57);
 		contentPane.add(panelAS);
 
 		JRadioButton rdbtnSiAS = new JRadioButton("SI");
@@ -182,20 +172,20 @@ public class FichaBAcom extends JFrame {
 
 		JLabel label_3 = new JLabel("Observaciones/Referencia");
 		label_3.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setBounds(78, 11, 174, 14);
+		label_3.setHorizontalAlignment(SwingConstants.LEFT);
+		label_3.setBounds(78, 11, 139, 14);
 		panelAS.add(label_3);
 
 		txtObsAS = new JTextField();
 		txtObsAS.setColumns(10);
-		txtObsAS.setBounds(98, 25, 136, 20);
+		txtObsAS.setBounds(98, 25, 108, 20);
 		panelAS.add(txtObsAS);
 
 		JLabel lblTituloVoz = new JLabel("Voz y datos");
 		lblTituloVoz.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblTituloVoz.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTituloVoz.setFont(new Font("Arial", Font.BOLD, 11));
-		lblTituloVoz.setBounds(20, 442, 181, 14);
+		lblTituloVoz.setBounds(20, 422, 181, 14);
 		contentPane.add(lblTituloVoz);
 		String textoVoz = "<html><body>Se provee un sistema categor\u00EDa 6 tipo <br>inal\u00E1mbrico para el servicio de al menos<br>110 usuarios, 50 por cada laboratorio y 10"
 				+ "<br>para m\u00F3dulo de administraci\u00F3n.<br>La interconexi\u00F3n entre equipos se realiza<br>mediante cable estructurado siempre y<br>"
@@ -209,12 +199,12 @@ public class FichaBAcom extends JFrame {
 		lblDescVoz.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescVoz.setText(textoVoz);
 		lblDescVoz.setVerticalAlignment(SwingConstants.TOP);
-		lblDescVoz.setBounds(10, 467, 241, 294);
+		lblDescVoz.setBounds(10, 442, 241, 294);
 		contentPane.add(lblDescVoz);
 
 		JPanel panelVoz = new JPanel();
 		panelVoz.setLayout(null);
-		panelVoz.setBounds(261, 442, 252, 57);
+		panelVoz.setBounds(223, 422, 214, 57);
 		contentPane.add(panelVoz);
 
 		JRadioButton rdbtnSiVoz = new JRadioButton("SI");
@@ -229,20 +219,20 @@ public class FichaBAcom extends JFrame {
 
 		JLabel label_4 = new JLabel("Observaciones/Referencia");
 		label_4.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_4.setHorizontalAlignment(SwingConstants.CENTER);
-		label_4.setBounds(78, 11, 174, 14);
+		label_4.setHorizontalAlignment(SwingConstants.LEFT);
+		label_4.setBounds(78, 11, 139, 14);
 		panelVoz.add(label_4);
 
 		txtObsVoz = new JTextField();
 		txtObsVoz.setColumns(10);
-		txtObsVoz.setBounds(98, 25, 136, 20);
+		txtObsVoz.setBounds(98, 25, 108, 20);
 		panelVoz.add(txtObsVoz);
 
 		JLabel lbTituloCableado = new JLabel("Cableado el\u00E9ctrico");
 		lbTituloCableado.setVerticalAlignment(SwingConstants.BOTTOM);
 		lbTituloCableado.setHorizontalAlignment(SwingConstants.CENTER);
 		lbTituloCableado.setFont(new Font("Arial", Font.BOLD, 11));
-		lbTituloCableado.setBounds(557, 160, 135, 14);
+		lbTituloCableado.setBounds(482, 160, 135, 14);
 		contentPane.add(lbTituloCableado);
 
 		String textoCableado = "<html><body>En el cableado el\u00E9ctrico se utilizan calibres:<br>- THHN #8, #10, #12, #14<br>- Cable AWG #14desnudo"
@@ -254,12 +244,12 @@ public class FichaBAcom extends JFrame {
 		lblDescCableado.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescCableado.setText(textoCableado);
 		lblDescCableado.setVerticalAlignment(SwingConstants.TOP);
-		lblDescCableado.setBounds(533, 185, 241, 235);
+		lblDescCableado.setBounds(458, 185, 241, 235);
 		contentPane.add(lblDescCableado);
 
 		JPanel panelCableado = new JPanel();
 		panelCableado.setLayout(null);
-		panelCableado.setBounds(784, 160, 252, 57);
+		panelCableado.setBounds(695, 160, 220, 57);
 		contentPane.add(panelCableado);
 
 		JRadioButton rdbtnSiCableado = new JRadioButton("SI");
@@ -274,20 +264,20 @@ public class FichaBAcom extends JFrame {
 
 		JLabel label_5 = new JLabel("Observaciones/Referencia");
 		label_5.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_5.setHorizontalAlignment(SwingConstants.CENTER);
-		label_5.setBounds(78, 11, 174, 14);
+		label_5.setHorizontalAlignment(SwingConstants.LEFT);
+		label_5.setBounds(78, 11, 143, 14);
 		panelCableado.add(label_5);
 
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(98, 25, 136, 20);
+		textField.setBounds(98, 25, 108, 20);
 		panelCableado.add(textField);
 
 		JLabel lblTituloPoste = new JLabel("Poste el\u00E9ctrico met\u00E1lico de 6 m");
 		lblTituloPoste.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblTituloPoste.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTituloPoste.setFont(new Font("Arial", Font.BOLD, 11));
-		lblTituloPoste.setBounds(533, 442, 227, 14);
+		lblTituloPoste.setBounds(458, 442, 227, 14);
 		contentPane.add(lblTituloPoste);
 
 		String textoPoste = "<html><body>Los postes son met\u00E1licos galvanizados de 6 m<br>de altura, con un espesor de l\u00E1mina<br>"
@@ -295,12 +285,12 @@ public class FichaBAcom extends JFrame {
 		JLabel lblLosPostesSon = new JLabel(textoPoste);
 		lblLosPostesSon.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblLosPostesSon.setVerticalAlignment(SwingConstants.TOP);
-		lblLosPostesSon.setBounds(533, 467, 241, 68);
+		lblLosPostesSon.setBounds(458, 467, 241, 68);
 		contentPane.add(lblLosPostesSon);
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setLayout(null);
-		panel_3.setBounds(784, 442, 252, 57);
+		panel_3.setBounds(695, 442, 220, 57);
 		contentPane.add(panel_3);
 
 		JRadioButton rdbtnSiPoste = new JRadioButton("SI");
@@ -315,20 +305,20 @@ public class FichaBAcom extends JFrame {
 
 		JLabel label_6 = new JLabel("Observaciones/Referencia");
 		label_6.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_6.setHorizontalAlignment(SwingConstants.CENTER);
-		label_6.setBounds(78, 11, 174, 14);
+		label_6.setHorizontalAlignment(SwingConstants.LEFT);
+		label_6.setBounds(78, 11, 143, 14);
 		panel_3.add(label_6);
 
 		txtObsPoste = new JTextField();
 		txtObsPoste.setColumns(10);
-		txtObsPoste.setBounds(98, 25, 136, 20);
+		txtObsPoste.setBounds(98, 25, 108, 20);
 		panel_3.add(txtObsPoste);
 
 		JLabel lblTituloTrans = new JLabel("Transformador");
 		lblTituloTrans.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblTituloTrans.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTituloTrans.setFont(new Font("Arial", Font.BOLD, 11));
-		lblTituloTrans.setBounds(1086, 160, 135, 14);
+		lblTituloTrans.setBounds(949, 160, 135, 14);
 		contentPane.add(lblTituloTrans);
 
 		String textoTrans = "<html><body>Se incluye un transformador tipo pad<br>mount de 100 KVA para cada UEPTM, que<br>incluye la base, cable de conexi\u00F3n con un<br>"
@@ -337,12 +327,12 @@ public class FichaBAcom extends JFrame {
 		lblDescTrans.setFont(new Font("Arial", Font.PLAIN, 11));
 		lblDescTrans.setVerticalAlignment(SwingConstants.TOP);
 		lblDescTrans.setText(textoTrans);
-		lblDescTrans.setBounds(1062, 185, 214, 84);
+		lblDescTrans.setBounds(925, 185, 214, 84);
 		contentPane.add(lblDescTrans);
 
 		JPanel panelTrans = new JPanel();
 		panelTrans.setLayout(null);
-		panelTrans.setBounds(1286, 160, 252, 57);
+		panelTrans.setBounds(1132, 160, 220, 57);
 		contentPane.add(panelTrans);
 
 		JRadioButton rdbtnSiTrans = new JRadioButton("SI");
@@ -357,20 +347,20 @@ public class FichaBAcom extends JFrame {
 
 		JLabel label_7 = new JLabel("Observaciones/Referencia");
 		label_7.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_7.setHorizontalAlignment(SwingConstants.CENTER);
-		label_7.setBounds(78, 11, 174, 14);
+		label_7.setHorizontalAlignment(SwingConstants.LEFT);
+		label_7.setBounds(78, 11, 136, 14);
 		panelTrans.add(label_7);
 
 		txtObsTrans = new JTextField();
 		txtObsTrans.setColumns(10);
-		txtObsTrans.setBounds(98, 25, 136, 20);
+		txtObsTrans.setBounds(98, 25, 108, 20);
 		panelTrans.add(txtObsTrans);
 
 		JLabel lblTituloIlum = new JLabel("Iluminaci\u00F3n exterior");
 		lblTituloIlum.setVerticalAlignment(SwingConstants.BOTTOM);
 		lblTituloIlum.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTituloIlum.setFont(new Font("Arial", Font.BOLD, 11));
-		lblTituloIlum.setBounds(1086, 288, 135, 14);
+		lblTituloIlum.setBounds(949, 288, 135, 14);
 		contentPane.add(lblTituloIlum);
 
 		String textoIlum = "<html><body>Todo el cableado es soterrado, colocado<br>en tuber\u00EDa de PVC.<br>Se utilizan LED  con temperatura de color<br>"
@@ -380,12 +370,12 @@ public class FichaBAcom extends JFrame {
 		lblDescIlum.setVerticalAlignment(SwingConstants.TOP);
 		lblDescIlum.setText(textoIlum);
 		lblDescIlum.setFont(new Font("Arial", Font.PLAIN, 11));
-		lblDescIlum.setBounds(1062, 313, 214, 138);
+		lblDescIlum.setBounds(925, 313, 214, 138);
 		contentPane.add(lblDescIlum);
 
 		JPanel panelIlum = new JPanel();
 		panelIlum.setLayout(null);
-		panelIlum.setBounds(1286, 288, 252, 57);
+		panelIlum.setBounds(1132, 288, 220, 57);
 		contentPane.add(panelIlum);
 
 		JRadioButton rdbtnSiIlum = new JRadioButton("SI");
@@ -399,104 +389,15 @@ public class FichaBAcom extends JFrame {
 		panelIlum.add(rdbtnNoIlum);
 
 		JLabel label_8 = new JLabel("Observaciones/Referencia");
-		label_8.setHorizontalAlignment(SwingConstants.CENTER);
+		label_8.setHorizontalAlignment(SwingConstants.LEFT);
 		label_8.setFont(new Font("Arial", Font.PLAIN, 11));
-		label_8.setBounds(78, 11, 174, 14);
+		label_8.setBounds(78, 11, 136, 14);
 		panelIlum.add(label_8);
 
 		txtObsIlum = new JTextField();
 		txtObsIlum.setColumns(10);
-		txtObsIlum.setBounds(98, 25, 136, 20);
+		txtObsIlum.setBounds(98, 25, 108, 20);
 		panelIlum.add(txtObsIlum);
-
-		JPanel panelInfoObli = new JPanel();
-		panelInfoObli.setBorder(new TitledBorder(null, "Informaci\u00F3n Obligatoria", TitledBorder.LEADING,
-				TitledBorder.TOP, null, Color.RED));
-		panelInfoObli.setBounds(1108, 467, 406, 269);
-		contentPane.add(panelInfoObli);
-		panelInfoObli.setLayout(null);
-
-		JLabel lblObsGenerales = new JLabel("Observaciones Generales:");
-		lblObsGenerales.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblObsGenerales.setFont(new Font("Arial", Font.PLAIN, 11));
-		lblObsGenerales.setBounds(10, 26, 139, 14);
-		panelInfoObli.add(lblObsGenerales);
-
-		txtObsGen = new JTextField();
-		txtObsGen.setBounds(159, 23, 228, 20);
-		panelInfoObli.add(txtObsGen);
-		txtObsGen.setColumns(10);
-
-		JLabel lblResponsable = new JLabel("Responsable MinEduc:");
-		lblResponsable.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblResponsable.setFont(new Font("Arial", Font.PLAIN, 11));
-		lblResponsable.setBounds(10, 52, 139, 14);
-		panelInfoObli.add(lblResponsable);
-
-		txtResponsable = new JTextField();
-		txtResponsable.setColumns(10);
-		txtResponsable.setBounds(159, 49, 228, 20);
-		panelInfoObli.add(txtResponsable);
-
-		JLabel lblCargo = new JLabel("Cargo:");
-		lblCargo.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblCargo.setFont(new Font("Arial", Font.PLAIN, 11));
-		lblCargo.setBounds(10, 78, 139, 14);
-		panelInfoObli.add(lblCargo);
-
-		txtCargo = new JTextField();
-		txtCargo.setColumns(10);
-		txtCargo.setBounds(159, 75, 228, 20);
-		panelInfoObli.add(txtCargo);
-
-		JLabel lblObsGen2 = new JLabel("Observaciones Generales:");
-		lblObsGen2.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblObsGen2.setFont(new Font("Arial", Font.PLAIN, 11));
-		lblObsGen2.setBounds(10, 120, 139, 14);
-		panelInfoObli.add(lblObsGen2);
-
-		txtObsGen2 = new JTextField();
-		txtObsGen2.setColumns(10);
-		txtObsGen2.setBounds(159, 117, 228, 20);
-		panelInfoObli.add(txtObsGen2);
-
-		JLabel lblRespContratista = new JLabel("Responsable Contratista");
-		lblRespContratista.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblRespContratista.setFont(new Font("Arial", Font.PLAIN, 11));
-		lblRespContratista.setBounds(10, 146, 139, 14);
-		panelInfoObli.add(lblRespContratista);
-
-		txtResponsableContra = new JTextField();
-		txtResponsableContra.setColumns(10);
-		txtResponsableContra.setBounds(159, 143, 228, 20);
-		panelInfoObli.add(txtResponsableContra);
-
-		JLabel lblCargo2 = new JLabel("Cargo:");
-		lblCargo2.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblCargo2.setFont(new Font("Arial", Font.PLAIN, 11));
-		lblCargo2.setBounds(10, 172, 139, 14);
-		panelInfoObli.add(lblCargo2);
-
-		txtCargo2 = new JTextField();
-		txtCargo2.setColumns(10);
-		txtCargo2.setBounds(159, 169, 228, 20);
-		panelInfoObli.add(txtCargo2);
-
-		JLabel lblFecha = new JLabel("Fecha:");
-		lblFecha.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblFecha.setFont(new Font("Arial", Font.PLAIN, 11));
-		lblFecha.setBounds(10, 198, 139, 14);
-		panelInfoObli.add(lblFecha);
-
-		txtFecha = new JTextField();
-		txtFecha.setColumns(10);
-		txtFecha.setBounds(159, 195, 228, 20);
-		panelInfoObli.add(txtFecha);
-
-		JButton btnInsertarFoto = new JButton("Insertar Foto");
-		btnInsertarFoto.setFont(new Font("Arial", Font.BOLD, 14));
-		btnInsertarFoto.setBounds(222, 226, 149, 23);
-		panelInfoObli.add(btnInsertarFoto);
 
 		addWindowListener(new WindowAdapter() {
 			@Override

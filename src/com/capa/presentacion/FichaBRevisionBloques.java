@@ -3,13 +3,10 @@ package com.capa.presentacion;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -20,8 +17,6 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
-import com.capa.util.Utilitarios;
-
 public class FichaBRevisionBloques extends JFrame {
 
 	/**
@@ -29,13 +24,6 @@ public class FichaBRevisionBloques extends JFrame {
 	 */
 	private static final long serialVersionUID = -464231132711014311L;
 	private JPanel contentPane;
-	private JTextField txtAmie;
-	private JTextField txtCircuito;
-	private JTextField txtFechaEntrega;
-	private JTextField txtFechaInicioTrabajo;
-	private JTextField txtSector;
-	private JTextField txtProyecto;
-	private JTextField txtParroquia;
 	private JTextField txtDObsRef;
 	private JTextField txtPPAObsRef;
 	private JTextField txtPTPObsRef;
@@ -46,25 +34,6 @@ public class FichaBRevisionBloques extends JFrame {
 	private JTextField txtIObsRef;
 	private JTextField txtSFObsRef;
 	private JTextField txtWPCObsRef;
-	private JPanel pnlInformacionObl;
-	private JPanel pnlIOTexts2;
-	private JTextField txtObsGenDer;
-	private JTextField txtResponsableContratista;
-	private JTextField txtCargoDer;
-	private JTextField txtFecha;
-	private JPanel pnlIOTexts1;
-	private JTextField txtObsGenIzq;
-	private JTextField txtResponsableMineduc;
-	private JTextField txtCargoIzq;
-	private JPanel pnlIOEtiquetas1;
-	private JLabel lblObsGenIzq;
-	private JLabel lblResponsableMineduc;
-	private JLabel lblCargoIzq;
-	private JPanel pnlIOEtiquetas2;
-	private JLabel lblObsGenDer;
-	private JLabel lblResponsableContratista;
-	private JLabel lblCargoDer;
-	private JLabel lblFecha;
 
 	/**
 	 * Launch the application.
@@ -93,123 +62,13 @@ public class FichaBRevisionBloques extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
-		
-		JPanel pnlSuperior = new JPanel();
-		pnlSuperior.setLayout(null);
-		pnlSuperior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlSuperior.setBounds(115, 11, 1052, 103);
-		contentPane.add(pnlSuperior);
-
-		JLabel lblLogoMinEdu = new JLabel("");
-		lblLogoMinEdu.setBounds(0, 11, 160, 81);
-		lblLogoMinEdu.setIcon(Utilitarios.getImagenIcon("logoMinEdu.png", 160, 80, 100));
-		pnlSuperior.add(lblLogoMinEdu);
-
-		txtAmie = new JTextField();
-		txtAmie.setColumns(10);
-		txtAmie.setBounds(391, 24, 86, 20);
-		pnlSuperior.add(txtAmie);
-
-		JComboBox cmbDistrito = new JComboBox();
-		cmbDistrito.setBounds(512, 24, 160, 20);
-		pnlSuperior.add(cmbDistrito);
-
-		JComboBox cmbZona = new JComboBox();
-		cmbZona.setBounds(160, 72, 50, 20);
-		pnlSuperior.add(cmbZona);
-
-		JComboBox cmbProvincia = new JComboBox();
-		cmbProvincia.setBounds(234, 72, 125, 20);
-		pnlSuperior.add(cmbProvincia);
-
-		JComboBox cmbCanton = new JComboBox();
-		cmbCanton.setBounds(391, 72, 125, 20);
-		pnlSuperior.add(cmbCanton);
-
-		txtCircuito = new JTextField();
-		txtCircuito.setColumns(10);
-		txtCircuito.setBounds(717, 24, 86, 20);
-		pnlSuperior.add(txtCircuito);
-
-		txtFechaEntrega = new JTextField();
-		txtFechaEntrega.setColumns(10);
-		txtFechaEntrega.setBounds(813, 24, 86, 20);
-		pnlSuperior.add(txtFechaEntrega);
-
-		txtFechaInicioTrabajo = new JTextField();
-		txtFechaInicioTrabajo.setColumns(10);
-		txtFechaInicioTrabajo.setBounds(912, 24, 86, 20);
-		pnlSuperior.add(txtFechaInicioTrabajo);
-
-		txtSector = new JTextField();
-		txtSector.setColumns(10);
-		txtSector.setBounds(705, 72, 208, 20);
-		pnlSuperior.add(txtSector);
-
-		JLabel lblProyecto = new JLabel("Proyecto");
-		lblProyecto.setBounds(164, 11, 57, 14);
-		pnlSuperior.add(lblProyecto);
-
-		JLabel lblZona = new JLabel("Zona");
-		lblZona.setBounds(160, 55, 40, 14);
-		pnlSuperior.add(lblZona);
-
-		JLabel lblProvincia = new JLabel("Provincia");
-		lblProvincia.setBounds(234, 55, 57, 14);
-		pnlSuperior.add(lblProvincia);
-
-		JLabel lblCanton = new JLabel("Cant\u00F3n");
-		lblCanton.setBounds(391, 55, 40, 14);
-		pnlSuperior.add(lblCanton);
-
-		JLabel lblParroquia = new JLabel("Parroquia");
-		lblParroquia.setBounds(545, 55, 57, 14);
-		pnlSuperior.add(lblParroquia);
-
-		JLabel lblSector = new JLabel("Sector");
-		lblSector.setBounds(705, 55, 57, 14);
-		pnlSuperior.add(lblSector);
-
-		JLabel lblAmie = new JLabel("AMIE");
-		lblAmie.setBounds(391, 11, 40, 14);
-		pnlSuperior.add(lblAmie);
-
-		JLabel lblDistrito = new JLabel("Distrito");
-		lblDistrito.setBounds(512, 11, 64, 14);
-		pnlSuperior.add(lblDistrito);
-
-		JLabel lblCircuito = new JLabel("Circuito");
-		lblCircuito.setBounds(717, 11, 57, 14);
-		pnlSuperior.add(lblCircuito);
-
-		JLabel lblFechaEntrega = new JLabel("Fecha Entrega");
-		lblFechaEntrega.setBounds(813, 11, 84, 14);
-		pnlSuperior.add(lblFechaEntrega);
-
-		JLabel lblFechaInicioTrabajo = new JLabel("Fecha Inicio Trabajo");
-		lblFechaInicioTrabajo.setBounds(911, 11, 114, 14);
-		pnlSuperior.add(lblFechaInicioTrabajo);
-
-		JButton btnRegistrar = new JButton("Registrar");
-		btnRegistrar.setBounds(938, 60, 98, 32);
-		pnlSuperior.add(btnRegistrar);
-
-		txtProyecto = new JTextField();
-		txtProyecto.setColumns(10);
-		txtProyecto.setBounds(160, 24, 199, 20);
-		pnlSuperior.add(txtProyecto);
-
-		txtParroquia = new JTextField();
-		txtParroquia.setColumns(10);
-		txtParroquia.setBounds(545, 72, 114, 20);
-		pnlSuperior.add(txtParroquia);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 484);
 		contentPane.add(tabbedPane);
 
 		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("1.- Ficha Revisiñn Bloques", null, pnlPestaña1, null);
+		tabbedPane.addTab("1.- Ficha Revisión Bloques", null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
 
 		JPanel pnlDimensiones = new JPanel();
@@ -221,7 +80,7 @@ public class FichaBRevisionBloques extends JFrame {
 
 		JLabel lblDCaracteristicas = new JLabel(
 				"<html><body>Largo del aula: 9,00 m<br>Ancho del aula: 6,00 m<br>Altura del aula: "
-						+ "Mñnima: 2,70 m, Mñxima: 3,00 m</body></html>");
+						+ "Mñnima: 2,70 m, Máxima: 3,00 m</body></html>");
 		lblDCaracteristicas.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblDCaracteristicas.setBounds(10, 13, 235, 48);
 		pnlDimensiones.add(lblDCaracteristicas);
@@ -599,10 +458,6 @@ public class FichaBRevisionBloques extends JFrame {
 		txtPCObsRef.setBounds(50, 16, 123, 20);
 		pnlPCObsRef.add(txtPCObsRef);
 
-		JButton btnSiguientePagina = new JButton("Siguiente P\u00E1gina");
-		btnSiguientePagina.setBounds(1125, 393, 135, 40);
-		pnlPestaña1.add(btnSiguientePagina);
-
 		JPanel pnlPestaña2 = new JPanel();
 		tabbedPane.addTab("2.- Ficha Revisiñn Bloques", null, pnlPestaña2, null);
 		pnlPestaña2.setLayout(null);
@@ -776,86 +631,6 @@ public class FichaBRevisionBloques extends JFrame {
 		txtWPCObsRef.setColumns(10);
 		txtWPCObsRef.setBounds(50, 16, 123, 20);
 		pnlWPCObsRef.add(txtWPCObsRef);
-
-		pnlInformacionObl = new JPanel();
-		pnlInformacionObl.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"),
-				"Informaci\u00F3n Obligatoria", TitledBorder.LEADING, TitledBorder.TOP, null, Color.RED));
-		pnlInformacionObl.setBounds(875, 201, 396, 244);
-		pnlPestaña2.add(pnlInformacionObl);
-		pnlInformacionObl.setLayout(null);
-
-		pnlIOEtiquetas1 = new JPanel();
-		pnlIOEtiquetas1.setBounds(10, 22, 157, 73);
-		pnlInformacionObl.add(pnlIOEtiquetas1);
-		pnlIOEtiquetas1.setLayout(new GridLayout(3, 0, 0, 0));
-
-		lblObsGenIzq = new JLabel("Observaciones Generales:");
-		pnlIOEtiquetas1.add(lblObsGenIzq);
-
-		lblResponsableMineduc = new JLabel("Responsable MinEduc:");
-		pnlIOEtiquetas1.add(lblResponsableMineduc);
-
-		lblCargoIzq = new JLabel("Cargo:");
-		pnlIOEtiquetas1.add(lblCargoIzq);
-
-		pnlIOTexts1 = new JPanel();
-		pnlIOTexts1.setBounds(166, 22, 220, 73);
-		pnlInformacionObl.add(pnlIOTexts1);
-		pnlIOTexts1.setLayout(new GridLayout(3, 0, 0, 0));
-
-		txtObsGenIzq = new JTextField();
-		txtObsGenIzq.setColumns(10);
-		pnlIOTexts1.add(txtObsGenIzq);
-
-		txtResponsableMineduc = new JTextField();
-		txtResponsableMineduc.setColumns(10);
-		pnlIOTexts1.add(txtResponsableMineduc);
-
-		txtCargoIzq = new JTextField();
-		txtCargoIzq.setColumns(10);
-		pnlIOTexts1.add(txtCargoIzq);
-
-		pnlIOEtiquetas2 = new JPanel();
-		pnlIOEtiquetas2.setBounds(10, 100, 157, 97);
-		pnlInformacionObl.add(pnlIOEtiquetas2);
-		pnlIOEtiquetas2.setLayout(new GridLayout(4, 0, 0, 0));
-
-		lblObsGenDer = new JLabel("Observaciones Generales:");
-		pnlIOEtiquetas2.add(lblObsGenDer);
-
-		lblResponsableContratista = new JLabel("Responsable Contratista:");
-		pnlIOEtiquetas2.add(lblResponsableContratista);
-
-		lblCargoDer = new JLabel("Cargo:");
-		pnlIOEtiquetas2.add(lblCargoDer);
-
-		lblFecha = new JLabel("Fecha:");
-		pnlIOEtiquetas2.add(lblFecha);
-
-		pnlIOTexts2 = new JPanel();
-		pnlIOTexts2.setBounds(166, 100, 220, 97);
-		pnlInformacionObl.add(pnlIOTexts2);
-		pnlIOTexts2.setLayout(new GridLayout(4, 0, 0, 0));
-
-		txtObsGenDer = new JTextField();
-		txtObsGenDer.setColumns(10);
-		pnlIOTexts2.add(txtObsGenDer);
-
-		txtResponsableContratista = new JTextField();
-		txtResponsableContratista.setColumns(10);
-		pnlIOTexts2.add(txtResponsableContratista);
-
-		txtCargoDer = new JTextField();
-		txtCargoDer.setColumns(10);
-		pnlIOTexts2.add(txtCargoDer);
-
-		txtFecha = new JTextField();
-		txtFecha.setColumns(10);
-		pnlIOTexts2.add(txtFecha);
-
-		JButton btnInsertarFoto = new JButton("Insertar FOTO");
-		btnInsertarFoto.setBounds(166, 198, 120, 35);
-		pnlInformacionObl.add(btnInsertarFoto);
 
 		addWindowListener(new WindowAdapter() {
 

@@ -1,9 +1,11 @@
 package com.capa.negocios;
 
+import java.util.List;
+
 import com.capa.datos.TFichaA;
 
 public interface ServicioFichaA {
 
-	void crear(TFichaA atributos);
+	void crear(List<TFichaA> atributos);
 
 }

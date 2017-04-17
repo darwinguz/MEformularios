@@ -62,7 +62,7 @@ public class Calculos {
 		int sumaTotal = ficha.getSumaCantidadTotal();
 		calculoPonderado = ((cantidadTotal * constCalculo) / sumaTotal) * 100;
 		calculoPonderado = redondearDecimales(calculoPonderado, 2);
-		return 0.0;
+		return calculoPonderado;
 	}
 
 	// falta métodos para calcular avance total de ejecutadas a la fecha y % de
