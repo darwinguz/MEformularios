@@ -141,10 +141,10 @@ public class Utilitarios {
 	}
 
 	public static TInformacionObligatoria cargarInfoObligatoria(JPinformacionObligatoria jpInfo) {
-		return new TInformacionObligatoria(jpInfo.getTxtObsGenMin().getText(), jpInfo.getTxtRespMinisterio().getText(),
-				jpInfo.getTxtCargoMin().getText(), jpInfo.getTxtObsGenCont().getText(),
-				jpInfo.getTxtRespContratista().getText(), jpInfo.getTxtCargoCont().getText(),
-				jpInfo.getDateFechaIO().getDate(), jpInfo.getPathFotoIO());
+		return new TInformacionObligatoria(jpInfo.getJtxtObsGenMin().getText(),
+				jpInfo.getJtxtResponsableMin().getText(), jpInfo.getJtxtCargoMin().getText(),
+				jpInfo.getJtxtObsGenCont().getText(), jpInfo.getJtxtResponsableCont().getText(),
+				jpInfo.getJtxtCargoCont().getText(), jpInfo.getDateFechaIO().getDate(), jpInfo.getPathFotoIO());
 	}
 
 	public static JTextField txtCantidad(int i, int constante, int cantidadEjecutada) {
