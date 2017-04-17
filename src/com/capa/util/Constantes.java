@@ -157,6 +157,26 @@ public class Constantes {
 	public static final String LBL_MM_28 = "<html><body><p align='right'>Paneles TCB (8.8x5.8 m)</p></body></html>";
 	public static final String LBL_MM_29 = "<html><body><p align='right'>Paneles vynil piso (0,15x1,93 m)</p></body></html>";
 	public static final String LBL_MM_30 = "<html><body><p align='right'>Paneles EPS para cubierta l=7, a= 1m</p></body></html>";
+	public static final String LBL_MM_31 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x3x0,09x0,09 m)</p></body></html>";
+	public static final String LBL_MM_32 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,90x0,90 m)</p></body></html>";
+	public static final String LBL_MM_33 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x1,10x0,09 m)</p></body></html>";
+	public static final String LBL_MM_34 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,80x0,09 m)</p></body></html>";
+	public static final String LBL_MM_35 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x2,70 x0,90  m)</p></body></html>";
+	public static final String LBL_MM_36 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x1,10 x0,90  m)</p></body></html>";
+	public static final String LBL_MM_37 = "<html><body><p align='right'>Paneles EPS pared -   ( 1x0,50 x0,90  m)</p></body></html>";
+	public static final String LBL_MM_38 = "<html><body><p align='right'>Panel Hvar- pared laterales izq (libre)</p></body></html>";
+	public static final String LBL_MM_39 = "<html><body><p align='right'>Dados cimentación</p></body></html>";
+	public static final String LBL_MM_40 = "<html><body><p align='right'>Perfil SF Tipo 1</p></body></html>";
+	public static final String LBL_MM_41 = "<html><body><p align='right'>Perfil SF Tipo 2</p></body></html>";
+	public static final String LBL_MM_42 = "<html><body><p align='right'>Perfil SF Tipo 3</p></body></html>";
+	public static final String LBL_MM_43 = "<html><body><p align='right'>Perfil SF Tipo 4</p></body></html>";
+	public static final String LBL_MM_44 = "<html><body><p align='right'>Perfil SF Tipo 5</p></body></html>";
+	public static final String LBL_MM_45 = "<html><body><p align='right'>Perfil SF Tipo 6</p></body></html>";
+	public static final String LBL_MM_46 = "<html><body><p align='right'>Perfil SF Tipo 7</p></body></html>";
+	public static final String LBL_MM_47 = "<html><body><p align='right'>Perfil SF Tipo 8</p></body></html>";
+	public static final String LBL_MM_48 = "<html><body><p align='right'>Perfil SF Tipo 9</p></body></html>";
+	public static final String LBL_MM_49 = "<html><body><p align='right'>Perfil SF Tipo 10</p></body></html>";
+	public static final String LBL_MM_50 = "<html><body><p align='right'>Perfil SF Tipo 11</p></body></html>";
 
 	/*
 	 * MStemplates
@@ -295,7 +315,7 @@ public class Constantes {
 	public static final String LBL_WF_2 = "<html><body><p align='right'>Router wireless Tipo N</p></body></html>";
 	public static final String LBL_WF_3 = "<html><body><p align='right'>Access point tipo N</p></body></html>";
 	public static final String LBL_WF_4 = "<html><body><p align='right'>Sockets de pared cat 6 RJ45</p></body></html>";
-	public static final String LBL_WF_5 = "<html><body><p align='right'>Tubería PVC 1/2' l=6 mt</p></body></html>";
+	public static final String LBL_WF_5 = "<html><body><p align='right'>Tubería PVC 1/2\" l=6 mt</p></body></html>";
 	public static final String LBL_WF_6 = "<html><body><p align='right'>Cable de red CAT6 l=150m</p></body></html>";
 	public static final String LBL_WF_7 = "<html><body><p align='right'>Bandeja para montaje access point</p></body></html>";
 	public static final String LBL_WF_8 = "<html><body><p align='right'>Patchcord 6ft cat6</p></body></html>";
