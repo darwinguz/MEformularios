@@ -157,7 +157,7 @@ public class AlInicio extends JFrame {
 								JOptionPane.INFORMATION_MESSAGE);
 						txtBuscar.setEditable(false);
 					} else {
-						// tCabecera = null;
+						tCabecera = null;
 						JOptionPane.showMessageDialog(null, "No existe el proyecto", "ERROR",
 								JOptionPane.ERROR_MESSAGE);
 						txtBuscar.setEnabled(true);

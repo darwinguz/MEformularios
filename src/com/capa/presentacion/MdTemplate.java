@@ -2,6 +2,7 @@ package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
 import static com.capa.util.Validaciones.*;
@@ -484,9 +485,10 @@ public class MdTemplate extends JFrame {
 	private JLabel lblBisagras_1;
 	private JTextField txtCantidad191;
 
-	TInformacionObligatoria infor;
-	TFicha ficha;
-	ServicioFicha servFicha;
+	private TInformacionObligatoria infor;
+	private TFicha ficha;
+	private ServicioFicha servFicha;
+	private String fotoInfoObl;
 
 	/**
 	 * Launch the application.
@@ -3256,6 +3258,12 @@ public class MdTemplate extends JFrame {
 		validarDigitos(txtCantidad941);
 
 		JPinformacionObligatoria informacionObligatoriaV = new JPinformacionObligatoria(858, 335);
+		informacionObligatoriaV.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				fotoInfoObl = getPathImagen();
+			}
+		});
 		panel_44.add(informacionObligatoriaV.getPnlInformacionObl());
 
 		llenarFicha();
@@ -3265,9 +3273,16 @@ public class MdTemplate extends JFrame {
 
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
+				infor.setIoFotoPath(fotoInfoObl);
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
+					if (detallesFicha == null) {
+						JOptionPane.showMessageDialog(null,
+								"ERROR: Verificar que los registros no se encuentren VACÍOS", "Mensaje de Error",
+								JOptionPane.ERROR_MESSAGE);
+						return;
+					}
 					if (registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
 						servFicha.guardarFormulario(detallesFicha);
