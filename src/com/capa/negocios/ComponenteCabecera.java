@@ -59,7 +59,7 @@ public class ComponenteCabecera implements ServicioCabecera {
 				cabecera.setCFechaInicio(rs.getDate("c_fecha_inicio"));
 				cabecera.setCFechaElaboracionInforme(rs.getDate("c_fecha_elaboracion_informe"));
 				cabecera.setTipoFicha(rs.getString("c_tipo_ficha"));
-				System.out.println(cabecera);
+				System.out.println("CAB" + cabecera);
 			}
 
 		} catch (Exception e) {

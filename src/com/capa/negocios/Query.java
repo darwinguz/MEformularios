@@ -17,7 +17,7 @@ import com.capa.datos.TFichaD;
 import com.capa.util.Utilitarios;
 
 public class Query {
-	private static MySql mysql = new MySql("localhost", "db_ministerio_ed", "root", "admin");
+	private static MySql mysql = new MySql("localhost", "db_ministerio_ed", "root", "root");
 
 	public static ResultSet seleccionar(String query) {
 		Statement comando;

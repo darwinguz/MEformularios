@@ -150,17 +150,34 @@ public class AlInicio extends JFrame {
 				}
 
 				if (key == KeyEvent.VK_ENTER) {
-					try {
-						tCabecera = comProyecto.buscarProyecto(txtBuscar.getText());
+					// try {
+					// tCabecera =
+					// comProyecto.buscarProyecto(txtBuscar.getText());
+					// Utilitarios.settCabecera(tCabecera);
+					// System.out.println(tCabecera.getCAmie());
+					// JOptionPane.showMessageDialog(null, "Proyecto cargado",
+					// "Proyecto",
+					// JOptionPane.INFORMATION_MESSAGE);
+					// txtBuscar.setEditable(false);
+					// } catch (NullPointerException np) {
+					// JOptionPane.showMessageDialog(null, "No existe el
+					// proyecto", "ERROR",
+					// JOptionPane.ERROR_MESSAGE);
+					// txtBuscar.setEnabled(true);
+					// }
+					tCabecera = comProyecto.buscarProyecto(txtBuscar.getText());
+					if (!(tCabecera.getCNombreProyecto() == null)) {
 						Utilitarios.settCabecera(tCabecera);
 						JOptionPane.showMessageDialog(null, "Proyecto cargado", "Proyecto",
 								JOptionPane.INFORMATION_MESSAGE);
 						txtBuscar.setEditable(false);
-					} catch (NullPointerException np) {
+					} else {
+						// tCabecera = null;
 						JOptionPane.showMessageDialog(null, "No existe el proyecto", "ERROR",
 								JOptionPane.ERROR_MESSAGE);
 						txtBuscar.setEnabled(true);
 					}
+
 				}
 			}
 		});
