@@ -1,17 +1,25 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.getPathImagen;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import com.capa.util.Utilitarios;
+
 import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -22,17 +30,19 @@ public class FichaBbateriasSanitarias extends JFrame {
 
 	private static final long serialVersionUID = 6812081295798595025L;
 	private JPanel panelPrincipal;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
+	private JTextField txtObs0;
+	private JTextField txtObs1;
+	private JTextField txtObs2;
+	private JTextField txtObs3;
+	private JTextField txtObs4;
+	private JTextField txtObs6;
+	private JTextField txtObs5;
+	private JTextField txtObs7;
+	private JTextField txtObs8;
+	private JTextField txtObs10;
+	private JTextField txtObs11;
+
+	private String fotoInfoObl;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -92,13 +102,17 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_1.setBounds(10, 19, 123, 14);
 		panel_1.add(label_1);
 
-		JRadioButton radioButton = new JRadioButton("");
-		radioButton.setBounds(31, 2, 21, 23);
-		panel_1.add(radioButton);
+		JRadioButton rdBtn00 = new JRadioButton("");
+		rdBtn00.setBounds(31, 2, 21, 23);
+		panel_1.add(rdBtn00);
 
-		JRadioButton radioButton_1 = new JRadioButton("");
-		radioButton_1.setBounds(81, 2, 21, 23);
-		panel_1.add(radioButton_1);
+		JRadioButton rdBtn01 = new JRadioButton("");
+		rdBtn01.setBounds(81, 2, 21, 23);
+		panel_1.add(rdBtn01);
+
+		ButtonGroup grupoBotonD = new ButtonGroup();
+		grupoBotonD.add(rdBtn00);
+		grupoBotonD.add(rdBtn01);
 
 		JLabel label_2 = new JLabel("SI");
 		label_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -110,10 +124,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_3.setBounds(108, 5, 21, 14);
 		panel_1.add(label_3);
 
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(10, 32, 123, 20);
-		panel_1.add(textField);
+		txtObs0 = new JTextField();
+		txtObs0.setColumns(10);
+		txtObs0.setBounds(10, 32, 123, 20);
+		panel_1.add(txtObs0);
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setLayout(null);
@@ -139,13 +153,17 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label.setBounds(10, 19, 123, 14);
 		panel_3.add(label);
 
-		JRadioButton radioButton_2 = new JRadioButton("");
-		radioButton_2.setBounds(31, 2, 21, 23);
-		panel_3.add(radioButton_2);
+		JRadioButton rdBtn10 = new JRadioButton("");
+		rdBtn10.setBounds(31, 2, 21, 23);
+		panel_3.add(rdBtn10);
 
-		JRadioButton radioButton_3 = new JRadioButton("");
-		radioButton_3.setBounds(81, 2, 21, 23);
-		panel_3.add(radioButton_3);
+		JRadioButton rdBtn11 = new JRadioButton("");
+		rdBtn11.setBounds(81, 2, 21, 23);
+		panel_3.add(rdBtn11);
+
+		ButtonGroup grupoBoton1 = new ButtonGroup();
+		grupoBoton1.add(rdBtn10);
+		grupoBoton1.add(rdBtn11);
 
 		JLabel label_4 = new JLabel("SI");
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -157,10 +175,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_5.setBounds(108, 5, 21, 14);
 		panel_3.add(label_5);
 
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(10, 32, 123, 20);
-		panel_3.add(textField_1);
+		txtObs1 = new JTextField();
+		txtObs1.setColumns(10);
+		txtObs1.setBounds(10, 32, 123, 20);
+		panel_3.add(txtObs1);
 
 		JPanel panel_4 = new JPanel();
 		panel_4.setLayout(null);
@@ -186,13 +204,17 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_6.setBounds(10, 19, 123, 14);
 		panel_5.add(label_6);
 
-		JRadioButton radioButton_4 = new JRadioButton("");
-		radioButton_4.setBounds(31, 2, 21, 23);
-		panel_5.add(radioButton_4);
+		JRadioButton rdBtn20 = new JRadioButton("");
+		rdBtn20.setBounds(31, 2, 21, 23);
+		panel_5.add(rdBtn20);
 
-		JRadioButton radioButton_5 = new JRadioButton("");
-		radioButton_5.setBounds(81, 2, 21, 23);
-		panel_5.add(radioButton_5);
+		JRadioButton rdBtn21 = new JRadioButton("");
+		rdBtn21.setBounds(81, 2, 21, 23);
+		panel_5.add(rdBtn21);
+
+		ButtonGroup grupoBoton2 = new ButtonGroup();
+		grupoBoton2.add(rdBtn20);
+		grupoBoton2.add(rdBtn21);
 
 		JLabel label_7 = new JLabel("SI");
 		label_7.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -204,10 +226,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_8.setBounds(108, 5, 21, 14);
 		panel_5.add(label_8);
 
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(10, 32, 123, 20);
-		panel_5.add(textField_2);
+		txtObs2 = new JTextField();
+		txtObs2.setColumns(10);
+		txtObs2.setBounds(10, 32, 123, 20);
+		panel_5.add(txtObs2);
 
 		JPanel panel_6 = new JPanel();
 		panel_6.setLayout(null);
@@ -233,13 +255,17 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_9.setBounds(10, 19, 123, 14);
 		panel_7.add(label_9);
 
-		JRadioButton radioButton_6 = new JRadioButton("");
-		radioButton_6.setBounds(31, 2, 21, 23);
-		panel_7.add(radioButton_6);
+		JRadioButton rdBtn30 = new JRadioButton("");
+		rdBtn30.setBounds(31, 2, 21, 23);
+		panel_7.add(rdBtn30);
 
-		JRadioButton radioButton_7 = new JRadioButton("");
-		radioButton_7.setBounds(81, 2, 21, 23);
-		panel_7.add(radioButton_7);
+		JRadioButton rdBtn31 = new JRadioButton("");
+		rdBtn31.setBounds(81, 2, 21, 23);
+		panel_7.add(rdBtn31);
+
+		ButtonGroup grupoBoton3 = new ButtonGroup();
+		grupoBoton3.add(rdBtn30);
+		grupoBoton3.add(rdBtn31);
 
 		JLabel label_10 = new JLabel("SI");
 		label_10.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -251,10 +277,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_11.setBounds(108, 5, 21, 14);
 		panel_7.add(label_11);
 
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(10, 32, 123, 20);
-		panel_7.add(textField_3);
+		txtObs3 = new JTextField();
+		txtObs3.setColumns(10);
+		txtObs3.setBounds(10, 32, 123, 20);
+		panel_7.add(txtObs3);
 
 		JPanel panel_15 = new JPanel();
 		panel_15.setLayout(null);
@@ -280,13 +306,17 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_13.setBounds(10, 19, 123, 14);
 		panel_8.add(label_13);
 
-		JRadioButton radioButton_8 = new JRadioButton("");
-		radioButton_8.setBounds(31, 2, 21, 23);
-		panel_8.add(radioButton_8);
+		JRadioButton rdBtn40 = new JRadioButton("");
+		rdBtn40.setBounds(31, 2, 21, 23);
+		panel_8.add(rdBtn40);
 
-		JRadioButton radioButton_9 = new JRadioButton("");
-		radioButton_9.setBounds(81, 2, 21, 23);
-		panel_8.add(radioButton_9);
+		JRadioButton rdBtn41 = new JRadioButton("");
+		rdBtn41.setBounds(81, 2, 21, 23);
+		panel_8.add(rdBtn41);
+
+		ButtonGroup grupoBoton4 = new ButtonGroup();
+		grupoBoton4.add(rdBtn40);
+		grupoBoton4.add(rdBtn41);
 
 		JLabel label_14 = new JLabel("SI");
 		label_14.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -298,10 +328,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_15.setBounds(108, 5, 21, 14);
 		panel_8.add(label_15);
 
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(10, 32, 123, 20);
-		panel_8.add(textField_4);
+		txtObs4 = new JTextField();
+		txtObs4.setColumns(10);
+		txtObs4.setBounds(10, 32, 123, 20);
+		panel_8.add(txtObs4);
 
 		JPanel panel_9 = new JPanel();
 		panel_9.setLayout(null);
@@ -327,13 +357,17 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_17.setBounds(10, 19, 123, 14);
 		panel_10.add(label_17);
 
-		JRadioButton radioButton_10 = new JRadioButton("");
-		radioButton_10.setBounds(31, 2, 21, 23);
-		panel_10.add(radioButton_10);
+		JRadioButton rdBtn60 = new JRadioButton("");
+		rdBtn60.setBounds(31, 2, 21, 23);
+		panel_10.add(rdBtn60);
 
-		JRadioButton radioButton_11 = new JRadioButton("");
-		radioButton_11.setBounds(81, 2, 21, 23);
-		panel_10.add(radioButton_11);
+		JRadioButton rdBtn61 = new JRadioButton("");
+		rdBtn61.setBounds(81, 2, 21, 23);
+		panel_10.add(rdBtn61);
+
+		ButtonGroup grupoBoton6 = new ButtonGroup();
+		grupoBoton6.add(rdBtn60);
+		grupoBoton6.add(rdBtn61);
 
 		JLabel label_18 = new JLabel("SI");
 		label_18.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -345,10 +379,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_19.setBounds(108, 5, 21, 14);
 		panel_10.add(label_19);
 
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(10, 32, 123, 20);
-		panel_10.add(textField_5);
+		txtObs6 = new JTextField();
+		txtObs6.setColumns(10);
+		txtObs6.setBounds(10, 32, 123, 20);
+		panel_10.add(txtObs6);
 
 		JPanel panel_11 = new JPanel();
 		panel_11.setLayout(null);
@@ -374,13 +408,17 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_21.setBounds(10, 19, 123, 14);
 		panel_12.add(label_21);
 
-		JRadioButton radioButton_12 = new JRadioButton("");
-		radioButton_12.setBounds(31, 2, 21, 23);
-		panel_12.add(radioButton_12);
+		JRadioButton rdBtn50 = new JRadioButton("");
+		rdBtn50.setBounds(31, 2, 21, 23);
+		panel_12.add(rdBtn50);
 
-		JRadioButton radioButton_13 = new JRadioButton("");
-		radioButton_13.setBounds(81, 2, 21, 23);
-		panel_12.add(radioButton_13);
+		JRadioButton rdBtn51 = new JRadioButton("");
+		rdBtn51.setBounds(81, 2, 21, 23);
+		panel_12.add(rdBtn51);
+
+		ButtonGroup grupoBoton5 = new ButtonGroup();
+		grupoBoton5.add(rdBtn50);
+		grupoBoton5.add(rdBtn51);
 
 		JLabel label_22 = new JLabel("SI");
 		label_22.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -392,10 +430,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_23.setBounds(108, 5, 21, 14);
 		panel_12.add(label_23);
 
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(10, 32, 123, 20);
-		panel_12.add(textField_6);
+		txtObs5 = new JTextField();
+		txtObs5.setColumns(10);
+		txtObs5.setBounds(10, 32, 123, 20);
+		panel_12.add(txtObs5);
 
 		JPanel panel_13 = new JPanel();
 		panel_13.setLayout(null);
@@ -422,13 +460,17 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_25.setBounds(10, 19, 123, 14);
 		panel_14.add(label_25);
 
-		JRadioButton radioButton_14 = new JRadioButton("");
-		radioButton_14.setBounds(31, 2, 21, 23);
-		panel_14.add(radioButton_14);
+		JRadioButton rdBtn70 = new JRadioButton("");
+		rdBtn70.setBounds(31, 2, 21, 23);
+		panel_14.add(rdBtn70);
 
-		JRadioButton radioButton_15 = new JRadioButton("");
-		radioButton_15.setBounds(81, 2, 21, 23);
-		panel_14.add(radioButton_15);
+		JRadioButton rdBtn71 = new JRadioButton("");
+		rdBtn71.setBounds(81, 2, 21, 23);
+		panel_14.add(rdBtn71);
+
+		ButtonGroup grupoBoton7 = new ButtonGroup();
+		grupoBoton7.add(rdBtn70);
+		grupoBoton7.add(rdBtn71);
 
 		JLabel label_26 = new JLabel("SI");
 		label_26.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -440,10 +482,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_27.setBounds(108, 5, 21, 14);
 		panel_14.add(label_27);
 
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(10, 32, 123, 20);
-		panel_14.add(textField_7);
+		txtObs7 = new JTextField();
+		txtObs7.setColumns(10);
+		txtObs7.setBounds(10, 32, 123, 20);
+		panel_14.add(txtObs7);
 
 		JPanel pnlPestaña2 = new JPanel();
 		tabbedPane.addTab("2.- Ficha Baterias Sanitarias", null, pnlPestaña2, null);
@@ -451,8 +493,15 @@ public class FichaBbateriasSanitarias extends JFrame {
 
 		JPcabecera cabecera = new JPcabecera();
 		panelPrincipal.add(cabecera.getCabecera());
+		Utilitarios.llenarCabecera(cabecera);
 
-		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(1, 1);
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(552, 155);
+		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				fotoInfoObl = getPathImagen();
+			}
+		});
 		pnlPestaña2.add(infoObligatoria.getPnlInformacionObl());
 
 		JPanel panel = new JPanel();
@@ -492,13 +541,17 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_16.setBounds(10, 19, 123, 14);
 		panel_16.add(label_16);
 
-		JRadioButton radioButton_16 = new JRadioButton("");
-		radioButton_16.setBounds(31, 2, 21, 23);
-		panel_16.add(radioButton_16);
+		JRadioButton rdBtn80 = new JRadioButton("");
+		rdBtn80.setBounds(31, 2, 21, 23);
+		panel_16.add(rdBtn80);
 
-		JRadioButton radioButton_17 = new JRadioButton("");
-		radioButton_17.setBounds(81, 2, 21, 23);
-		panel_16.add(radioButton_17);
+		JRadioButton rdBtn81 = new JRadioButton("");
+		rdBtn81.setBounds(81, 2, 21, 23);
+		panel_16.add(rdBtn81);
+
+		ButtonGroup grupoBoton8 = new ButtonGroup();
+		grupoBoton8.add(rdBtn80);
+		grupoBoton8.add(rdBtn81);
 
 		JLabel label_20 = new JLabel("SI");
 		label_20.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -510,10 +563,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_24.setBounds(108, 5, 21, 14);
 		panel_16.add(label_24);
 
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(10, 32, 123, 20);
-		panel_16.add(textField_8);
+		txtObs8 = new JTextField();
+		txtObs8.setColumns(10);
+		txtObs8.setBounds(10, 32, 123, 20);
+		panel_16.add(txtObs8);
 
 		JPanel panel_18 = new JPanel();
 		panel_18.setLayout(null);
@@ -526,13 +579,17 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_29.setBounds(10, 19, 123, 14);
 		panel_18.add(label_29);
 
-		JRadioButton radioButton_18 = new JRadioButton("");
-		radioButton_18.setBounds(31, 2, 21, 23);
-		panel_18.add(radioButton_18);
+		JRadioButton rdBtn90 = new JRadioButton("");
+		rdBtn90.setBounds(31, 2, 21, 23);
+		panel_18.add(rdBtn90);
 
-		JRadioButton radioButton_19 = new JRadioButton("");
-		radioButton_19.setBounds(81, 2, 21, 23);
-		panel_18.add(radioButton_19);
+		JRadioButton rdBtn91 = new JRadioButton("");
+		rdBtn91.setBounds(81, 2, 21, 23);
+		panel_18.add(rdBtn91);
+
+		ButtonGroup grupoBoton9 = new ButtonGroup();
+		grupoBoton9.add(rdBtn90);
+		grupoBoton9.add(rdBtn91);
 
 		JLabel label_30 = new JLabel("SI");
 		label_30.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -544,10 +601,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_31.setBounds(108, 5, 21, 14);
 		panel_18.add(label_31);
 
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(10, 32, 123, 20);
-		panel_18.add(textField_9);
+		txtObs10 = new JTextField();
+		txtObs10.setColumns(10);
+		txtObs10.setBounds(10, 32, 123, 20);
+		panel_18.add(txtObs10);
 
 		JPanel panel_19 = new JPanel();
 		panel_19.setLayout(null);
@@ -573,13 +630,17 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_33.setBounds(10, 19, 123, 14);
 		panel_20.add(label_33);
 
-		JRadioButton radioButton_20 = new JRadioButton("");
-		radioButton_20.setBounds(31, 2, 21, 23);
-		panel_20.add(radioButton_20);
+		JRadioButton rdBtn100 = new JRadioButton("");
+		rdBtn100.setBounds(31, 2, 21, 23);
+		panel_20.add(rdBtn100);
 
-		JRadioButton radioButton_21 = new JRadioButton("");
-		radioButton_21.setBounds(81, 2, 21, 23);
-		panel_20.add(radioButton_21);
+		JRadioButton rdBtn101 = new JRadioButton("");
+		rdBtn101.setBounds(81, 2, 21, 23);
+		panel_20.add(rdBtn101);
+
+		ButtonGroup grupoBoton11 = new ButtonGroup();
+		grupoBoton11.add(rdBtn100);
+		grupoBoton11.add(rdBtn101);
 
 		JLabel label_34 = new JLabel("SI");
 		label_34.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -591,10 +652,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_35.setBounds(108, 5, 21, 14);
 		panel_20.add(label_35);
 
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		textField_10.setBounds(10, 32, 123, 20);
-		panel_20.add(textField_10);
+		txtObs11 = new JTextField();
+		txtObs11.setColumns(10);
+		txtObs11.setBounds(10, 32, 123, 20);
+		panel_20.add(txtObs11);
 
 		addWindowListener(new WindowAdapter() {
 			@Override

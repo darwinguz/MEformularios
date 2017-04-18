@@ -1,17 +1,25 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.getPathImagen;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
+
+import com.capa.util.Utilitarios;
+
 import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -22,9 +30,11 @@ public class FichaBrecreacionExteriores extends JFrame {
 
 	private static final long serialVersionUID = -5853152116433473591L;
 	private JPanel panelPrincipal;
-	private JTextField textField_1;
-	private JTextField textField;
-	private JTextField textField_2;
+	private JTextField txtObs1;
+	private JTextField txtObs0;
+	private JTextField txtObs2;
+
+	private String fotoInfoObl;
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -62,8 +72,15 @@ public class FichaBrecreacionExteriores extends JFrame {
 
 		JPcabecera cabecera = new JPcabecera();
 		panelPrincipal.add(cabecera.getCabecera());
+		Utilitarios.llenarCabecera(cabecera);
 
-		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(1, 1);
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(716, 443);
+		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				fotoInfoObl = getPathImagen();
+			}
+		});
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
 
 		JPanel panel_0 = new JPanel();
@@ -90,13 +107,17 @@ public class FichaBrecreacionExteriores extends JFrame {
 		label_1.setBounds(8, 57, 123, 14);
 		panel_1.add(label_1);
 
-		JRadioButton radioButton = new JRadioButton("");
-		radioButton.setBounds(44, 27, 21, 23);
-		panel_1.add(radioButton);
+		JRadioButton rdBtn00 = new JRadioButton("");
+		rdBtn00.setBounds(44, 27, 21, 23);
+		panel_1.add(rdBtn00);
 
-		JRadioButton radioButton_1 = new JRadioButton("");
-		radioButton_1.setBounds(65, 27, 21, 23);
-		panel_1.add(radioButton_1);
+		JRadioButton rdBtn01 = new JRadioButton("");
+		rdBtn01.setBounds(65, 27, 21, 23);
+		panel_1.add(rdBtn01);
+
+		ButtonGroup grupoBoton0 = new ButtonGroup();
+		grupoBoton0.add(rdBtn00);
+		grupoBoton0.add(rdBtn01);
 
 		JLabel label_2 = new JLabel("SI");
 		label_2.setBounds(48, 11, 21, 14);
@@ -106,10 +127,10 @@ public class FichaBrecreacionExteriores extends JFrame {
 		label_3.setBounds(67, 11, 21, 14);
 		panel_1.add(label_3);
 
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(8, 71, 123, 20);
-		panel_1.add(textField);
+		txtObs0 = new JTextField();
+		txtObs0.setColumns(10);
+		txtObs0.setBounds(8, 71, 123, 20);
+		panel_1.add(txtObs0);
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setLayout(null);
@@ -135,13 +156,17 @@ public class FichaBrecreacionExteriores extends JFrame {
 		label_5.setBounds(8, 57, 123, 14);
 		panel_3.add(label_5);
 
-		JRadioButton radioButton_2 = new JRadioButton("");
-		radioButton_2.setBounds(44, 27, 21, 23);
-		panel_3.add(radioButton_2);
+		JRadioButton rdBtn10 = new JRadioButton("");
+		rdBtn10.setBounds(44, 27, 21, 23);
+		panel_3.add(rdBtn10);
 
-		JRadioButton radioButton_3 = new JRadioButton("");
-		radioButton_3.setBounds(65, 27, 21, 23);
-		panel_3.add(radioButton_3);
+		JRadioButton rdBtn11 = new JRadioButton("");
+		rdBtn11.setBounds(65, 27, 21, 23);
+		panel_3.add(rdBtn11);
+
+		ButtonGroup grupoBoton1 = new ButtonGroup();
+		grupoBoton1.add(rdBtn10);
+		grupoBoton1.add(rdBtn11);
 
 		JLabel label_6 = new JLabel("SI");
 		label_6.setBounds(48, 11, 21, 14);
@@ -151,10 +176,10 @@ public class FichaBrecreacionExteriores extends JFrame {
 		label_7.setBounds(67, 11, 21, 14);
 		panel_3.add(label_7);
 
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(8, 71, 123, 20);
-		panel_3.add(textField_1);
+		txtObs1 = new JTextField();
+		txtObs1.setColumns(10);
+		txtObs1.setBounds(8, 71, 123, 20);
+		panel_3.add(txtObs1);
 
 		JPanel panel_4 = new JPanel();
 		panel_4.setLayout(null);
@@ -180,13 +205,17 @@ public class FichaBrecreacionExteriores extends JFrame {
 		label_4.setBounds(8, 57, 123, 14);
 		panel_5.add(label_4);
 
-		JRadioButton radioButton_4 = new JRadioButton("");
-		radioButton_4.setBounds(44, 27, 21, 23);
-		panel_5.add(radioButton_4);
+		JRadioButton rdBtn20 = new JRadioButton("");
+		rdBtn20.setBounds(44, 27, 21, 23);
+		panel_5.add(rdBtn20);
 
-		JRadioButton radioButton_5 = new JRadioButton("");
-		radioButton_5.setBounds(65, 27, 21, 23);
-		panel_5.add(radioButton_5);
+		JRadioButton rdBtn21 = new JRadioButton("");
+		rdBtn21.setBounds(65, 27, 21, 23);
+		panel_5.add(rdBtn21);
+
+		ButtonGroup grupoBoton2 = new ButtonGroup();
+		grupoBoton2.add(rdBtn20);
+		grupoBoton2.add(rdBtn21);
 
 		JLabel label_8 = new JLabel("SI");
 		label_8.setBounds(48, 11, 21, 14);
@@ -196,10 +225,10 @@ public class FichaBrecreacionExteriores extends JFrame {
 		label_9.setBounds(67, 11, 21, 14);
 		panel_5.add(label_9);
 
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(8, 71, 123, 20);
-		panel_5.add(textField_2);
+		txtObs2 = new JTextField();
+		txtObs2.setColumns(10);
+		txtObs2.setBounds(8, 71, 123, 20);
+		panel_5.add(txtObs2);
 
 		addWindowListener(new WindowAdapter() {
 

@@ -75,6 +75,14 @@ public class AlInicio extends JFrame {
 
 		JButton btnAvanceGeneral = new JButton("   2.- Avance General (A)");
 		btnAvanceGeneral.setHorizontalAlignment(SwingConstants.LEFT);
+		btnAvanceGeneral.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				FichaATemplate fichaA = new FichaATemplate();
+				fichaA.generarDatos();
+			}
+		});
 		pnlBotones.add(btnAvanceGeneral);
 
 		JButton btnRevisionCaract = new JButton("   3.- Revisión Características Técnicas (B)");

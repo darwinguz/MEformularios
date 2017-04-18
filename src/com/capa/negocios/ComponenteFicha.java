@@ -150,12 +150,18 @@ public class ComponenteFicha implements ServicioFicha {
 				mensaje = "Ingreso exitoso";
 				titulo = "INGRESO";
 				tipoMensaje = 1;
-//				System.out.println(query);
+				// System.out.println(query);
 			} catch (Exception e) {
 				mensaje = "Error al insertar datos del formulario MA " + e.getMessage();
 			}
 		});
 		JOptionPane.showMessageDialog(null, mensaje, titulo, tipoMensaje);
+
+	}
+
+	@Override
+	public void guardarFichaB(List<TdetalleFicha> detallesFicha) {
+		// TODO Auto-generated method stub
 
 	}
 

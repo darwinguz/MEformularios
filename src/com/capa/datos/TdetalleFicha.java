@@ -19,8 +19,21 @@ public class TdetalleFicha implements Serializable {
 	private Integer detActualizacionN;
 	private BigDecimal porcentajeAvance;
 
+	private String desicion;
+
 	public TdetalleFicha() {
 		super();
+	}
+
+	public TdetalleFicha(TCabecera cabecera, TInformacionObligatoria informacion, TGrupo grupo, TFicha ficha,
+			Integer detActualizacion, String obs, String desicion) {
+		this.TCabecera = cabecera;
+		this.InfoObligatoria = informacion;
+		this.TGrupo = grupo;
+		this.TFicha = ficha;
+		this.detActualizacionN = detActualizacion;
+		this.detObsRef = obs;
+		this.desicion = desicion;
 	}
 
 	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria, TGrupo tGrupo, TFicha tFicha,
@@ -157,6 +170,14 @@ public class TdetalleFicha implements Serializable {
 
 	public void setPorcentajeAvance(BigDecimal porcentajeAvance) {
 		this.porcentajeAvance = porcentajeAvance;
+	}
+
+	public String getDesicion() {
+		return desicion;
+	}
+
+	public void setDesicion(String desicion) {
+		this.desicion = desicion;
 	}
 
 	@Override

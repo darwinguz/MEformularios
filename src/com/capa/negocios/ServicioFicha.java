@@ -45,4 +45,6 @@ public interface ServicioFicha {
 	 */
 	public List<TdetalleFicha> detallesFicha(TCabecera serialC, TFicha serialF);
 
+	public void guardarFichaB(List<TdetalleFicha> detallesFicha);
+
 }
