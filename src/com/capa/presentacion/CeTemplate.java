@@ -47,6 +47,7 @@ import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.util.Utilitarios;
+import com.capa.util.Validaciones;
 
 public class CeTemplate extends JFrame {
 
@@ -71,9 +72,9 @@ public class CeTemplate extends JFrame {
 	private JTextField txtObs0;
 	private JTextField txtCantidad00;
 
-	TInformacionObligatoria infor;
-	TFicha ficha;
-	ServicioFicha servFicha;
+	private TInformacionObligatoria infor;
+	private TFicha ficha;
+	private ServicioFicha servFicha;
 
 	private String fotoInfoObl;
 
@@ -332,7 +333,7 @@ public class CeTemplate extends JFrame {
 								JOptionPane.ERROR_MESSAGE);
 						return;
 					}
-					if (registrosValidados(detallesFicha)) {
+					if (Validaciones.registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
 						servFicha.guardarFormulario(cargarListas());
 						HashMap<String, Object> parametros = new HashMap<String, Object>();
@@ -345,23 +346,10 @@ public class CeTemplate extends JFrame {
 						reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
-					} else {
-						JOptionPane.showMessageDialog(null, "ERROR: Verificar valores ejecutados!", "Mensaje de Error",
-								JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria");
 				}
-			}
-
-			private boolean registrosValidados(List<TdetalleFicha> detallesFicha) {
-				for (TdetalleFicha detalle : detallesFicha) {
-					if (detalle.getDetCantidadEjecutada() > detalle.getDetCantidadLimite()
-							|| detalle.getDetCantidadEjecutada() < 0) {
-						return false;
-					}
-				}
-				return true;
 			}
 		});
 

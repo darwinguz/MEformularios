@@ -2,6 +2,7 @@ package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
 import static com.capa.util.Validaciones.*;
@@ -13,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JFrame;
@@ -30,8 +32,11 @@ import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.util.Utilitarios;
 
 public class MsTemplate extends JFrame {
 
@@ -217,9 +222,11 @@ public class MsTemplate extends JFrame {
 	private JTextField txtCantidad391;
 	private JTextField txtObs39;
 
-	TInformacionObligatoria infor;
-	TFicha ficha;
-	ServicioFicha servFicha;
+	private TInformacionObligatoria infor;
+	private TFicha ficha;
+	private ServicioFicha servFicha;
+
+	private String fotoInfoObl;
 
 	/**
 	 * Launch the application.
@@ -267,7 +274,13 @@ public class MsTemplate extends JFrame {
 		contentPane.add(panel1);
 		panel1.setLayout(null);
 
-		JPinformacionObligatoria informacionObligatoriaV = new JPinformacionObligatoria(858, 380);
+		JPinformacionObligatoria informacionObligatoriaV = new JPinformacionObligatoria(885, 370);
+		informacionObligatoriaV.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				fotoInfoObl = getPathImagen();
+			}
+		});
 		panel1.add(informacionObligatoriaV.getPnlInformacionObl());
 
 		JLabel lblKitElctrico = new JLabel("KIT EL\u00C9CTRICO");
@@ -1449,31 +1462,33 @@ public class MsTemplate extends JFrame {
 				// TODO Auto-generated method stub
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
+				infor.setIoFotoPath(fotoInfoObl);
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
+					if (detallesFicha == null) {
+						JOptionPane.showMessageDialog(null,
+								"ERROR: Verificar que los registros no se encuentren VACÍOS", "Mensaje de Error",
+								JOptionPane.ERROR_MESSAGE);
+						return;
+					}
 					if (registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
 						servFicha.guardarFormulario(detallesFicha);
+						HashMap<String, Object> parametros = new HashMap<String, Object>();
+						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+						parametros.put("serial_ficha", ficha.getFiSerial());
+
+						Reporte reporte = new Reporte("Reporte CE", 280, 10, 850, 750);
+						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
+								Query.getMysql().getConexion());
+						reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
-					} else {
-						JOptionPane.showMessageDialog(null, "ERROR: Verificar valores ejecutados!", "Mensaje de Error",
-								JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
 				}
-			}
-
-			private boolean registrosValidados(List<TdetalleFicha> detallesFicha) {
-				for (TdetalleFicha detalle : detallesFicha) {
-					if (detalle.getDetCantidadEjecutada() > detalle.getDetCantidadLimite()
-							|| detalle.getDetCantidadEjecutada() < 0) {
-						return false;
-					}
-				}
-				return true;
 			}
 		});
 

@@ -807,16 +807,6 @@ public class MexTemplate extends JFrame {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
 				}
 			}
-
-			private boolean registrosValidados(List<TdetalleFicha> detallesFicha) {
-				for (TdetalleFicha detalle : detallesFicha) {
-					if (detalle.getDetCantidadEjecutada() > detalle.getDetCantidadLimite()
-							|| detalle.getDetCantidadEjecutada() < 0) {
-						return false;
-					}
-				}
-				return true;
-			}
 		});
 
 		addWindowListener(new WindowAdapter() {
