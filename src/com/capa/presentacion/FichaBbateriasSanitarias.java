@@ -81,7 +81,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 		panelPrincipal.add(tabbedPane);
 
 		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("1.- Ficha Baterias Sanitarias", null, pnlPestaña1, null);
+		tabbedPane.addTab("1.- " + ficha.getFiDescripcion(), null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
 
 		JPanel panel_0 = new JPanel();
