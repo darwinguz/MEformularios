@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,14 +32,15 @@ import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.util.Utilitarios;
+import com.capa.util.Validaciones;
 
 public class PGTemplate extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtCantidad40;
@@ -362,10 +364,7 @@ public class PGTemplate extends JFrame {
 	private JTextField txtCantidad780;
 	private JTextField txtCantidad781;
 	private JTextField txtObs78;
-
-	/**
-	 * Launch the application.
-	 */
+	private ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
 	// public static void main(String[] args) {
 	// EventQueue.invokeLater(new Runnable() {
 	// public void run() {
@@ -379,18 +378,17 @@ public class PGTemplate extends JFrame {
 	// });
 	// }
 
-	/**
-	 * Create the frame.
-	 */
 	public PGTemplate(TFicha ficha) {
-		this.ficha = ficha;
+
 		setTitle(ficha.getFiNombre());
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
+		this.ficha = ficha;
 		this.setTitle(ficha.getFiNombre());
+		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
@@ -400,9 +398,6 @@ public class PGTemplate extends JFrame {
 		servFicha = new ComponenteFicha();
 
 		llenarCabecera(cabecera);
-
-		this.setResizable(false);
-		this.setLocationRelativeTo(null);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 122, 1294, 569);
@@ -415,7 +410,7 @@ public class PGTemplate extends JFrame {
 				+ "selladora)</body></html>";
 
 		JPanel panel1 = new JPanel();
-		tabbedPane.addTab("1.- PG porton y garita-1", null, panel1, null);
+		tabbedPane.addTab("1.- " + ficha.getFiDescripcion(), null, panel1, null);
 		panel1.setLayout(null);
 
 		JLabel label = new JLabel("KIT EL\u00C9CTRICO");
@@ -1696,7 +1691,7 @@ public class PGTemplate extends JFrame {
 		panel1.add(txtObs78);
 
 		JPanel panel2 = new JPanel();
-		tabbedPane.addTab("2.-PG porton y garita-1", null, panel2, null);
+		tabbedPane.addTab("2.- " + ficha.getFiDescripcion(), null, panel2, null);
 		panel2.setLayout(null);
 
 		label_37 = new JLabel("KIT AGUA RESIDUAL");
@@ -2697,8 +2692,13 @@ public class PGTemplate extends JFrame {
 		txtObs72.setBounds(1146, 77, 133, 20);
 		panel2.add(txtObs72);
 
-		JPinformacionObligatoria informacionObligatoriaV = new JPinformacionObligatoria(865, 325);
-		panel2.add(informacionObligatoriaV.getPnlInformacionObl());
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(865, 325);
+		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				infoObligatoria.setPathFotoIO(Utilitarios.getPathImagen());
+			}
+		});
+		panel2.add(infoObligatoria.getPnlInformacionObl());
 
 		validarDigitos(txtCantidad01);
 		validarDigitos(txtCantidad11);
@@ -2786,35 +2786,41 @@ public class PGTemplate extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
-				infor = cargarInfoObligatoria(informacionObligatoriaV);
-				// System.out.println(infor.gettCabe().getCNombreProyecto());
+				infor = cargarInfoObligatoria(infoObligatoria);
+				List<TdetalleFicha> detallesFicha = cargarListas();
 
 				if (validarInfo(infor)) {
-					List<TdetalleFicha> detallesFicha = cargarListas();
-					if (registrosValidados(detallesFicha)) {
+
+					if (detallesFicha == null) {
+						JOptionPane.showMessageDialog(null,
+								"ERROR: Verificar que los registros no se encuentren VACÍOS", "Mensaje de Error",
+								JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+
+					if (Validaciones.registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
-						servFicha.guardarFormulario(cargarListas());
+						infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
+
+						servFicha.guardarFormulario(detallesFicha);
+
+						HashMap<String, Object> parametros = new HashMap<String, Object>();
+						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+						parametros.put("serial_ficha", ficha.getFiSerial());
+
+						Reporte reporte = new Reporte("Reporte MA", 280, 10, 850, 750);
+						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
+								Query.getMysql().getConexion());
+						reporte.setVisible(true);
+
 						new Menu().setVisible(true);
 						dispose();
-					} else {
-						JOptionPane.showMessageDialog(null, "ERROR: Verificar valores ejecutados!", "Mensaje de Error",
-								JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
-					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
+					JOptionPane.showMessageDialog(null, "Ingresar Información Obligatoria ");
 				}
 			}
 
-			private boolean registrosValidados(List<TdetalleFicha> detallesFicha) {
-				for (TdetalleFicha detalle : detallesFicha) {
-					if (detalle.getDetCantidadEjecutada() > detalle.getDetCantidadLimite()
-							|| detalle.getDetCantidadEjecutada() < 0) {
-						return false;
-					}
-				}
-				return true;
-			}
 		});
 
 		addWindowListener(new WindowAdapter() {

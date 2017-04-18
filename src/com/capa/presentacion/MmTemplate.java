@@ -1,11 +1,63 @@
 package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
+import static com.capa.util.Constantes.LBL_MM_0;
+import static com.capa.util.Constantes.LBL_MM_1;
+import static com.capa.util.Constantes.LBL_MM_10;
+import static com.capa.util.Constantes.LBL_MM_11;
+import static com.capa.util.Constantes.LBL_MM_12;
+import static com.capa.util.Constantes.LBL_MM_13;
+import static com.capa.util.Constantes.LBL_MM_14;
+import static com.capa.util.Constantes.LBL_MM_15;
+import static com.capa.util.Constantes.LBL_MM_16;
+import static com.capa.util.Constantes.LBL_MM_17;
+import static com.capa.util.Constantes.LBL_MM_18;
+import static com.capa.util.Constantes.LBL_MM_19;
+import static com.capa.util.Constantes.LBL_MM_2;
+import static com.capa.util.Constantes.LBL_MM_20;
+import static com.capa.util.Constantes.LBL_MM_21;
+import static com.capa.util.Constantes.LBL_MM_22;
+import static com.capa.util.Constantes.LBL_MM_23;
+import static com.capa.util.Constantes.LBL_MM_24;
+import static com.capa.util.Constantes.LBL_MM_25;
+import static com.capa.util.Constantes.LBL_MM_26;
+import static com.capa.util.Constantes.LBL_MM_27;
+import static com.capa.util.Constantes.LBL_MM_28;
+import static com.capa.util.Constantes.LBL_MM_29;
+import static com.capa.util.Constantes.LBL_MM_3;
+import static com.capa.util.Constantes.LBL_MM_30;
+import static com.capa.util.Constantes.LBL_MM_31;
+import static com.capa.util.Constantes.LBL_MM_32;
+import static com.capa.util.Constantes.LBL_MM_33;
+import static com.capa.util.Constantes.LBL_MM_34;
+import static com.capa.util.Constantes.LBL_MM_35;
+import static com.capa.util.Constantes.LBL_MM_36;
+import static com.capa.util.Constantes.LBL_MM_37;
+import static com.capa.util.Constantes.LBL_MM_38;
+import static com.capa.util.Constantes.LBL_MM_39;
+import static com.capa.util.Constantes.LBL_MM_4;
+import static com.capa.util.Constantes.LBL_MM_40;
+import static com.capa.util.Constantes.LBL_MM_41;
+import static com.capa.util.Constantes.LBL_MM_42;
+import static com.capa.util.Constantes.LBL_MM_43;
+import static com.capa.util.Constantes.LBL_MM_44;
+import static com.capa.util.Constantes.LBL_MM_45;
+import static com.capa.util.Constantes.LBL_MM_46;
+import static com.capa.util.Constantes.LBL_MM_47;
+import static com.capa.util.Constantes.LBL_MM_48;
+import static com.capa.util.Constantes.LBL_MM_49;
+import static com.capa.util.Constantes.LBL_MM_5;
+import static com.capa.util.Constantes.LBL_MM_50;
+import static com.capa.util.Constantes.LBL_MM_6;
+import static com.capa.util.Constantes.LBL_MM_7;
+import static com.capa.util.Constantes.LBL_MM_8;
+import static com.capa.util.Constantes.LBL_MM_9;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
-import static com.capa.util.Validaciones.*;
-import static com.capa.util.Constantes.*;
+import static com.capa.util.Validaciones.registrosValidados;
+import static com.capa.util.Validaciones.validarDigitos;
+import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -36,7 +88,6 @@ import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
-import com.capa.presentacion.JPinformacionObligatoria;
 import com.capa.util.Utilitarios;
 
 public class MmTemplate extends JFrame {
@@ -2061,16 +2112,6 @@ public class MmTemplate extends JFrame {
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar Información Obligatoria");
 				}
-			}
-
-			private boolean registrosValidados(List<TdetalleFicha> detallesFicha) {
-				for (TdetalleFicha detalle : detallesFicha) {
-					if (detalle.getDetCantidadEjecutada() > detalle.getDetCantidadLimite()
-							|| detalle.getDetCantidadEjecutada() < 0) {
-						return false;
-					}
-				}
-				return true;
 			}
 
 		});
