@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.List;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 import com.capa.datos.TFicha;
+import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ServicioFicha;
 import com.capa.presentacion.FichaB;
@@ -476,5 +478,9 @@ public class FichaBacometidas extends JFrame {
 				dispose();
 			}
 		});
+	}
+
+	List<TdetalleFicha> detallesFicha() {
+
 	}
 }
