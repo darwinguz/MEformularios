@@ -12,17 +12,17 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import org.apache.commons.collections.comparators.ComparableComparator;
+
+import com.capa.negocios.ComponenteFicha;
+import com.capa.negocios.ServicioFicha;
+
 public class FichaB extends JFrame {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -6881692801126802167L;
-	private JPanel contentPane;
+	private JPanel pnlPrincipal;
+	ServicioFicha srvFicha = new ComponenteFicha();
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -36,21 +36,19 @@ public class FichaB extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
 	public FichaB() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 206, 241);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		setBounds(100, 100, 206, 220);
+		setTitle("Ficha B");
 		setLocationRelativeTo(null);
+		pnlPrincipal = new JPanel();
+		pnlPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
+		pnlPrincipal.setLayout(null);
+		setContentPane(pnlPrincipal);
 
 		JPanel pnlBotones = new JPanel();
 		pnlBotones.setBounds(10, 11, 171, 145);
-		contentPane.add(pnlBotones);
+		pnlPrincipal.add(pnlBotones);
 		pnlBotones.setLayout(new GridLayout(4, 1, 0, 2));
 
 		JButton btnAcometidas = new JButton("Acometidas");
@@ -59,8 +57,7 @@ public class FichaB extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				new FichaBAcom().setVisible(true);
+				new FichaBacometidas(srvFicha.buscarFormulario("FB-A")).setVisible(true);
 				dispose();
 			}
 		});
@@ -71,53 +68,34 @@ public class FichaB extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				new FichaBbateriasSanitarias().setVisible(true);
 				dispose();
 			}
 		});
 
-		JButton btnRevisionBloques = new JButton("Revision Bloques");
+		JButton btnRevisionBloques = new JButton("Revisión Bloques");
 		pnlBotones.add(btnRevisionBloques);
 		btnRevisionBloques.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				new FichaBRevisionBloques().setVisible(true);
 				dispose();
 			}
 		});
 
-		JButton btnRecreacionExt = new JButton("Recreacion y Exteriores");
+		JButton btnRecreacionExt = new JButton("Recreación y Exteriores");
 		pnlBotones.add(btnRecreacionExt);
 		btnRecreacionExt.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				new FichaBrecreacionExteriores().setVisible(true);
 				dispose();
-			}
-		});
-
-		JButton btnSalir = new JButton("Salir");
-		btnSalir.setBounds(109, 163, 72, 32);
-		contentPane.add(btnSalir);
-		btnSalir.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				dispose();
-
 			}
 		});
 
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
-				// TODO Auto-generated method stub
 				new AlInicio().setVisible(true);
 				dispose();
 			}
