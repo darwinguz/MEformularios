@@ -12,8 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import org.apache.commons.collections.comparators.ComparableComparator;
-
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ServicioFicha;
 
@@ -68,7 +66,7 @@ public class FichaB extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new FichaBbateriasSanitarias().setVisible(true);
+				new FichaBbateriasSanitarias(srvFicha.buscarFormulario("FB-S")).setVisible(true);
 				dispose();
 			}
 		});
@@ -78,7 +76,7 @@ public class FichaB extends JFrame {
 		btnRevisionBloques.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				new FichaBRevisionBloques().setVisible(true);
+				new FichaBRevisionBloques(srvFicha.buscarFormulario("FB-RB")).setVisible(true);
 				dispose();
 			}
 		});
@@ -88,7 +86,7 @@ public class FichaB extends JFrame {
 		btnRecreacionExt.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
-				new FichaBrecreacionExteriores().setVisible(true);
+				new FichaBrecreacionExteriores(srvFicha.buscarFormulario("FB-RE")).setVisible(true);
 				dispose();
 			}
 		});

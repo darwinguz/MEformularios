@@ -480,7 +480,7 @@ public class FichaBacometidas extends JFrame {
 		});
 	}
 
-	List<TdetalleFicha> detallesFicha() {
-
+	public List<TdetalleFicha> detallesFicha() {
+		return null;
 	}
 }

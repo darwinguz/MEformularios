@@ -12,6 +12,9 @@ import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import com.capa.datos.TFicha;
+import com.capa.negocios.ComponenteFicha;
+import com.capa.negocios.ServicioFicha;
 import com.capa.util.Utilitarios;
 
 import javax.swing.UIManager;
@@ -48,7 +51,9 @@ public class FichaBbateriasSanitarias extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FichaBbateriasSanitarias frame = new FichaBbateriasSanitarias();
+					ServicioFicha sf = new ComponenteFicha();
+					TFicha fi = sf.buscarFormulario("FB-S");
+					FichaBbateriasSanitarias frame = new FichaBbateriasSanitarias(fi);
 					frame.setVisible(true);
 					frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -61,9 +66,10 @@ public class FichaBbateriasSanitarias extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FichaBbateriasSanitarias() {
+	public FichaBbateriasSanitarias(TFicha ficha) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
+		setTitle(ficha.getFiDescripcion().toUpperCase());
 		panelPrincipal = new JPanel();
 		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		panelPrincipal.setLayout(new BorderLayout(0, 0));
