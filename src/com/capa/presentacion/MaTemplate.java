@@ -1601,7 +1601,6 @@ public class MaTemplate extends JFrame {
 						srvFicha.guardarFormulario(getRegistrosDetalle(infoObl));
 
 						HashMap<String, Object> parametros = new HashMap<String, Object>();
-						parametros.put("nombre_ficha", ficha.getFiNombre());
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
 						parametros.put("serial_ficha", ficha.getFiSerial());
 
