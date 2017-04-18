@@ -32,6 +32,7 @@ import static com.capa.util.Constantes.LBL_EX_6;
 import static com.capa.util.Constantes.LBL_EX_7;
 import static com.capa.util.Constantes.LBL_EX_8;
 import static com.capa.util.Constantes.LBL_EX_9;
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Utilitarios.llenarCabecera;
@@ -229,9 +230,11 @@ public class ExTemplate extends JFrame {
 	private JLabel lblSMTCantidad;
 	private JLabel lblSMTObsRef;
 
-	TInformacionObligatoria infor;
-	TFicha ficha;
-	ServicioFicha servFicha;
+	private TInformacionObligatoria infor;
+	private TFicha ficha;
+	private ServicioFicha servFicha;
+
+	private String fotoInfoObl;
 
 	public ExTemplate(TFicha ficha) {
 		this.ficha = ficha;
@@ -1085,11 +1088,11 @@ public class ExTemplate extends JFrame {
 		lblSMTObsRef.setBounds(267, 1, 143, 14);
 		pnlSMT.add(lblSMTObsRef);
 
-		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(865, 325);
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(865, 240);
 		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				infoObligatoria.setPathFotoIO(getPathImagen());
+				fotoInfoObl = getPathImagen();
 			}
 		});
 		pnlPestaña1.add(infoObligatoria.getPnlInformacionObl());
@@ -1101,6 +1104,9 @@ public class ExTemplate extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+
+				infor = cargarInfoObligatoria(infoObligatoria);
+				infor.setIoFotoPath(fotoInfoObl);
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
@@ -1116,16 +1122,12 @@ public class ExTemplate extends JFrame {
 						HashMap<String, Object> parametros = new HashMap<String, Object>();
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
 						parametros.put("serial_ficha", ficha.getFiSerial());
-
 						Reporte reporte = new Reporte("Reporte Ex", 280, 10, 850, 750);
 						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
 								Query.getMysql().getConexion());
 						reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
-					} else {
-						JOptionPane.showMessageDialog(null, "ERROR: Verificar valores ejecutados!", "Mensaje de Error",
-								JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");

@@ -98,9 +98,9 @@ public class WFTemplate extends JFrame {
 	private JTextField txtCantidad161;
 	private JTextField txtObs16;
 
-	TInformacionObligatoria infor;
-	TFicha ficha;
-	ServicioFicha servFicha;
+	private TInformacionObligatoria infor;
+	private TFicha ficha;
+	private ServicioFicha servFicha;
 
 	private String fotoInfoObl;
 
@@ -654,16 +654,6 @@ public class WFTemplate extends JFrame {
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");
 				}
-			}
-
-			private boolean registrosValidados(List<TdetalleFicha> detallesFicha) {
-				for (TdetalleFicha detalle : detallesFicha) {
-					if (detalle.getDetCantidadEjecutada() > detalle.getDetCantidadLimite()
-							|| detalle.getDetCantidadEjecutada() < 0) {
-						return false;
-					}
-				}
-				return true;
 			}
 		});
 
