@@ -73,7 +73,8 @@ import static com.capa.util.Constantes.LBL_BS_8;
 import static com.capa.util.Constantes.LBL_BS_9;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.gettCabecera;
-import static com.capa.util.Validaciones.*;
+import static com.capa.util.Validaciones.validarDigitos;
+import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -106,8 +107,6 @@ import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
-import com.capa.presentacion.JPinformacionObligatoria;
-import com.capa.presentacion.JPcabecera;
 import com.capa.util.Utilitarios;
 import com.capa.util.Validaciones;
 
@@ -546,8 +545,13 @@ public class BsTemplate extends JFrame {
 		tabbedPane.addTab("2.- " + ficha.getFiDescripcion(), null, pnlPestaña2, null);
 		pnlPestaña2.setLayout(null);
 
-		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(859, 348);
-		pnlPestaña2.add(infoObligatoria.getPnlInformacionObl());
+		JPinformacionObligatoria jpIOblig = new JPinformacionObligatoria(859, 348);
+		jpIOblig.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jpIOblig.setPathFotoIO(Utilitarios.getPathImagen());
+			}
+		});
+		pnlPestaña2.add(jpIOblig.getPnlInformacionObl());
 
 		panel5 = new JPanel();
 		panel5.setLayout(null);
@@ -2777,7 +2781,7 @@ public class BsTemplate extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				TInformacionObligatoria infoObl = cargarInfoObligatoria(infoObligatoria);
+				TInformacionObligatoria infoObl = cargarInfoObligatoria(jpIOblig);
 
 				if (validarInfo(infoObl)) {
 					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
