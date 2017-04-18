@@ -12,6 +12,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import com.capa.datos.TFicha;
 import com.capa.util.Utilitarios;
 
 import javax.swing.UIManager;
@@ -34,26 +35,28 @@ public class FichaBrecreacionExteriores extends JFrame {
 	private JTextField txtObs0;
 	private JTextField txtObs2;
 
+	private TFicha ficha;
 	private String fotoInfoObl;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FichaBrecreacionExteriores frame = new FichaBrecreacionExteriores();
-					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// FichaBrecreacionExteriores frame = new FichaBrecreacionExteriores();
+	// frame.setVisible(true);
+	// frame.setLocationRelativeTo(null);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
 	 */
-	public FichaBrecreacionExteriores() {
+	public FichaBrecreacionExteriores(TFicha tFicha) {
+		this.ficha = tFicha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		panelPrincipal = new JPanel();
@@ -61,6 +64,7 @@ public class FichaBrecreacionExteriores extends JFrame {
 		panelPrincipal.setLayout(new BorderLayout(0, 0));
 		setContentPane(panelPrincipal);
 		setLocationRelativeTo(null);
+		this.setTitle(ficha.getFiNombre());
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
@@ -72,9 +76,9 @@ public class FichaBrecreacionExteriores extends JFrame {
 
 		JPcabecera cabecera = new JPcabecera();
 		panelPrincipal.add(cabecera.getCabecera());
-		Utilitarios.llenarCabecera(cabecera);
+		// Utilitarios.llenarCabecera(cabecera);
 
-		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(716, 443);
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(860, 360);
 		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {

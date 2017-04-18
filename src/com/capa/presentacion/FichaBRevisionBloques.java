@@ -17,6 +17,8 @@ import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
+import com.capa.datos.TFicha;
+
 public class FichaBRevisionBloques extends JFrame {
 
 	/**
@@ -35,26 +37,29 @@ public class FichaBRevisionBloques extends JFrame {
 	private JTextField txtSFObsRef;
 	private JTextField txtWPCObsRef;
 
+	private TFicha ficha;
+	private String fotoInfoObl;
+
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FichaBRevisionBloques frame = new FichaBRevisionBloques();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// FichaBRevisionBloques frame = new FichaBRevisionBloques();
+	// frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
 	 */
-	public FichaBRevisionBloques() {
+	public FichaBRevisionBloques(TFicha tFicha) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1318, 659);
 		contentPane = new JPanel();
