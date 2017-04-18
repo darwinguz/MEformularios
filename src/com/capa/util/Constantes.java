@@ -372,28 +372,6 @@ public class Constantes {
 	public static final String LBL_MB_38 = "<html><body><p align='right'>Perfil SF Tipo 11</p></body></html>";
 
 	/*
-	 * BaTemplates
-	 */
-	public static final String LBL_BA_0 = "<html><body><p align='right'>La tubería de PVC presión, unión roscable instalada cumple con las especificaciones:</p></body></html>";
-	public static final String LBL_BA_1 = "<html><body><p align='right'>ASTM D- 1785- 89, para tubería de agua fría.</p></body></html>";
-	public static final String LBL_BA_2 = "<html><body><p align='right'>La tubería instalada soporta una prueba de presión no menor a 100 psi.</p></body></html>";
-	public static final String LBL_BA_3 = "<html><body><p align='right'>La tubería instalada sirve para alcantarillado, desalojo de aguas servidas y aguas lluvias.</p></body></html>";
-	public static final String LBL_BA_4 = "<html><body><p align='right'>Se provee un sistema categoría 6 tipo inalámbrico para el servicio de al menos 110 usuarios, 50 por cada laboratorio y 10 para módulo de administración.</p></body></html>";
-	public static final String LBL_BA_5 = "<html><body><p align='right'>La interconexión entre equipos se realiza mediante cable estructurado siempre y cuando la distancia sea menor a 100 m, cumpliendo la Norma y será Categoría 6 o superior, en caso de ser soterrado y en caso de estar cercano a cables de energía eléctrica se utiliza conductor tipo SHIELDED para evitar interferencia electromagnética.</p></body></html>";
-	public static final String LBL_BA_6 = "<html><body><p align='right'>Se coloca al menos 1 router wireless Tipo N de 10/100/100 MB, y un Access point por laboratorio y módulo de administración.</p></body></html>";
-	public static final String LBL_BA_7 = "<html><body><p align='right'>El rack es ubicado en uno de los laboratorios de tecnología, y se provee de un conversor de media.</p></body></html>";
-	public static final String LBL_BA_8 = "<html><body><p align='right'>Se consideran cajas de conexión de 60X60X70 y tubería PVC y patch cord de FO.</p></body></html>";
-	public static final String LBL_BA_9 = "<html><body><p align='right'>En el cableado eléctrico se utilizan calibres:<br>THHN #8, #10, #12, #14<br>Cable AWG #14desnudo</p></body></html>";
-	public static final String LBL_BA_10 = "<html><body><p align='right'>Los conductores cumplen con las normas de fabricación NEMA ASTM-B3, ASTM-B8, UL62, UL83 y la UL-1581 y aprobados según el sistema de calidad del cable. Aislamiento: Cloruro de polietileno (PVC) de 90°C (194°F) resistente a la humedad, no propaga llama, voltaje de servicio 600V, el color de cada cable es de acuerdo a las especificaciones aprobadas en nuestro medio.</p></body></html>";
-	public static final String LBL_BA_11 = "<html><body><p align='right'>El tendido exterior se considera con tubería soterrada de PVC de 3(75 mm) y cajas de conexión de dimensiones de 60X60X70 cm.</p></body></html>";
-	public static final String LBL_BA_12 = "<html><body><p align='right'>Los postes son metálicos galvanizados de 6 m de altura, con un espesor de lámina mínimo de 3 mm, con placa base de mínimo 12 mm de espesor.</p></body></html>";
-	public static final String LBL_BA_13 = "<html><body><p align='right'>Se incluye un transformador tipo pad mount de 100 KVA para cada UEPTM, que incluye la base, cable de conexión con un tablero de distribución principal, malla a tierra y pruebas de funcionamiento.</p></body></html>";
-	public static final String LBL_BA_14 = "<html><body><p align='right'>Todo el cableado es soterrado, colocado en tubería de PVC.</p></body></html>";
-	public static final String LBL_BA_15 = "<html><body><p align='right'>Se utilizan LED  con temperatura de color de 2700K a 6500K, con voltaje de 110V a 220V, como mínimo.</p></body></html>";
-	public static final String LBL_BA_16 = "<html><body><p align='right'>Eficiencia de luminosidad de 100 Lm/W con un IP65 y de 120W.</p></body></html>";
-	public static final String LBL_BA_17 = "<html><body><p align='right'>La vida útil de la luminaria LED, es de al menos 50000 horas en óptimas condiciones.</p></body></html>";
-
-	/*
 	 * CEtemplates
 	 */
 	public static final String LBL_CE_0 = "<html><body><p align='right'>Paneles WPC 0,15x0,01x2,91 mts</p></body></html>";
