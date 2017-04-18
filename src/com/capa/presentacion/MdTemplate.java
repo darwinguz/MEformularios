@@ -15,6 +15,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -34,8 +35,11 @@ import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.util.Utilitarios;
 
 public class MdTemplate extends JFrame {
 
@@ -3286,11 +3290,15 @@ public class MdTemplate extends JFrame {
 					if (registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
 						servFicha.guardarFormulario(detallesFicha);
+						HashMap<String, Object> parametros = new HashMap<String, Object>();
+						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+						parametros.put("serial_ficha", ficha.getFiSerial());
+						Reporte reporte = new Reporte("Reporte MD", 280, 10, 850, 750);
+						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
+								Query.getMysql().getConexion());
+						reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
-					} else {
-						JOptionPane.showMessageDialog(null, "ERROR: Verificar valores ejecutados!", "Mensaje de Error",
-								JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");

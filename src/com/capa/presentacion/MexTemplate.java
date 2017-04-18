@@ -39,6 +39,7 @@ import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.util.Utilitarios;
+import javax.swing.SwingConstants;
 
 public class MexTemplate extends JFrame {
 
@@ -226,31 +227,40 @@ public class MexTemplate extends JFrame {
 		panel_26.setLayout(new GridLayout(3, 2, 0, 0));
 
 		txtCantidad120 = new JTextField();
+		txtCantidad120.setText("105");
+		txtCantidad120.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad120.setEditable(false);
 		txtCantidad120.setColumns(10);
 		panel_26.add(txtCantidad120);
 
 		txtCantidad121 = new JTextField();
+		txtCantidad121.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad121.setColumns(10);
 		panel_26.add(txtCantidad121);
 		validarDigitos(txtCantidad121);
 
 		txtCantidad130 = new JTextField();
+		txtCantidad130.setText("6");
+		txtCantidad130.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad130.setEditable(false);
 		txtCantidad130.setColumns(10);
 		panel_26.add(txtCantidad130);
 
 		txtCantidad131 = new JTextField();
+		txtCantidad131.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad131.setColumns(10);
 		panel_26.add(txtCantidad131);
 		validarDigitos(txtCantidad131);
 
 		txtCantidad140 = new JTextField();
+		txtCantidad140.setText("440");
+		txtCantidad140.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad140.setEditable(false);
 		txtCantidad140.setColumns(10);
 		panel_26.add(txtCantidad140);
 
 		txtCantidad141 = new JTextField();
+		txtCantidad141.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad141.setColumns(10);
 		panel_26.add(txtCantidad141);
 		validarDigitos(txtCantidad141);
@@ -314,31 +324,42 @@ public class MexTemplate extends JFrame {
 		panel_17.setLayout(new GridLayout(3, 2, 0, 0));
 
 		txtCantidad00 = new JTextField();
+		txtCantidad00.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad00.setText("292");
 		txtCantidad00.setEditable(false);
 		txtCantidad00.setColumns(10);
 		panel_17.add(txtCantidad00);
 
 		txtCantidad01 = new JTextField();
+		txtCantidad01.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad01.setColumns(10);
 		panel_17.add(txtCantidad01);
 		validarDigitos(txtCantidad01);
 
 		txtCantidad10 = new JTextField();
+		txtCantidad10.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad10.setText("5");
 		txtCantidad10.setEditable(false);
 		txtCantidad10.setColumns(10);
 		panel_17.add(txtCantidad10);
 
 		txtCantidad11 = new JTextField();
+		txtCantidad11.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad11.setColumns(10);
 		panel_17.add(txtCantidad11);
 		validarDigitos(txtCantidad11);
 
 		txtCantidad20 = new JTextField();
+		txtCantidad20.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		txtCantidad20.setText("1000");
+		txtCantidad20.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad20.setEditable(false);
 		txtCantidad20.setColumns(10);
 		panel_17.add(txtCantidad20);
 
 		txtCantidad21 = new JTextField();
+		txtCantidad21.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		txtCantidad21.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad21.setColumns(10);
 		panel_17.add(txtCantidad21);
 		validarDigitos(txtCantidad21);
@@ -403,31 +424,40 @@ public class MexTemplate extends JFrame {
 		panel_3.setLayout(new GridLayout(3, 2, 0, 0));
 
 		txtCantidad30 = new JTextField();
+		txtCantidad30.setText("77");
+		txtCantidad30.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad30.setEditable(false);
 		txtCantidad30.setColumns(10);
 		panel_3.add(txtCantidad30);
 
 		txtCantidad31 = new JTextField();
+		txtCantidad31.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad31.setColumns(10);
 		panel_3.add(txtCantidad31);
 		validarDigitos(txtCantidad31);
 
 		txtCantidad40 = new JTextField();
+		txtCantidad40.setText("7");
+		txtCantidad40.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad40.setEditable(false);
 		txtCantidad40.setColumns(10);
 		panel_3.add(txtCantidad40);
 
 		txtCantidad41 = new JTextField();
+		txtCantidad41.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad41.setColumns(10);
 		panel_3.add(txtCantidad41);
 		validarDigitos(txtCantidad41);
 
 		txtCantidad50 = new JTextField();
+		txtCantidad50.setText("400");
+		txtCantidad50.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad50.setEditable(false);
 		txtCantidad50.setColumns(10);
 		panel_3.add(txtCantidad50);
 
 		txtCantidad51 = new JTextField();
+		txtCantidad51.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad51.setColumns(10);
 		panel_3.add(txtCantidad51);
 		validarDigitos(txtCantidad51);
@@ -493,31 +523,40 @@ public class MexTemplate extends JFrame {
 		panel_7.setLayout(new GridLayout(3, 2, 0, 0));
 
 		txtCantidad60 = new JTextField();
+		txtCantidad60.setText("180");
+		txtCantidad60.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad60.setEditable(false);
 		txtCantidad60.setColumns(10);
 		panel_7.add(txtCantidad60);
 
 		txtCantidad61 = new JTextField();
+		txtCantidad61.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad61.setColumns(10);
 		panel_7.add(txtCantidad61);
 		validarDigitos(txtCantidad61);
 
 		txtCantidad70 = new JTextField();
+		txtCantidad70.setText("7");
+		txtCantidad70.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad70.setEditable(false);
 		txtCantidad70.setColumns(10);
 		panel_7.add(txtCantidad70);
 
 		txtCantidad71 = new JTextField();
+		txtCantidad71.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad71.setColumns(10);
 		panel_7.add(txtCantidad71);
 		validarDigitos(txtCantidad71);
 
 		txtCantidad80 = new JTextField();
+		txtCantidad80.setText("900");
+		txtCantidad80.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad80.setEditable(false);
 		txtCantidad80.setColumns(10);
 		panel_7.add(txtCantidad80);
 
 		txtCantidad81 = new JTextField();
+		txtCantidad81.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad81.setColumns(10);
 		panel_7.add(txtCantidad81);
 		validarDigitos(txtCantidad81);
@@ -581,31 +620,40 @@ public class MexTemplate extends JFrame {
 		panel_11.setLayout(new GridLayout(3, 2, 0, 0));
 
 		txtCantidad90 = new JTextField();
+		txtCantidad90.setText("104");
+		txtCantidad90.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad90.setEditable(false);
 		txtCantidad90.setColumns(10);
 		panel_11.add(txtCantidad90);
 
 		txtCantidad91 = new JTextField();
+		txtCantidad91.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad91.setColumns(10);
 		panel_11.add(txtCantidad91);
 		validarDigitos(txtCantidad91);
 
 		txtCantidad100 = new JTextField();
+		txtCantidad100.setText("4");
+		txtCantidad100.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad100.setEditable(false);
 		txtCantidad100.setColumns(10);
 		panel_11.add(txtCantidad100);
 
 		txtCantidad101 = new JTextField();
+		txtCantidad101.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad101.setColumns(10);
 		panel_11.add(txtCantidad101);
 		validarDigitos(txtCantidad101);
 
 		txtCantidad110 = new JTextField();
+		txtCantidad110.setText("300");
+		txtCantidad110.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad110.setEditable(false);
 		txtCantidad110.setColumns(10);
 		panel_11.add(txtCantidad110);
 
 		txtCantidad111 = new JTextField();
+		txtCantidad111.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad111.setColumns(10);
 		panel_11.add(txtCantidad111);
 		validarDigitos(txtCantidad111);
@@ -666,21 +714,27 @@ public class MexTemplate extends JFrame {
 		panel_23.setLayout(new GridLayout(2, 2, 0, 0));
 
 		txtCantidad160 = new JTextField();
+		txtCantidad160.setText("82");
+		txtCantidad160.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad160.setEditable(false);
 		txtCantidad160.setColumns(10);
 		panel_23.add(txtCantidad160);
 
 		txtCantidad161 = new JTextField();
+		txtCantidad161.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad161.setColumns(10);
 		panel_23.add(txtCantidad161);
 		validarDigitos(txtCantidad161);
 
 		txtCantidad170 = new JTextField();
+		txtCantidad170.setText("200");
+		txtCantidad170.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad170.setEditable(false);
 		txtCantidad170.setColumns(10);
 		panel_23.add(txtCantidad170);
 
 		txtCantidad171 = new JTextField();
+		txtCantidad171.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad171.setColumns(10);
 		panel_23.add(txtCantidad171);
 		validarDigitos(txtCantidad171);
@@ -733,11 +787,14 @@ public class MexTemplate extends JFrame {
 		panel_21.setLayout(new GridLayout(1, 1, 0, 0));
 
 		txtCantidad150 = new JTextField();
+		txtCantidad150.setText("2");
+		txtCantidad150.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad150.setEditable(false);
 		txtCantidad150.setColumns(10);
 		panel_21.add(txtCantidad150);
 
 		txtCantidad151 = new JTextField();
+		txtCantidad151.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad151.setColumns(10);
 		panel_21.add(txtCantidad151);
 		validarDigitos(txtCantidad151);
@@ -792,16 +849,12 @@ public class MexTemplate extends JFrame {
 						HashMap<String, Object> parametros = new HashMap<String, Object>();
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
 						parametros.put("serial_ficha", ficha.getFiSerial());
-
-						Reporte reporte = new Reporte("Reporte MB", 280, 10, 850, 750);
+						Reporte reporte = new Reporte("Reporte Mex", 280, 10, 850, 750);
 						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
 								Query.getMysql().getConexion());
 						reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
-					} else {
-						JOptionPane.showMessageDialog(null, "ERROR: Verificar valores ejecutados!", "Mensaje de Error",
-								JOptionPane.ERROR_MESSAGE);
 					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria ");

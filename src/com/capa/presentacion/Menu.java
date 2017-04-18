@@ -651,7 +651,7 @@ public class Menu extends JFrame {
 		JButton btnPortonGarita = new JButton("<html><body><p align=\"center\">Portón y Garita</body></html>");
 		btnPortonGarita.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new PGTemplate(servicioFicha.buscarFormulario("CE-1")).setVisible(true);
+				new PGTemplate(servicioFicha.buscarFormulario("PG-1")).setVisible(true);
 				dispose();
 			}
 		});
