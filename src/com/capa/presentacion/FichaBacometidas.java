@@ -41,20 +41,20 @@ public class FichaBacometidas extends JFrame {
 	private JTextField txtObs6;
 	private JTextField txtObs7;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ServicioFicha sf = new ComponenteFicha();
-					TFicha fi = sf.buscarFormulario("FB-A");
-					FichaBacometidas frame = new FichaBacometidas(fi);
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+//	public static void main(String[] args) {
+//		EventQueue.invokeLater(new Runnable() {
+//			public void run() {
+//				try {
+//					ServicioFicha sf = new ComponenteFicha();
+//					TFicha fi = sf.buscarFormulario("FB-A");
+//					FichaBacometidas frame = new FichaBacometidas(fi);
+//					frame.setVisible(true);
+//				} catch (Exception e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//	}
 
 	public FichaBacometidas(TFicha ficha) {
 		setTitle(ficha.getFiDescripcion().toUpperCase());

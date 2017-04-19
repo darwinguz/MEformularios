@@ -1,14 +1,24 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Validaciones.validarInfo;
+
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
@@ -18,6 +28,16 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 import com.capa.datos.TFicha;
+import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
+import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteFicha;
+import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
+import com.capa.negocios.ServicioFicha;
+import com.capa.negocios.ServicioInfoObligatoria;
+import com.capa.util.Utilitarios;
 
 public class FichaBRevisionBloques extends JFrame {
 
@@ -26,19 +46,42 @@ public class FichaBRevisionBloques extends JFrame {
 	 */
 	private static final long serialVersionUID = -464231132711014311L;
 	private JPanel contentPane;
-	private JTextField txtDObsRef;
-	private JTextField txtPPAObsRef;
-	private JTextField txtPTPObsRef;
-	private JTextField txtPCObsRef;
-	private JTextField txtV_UPVCObsRef;
-	private JTextField textField_4;
-	private JTextField txtEMObsRef;
-	private JTextField txtIObsRef;
-	private JTextField txtSFObsRef;
-	private JTextField txtWPCObsRef;
+	private JTextField txtObs0;
+	private JTextField txtObs3;
+	private JTextField txtObs5;
+	private JTextField txtObs6;
+	private JTextField txtObs4;
+	private JTextField txtObs1;
+	private JTextField txtObs2;
+	private JTextField txtObs7;
+	private JTextField txtObs8;
+	private JTextField txtObs9;
 
 	private TFicha ficha;
 	private String fotoInfoObl;
+
+	private TInformacionObligatoria infor;
+	private ServicioFicha servFicha;
+	private JRadioButton rdBtn00;
+	private JRadioButton rdBtn01;
+	private JRadioButton rdBtn10;
+	private JRadioButton rdBtn11;
+	private JRadioButton rdBtn20;
+	private JRadioButton rdBtn21;
+	private JRadioButton rdBtn30;
+	private JRadioButton rdBtn31;
+	private JRadioButton rdBtn40;
+	private JRadioButton rdBtn41;
+	private JRadioButton rdBtn50;
+	private JRadioButton rdBtn51;
+	private JRadioButton rdBtn60;
+	private JRadioButton rdBtn61;
+	private JRadioButton rdBtn70;
+	private JRadioButton rdBtn71;
+	private JRadioButton rdBtn80;
+	private JRadioButton rdBtn81;
+	private JRadioButton rdBtn90;
+	private JRadioButton rdBtn91;
 
 	/**
 	 * Launch the application.
@@ -60,6 +103,7 @@ public class FichaBRevisionBloques extends JFrame {
 	 * Create the frame.
 	 */
 	public FichaBRevisionBloques(TFicha tFicha) {
+		this.ficha = tFicha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1318, 659);
 		contentPane = new JPanel();
@@ -68,9 +112,15 @@ public class FichaBRevisionBloques extends JFrame {
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
 
+		servFicha = new ComponenteFicha();
+
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 484);
 		contentPane.add(tabbedPane);
+
+		JPcabecera cabecera = new JPcabecera();
+		contentPane.add(cabecera.getCabecera());
+		Utilitarios.llenarCabecera(cabecera);
 
 		JPanel pnlPestaña1 = new JPanel();
 		tabbedPane.addTab("1.- Ficha Revisión Bloques", null, pnlPestaña1, null);
@@ -101,17 +151,17 @@ public class FichaBRevisionBloques extends JFrame {
 		lblDObsRef.setBounds(50, 0, 123, 14);
 		pnlDObsRef.add(lblDObsRef);
 
-		JRadioButton rdbtnDSi = new JRadioButton("");
-		rdbtnDSi.setBounds(2, 16, 21, 23);
-		pnlDObsRef.add(rdbtnDSi);
+		rdBtn00 = new JRadioButton("");
+		rdBtn00.setBounds(2, 16, 21, 23);
+		pnlDObsRef.add(rdBtn00);
 
-		JRadioButton rdbtnDNo = new JRadioButton("");
-		rdbtnDNo.setBounds(23, 16, 21, 23);
-		pnlDObsRef.add(rdbtnDNo);
+		rdBtn01 = new JRadioButton("");
+		rdBtn01.setBounds(23, 16, 21, 23);
+		pnlDObsRef.add(rdBtn01);
 
 		ButtonGroup grBtnD = new ButtonGroup();
-		grBtnD.add(rdbtnDSi);
-		grBtnD.add(rdbtnDNo);
+		grBtnD.add(rdBtn00);
+		grBtnD.add(rdBtn01);
 
 		JLabel lblDSi = new JLabel("SI");
 		lblDSi.setBounds(6, 0, 21, 14);
@@ -121,10 +171,10 @@ public class FichaBRevisionBloques extends JFrame {
 		lblDNo.setBounds(25, 0, 21, 14);
 		pnlDObsRef.add(lblDNo);
 
-		txtDObsRef = new JTextField();
-		txtDObsRef.setBounds(50, 16, 123, 20);
-		pnlDObsRef.add(txtDObsRef);
-		txtDObsRef.setColumns(10);
+		txtObs0 = new JTextField();
+		txtObs0.setBounds(50, 16, 123, 20);
+		pnlDObsRef.add(txtObs0);
+		txtObs0.setColumns(10);
 
 		JPanel pnlBasesPrefabricadas = new JPanel();
 		pnlBasesPrefabricadas.setLayout(null);
@@ -151,16 +201,17 @@ public class FichaBRevisionBloques extends JFrame {
 		lblBPObsRef.setBounds(50, 0, 123, 14);
 		pnlBPObsRef.add(lblBPObsRef);
 
-		JRadioButton rdbtnBPSi = new JRadioButton("");
-		rdbtnBPSi.setBounds(2, 16, 21, 23);
-		pnlBPObsRef.add(rdbtnBPSi);
+		rdBtn10 = new JRadioButton("");
+		rdBtn10.setBounds(2, 16, 21, 23);
+		pnlBPObsRef.add(rdBtn10);
 
-		JRadioButton rdbtnBPNo = new JRadioButton("");
-		rdbtnBPNo.setBounds(23, 16, 21, 23);
-		pnlBPObsRef.add(rdbtnBPNo);
+		rdBtn11 = new JRadioButton("");
+		rdBtn11.setBounds(23, 16, 21, 23);
+		pnlBPObsRef.add(rdBtn11);
+
 		ButtonGroup grBtnBP = new ButtonGroup();
-		grBtnBP.add(rdbtnBPSi);
-		grBtnBP.add(rdbtnBPNo);
+		grBtnBP.add(rdBtn10);
+		grBtnBP.add(rdBtn11);
 
 		JLabel lblBPSi = new JLabel("SI");
 		lblBPSi.setBounds(6, 0, 21, 14);
@@ -170,10 +221,10 @@ public class FichaBRevisionBloques extends JFrame {
 		lblBPNo.setBounds(25, 0, 21, 14);
 		pnlBPObsRef.add(lblBPNo);
 
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(50, 16, 123, 20);
-		pnlBPObsRef.add(textField_4);
+		txtObs1 = new JTextField();
+		txtObs1.setColumns(10);
+		txtObs1.setBounds(50, 16, 123, 20);
+		pnlBPObsRef.add(txtObs1);
 
 		JPanel pnlEstrMetalica = new JPanel();
 		pnlEstrMetalica.setLayout(null);
@@ -209,17 +260,17 @@ public class FichaBRevisionBloques extends JFrame {
 		lblEMObsRef.setBounds(50, 0, 123, 14);
 		pnlEMObsRef.add(lblEMObsRef);
 
-		JRadioButton rdbtnEMSi = new JRadioButton("");
-		rdbtnEMSi.setBounds(2, 16, 21, 23);
-		pnlEMObsRef.add(rdbtnEMSi);
+		rdBtn20 = new JRadioButton("");
+		rdBtn20.setBounds(2, 16, 21, 23);
+		pnlEMObsRef.add(rdBtn20);
 
-		JRadioButton rdbtnEMNo = new JRadioButton("");
-		rdbtnEMNo.setBounds(23, 16, 21, 23);
-		pnlEMObsRef.add(rdbtnEMNo);
+		rdBtn21 = new JRadioButton("");
+		rdBtn21.setBounds(23, 16, 21, 23);
+		pnlEMObsRef.add(rdBtn21);
 
 		ButtonGroup grBtnEM = new ButtonGroup();
-		grBtnEM.add(rdbtnEMSi);
-		grBtnEM.add(rdbtnEMNo);
+		grBtnEM.add(rdBtn20);
+		grBtnEM.add(rdBtn21);
 
 		JLabel lblEMSi = new JLabel("SI");
 		lblEMSi.setBounds(6, 0, 21, 14);
@@ -229,10 +280,10 @@ public class FichaBRevisionBloques extends JFrame {
 		lblEMNo.setBounds(25, 0, 21, 14);
 		pnlEMObsRef.add(lblEMNo);
 
-		txtEMObsRef = new JTextField();
-		txtEMObsRef.setColumns(10);
-		txtEMObsRef.setBounds(50, 16, 123, 20);
-		pnlEMObsRef.add(txtEMObsRef);
+		txtObs2 = new JTextField();
+		txtObs2.setColumns(10);
+		txtObs2.setBounds(50, 16, 123, 20);
+		pnlEMObsRef.add(txtObs2);
 
 		JPanel pnlPPA = new JPanel();
 		pnlPPA.setLayout(null);
@@ -267,17 +318,17 @@ public class FichaBRevisionBloques extends JFrame {
 		lblPPAObsRef.setBounds(50, 0, 123, 14);
 		pnlPPAObsRef.add(lblPPAObsRef);
 
-		JRadioButton rdbtnPPASi = new JRadioButton("");
-		rdbtnPPASi.setBounds(2, 16, 21, 23);
-		pnlPPAObsRef.add(rdbtnPPASi);
+		rdBtn30 = new JRadioButton("");
+		rdBtn30.setBounds(2, 16, 21, 23);
+		pnlPPAObsRef.add(rdBtn30);
 
-		JRadioButton rdbtnPPANo = new JRadioButton("");
-		rdbtnPPANo.setBounds(23, 16, 21, 23);
-		pnlPPAObsRef.add(rdbtnPPANo);
+		rdBtn31 = new JRadioButton("");
+		rdBtn31.setBounds(23, 16, 21, 23);
+		pnlPPAObsRef.add(rdBtn31);
 
 		ButtonGroup grBtnPPA = new ButtonGroup();
-		grBtnPPA.add(rdbtnPPASi);
-		grBtnPPA.add(rdbtnPPANo);
+		grBtnPPA.add(rdBtn30);
+		grBtnPPA.add(rdBtn31);
 
 		JLabel lblPPASi = new JLabel("SI");
 		lblPPASi.setBounds(6, 0, 21, 14);
@@ -287,10 +338,10 @@ public class FichaBRevisionBloques extends JFrame {
 		lblPPANo.setBounds(25, 0, 21, 14);
 		pnlPPAObsRef.add(lblPPANo);
 
-		txtPPAObsRef = new JTextField();
-		txtPPAObsRef.setColumns(10);
-		txtPPAObsRef.setBounds(50, 16, 123, 20);
-		pnlPPAObsRef.add(txtPPAObsRef);
+		txtObs3 = new JTextField();
+		txtObs3.setColumns(10);
+		txtObs3.setBounds(50, 16, 123, 20);
+		pnlPPAObsRef.add(txtObs3);
 
 		JPanel pnlVentanasUPVC = new JPanel();
 		pnlVentanasUPVC.setLayout(null);
@@ -323,17 +374,17 @@ public class FichaBRevisionBloques extends JFrame {
 		lblV_UPVCObsRef.setBounds(50, 0, 123, 14);
 		pnlV_UPVCObsRef.add(lblV_UPVCObsRef);
 
-		JRadioButton rdbtnV_UPVCSi = new JRadioButton("");
-		rdbtnV_UPVCSi.setBounds(2, 16, 21, 23);
-		pnlV_UPVCObsRef.add(rdbtnV_UPVCSi);
+		rdBtn40 = new JRadioButton("");
+		rdBtn40.setBounds(2, 16, 21, 23);
+		pnlV_UPVCObsRef.add(rdBtn40);
 
-		JRadioButton rdbtnV_UPVCNo = new JRadioButton("");
-		rdbtnV_UPVCNo.setBounds(23, 16, 21, 23);
-		pnlV_UPVCObsRef.add(rdbtnV_UPVCNo);
+		rdBtn41 = new JRadioButton("");
+		rdBtn41.setBounds(23, 16, 21, 23);
+		pnlV_UPVCObsRef.add(rdBtn41);
 
 		ButtonGroup grBtnV_UPVC = new ButtonGroup();
-		grBtnV_UPVC.add(rdbtnV_UPVCSi);
-		grBtnV_UPVC.add(rdbtnV_UPVCNo);
+		grBtnV_UPVC.add(rdBtn40);
+		grBtnV_UPVC.add(rdBtn41);
 
 		JLabel lblV_UPVCSi = new JLabel("SI");
 		lblV_UPVCSi.setBounds(6, 0, 21, 14);
@@ -343,10 +394,10 @@ public class FichaBRevisionBloques extends JFrame {
 		lblV_UPVCNo.setBounds(25, 0, 21, 14);
 		pnlV_UPVCObsRef.add(lblV_UPVCNo);
 
-		txtV_UPVCObsRef = new JTextField();
-		txtV_UPVCObsRef.setColumns(10);
-		txtV_UPVCObsRef.setBounds(50, 16, 123, 20);
-		pnlV_UPVCObsRef.add(txtV_UPVCObsRef);
+		txtObs4 = new JTextField();
+		txtObs4.setColumns(10);
+		txtObs4.setBounds(50, 16, 123, 20);
+		pnlV_UPVCObsRef.add(txtObs4);
 
 		JPanel pnlPTP = new JPanel();
 		pnlPTP.setLayout(null);
@@ -380,17 +431,17 @@ public class FichaBRevisionBloques extends JFrame {
 		lblPTPObsRef.setBounds(50, 0, 123, 14);
 		pnlPTPObsRef.add(lblPTPObsRef);
 
-		JRadioButton rdbtnPTPSi = new JRadioButton("");
-		rdbtnPTPSi.setBounds(2, 16, 21, 23);
-		pnlPTPObsRef.add(rdbtnPTPSi);
+		rdBtn50 = new JRadioButton("");
+		rdBtn50.setBounds(2, 16, 21, 23);
+		pnlPTPObsRef.add(rdBtn50);
 
-		JRadioButton rdbtnPTPNo = new JRadioButton("");
-		rdbtnPTPNo.setBounds(23, 16, 21, 23);
-		pnlPTPObsRef.add(rdbtnPTPNo);
+		rdBtn51 = new JRadioButton("");
+		rdBtn51.setBounds(23, 16, 21, 23);
+		pnlPTPObsRef.add(rdBtn51);
 
 		ButtonGroup grBtnPTP = new ButtonGroup();
-		grBtnPTP.add(rdbtnPTPSi);
-		grBtnPTP.add(rdbtnPTPNo);
+		grBtnPTP.add(rdBtn50);
+		grBtnPTP.add(rdBtn51);
 
 		JLabel lblPTPSi = new JLabel("SI");
 		lblPTPSi.setBounds(6, 0, 21, 14);
@@ -400,10 +451,10 @@ public class FichaBRevisionBloques extends JFrame {
 		lblPTPNo.setBounds(25, 0, 21, 14);
 		pnlPTPObsRef.add(lblPTPNo);
 
-		txtPTPObsRef = new JTextField();
-		txtPTPObsRef.setColumns(10);
-		txtPTPObsRef.setBounds(50, 16, 123, 20);
-		pnlPTPObsRef.add(txtPTPObsRef);
+		txtObs5 = new JTextField();
+		txtObs5.setColumns(10);
+		txtObs5.setBounds(50, 16, 123, 20);
+		pnlPTPObsRef.add(txtObs5);
 
 		JPanel pnlPC = new JPanel();
 		pnlPC.setLayout(null);
@@ -438,17 +489,17 @@ public class FichaBRevisionBloques extends JFrame {
 		lblPCObsRef.setBounds(50, 0, 123, 14);
 		pnlPCObsRef.add(lblPCObsRef);
 
-		JRadioButton rdbtnPCSi = new JRadioButton("");
-		rdbtnPCSi.setBounds(2, 16, 21, 23);
-		pnlPCObsRef.add(rdbtnPCSi);
+		rdBtn60 = new JRadioButton("");
+		rdBtn60.setBounds(2, 16, 21, 23);
+		pnlPCObsRef.add(rdBtn60);
 
-		JRadioButton rdbtnPCNo = new JRadioButton("");
-		rdbtnPCNo.setBounds(23, 16, 21, 23);
-		pnlPCObsRef.add(rdbtnPCNo);
+		rdBtn61 = new JRadioButton("");
+		rdBtn61.setBounds(23, 16, 21, 23);
+		pnlPCObsRef.add(rdBtn61);
 
 		ButtonGroup grBtnPC = new ButtonGroup();
-		grBtnPC.add(rdbtnPCSi);
-		grBtnPC.add(rdbtnPCNo);
+		grBtnPC.add(rdBtn60);
+		grBtnPC.add(rdBtn61);
 
 		JLabel lblPCSi = new JLabel("SI");
 		lblPCSi.setBounds(6, 0, 21, 14);
@@ -458,10 +509,10 @@ public class FichaBRevisionBloques extends JFrame {
 		lblPCNo.setBounds(25, 0, 21, 14);
 		pnlPCObsRef.add(lblPCNo);
 
-		txtPCObsRef = new JTextField();
-		txtPCObsRef.setColumns(10);
-		txtPCObsRef.setBounds(50, 16, 123, 20);
-		pnlPCObsRef.add(txtPCObsRef);
+		txtObs6 = new JTextField();
+		txtObs6.setColumns(10);
+		txtObs6.setBounds(50, 16, 123, 20);
+		pnlPCObsRef.add(txtObs6);
 
 		JPanel pnlPestaña2 = new JPanel();
 		tabbedPane.addTab("2.- Ficha Revisiñn Bloques", null, pnlPestaña2, null);
@@ -496,17 +547,17 @@ public class FichaBRevisionBloques extends JFrame {
 		lblIObsRef.setBounds(50, 0, 123, 14);
 		pnlIObsRef.add(lblIObsRef);
 
-		JRadioButton rdbtnISi = new JRadioButton("");
-		rdbtnISi.setBounds(2, 16, 21, 23);
-		pnlIObsRef.add(rdbtnISi);
+		rdBtn70 = new JRadioButton("");
+		rdBtn70.setBounds(2, 16, 21, 23);
+		pnlIObsRef.add(rdBtn70);
 
-		JRadioButton rdbtnINo = new JRadioButton("");
-		rdbtnINo.setBounds(23, 16, 21, 23);
-		pnlIObsRef.add(rdbtnINo);
+		rdBtn71 = new JRadioButton("");
+		rdBtn71.setBounds(23, 16, 21, 23);
+		pnlIObsRef.add(rdBtn71);
 
 		ButtonGroup grBtnI = new ButtonGroup();
-		grBtnI.add(rdbtnISi);
-		grBtnI.add(rdbtnINo);
+		grBtnI.add(rdBtn70);
+		grBtnI.add(rdBtn71);
 
 		JLabel lblISi = new JLabel("SI");
 		lblISi.setBounds(6, 0, 21, 14);
@@ -516,10 +567,10 @@ public class FichaBRevisionBloques extends JFrame {
 		lblINo.setBounds(25, 0, 21, 14);
 		pnlIObsRef.add(lblINo);
 
-		txtIObsRef = new JTextField();
-		txtIObsRef.setColumns(10);
-		txtIObsRef.setBounds(50, 16, 123, 20);
-		pnlIObsRef.add(txtIObsRef);
+		txtObs7 = new JTextField();
+		txtObs7.setColumns(10);
+		txtObs7.setBounds(50, 16, 123, 20);
+		pnlIObsRef.add(txtObs7);
 
 		JPanel pnlSistFuerza = new JPanel();
 		pnlSistFuerza.setLayout(null);
@@ -557,17 +608,17 @@ public class FichaBRevisionBloques extends JFrame {
 		lblSFObsRef.setBounds(50, 0, 123, 14);
 		pnlSFObsRef.add(lblSFObsRef);
 
-		JRadioButton rdbtnSFSi = new JRadioButton("");
-		rdbtnSFSi.setBounds(2, 16, 21, 23);
-		pnlSFObsRef.add(rdbtnSFSi);
+		rdBtn80 = new JRadioButton("");
+		rdBtn80.setBounds(2, 16, 21, 23);
+		pnlSFObsRef.add(rdBtn80);
 
-		JRadioButton rdbtnSFNo = new JRadioButton("");
-		rdbtnSFNo.setBounds(23, 16, 21, 23);
-		pnlSFObsRef.add(rdbtnSFNo);
+		rdBtn81 = new JRadioButton("");
+		rdBtn81.setBounds(23, 16, 21, 23);
+		pnlSFObsRef.add(rdBtn81);
 
 		ButtonGroup grBtnSF = new ButtonGroup();
-		grBtnSF.add(rdbtnSFSi);
-		grBtnSF.add(rdbtnSFNo);
+		grBtnSF.add(rdBtn80);
+		grBtnSF.add(rdBtn81);
 
 		JLabel lblSFSi = new JLabel("SI");
 		lblSFSi.setBounds(6, 0, 21, 14);
@@ -577,10 +628,10 @@ public class FichaBRevisionBloques extends JFrame {
 		lblSFNo.setBounds(25, 0, 21, 14);
 		pnlSFObsRef.add(lblSFNo);
 
-		txtSFObsRef = new JTextField();
-		txtSFObsRef.setColumns(10);
-		txtSFObsRef.setBounds(50, 16, 123, 20);
-		pnlSFObsRef.add(txtSFObsRef);
+		txtObs8 = new JTextField();
+		txtObs8.setColumns(10);
+		txtObs8.setBounds(50, 16, 123, 20);
+		pnlSFObsRef.add(txtObs8);
 
 		JPanel pnlWPC = new JPanel();
 		pnlWPC.setLayout(null);
@@ -612,17 +663,17 @@ public class FichaBRevisionBloques extends JFrame {
 		lblWPCObsRef.setBounds(50, 0, 123, 14);
 		pnlWPCObsRef.add(lblWPCObsRef);
 
-		JRadioButton rdbtnWPCSi = new JRadioButton("");
-		rdbtnWPCSi.setBounds(2, 16, 21, 23);
-		pnlWPCObsRef.add(rdbtnWPCSi);
+		rdBtn90 = new JRadioButton("");
+		rdBtn90.setBounds(2, 16, 21, 23);
+		pnlWPCObsRef.add(rdBtn90);
 
-		JRadioButton rdbtnWPCNo = new JRadioButton("");
-		rdbtnWPCNo.setBounds(23, 16, 21, 23);
-		pnlWPCObsRef.add(rdbtnWPCNo);
+		rdBtn91 = new JRadioButton("");
+		rdBtn91.setBounds(23, 16, 21, 23);
+		pnlWPCObsRef.add(rdBtn91);
 
 		ButtonGroup grBtnWPC = new ButtonGroup();
-		grBtnWPC.add(rdbtnWPCSi);
-		grBtnWPC.add(rdbtnWPCNo);
+		grBtnWPC.add(rdBtn90);
+		grBtnWPC.add(rdBtn91);
 
 		JLabel lblWPCSi = new JLabel("SI");
 		lblWPCSi.setBounds(6, 0, 21, 14);
@@ -632,10 +683,48 @@ public class FichaBRevisionBloques extends JFrame {
 		lblWPCNo.setBounds(25, 0, 21, 14);
 		pnlWPCObsRef.add(lblWPCNo);
 
-		txtWPCObsRef = new JTextField();
-		txtWPCObsRef.setColumns(10);
-		txtWPCObsRef.setBounds(50, 16, 123, 20);
-		pnlWPCObsRef.add(txtWPCObsRef);
+		txtObs9 = new JTextField();
+		txtObs9.setColumns(10);
+		txtObs9.setBounds(50, 16, 123, 20);
+		pnlWPCObsRef.add(txtObs9);
+
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(845, 200);
+		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				fotoInfoObl = getPathImagen();
+			}
+		});
+		pnlPestaña2.add(infoObligatoria.getPnlInformacionObl());
+
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+
+				infor = cargarInfoObligatoria(infoObligatoria);
+				infor.setIoFotoPath(fotoInfoObl);
+				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
+				if (validarInfo(infor)) {
+					srvInfoOblig.crear(infor);
+					servFicha.guardarFichaB(cargarFicha());
+					HashMap<String, Object> parametros = new HashMap<String, Object>();
+					parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+					parametros.put("serial_ficha", ficha.getFiSerial());
+
+					Reporte reporte = new Reporte("Reporte Baterías Sanitarias", 280, 10, 850, 750);
+					reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
+							Query.getMysql().getConexion());
+					reporte.setVisible(true);
+					new FichaB().setVisible(true);
+					dispose();
+
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria");
+				}
+			}
+		});
 
 		addWindowListener(new WindowAdapter() {
 
@@ -646,5 +735,117 @@ public class FichaBRevisionBloques extends JFrame {
 				dispose();
 			}
 		});
+	}
+
+	public List<TdetalleFicha> cargarFicha() {
+		List<TdetalleFicha> listaDetalles = new LinkedList<>();
+		TGrupo grupoTmp = servFicha.buscarGrupo("Dimensiones");
+		String observacion, desicion = "";
+		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
+		if (updateFicha == -1) {
+			updateFicha = 0;
+		} else {
+			updateFicha++;
+		}
+		observacion = txtObs0.getText();
+		if (rdBtn00.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn01.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Piezas sanitarias");
+		observacion = txtObs1.getText();
+		if (rdBtn10.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn11.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Bases prefabricadas");
+		observacion = txtObs2.getText();
+		if (rdBtn20.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn21.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Estructura metálica Steel");
+		observacion = txtObs3.getText();
+		if (rdBtn30.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn31.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Paneles de pared con alma de EPS");
+		observacion = txtObs4.getText();
+		if (rdBtn40.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn41.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Ventana de UPVC");
+		observacion = txtObs5.getText();
+		if (rdBtn50.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn51.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Panel de cubierta con EPS");
+		observacion = txtObs6.getText();
+		if (rdBtn60.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn61.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Compuesto de madera y plástico");
+		observacion = txtObs7.getText();
+		if (rdBtn70.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn71.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Iluminación");
+		observacion = txtObs8.getText();
+		if (rdBtn80.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn81.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Inodoro");
+		observacion = txtObs9.getText();
+		if (rdBtn90.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn91.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		return listaDetalles;
 	}
 }

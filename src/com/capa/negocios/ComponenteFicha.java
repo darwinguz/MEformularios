@@ -162,7 +162,26 @@ public class ComponenteFicha implements ServicioFicha {
 	@Override
 	public void guardarFichaB(List<TdetalleFicha> detallesFicha) {
 		// TODO Auto-generated method stub
-
+		detallesFicha.forEach(item -> {
+			try {
+				String aux = item.getDetEtiqueta().replaceAll("<html><body><p align='right'>", "");
+				aux = aux.replaceAll("</p></body></html>", "");
+				item.setDetEtiqueta(aux);
+				String query = "INSERT INTO t_detalle_ficha (io_serial, fi_serial, c_serial, "
+						+ "g_serial, df_obs_ref, df_actualizacion_n) VALUES (" + item.getInfoObligatoria().getIoSerial()
+						+ ", " + item.getTFicha().getFiSerial() + ", " + item.getTCabecera().getCSerial() + ", "
+						+ item.getTGrupo().getGSerial() + ", '" + item.getDetObsRef() + "', "
+						+ item.getDetActualizacionN() + ", '" + item.getDesicion() + "');";
+				Query.insertar(query);
+				mensaje = "Ingreso exitoso";
+				titulo = "INGRESO";
+				tipoMensaje = 1;
+				// System.out.println(query);
+			} catch (Exception e) {
+				mensaje = "Error al insertar datos del formulario B " + e.getMessage();
+			}
+		});
+		JOptionPane.showMessageDialog(null, mensaje, titulo, tipoMensaje);
 	}
 
 }

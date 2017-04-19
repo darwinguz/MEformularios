@@ -1,9 +1,11 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.getPathImagen;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
@@ -13,18 +15,30 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 import com.capa.datos.TFicha;
+import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
+import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
+import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
+import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.util.Utilitarios;
 
 import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -42,31 +56,59 @@ public class FichaBbateriasSanitarias extends JFrame {
 	private JTextField txtObs5;
 	private JTextField txtObs7;
 	private JTextField txtObs8;
+	private JTextField txtObs9;
 	private JTextField txtObs10;
-	private JTextField txtObs11;
+
+	JRadioButton rdBtn00;
+	JRadioButton rdBtn01;
+	JRadioButton rdBtn10;
+	JRadioButton rdBtn11;
+
+	private TInformacionObligatoria infor;
+	private ServicioFicha servFicha;
+	private TFicha ficha;
 
 	private String fotoInfoObl;
+	private JRadioButton rdBtn20;
+	private JRadioButton rdBtn21;
+	private JRadioButton rdBtn30;
+	private JRadioButton rdBtn31;
+	private JRadioButton rdBtn40;
+	private JRadioButton rdBtn41;
+	private JRadioButton rdBtn60;
+	private JRadioButton rdBtn61;
+	private JRadioButton rdBtn50;
+	private JRadioButton rdBtn51;
+	private JRadioButton rdBtn70;
+	private JRadioButton rdBtn71;
+	private JRadioButton rdBtn80;
+	private JRadioButton rdBtn81;
+	private JRadioButton rdBtn90;
+	private JRadioButton rdBtn91;
+	private JRadioButton rdBtn100;
+	private JRadioButton rdBtn101;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ServicioFicha sf = new ComponenteFicha();
-					TFicha fi = sf.buscarFormulario("FB-S");
-					FichaBbateriasSanitarias frame = new FichaBbateriasSanitarias(fi);
-					frame.setVisible(true);
-					frame.setLocationRelativeTo(null);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// ServicioFicha sf = new ComponenteFicha();
+	// TFicha fi = sf.buscarFormulario("FB-S");
+	// FichaBbateriasSanitarias frame = new FichaBbateriasSanitarias(fi);
+	// frame.setVisible(true);
+	// frame.setLocationRelativeTo(null);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
 	 */
 	public FichaBbateriasSanitarias(TFicha ficha) {
+		this.ficha = ficha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		setTitle(ficha.getFiDescripcion().toUpperCase());
@@ -75,6 +117,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 		panelPrincipal.setLayout(new BorderLayout(0, 0));
 		setContentPane(panelPrincipal);
 		setLocationRelativeTo(null);
+		servFicha = new ComponenteFicha();
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
@@ -108,11 +151,11 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_1.setBounds(10, 19, 123, 14);
 		panel_1.add(label_1);
 
-		JRadioButton rdBtn00 = new JRadioButton("");
+		rdBtn00 = new JRadioButton("");
 		rdBtn00.setBounds(31, 2, 21, 23);
 		panel_1.add(rdBtn00);
 
-		JRadioButton rdBtn01 = new JRadioButton("");
+		rdBtn01 = new JRadioButton("");
 		rdBtn01.setBounds(81, 2, 21, 23);
 		panel_1.add(rdBtn01);
 
@@ -159,11 +202,11 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label.setBounds(10, 19, 123, 14);
 		panel_3.add(label);
 
-		JRadioButton rdBtn10 = new JRadioButton("");
+		rdBtn10 = new JRadioButton("");
 		rdBtn10.setBounds(31, 2, 21, 23);
 		panel_3.add(rdBtn10);
 
-		JRadioButton rdBtn11 = new JRadioButton("");
+		rdBtn11 = new JRadioButton("");
 		rdBtn11.setBounds(81, 2, 21, 23);
 		panel_3.add(rdBtn11);
 
@@ -210,11 +253,11 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_6.setBounds(10, 19, 123, 14);
 		panel_5.add(label_6);
 
-		JRadioButton rdBtn20 = new JRadioButton("");
+		rdBtn20 = new JRadioButton("");
 		rdBtn20.setBounds(31, 2, 21, 23);
 		panel_5.add(rdBtn20);
 
-		JRadioButton rdBtn21 = new JRadioButton("");
+		rdBtn21 = new JRadioButton("");
 		rdBtn21.setBounds(81, 2, 21, 23);
 		panel_5.add(rdBtn21);
 
@@ -261,11 +304,11 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_9.setBounds(10, 19, 123, 14);
 		panel_7.add(label_9);
 
-		JRadioButton rdBtn30 = new JRadioButton("");
+		rdBtn30 = new JRadioButton("");
 		rdBtn30.setBounds(31, 2, 21, 23);
 		panel_7.add(rdBtn30);
 
-		JRadioButton rdBtn31 = new JRadioButton("");
+		rdBtn31 = new JRadioButton("");
 		rdBtn31.setBounds(81, 2, 21, 23);
 		panel_7.add(rdBtn31);
 
@@ -312,11 +355,11 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_13.setBounds(10, 19, 123, 14);
 		panel_8.add(label_13);
 
-		JRadioButton rdBtn40 = new JRadioButton("");
+		rdBtn40 = new JRadioButton("");
 		rdBtn40.setBounds(31, 2, 21, 23);
 		panel_8.add(rdBtn40);
 
-		JRadioButton rdBtn41 = new JRadioButton("");
+		rdBtn41 = new JRadioButton("");
 		rdBtn41.setBounds(81, 2, 21, 23);
 		panel_8.add(rdBtn41);
 
@@ -363,11 +406,11 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_17.setBounds(10, 19, 123, 14);
 		panel_10.add(label_17);
 
-		JRadioButton rdBtn60 = new JRadioButton("");
+		rdBtn60 = new JRadioButton("");
 		rdBtn60.setBounds(31, 2, 21, 23);
 		panel_10.add(rdBtn60);
 
-		JRadioButton rdBtn61 = new JRadioButton("");
+		rdBtn61 = new JRadioButton("");
 		rdBtn61.setBounds(81, 2, 21, 23);
 		panel_10.add(rdBtn61);
 
@@ -414,11 +457,11 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_21.setBounds(10, 19, 123, 14);
 		panel_12.add(label_21);
 
-		JRadioButton rdBtn50 = new JRadioButton("");
+		rdBtn50 = new JRadioButton("");
 		rdBtn50.setBounds(31, 2, 21, 23);
 		panel_12.add(rdBtn50);
 
-		JRadioButton rdBtn51 = new JRadioButton("");
+		rdBtn51 = new JRadioButton("");
 		rdBtn51.setBounds(81, 2, 21, 23);
 		panel_12.add(rdBtn51);
 
@@ -466,11 +509,11 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_25.setBounds(10, 19, 123, 14);
 		panel_14.add(label_25);
 
-		JRadioButton rdBtn70 = new JRadioButton("");
+		rdBtn70 = new JRadioButton("");
 		rdBtn70.setBounds(31, 2, 21, 23);
 		panel_14.add(rdBtn70);
 
-		JRadioButton rdBtn71 = new JRadioButton("");
+		rdBtn71 = new JRadioButton("");
 		rdBtn71.setBounds(81, 2, 21, 23);
 		panel_14.add(rdBtn71);
 
@@ -494,7 +537,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 		panel_14.add(txtObs7);
 
 		JPanel pnlPestaña2 = new JPanel();
-		tabbedPane.addTab("2.- Ficha Baterias Sanitarias", null, pnlPestaña2, null);
+		tabbedPane.addTab("2.- " + ficha.getFiDescripcion(), null, pnlPestaña2, null);
 		pnlPestaña2.setLayout(null);
 
 		JPcabecera cabecera = new JPcabecera();
@@ -512,7 +555,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
-		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Dimensiones",
+		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Iluminaci\u00F3n",
 				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel.setBounds(10, 11, 249, 181);
 		pnlPestaña2.add(panel);
@@ -527,8 +570,8 @@ public class FichaBbateriasSanitarias extends JFrame {
 		panel_17.setBounds(10, 210, 249, 150);
 		pnlPestaña2.add(panel_17);
 		panel_17.setLayout(null);
-		panel_17.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Piezas Sanitarias",
-				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_17.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Inodoro", TitledBorder.LEADING,
+				TitledBorder.TOP, null, new Color(0, 0, 0)));
 
 		JLabel lblcaractersticaslosInodoros = new JLabel(
 				"<html>\r\n<body>\r\n<p align=\"justify\">Caracter\u00EDsticas: \r\n<br>Los inodoros cumplen con las especificaciones de la norma NTE INEN 1571: Artefectos sanitarios.\r\n<br>La grifer\u00EDa cumpe con las normas NTE INEN: 602, 950, 967, 968, 969 y las establecidas ASTM en las referidas normas.\r\n<br>Normativa:  NTE INEN 1571: Artefactos sanitarios, NTE INEN:602, 950, 967, 968, 969 y las establecidas ASTM en las referidas normas.\r\n<br>Plano de referencia: PE-05\r\n</p>\r\n</body>\r\n</html>");
@@ -547,11 +590,11 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_16.setBounds(10, 19, 123, 14);
 		panel_16.add(label_16);
 
-		JRadioButton rdBtn80 = new JRadioButton("");
+		rdBtn80 = new JRadioButton("");
 		rdBtn80.setBounds(31, 2, 21, 23);
 		panel_16.add(rdBtn80);
 
-		JRadioButton rdBtn81 = new JRadioButton("");
+		rdBtn81 = new JRadioButton("");
 		rdBtn81.setBounds(81, 2, 21, 23);
 		panel_16.add(rdBtn81);
 
@@ -585,11 +628,11 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_29.setBounds(10, 19, 123, 14);
 		panel_18.add(label_29);
 
-		JRadioButton rdBtn90 = new JRadioButton("");
+		rdBtn90 = new JRadioButton("");
 		rdBtn90.setBounds(31, 2, 21, 23);
 		panel_18.add(rdBtn90);
 
-		JRadioButton rdBtn91 = new JRadioButton("");
+		rdBtn91 = new JRadioButton("");
 		rdBtn91.setBounds(81, 2, 21, 23);
 		panel_18.add(rdBtn91);
 
@@ -607,14 +650,14 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_31.setBounds(108, 5, 21, 14);
 		panel_18.add(label_31);
 
-		txtObs10 = new JTextField();
-		txtObs10.setColumns(10);
-		txtObs10.setBounds(10, 32, 123, 20);
-		panel_18.add(txtObs10);
+		txtObs9 = new JTextField();
+		txtObs9.setColumns(10);
+		txtObs9.setBounds(10, 32, 123, 20);
+		panel_18.add(txtObs9);
 
 		JPanel panel_19 = new JPanel();
 		panel_19.setLayout(null);
-		panel_19.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Bases pre-fabricadas",
+		panel_19.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Urinarios",
 				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		panel_19.setBounds(10, 371, 249, 150);
 		pnlPestaña2.add(panel_19);
@@ -636,11 +679,11 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_33.setBounds(10, 19, 123, 14);
 		panel_20.add(label_33);
 
-		JRadioButton rdBtn100 = new JRadioButton("");
+		rdBtn100 = new JRadioButton("");
 		rdBtn100.setBounds(31, 2, 21, 23);
 		panel_20.add(rdBtn100);
 
-		JRadioButton rdBtn101 = new JRadioButton("");
+		rdBtn101 = new JRadioButton("");
 		rdBtn101.setBounds(81, 2, 21, 23);
 		panel_20.add(rdBtn101);
 
@@ -658,10 +701,39 @@ public class FichaBbateriasSanitarias extends JFrame {
 		label_35.setBounds(108, 5, 21, 14);
 		panel_20.add(label_35);
 
-		txtObs11 = new JTextField();
-		txtObs11.setColumns(10);
-		txtObs11.setBounds(10, 32, 123, 20);
-		panel_20.add(txtObs11);
+		txtObs10 = new JTextField();
+		txtObs10.setColumns(10);
+		txtObs10.setBounds(10, 32, 123, 20);
+		panel_20.add(txtObs10);
+
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+
+				infor = cargarInfoObligatoria(infoObligatoria);
+				infor.setIoFotoPath(fotoInfoObl);
+				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
+				if (validarInfo(infor)) {
+					srvInfoOblig.crear(infor);
+					servFicha.guardarFichaB(cargarFicha());
+					HashMap<String, Object> parametros = new HashMap<String, Object>();
+					parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+					parametros.put("serial_ficha", ficha.getFiSerial());
+
+					Reporte reporte = new Reporte("Reporte Baterías Sanitarias", 280, 10, 850, 750);
+					reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
+							Query.getMysql().getConexion());
+					reporte.setVisible(true);
+					new FichaB().setVisible(true);
+					dispose();
+
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria");
+				}
+			}
+		});
 
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -672,5 +744,127 @@ public class FichaBbateriasSanitarias extends JFrame {
 			}
 		});
 
+	}
+
+	public List<TdetalleFicha> cargarFicha() {
+		List<TdetalleFicha> listaDetalles = new LinkedList<>();
+		TGrupo grupoTmp = servFicha.buscarGrupo("Dimensiones");
+		String observacion, desicion = "";
+		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
+		if (updateFicha == -1) {
+			updateFicha = 0;
+		} else {
+			updateFicha++;
+		}
+		observacion = txtObs0.getText();
+		if (rdBtn00.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn01.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Piezas sanitarias");
+		observacion = txtObs1.getText();
+		if (rdBtn10.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn11.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Bases prefabricadas");
+		observacion = txtObs2.getText();
+		if (rdBtn20.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn21.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Estructura metálica Steel");
+		observacion = txtObs3.getText();
+		if (rdBtn30.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn31.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Paneles de pared con alma de EPS");
+		observacion = txtObs4.getText();
+		if (rdBtn40.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn41.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Ventana de UPVC");
+		observacion = txtObs5.getText();
+		if (rdBtn50.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn51.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Panel de cubierta con EPS");
+		observacion = txtObs6.getText();
+		if (rdBtn60.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn61.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Compuesto de madera y plástico");
+		observacion = txtObs7.getText();
+		if (rdBtn70.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn71.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Iluminación");
+		observacion = txtObs8.getText();
+		if (rdBtn80.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn81.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Inodoro");
+		observacion = txtObs9.getText();
+		if (rdBtn90.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn91.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Urinarios");
+		observacion = txtObs10.getText();
+		if (rdBtn100.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn101.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		return listaDetalles;
 	}
 }

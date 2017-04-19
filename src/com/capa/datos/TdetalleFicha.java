@@ -25,6 +25,7 @@ public class TdetalleFicha implements Serializable {
 		super();
 	}
 
+	// constructor para ingresar Fichas B
 	public TdetalleFicha(TCabecera cabecera, TInformacionObligatoria informacion, TGrupo grupo, TFicha ficha,
 			Integer detActualizacion, String obs, String desicion) {
 		this.TCabecera = cabecera;

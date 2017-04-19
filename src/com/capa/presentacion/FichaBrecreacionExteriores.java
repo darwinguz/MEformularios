@@ -1,9 +1,11 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.getPathImagen;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
@@ -13,16 +15,29 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 import com.capa.datos.TFicha;
+import com.capa.datos.TGrupo;
+import com.capa.datos.TInformacionObligatoria;
+import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
+import com.capa.negocios.ServicioFicha;
+import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.util.Utilitarios;
 
 import javax.swing.UIManager;
 import java.awt.Color;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -37,6 +52,15 @@ public class FichaBrecreacionExteriores extends JFrame {
 
 	private TFicha ficha;
 	private String fotoInfoObl;
+	private TInformacionObligatoria infor;
+	private ServicioFicha servFicha;
+
+	private JRadioButton rdBtn00;
+	private JRadioButton rdBtn01;
+	private JRadioButton rdBtn10;
+	private JRadioButton rdBtn11;
+	private JRadioButton rdBtn20;
+	private JRadioButton rdBtn21;
 
 	// public static void main(String[] args) {
 	// EventQueue.invokeLater(new Runnable() {
@@ -76,7 +100,7 @@ public class FichaBrecreacionExteriores extends JFrame {
 
 		JPcabecera cabecera = new JPcabecera();
 		panelPrincipal.add(cabecera.getCabecera());
-		// Utilitarios.llenarCabecera(cabecera);
+		Utilitarios.llenarCabecera(cabecera);
 
 		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(860, 360);
 		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
@@ -111,11 +135,11 @@ public class FichaBrecreacionExteriores extends JFrame {
 		label_1.setBounds(8, 57, 123, 14);
 		panel_1.add(label_1);
 
-		JRadioButton rdBtn00 = new JRadioButton("");
+		rdBtn00 = new JRadioButton("");
 		rdBtn00.setBounds(44, 27, 21, 23);
 		panel_1.add(rdBtn00);
 
-		JRadioButton rdBtn01 = new JRadioButton("");
+		rdBtn01 = new JRadioButton("");
 		rdBtn01.setBounds(65, 27, 21, 23);
 		panel_1.add(rdBtn01);
 
@@ -160,11 +184,11 @@ public class FichaBrecreacionExteriores extends JFrame {
 		label_5.setBounds(8, 57, 123, 14);
 		panel_3.add(label_5);
 
-		JRadioButton rdBtn10 = new JRadioButton("");
+		rdBtn10 = new JRadioButton("");
 		rdBtn10.setBounds(44, 27, 21, 23);
 		panel_3.add(rdBtn10);
 
-		JRadioButton rdBtn11 = new JRadioButton("");
+		rdBtn11 = new JRadioButton("");
 		rdBtn11.setBounds(65, 27, 21, 23);
 		panel_3.add(rdBtn11);
 
@@ -209,11 +233,11 @@ public class FichaBrecreacionExteriores extends JFrame {
 		label_4.setBounds(8, 57, 123, 14);
 		panel_5.add(label_4);
 
-		JRadioButton rdBtn20 = new JRadioButton("");
+		rdBtn20 = new JRadioButton("");
 		rdBtn20.setBounds(44, 27, 21, 23);
 		panel_5.add(rdBtn20);
 
-		JRadioButton rdBtn21 = new JRadioButton("");
+		rdBtn21 = new JRadioButton("");
 		rdBtn21.setBounds(65, 27, 21, 23);
 		panel_5.add(rdBtn21);
 
@@ -234,6 +258,34 @@ public class FichaBrecreacionExteriores extends JFrame {
 		txtObs2.setBounds(8, 71, 123, 20);
 		panel_5.add(txtObs2);
 
+		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+
+				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+
+				infor = cargarInfoObligatoria(infoObligatoria);
+				infor.setIoFotoPath(fotoInfoObl);
+				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
+				if (validarInfo(infor)) {
+					srvInfoOblig.crear(infor);
+					servFicha.guardarFichaB(cargarFicha());
+					HashMap<String, Object> parametros = new HashMap<String, Object>();
+					parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+					parametros.put("serial_ficha", ficha.getFiSerial());
+					Reporte reporte = new Reporte("Reporte Recreación exterior", 280, 10, 850, 750);
+					reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
+							Query.getMysql().getConexion());
+					reporte.setVisible(true);
+					new FichaB().setVisible(true);
+					dispose();
+
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria");
+				}
+			}
+		});
+
 		addWindowListener(new WindowAdapter() {
 
 			@Override
@@ -244,6 +296,48 @@ public class FichaBrecreacionExteriores extends JFrame {
 			}
 		});
 
+	}
+
+	public List<TdetalleFicha> cargarFicha() {
+		List<TdetalleFicha> listaDetalles = new LinkedList<>();
+		TGrupo grupoTmp = servFicha.buscarGrupo("Superficie");
+		String observacion, desicion = "";
+		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
+		if (updateFicha == -1) {
+			updateFicha = 0;
+		} else {
+			updateFicha++;
+		}
+		observacion = txtObs0.getText();
+		if (rdBtn00.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn01.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Cerramiento perimetral");
+		observacion = txtObs1.getText();
+		if (rdBtn10.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn11.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Caminerías exteriores");
+		observacion = txtObs2.getText();
+		if (rdBtn20.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn21.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		return listaDetalles;
 	}
 
 }
