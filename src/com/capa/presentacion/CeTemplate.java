@@ -108,7 +108,7 @@ public class CeTemplate extends JFrame {
 		setContentPane(panelPrincipal);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		this.setTitle(ficha.getFiNombre());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 		servFicha = new ComponenteFicha();
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);

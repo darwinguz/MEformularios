@@ -195,7 +195,7 @@ public class MtTemplate extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		setTitle(ficha.getFiNombre());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);

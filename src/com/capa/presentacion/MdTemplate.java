@@ -528,7 +528,7 @@ public class MdTemplate extends JFrame {
 
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		setTitle(ficha.getFiNombre());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 		servFicha = new ComponenteFicha();
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);

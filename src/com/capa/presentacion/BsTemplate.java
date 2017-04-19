@@ -528,7 +528,7 @@ public class BsTemplate extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		this.setTitle(ficha.getFiNombre());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.ficha = ficha;

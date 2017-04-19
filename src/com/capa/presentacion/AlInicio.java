@@ -122,7 +122,7 @@ public class AlInicio extends JFrame {
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				Utilitarios.setNombreFicha("Ficha C");
+				Utilitarios.setNombreFicha("Menú C - Ficha - ");
 				new Menu().setVisible(true);
 				dispose();
 			}
@@ -139,7 +139,7 @@ public class AlInicio extends JFrame {
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
-				Utilitarios.setNombreFicha("Ficha C.1");
+				Utilitarios.setNombreFicha("Menú C.1 - Ficha - ");
 				new Menu().setVisible(true);
 				dispose();
 			}

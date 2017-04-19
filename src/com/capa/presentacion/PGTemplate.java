@@ -380,13 +380,12 @@ public class PGTemplate extends JFrame {
 
 	public PGTemplate(TFicha ficha) {
 
-		setTitle(ficha.getFiNombre());
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		this.ficha = ficha;
-		this.setTitle(ficha.getFiNombre());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 

@@ -2089,7 +2089,7 @@ public class MmTemplate extends JFrame {
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
 		contentPane.setLayout(null);
-		setTitle("MM-" + ficha.getFiNombre());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 
 		llenarCabecera(cabecera);
 		llenarFicha();

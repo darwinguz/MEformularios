@@ -246,7 +246,7 @@ public class ExTemplate extends JFrame {
 
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		setTitle(ficha.getFiNombre());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 		servFicha = new ComponenteFicha();
 
 		JPcabecera cabecera = new JPcabecera();

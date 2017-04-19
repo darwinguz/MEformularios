@@ -132,7 +132,7 @@ public class WFTemplate extends JFrame {
 		setContentPane(contentPane);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		setTitle(ficha.getFiNombre());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 		servFicha = new ComponenteFicha();
 
 		JPcabecera cabecera = new JPcabecera();

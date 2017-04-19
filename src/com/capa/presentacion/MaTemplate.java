@@ -265,7 +265,7 @@ public class MaTemplate extends JFrame {
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		this.setTitle(ficha.getFiNombre());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.ficha = ficha;

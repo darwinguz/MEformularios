@@ -173,7 +173,7 @@ public class MexTemplate extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
-		this.setTitle(ficha.getFiNombre());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 		this.setLocationRelativeTo(null);
 		this.setResizable(false);
 		servFicha = new ComponenteFicha();

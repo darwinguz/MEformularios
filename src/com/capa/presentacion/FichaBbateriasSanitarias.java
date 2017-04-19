@@ -111,7 +111,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 		this.ficha = ficha;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1320, 730);
-		setTitle(ficha.getFiDescripcion().toUpperCase());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 		panelPrincipal = new JPanel();
 		panelPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		panelPrincipal.setLayout(new BorderLayout(0, 0));
