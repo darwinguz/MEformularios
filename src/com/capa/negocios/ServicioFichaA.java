@@ -8,4 +8,5 @@ public interface ServicioFichaA {
 
 	void crear(List<TFichaA> atributos);
 
+	Integer maxFichaA();
 }

@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.HashMap;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -18,6 +19,8 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.datos.TCabecera;
 import com.capa.negocios.ComponenteCabecera;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioCabecera;
 import com.capa.util.Utilitarios;
 
@@ -82,6 +85,14 @@ public class AlInicio extends JFrame {
 				// TODO Auto-generated method stub
 				FichaATemplate fichaA = new FichaATemplate();
 				fichaA.generarDatos();
+
+				HashMap<String, Object> parametros = new HashMap<String, Object>();
+				parametros.put("serial_cabecera", tCabecera.getCSerial());
+
+				Reporte reporte = new Reporte("Reporte Ficha A", 280, 10, 850, 750);
+				reporte.cargarReporte("src/com/capa/templates/Evaluacion.jasper", parametros,
+						Query.getMysql().getConexion());
+				reporte.setVisible(true);
 			}
 		});
 		pnlBotones.add(btnAvanceGeneral);

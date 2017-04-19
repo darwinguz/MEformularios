@@ -1,5 +1,6 @@
 package com.capa.negocios;
 
+import java.sql.ResultSet;
 import java.util.List;
 
 import javax.swing.JOptionPane;
@@ -31,4 +32,20 @@ public class ComponenteFichaA implements ServicioFichaA {
 		JOptionPane.showMessageDialog(null, mensaje, titulo, tipoMensaje);
 
 	}
+
+	@Override
+	public Integer maxFichaA() {
+		String query = "SELECT MAX(fa_serial) FROM t_ficha_a;";
+		Integer maximo = new Integer(-1);
+		try {
+			ResultSet rs = Query.seleccionar(query);
+			while (rs.next()) {
+				maximo = rs.getInt("max(df_actualizacion_n)");
+			}
+		} catch (Exception e) {
+			System.out.println("Error al BUSCAR Maximo Ficha A: " + e.getMessage());
+		}
+		return maximo;
+	}
+
 }
