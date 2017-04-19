@@ -46,8 +46,7 @@ public class TLugarGeografico implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "TLugarGeografico [lgCodigo=" + lgCodigo + ", TLugarGeografico=" + TLugarGeografico + ", lgNombre="
-				+ lgNombre + "]";
+		return "TLugarGeografico [lgNombre=" + lgNombre + "]";
 	}
 
 }
