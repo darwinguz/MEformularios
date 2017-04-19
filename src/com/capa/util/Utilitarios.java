@@ -34,6 +34,7 @@ import com.capa.presentacion.JPinformacionObligatoria;
 public class Utilitarios {
 
 	private static TCabecera tCabecera;
+	private static String nombreFicha;
 
 	public static ImageIcon getImagenIcon(String path, int base, int altura, int resolucion) {
 		URL url = Utilitarios.class.getResource("/com/capa/imagenes/" + path);
@@ -160,6 +161,15 @@ public class Utilitarios {
 
 	public static JTextField txtObs(int i) {
 		return new JTextField(Integer.valueOf(i));
+	}
+
+	
+	public static String getNombreFicha() {
+		return nombreFicha;
+	}
+
+	public static void setNombreFicha(String nombreFicha) {
+		Utilitarios.nombreFicha = nombreFicha;
 	}
 
 	public static Integer buscarNumeroUpdateFicha() {

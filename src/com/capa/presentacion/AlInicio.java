@@ -70,7 +70,6 @@ public class AlInicio extends JFrame {
 		btnDatosGenerales.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				AdatosReferenciales adatosReferenciales = new AdatosReferenciales(alInicio);
 				adatosReferenciales.setVisible(true);
 			}
@@ -82,7 +81,6 @@ public class AlInicio extends JFrame {
 		btnAvanceGeneral.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				FichaATemplate fichaA = new FichaATemplate();
 				fichaA.generarDatos();
 
@@ -104,7 +102,6 @@ public class AlInicio extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (tCabecera == null) {
 					JOptionPane.showMessageDialog(null, "ERROR: Proyecto no ingresado", "Mensaje de Error",
 							JOptionPane.ERROR_MESSAGE);
@@ -117,6 +114,19 @@ public class AlInicio extends JFrame {
 
 		JButton btnCuantifComp = new JButton("   4.- Cuantificación Componentes (C)");
 		btnCuantifComp.setHorizontalAlignment(SwingConstants.LEFT);
+		btnCuantifComp.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (tCabecera == null) {
+					JOptionPane.showMessageDialog(null, "ERROR: Proyecto no ingresado", "Mensaje de Error",
+							JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				Utilitarios.setNombreFicha("Ficha C");
+				new Menu().setVisible(true);
+				dispose();
+			}
+		});
 		pnlBotones.add(btnCuantifComp);
 
 		JButton btnReporteAct = new JButton("   5.- Reporte de Actividades (C.1)");
@@ -124,12 +134,12 @@ public class AlInicio extends JFrame {
 		btnReporteAct.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (tCabecera == null) {
 					JOptionPane.showMessageDialog(null, "ERROR: Proyecto no ingresado", "Mensaje de Error",
 							JOptionPane.ERROR_MESSAGE);
 					return;
 				}
+				Utilitarios.setNombreFicha("Ficha C.1");
 				new Menu().setVisible(true);
 				dispose();
 			}
@@ -141,7 +151,6 @@ public class AlInicio extends JFrame {
 		btnReporteInsp.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (tCabecera == null) {
 					JOptionPane.showMessageDialog(null, "ERROR: Proyecto no ingresado", "Mensaje de Error",
 							JOptionPane.ERROR_MESSAGE);
