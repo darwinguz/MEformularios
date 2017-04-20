@@ -19,7 +19,13 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 import com.capa.datos.TFicha;
+import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteFicha;
+import com.capa.negocios.ServicioFicha;
+import com.capa.presentacion.FichaB;
+import com.capa.presentacion.JPcabecera;
+import com.capa.presentacion.JPinformacionObligatoria;
 import com.capa.util.Utilitarios;
 
 public class FichaBacometidas extends JFrame {
@@ -34,6 +40,12 @@ public class FichaBacometidas extends JFrame {
 	private JTextField txtObs5;
 	private JTextField txtObs6;
 	private JTextField txtObs7;
+
+	private TInformacionObligatoria infor;
+	private ServicioFicha servFicha;
+	private TFicha ficha;
+
+	private String fotoInfoObl;
 
 	// public static void main(String[] args) {
 	// EventQueue.invokeLater(new Runnable() {
@@ -51,7 +63,8 @@ public class FichaBacometidas extends JFrame {
 	// }
 
 	public FichaBacometidas(TFicha ficha) {
-		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
+		this.ficha = ficha;
+		setTitle(ficha.getFiDescripcion().toUpperCase());
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 1306, 695);
 		contentPane = new JPanel();
@@ -59,6 +72,9 @@ public class FichaBacometidas extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
+		this.setResizable(false);
+
+		servFicha = new ComponenteFicha();
 
 		JLabel lblTituloPoste = new JLabel("");
 		lblTituloPoste.setVerticalAlignment(SwingConstants.BOTTOM);
@@ -99,13 +115,13 @@ public class FichaBacometidas extends JFrame {
 		label_1.setBounds(10, 19, 123, 14);
 		panel_1.add(label_1);
 
-		JRadioButton radioButton = new JRadioButton("");
-		radioButton.setBounds(31, 2, 21, 23);
-		panel_1.add(radioButton);
+		JRadioButton rdBtn00 = new JRadioButton("");
+		rdBtn00.setBounds(31, 2, 21, 23);
+		panel_1.add(rdBtn00);
 
-		JRadioButton radioButton_1 = new JRadioButton("");
-		radioButton_1.setBounds(81, 2, 21, 23);
-		panel_1.add(radioButton_1);
+		JRadioButton rdBtn01 = new JRadioButton("");
+		rdBtn01.setBounds(81, 2, 21, 23);
+		panel_1.add(rdBtn01);
 
 		JLabel label_2 = new JLabel("SI");
 		label_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -159,13 +175,13 @@ public class FichaBacometidas extends JFrame {
 		label.setBounds(10, 19, 123, 14);
 		panel_4.add(label);
 
-		JRadioButton radioButton_2 = new JRadioButton("");
-		radioButton_2.setBounds(31, 2, 21, 23);
-		panel_4.add(radioButton_2);
+		JRadioButton rdBtn10 = new JRadioButton("");
+		rdBtn10.setBounds(31, 2, 21, 23);
+		panel_4.add(rdBtn10);
 
-		JRadioButton radioButton_3 = new JRadioButton("");
-		radioButton_3.setBounds(81, 2, 21, 23);
-		panel_4.add(radioButton_3);
+		JRadioButton rdBtn11 = new JRadioButton("");
+		rdBtn11.setBounds(81, 2, 21, 23);
+		panel_4.add(rdBtn11);
 
 		JLabel label_3 = new JLabel("SI");
 		label_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -193,13 +209,13 @@ public class FichaBacometidas extends JFrame {
 		label_5.setBounds(10, 19, 123, 14);
 		panel_5.add(label_5);
 
-		JRadioButton radioButton_4 = new JRadioButton("");
-		radioButton_4.setBounds(31, 2, 21, 23);
-		panel_5.add(radioButton_4);
+		JRadioButton rdBtn20 = new JRadioButton("");
+		rdBtn20.setBounds(31, 2, 21, 23);
+		panel_5.add(rdBtn20);
 
-		JRadioButton radioButton_5 = new JRadioButton("");
-		radioButton_5.setBounds(81, 2, 21, 23);
-		panel_5.add(radioButton_5);
+		JRadioButton rdBtn21 = new JRadioButton("");
+		rdBtn21.setBounds(81, 2, 21, 23);
+		panel_5.add(rdBtn21);
 
 		JLabel label_6 = new JLabel("SI");
 		label_6.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -246,13 +262,13 @@ public class FichaBacometidas extends JFrame {
 		label_11.setBounds(10, 19, 123, 14);
 		panel_7.add(label_11);
 
-		JRadioButton radioButton_6 = new JRadioButton("");
-		radioButton_6.setBounds(31, 2, 21, 23);
-		panel_7.add(radioButton_6);
+		JRadioButton rdBtn30 = new JRadioButton("");
+		rdBtn30.setBounds(31, 2, 21, 23);
+		panel_7.add(rdBtn30);
 
-		JRadioButton radioButton_7 = new JRadioButton("");
-		radioButton_7.setBounds(81, 2, 21, 23);
-		panel_7.add(radioButton_7);
+		JRadioButton rdBtn31 = new JRadioButton("");
+		rdBtn31.setBounds(81, 2, 21, 23);
+		panel_7.add(rdBtn31);
 
 		JLabel label_12 = new JLabel("SI");
 		label_12.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -307,13 +323,13 @@ public class FichaBacometidas extends JFrame {
 		label_14.setBounds(10, 19, 123, 14);
 		panel_10.add(label_14);
 
-		JRadioButton radioButton_8 = new JRadioButton("");
-		radioButton_8.setBounds(31, 2, 21, 23);
-		panel_10.add(radioButton_8);
+		JRadioButton rdBtn40 = new JRadioButton("");
+		rdBtn40.setBounds(31, 2, 21, 23);
+		panel_10.add(rdBtn40);
 
-		JRadioButton radioButton_9 = new JRadioButton("");
-		radioButton_9.setBounds(81, 2, 21, 23);
-		panel_10.add(radioButton_9);
+		JRadioButton rdBtn41 = new JRadioButton("");
+		rdBtn41.setBounds(81, 2, 21, 23);
+		panel_10.add(rdBtn41);
 
 		JLabel label_15 = new JLabel("SI");
 		label_15.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -341,13 +357,13 @@ public class FichaBacometidas extends JFrame {
 		label_17.setBounds(10, 19, 123, 14);
 		panel_11.add(label_17);
 
-		JRadioButton radioButton_10 = new JRadioButton("");
-		radioButton_10.setBounds(31, 2, 21, 23);
-		panel_11.add(radioButton_10);
+		JRadioButton rdBtn50 = new JRadioButton("");
+		rdBtn50.setBounds(31, 2, 21, 23);
+		panel_11.add(rdBtn50);
 
-		JRadioButton radioButton_11 = new JRadioButton("");
-		radioButton_11.setBounds(81, 2, 21, 23);
-		panel_11.add(radioButton_11);
+		JRadioButton rdBtn51 = new JRadioButton("");
+		rdBtn51.setBounds(81, 2, 21, 23);
+		panel_11.add(rdBtn51);
 
 		JLabel label_18 = new JLabel("SI");
 		label_18.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -388,13 +404,13 @@ public class FichaBacometidas extends JFrame {
 		label_7.setBounds(10, 19, 123, 14);
 		panel_13.add(label_7);
 
-		JRadioButton radioButton_12 = new JRadioButton("");
-		radioButton_12.setBounds(31, 2, 21, 23);
-		panel_13.add(radioButton_12);
+		JRadioButton rdBtn60 = new JRadioButton("");
+		rdBtn60.setBounds(31, 2, 21, 23);
+		panel_13.add(rdBtn60);
 
-		JRadioButton radioButton_13 = new JRadioButton("");
-		radioButton_13.setBounds(81, 2, 21, 23);
-		panel_13.add(radioButton_13);
+		JRadioButton rdBtn61 = new JRadioButton("");
+		rdBtn61.setBounds(81, 2, 21, 23);
+		panel_13.add(rdBtn61);
 
 		JLabel label_8 = new JLabel("SI");
 		label_8.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -435,13 +451,13 @@ public class FichaBacometidas extends JFrame {
 		label_21.setBounds(10, 19, 123, 14);
 		panel_15.add(label_21);
 
-		JRadioButton radioButton_14 = new JRadioButton("");
-		radioButton_14.setBounds(31, 2, 21, 23);
-		panel_15.add(radioButton_14);
+		JRadioButton rdBtn70 = new JRadioButton("");
+		rdBtn70.setBounds(31, 2, 21, 23);
+		panel_15.add(rdBtn70);
 
-		JRadioButton radioButton_15 = new JRadioButton("");
-		radioButton_15.setBounds(81, 2, 21, 23);
-		panel_15.add(radioButton_15);
+		JRadioButton rdBtn71 = new JRadioButton("");
+		rdBtn71.setBounds(81, 2, 21, 23);
+		panel_15.add(rdBtn71);
 
 		JLabel label_22 = new JLabel("SI");
 		label_22.setFont(new Font("Tahoma", Font.PLAIN, 10));

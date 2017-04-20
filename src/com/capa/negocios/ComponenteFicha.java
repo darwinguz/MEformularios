@@ -164,14 +164,16 @@ public class ComponenteFicha implements ServicioFicha {
 		// TODO Auto-generated method stub
 		detallesFicha.forEach(item -> {
 			try {
-				String aux = item.getDetEtiqueta().replaceAll("<html><body><p align='right'>", "");
-				aux = aux.replaceAll("</p></body></html>", "");
-				item.setDetEtiqueta(aux);
+				// String aux = item.getDetEtiqueta().replaceAll("<html><body><p
+				// align='right'>", "");
+				// aux = aux.replaceAll("</p></body></html>", "");
+				// item.setDetEtiqueta(aux);
 				String query = "INSERT INTO t_detalle_ficha (io_serial, fi_serial, c_serial, "
-						+ "g_serial, df_obs_ref, df_actualizacion_n) VALUES (" + item.getInfoObligatoria().getIoSerial()
-						+ ", " + item.getTFicha().getFiSerial() + ", " + item.getTCabecera().getCSerial() + ", "
-						+ item.getTGrupo().getGSerial() + ", '" + item.getDetObsRef() + "', "
-						+ item.getDetActualizacionN() + ", '" + item.getDesicion() + "');";
+						+ "g_serial, df_obs_ref, df_actualizacion_n, df_desicion) VALUES ("
+						+ item.getInfoObligatoria().getIoSerial() + ", " + item.getTFicha().getFiSerial() + ", "
+						+ item.getTCabecera().getCSerial() + ", " + item.getTGrupo().getGSerial() + ", '"
+						+ item.getDetObsRef() + "', " + item.getDetActualizacionN() + ", '" + item.getDesicion()
+						+ "');";
 				Query.insertar(query);
 				mensaje = "Ingreso exitoso";
 				titulo = "INGRESO";
