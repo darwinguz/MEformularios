@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.io.InputStream;
 import java.util.HashMap;
 
 import javax.swing.JButton;
@@ -87,9 +88,9 @@ public class AlInicio extends JFrame {
 				HashMap<String, Object> parametros = new HashMap<String, Object>();
 				parametros.put("serial_cabecera", tCabecera.getCSerial());
 
-				Reporte reporte = new Reporte("Reporte Ficha A", 280, 10, 850, 750);
-				reporte.cargarReporte("src/com/capa/templates/Evaluacion.jasper", parametros,
-						Query.getMysql().getConexion());
+				Reporte reporte = new Reporte("Reporte Evaluación", 280, 10, 850, 750);
+				InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/Evaluacion.jasper");
+				reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 				reporte.setVisible(true);
 			}
 		});

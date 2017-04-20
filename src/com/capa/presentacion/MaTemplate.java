@@ -94,6 +94,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -1605,8 +1606,8 @@ public class MaTemplate extends JFrame {
 						parametros.put("serial_ficha", ficha.getFiSerial());
 
 						Reporte reporte = new Reporte("Reporte MA", 280, 10, 850, 750);
-						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
-								Query.getMysql().getConexion());
+						InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
+						reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 						reporte.setVisible(true);
 
 						new Menu().setVisible(true);

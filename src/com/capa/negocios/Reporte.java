@@ -1,5 +1,6 @@
 package com.capa.negocios;
 
+import java.io.InputStream;
 import java.sql.Connection;
 import java.util.HashMap;
 
@@ -27,7 +28,7 @@ public class Reporte extends JDialog {
 		setModal(true);
 	}
 
-	public void cargarReporte(final String path, final HashMap<String, Object> parametros, final Connection conexion) {
+	public void cargarReporte(InputStream path, HashMap<String, Object> parametros, Connection conexion) {
 		try {
 			this.print = JasperFillManager.fillReport(path, parametros, conexion);
 			this.viewer = new JRViewer(this.print);

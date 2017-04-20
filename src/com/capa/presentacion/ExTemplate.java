@@ -45,6 +45,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -1123,8 +1124,8 @@ public class ExTemplate extends JFrame {
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
 						parametros.put("serial_ficha", ficha.getFiSerial());
 						Reporte reporte = new Reporte("Reporte Ex", 280, 10, 850, 750);
-						reporte.cargarReporte("src/com/capa/templates/MA.jasper", parametros,
-								Query.getMysql().getConexion());
+						InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
+						reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 						reporte.setVisible(true);
 						new Menu().setVisible(true);
 						dispose();
