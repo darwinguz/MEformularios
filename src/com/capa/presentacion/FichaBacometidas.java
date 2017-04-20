@@ -1,15 +1,25 @@
 package com.capa.presentacion;
 
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Validaciones.validarInfo;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -19,10 +29,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
 import com.capa.datos.TFicha;
+import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteFicha;
+import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
+import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.presentacion.FichaB;
 import com.capa.presentacion.JPcabecera;
 import com.capa.presentacion.JPinformacionObligatoria;
@@ -46,6 +61,22 @@ public class FichaBacometidas extends JFrame {
 	private TFicha ficha;
 
 	private String fotoInfoObl;
+	private JRadioButton rdBtn00;
+	private JRadioButton rdBtn01;
+	private JRadioButton rdBtn10;
+	private JRadioButton rdBtn11;
+	private JRadioButton rdBtn20;
+	private JRadioButton rdBtn21;
+	private JRadioButton rdBtn30;
+	private JRadioButton rdBtn31;
+	private JRadioButton rdBtn40;
+	private JRadioButton rdBtn41;
+	private JRadioButton rdBtn50;
+	private JRadioButton rdBtn51;
+	private JRadioButton rdBtn60;
+	private JRadioButton rdBtn61;
+	private JRadioButton rdBtn70;
+	private JRadioButton rdBtn71;
 
 	// public static void main(String[] args) {
 	// EventQueue.invokeLater(new Runnable() {
@@ -84,12 +115,17 @@ public class FichaBacometidas extends JFrame {
 		contentPane.add(lblTituloPoste);
 
 		JPinformacionObligatoria jPinfoOblig = new JPinformacionObligatoria(860, 430);
+		jPinfoOblig.getBtnInsertarFoto().addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				fotoInfoObl = getPathImagen();
+			}
+		});
 		contentPane.add(jPinfoOblig.getPnlInformacionObl());
 
 		JPcabecera jPcabecera = new JPcabecera();
-		Utilitarios.llenarCabecera(jPcabecera);
-
 		contentPane.add(jPcabecera.getCabecera());
+		Utilitarios.llenarCabecera(jPcabecera);
 
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
@@ -115,13 +151,17 @@ public class FichaBacometidas extends JFrame {
 		label_1.setBounds(10, 19, 123, 14);
 		panel_1.add(label_1);
 
-		JRadioButton rdBtn00 = new JRadioButton("");
+		rdBtn00 = new JRadioButton("");
 		rdBtn00.setBounds(31, 2, 21, 23);
 		panel_1.add(rdBtn00);
 
-		JRadioButton rdBtn01 = new JRadioButton("");
+		rdBtn01 = new JRadioButton("");
 		rdBtn01.setBounds(81, 2, 21, 23);
 		panel_1.add(rdBtn01);
+
+		ButtonGroup grupoBoton0 = new ButtonGroup();
+		grupoBoton0.add(rdBtn00);
+		grupoBoton0.add(rdBtn01);
 
 		JLabel label_2 = new JLabel("SI");
 		label_2.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -175,13 +215,17 @@ public class FichaBacometidas extends JFrame {
 		label.setBounds(10, 19, 123, 14);
 		panel_4.add(label);
 
-		JRadioButton rdBtn10 = new JRadioButton("");
+		rdBtn10 = new JRadioButton("");
 		rdBtn10.setBounds(31, 2, 21, 23);
 		panel_4.add(rdBtn10);
 
-		JRadioButton rdBtn11 = new JRadioButton("");
+		rdBtn11 = new JRadioButton("");
 		rdBtn11.setBounds(81, 2, 21, 23);
 		panel_4.add(rdBtn11);
+
+		ButtonGroup grupoBoton1 = new ButtonGroup();
+		grupoBoton1.add(rdBtn10);
+		grupoBoton1.add(rdBtn11);
 
 		JLabel label_3 = new JLabel("SI");
 		label_3.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -209,13 +253,17 @@ public class FichaBacometidas extends JFrame {
 		label_5.setBounds(10, 19, 123, 14);
 		panel_5.add(label_5);
 
-		JRadioButton rdBtn20 = new JRadioButton("");
+		rdBtn20 = new JRadioButton("");
 		rdBtn20.setBounds(31, 2, 21, 23);
 		panel_5.add(rdBtn20);
 
-		JRadioButton rdBtn21 = new JRadioButton("");
+		rdBtn21 = new JRadioButton("");
 		rdBtn21.setBounds(81, 2, 21, 23);
 		panel_5.add(rdBtn21);
+
+		ButtonGroup grupoBoton2 = new ButtonGroup();
+		grupoBoton2.add(rdBtn20);
+		grupoBoton2.add(rdBtn21);
 
 		JLabel label_6 = new JLabel("SI");
 		label_6.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -262,13 +310,17 @@ public class FichaBacometidas extends JFrame {
 		label_11.setBounds(10, 19, 123, 14);
 		panel_7.add(label_11);
 
-		JRadioButton rdBtn30 = new JRadioButton("");
+		rdBtn30 = new JRadioButton("");
 		rdBtn30.setBounds(31, 2, 21, 23);
 		panel_7.add(rdBtn30);
 
-		JRadioButton rdBtn31 = new JRadioButton("");
+		rdBtn31 = new JRadioButton("");
 		rdBtn31.setBounds(81, 2, 21, 23);
 		panel_7.add(rdBtn31);
+
+		ButtonGroup grupoBoton3 = new ButtonGroup();
+		grupoBoton3.add(rdBtn30);
+		grupoBoton3.add(rdBtn31);
 
 		JLabel label_12 = new JLabel("SI");
 		label_12.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -323,13 +375,17 @@ public class FichaBacometidas extends JFrame {
 		label_14.setBounds(10, 19, 123, 14);
 		panel_10.add(label_14);
 
-		JRadioButton rdBtn40 = new JRadioButton("");
+		rdBtn40 = new JRadioButton("");
 		rdBtn40.setBounds(31, 2, 21, 23);
 		panel_10.add(rdBtn40);
 
-		JRadioButton rdBtn41 = new JRadioButton("");
+		rdBtn41 = new JRadioButton("");
 		rdBtn41.setBounds(81, 2, 21, 23);
 		panel_10.add(rdBtn41);
+
+		ButtonGroup grupoBoton4 = new ButtonGroup();
+		grupoBoton4.add(rdBtn40);
+		grupoBoton4.add(rdBtn41);
 
 		JLabel label_15 = new JLabel("SI");
 		label_15.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -357,13 +413,17 @@ public class FichaBacometidas extends JFrame {
 		label_17.setBounds(10, 19, 123, 14);
 		panel_11.add(label_17);
 
-		JRadioButton rdBtn50 = new JRadioButton("");
+		rdBtn50 = new JRadioButton("");
 		rdBtn50.setBounds(31, 2, 21, 23);
 		panel_11.add(rdBtn50);
 
-		JRadioButton rdBtn51 = new JRadioButton("");
+		rdBtn51 = new JRadioButton("");
 		rdBtn51.setBounds(81, 2, 21, 23);
 		panel_11.add(rdBtn51);
+
+		ButtonGroup grupoBoton5 = new ButtonGroup();
+		grupoBoton5.add(rdBtn50);
+		grupoBoton5.add(rdBtn51);
 
 		JLabel label_18 = new JLabel("SI");
 		label_18.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -404,13 +464,17 @@ public class FichaBacometidas extends JFrame {
 		label_7.setBounds(10, 19, 123, 14);
 		panel_13.add(label_7);
 
-		JRadioButton rdBtn60 = new JRadioButton("");
+		rdBtn60 = new JRadioButton("");
 		rdBtn60.setBounds(31, 2, 21, 23);
 		panel_13.add(rdBtn60);
 
-		JRadioButton rdBtn61 = new JRadioButton("");
+		rdBtn61 = new JRadioButton("");
 		rdBtn61.setBounds(81, 2, 21, 23);
 		panel_13.add(rdBtn61);
+
+		ButtonGroup grupoBoton6 = new ButtonGroup();
+		grupoBoton6.add(rdBtn60);
+		grupoBoton6.add(rdBtn61);
 
 		JLabel label_8 = new JLabel("SI");
 		label_8.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -451,13 +515,17 @@ public class FichaBacometidas extends JFrame {
 		label_21.setBounds(10, 19, 123, 14);
 		panel_15.add(label_21);
 
-		JRadioButton rdBtn70 = new JRadioButton("");
+		rdBtn70 = new JRadioButton("");
 		rdBtn70.setBounds(31, 2, 21, 23);
 		panel_15.add(rdBtn70);
 
-		JRadioButton rdBtn71 = new JRadioButton("");
+		rdBtn71 = new JRadioButton("");
 		rdBtn71.setBounds(81, 2, 21, 23);
 		panel_15.add(rdBtn71);
+
+		ButtonGroup grupoBoton7 = new ButtonGroup();
+		grupoBoton7.add(rdBtn70);
+		grupoBoton7.add(rdBtn71);
 
 		JLabel label_22 = new JLabel("SI");
 		label_22.setFont(new Font("Tahoma", Font.PLAIN, 10));
@@ -475,9 +543,31 @@ public class FichaBacometidas extends JFrame {
 		panel_15.add(txtObs7);
 
 		jPcabecera.getBtnRegistrar().addActionListener(new ActionListener() {
-
+			@Override
 			public void actionPerformed(ActionEvent e) {
 
+				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
+
+				infor = cargarInfoObligatoria(jPinfoOblig);
+				infor.setIoFotoPath(fotoInfoObl);
+				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
+				if (validarInfo(infor)) {
+					srvInfoOblig.crear(infor);
+					servFicha.guardarFichaB(cargarFicha());
+					HashMap<String, Object> parametros = new HashMap<String, Object>();
+					parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+					parametros.put("serial_ficha", ficha.getFiSerial());
+
+					Reporte reporte = new Reporte("Reporte Baterías Sanitarias", 280, 10, 850, 750);
+					InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
+					reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
+					reporte.setVisible(true);
+					new FichaB().setVisible(true);
+					dispose();
+
+				} else {
+					JOptionPane.showMessageDialog(null, "Ingresar datos en Información Obligatoria");
+				}
 			}
 		});
 
@@ -490,7 +580,95 @@ public class FichaBacometidas extends JFrame {
 		});
 	}
 
-	public List<TdetalleFicha> detallesFicha() {
-		return null;
+	public List<TdetalleFicha> cargarFicha() {
+		List<TdetalleFicha> listaDetalles = new LinkedList<>();
+		TGrupo grupoTmp = servFicha.buscarGrupo("Dimensiones");
+		String observacion, desicion = "";
+		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
+		if (updateFicha == -1) {
+			updateFicha = 0;
+		} else {
+			updateFicha++;
+		}
+		observacion = txtObs0.getText();
+		if (rdBtn00.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn01.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Piezas sanitarias");
+		observacion = txtObs1.getText();
+		if (rdBtn10.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn11.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Bases prefabricadas");
+		observacion = txtObs2.getText();
+		if (rdBtn20.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn21.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Estructura metálica Steel");
+		observacion = txtObs3.getText();
+		if (rdBtn30.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn31.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Paneles de pared con alma de EPS");
+		observacion = txtObs4.getText();
+		if (rdBtn40.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn41.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Ventana de UPVC");
+		observacion = txtObs5.getText();
+		if (rdBtn50.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn51.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Panel de cubierta con EPS");
+		observacion = txtObs6.getText();
+		if (rdBtn60.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn61.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		grupoTmp = servFicha.buscarGrupo("Compuesto de madera y plástico");
+		observacion = txtObs7.getText();
+		if (rdBtn70.isSelected()) {
+			desicion = "SI";
+		} else if (rdBtn71.isSelected()) {
+			desicion = "NO";
+		}
+		listaDetalles
+				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+
+		return listaDetalles;
 	}
 }

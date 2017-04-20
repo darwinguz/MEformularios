@@ -42,6 +42,7 @@ import java.util.List;
 
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class FichaBrecreacionExteriores extends JFrame {
 
@@ -89,7 +90,8 @@ public class FichaBrecreacionExteriores extends JFrame {
 		panelPrincipal.setLayout(new BorderLayout(0, 0));
 		setContentPane(panelPrincipal);
 		setLocationRelativeTo(null);
-		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
+		this.setTitle(ficha.getFiNombre());
+		this.setResizable(false);
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
@@ -103,7 +105,7 @@ public class FichaBrecreacionExteriores extends JFrame {
 		panelPrincipal.add(cabecera.getCabecera());
 		Utilitarios.llenarCabecera(cabecera);
 
-		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(860, 360);
+		JPinformacionObligatoria infoObligatoria = new JPinformacionObligatoria(860, 320);
 		infoObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -214,13 +216,14 @@ public class FichaBrecreacionExteriores extends JFrame {
 		panel_4.setLayout(null);
 		panel_4.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Caminer\u00EDas Exteriores",
 				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_4.setBounds(862, 11, 249, 360);
+		panel_4.setBounds(862, 11, 249, 301);
 		pnlPestaña1.add(panel_4);
 
 		JLabel lbl_3 = new JLabel(
 				"<html>\r\n<body>\r\n<p align=\"justify\">\r\nMateriales: \r\n<br>Paneles prefabricados  WPC (compuesto de pl\u00E1stico y madera) a base de fibras pl\u00E1sticas, resistentes a rayos ultravioletas y asegurar una durabilidad m\u00EDnima de 15 a\u00F1os.\r\n<br>El material utilizado no contiene productos qu\u00EDmicos da\u00F1inos.\r\n<br>Dimensiones m\u00EDnimas e instalaci\u00F3n:\r\n<br>La caminer\u00EDa se conforma con paneles prefabricados WPC (compuesto de pl\u00E1stico y madera) a base de fibras pl\u00E1sticas y utilizadas como piso exterior.\r\n<br>La instalaci\u00F3n es ejecutada por medio de perfiles de anclaje pl\u00E1sticos.\r\n<br>El perfil compuesto del panel es hueco fabricado por extrusi\u00F3n.\r\n<br>El panel tiene tiene dimensiones m\u00EDnimas de 150mm de ancho X 28 mm de espesor.\r\n<br>El perfil de anclaje tiene dimensiones m\u00EDnimas de 40 mm X 60mm (vigueta de pl\u00E1stico).\r\n</p>\r\n</body>\r\n</html>");
+		lbl_3.setVerticalAlignment(SwingConstants.TOP);
 		lbl_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lbl_3.setBounds(10, 13, 235, 336);
+		lbl_3.setBounds(10, 13, 235, 289);
 		panel_4.add(lbl_3);
 
 		JPanel panel_5 = new JPanel();

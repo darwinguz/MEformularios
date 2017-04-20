@@ -42,6 +42,8 @@ public class FichaB extends JFrame {
 		pnlPrincipal = new JPanel();
 		pnlPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		pnlPrincipal.setLayout(null);
+		this.setResizable(false);
+
 		setContentPane(pnlPrincipal);
 
 		JPanel pnlBotones = new JPanel();
