@@ -14,7 +14,9 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -30,6 +32,8 @@ import com.capa.datos.TFichaD;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.negocios.ComponenteFichaD;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Query;
+import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFichaD;
 import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.util.Utilitarios;
@@ -418,6 +422,14 @@ public class FichaD extends JFrame {
 						srvFicha.crear(it2);
 					}
 
+					HashMap<String, Object> parametros = new HashMap<String, Object>();
+					parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
+
+					Reporte reporte = new Reporte("Reporte Evaluación D", 280, 10, 850, 750);
+					InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/EvaluacionD.jasper");
+					reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
+					reporte.setVisible(true);
+					
 					new AlInicio().setVisible(true);
 					dispose();
 
