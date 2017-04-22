@@ -1,10 +1,7 @@
 package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
-import static com.capa.util.Utilitarios.cargarInfoObligatoria;
-import static com.capa.util.Utilitarios.getPathImagen;
-import static com.capa.util.Utilitarios.gettCabecera;
-import static com.capa.util.Utilitarios.llenarCabecera;
+import static com.capa.util.Utilitarios.*;
 import static com.capa.util.Validaciones.*;
 import static com.capa.util.Constantes.*;
 
@@ -685,89 +682,89 @@ public class WFTemplate extends JFrame {
 		TGrupo grupoTmp = servFicha.buscarGrupo("Kit voz y datos WF");
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad00.getText()),
 				Integer.parseInt(txtCantidad01.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_0,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_0),
 				Integer.parseInt(txtCantidad00.getText()), Integer.parseInt(txtCantidad01.getText()), txtObs0.getText(),
 				updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad10.getText()),
 				Integer.parseInt(txtCantidad11.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_1,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_1),
 				Integer.parseInt(txtCantidad10.getText()), Integer.parseInt(txtCantidad11.getText()), txtObs1.getText(),
 				updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad20.getText()),
 				Integer.parseInt(txtCantidad21.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_2,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_2),
 				Integer.parseInt(txtCantidad20.getText()), Integer.parseInt(txtCantidad21.getText()), txtObs2.getText(),
 				updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad30.getText()),
 				Integer.parseInt(txtCantidad31.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_3,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_3),
 				Integer.parseInt(txtCantidad30.getText()), Integer.parseInt(txtCantidad31.getText()), txtObs3.getText(),
 				updateFicha, porcentajeAvance));
 
 		grupoTmp = servFicha.buscarGrupo("Kit de interconexion voz y datos");
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad40.getText()),
 				Integer.parseInt(txtCantidad41.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_4,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_4),
 				Integer.parseInt(txtCantidad40.getText()), Integer.parseInt(txtCantidad41.getText()), txtObs4.getText(),
 				updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad50.getText()),
 				Integer.parseInt(txtCantidad51.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_5,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_5),
 				Integer.parseInt(txtCantidad50.getText()), Integer.parseInt(txtCantidad51.getText()), txtObs5.getText(),
 				updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad60.getText()),
 				Integer.parseInt(txtCantidad61.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_6,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_6),
 				Integer.parseInt(txtCantidad60.getText()), Integer.parseInt(txtCantidad61.getText()), txtObs6.getText(),
 				updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad70.getText()),
 				Integer.parseInt(txtCantidad71.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_7,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_7),
 				Integer.parseInt(txtCantidad70.getText()), Integer.parseInt(txtCantidad71.getText()), txtObs7.getText(),
 				updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad80.getText()),
 				Integer.parseInt(txtCantidad81.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_8,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_8),
 				Integer.parseInt(txtCantidad80.getText()), Integer.parseInt(txtCantidad81.getText()), txtObs8.getText(),
 				updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad90.getText()),
 				Integer.parseInt(txtCantidad91.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_9,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_9),
 				Integer.parseInt(txtCantidad90.getText()), Integer.parseInt(txtCantidad91.getText()), txtObs9.getText(),
 				updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad100.getText()),
 				Integer.parseInt(txtCantidad101.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_10,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_10),
 				Integer.parseInt(txtCantidad100.getText()), Integer.parseInt(txtCantidad101.getText()),
 				txtObs10.getText(), updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad110.getText()),
 				Integer.parseInt(txtCantidad111.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_11,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_11),
 				Integer.parseInt(txtCantidad110.getText()), Integer.parseInt(txtCantidad111.getText()),
 				txtObs11.getText(), updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad120.getText()),
 				Integer.parseInt(txtCantidad121.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_12,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_12),
 				Integer.parseInt(txtCantidad120.getText()), Integer.parseInt(txtCantidad121.getText()),
 				txtObs12.getText(), updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad130.getText()),
 				Integer.parseInt(txtCantidad131.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_13,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_13),
 				Integer.parseInt(txtCantidad130.getText()), Integer.parseInt(txtCantidad131.getText()),
 				txtObs13.getText(), updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad140.getText()),
 				Integer.parseInt(txtCantidad141.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_14,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_14),
 				Integer.parseInt(txtCantidad140.getText()), Integer.parseInt(txtCantidad141.getText()),
 				txtObs14.getText(), updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad150.getText()),
 				Integer.parseInt(txtCantidad151.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_15,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_15),
 				Integer.parseInt(txtCantidad150.getText()), Integer.parseInt(txtCantidad151.getText()),
 				txtObs15.getText(), updateFicha, porcentajeAvance));
 		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad160.getText()),
 				Integer.parseInt(txtCantidad161.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, LBL_WF_16,
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_WF_16),
 				Integer.parseInt(txtCantidad160.getText()), Integer.parseInt(txtCantidad161.getText()),
 				txtObs16.getText(), updateFicha, porcentajeAvance));
 

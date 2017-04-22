@@ -135,10 +135,10 @@ public class ComponenteFicha implements ServicioFicha {
 	public void guardarFormulario(List<TdetalleFicha> detallesFicha) {
 		detallesFicha.forEach(item -> {
 			try {
-				String aux = item.getDetEtiqueta().replaceAll("<html><body><p align='right'>", "");
-				aux = aux.replaceAll("</p></body></html>", "");
-				aux = aux.replaceAll("<html><body><p align=right>", "");
-				item.setDetEtiqueta(aux);
+//				String aux = item.getDetEtiqueta().replaceAll("<html><body><p align='right'>", "");
+//				aux = aux.replaceAll("</p></body></html>", "");
+//				aux = aux.replaceAll("<html><body><p align=right>", "");
+//				item.setDetEtiqueta(aux);
 				String query = "INSERT INTO t_detalle_ficha (io_serial, fi_serial, c_serial, "
 						+ "g_serial, df_etiqueta, df_cantidad_limite, df_cantidad_ejecutada, "
 						+ "df_obs_ref, df_actualizacion_n, df_porcentaje_avance) VALUES ("
@@ -165,10 +165,10 @@ public class ComponenteFicha implements ServicioFicha {
 		// TODO Auto-generated method stub
 		detallesFicha.forEach(item -> {
 			try {
-				String aux = item.getDetEtiqueta().replaceAll("<html><body><p align='right'>", "");
-				aux = aux.replaceAll("</p></body></html>", "");
-				aux = aux.replaceAll("<html><body><p align=right>", "");
-				item.setDetEtiqueta(aux);
+//				String aux = item.getDetEtiqueta().replaceAll("<html><body><p align='right'>", "");
+//				aux = aux.replaceAll("</p></body></html>", "");
+//				aux = aux.replaceAll("<html><body><p align=right>", "");
+//				item.setDetEtiqueta(aux);
 				String query = "INSERT INTO t_detalle_ficha (io_serial, fi_serial, c_serial, "
 						+ "g_serial, df_etiqueta, df_obs_ref, df_actualizacion_n, df_desicion) VALUES ("
 						+ item.getInfoObligatoria().getIoSerial() + ", " + item.getTFicha().getFiSerial() + ", "

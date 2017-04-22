@@ -1,8 +1,6 @@
 package com.capa.presentacion;
 
-import static com.capa.util.Utilitarios.cargarInfoObligatoria;
-import static com.capa.util.Utilitarios.getPathImagen;
-import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Utilitarios.*;
 import static com.capa.util.Validaciones.validarInfo;
 import static com.capa.util.Constantes.*;
 
@@ -766,7 +764,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BBS_0));
+				quitarEtiquetasHTML(LBL_BBS_0)));
 
 		grupoTmp = servFicha.buscarGrupo("Piezas sanitarias");
 		observacion = txtObs1.getText();
@@ -776,7 +774,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BBS_1));
+				quitarEtiquetasHTML(LBL_BBS_1)));
 
 		grupoTmp = servFicha.buscarGrupo("Bases prefabricadas");
 		observacion = txtObs2.getText();
@@ -786,7 +784,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BBS_2));
+				quitarEtiquetasHTML(LBL_BBS_2)));
 
 		grupoTmp = servFicha.buscarGrupo("Estructura metálica Steel");
 		observacion = txtObs3.getText();
@@ -796,7 +794,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BBS_3));
+				quitarEtiquetasHTML(LBL_BBS_3)));
 
 		grupoTmp = servFicha.buscarGrupo("Paneles de pared con alma de EPS");
 		observacion = txtObs4.getText();
@@ -806,7 +804,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BBS_4));
+				quitarEtiquetasHTML(LBL_BBS_4)));
 
 		grupoTmp = servFicha.buscarGrupo("Ventana de UPVC");
 		observacion = txtObs5.getText();
@@ -816,7 +814,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BBS_5));
+				quitarEtiquetasHTML(LBL_BBS_5)));
 
 		grupoTmp = servFicha.buscarGrupo("Panel de cubierta con EPS");
 		observacion = txtObs6.getText();
@@ -826,7 +824,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BBS_6));
+				quitarEtiquetasHTML(LBL_BBS_6)));
 
 		grupoTmp = servFicha.buscarGrupo("Compuesto de madera y plástico");
 		observacion = txtObs7.getText();
@@ -836,7 +834,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BBS_7));
+				quitarEtiquetasHTML(LBL_BBS_7)));
 
 		grupoTmp = servFicha.buscarGrupo("Iluminación");
 		observacion = txtObs8.getText();
@@ -846,7 +844,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BBS_8));
+				quitarEtiquetasHTML(LBL_BBS_8)));
 
 		grupoTmp = servFicha.buscarGrupo("Inodoro");
 		observacion = txtObs9.getText();
@@ -856,7 +854,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BBS_9));
+				quitarEtiquetasHTML(LBL_BBS_9)));
 
 		grupoTmp = servFicha.buscarGrupo("Urinarios");
 		observacion = txtObs10.getText();
@@ -866,7 +864,7 @@ public class FichaBbateriasSanitarias extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BBS_10));
+				quitarEtiquetasHTML(LBL_BBS_10)));
 
 		return listaDetalles;
 	}

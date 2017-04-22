@@ -1,8 +1,6 @@
 package com.capa.presentacion;
 
-import static com.capa.util.Utilitarios.cargarInfoObligatoria;
-import static com.capa.util.Utilitarios.getPathImagen;
-import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Utilitarios.*;
 import static com.capa.util.Validaciones.validarInfo;
 import static com.capa.util.Constantes.*;
 
@@ -320,7 +318,7 @@ public class FichaBrecreacionExteriores extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BRE_0));
+				quitarEtiquetasHTML(LBL_BRE_0)));
 
 		grupoTmp = servFicha.buscarGrupo("Cerramiento perimetral");
 		observacion = txtObs1.getText();
@@ -330,7 +328,7 @@ public class FichaBrecreacionExteriores extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BRE_1));
+				quitarEtiquetasHTML(LBL_BRE_1)));
 
 		grupoTmp = servFicha.buscarGrupo("Caminerías exteriores");
 		observacion = txtObs2.getText();
@@ -340,7 +338,7 @@ public class FichaBrecreacionExteriores extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				LBL_BRE_2));
+				quitarEtiquetasHTML(LBL_BRE_2)));
 
 		return listaDetalles;
 	}

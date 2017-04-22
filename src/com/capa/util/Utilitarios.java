@@ -163,7 +163,6 @@ public class Utilitarios {
 		return new JTextField(Integer.valueOf(i));
 	}
 
-	
 	public static String getNombreFicha() {
 		return nombreFicha;
 	}
@@ -182,6 +181,13 @@ public class Utilitarios {
 			updateFicha++;
 		}
 		return updateFicha;
+	}
+
+	public static String quitarEtiquetasHTML(String constante) {
+		String nuevaConstante = constante.replaceAll("<html><body><p align='right'>", "");
+		nuevaConstante = nuevaConstante.replaceAll("</p></body></html>", "");
+		nuevaConstante = nuevaConstante.replaceAll("<html><body><p align=right>", "");
+		return nuevaConstante;
 	}
 
 	public static Map<String, String> mapDistritos() {

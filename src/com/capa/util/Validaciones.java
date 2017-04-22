@@ -40,7 +40,7 @@ public class Validaciones {
 					|| detallesFicha.get(i).getDetCantidadEjecutada() < 0) {
 				JOptionPane.showMessageDialog(null,
 						"ERROR: Verificar que las Cantidades Ingresadas sean menores o iguales a las Cantidades Limite!\n"
-								+ "ETIQUETA:" + detallesFicha.get(i).getDetEtiqueta() + "",
+								+ "ETIQUETA: " + detallesFicha.get(i).getDetEtiqueta() + "",
 						"Mensaje de Error", JOptionPane.ERROR_MESSAGE);
 				return false;
 			}
