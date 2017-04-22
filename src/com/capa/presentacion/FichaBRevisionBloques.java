@@ -4,6 +4,7 @@ import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
 import static com.capa.util.Validaciones.validarInfo;
+import static com.capa.util.Constantes.*;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -754,8 +755,8 @@ public class FichaBRevisionBloques extends JFrame {
 		} else if (rdBtn01.isSelected()) {
 			desicion = "NO";
 		}
-		listaDetalles
-				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
+				LBL_BR_0));
 
 		grupoTmp = servFicha.buscarGrupo("Piezas sanitarias");
 		observacion = txtObs1.getText();
@@ -764,8 +765,8 @@ public class FichaBRevisionBloques extends JFrame {
 		} else if (rdBtn11.isSelected()) {
 			desicion = "NO";
 		}
-		listaDetalles
-				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
+				LBL_BR_1));
 
 		grupoTmp = servFicha.buscarGrupo("Bases prefabricadas");
 		observacion = txtObs2.getText();
@@ -774,8 +775,8 @@ public class FichaBRevisionBloques extends JFrame {
 		} else if (rdBtn21.isSelected()) {
 			desicion = "NO";
 		}
-		listaDetalles
-				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
+				LBL_BR_2));
 
 		grupoTmp = servFicha.buscarGrupo("Estructura metálica Steel");
 		observacion = txtObs3.getText();
@@ -784,8 +785,8 @@ public class FichaBRevisionBloques extends JFrame {
 		} else if (rdBtn31.isSelected()) {
 			desicion = "NO";
 		}
-		listaDetalles
-				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
+				LBL_BR_3));
 
 		grupoTmp = servFicha.buscarGrupo("Paneles de pared con alma de EPS");
 		observacion = txtObs4.getText();
@@ -794,8 +795,8 @@ public class FichaBRevisionBloques extends JFrame {
 		} else if (rdBtn41.isSelected()) {
 			desicion = "NO";
 		}
-		listaDetalles
-				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
+				LBL_BR_4));
 
 		grupoTmp = servFicha.buscarGrupo("Ventana de UPVC");
 		observacion = txtObs5.getText();
@@ -804,8 +805,8 @@ public class FichaBRevisionBloques extends JFrame {
 		} else if (rdBtn51.isSelected()) {
 			desicion = "NO";
 		}
-		listaDetalles
-				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
+				LBL_BR_5));
 
 		grupoTmp = servFicha.buscarGrupo("Panel de cubierta con EPS");
 		observacion = txtObs6.getText();
@@ -814,8 +815,8 @@ public class FichaBRevisionBloques extends JFrame {
 		} else if (rdBtn61.isSelected()) {
 			desicion = "NO";
 		}
-		listaDetalles
-				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
+				LBL_BR_6));
 
 		grupoTmp = servFicha.buscarGrupo("Compuesto de madera y plástico");
 		observacion = txtObs7.getText();
@@ -824,8 +825,8 @@ public class FichaBRevisionBloques extends JFrame {
 		} else if (rdBtn71.isSelected()) {
 			desicion = "NO";
 		}
-		listaDetalles
-				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
+				LBL_BR_7));
 
 		grupoTmp = servFicha.buscarGrupo("Iluminación");
 		observacion = txtObs8.getText();
@@ -834,8 +835,8 @@ public class FichaBRevisionBloques extends JFrame {
 		} else if (rdBtn81.isSelected()) {
 			desicion = "NO";
 		}
-		listaDetalles
-				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
+				LBL_BR_8));
 
 		grupoTmp = servFicha.buscarGrupo("Inodoro");
 		observacion = txtObs9.getText();
@@ -844,8 +845,8 @@ public class FichaBRevisionBloques extends JFrame {
 		} else if (rdBtn91.isSelected()) {
 			desicion = "NO";
 		}
-		listaDetalles
-				.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion));
+		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
+				LBL_BR_9));
 
 		return listaDetalles;
 	}

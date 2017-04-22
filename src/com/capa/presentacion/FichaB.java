@@ -1,6 +1,5 @@
 package com.capa.presentacion;
 
-import java.awt.EventQueue;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,19 +19,6 @@ public class FichaB extends JFrame {
 	private static final long serialVersionUID = -6881692801126802167L;
 	private JPanel pnlPrincipal;
 	ServicioFicha srvFicha = new ComponenteFicha();
-
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FichaB frame = new FichaB();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	public FichaB() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

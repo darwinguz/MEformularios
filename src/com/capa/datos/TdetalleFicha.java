@@ -27,7 +27,7 @@ public class TdetalleFicha implements Serializable {
 
 	// constructor para ingresar Fichas B
 	public TdetalleFicha(TCabecera cabecera, TInformacionObligatoria informacion, TGrupo grupo, TFicha ficha,
-			Integer detActualizacion, String obs, String desicion) {
+			Integer detActualizacion, String obs, String desicion, String etiqueta) {
 		this.TCabecera = cabecera;
 		this.InfoObligatoria = informacion;
 		this.TGrupo = grupo;
@@ -35,6 +35,7 @@ public class TdetalleFicha implements Serializable {
 		this.detActualizacionN = detActualizacion;
 		this.detObsRef = obs;
 		this.desicion = desicion;
+		this.detEtiqueta = etiqueta;
 	}
 
 	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria, TGrupo tGrupo, TFicha tFicha,
