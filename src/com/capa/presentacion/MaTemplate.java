@@ -1610,7 +1610,9 @@ public class MaTemplate extends JFrame {
 						InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
 						reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 						reporte.setVisible(true);
-
+						
+						System.out.println( JOptionPane.showConfirmDialog(null, "Realmente desea salir de Hola Swing?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)); 
+						
 						new Menu().setVisible(true);
 						dispose();
 					}
