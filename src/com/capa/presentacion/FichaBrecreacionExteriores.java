@@ -17,6 +17,7 @@ import com.capa.datos.TFicha;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.Query;
 import com.capa.negocios.Reporte;
@@ -91,6 +92,8 @@ public class FichaBrecreacionExteriores extends JFrame {
 		setLocationRelativeTo(null);
 		this.setTitle(ficha.getFiNombre());
 		this.setResizable(false);
+
+		servFicha = new ComponenteFicha();
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
