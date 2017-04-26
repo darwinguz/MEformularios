@@ -1,15 +1,43 @@
 package com.capa.presentacion;
 
-import static com.capa.util.Utilitarios.*;
+import static com.capa.util.Constantes.LBL_BBS_0;
+import static com.capa.util.Constantes.LBL_BBS_1;
+import static com.capa.util.Constantes.LBL_BBS_10;
+import static com.capa.util.Constantes.LBL_BBS_2;
+import static com.capa.util.Constantes.LBL_BBS_3;
+import static com.capa.util.Constantes.LBL_BBS_4;
+import static com.capa.util.Constantes.LBL_BBS_5;
+import static com.capa.util.Constantes.LBL_BBS_6;
+import static com.capa.util.Constantes.LBL_BBS_7;
+import static com.capa.util.Constantes.LBL_BBS_8;
+import static com.capa.util.Constantes.LBL_BBS_9;
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Utilitarios.quitarEtiquetasHTML;
 import static com.capa.util.Validaciones.validarInfo;
-import static com.capa.util.Constantes.*;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTabbedPane;
+import javax.swing.JTextField;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 
@@ -24,24 +52,6 @@ import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.util.Utilitarios;
-
-import javax.swing.UIManager;
-import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
 
 public class FichaBbateriasSanitarias extends JFrame {
 
@@ -724,7 +734,8 @@ public class FichaBbateriasSanitarias extends JFrame {
 					parametros.put("serial_ficha", ficha.getFiSerial());
 
 					Reporte reporte = new Reporte("Reporte Baterías Sanitarias", 280, 10, 850, 750);
-					InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
+					InputStream path = AlInicio.class
+							.getResourceAsStream("/com/capa/templates/BateriasSanitarias.jasper");
 					reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 					reporte.setVisible(true);
 					new FichaB().setVisible(true);
