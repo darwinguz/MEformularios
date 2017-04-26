@@ -29,6 +29,7 @@ public class EmailCliente extends JFrame {
 	private JTextField txtPathPDF;
 	private JButton btnEnviar;
 	private JButton btnAddArchivo;
+	private JTextArea txtContenidoSMS;
 
 	/**
 	 * Launch the application.
@@ -97,9 +98,9 @@ public class EmailCliente extends JFrame {
 		pwdUser.setBounds(307, 8, 153, 20);
 		contentPane.add(pwdUser);
 
-		JTextArea textArea = new JTextArea();
-		textArea.setBounds(10, 86, 450, 162);
-		contentPane.add(textArea);
+		txtContenidoSMS = new JTextArea();
+		txtContenidoSMS.setBounds(10, 86, 450, 162);
+		contentPane.add(txtContenidoSMS);
 
 		JLabel lblAdjunto = new JLabel("Adjunto: ");
 		lblAdjunto.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -121,4 +122,70 @@ public class EmailCliente extends JFrame {
 		btnEnviar.setBounds(371, 57, 89, 23);
 		contentPane.add(btnEnviar);
 	}
+
+	public JTextField getTxtUser() {
+		return txtUser;
+	}
+
+	public void setTxtUser(JTextField txtUser) {
+		this.txtUser = txtUser;
+	}
+
+	public JTextField getTxtPara() {
+		return txtPara;
+	}
+
+	public void setTxtPara(JTextField txtPara) {
+		this.txtPara = txtPara;
+	}
+
+	public JTextField getTxtAsunto() {
+		return txtAsunto;
+	}
+
+	public void setTxtAsunto(JTextField txtAsunto) {
+		this.txtAsunto = txtAsunto;
+	}
+
+	public JPasswordField getPwdUser() {
+		return pwdUser;
+	}
+
+	public void setPwdUser(JPasswordField pwdUser) {
+		this.pwdUser = pwdUser;
+	}
+
+	public JTextField getTxtPathPDF() {
+		return txtPathPDF;
+	}
+
+	public void setTxtPathPDF(JTextField txtPathPDF) {
+		this.txtPathPDF = txtPathPDF;
+	}
+
+	public JButton getBtnEnviar() {
+		return btnEnviar;
+	}
+
+	public void setBtnEnviar(JButton btnEnviar) {
+		this.btnEnviar = btnEnviar;
+	}
+
+	public JButton getBtnAddArchivo() {
+		return btnAddArchivo;
+	}
+
+	public void setBtnAddArchivo(JButton btnAddArchivo) {
+		this.btnAddArchivo = btnAddArchivo;
+	}
+
+	public JTextArea getTxtContenidoSMS() {
+		return txtContenidoSMS;
+	}
+
+	public void setTxtContenidoSMS(JTextArea txtContenidoSMS) {
+		this.txtContenidoSMS = txtContenidoSMS;
+	}
+	
+	
 }

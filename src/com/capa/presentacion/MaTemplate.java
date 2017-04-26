@@ -100,6 +100,12 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
+import javax.mail.BodyPart;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMultipart;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -118,6 +124,7 @@ import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
+import com.capa.negocios.Email;
 import com.capa.negocios.Query;
 import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioCabecera;
@@ -254,7 +261,7 @@ public class MaTemplate extends JFrame {
 	private JTextField txtCantidad371;
 	private JTextField txtCantidad381;
 	private JTextField txtCantidad391;
-
+	private String pathFormularioPDF;
 	private String fotoInfoObl;
 	private TFicha ficha;
 
@@ -1610,11 +1617,64 @@ public class MaTemplate extends JFrame {
 						InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
 						reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 						reporte.setVisible(true);
+
+						int dialog = JOptionPane.showConfirmDialog(null,
+								"Desea enviar el formulario por correro electrónico?", "Email",
+								JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+						if (dialog == 0) {
+
+							Email emailServer = new Email();
+							EmailCliente emailCliente = new EmailCliente();
+							BodyPart partBodyContenido = new MimeBodyPart();
+							BodyPart partBodyAdjunto = new MimeBodyPart();
+							MimeMultipart multiParte = new MimeMultipart();
+
+							emailCliente.setVisible(true);
+							emailCliente.setLocationRelativeTo(null);
+
+							String de = emailCliente.getTxtUser().getText();
+							String clave = emailCliente.getPwdUser().getSelectedText();
+							String para = emailCliente.getTxtPara().getText();
+							String asunto = emailCliente.getTxtAsunto().getText();
+							String contenidoSMS = emailCliente.getTxtContenidoSMS().getText();
+
+							emailCliente.getBtnAddArchivo().addActionListener(new ActionListener() {
+
+								public void actionPerformed(ActionEvent e) {
+									setPathFormularioPDF(Utilitarios.getPathImagen());
+								}
+							});
+
+							try {
+								partBodyContenido.setText(contenidoSMS);
+								partBodyAdjunto.setDataHandler(
+										new DataHandler(new FileDataSource("‪C:/Users/FREDDY/Desktop/test.pdf")));
+								partBodyAdjunto.setFileName("test.pdf");
+
+								multiParte.addBodyPart(partBodyContenido);
+								multiParte.addBodyPart(partBodyAdjunto);
+							} catch (MessagingException e1) {
+								e1.printStackTrace();
+							}
+
+							emailCliente.getBtnEnviar().addActionListener(new ActionListener() {
+								public void actionPerformed(ActionEvent e) {
+									boolean resultado = emailServer.enviarCorreo(de, clave, para, multiParte, asunto);
+									if (resultado) {
+										System.out.println("Exito!");
+									} else {
+										System.out.println("Fracaso!");
+									}
+									new Menu().setVisible(true);
+									dispose();
+								}
+							});
+						} else {
+							System.out.println("Ingrese los datos correctamente");
+						}
+
 						
-						System.out.println( JOptionPane.showConfirmDialog(null, "Realmente desea salir de Hola Swing?", "Confirmar salida", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)); 
-						
-						new Menu().setVisible(true);
-						dispose();
 					}
 
 				} else {
@@ -2024,6 +2084,14 @@ public class MaTemplate extends JFrame {
 			txtObs38.setText("");
 			txtObs39.setText("");
 		}
+	}
+
+	public String getPathFormularioPDF() {
+		return pathFormularioPDF;
+	}
+
+	public void setPathFormularioPDF(String pathFormularioPDF) {
+		this.pathFormularioPDF = pathFormularioPDF;
 	}
 
 }
