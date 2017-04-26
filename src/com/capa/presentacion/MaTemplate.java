@@ -1640,7 +1640,6 @@ public class MaTemplate extends JFrame {
 							String contenidoSMS = emailCliente.getTxtContenidoSMS().getText();
 
 							emailCliente.getBtnAddArchivo().addActionListener(new ActionListener() {
-
 								public void actionPerformed(ActionEvent e) {
 									setPathFormularioPDF(Utilitarios.getPathImagen());
 								}
@@ -1648,16 +1647,15 @@ public class MaTemplate extends JFrame {
 
 							try {
 								partBodyContenido.setText(contenidoSMS);
-								partBodyAdjunto.setDataHandler(
-										new DataHandler(new FileDataSource("‪C:/Users/FREDDY/Desktop/test.pdf")));
-								partBodyAdjunto.setFileName("test.pdf");
+								partBodyAdjunto.setDataHandler(new DataHandler(new FileDataSource(getPathFormularioPDF())));
+//								partBodyAdjunto.setDataHandler(new DataHandler(new FileDataSource("‪C:/Users/FREDDY/Desktop/test.pdf")));
+//								partBodyAdjunto.setFileName("test.pdf");
 
 								multiParte.addBodyPart(partBodyContenido);
 								multiParte.addBodyPart(partBodyAdjunto);
 							} catch (MessagingException e1) {
 								e1.printStackTrace();
 							}
-
 							emailCliente.getBtnEnviar().addActionListener(new ActionListener() {
 								public void actionPerformed(ActionEvent e) {
 									boolean resultado = emailServer.enviarCorreo(de, clave, para, multiParte, asunto);
@@ -1666,17 +1664,15 @@ public class MaTemplate extends JFrame {
 									} else {
 										System.out.println("Fracaso!");
 									}
-									new Menu().setVisible(true);
-									dispose();
+
 								}
 							});
 						} else {
 							System.out.println("Ingrese los datos correctamente");
 						}
-
-						
 					}
-
+					new Menu().setVisible(true);
+					dispose();
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar Información Obligatoria");
 				}
