@@ -18,7 +18,7 @@ public class Calculos {
 		return bigDecimal;
 	}
 
-	public static double calcularEjecutado(FichaA ficha) {
+	public static double calcularEjecutado(FichaA ficha) throws ArithmeticException {
 		ServicioFicha servicioFicha = new ComponenteFicha();
 		List<TdetalleFicha> listaDetalles;
 		TFicha objetoFicha;
