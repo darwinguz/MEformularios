@@ -664,7 +664,7 @@ public class Constantes {
 	/*
 	 * TxtCantidadLimite HSTemplate
 	 */
-	public static final String TXT_HS_0 = "35";
+	public static final String TXT_HS_0 = "355";
 	public static final String TXT_HS_1 = "76";
 	public static final String TXT_HS_2 = "41";
 	public static final String TXT_HS_3 = "1";

@@ -401,7 +401,7 @@ public class FichaD extends JFrame {
 		jpIObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jpIObligatoria.setPathFotoIO(Utilitarios.getPathImagen());
-				infoObl = cargarInfoObligatoria(jpIObligatoria);
+				// infoObl = cargarInfoObligatoria(jpIObligatoria);
 			}
 		});
 		panel_2.add(jpIObligatoria.getPnlInformacionObl());
@@ -409,18 +409,22 @@ public class FichaD extends JFrame {
 		cabecera.getBtnRegistrar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				srvIObligatoria.crear(infoObl);
+				infoObl = cargarInfoObligatoria(jpIObligatoria);
+				// srvIObligatoria.crear(infoObl);
 				infoObl.setIoSerial(srvIObligatoria.serialInfoOblMax());
 
 				if (validarInfo(infoObl)) {
 
+					srvIObligatoria.crear(infoObl);
 					for (TFichaD it1 : getListasD()) {
 						it1.settInformacionObl(infoObl);
 					}
 
-					for (TFichaD it2 : getListasD()) {
-						srvFicha.crear(it2);
-					}
+					srvFicha.crearFichaD(getListasD());
+
+					// for (TFichaD it2 : getListasD()) {
+					// srvFicha.crear(it2);
+					// }
 
 					HashMap<String, Object> parametros = new HashMap<String, Object>();
 					parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
@@ -429,7 +433,7 @@ public class FichaD extends JFrame {
 					InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/EvaluacionD.jasper");
 					reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 					reporte.setVisible(true);
-					
+
 					new AlInicio().setVisible(true);
 					dispose();
 
@@ -455,6 +459,10 @@ public class FichaD extends JFrame {
 
 	public void setListasD(List<TFichaD> listasD) {
 		this.listasD = listasD;
+	}
+
+	public void insertarFichaD() {
+
 	}
 
 	// public List<TFichaD> getListaFichaD(TInformacionObligatoria iObligatoria)

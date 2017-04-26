@@ -17,6 +17,7 @@ import com.capa.datos.TFicha;
 import com.capa.datos.TGrupo;
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
+import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.Query;
 import com.capa.negocios.Reporte;
@@ -91,6 +92,8 @@ public class FichaBrecreacionExteriores extends JFrame {
 		setLocationRelativeTo(null);
 		this.setTitle(ficha.getFiNombre());
 		this.setResizable(false);
+
+		servFicha = new ComponenteFicha();
 
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(10, 125, 1286, 560);
@@ -276,8 +279,10 @@ public class FichaBrecreacionExteriores extends JFrame {
 					HashMap<String, Object> parametros = new HashMap<String, Object>();
 					parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
 					parametros.put("serial_ficha", ficha.getFiSerial());
+
 					Reporte reporte = new Reporte("Reporte Recreación exterior", 280, 10, 850, 750);
-					InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
+					InputStream path = AlInicio.class
+							.getResourceAsStream("/com/capa/templates/BateriasSanitarias.jasper");
 					reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 					reporte.setVisible(true);
 					new FichaB().setVisible(true);
