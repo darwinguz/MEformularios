@@ -9,12 +9,14 @@ import java.util.List;
 import com.capa.datos.TFicha;
 import com.capa.datos.TdetalleFicha;
 import com.capa.util.FichaA;
+import com.capa.util.Utilitarios;
 
 public class Calculos {
 
 	public static BigDecimal calcularPorcentajeAvance(double cantidadLimite, double cantidadEjecutada) {
 		BigDecimal bigDecimal = BigDecimal.valueOf((cantidadEjecutada / cantidadLimite) * 100);
-		bigDecimal = bigDecimal.setScale(0, RoundingMode.HALF_UP);
+		// bigDecimal = bigDecimal.setScale(2, RoundingMode.HALF_UP);
+		bigDecimal = BigDecimal.valueOf(Utilitarios.redondearDecimales(bigDecimal.doubleValue(), 2));
 		return bigDecimal;
 	}
 
