@@ -3,7 +3,6 @@ package com.capa.negocios;
 import static com.capa.util.Utilitarios.*;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.List;
 
 import com.capa.datos.TFicha;
