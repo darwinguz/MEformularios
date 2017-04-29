@@ -1,12 +1,7 @@
 package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
-import static com.capa.util.Constantes.LBL_CE_0;
-import static com.capa.util.Constantes.LBL_CE_1;
-import static com.capa.util.Constantes.LBL_CE_2;
-import static com.capa.util.Constantes.LBL_CE_3;
-import static com.capa.util.Constantes.LBL_CE_4;
-import static com.capa.util.Constantes.LBL_CE_5;
+import static com.capa.util.Constantes.*;
 import static com.capa.util.Utilitarios.*;
 import static com.capa.util.Validaciones.*;
 
@@ -332,6 +327,8 @@ public class CeTemplate extends JFrame {
 					}
 					if (Validaciones.registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
+						infor.setIoFotoPath(fotoInfoObl);
+						infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 						servFicha.guardarFormulario(cargarListas());
 						HashMap<String, Object> parametros = new HashMap<String, Object>();
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
@@ -376,33 +373,33 @@ public class CeTemplate extends JFrame {
 				Double.parseDouble(txtCantidad01.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_CE_0),
 				Integer.parseInt(txtCantidad00.getText()), Integer.parseInt(txtCantidad01.getText()), txtObs0.getText(),
-				updateFicha, porcentajeAvance));
+				updateFicha, porcentajeAvance, ITEM_CE_0, "UNIDAD"));
 		grupoTmp = servFicha.buscarGrupo("Componente estructural");
 		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad10.getText()),
 				Double.parseDouble(txtCantidad11.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_CE_1),
 				Integer.parseInt(txtCantidad10.getText()), Integer.parseInt(txtCantidad11.getText()), txtObs1.getText(),
-				updateFicha, porcentajeAvance));
+				updateFicha, porcentajeAvance, ITEM_CE_1, "UNIDAD"));
 		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad20.getText()),
 				Double.parseDouble(txtCantidad21.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_CE_2),
 				Integer.parseInt(txtCantidad20.getText()), Integer.parseInt(txtCantidad21.getText()), txtObs2.getText(),
-				updateFicha, porcentajeAvance));
+				updateFicha, porcentajeAvance, ITEM_CE_2, "UNIDAD"));
 		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad30.getText()),
 				Double.parseDouble(txtCantidad31.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_CE_3),
 				Integer.parseInt(txtCantidad30.getText()), Integer.parseInt(txtCantidad31.getText()), txtObs3.getText(),
-				updateFicha, porcentajeAvance));
+				updateFicha, porcentajeAvance, ITEM_CE_3, "UNIDAD"));
 		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad40.getText()),
 				Double.parseDouble(txtCantidad41.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_CE_4),
 				Integer.parseInt(txtCantidad40.getText()), Integer.parseInt(txtCantidad41.getText()), txtObs4.getText(),
-				updateFicha, porcentajeAvance));
+				updateFicha, porcentajeAvance, ITEM_CE_4, "UNIDAD"));
 		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad50.getText()),
 				Double.parseDouble(txtCantidad51.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_CE_5),
 				Integer.parseInt(txtCantidad50.getText()), Integer.parseInt(txtCantidad51.getText()), txtObs5.getText(),
-				updateFicha, porcentajeAvance));
+				updateFicha, porcentajeAvance, ITEM_CE_5, "UNIDAD"));
 
 		return listaDetalles;
 	}

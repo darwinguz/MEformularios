@@ -881,108 +881,108 @@ public class MexTemplate extends JFrame {
 		} else {
 			updateFicha++;
 		}
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad00.getText()),
-				Integer.parseInt(txtCantidad01.getText()));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad00.getText()),
+				Double.parseDouble(txtCantidad01.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_0),
 				Integer.parseInt(txtCantidad00.getText()), Integer.parseInt(txtCantidad01.getText()), txtObs0.getText(),
-				updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad10.getText()),
-				Integer.parseInt(txtCantidad11.getText()));
+				updateFicha, porcentajeAvance, ITEM_MEX_0, "UNIDAD"));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad10.getText()),
+				Double.parseDouble(txtCantidad11.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_1),
 				Integer.parseInt(txtCantidad10.getText()), Integer.parseInt(txtCantidad11.getText()), txtObs1.getText(),
-				updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad20.getText()),
-				Integer.parseInt(txtCantidad21.getText()));
+				updateFicha, porcentajeAvance, ITEM_MEX_1, "UNIDAD"));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad20.getText()),
+				Double.parseDouble(txtCantidad21.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_2),
 				Integer.parseInt(txtCantidad20.getText()), Integer.parseInt(txtCantidad21.getText()), txtObs2.getText(),
-				updateFicha, porcentajeAvance));
+				updateFicha, porcentajeAvance, ITEM_MEX_2, "UNIDAD"));
 
 		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo B - 250x105");
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad30.getText()),
-				Integer.parseInt(txtCantidad31.getText()));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad30.getText()),
+				Double.parseDouble(txtCantidad31.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_3),
 				Integer.parseInt(txtCantidad30.getText()), Integer.parseInt(txtCantidad31.getText()), txtObs3.getText(),
-				updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad40.getText()),
-				Integer.parseInt(txtCantidad41.getText()));
+				updateFicha, porcentajeAvance, ITEM_MEX_3, "UNIDAD"));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad40.getText()),
+				Double.parseDouble(txtCantidad41.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_4),
 				Integer.parseInt(txtCantidad40.getText()), Integer.parseInt(txtCantidad41.getText()), txtObs4.getText(),
-				updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad50.getText()),
-				Integer.parseInt(txtCantidad51.getText()));
+				updateFicha, porcentajeAvance, ITEM_MEX_4, "UNIDAD"));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad50.getText()),
+				Double.parseDouble(txtCantidad51.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_5),
 				Integer.parseInt(txtCantidad50.getText()), Integer.parseInt(txtCantidad51.getText()), txtObs5.getText(),
-				updateFicha, porcentajeAvance));
+				updateFicha, porcentajeAvance, ITEM_MEX_5, "UNIDAD"));
 
 		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo C - 240x105");
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad60.getText()),
-				Integer.parseInt(txtCantidad61.getText()));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad60.getText()),
+				Double.parseDouble(txtCantidad61.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_6),
 				Integer.parseInt(txtCantidad60.getText()), Integer.parseInt(txtCantidad61.getText()), txtObs6.getText(),
-				updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad70.getText()),
-				Integer.parseInt(txtCantidad71.getText()));
+				updateFicha, porcentajeAvance, ITEM_MEX_6, "UNIDAD"));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad70.getText()),
+				Double.parseDouble(txtCantidad71.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_7),
 				Integer.parseInt(txtCantidad70.getText()), Integer.parseInt(txtCantidad71.getText()), txtObs7.getText(),
-				updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad80.getText()),
-				Integer.parseInt(txtCantidad81.getText()));
+				updateFicha, porcentajeAvance, ITEM_MEX_7, "UNIDAD"));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad80.getText()),
+				Double.parseDouble(txtCantidad81.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_8),
 				Integer.parseInt(txtCantidad80.getText()), Integer.parseInt(txtCantidad81.getText()), txtObs8.getText(),
-				updateFicha, porcentajeAvance));
+				updateFicha, porcentajeAvance, ITEM_MEX_8, "UNIDAD"));
 
 		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo D - 135x105");
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad90.getText()),
-				Integer.parseInt(txtCantidad91.getText()));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad90.getText()),
+				Double.parseDouble(txtCantidad91.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_9),
 				Integer.parseInt(txtCantidad90.getText()), Integer.parseInt(txtCantidad91.getText()), txtObs9.getText(),
-				updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad100.getText()),
-				Integer.parseInt(txtCantidad101.getText()));
+				updateFicha, porcentajeAvance, ITEM_MEX_9, "UNIDAD"));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad100.getText()),
+				Double.parseDouble(txtCantidad101.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_10),
 				Integer.parseInt(txtCantidad100.getText()), Integer.parseInt(txtCantidad101.getText()),
-				txtObs10.getText(), updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad110.getText()),
-				Integer.parseInt(txtCantidad111.getText()));
+				txtObs10.getText(), updateFicha, porcentajeAvance, ITEM_MEX_10, "UNIDAD"));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad110.getText()),
+				Double.parseDouble(txtCantidad111.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_11),
 				Integer.parseInt(txtCantidad110.getText()), Integer.parseInt(txtCantidad111.getText()),
-				txtObs11.getText(), updateFicha, porcentajeAvance));
+				txtObs11.getText(), updateFicha, porcentajeAvance, ITEM_MEX_11, "UNIDAD"));
 
 		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo E - 204x105");
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad120.getText()),
-				Integer.parseInt(txtCantidad121.getText()));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad120.getText()),
+				Double.parseDouble(txtCantidad121.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_12),
 				Integer.parseInt(txtCantidad120.getText()), Integer.parseInt(txtCantidad121.getText()),
-				txtObs12.getText(), updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad130.getText()),
-				Integer.parseInt(txtCantidad131.getText()));
+				txtObs12.getText(), updateFicha, porcentajeAvance, ITEM_MEX_12, "UNIDAD"));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad130.getText()),
+				Double.parseDouble(txtCantidad131.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_13),
 				Integer.parseInt(txtCantidad130.getText()), Integer.parseInt(txtCantidad131.getText()),
-				txtObs13.getText(), updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad140.getText()),
-				Integer.parseInt(txtCantidad141.getText()));
+				txtObs13.getText(), updateFicha, porcentajeAvance, ITEM_MEX_13, "UNIDAD"));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad140.getText()),
+				Double.parseDouble(txtCantidad141.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_14),
 				Integer.parseInt(txtCantidad140.getText()), Integer.parseInt(txtCantidad141.getText()),
-				txtObs14.getText(), updateFicha, porcentajeAvance));
+				txtObs14.getText(), updateFicha, porcentajeAvance, ITEM_MEX_14, "UNIDAD"));
 
 		grupoTmp = servFicha.buscarGrupo("Módulo de esparcimiento deportivo");
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad150.getText()),
-				Integer.parseInt(txtCantidad151.getText()));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad150.getText()),
+				Double.parseDouble(txtCantidad151.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_15),
 				Integer.parseInt(txtCantidad150.getText()), Integer.parseInt(txtCantidad151.getText()),
-				txtObs15.getText(), updateFicha, porcentajeAvance));
+				txtObs15.getText(), updateFicha, porcentajeAvance, ITEM_MEX_15, "UNIDAD"));
 
 		grupoTmp = servFicha.buscarGrupo("Kit de áreas verdes");
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad160.getText()),
-				Integer.parseInt(txtCantidad161.getText()));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad160.getText()),
+				Double.parseDouble(txtCantidad161.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_16),
 				Integer.parseInt(txtCantidad160.getText()), Integer.parseInt(txtCantidad161.getText()),
-				txtObs16.getText(), updateFicha, porcentajeAvance));
-		porcentajeAvance = calcularPorcentajeAvance(Integer.parseInt(txtCantidad170.getText()),
-				Integer.parseInt(txtCantidad171.getText()));
+				txtObs16.getText(), updateFicha, porcentajeAvance, ITEM_MEX_16, "UNIDAD"));
+		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad170.getText()),
+				Double.parseDouble(txtCantidad171.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_17),
 				Integer.parseInt(txtCantidad170.getText()), Integer.parseInt(txtCantidad171.getText()),
-				txtObs17.getText(), updateFicha, porcentajeAvance));
+				txtObs17.getText(), updateFicha, porcentajeAvance, ITEM_MEX_17, "UNIDAD"));
 
 		return listaDetalles;
 	}

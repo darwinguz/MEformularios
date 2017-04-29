@@ -18,6 +18,8 @@ public class TdetalleFicha implements Serializable {
 	private String detObsRef;
 	private Integer detActualizacionN;
 	private BigDecimal porcentajeAvance;
+	private String item;
+	private String unidad;
 
 	private String desicion;
 
@@ -40,7 +42,7 @@ public class TdetalleFicha implements Serializable {
 
 	public TdetalleFicha(TCabecera tCabecera, TInformacionObligatoria infoObligatoria, TGrupo tGrupo, TFicha tFicha,
 			String detEtiqueta, Integer detCantidadLimite, Integer detCantidadEjecutada, String detObsRef,
-			Integer detActualizacionN, BigDecimal porcentaje) {
+			Integer detActualizacionN, BigDecimal porcentaje, String item, String unidad) {
 		super();
 		TCabecera = tCabecera;
 		InfoObligatoria = infoObligatoria;
@@ -52,6 +54,8 @@ public class TdetalleFicha implements Serializable {
 		this.detObsRef = detObsRef;
 		this.detActualizacionN = detActualizacionN;
 		this.porcentajeAvance = porcentaje;
+		this.item = item;
+		this.unidad = unidad;
 	}
 
 	public TdetalleFicha(Integer detFichaSerial, com.capa.datos.TCabecera tCabecera,
@@ -180,6 +184,22 @@ public class TdetalleFicha implements Serializable {
 
 	public void setDesicion(String desicion) {
 		this.desicion = desicion;
+	}
+
+	public String getItem() {
+		return item;
+	}
+
+	public void setItem(String item) {
+		this.item = item;
+	}
+
+	public String getUnidad() {
+		return unidad;
+	}
+
+	public void setUnidad(String unidad) {
+		this.unidad = unidad;
 	}
 
 	@Override

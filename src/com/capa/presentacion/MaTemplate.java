@@ -2,86 +2,7 @@ package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Utilitarios.*;
-import static com.capa.util.Constantes.LBL_MA_0;
-import static com.capa.util.Constantes.LBL_MA_1;
-import static com.capa.util.Constantes.LBL_MA_10;
-import static com.capa.util.Constantes.LBL_MA_11;
-import static com.capa.util.Constantes.LBL_MA_12;
-import static com.capa.util.Constantes.LBL_MA_13;
-import static com.capa.util.Constantes.LBL_MA_14;
-import static com.capa.util.Constantes.LBL_MA_15;
-import static com.capa.util.Constantes.LBL_MA_16;
-import static com.capa.util.Constantes.LBL_MA_17;
-import static com.capa.util.Constantes.LBL_MA_18;
-import static com.capa.util.Constantes.LBL_MA_19;
-import static com.capa.util.Constantes.LBL_MA_2;
-import static com.capa.util.Constantes.LBL_MA_20;
-import static com.capa.util.Constantes.LBL_MA_21;
-import static com.capa.util.Constantes.LBL_MA_22;
-import static com.capa.util.Constantes.LBL_MA_23;
-import static com.capa.util.Constantes.LBL_MA_24;
-import static com.capa.util.Constantes.LBL_MA_25;
-import static com.capa.util.Constantes.LBL_MA_26;
-import static com.capa.util.Constantes.LBL_MA_27;
-import static com.capa.util.Constantes.LBL_MA_28;
-import static com.capa.util.Constantes.LBL_MA_29;
-import static com.capa.util.Constantes.LBL_MA_3;
-import static com.capa.util.Constantes.LBL_MA_30;
-import static com.capa.util.Constantes.LBL_MA_31;
-import static com.capa.util.Constantes.LBL_MA_32;
-import static com.capa.util.Constantes.LBL_MA_33;
-import static com.capa.util.Constantes.LBL_MA_34;
-import static com.capa.util.Constantes.LBL_MA_35;
-import static com.capa.util.Constantes.LBL_MA_36;
-import static com.capa.util.Constantes.LBL_MA_37;
-import static com.capa.util.Constantes.LBL_MA_38;
-import static com.capa.util.Constantes.LBL_MA_39;
-import static com.capa.util.Constantes.LBL_MA_4;
-import static com.capa.util.Constantes.LBL_MA_5;
-import static com.capa.util.Constantes.LBL_MA_6;
-import static com.capa.util.Constantes.LBL_MA_7;
-import static com.capa.util.Constantes.LBL_MA_8;
-import static com.capa.util.Constantes.LBL_MA_9;
-import static com.capa.util.Constantes.TXT_MA_0;
-import static com.capa.util.Constantes.TXT_MA_1;
-import static com.capa.util.Constantes.TXT_MA_10;
-import static com.capa.util.Constantes.TXT_MA_11;
-import static com.capa.util.Constantes.TXT_MA_12;
-import static com.capa.util.Constantes.TXT_MA_13;
-import static com.capa.util.Constantes.TXT_MA_14;
-import static com.capa.util.Constantes.TXT_MA_15;
-import static com.capa.util.Constantes.TXT_MA_16;
-import static com.capa.util.Constantes.TXT_MA_17;
-import static com.capa.util.Constantes.TXT_MA_18;
-import static com.capa.util.Constantes.TXT_MA_19;
-import static com.capa.util.Constantes.TXT_MA_2;
-import static com.capa.util.Constantes.TXT_MA_20;
-import static com.capa.util.Constantes.TXT_MA_21;
-import static com.capa.util.Constantes.TXT_MA_22;
-import static com.capa.util.Constantes.TXT_MA_23;
-import static com.capa.util.Constantes.TXT_MA_24;
-import static com.capa.util.Constantes.TXT_MA_25;
-import static com.capa.util.Constantes.TXT_MA_26;
-import static com.capa.util.Constantes.TXT_MA_27;
-import static com.capa.util.Constantes.TXT_MA_28;
-import static com.capa.util.Constantes.TXT_MA_29;
-import static com.capa.util.Constantes.TXT_MA_3;
-import static com.capa.util.Constantes.TXT_MA_30;
-import static com.capa.util.Constantes.TXT_MA_31;
-import static com.capa.util.Constantes.TXT_MA_32;
-import static com.capa.util.Constantes.TXT_MA_33;
-import static com.capa.util.Constantes.TXT_MA_34;
-import static com.capa.util.Constantes.TXT_MA_35;
-import static com.capa.util.Constantes.TXT_MA_36;
-import static com.capa.util.Constantes.TXT_MA_37;
-import static com.capa.util.Constantes.TXT_MA_38;
-import static com.capa.util.Constantes.TXT_MA_39;
-import static com.capa.util.Constantes.TXT_MA_4;
-import static com.capa.util.Constantes.TXT_MA_5;
-import static com.capa.util.Constantes.TXT_MA_6;
-import static com.capa.util.Constantes.TXT_MA_7;
-import static com.capa.util.Constantes.TXT_MA_8;
-import static com.capa.util.Constantes.TXT_MA_9;
+import static com.capa.util.Constantes.*;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.getPathImagen;
 import static com.capa.util.Utilitarios.gettCabecera;
@@ -1647,9 +1568,12 @@ public class MaTemplate extends JFrame {
 
 							try {
 								partBodyContenido.setText(contenidoSMS);
-								partBodyAdjunto.setDataHandler(new DataHandler(new FileDataSource(getPathFormularioPDF())));
-//								partBodyAdjunto.setDataHandler(new DataHandler(new FileDataSource("‪C:/Users/FREDDY/Desktop/test.pdf")));
-//								partBodyAdjunto.setFileName("test.pdf");
+								partBodyAdjunto
+										.setDataHandler(new DataHandler(new FileDataSource(getPathFormularioPDF())));
+								// partBodyAdjunto.setDataHandler(new
+								// DataHandler(new
+								// FileDataSource("‪C:/Users/FREDDY/Desktop/test.pdf")));
+								// partBodyAdjunto.setFileName("test.pdf");
 
 								multiParte.addBodyPart(partBodyContenido);
 								multiParte.addBodyPart(partBodyAdjunto);
@@ -1716,193 +1640,233 @@ public class MaTemplate extends JFrame {
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, quitarEtiquetasHTML(LBL_MA_0),
 					Integer.parseInt(txtCantidad00.getText()), Integer.parseInt(txtCantidad01.getText()),
 					txtObs0.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad00.getText()),
-							Integer.parseInt(txtCantidad01.getText()))));
+							Integer.parseInt(txtCantidad01.getText())),
+					ITEM_MA_0, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, quitarEtiquetasHTML(LBL_MA_1),
 					Integer.parseInt(txtCantidad10.getText()), Integer.parseInt(txtCantidad11.getText()),
 					txtObs1.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad10.getText()),
-							Integer.parseInt(txtCantidad11.getText()))));
+							Integer.parseInt(txtCantidad11.getText())),
+					ITEM_MA_1, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, quitarEtiquetasHTML(LBL_MA_2),
 					Integer.parseInt(txtCantidad20.getText()), Integer.parseInt(txtCantidad21.getText()),
 					txtObs2.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad20.getText()),
-							Integer.parseInt(txtCantidad21.getText()))));
+							Integer.parseInt(txtCantidad21.getText())),
+					ITEM_MA_2, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, quitarEtiquetasHTML(LBL_MA_3),
 					Integer.parseInt(txtCantidad30.getText()), Integer.parseInt(txtCantidad31.getText()),
 					txtObs3.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad30.getText()),
-							Integer.parseInt(txtCantidad31.getText()))));
+							Integer.parseInt(txtCantidad31.getText())),
+					ITEM_MA_3, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, quitarEtiquetasHTML(LBL_MA_4),
 					Integer.parseInt(txtCantidad40.getText()), Integer.parseInt(txtCantidad41.getText()),
 					txtObs4.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad40.getText()),
-							Integer.parseInt(txtCantidad41.getText()))));
+							Integer.parseInt(txtCantidad41.getText())),
+					ITEM_MA_4, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, quitarEtiquetasHTML(LBL_MA_5),
 					Integer.parseInt(txtCantidad50.getText()), Integer.parseInt(txtCantidad51.getText()),
 					txtObs5.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad50.getText()),
-							Integer.parseInt(txtCantidad51.getText()))));
+							Integer.parseInt(txtCantidad51.getText())),
+					ITEM_MA_5, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, quitarEtiquetasHTML(LBL_MA_6),
 					Integer.parseInt(txtCantidad60.getText()), Integer.parseInt(txtCantidad61.getText()),
 					txtObs6.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad60.getText()),
-							Integer.parseInt(txtCantidad61.getText()))));
+							Integer.parseInt(txtCantidad61.getText())),
+					ITEM_MA_6, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, quitarEtiquetasHTML(LBL_MA_7),
 					Integer.parseInt(txtCantidad70.getText()), Integer.parseInt(txtCantidad71.getText()),
 					txtObs7.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad70.getText()),
-							Integer.parseInt(txtCantidad71.getText()))));
+							Integer.parseInt(txtCantidad71.getText())),
+					ITEM_MA_7, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, quitarEtiquetasHTML(LBL_MA_8),
 					Integer.parseInt(txtCantidad80.getText()), Integer.parseInt(txtCantidad81.getText()),
 					txtObs8.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad80.getText()),
-							Integer.parseInt(txtCantidad81.getText()))));
+							Integer.parseInt(txtCantidad81.getText())),
+					ITEM_MA_8, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha, quitarEtiquetasHTML(LBL_MA_9),
 					Integer.parseInt(txtCantidad90.getText()), Integer.parseInt(txtCantidad91.getText()),
 					txtObs9.getText(), updateFicha, calcularPorcentajeAvance(Integer.parseInt(txtCantidad90.getText()),
-							Integer.parseInt(txtCantidad91.getText()))));
+							Integer.parseInt(txtCantidad91.getText())),
+					ITEM_MA_9, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
 					quitarEtiquetasHTML(LBL_MA_10), Integer.parseInt(txtCantidad100.getText()),
 					Integer.parseInt(txtCantidad101.getText()), txtObs10.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad100.getText()),
-							Integer.parseInt(txtCantidad101.getText()))));
+							Integer.parseInt(txtCantidad101.getText())),
+					ITEM_MA_10, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
 					quitarEtiquetasHTML(LBL_MA_11), Integer.parseInt(txtCantidad110.getText()),
 					Integer.parseInt(txtCantidad111.getText()), txtObs11.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad110.getText()),
-							Integer.parseInt(txtCantidad111.getText()))));
+							Integer.parseInt(txtCantidad111.getText())),
+					ITEM_MA_11, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
 					quitarEtiquetasHTML(LBL_MA_12), Integer.parseInt(txtCantidad120.getText()),
 					Integer.parseInt(txtCantidad121.getText()), txtObs12.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad120.getText()),
-							Integer.parseInt(txtCantidad121.getText()))));
+							Integer.parseInt(txtCantidad121.getText())),
+					ITEM_MA_12, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
 					quitarEtiquetasHTML(LBL_MA_13), Integer.parseInt(txtCantidad130.getText()),
 					Integer.parseInt(txtCantidad131.getText()), txtObs13.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad130.getText()),
-							Integer.parseInt(txtCantidad131.getText()))));
+							Integer.parseInt(txtCantidad131.getText())),
+					ITEM_MA_13, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
 					quitarEtiquetasHTML(LBL_MA_14), Integer.parseInt(txtCantidad140.getText()),
 					Integer.parseInt(txtCantidad141.getText()), txtObs14.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad140.getText()),
-							Integer.parseInt(txtCantidad141.getText()))));
+							Integer.parseInt(txtCantidad141.getText())),
+					ITEM_MA_14, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
 					quitarEtiquetasHTML(LBL_MA_15), Integer.parseInt(txtCantidad150.getText()),
 					Integer.parseInt(txtCantidad151.getText()), txtObs15.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad150.getText()),
-							Integer.parseInt(txtCantidad151.getText()))));
+							Integer.parseInt(txtCantidad151.getText())),
+					ITEM_MA_15, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
 					quitarEtiquetasHTML(LBL_MA_16), Integer.parseInt(txtCantidad160.getText()),
 					Integer.parseInt(txtCantidad161.getText()), txtObs16.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad160.getText()),
-							Integer.parseInt(txtCantidad161.getText()))));
+							Integer.parseInt(txtCantidad161.getText())),
+					ITEM_MA_16, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
 					quitarEtiquetasHTML(LBL_MA_17), Integer.parseInt(txtCantidad170.getText()),
 					Integer.parseInt(txtCantidad171.getText()), txtObs17.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad170.getText()),
-							Integer.parseInt(txtCantidad171.getText()))));
+							Integer.parseInt(txtCantidad171.getText())),
+					ITEM_MA_17, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
 					quitarEtiquetasHTML(LBL_MA_18), Integer.parseInt(txtCantidad180.getText()),
 					Integer.parseInt(txtCantidad181.getText()), txtObs18.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad180.getText()),
-							Integer.parseInt(txtCantidad181.getText()))));
+							Integer.parseInt(txtCantidad181.getText())),
+					ITEM_MA_18, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
 					quitarEtiquetasHTML(LBL_MA_19), Integer.parseInt(txtCantidad190.getText()),
 					Integer.parseInt(txtCantidad191.getText()), txtObs19.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad190.getText()),
-							Integer.parseInt(txtCantidad191.getText()))));
+							Integer.parseInt(txtCantidad191.getText())),
+					ITEM_MA_19, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
 					quitarEtiquetasHTML(LBL_MA_20), Integer.parseInt(txtCantidad200.getText()),
 					Integer.parseInt(txtCantidad201.getText()), txtObs20.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad200.getText()),
-							Integer.parseInt(txtCantidad201.getText()))));
+							Integer.parseInt(txtCantidad201.getText())),
+					ITEM_MA_20, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
 					quitarEtiquetasHTML(LBL_MA_21), Integer.parseInt(txtCantidad210.getText()),
 					Integer.parseInt(txtCantidad211.getText()), txtObs21.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad210.getText()),
-							Integer.parseInt(txtCantidad211.getText()))));
+							Integer.parseInt(txtCantidad211.getText())),
+					ITEM_MA_21, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
 					quitarEtiquetasHTML(LBL_MA_22), Integer.parseInt(txtCantidad220.getText()),
 					Integer.parseInt(txtCantidad221.getText()), txtObs22.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad220.getText()),
-							Integer.parseInt(txtCantidad221.getText()))));
+							Integer.parseInt(txtCantidad221.getText())),
+					ITEM_MA_22, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
 					quitarEtiquetasHTML(LBL_MA_23), Integer.parseInt(txtCantidad230.getText()),
 					Integer.parseInt(txtCantidad231.getText()), txtObs23.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad230.getText()),
-							Integer.parseInt(txtCantidad231.getText()))));
+							Integer.parseInt(txtCantidad231.getText())),
+					ITEM_MA_23, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha,
 					quitarEtiquetasHTML(LBL_MA_24), Integer.parseInt(txtCantidad240.getText()),
 					Integer.parseInt(txtCantidad241.getText()), txtObs24.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad240.getText()),
-							Integer.parseInt(txtCantidad241.getText()))));
+							Integer.parseInt(txtCantidad241.getText())),
+					ITEM_MA_24, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha,
 					quitarEtiquetasHTML(LBL_MA_25), Integer.parseInt(txtCantidad250.getText()),
 					Integer.parseInt(txtCantidad251.getText()), txtObs25.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad250.getText()),
-							Integer.parseInt(txtCantidad251.getText()))));
+							Integer.parseInt(txtCantidad251.getText())),
+					ITEM_MA_25, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo8, ficha,
 					quitarEtiquetasHTML(LBL_MA_26), Integer.parseInt(txtCantidad260.getText()),
 					Integer.parseInt(txtCantidad261.getText()), txtObs26.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad260.getText()),
-							Integer.parseInt(txtCantidad261.getText()))));
+							Integer.parseInt(txtCantidad261.getText())),
+					ITEM_MA_26, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_27), Integer.parseInt(txtCantidad270.getText()),
 					Integer.parseInt(txtCantidad271.getText()), txtObs27.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad270.getText()),
-							Integer.parseInt(txtCantidad271.getText()))));
+							Integer.parseInt(txtCantidad271.getText())),
+					ITEM_MA_27, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_28), Integer.parseInt(txtCantidad280.getText()),
 					Integer.parseInt(txtCantidad281.getText()), txtObs28.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad280.getText()),
-							Integer.parseInt(txtCantidad281.getText()))));
+							Integer.parseInt(txtCantidad281.getText())),
+					ITEM_MA_28, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_29), Integer.parseInt(txtCantidad290.getText()),
 					Integer.parseInt(txtCantidad291.getText()), txtObs29.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad290.getText()),
-							Integer.parseInt(txtCantidad291.getText()))));
+							Integer.parseInt(txtCantidad291.getText())),
+					ITEM_MA_29, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_30), Integer.parseInt(txtCantidad300.getText()),
 					Integer.parseInt(txtCantidad301.getText()), txtObs30.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad300.getText()),
-							Integer.parseInt(txtCantidad301.getText()))));
+							Integer.parseInt(txtCantidad301.getText())),
+					ITEM_MA_30, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_31), Integer.parseInt(txtCantidad310.getText()),
 					Integer.parseInt(txtCantidad311.getText()), txtObs31.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad310.getText()),
-							Integer.parseInt(txtCantidad311.getText()))));
+							Integer.parseInt(txtCantidad311.getText())),
+					ITEM_MA_31, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_32), Integer.parseInt(txtCantidad320.getText()),
 					Integer.parseInt(txtCantidad321.getText()), txtObs32.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad320.getText()),
-							Integer.parseInt(txtCantidad321.getText()))));
+							Integer.parseInt(txtCantidad321.getText())),
+					ITEM_MA_32, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_33), Integer.parseInt(txtCantidad330.getText()),
 					Integer.parseInt(txtCantidad331.getText()), txtObs33.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad330.getText()),
-							Integer.parseInt(txtCantidad331.getText()))));
+							Integer.parseInt(txtCantidad331.getText())),
+					ITEM_MA_33, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_34), Integer.parseInt(txtCantidad340.getText()),
 					Integer.parseInt(txtCantidad341.getText()), txtObs34.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad340.getText()),
-							Integer.parseInt(txtCantidad341.getText()))));
+							Integer.parseInt(txtCantidad341.getText())),
+					ITEM_MA_34, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_35), Integer.parseInt(txtCantidad350.getText()),
 					Integer.parseInt(txtCantidad351.getText()), txtObs35.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad350.getText()),
-							Integer.parseInt(txtCantidad351.getText()))));
+							Integer.parseInt(txtCantidad351.getText())),
+					ITEM_MA_35, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_36), Integer.parseInt(txtCantidad360.getText()),
 					Integer.parseInt(txtCantidad361.getText()), txtObs36.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad360.getText()),
-							Integer.parseInt(txtCantidad361.getText()))));
+							Integer.parseInt(txtCantidad361.getText())),
+					ITEM_MA_36, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_37), Integer.parseInt(txtCantidad370.getText()),
 					Integer.parseInt(txtCantidad371.getText()), txtObs37.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad370.getText()),
-							Integer.parseInt(txtCantidad371.getText()))));
+							Integer.parseInt(txtCantidad371.getText())),
+					ITEM_MA_37, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_38), Integer.parseInt(txtCantidad380.getText()),
 					Integer.parseInt(txtCantidad381.getText()), txtObs38.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad380.getText()),
-							Integer.parseInt(txtCantidad381.getText()))));
+							Integer.parseInt(txtCantidad381.getText())),
+					ITEM_MA_38, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_MA_39), Integer.parseInt(txtCantidad390.getText()),
 					Integer.parseInt(txtCantidad391.getText()), txtObs39.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad390.getText()),
-							Integer.parseInt(txtCantidad391.getText()))));
+							Integer.parseInt(txtCantidad391.getText())),
+					ITEM_MA_39, "UNIDAD"));
 
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
