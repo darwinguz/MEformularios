@@ -435,7 +435,7 @@ public class Menu extends JFrame {
 		btnBañosAd1.setBounds(186, 312, 64, 78);
 		btnBañosAd1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new BsTemplate(servicioFicha.buscarFormulario("BS2-1")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS2-1")).setVisible(true);
 				dispose();
 
 			}
@@ -449,7 +449,7 @@ public class Menu extends JFrame {
 		btnBañosAd2.setBounds(938, 314, 64, 76);
 		btnBañosAd2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new BsTemplate(servicioFicha.buscarFormulario("BS2-2")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS2-2")).setVisible(true);
 				dispose();
 
 			}
@@ -506,7 +506,7 @@ public class Menu extends JFrame {
 		btnBS1bañosNiñ1.setBounds(291, 136, 35, 40);
 		btnBS1bañosNiñ1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new BsTemplate(servicioFicha.buscarFormulario("BS1-1")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS1-1")).setVisible(true);
 				dispose();
 
 			}
@@ -520,7 +520,7 @@ public class Menu extends JFrame {
 		btnBS1bañosNiñ2.setBounds(326, 136, 37, 40);
 		btnBS1bañosNiñ2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new BsTemplate(servicioFicha.buscarFormulario("BS1-2")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS1-2")).setVisible(true);
 				dispose();
 
 			}
@@ -534,7 +534,7 @@ public class Menu extends JFrame {
 		btnBS1bañosNiñ3.setBounds(449, 136, 37, 40);
 		btnBS1bañosNiñ3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new BsTemplate(servicioFicha.buscarFormulario("BS1-3")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS1-3")).setVisible(true);
 				dispose();
 
 			}
@@ -548,7 +548,7 @@ public class Menu extends JFrame {
 		btnBS1bañosNiñ4.setBounds(486, 136, 35, 40);
 		btnBS1bañosNiñ4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new BsTemplate(servicioFicha.buscarFormulario("BS1-4")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS1-4")).setVisible(true);
 				dispose();
 
 			}
@@ -613,7 +613,7 @@ public class Menu extends JFrame {
 		btnBS3bañosAdo1.setBounds(579, 202, 62, 36);
 		btnBS3bañosAdo1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new BsTemplate(servicioFicha.buscarFormulario("BS3-1")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS3-1")).setVisible(true);
 				dispose();
 
 			}
@@ -627,7 +627,7 @@ public class Menu extends JFrame {
 		btnBS3bañosAdo2.setBounds(579, 242, 62, 36);
 		btnBS3bañosAdo2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new BsTemplate(servicioFicha.buscarFormulario("BS3-2")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS3-2")).setVisible(true);
 				dispose();
 
 			}
