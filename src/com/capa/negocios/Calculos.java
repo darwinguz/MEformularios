@@ -19,20 +19,24 @@ public class Calculos {
 		return bigDecimal;
 	}
 
-	public static double calcularEjecutado(FichaA ficha) throws ArithmeticException {
+	public static double calcularEjecutado(FichaA ficha) {
 		ServicioFicha servicioFicha = new ComponenteFicha();
 		List<TdetalleFicha> listaDetalles;
 		TFicha objetoFicha;
 		String nombreModulo = ficha.name();
 		double valorEjecutado = 0.0, relacion = 0.0;
-		int sumaCantidadLimite = 0, sumaCantidadEjecutada = 0;
+		double sumaCantidadLimite = 0.0, sumaCantidadEjecutada = 0.0;
 		for (int i = 1; i < ficha.getCantidadTotal(); i++) {
 			try {
+				sumaCantidadLimite = 0.0;
+				sumaCantidadEjecutada = 0.0;
 				objetoFicha = servicioFicha.buscarFormulario(nombreModulo + "-" + i);
 				listaDetalles = servicioFicha.detallesFicha(gettCabecera(), objetoFicha);
 				for (TdetalleFicha detalle : listaDetalles) {
 					sumaCantidadLimite += detalle.getDetCantidadLimite();
 					sumaCantidadEjecutada += detalle.getDetCantidadEjecutada();
+					// System.out.println("Cantidad ejecutada: " +
+					// sumaCantidadEjecutada);
 				}
 				if (nombreModulo.equals("EX")) {
 					for (int k = 15; k <= 21; k++) {
@@ -52,6 +56,10 @@ public class Calculos {
 
 			relacion = sumaCantidadEjecutada / sumaCantidadLimite;
 			valorEjecutado += relacion;
+			System.out.println("Relacion " + relacion);
+			System.out.println("Cantidad ejecutada " + sumaCantidadEjecutada);
+			System.out.println("Cantidad limite " + sumaCantidadLimite);
+			System.out.println("Valor ejecutado " + valorEjecutado);
 		}
 		return valorEjecutado;
 	}
@@ -61,11 +69,8 @@ public class Calculos {
 		double constCalculo = ficha.getConstanteCalculo();
 		int cantidadTotal = ficha.getCantidadTotal();
 		int sumaTotal = ficha.getSumaCantidadTotal();
-		calculoPonderado = ((cantidadTotal * constCalculo) / sumaTotal) * 100;
+		calculoPonderado = ((cantidadTotal * constCalculo) / sumaTotal);
 		calculoPonderado = redondearDecimales(calculoPonderado, 2);
 		return calculoPonderado;
 	}
-
-	// falta métodos para calcular avance total de ejecutadas a la fecha y % de
-	// avance
 }

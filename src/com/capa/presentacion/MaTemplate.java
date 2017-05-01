@@ -1594,9 +1594,9 @@ public class MaTemplate extends JFrame {
 						} else {
 							System.out.println("Ingrese los datos correctamente");
 						}
+						new Menu().setVisible(true);
+						dispose();
 					}
-					new Menu().setVisible(true);
-					dispose();
 				} else {
 					JOptionPane.showMessageDialog(null, "Ingresar Información Obligatoria");
 				}
@@ -1620,7 +1620,9 @@ public class MaTemplate extends JFrame {
 
 		if (updateFicha == -1) {
 			updateFicha = 0;
+			System.out.println("Ingreso if" + updateFicha);
 		} else {
+			System.out.println("Ingreso else" + updateFicha);
 			updateFicha++;
 		}
 
@@ -1635,6 +1637,7 @@ public class MaTemplate extends JFrame {
 		TGrupo grupo7 = srvFicha.buscarGrupo("Interior");
 		TGrupo grupo8 = srvFicha.buscarGrupo("Cubierta");
 		TGrupo grupo9 = srvFicha.buscarGrupo("Componente estructural");
+		System.out.println("Antes de obtener detalles" + updateFicha);
 
 		try {
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha, quitarEtiquetasHTML(LBL_MA_0),

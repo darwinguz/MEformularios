@@ -676,7 +676,7 @@ public class Menu extends JFrame {
 		JButton btnHS1 = new JButton("<html><body><p align=\"center\">SHS kit<br>Hidrosa</body></html>");
 		btnHS1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new HsTemplate(servicioFicha.buscarFormulario("HS-1")).setVisible(true);
+				new HsTemplate(servicioFicha.buscarFormulario("SHS-1")).setVisible(true);
 				dispose();
 			}
 		});
