@@ -187,6 +187,7 @@ public class Utilitarios {
 		String nuevaConstante = constante.replaceAll("<html><body><p align='right'>", "");
 		nuevaConstante = nuevaConstante.replaceAll("</p></body></html>", "");
 		nuevaConstante = nuevaConstante.replaceAll("<html><body><p align=right>", "");
+		nuevaConstante = nuevaConstante.replaceAll("<br>", "");
 		return nuevaConstante;
 	}
 

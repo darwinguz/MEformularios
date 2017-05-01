@@ -673,7 +673,7 @@ public class Menu extends JFrame {
 		btnEXkitElec.setBounds(668, 176, 62, 36);
 		contentPane.add(btnEXkitElec);
 
-		JButton btnHS1 = new JButton("<html><body><p align=\"center\">HL kit<br>Hidrosa</body></html>");
+		JButton btnHS1 = new JButton("<html><body><p align=\"center\">SHS kit<br>Hidrosa</body></html>");
 		btnHS1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new HsTemplate(servicioFicha.buscarFormulario("HS-1")).setVisible(true);

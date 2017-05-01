@@ -248,25 +248,25 @@ public class MmTemplate extends JFrame {
 		pnlKitElectrico.add(pnlEtiquetas00);
 		pnlEtiquetas00.setLayout(new GridLayout(4, 1, 0, 0));
 
-		JLabel lblKitCableElctrico = new JLabel("Kit cable eléctrico  ");
+		JLabel lblKitCableElctrico = new JLabel(LBL_MM_0);
 		lblKitCableElctrico.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblKitCableElctrico.setFont(new Font("Arial", Font.PLAIN, 11));
 		pnlEtiquetas00.add(lblKitCableElctrico);
 
-		JLabel lblInterruptor = new JLabel("Interruptor  ");
+		JLabel lblToma = new JLabel(LBL_MM_1);
+		lblToma.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblToma.setFont(new Font("Arial", Font.PLAIN, 11));
+		pnlEtiquetas00.add(lblToma);
+
+		JLabel lblInterruptor = new JLabel(LBL_MM_2);
 		lblInterruptor.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblInterruptor.setFont(new Font("Arial", Font.PLAIN, 11));
 		pnlEtiquetas00.add(lblInterruptor);
 
-		JLabel lblTomacorrientes = new JLabel("Tomacorrientes  ");
-		lblTomacorrientes.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblTomacorrientes.setFont(new Font("Arial", Font.PLAIN, 11));
-		pnlEtiquetas00.add(lblTomacorrientes);
-
-		JLabel lblLuminariasLed = new JLabel("Luminarias LED 60 w - 5000 lum  ");
-		lblLuminariasLed.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLuminariasLed.setFont(new Font("Arial", Font.PLAIN, 11));
-		pnlEtiquetas00.add(lblLuminariasLed);
+		JLabel lblCable = new JLabel(LBL_MM_3);
+		lblCable.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblCable.setFont(new Font("Arial", Font.PLAIN, 11));
+		pnlEtiquetas00.add(lblCable);
 
 		JPanel pnlCantidadidad00 = new JPanel();
 		pnlCantidadidad00.setBounds(195, 14, 50, 80);
@@ -348,11 +348,11 @@ public class MmTemplate extends JFrame {
 		lblKitElctrico.setBounds(0, 0, 191, 14);
 		pnlKitElectrico.add(lblKitElctrico);
 
-		JLabel label_24 = new JLabel("Cantidadidad");
-		label_24.setHorizontalAlignment(SwingConstants.LEFT);
-		label_24.setFont(new Font("Arial", Font.BOLD, 11));
-		label_24.setBounds(195, 0, 60, 14);
-		pnlKitElectrico.add(label_24);
+		JLabel lblCantidad = new JLabel("Cantidad");
+		lblCantidad.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCantidad.setFont(new Font("Arial", Font.BOLD, 11));
+		lblCantidad.setBounds(195, 0, 60, 14);
+		pnlKitElectrico.add(lblCantidad);
 
 		JLabel label_25 = new JLabel("Observación/Referencia");
 		label_25.setHorizontalAlignment(SwingConstants.LEFT);
@@ -402,11 +402,11 @@ public class MmTemplate extends JFrame {
 		txtObs4.setColumns(10);
 		panel_3.add(txtObs4);
 
-		JLabel label_8 = new JLabel("Cantidadidad");
-		label_8.setHorizontalAlignment(SwingConstants.LEFT);
-		label_8.setFont(new Font("Arial", Font.BOLD, 11));
-		label_8.setBounds(195, 0, 60, 14);
-		panel.add(label_8);
+		JLabel lblCantidad_1 = new JLabel("Cantidad");
+		lblCantidad_1.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCantidad_1.setFont(new Font("Arial", Font.BOLD, 11));
+		lblCantidad_1.setBounds(195, 0, 60, 14);
+		panel.add(lblCantidad_1);
 
 		JLabel label_17 = new JLabel("Observación/Referencia");
 		label_17.setHorizontalAlignment(SwingConstants.LEFT);
@@ -462,11 +462,11 @@ public class MmTemplate extends JFrame {
 		txtObs5.setColumns(10);
 		panel_7.add(txtObs5);
 
-		JLabel label_1 = new JLabel("Cantidadidad");
-		label_1.setHorizontalAlignment(SwingConstants.LEFT);
-		label_1.setFont(new Font("Arial", Font.BOLD, 11));
-		label_1.setBounds(195, 0, 60, 14);
-		panel_4.add(label_1);
+		JLabel lblCantidad_2 = new JLabel("Cantidad");
+		lblCantidad_2.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCantidad_2.setFont(new Font("Arial", Font.BOLD, 11));
+		lblCantidad_2.setBounds(195, 0, 60, 14);
+		panel_4.add(lblCantidad_2);
 
 		JLabel label_2 = new JLabel("Observación/Referencia");
 		label_2.setHorizontalAlignment(SwingConstants.LEFT);
@@ -654,11 +654,11 @@ public class MmTemplate extends JFrame {
 		txtObs10.setColumns(10);
 		panel_20.add(txtObs10);
 
-		JLabel label_26 = new JLabel("Cantidadidad");
-		label_26.setHorizontalAlignment(SwingConstants.LEFT);
-		label_26.setFont(new Font("Arial", Font.BOLD, 11));
-		label_26.setBounds(195, 0, 60, 14);
-		panel_17.add(label_26);
+		JLabel lblCantidad_3 = new JLabel("Cantidad");
+		lblCantidad_3.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCantidad_3.setFont(new Font("Arial", Font.BOLD, 11));
+		lblCantidad_3.setBounds(195, 0, 60, 14);
+		panel_17.add(lblCantidad_3);
 
 		JLabel label_27 = new JLabel("Observación/Referencia");
 		label_27.setHorizontalAlignment(SwingConstants.LEFT);
@@ -706,7 +706,7 @@ public class MmTemplate extends JFrame {
 
 		txtCantidad120 = new JTextField();
 		txtCantidad120.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad120.setText("3");
+		txtCantidad120.setText("2");
 		txtCantidad120.setEditable(false);
 		txtCantidad120.setColumns(10);
 		panel_22.add(txtCantidad120);
@@ -735,11 +735,11 @@ public class MmTemplate extends JFrame {
 		panel_79.setBounds(434, 11, 414, 96);
 		panelLab1.add(panel_79);
 
-		JLabel label_21 = new JLabel("Cantidadidad");
-		label_21.setHorizontalAlignment(SwingConstants.LEFT);
-		label_21.setFont(new Font("Arial", Font.BOLD, 11));
-		label_21.setBounds(195, 0, 60, 14);
-		panel_79.add(label_21);
+		JLabel lblCantidad_4 = new JLabel("Cantidad");
+		lblCantidad_4.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCantidad_4.setFont(new Font("Arial", Font.BOLD, 11));
+		lblCantidad_4.setBounds(195, 0, 60, 14);
+		panel_79.add(lblCantidad_4);
 
 		JLabel label_28 = new JLabel("Observación/Referencia");
 		label_28.setHorizontalAlignment(SwingConstants.LEFT);
@@ -871,11 +871,11 @@ public class MmTemplate extends JFrame {
 		txtObs15.setColumns(10);
 		panel_33.add(txtObs15);
 
-		JLabel label_7 = new JLabel("Cantidadidad");
-		label_7.setHorizontalAlignment(SwingConstants.LEFT);
-		label_7.setFont(new Font("Arial", Font.BOLD, 11));
-		label_7.setBounds(195, 0, 60, 14);
-		panel_30.add(label_7);
+		JLabel lblCantidad_5 = new JLabel("Cantidad");
+		lblCantidad_5.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCantidad_5.setFont(new Font("Arial", Font.BOLD, 11));
+		lblCantidad_5.setBounds(195, 0, 60, 14);
+		panel_30.add(lblCantidad_5);
 
 		JLabel label_30 = new JLabel("Observación/Referencia");
 		label_30.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1183,11 +1183,11 @@ public class MmTemplate extends JFrame {
 		txtObs24.setColumns(10);
 		panel_27.add(txtObs24);
 
-		JLabel label_73 = new JLabel("Cantidadidad");
-		label_73.setHorizontalAlignment(SwingConstants.LEFT);
-		label_73.setFont(new Font("Arial", Font.BOLD, 11));
-		label_73.setBounds(195, 0, 60, 14);
-		panel_24.add(label_73);
+		JLabel lblCantidad_6 = new JLabel("Cantidad");
+		lblCantidad_6.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCantidad_6.setFont(new Font("Arial", Font.BOLD, 11));
+		lblCantidad_6.setBounds(195, 0, 60, 14);
+		panel_24.add(lblCantidad_6);
 
 		JLabel label_76 = new JLabel("Observación/Referencia");
 		label_76.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1245,11 +1245,11 @@ public class MmTemplate extends JFrame {
 		panel_49.setBounds(854, 11, 414, 131);
 		panelLab1.add(panel_49);
 
-		JLabel label_35 = new JLabel("Cantidadidad");
-		label_35.setHorizontalAlignment(SwingConstants.LEFT);
-		label_35.setFont(new Font("Arial", Font.BOLD, 11));
-		label_35.setBounds(195, 0, 60, 14);
-		panel_49.add(label_35);
+		JLabel lblCantidad_7 = new JLabel("Cantidad");
+		lblCantidad_7.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCantidad_7.setFont(new Font("Arial", Font.BOLD, 11));
+		lblCantidad_7.setBounds(195, 0, 60, 14);
+		panel_49.add(lblCantidad_7);
 
 		JLabel label_37 = new JLabel("Observación/Referencia");
 		label_37.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1340,7 +1340,7 @@ public class MmTemplate extends JFrame {
 		panel_57.add(txtCantidad281);
 
 		txtCantidad290 = new JTextField();
-		txtCantidad290.setText("17");
+		txtCantidad290.setText("177");
 		txtCantidad290.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad290.setEditable(false);
 		txtCantidad290.setColumns(10);
@@ -1493,11 +1493,11 @@ public class MmTemplate extends JFrame {
 		txtObs34.setColumns(10);
 		panel_53.add(txtObs34);
 
-		JLabel label_15 = new JLabel("Cantidadidad");
-		label_15.setHorizontalAlignment(SwingConstants.LEFT);
-		label_15.setFont(new Font("Arial", Font.BOLD, 11));
-		label_15.setBounds(195, 0, 50, 14);
-		panel_50.add(label_15);
+		JLabel lblCantidad_8 = new JLabel("Cantidad");
+		lblCantidad_8.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCantidad_8.setFont(new Font("Arial", Font.BOLD, 11));
+		lblCantidad_8.setBounds(195, 0, 50, 14);
+		panel_50.add(lblCantidad_8);
 
 		JLabel label_20 = new JLabel("Observación/Referencia");
 		label_20.setHorizontalAlignment(SwingConstants.LEFT);
@@ -1655,11 +1655,11 @@ public class MmTemplate extends JFrame {
 		txtObs38.setColumns(10);
 		panel_64.add(txtObs38);
 
-		JLabel label_47 = new JLabel("Cantidadidad");
-		label_47.setHorizontalAlignment(SwingConstants.LEFT);
-		label_47.setFont(new Font("Arial", Font.BOLD, 11));
-		label_47.setBounds(195, 0, 60, 14);
-		panel_61.add(label_47);
+		JLabel lblCantidad_9 = new JLabel("Cantidad");
+		lblCantidad_9.setHorizontalAlignment(SwingConstants.LEFT);
+		lblCantidad_9.setFont(new Font("Arial", Font.BOLD, 11));
+		lblCantidad_9.setBounds(195, 0, 60, 14);
+		panel_61.add(lblCantidad_9);
 
 		JLabel label_48 = new JLabel("Observación/Referencia");
 		label_48.setHorizontalAlignment(SwingConstants.LEFT);
