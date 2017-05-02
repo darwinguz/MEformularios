@@ -398,6 +398,8 @@ public class FichaD extends JFrame {
 		contentPane.add(panel_2);
 
 		JPinformacionObligatoria jpIObligatoria = new JPinformacionObligatoria(165, 280);
+		jpIObligatoria.getBtnInsertarFoto().setText("Insertar foto bloque");
+		jpIObligatoria.getBtnInsertarFoto().setBounds(166, 175, 157, 23);
 		jpIObligatoria.getBtnInsertarFoto().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				jpIObligatoria.setPathFotoIO(Utilitarios.getPathImagen());

@@ -312,7 +312,7 @@ public class MaTemplate extends JFrame {
 		txtCantidad31 = new JTextField();
 		txtCantidad31.setColumns(10);
 		pnlTECantidad.add(txtCantidad31);
-		Validaciones.validarDigitos(txtCantidad01);
+		Validaciones.validarDigitos(txtCantidad31);
 
 		txtCantidad40 = new JTextField();
 		txtCantidad40.setEditable(false);
@@ -1429,66 +1429,79 @@ public class MaTemplate extends JFrame {
 		txtCantidad271.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad271.setColumns(10);
 		panel.add(txtCantidad271);
+		Validaciones.validarDigitos(txtCantidad271);
 
 		txtCantidad281 = new JTextField();
 		txtCantidad281.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad281.setColumns(10);
 		panel.add(txtCantidad281);
+		Validaciones.validarDigitos(txtCantidad281);
 
 		txtCantidad291 = new JTextField();
 		txtCantidad291.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad291.setColumns(10);
 		panel.add(txtCantidad291);
+		Validaciones.validarDigitos(txtCantidad291);
 
 		txtCantidad301 = new JTextField();
 		txtCantidad301.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad301.setColumns(10);
 		panel.add(txtCantidad301);
+		Validaciones.validarDigitos(txtCantidad301);
 
 		txtCantidad311 = new JTextField();
 		txtCantidad311.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad311.setColumns(10);
 		panel.add(txtCantidad311);
+		Validaciones.validarDigitos(txtCantidad311);
 
 		txtCantidad321 = new JTextField();
 		txtCantidad321.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad321.setColumns(10);
 		panel.add(txtCantidad321);
+		Validaciones.validarDigitos(txtCantidad321);
 
 		txtCantidad331 = new JTextField();
 		txtCantidad331.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad331.setColumns(10);
 		panel.add(txtCantidad331);
+		Validaciones.validarDigitos(txtCantidad331);
 
 		txtCantidad341 = new JTextField();
 		txtCantidad341.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad341.setColumns(10);
 		panel.add(txtCantidad341);
+		Validaciones.validarDigitos(txtCantidad341);
 
 		txtCantidad351 = new JTextField();
 		txtCantidad351.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad351.setColumns(10);
 		panel.add(txtCantidad351);
+		Validaciones.validarDigitos(txtCantidad351);
 
 		txtCantidad361 = new JTextField();
 		txtCantidad361.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad361.setColumns(10);
 		panel.add(txtCantidad361);
+		Validaciones.validarDigitos(txtCantidad361);
 
 		txtCantidad371 = new JTextField();
 		txtCantidad371.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad371.setColumns(10);
 		panel.add(txtCantidad371);
+		Validaciones.validarDigitos(txtCantidad371);
 
 		txtCantidad381 = new JTextField();
 		txtCantidad381.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad381.setColumns(10);
 		panel.add(txtCantidad381);
+		Validaciones.validarDigitos(txtCantidad381);
 
 		txtCantidad391 = new JTextField();
 		txtCantidad391.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad391.setColumns(10);
 		panel.add(txtCantidad391);
+		Validaciones.validarDigitos(txtCantidad391);
 
 		JPcabecera cabecera = new JPcabecera();
 		contentPane.add(cabecera.getCabecera());
