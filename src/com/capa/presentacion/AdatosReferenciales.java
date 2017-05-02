@@ -26,8 +26,10 @@ import com.capa.datos.TLugarGeografico;
 import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteLGeografico;
 import com.capa.negocios.ServicioCabecera;
+import com.capa.presentacion.AlInicio;
 import com.capa.util.Utilitarios;
 import com.toedter.calendar.JDateChooser;
+import javax.swing.DefaultComboBoxModel;
 
 public class AdatosReferenciales extends JFrame {
 
@@ -41,7 +43,6 @@ public class AdatosReferenciales extends JFrame {
 	private JTextField txtProyecto;
 	private JTextField txtAmei;
 	private JTextField txtCircuito;
-	private JTextField txtSector;
 	private JDateChooser dateEntregaPredioFecha;
 	private JDateChooser dateInicioTrabajoFecha;
 	private JDateChooser dateElabInformeFecha;
@@ -166,11 +167,6 @@ public class AdatosReferenciales extends JFrame {
 		panelPrincipal.add(txtCircuito);
 		txtCircuito.setColumns(10);
 
-		txtSector = new JTextField();
-		txtSector.setBounds(506, 210, 180, 20);
-		panelPrincipal.add(txtSector);
-		txtSector.setColumns(10);
-
 		dateEntregaPredioFecha = new JDateChooser();
 		dateEntregaPredioFecha.setBounds(37, 280, 180, 20);
 		dateEntregaPredioFecha.setDateFormatString("yyyy-MM-dd");
@@ -232,6 +228,10 @@ public class AdatosReferenciales extends JFrame {
 		cbxDistrito.setBounds(37, 210, 180, 20);
 		cbxDistrito.addItem(new String("Seleccionar"));
 		panelPrincipal.add(cbxDistrito);
+		JComboBox<String> cbxSector = new JComboBox<String>();
+		cbxSector.setModel(new DefaultComboBoxModel(new String[] { "Urbano", "Rural" }));
+		cbxSector.setBounds(538, 210, 125, 20);
+		panelPrincipal.add(cbxSector);
 
 		// rrellenarComboDistrito();
 
@@ -297,7 +297,7 @@ public class AdatosReferenciales extends JFrame {
 				TLugarGeografico parroquia = (TLugarGeografico) cbxParroquia.getSelectedItem();
 				String distrito = String.valueOf(cbxDistrito.getSelectedItem());
 				String circuito = txtCircuito.getText();
-				String sector = txtSector.getText();
+				String sector = (String) cbxSector.getSelectedItem();
 				Date fechaEntrega = dateEntregaPredioFecha.getDate();
 				Date fechaInicio = dateInicioTrabajoFecha.getDate();
 				Date fechaFin = dateElabInformeFecha.getDate();
@@ -347,5 +347,4 @@ public class AdatosReferenciales extends JFrame {
 	public List<TLugarGeografico> provincias() {
 		return new ComponenteLGeografico().buscarProvincia();
 	}
-
 }
