@@ -70,6 +70,7 @@ public class AdatosReferenciales extends JFrame {
 		});
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public AdatosReferenciales(AlInicio alInicio) {
 		this.alInicio = alInicio;
 
@@ -233,7 +234,6 @@ public class AdatosReferenciales extends JFrame {
 		cbxSector.setBounds(538, 210, 125, 20);
 		panelPrincipal.add(cbxSector);
 
-		// rrellenarComboDistrito();
 
 		Iterator<String> it = Utilitarios.mapDistritos().keySet().iterator();
 
