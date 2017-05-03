@@ -1,4 +1,4 @@
-package com.capa.presentacion;
+package com.capa.util;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -27,7 +27,7 @@ import com.capa.datos.TLugarGeografico;
 import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteLGeografico;
 import com.capa.negocios.ServicioCabecera;
-import com.capa.util.Utilitarios;
+import com.capa.presentacion.AlInicio;
 import com.toedter.calendar.JDateChooser;
 
 public class AdatosReferenciales extends JFrame {
