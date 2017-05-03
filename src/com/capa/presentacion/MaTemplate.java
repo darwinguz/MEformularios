@@ -1567,34 +1567,37 @@ public class MaTemplate extends JFrame {
 							emailCliente.setVisible(true);
 							emailCliente.setLocationRelativeTo(null);
 
-							String de = emailCliente.getTxtUser().getText();
-							String clave = emailCliente.getPwdUser().getSelectedText();
-							String para = emailCliente.getTxtPara().getText();
-							String asunto = emailCliente.getTxtAsunto().getText();
-							String contenidoSMS = emailCliente.getTxtContenidoSMS().getText();
-
 							emailCliente.getBtnAddArchivo().addActionListener(new ActionListener() {
 								public void actionPerformed(ActionEvent e) {
 									setPathFormularioPDF(Utilitarios.getPathImagen());
 								}
 							});
 
-							try {
-								partBodyContenido.setText(contenidoSMS);
-								partBodyAdjunto
-										.setDataHandler(new DataHandler(new FileDataSource(getPathFormularioPDF())));
-								// partBodyAdjunto.setDataHandler(new
-								// DataHandler(new
-								// FileDataSource("‪C:/Users/FREDDY/Desktop/test.pdf")));
-								// partBodyAdjunto.setFileName("test.pdf");
-
-								multiParte.addBodyPart(partBodyContenido);
-								multiParte.addBodyPart(partBodyAdjunto);
-							} catch (MessagingException e1) {
-								e1.printStackTrace();
-							}
 							emailCliente.getBtnEnviar().addActionListener(new ActionListener() {
 								public void actionPerformed(ActionEvent e) {
+									String de = emailCliente.getTxtUser().getText();
+									String clave = emailCliente.getPwdUser().getSelectedText();
+									String para = emailCliente.getTxtPara().getText();
+									String asunto = emailCliente.getTxtAsunto().getText();
+									String contenidoSMS = emailCliente.getTxtContenidoSMS().getText();
+
+									System.err.println(de + "" + para + "" + asunto);
+
+									try {
+										partBodyContenido.setText(contenidoSMS);
+										partBodyAdjunto.setDataHandler(
+												new DataHandler(new FileDataSource(getPathFormularioPDF())));
+										// partBodyAdjunto.setDataHandler(new
+										// DataHandler(new
+										// FileDataSource("‪C:/Users/FREDDY/Desktop/test.pdf")));
+										// partBodyAdjunto.setFileName("test.pdf");
+
+										multiParte.addBodyPart(partBodyContenido);
+										multiParte.addBodyPart(partBodyAdjunto);
+									} catch (MessagingException e1) {
+										e1.printStackTrace();
+									}
+
 									boolean resultado = emailServer.enviarCorreo(de, clave, para, multiParte, asunto);
 									if (resultado) {
 										System.out.println("Exito!");
@@ -1604,6 +1607,7 @@ public class MaTemplate extends JFrame {
 
 								}
 							});
+
 						} else {
 							System.out.println("Ingrese los datos correctamente");
 						}

@@ -1,8 +1,59 @@
 package com.capa.presentacion;
 
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
-import static com.capa.util.Constantes.*;
-import static com.capa.util.Utilitarios.*;
+import static com.capa.util.Constantes.ITEM_EX_0;
+import static com.capa.util.Constantes.ITEM_EX_1;
+import static com.capa.util.Constantes.ITEM_EX_10;
+import static com.capa.util.Constantes.ITEM_EX_11;
+import static com.capa.util.Constantes.ITEM_EX_12;
+import static com.capa.util.Constantes.ITEM_EX_13;
+import static com.capa.util.Constantes.ITEM_EX_14;
+import static com.capa.util.Constantes.ITEM_EX_2;
+import static com.capa.util.Constantes.ITEM_EX_22;
+import static com.capa.util.Constantes.ITEM_EX_23;
+import static com.capa.util.Constantes.ITEM_EX_24;
+import static com.capa.util.Constantes.ITEM_EX_25;
+import static com.capa.util.Constantes.ITEM_EX_26;
+import static com.capa.util.Constantes.ITEM_EX_27;
+import static com.capa.util.Constantes.ITEM_EX_28;
+import static com.capa.util.Constantes.ITEM_EX_29;
+import static com.capa.util.Constantes.ITEM_EX_3;
+import static com.capa.util.Constantes.ITEM_EX_30;
+import static com.capa.util.Constantes.ITEM_EX_4;
+import static com.capa.util.Constantes.ITEM_EX_5;
+import static com.capa.util.Constantes.ITEM_EX_6;
+import static com.capa.util.Constantes.ITEM_EX_7;
+import static com.capa.util.Constantes.ITEM_EX_8;
+import static com.capa.util.Constantes.ITEM_EX_9;
+import static com.capa.util.Constantes.LBL_EX_0;
+import static com.capa.util.Constantes.LBL_EX_1;
+import static com.capa.util.Constantes.LBL_EX_10;
+import static com.capa.util.Constantes.LBL_EX_11;
+import static com.capa.util.Constantes.LBL_EX_12;
+import static com.capa.util.Constantes.LBL_EX_13;
+import static com.capa.util.Constantes.LBL_EX_14;
+import static com.capa.util.Constantes.LBL_EX_2;
+import static com.capa.util.Constantes.LBL_EX_22;
+import static com.capa.util.Constantes.LBL_EX_23;
+import static com.capa.util.Constantes.LBL_EX_24;
+import static com.capa.util.Constantes.LBL_EX_25;
+import static com.capa.util.Constantes.LBL_EX_26;
+import static com.capa.util.Constantes.LBL_EX_27;
+import static com.capa.util.Constantes.LBL_EX_28;
+import static com.capa.util.Constantes.LBL_EX_29;
+import static com.capa.util.Constantes.LBL_EX_3;
+import static com.capa.util.Constantes.LBL_EX_30;
+import static com.capa.util.Constantes.LBL_EX_4;
+import static com.capa.util.Constantes.LBL_EX_5;
+import static com.capa.util.Constantes.LBL_EX_6;
+import static com.capa.util.Constantes.LBL_EX_7;
+import static com.capa.util.Constantes.LBL_EX_8;
+import static com.capa.util.Constantes.LBL_EX_9;
+import static com.capa.util.Utilitarios.cargarInfoObligatoria;
+import static com.capa.util.Utilitarios.getPathImagen;
+import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Utilitarios.llenarCabecera;
+import static com.capa.util.Utilitarios.quitarEtiquetasHTML;
 import static com.capa.util.Validaciones.validarDigitos;
 import static com.capa.util.Validaciones.validarInfo;
 
@@ -105,41 +156,6 @@ public class ExTemplate extends JFrame {
 	private JTextField txtObs14;
 	private JLabel lblEDCantidad;
 	private JLabel lblEDObsRef;
-	private JPanel pnlAE;
-	private JPanel pnlAEEtiquetas;
-	private JLabel lblDadosCimentacionAXA;
-	private JLabel lblLuminariasLed;
-	private JLabel lblPostesSimples;
-	private JLabel lblPostesDobles;
-	private JLabel lblAECajasConexion;
-	private JLabel lblAEKitCableadoElectrico;
-	private JLabel lblAETuberaPvc;
-	private JLabel lblAEKitAlumbradoExterior;
-	private JPanel pnlAECantidad;
-	private JTextField txtCantidad150;
-	private JTextField txtCantidad151;
-	private JTextField txtCantidad160;
-	private JTextField txtCantidad161;
-	private JTextField txtCantidad170;
-	private JTextField txtCantidad171;
-	private JTextField txtCantidad180;
-	private JTextField txtCantidad181;
-	private JTextField txtCantidad190;
-	private JTextField txtCantidad191;
-	private JTextField txtCantidad200;
-	private JTextField txtCantidad201;
-	private JTextField txtCantidad210;
-	private JTextField txtCantidad211;
-	private JPanel pnlAEObsRef;
-	private JTextField txtObs15;
-	private JTextField txtObs16;
-	private JTextField txtObs17;
-	private JTextField txtObs18;
-	private JTextField txtObs19;
-	private JTextField txtObs20;
-	private JTextField txtObs21;
-	private JLabel lblAECantidad;
-	private JLabel lblAEObsRef;
 	private JPanel pnlT;
 	private JPanel pnlTEtiquetas;
 	private JLabel lblTKitCableadoTR;
@@ -600,184 +616,10 @@ public class ExTemplate extends JFrame {
 		lblEDObsRef.setBounds(267, 1, 143, 14);
 		pnlED.add(lblEDObsRef);
 
-		pnlAE = new JPanel();
-		pnlAE.setLayout(null);
-		pnlAE.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlAE.setBounds(434, 11, 414, 190);
-		pnlPestaña1.add(pnlAE);
-
-		pnlAEEtiquetas = new JPanel();
-		pnlAEEtiquetas.setBounds(3, 17, 199, 169);
-		pnlAE.add(pnlAEEtiquetas);
-		pnlAEEtiquetas.setLayout(new GridLayout(7, 0, 0, 0));
-
-		lblDadosCimentacionAXA = new JLabel(LBL_EX_15);
-		pnlAEEtiquetas.add(lblDadosCimentacionAXA);
-
-		lblLuminariasLed = new JLabel(LBL_EX_16);
-		pnlAEEtiquetas.add(lblLuminariasLed);
-
-		lblPostesSimples = new JLabel(LBL_EX_17);
-		pnlAEEtiquetas.add(lblPostesSimples);
-
-		lblPostesDobles = new JLabel(LBL_EX_18);
-		pnlAEEtiquetas.add(lblPostesDobles);
-
-		lblAECajasConexion = new JLabel(LBL_EX_19);
-		pnlAEEtiquetas.add(lblAECajasConexion);
-
-		lblAEKitCableadoElectrico = new JLabel(LBL_EX_20);
-		pnlAEEtiquetas.add(lblAEKitCableadoElectrico);
-
-		lblAETuberaPvc = new JLabel(LBL_EX_21);
-		pnlAEEtiquetas.add(lblAETuberaPvc);
-
-		lblAEKitAlumbradoExterior = new JLabel("KIT ALUMBRADO EXTERIOR");
-		lblAEKitAlumbradoExterior.setFont(new Font("Tahoma", Font.BOLD, 11));
-		lblAEKitAlumbradoExterior.setBounds(3, 1, 176, 14);
-		pnlAE.add(lblAEKitAlumbradoExterior);
-
-		pnlAECantidad = new JPanel();
-		pnlAECantidad.setBounds(210, 17, 55, 169);
-		pnlAE.add(pnlAECantidad);
-		pnlAECantidad.setLayout(new GridLayout(7, 2, 0, 0));
-
-		txtCantidad150 = new JTextField();
-		txtCantidad150.setText("10");
-		txtCantidad150.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad150.setEditable(false);
-		txtCantidad150.setColumns(10);
-		pnlAECantidad.add(txtCantidad150);
-
-		txtCantidad151 = new JTextField();
-		txtCantidad151.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad151.setColumns(10);
-		pnlAECantidad.add(txtCantidad151);
-		validarDigitos(txtCantidad151);
-
-		txtCantidad160 = new JTextField();
-		txtCantidad160.setText("18");
-		txtCantidad160.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad160.setEditable(false);
-		txtCantidad160.setColumns(10);
-		pnlAECantidad.add(txtCantidad160);
-
-		txtCantidad161 = new JTextField();
-		txtCantidad161.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad161.setColumns(10);
-		pnlAECantidad.add(txtCantidad161);
-		validarDigitos(txtCantidad161);
-
-		txtCantidad170 = new JTextField();
-		txtCantidad170.setText("2");
-		txtCantidad170.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad170.setEditable(false);
-		txtCantidad170.setColumns(10);
-		pnlAECantidad.add(txtCantidad170);
-
-		txtCantidad171 = new JTextField();
-		txtCantidad171.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad171.setColumns(10);
-		pnlAECantidad.add(txtCantidad171);
-		validarDigitos(txtCantidad171);
-
-		txtCantidad180 = new JTextField();
-		txtCantidad180.setText("8");
-		txtCantidad180.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad180.setEditable(false);
-		txtCantidad180.setColumns(10);
-		pnlAECantidad.add(txtCantidad180);
-
-		txtCantidad181 = new JTextField();
-		txtCantidad181.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad181.setColumns(10);
-		pnlAECantidad.add(txtCantidad181);
-		validarDigitos(txtCantidad181);
-
-		txtCantidad190 = new JTextField();
-		txtCantidad190.setText("18");
-		txtCantidad190.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad190.setEditable(false);
-		txtCantidad190.setColumns(10);
-		pnlAECantidad.add(txtCantidad190);
-
-		txtCantidad191 = new JTextField();
-		txtCantidad191.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad191.setColumns(10);
-		pnlAECantidad.add(txtCantidad191);
-		validarDigitos(txtCantidad191);
-
-		txtCantidad200 = new JTextField();
-		txtCantidad200.setText("1");
-		txtCantidad200.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad200.setEditable(false);
-		txtCantidad200.setColumns(10);
-		pnlAECantidad.add(txtCantidad200);
-
-		txtCantidad201 = new JTextField();
-		txtCantidad201.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad201.setColumns(10);
-		pnlAECantidad.add(txtCantidad201);
-		validarDigitos(txtCantidad201);
-
-		txtCantidad210 = new JTextField();
-		txtCantidad210.setText("66");
-		txtCantidad210.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad210.setEditable(false);
-		txtCantidad210.setColumns(10);
-		pnlAECantidad.add(txtCantidad210);
-
-		txtCantidad211 = new JTextField();
-		txtCantidad211.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad211.setColumns(10);
-		pnlAECantidad.add(txtCantidad211);
-		validarDigitos(txtCantidad211);
-
-		pnlAEObsRef = new JPanel();
-		pnlAEObsRef.setBounds(267, 17, 143, 169);
-		pnlAE.add(pnlAEObsRef);
-		pnlAEObsRef.setLayout(new GridLayout(7, 0, 0, 0));
-
-		txtObs15 = new JTextField();
-		txtObs15.setColumns(10);
-		pnlAEObsRef.add(txtObs15);
-
-		txtObs16 = new JTextField();
-		txtObs16.setColumns(10);
-		pnlAEObsRef.add(txtObs16);
-
-		txtObs17 = new JTextField();
-		txtObs17.setColumns(10);
-		pnlAEObsRef.add(txtObs17);
-
-		txtObs18 = new JTextField();
-		txtObs18.setColumns(10);
-		pnlAEObsRef.add(txtObs18);
-
-		txtObs19 = new JTextField();
-		txtObs19.setColumns(10);
-		pnlAEObsRef.add(txtObs19);
-
-		txtObs20 = new JTextField();
-		txtObs20.setColumns(10);
-		pnlAEObsRef.add(txtObs20);
-
-		txtObs21 = new JTextField();
-		txtObs21.setColumns(10);
-		pnlAEObsRef.add(txtObs21);
-
-		lblAECantidad = new JLabel("Cantidad");
-		lblAECantidad.setBounds(210, 1, 55, 14);
-		pnlAE.add(lblAECantidad);
-
-		lblAEObsRef = new JLabel("Observaci\u00F3n/Referencia");
-		lblAEObsRef.setBounds(267, 1, 143, 14);
-		pnlAE.add(lblAEObsRef);
-
 		pnlBA = new JPanel();
 		pnlBA.setLayout(null);
 		pnlBA.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlBA.setBounds(434, 212, 414, 95);
+		pnlBA.setBounds(434, 11, 414, 95);
 		pnlPestaña1.add(pnlBA);
 
 		pnlBAEtiquetas = new JPanel();
@@ -871,7 +713,7 @@ public class ExTemplate extends JFrame {
 		pnlT = new JPanel();
 		pnlT.setLayout(null);
 		pnlT.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlT.setBounds(858, 11, 414, 141);
+		pnlT.setBounds(434, 186, 414, 141);
 		pnlPestaña1.add(pnlT);
 
 		pnlTEtiquetas = new JPanel();
@@ -1005,7 +847,7 @@ public class ExTemplate extends JFrame {
 		pnlSMT = new JPanel();
 		pnlSMT.setLayout(null);
 		pnlSMT.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlSMT.setBounds(858, 154, 414, 47);
+		pnlSMT.setBounds(434, 398, 414, 47);
 		pnlPestaña1.add(pnlSMT);
 
 		pnlSMTEtiquetas = new JPanel();
@@ -1206,41 +1048,6 @@ public class ExTemplate extends JFrame {
 				txtObs14.getText(), updateFicha, porcentajeAvance, ITEM_EX_14, "UNIDAD"));
 
 		grupoTmp = servFicha.buscarGrupo("Kit alumbrado exterior");
-		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad150.getText()),
-				Double.parseDouble(txtCantidad151.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_EX_15),
-				Integer.parseInt(txtCantidad150.getText()), Integer.parseInt(txtCantidad151.getText()),
-				txtObs15.getText(), updateFicha, porcentajeAvance, ITEM_EX_15, "UNIDAD"));
-		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad160.getText()),
-				Double.parseDouble(txtCantidad161.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_EX_16),
-				Integer.parseInt(txtCantidad160.getText()), Integer.parseInt(txtCantidad161.getText()),
-				txtObs16.getText(), updateFicha, porcentajeAvance, ITEM_EX_16, "UNIDAD"));
-		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad170.getText()),
-				Double.parseDouble(txtCantidad171.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_EX_17),
-				Integer.parseInt(txtCantidad170.getText()), Integer.parseInt(txtCantidad171.getText()),
-				txtObs17.getText(), updateFicha, porcentajeAvance, ITEM_EX_17, "UNIDAD"));
-		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad180.getText()),
-				Double.parseDouble(txtCantidad181.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_EX_18),
-				Integer.parseInt(txtCantidad180.getText()), Integer.parseInt(txtCantidad181.getText()),
-				txtObs18.getText(), updateFicha, porcentajeAvance, ITEM_EX_18, "UNIDAD"));
-		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad190.getText()),
-				Double.parseDouble(txtCantidad191.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_EX_19),
-				Integer.parseInt(txtCantidad190.getText()), Integer.parseInt(txtCantidad191.getText()),
-				txtObs19.getText(), updateFicha, porcentajeAvance, ITEM_EX_19, "UNIDAD"));
-		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad200.getText()),
-				Double.parseDouble(txtCantidad201.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_EX_20),
-				Integer.parseInt(txtCantidad200.getText()), Integer.parseInt(txtCantidad201.getText()),
-				txtObs20.getText(), updateFicha, porcentajeAvance, ITEM_EX_20, "UNIDAD"));
-		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad210.getText()),
-				Double.parseDouble(txtCantidad211.getText()));
-		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_EX_21),
-				Integer.parseInt(txtCantidad210.getText()), Integer.parseInt(txtCantidad211.getText()),
-				txtObs21.getText(), updateFicha, porcentajeAvance, ITEM_EX_21, "UNIDAD"));
 
 		grupoTmp = servFicha.buscarGrupo("Kit bomba de agua");
 		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad220.getText()),
@@ -1314,13 +1121,6 @@ public class ExTemplate extends JFrame {
 			txtCantidad121.setText(String.valueOf(listaDetalles.get(12).getDetCantidadEjecutada()));
 			txtCantidad131.setText(String.valueOf(listaDetalles.get(13).getDetCantidadEjecutada()));
 			txtCantidad141.setText(String.valueOf(listaDetalles.get(14).getDetCantidadEjecutada()));
-			txtCantidad151.setText(String.valueOf(listaDetalles.get(15).getDetCantidadEjecutada()));
-			txtCantidad161.setText(String.valueOf(listaDetalles.get(16).getDetCantidadEjecutada()));
-			txtCantidad171.setText(String.valueOf(listaDetalles.get(17).getDetCantidadEjecutada()));
-			txtCantidad181.setText(String.valueOf(listaDetalles.get(18).getDetCantidadEjecutada()));
-			txtCantidad191.setText(String.valueOf(listaDetalles.get(19).getDetCantidadEjecutada()));
-			txtCantidad201.setText(String.valueOf(listaDetalles.get(20).getDetCantidadEjecutada()));
-			txtCantidad211.setText(String.valueOf(listaDetalles.get(21).getDetCantidadEjecutada()));
 			txtCantidad221.setText(String.valueOf(listaDetalles.get(22).getDetCantidadEjecutada()));
 			txtCantidad231.setText(String.valueOf(listaDetalles.get(23).getDetCantidadEjecutada()));
 			txtCantidad241.setText(String.valueOf(listaDetalles.get(24).getDetCantidadEjecutada()));
@@ -1346,13 +1146,6 @@ public class ExTemplate extends JFrame {
 			txtObs12.setText(listaDetalles.get(12).getDetObsRef());
 			txtObs13.setText(listaDetalles.get(13).getDetObsRef());
 			txtObs14.setText(listaDetalles.get(14).getDetObsRef());
-			txtObs15.setText(listaDetalles.get(15).getDetObsRef());
-			txtObs16.setText(listaDetalles.get(16).getDetObsRef());
-			txtObs17.setText(listaDetalles.get(17).getDetObsRef());
-			txtObs18.setText(listaDetalles.get(18).getDetObsRef());
-			txtObs19.setText(listaDetalles.get(19).getDetObsRef());
-			txtObs20.setText(listaDetalles.get(20).getDetObsRef());
-			txtObs21.setText(listaDetalles.get(21).getDetObsRef());
 			txtObs22.setText(listaDetalles.get(22).getDetObsRef());
 			txtObs23.setText(listaDetalles.get(23).getDetObsRef());
 			txtObs24.setText(listaDetalles.get(24).getDetObsRef());
@@ -1378,13 +1171,6 @@ public class ExTemplate extends JFrame {
 			txtCantidad121.setText(String.valueOf(0));
 			txtCantidad131.setText(String.valueOf(0));
 			txtCantidad141.setText(String.valueOf(0));
-			txtCantidad151.setText(String.valueOf(0));
-			txtCantidad161.setText(String.valueOf(0));
-			txtCantidad171.setText(String.valueOf(0));
-			txtCantidad181.setText(String.valueOf(0));
-			txtCantidad191.setText(String.valueOf(0));
-			txtCantidad201.setText(String.valueOf(0));
-			txtCantidad211.setText(String.valueOf(0));
 			txtCantidad221.setText(String.valueOf(0));
 			txtCantidad231.setText(String.valueOf(0));
 			txtCantidad241.setText(String.valueOf(0));
@@ -1410,13 +1196,6 @@ public class ExTemplate extends JFrame {
 			txtObs12.setText("");
 			txtObs13.setText("");
 			txtObs14.setText("");
-			txtObs15.setText("");
-			txtObs16.setText("");
-			txtObs17.setText("");
-			txtObs18.setText("");
-			txtObs19.setText("");
-			txtObs20.setText("");
-			txtObs21.setText("");
 			txtObs22.setText("");
 			txtObs23.setText("");
 			txtObs24.setText("");
