@@ -1,4 +1,4 @@
-package com.capa.presentacion;
+package com.capa.util;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -18,6 +18,20 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ServicioFicha;
+import com.capa.presentacion.AlInicio;
+import com.capa.presentacion.Bs2Template;
+import com.capa.presentacion.CeTemplate;
+import com.capa.presentacion.ExTemplate;
+import com.capa.presentacion.HsTemplate;
+import com.capa.presentacion.MaTemplate;
+import com.capa.presentacion.MbTemplate;
+import com.capa.presentacion.MdTemplate;
+import com.capa.presentacion.MexTemplate;
+import com.capa.presentacion.MmTemplate;
+import com.capa.presentacion.MsTemplate;
+import com.capa.presentacion.MtTemplate;
+import com.capa.presentacion.PGTemplate;
+import com.capa.presentacion.WFTemplate;
 
 public class Menu extends JFrame {
 
@@ -57,22 +71,20 @@ public class Menu extends JFrame {
 				dispose();
 			}
 		});
-
+		
 		JButton btnAEkit = new JButton("<html><body><p align=\"center\">AE KIT<br>Alumbrado<br>Exterior</body></html>");
 		btnAEkit.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnAEkit.setBackground(new Color(50, 205, 50));
 		btnAEkit.setBounds(729, 245, 62, 36);
 		contentPane.add(btnAEkit);
-
-		JButton btnBS1_4 = new JButton(
-				"<html><body><p align=\"center\">BS1<br>Bateria<br>Sanitaria<br>EGB-BCH-4</body></html>");
+		
+		JButton btnBS1_4 = new JButton("<html><body><p align=\"center\">BS1<br>Bateria<br>Sanitaria<br>EGB-BCH-4</body></html>");
 		btnBS1_4.setFont(new Font("Tahoma", Font.BOLD, 6));
 		btnBS1_4.setBackground(new Color(250, 128, 114));
 		btnBS1_4.setBounds(938, 312, 64, 40);
 		contentPane.add(btnBS1_4);
-
-		JButton btnBS1_3 = new JButton(
-				"<html><body><p align=\"center\">BS1<br>Bateria<br>Sanitaria<br>EGB-BCH-3</body></html>");
+		
+		JButton btnBS1_3 = new JButton("<html><body><p align=\"center\">BS1<br>Bateria<br>Sanitaria<br>EGB-BCH-3</body></html>");
 		btnBS1_3.setFont(new Font("Tahoma", Font.BOLD, 6));
 		btnBS1_3.setBackground(new Color(250, 128, 114));
 		btnBS1_3.setBounds(186, 312, 64, 40);
@@ -449,8 +461,7 @@ public class Menu extends JFrame {
 		btnAula30.setBounds(1068, 535, 69, 72);
 		contentPane.add(btnAula30);
 
-		JButton btnBS2_1 = new JButton(
-				"<html><body><p align=\"center\">BS2<br>Bateria<br>Sanitaria<br>EGB-BCH-1</body></html>");
+		JButton btnBS2_1 = new JButton("<html><body><p align=\"center\">BS2<br>Bateria<br>Sanitaria<br>EGB-BCH-1</body></html>");
 		btnBS2_1.setFont(new Font("Tahoma", Font.BOLD, 6));
 		btnBS2_1.setBackground(new Color(240, 230, 140));
 		btnBS2_1.setBounds(186, 350, 64, 40);
@@ -464,8 +475,7 @@ public class Menu extends JFrame {
 
 		contentPane.add(btnBS2_1);
 
-		JButton btnBS2_2 = new JButton(
-				"<html><body><p align=\"center\">BS2<br>Bateria<br>Sanitaria<br>EGB-BCH-2</body></html>");
+		JButton btnBS2_2 = new JButton("<html><body><p align=\"center\">BS2<br>Bateria<br>Sanitaria<br>EGB-BCH-2</body></html>");
 		btnBS2_2.setFont(new Font("Tahoma", Font.BOLD, 6));
 		btnBS2_2.setBackground(new Color(240, 230, 140));
 		btnBS2_2.setBounds(938, 350, 64, 40);
@@ -521,7 +531,8 @@ public class Menu extends JFrame {
 		btnMBbiblio1.setBounds(819, 209, 64, 72);
 		contentPane.add(btnMBbiblio1);
 
-		JButton btnBS3_1 = new JButton("<html><body><p align=\"center\">BS3<br>baños<br>EI-1</body></html>");
+		JButton btnBS3_1 = new JButton(
+				"<html><body><p align=\"center\">BS3<br>baños<br>EI-1</body></html>");
 		btnBS3_1.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnBS3_1.setBackground(new Color(199, 21, 133));
 		btnBS3_1.setBounds(291, 136, 69, 40);
@@ -534,7 +545,8 @@ public class Menu extends JFrame {
 		});
 		contentPane.add(btnBS3_1);
 
-		JButton btnBS3_2 = new JButton("<html><body><p align=\"center\">BS3<br>baños<br>EI-2</body></html>");
+		JButton btnBS3_2 = new JButton(
+				"<html><body><p align=\"center\">BS3<br>baños<br>EI-2</body></html>");
 		btnBS3_2.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnBS3_2.setBackground(new Color(199, 21, 133));
 		btnBS3_2.setBounds(449, 136, 72, 40);
