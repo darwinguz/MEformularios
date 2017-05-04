@@ -3276,6 +3276,7 @@ public class MdTemplate extends JFrame {
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
 				infor.setIoFotoPath(fotoInfoObl);
+				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
@@ -3317,9 +3318,9 @@ public class MdTemplate extends JFrame {
 
 		BigDecimal porcentajeAvance;
 
-		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-
-		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
+		// ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+		//
+		// infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
 		TGrupo grupoTmp = servFicha.buscarGrupo("Kit eléctrico");
 		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);

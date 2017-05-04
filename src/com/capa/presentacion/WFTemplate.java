@@ -623,6 +623,7 @@ public class WFTemplate extends JFrame {
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
 				infor.setIoFotoPath(fotoInfoObl);
+				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
@@ -666,8 +667,8 @@ public class WFTemplate extends JFrame {
 	public List<TdetalleFicha> cargarListas() {
 		List<TdetalleFicha> listaDetalles = new LinkedList<>();
 
-		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
+		// ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+		// infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
 		BigDecimal porcentajeAvance;
 

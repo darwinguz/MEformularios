@@ -1075,6 +1075,7 @@ public class ExTemplate extends JFrame {
 
 				infor = cargarInfoObligatoria(infoObligatoria);
 				infor.setIoFotoPath(fotoInfoObl);
+				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
@@ -1115,8 +1116,8 @@ public class ExTemplate extends JFrame {
 	public List<TdetalleFicha> cargarListas() {
 		List<TdetalleFicha> listaDetalles = new LinkedList<>();
 
-		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
+		// ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+		// infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
 		BigDecimal porcentajeAvance;
 		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
