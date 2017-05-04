@@ -18,6 +18,21 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ServicioFicha;
+import com.capa.presentacion.AeTemplate;
+import com.capa.presentacion.AlInicio;
+import com.capa.presentacion.Bs2Template;
+import com.capa.presentacion.CeTemplate;
+import com.capa.presentacion.ExTemplate;
+import com.capa.presentacion.HsTemplate;
+import com.capa.presentacion.MaTemplate;
+import com.capa.presentacion.MbTemplate;
+import com.capa.presentacion.MdTemplate;
+import com.capa.presentacion.MexTemplate;
+import com.capa.presentacion.MmTemplate;
+import com.capa.presentacion.MsTemplate;
+import com.capa.presentacion.MtTemplate;
+import com.capa.presentacion.PGTemplate;
+import com.capa.presentacion.WFTemplate;
 
 public class Menu extends JFrame {
 
@@ -59,6 +74,12 @@ public class Menu extends JFrame {
 		});
 
 		JButton btnAEkit = new JButton("<html><body><p align=\"center\">AE KIT<br>Alumbrado<br>Exterior</body></html>");
+		btnAEkit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new AeTemplate(servicioFicha.buscarFormulario("AE")).setVisible(true);
+				dispose();
+			}
+		});
 		btnAEkit.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnAEkit.setBackground(new Color(50, 205, 50));
 		btnAEkit.setBounds(729, 245, 62, 36);

@@ -336,6 +336,7 @@ public class AeTemplate extends JFrame {
 					}
 					if (Validaciones.registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
+						infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 						servFicha.guardarFormulario(detallesFicha);
 						HashMap<String, Object> parametros = new HashMap<String, Object>();
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
@@ -365,8 +366,8 @@ public class AeTemplate extends JFrame {
 	public List<TdetalleFicha> cargarListas() {
 		List<TdetalleFicha> listaDetalles = new LinkedList<>();
 
-		ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-		infor.setIoSerial(srvInfoObl.serialInfoOblMax());
+		// ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
+		// infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
 		BigDecimal porcentajeAvance;
 		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);

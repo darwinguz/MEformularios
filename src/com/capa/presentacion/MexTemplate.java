@@ -832,7 +832,6 @@ public class MexTemplate extends JFrame {
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
 				infor.setIoFotoPath(fotoInfoObl);
-				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
@@ -844,6 +843,7 @@ public class MexTemplate extends JFrame {
 					}
 					if (registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
+						infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 						servFicha.guardarFormulario(cargarListas());
 						HashMap<String, Object> parametros = new HashMap<String, Object>();
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());

@@ -917,7 +917,7 @@ public class ExTemplate extends JFrame {
 
 				infor = cargarInfoObligatoria(infoObligatoria);
 				infor.setIoFotoPath(fotoInfoObl);
-				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
+				// infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
@@ -929,6 +929,8 @@ public class ExTemplate extends JFrame {
 					}
 					if (Validaciones.registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
+						// infor.setIoFotoPath(fotoInfoObl);
+						infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 						servFicha.guardarFormulario(detallesFicha);
 						HashMap<String, Object> parametros = new HashMap<String, Object>();
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());

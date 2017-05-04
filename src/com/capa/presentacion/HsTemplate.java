@@ -1524,7 +1524,7 @@ public class HsTemplate extends JFrame {
 
 				if (validarInfo(infoObl)) {
 					ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
-					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
+//					infoObl.setIoSerial(srvInfoObl.serialInfoOblMax());
 					List<TdetalleFicha> detallesFicha = getListaGrupos(infoObl);
 
 					if (detallesFicha == null) {

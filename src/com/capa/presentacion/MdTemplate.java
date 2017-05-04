@@ -3276,7 +3276,6 @@ public class MdTemplate extends JFrame {
 				ServicioInfoObligatoria srvInfoOblig = new ComponenteInfoObligatoria();
 				infor = cargarInfoObligatoria(informacionObligatoriaV);
 				infor.setIoFotoPath(fotoInfoObl);
-				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
@@ -3288,7 +3287,6 @@ public class MdTemplate extends JFrame {
 					}
 					if (registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
-						infor.setIoFotoPath(fotoInfoObl);
 						infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 						servFicha.guardarFormulario(detallesFicha);
 						HashMap<String, Object> parametros = new HashMap<String, Object>();

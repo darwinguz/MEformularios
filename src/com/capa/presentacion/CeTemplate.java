@@ -316,7 +316,7 @@ public class CeTemplate extends JFrame {
 
 				infor = cargarInfoObligatoria(infoObligatoria);
 				infor.setIoFotoPath(fotoInfoObl);
-				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
+				// infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 				if (validarInfo(infor)) {
 					List<TdetalleFicha> detallesFicha = cargarListas();
 					if (detallesFicha == null) {
@@ -327,7 +327,6 @@ public class CeTemplate extends JFrame {
 					}
 					if (Validaciones.registrosValidados(detallesFicha)) {
 						srvInfoOblig.crear(infor);
-						infor.setIoFotoPath(fotoInfoObl);
 						infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 						servFicha.guardarFormulario(cargarListas());
 						HashMap<String, Object> parametros = new HashMap<String, Object>();
