@@ -413,11 +413,11 @@ public class FichaD extends JFrame {
 
 				infoObl = cargarInfoObligatoria(jpIObligatoria);
 				// srvIObligatoria.crear(infoObl);
-				infoObl.setIoSerial(srvIObligatoria.serialInfoOblMax());
 
 				if (validarInfo(infoObl)) {
 
 					srvIObligatoria.crear(infoObl);
+					infoObl.setIoSerial(srvIObligatoria.serialInfoOblMax());
 					for (TFichaD it1 : getListasD()) {
 						it1.settInformacionObl(infoObl);
 					}

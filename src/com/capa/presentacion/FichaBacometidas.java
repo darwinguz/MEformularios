@@ -549,9 +549,10 @@ public class FichaBacometidas extends JFrame {
 
 				infor = cargarInfoObligatoria(jPinfoOblig);
 				infor.setIoFotoPath(fotoInfoObl);
-				infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
+
 				if (validarInfo(infor)) {
 					srvInfoOblig.crear(infor);
+					infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
 					servFicha.guardarFichaB(cargarFicha());
 					HashMap<String, Object> parametros = new HashMap<String, Object>();
 					parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
