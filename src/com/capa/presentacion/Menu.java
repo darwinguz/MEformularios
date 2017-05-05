@@ -87,6 +87,12 @@ public class Menu extends JFrame {
 
 		JButton btnBS1_4 = new JButton(
 				"<html><body><p align=\"center\">BS1<br>Bateria<br>Sanitaria<br>EGB-BCH-4</body></html>");
+		btnBS1_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new Bs2Template(servicioFicha.buscarFormulario("BS1-4")).setVisible(true);
+				dispose();
+			}
+		});
 		btnBS1_4.setFont(new Font("Tahoma", Font.BOLD, 6));
 		btnBS1_4.setBackground(new Color(250, 128, 114));
 		btnBS1_4.setBounds(938, 312, 64, 40);
@@ -94,6 +100,12 @@ public class Menu extends JFrame {
 
 		JButton btnBS1_3 = new JButton(
 				"<html><body><p align=\"center\">BS1<br>Bateria<br>Sanitaria<br>EGB-BCH-3</body></html>");
+		btnBS1_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new Bs2Template(servicioFicha.buscarFormulario("BS1-3")).setVisible(true);
+				dispose();
+			}
+		});
 		btnBS1_3.setFont(new Font("Tahoma", Font.BOLD, 6));
 		btnBS1_3.setBackground(new Color(250, 128, 114));
 		btnBS1_3.setBounds(186, 312, 64, 40);
@@ -548,7 +560,7 @@ public class Menu extends JFrame {
 		btnBS3_1.setBounds(291, 136, 69, 40);
 		btnBS3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS1-1")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS3-1")).setVisible(true);
 				dispose();
 
 			}
@@ -561,7 +573,7 @@ public class Menu extends JFrame {
 		btnBS3_2.setBounds(449, 136, 72, 40);
 		btnBS3_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS1-3")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS3-2")).setVisible(true);
 				dispose();
 
 			}
@@ -626,7 +638,7 @@ public class Menu extends JFrame {
 		btnBS1_1.setBounds(579, 202, 62, 36);
 		btnBS1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS3-1")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS1-1")).setVisible(true);
 				dispose();
 
 			}
@@ -640,7 +652,7 @@ public class Menu extends JFrame {
 		btnBS1_2.setBounds(579, 242, 62, 36);
 		btnBS1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS3-2")).setVisible(true);
+				new Bs2Template(servicioFicha.buscarFormulario("BS1-2")).setVisible(true);
 				dispose();
 
 			}
