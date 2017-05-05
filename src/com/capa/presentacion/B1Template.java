@@ -46,7 +46,7 @@ import com.capa.negocios.ServicioInfoObligatoria;
 import com.capa.util.Utilitarios;
 import com.capa.util.Validaciones;
 
-public class Bs2Template extends JFrame {
+public class B1Template extends JFrame {
 
 	private static final long serialVersionUID = -2700930880133355576L;
 
@@ -454,7 +454,7 @@ public class Bs2Template extends JFrame {
 		});
 	}
 
-	public Bs2Template(TFicha ficha) {
+	public B1Template(TFicha ficha) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1318, 740);
 		contentPane = new JPanel();
