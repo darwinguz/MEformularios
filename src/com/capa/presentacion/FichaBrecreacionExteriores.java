@@ -272,7 +272,7 @@ public class FichaBrecreacionExteriores extends JFrame {
 
 				infor = cargarInfoObligatoria(infoObligatoria);
 				infor.setIoFotoPath(fotoInfoObl);
-				
+
 				if (validarInfo(infor)) {
 					srvInfoOblig.crear(infor);
 					infor.setIoSerial(srvInfoOblig.serialInfoOblMax());
@@ -281,7 +281,7 @@ public class FichaBrecreacionExteriores extends JFrame {
 					parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
 					parametros.put("serial_ficha", ficha.getFiSerial());
 
-					Reporte reporte = new Reporte("Reporte Recreación exterior", 280, 10, 850, 750);
+					Reporte reporte = new Reporte("Reporte Recreación Exterior", 280, 10, 850, 750);
 					InputStream path = AlInicio.class
 							.getResourceAsStream("/com/capa/templates/BateriasSanitarias.jasper");
 					reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());

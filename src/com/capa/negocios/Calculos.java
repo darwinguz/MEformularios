@@ -26,7 +26,7 @@ public class Calculos {
 		String nombreModulo = ficha.name();
 		double valorEjecutado = 0.0, relacion = 0.0;
 		double sumaCantidadLimite = 0.0, sumaCantidadEjecutada = 0.0;
-		for (int i = 1; i < ficha.getCantidadTotal(); i++) {
+		for (int i = 1; i <= ficha.getCantidadTotal(); i++) {
 			try {
 				sumaCantidadLimite = 0.0;
 				sumaCantidadEjecutada = 0.0;
@@ -56,6 +56,7 @@ public class Calculos {
 
 			relacion = sumaCantidadEjecutada / sumaCantidadLimite;
 			valorEjecutado += relacion;
+			System.out.println("Ficha " + objetoFicha.getFiNombre());
 			System.out.println("Relacion " + relacion);
 			System.out.println("Cantidad ejecutada " + sumaCantidadEjecutada);
 			System.out.println("Cantidad limite " + sumaCantidadLimite);
@@ -71,6 +72,9 @@ public class Calculos {
 		int sumaTotal = ficha.getSumaCantidadTotal();
 		calculoPonderado = ((cantidadTotal * constCalculo) / sumaTotal);
 		calculoPonderado = redondearDecimales(calculoPonderado, 2);
+		if (ficha.name().equals("MD")) {
+			calculoPonderado = 2 * calculoPonderado;
+		}
 		return calculoPonderado;
 	}
 }

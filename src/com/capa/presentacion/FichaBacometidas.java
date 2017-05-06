@@ -557,7 +557,7 @@ public class FichaBacometidas extends JFrame {
 					HashMap<String, Object> parametros = new HashMap<String, Object>();
 					parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
 					parametros.put("serial_ficha", ficha.getFiSerial());
-					Reporte reporte = new Reporte("Reporte Baterías Sanitarias", 280, 10, 850, 750);
+					Reporte reporte = new Reporte("Reporte Acometidas", 280, 10, 850, 750);
 					InputStream path = AlInicio.class
 							.getResourceAsStream("/com/capa/templates/BateriasSanitarias.jasper");
 					reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());

@@ -42,9 +42,9 @@ public class FichaATemplate {
 		double ejecutadoBS3 = calcularEjecutado(FichaA.BS3);
 		double ejecutadoMEX = calcularEjecutado(FichaA.MEX);
 		double ejecutadoPG = calcularEjecutado(FichaA.PG);
-		double ejecutadoMC = calcularEjecutado(FichaA.MC);
+		double ejecutadoMC = calcularEjecutado(FichaA.CE);
 		double ejecutadoEX = calcularEjecutado(FichaA.EX);
-		double ejecutadoHS = calcularEjecutado(FichaA.HS);
+		double ejecutadoHS = calcularEjecutado(FichaA.SHS);
 		double ejecutadoAE = calcularEjecutado(FichaA.AE);
 		double ejecutadoWF = calcularEjecutado(FichaA.WF);
 
@@ -59,9 +59,9 @@ public class FichaATemplate {
 		double ponderadoBS3 = calcularPonderado(FichaA.BS3);
 		double ponderadoMEX = calcularPonderado(FichaA.MEX);
 		double ponderadoPG = calcularPonderado(FichaA.PG);
-		double ponderadoMC = calcularPonderado(FichaA.MC);
+		double ponderadoMC = calcularPonderado(FichaA.CE);
 		double ponderadoEX = calcularPonderado(FichaA.EX);
-		double ponderadoHS = calcularPonderado(FichaA.HS);
+		double ponderadoHS = calcularPonderado(FichaA.SHS);
 		double ponderadoAE = calcularPonderado(FichaA.AE);
 		double ponderadoWF = calcularPonderado(FichaA.WF);
 
@@ -72,13 +72,16 @@ public class FichaATemplate {
 		double avanceMB = (ejecutadoMB * ponderadoMB) / FichaA.MB.getCantidadTotal();
 		double avanceMD = (ejecutadoMD * ponderadoMD) / FichaA.MD.getCantidadTotal();
 		double avanceBS1 = (ejecutadoBS1 * ponderadoBS1) / FichaA.BS1.getCantidadTotal();
+		// BigDecimal avanceBigBS1 = BigDecimal.valueOf((ejecutadoBS1 *
+		// ponderadoBS1) / FichaA.BS1.getCantidadTotal());
+		// double avanceBS1 = avanceBigBS1.doubleValue();
 		double avanceBS2 = (ejecutadoBS2 * ponderadoBS2) / FichaA.BS2.getCantidadTotal();
 		double avanceBS3 = (ejecutadoBS3 * ponderadoBS3) / FichaA.BS3.getCantidadTotal();
 		double avanceMEX = (ejecutadoMEX * ponderadoMEX) / FichaA.MEX.getCantidadTotal();
 		double avancePG = (ejecutadoPG * ponderadoPG) / FichaA.PG.getCantidadTotal();
-		double avanceMC = (ejecutadoMC * ponderadoMC) / FichaA.MC.getCantidadTotal();
+		double avanceMC = (ejecutadoMC * ponderadoMC) / FichaA.CE.getCantidadTotal();
 		double avanceEX = (ejecutadoEX * ponderadoEX) / FichaA.EX.getCantidadTotal();
-		double avanceHS = (ejecutadoHS * ponderadoHS) / FichaA.HS.getCantidadTotal();
+		double avanceHS = (ejecutadoHS * ponderadoHS) / FichaA.SHS.getCantidadTotal();
 		double avanceAE = (ejecutadoAE * ponderadoAE) / FichaA.AE.getCantidadTotal();
 		double avanceWF = (ejecutadoWF * ponderadoWF) / FichaA.WF.getCantidadTotal();
 
@@ -104,12 +107,12 @@ public class FichaATemplate {
 				FichaA.MEX.getCantidadTotal(), ponderadoMEX, ejecutadoMEX, avanceMEX, ""));
 		listaA.add(new TFichaA(gettCabecera().getCSerial(), FichaA.PG.name(), FichaA.PG.getDescripcion(), "UNIDAD",
 				FichaA.PG.getCantidadTotal(), ponderadoPG, ejecutadoPG, avancePG, ""));
-		listaA.add(new TFichaA(gettCabecera().getCSerial(), FichaA.MC.name(), FichaA.MC.getDescripcion(), "UNIDAD",
-				FichaA.MC.getCantidadTotal(), ponderadoMC, ejecutadoMC, avanceMC, ""));
+		listaA.add(new TFichaA(gettCabecera().getCSerial(), FichaA.CE.name(), FichaA.CE.getDescripcion(), "UNIDAD",
+				FichaA.CE.getCantidadTotal(), ponderadoMC, ejecutadoMC, avanceMC, ""));
 		listaA.add(new TFichaA(gettCabecera().getCSerial(), FichaA.EX.name(), FichaA.EX.getDescripcion(), "UNIDAD",
 				FichaA.EX.getCantidadTotal(), ponderadoEX, ejecutadoEX, avanceEX, ""));
-		listaA.add(new TFichaA(gettCabecera().getCSerial(), FichaA.HS.name(), FichaA.HS.getDescripcion(), "UNIDAD",
-				FichaA.HS.getCantidadTotal(), ponderadoHS, ejecutadoHS, avanceHS, ""));
+		listaA.add(new TFichaA(gettCabecera().getCSerial(), FichaA.SHS.name(), FichaA.SHS.getDescripcion(), "UNIDAD",
+				FichaA.SHS.getCantidadTotal(), ponderadoHS, ejecutadoHS, avanceHS, ""));
 		listaA.add(new TFichaA(gettCabecera().getCSerial(), FichaA.AE.name(), FichaA.AE.getDescripcion(), "UNIDAD",
 				FichaA.AE.getCantidadTotal(), ponderadoAE, ejecutadoAE, avanceAE, ""));
 		listaA.add(new TFichaA(gettCabecera().getCSerial(), FichaA.WF.name(), FichaA.WF.getDescripcion(), "UNIDAD",
