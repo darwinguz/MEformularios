@@ -80,6 +80,17 @@ public class Menu extends JFrame {
 				dispose();
 			}
 		});
+
+		JButton btnSalir = new JButton("SALIR");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new AlInicio().setVisible(true);
+				dispose();
+			}
+		});
+		btnSalir.setBackground(Color.RED);
+		btnSalir.setBounds(965, 611, 92, 36);
+		contentPane.add(btnSalir);
 		btnAEkit.setFont(new Font("Tahoma", Font.BOLD, 8));
 		btnAEkit.setBackground(new Color(50, 205, 50));
 		btnAEkit.setBounds(729, 245, 62, 36);
