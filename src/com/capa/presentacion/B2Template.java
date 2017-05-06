@@ -22,6 +22,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.GridLayout;
+import javax.swing.JTextField;
 
 public class B2Template extends JFrame {
 
@@ -34,6 +35,21 @@ public class B2Template extends JFrame {
 	public ServicioCabecera srvCabecera = new ComponenteCabecera();
 	
 	private TFicha ficha;
+	private JTextField txtCantidad00;
+	private JTextField txtCantidad01;
+	private JTextField txtCantidad10;
+	private JTextField txtCantidad11;
+	private JTextField txtCantidad20;
+	private JTextField txtCantidad41;
+	private JTextField txtCantidad21;
+	private JTextField txtCantidad30;
+	private JTextField txtCantidad31;
+	private JTextField txtCantidad40;
+	private JTextField txtObs0;
+	private JTextField txtObs1;
+	private JTextField txtObs2;
+	private JTextField txtObs3;
+	private JTextField txtObs4;
 
 
 	/**
@@ -112,11 +128,11 @@ public class B2Template extends JFrame {
 		pnlPestaña2.add(panel_5);
 		panel_5.setLayout(null);
 		
-		JLabel label_12 = new JLabel("KIT ELÉCTRICO");
-		label_12.setHorizontalAlignment(SwingConstants.CENTER);
-		label_12.setFont(new Font("Arial", Font.BOLD, 10));
-		label_12.setBounds(10, 11, 167, 14);
-		panel_5.add(label_12);
+		JLabel lblComponenteArquitectnico = new JLabel("COMPONENTE ARQUITECTÓNICO");
+		lblComponenteArquitectnico.setHorizontalAlignment(SwingConstants.CENTER);
+		lblComponenteArquitectnico.setFont(new Font("Arial", Font.BOLD, 10));
+		lblComponenteArquitectnico.setBounds(10, 11, 167, 14);
+		panel_5.add(lblComponenteArquitectnico);
 		
 		JLabel label_13 = new JLabel("Cantidad");
 		label_13.setHorizontalAlignment(SwingConstants.CENTER);
@@ -135,11 +151,11 @@ public class B2Template extends JFrame {
 		pnlPestaña2.add(panel_6);
 		panel_6.setLayout(null);
 		
-		JLabel label = new JLabel("KIT ELÉCTRICO");
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("Arial", Font.BOLD, 10));
-		label.setBounds(10, 11, 167, 14);
-		panel_6.add(label);
+		JLabel lblFachadaFrontal = new JLabel("FACHADA FRONTAL");
+		lblFachadaFrontal.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFachadaFrontal.setFont(new Font("Arial", Font.BOLD, 10));
+		lblFachadaFrontal.setBounds(10, 11, 167, 14);
+		panel_6.add(lblFachadaFrontal);
 		
 		JLabel label_1 = new JLabel("Cantidad");
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -158,11 +174,11 @@ public class B2Template extends JFrame {
 		pnlPestaña2.add(panel_7);
 		panel_7.setLayout(null);
 		
-		JLabel label_3 = new JLabel("KIT ELÉCTRICO");
-		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setFont(new Font("Arial", Font.BOLD, 10));
-		label_3.setBounds(10, 11, 167, 14);
-		panel_7.add(label_3);
+		JLabel lblFachadaPosterior = new JLabel("FACHADA POSTERIOR");
+		lblFachadaPosterior.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFachadaPosterior.setFont(new Font("Arial", Font.BOLD, 10));
+		lblFachadaPosterior.setBounds(10, 11, 167, 14);
+		panel_7.add(lblFachadaPosterior);
 		
 		JLabel label_4 = new JLabel("Cantidad");
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -181,11 +197,11 @@ public class B2Template extends JFrame {
 		pnlPestaña2.add(panel_8);
 		panel_8.setLayout(null);
 		
-		JLabel label_6 = new JLabel("KIT ELÉCTRICO");
-		label_6.setHorizontalAlignment(SwingConstants.CENTER);
-		label_6.setFont(new Font("Arial", Font.BOLD, 10));
-		label_6.setBounds(10, 11, 167, 14);
-		panel_8.add(label_6);
+		JLabel lblFachadaLateral = new JLabel("FACHADA LATERAL");
+		lblFachadaLateral.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFachadaLateral.setFont(new Font("Arial", Font.BOLD, 10));
+		lblFachadaLateral.setBounds(10, 11, 167, 14);
+		panel_8.add(lblFachadaLateral);
 		
 		JLabel label_7 = new JLabel("Cantidad");
 		label_7.setHorizontalAlignment(SwingConstants.CENTER);
@@ -204,11 +220,11 @@ public class B2Template extends JFrame {
 		pnlPestaña2.add(panel_9);
 		panel_9.setLayout(null);
 		
-		JLabel label_9 = new JLabel("KIT ELÉCTRICO");
-		label_9.setHorizontalAlignment(SwingConstants.CENTER);
-		label_9.setFont(new Font("Arial", Font.BOLD, 10));
-		label_9.setBounds(10, 11, 167, 14);
-		panel_9.add(label_9);
+		JLabel lblComponenteEstructural = new JLabel("COMPONENTE ESTRUCTURAL");
+		lblComponenteEstructural.setHorizontalAlignment(SwingConstants.CENTER);
+		lblComponenteEstructural.setFont(new Font("Arial", Font.BOLD, 10));
+		lblComponenteEstructural.setBounds(10, 11, 167, 14);
+		panel_9.add(lblComponenteEstructural);
 		
 		JLabel label_10 = new JLabel("Cantidad");
 		label_10.setHorizontalAlignment(SwingConstants.CENTER);
@@ -253,21 +269,82 @@ public class B2Template extends JFrame {
 		panel_0.add(pnlCantidad0);
 		pnlCantidad0.setLayout(new GridLayout(5, 2, 0, 0));
 		
+		txtCantidad00 = new JTextField();
+		pnlCantidad0.add(txtCantidad00);
+		txtCantidad00.setColumns(10);
+		
+		txtCantidad01 = new JTextField();
+		txtCantidad01.setColumns(10);
+		pnlCantidad0.add(txtCantidad01);
+		
+		txtCantidad10 = new JTextField();
+		pnlCantidad0.add(txtCantidad10);
+		txtCantidad10.setColumns(10);
+		
+		txtCantidad11 = new JTextField();
+		txtCantidad11.setColumns(10);
+		pnlCantidad0.add(txtCantidad11);
+		
+		txtCantidad20 = new JTextField();
+		txtCantidad20.setColumns(10);
+		pnlCantidad0.add(txtCantidad20);
+		
+		txtCantidad21 = new JTextField();
+		txtCantidad21.setColumns(10);
+		pnlCantidad0.add(txtCantidad21);
+		
+		txtCantidad30 = new JTextField();
+		txtCantidad30.setColumns(10);
+		pnlCantidad0.add(txtCantidad30);
+		
+		txtCantidad31 = new JTextField();
+		txtCantidad31.setColumns(10);
+		pnlCantidad0.add(txtCantidad31);
+		
+		txtCantidad40 = new JTextField();
+		txtCantidad40.setColumns(10);
+		pnlCantidad0.add(txtCantidad40);
+		
+		txtCantidad41 = new JTextField();
+		txtCantidad41.setColumns(10);
+		pnlCantidad0.add(txtCantidad41);
+		
+		
 		JPanel pnlObservacion0 = new JPanel();
 		pnlObservacion0.setBounds(248, 30, 152, 125);
 		panel_0.add(pnlObservacion0);
 		pnlObservacion0.setLayout(new GridLayout(5, 0, 0, 0));
+		
+		txtObs0 = new JTextField();
+		pnlObservacion0.add(txtObs0);
+		txtObs0.setColumns(10);
+		
+		txtObs1 = new JTextField();
+		txtObs1.setColumns(10);
+		pnlObservacion0.add(txtObs1);
+		
+		txtObs2 = new JTextField();
+		txtObs2.setColumns(10);
+		pnlObservacion0.add(txtObs2);
+		
+		txtObs3 = new JTextField();
+		txtObs3.setColumns(10);
+		pnlObservacion0.add(txtObs3);
+		
+		txtObs4 = new JTextField();
+		txtObs4.setColumns(10);
+		pnlObservacion0.add(txtObs4);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(10, 212, 410, 100);
 		pnlPestaña1.add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel label_3 = new JLabel("KIT ELÉCTRICO");
-		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setFont(new Font("Arial", Font.BOLD, 10));
-		label_3.setBounds(10, 11, 167, 14);
-		panel_1.add(label_3);
+		JLabel lblKithidrosanitario = new JLabel("KITHIDROSANITARIO");
+		lblKithidrosanitario.setHorizontalAlignment(SwingConstants.CENTER);
+		lblKithidrosanitario.setFont(new Font("Arial", Font.BOLD, 10));
+		lblKithidrosanitario.setBounds(10, 11, 167, 14);
+		panel_1.add(lblKithidrosanitario);
 		
 		JLabel label_4 = new JLabel("Cantidad");
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -286,11 +363,11 @@ public class B2Template extends JFrame {
 		pnlPestaña1.add(panel_2);
 		panel_2.setLayout(null);
 		
-		JLabel label_6 = new JLabel("KIT ELÉCTRICO");
-		label_6.setHorizontalAlignment(SwingConstants.CENTER);
-		label_6.setFont(new Font("Arial", Font.BOLD, 10));
-		label_6.setBounds(10, 11, 167, 14);
-		panel_2.add(label_6);
+		JLabel lblKitAgua = new JLabel("KIT AGUA");
+		lblKitAgua.setHorizontalAlignment(SwingConstants.CENTER);
+		lblKitAgua.setFont(new Font("Arial", Font.BOLD, 10));
+		lblKitAgua.setBounds(10, 11, 167, 14);
+		panel_2.add(lblKitAgua);
 		
 		JLabel label_7 = new JLabel("Cantidad");
 		label_7.setHorizontalAlignment(SwingConstants.CENTER);
@@ -309,11 +386,11 @@ public class B2Template extends JFrame {
 		pnlPestaña1.add(panel_3);
 		panel_3.setLayout(null);
 		
-		JLabel label_9 = new JLabel("KIT ELÉCTRICO");
-		label_9.setHorizontalAlignment(SwingConstants.CENTER);
-		label_9.setFont(new Font("Arial", Font.BOLD, 10));
-		label_9.setBounds(10, 11, 167, 14);
-		panel_3.add(label_9);
+		JLabel lblKitAguaPotable = new JLabel("KIT AGUA POTABLE");
+		lblKitAguaPotable.setHorizontalAlignment(SwingConstants.CENTER);
+		lblKitAguaPotable.setFont(new Font("Arial", Font.BOLD, 10));
+		lblKitAguaPotable.setBounds(10, 11, 167, 14);
+		panel_3.add(lblKitAguaPotable);
 		
 		JLabel label_10 = new JLabel("Cantidad");
 		label_10.setHorizontalAlignment(SwingConstants.CENTER);
@@ -332,11 +409,11 @@ public class B2Template extends JFrame {
 		pnlPestaña1.add(panel_4);
 		panel_4.setLayout(null);
 		
-		JLabel label_12 = new JLabel("KIT ELÉCTRICO");
-		label_12.setHorizontalAlignment(SwingConstants.CENTER);
-		label_12.setFont(new Font("Arial", Font.BOLD, 10));
-		label_12.setBounds(10, 11, 167, 14);
-		panel_4.add(label_12);
+		JLabel lblKitAguaResidual = new JLabel("KIT AGUA RESIDUAL");
+		lblKitAguaResidual.setHorizontalAlignment(SwingConstants.CENTER);
+		lblKitAguaResidual.setFont(new Font("Arial", Font.BOLD, 10));
+		lblKitAguaResidual.setBounds(10, 11, 167, 14);
+		panel_4.add(lblKitAguaResidual);
 		
 		JLabel label_13 = new JLabel("Cantidad");
 		label_13.setHorizontalAlignment(SwingConstants.CENTER);
