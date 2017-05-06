@@ -82,6 +82,8 @@ public class Menu extends JFrame {
 		});
 
 		JButton btnSalir = new JButton("SALIR");
+		btnSalir.setForeground(Color.WHITE);
+		btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnSalir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new AlInicio().setVisible(true);
