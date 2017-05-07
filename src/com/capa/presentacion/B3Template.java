@@ -1,75 +1,6 @@
 package com.capa.presentacion;
 
-import static com.capa.util.Constantes.LBL_BS_0;
-import static com.capa.util.Constantes.LBL_BS_1;
-import static com.capa.util.Constantes.LBL_BS_10;
-import static com.capa.util.Constantes.LBL_BS_11;
-import static com.capa.util.Constantes.LBL_BS_12;
-import static com.capa.util.Constantes.LBL_BS_13;
-import static com.capa.util.Constantes.LBL_BS_14;
-import static com.capa.util.Constantes.LBL_BS_15;
-import static com.capa.util.Constantes.LBL_BS_16;
-import static com.capa.util.Constantes.LBL_BS_17;
-import static com.capa.util.Constantes.LBL_BS_18;
-import static com.capa.util.Constantes.LBL_BS_19;
-import static com.capa.util.Constantes.LBL_BS_2;
-import static com.capa.util.Constantes.LBL_BS_21;
-import static com.capa.util.Constantes.LBL_BS_22;
-import static com.capa.util.Constantes.LBL_BS_23;
-import static com.capa.util.Constantes.LBL_BS_24;
-import static com.capa.util.Constantes.LBL_BS_25;
-import static com.capa.util.Constantes.LBL_BS_26;
-import static com.capa.util.Constantes.LBL_BS_27;
-import static com.capa.util.Constantes.LBL_BS_28;
-import static com.capa.util.Constantes.LBL_BS_29;
-import static com.capa.util.Constantes.LBL_BS_3;
-import static com.capa.util.Constantes.LBL_BS_30;
-import static com.capa.util.Constantes.LBL_BS_31;
-import static com.capa.util.Constantes.LBL_BS_32;
-import static com.capa.util.Constantes.LBL_BS_33;
-import static com.capa.util.Constantes.LBL_BS_34;
-import static com.capa.util.Constantes.LBL_BS_35;
-import static com.capa.util.Constantes.LBL_BS_36;
-import static com.capa.util.Constantes.LBL_BS_37;
-import static com.capa.util.Constantes.LBL_BS_38;
-import static com.capa.util.Constantes.LBL_BS_39;
-import static com.capa.util.Constantes.LBL_BS_4;
-import static com.capa.util.Constantes.LBL_BS_40;
-import static com.capa.util.Constantes.LBL_BS_41;
-import static com.capa.util.Constantes.LBL_BS_42;
-import static com.capa.util.Constantes.LBL_BS_43;
-import static com.capa.util.Constantes.LBL_BS_44;
-import static com.capa.util.Constantes.LBL_BS_45;
-import static com.capa.util.Constantes.LBL_BS_46;
-import static com.capa.util.Constantes.LBL_BS_47;
-import static com.capa.util.Constantes.LBL_BS_48;
-import static com.capa.util.Constantes.LBL_BS_49;
-import static com.capa.util.Constantes.LBL_BS_5;
-import static com.capa.util.Constantes.LBL_BS_50;
-import static com.capa.util.Constantes.LBL_BS_51;
-import static com.capa.util.Constantes.LBL_BS_52;
-import static com.capa.util.Constantes.LBL_BS_53;
-import static com.capa.util.Constantes.LBL_BS_54;
-import static com.capa.util.Constantes.LBL_BS_55;
-import static com.capa.util.Constantes.LBL_BS_56;
-import static com.capa.util.Constantes.LBL_BS_57;
-import static com.capa.util.Constantes.LBL_BS_58;
-import static com.capa.util.Constantes.LBL_BS_59;
-import static com.capa.util.Constantes.LBL_BS_6;
-import static com.capa.util.Constantes.LBL_BS_60;
-import static com.capa.util.Constantes.LBL_BS_61;
-import static com.capa.util.Constantes.LBL_BS_62;
-import static com.capa.util.Constantes.LBL_BS_63;
-import static com.capa.util.Constantes.LBL_BS_64;
-import static com.capa.util.Constantes.LBL_BS_65;
-import static com.capa.util.Constantes.LBL_BS_66;
-import static com.capa.util.Constantes.LBL_BS_67;
-import static com.capa.util.Constantes.LBL_BS_68;
-import static com.capa.util.Constantes.LBL_BS_69;
-import static com.capa.util.Constantes.LBL_BS_7;
-import static com.capa.util.Constantes.LBL_BS_8;
-import static com.capa.util.Constantes.LBL_BS_9;
-
+import static com.capa.util.Constantes.*;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -416,17 +347,17 @@ public class B3Template extends JFrame {
 		panel_5.add(panel_2);
 		panel_2.setLayout(new GridLayout(3, 0, 0, 0));
 
-		JLabel lblLblbs_33 = new JLabel(LBL_BS_35);
+		JLabel lblLblbs_33 = new JLabel(LBL_BST3_35);
 		lblLblbs_33.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_33.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_2.add(lblLblbs_33);
 
-		JLabel lblLblbs_34 = new JLabel(LBL_BS_36);
+		JLabel lblLblbs_34 = new JLabel(LBL_BST3_36);
 		lblLblbs_34.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_34.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_2.add(lblLblbs_34);
 
-		JLabel lblLblbs_35 = new JLabel(LBL_BS_37);
+		JLabel lblLblbs_35 = new JLabel(LBL_BST3_37);
 		lblLblbs_35.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_35.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_2.add(lblLblbs_35);
@@ -488,7 +419,7 @@ public class B3Template extends JFrame {
 		panel_5.add(panel_12);
 		panel_12.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_36 = new JLabel(LBL_BS_38);
+		JLabel lblLblbs_36 = new JLabel(LBL_BST3_38);
 		lblLblbs_36.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_36.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_12.add(lblLblbs_36);
@@ -522,12 +453,12 @@ public class B3Template extends JFrame {
 		panel_5.add(panel_13);
 		panel_13.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel lblLblbs_37 = new JLabel(LBL_BS_39);
+		JLabel lblLblbs_37 = new JLabel("<html><body><p align=right>Ventanas UPVC con vidrio flotado de 3 mm de 0.45x2 mt (  lateral)</p></body></html>");
 		lblLblbs_37.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_37.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_13.add(lblLblbs_37);
 
-		JLabel lblLblbs_38 = new JLabel(LBL_BS_40);
+		JLabel lblLblbs_38 = new JLabel(LBL_BST3_40);
 		lblLblbs_38.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_38.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_13.add(lblLblbs_38);
@@ -599,17 +530,17 @@ public class B3Template extends JFrame {
 		panel_6.add(panel_14);
 		panel_14.setLayout(new GridLayout(3, 0, 0, 0));
 
-		JLabel lblLblbs_39 = new JLabel(LBL_BS_41);
+		JLabel lblLblbs_39 = new JLabel(LBL_BST3_41);
 		lblLblbs_39.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_39.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_14.add(lblLblbs_39);
 
-		JLabel lblLblbs_40 = new JLabel(LBL_BS_42);
+		JLabel lblLblbs_40 = new JLabel(LBL_BST3_42);
 		lblLblbs_40.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_40.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_14.add(lblLblbs_40);
 
-		JLabel lblLblbs_41 = new JLabel(LBL_BS_43);
+		JLabel lblLblbs_41 = new JLabel(LBL_BST3_43);
 		lblLblbs_41.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_41.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_14.add(lblLblbs_41);
@@ -695,22 +626,22 @@ public class B3Template extends JFrame {
 		panel_7.add(panel_17);
 		panel_17.setLayout(new GridLayout(4, 0, 0, 0));
 
-		JLabel lblLblbs_42 = new JLabel(LBL_BS_44);
+		JLabel lblLblbs_42 = new JLabel(LBL_BST3_44);
 		lblLblbs_42.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_42.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_17.add(lblLblbs_42);
 
-		JLabel lblLblbs_43 = new JLabel(LBL_BS_45);
+		JLabel lblLblbs_43 = new JLabel(LBL_BST3_45);
 		lblLblbs_43.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_43.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_17.add(lblLblbs_43);
 
-		JLabel lblLblbs_44 = new JLabel(LBL_BS_46);
+		JLabel lblLblbs_44 = new JLabel(LBL_BST3_46);
 		lblLblbs_44.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_44.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_17.add(lblLblbs_44);
 
-		JLabel lblLblbs_45 = new JLabel(LBL_BS_47);
+		JLabel lblLblbs_45 = new JLabel(LBL_BST3_47);
 		lblLblbs_45.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_45.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_17.add(lblLblbs_45);
@@ -810,52 +741,52 @@ public class B3Template extends JFrame {
 		panel_8.add(panel_20);
 		panel_20.setLayout(new GridLayout(12, 0, 0, 0));
 
-		JLabel lblLblbs_46 = new JLabel(LBL_BS_48);
+		JLabel lblLblbs_46 = new JLabel(LBL_BST3_48);
 		lblLblbs_46.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_46.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_46);
 
-		JLabel lblLblbs_47 = new JLabel(LBL_BS_49);
+		JLabel lblLblbs_47 = new JLabel(LBL_BST3_49);
 		lblLblbs_47.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_47.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_47);
 
-		JLabel lblLblbs_48 = new JLabel(LBL_BS_50);
+		JLabel lblLblbs_48 = new JLabel(LBL_BST3_50);
 		lblLblbs_48.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_48.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_48);
 
-		JLabel lblLblbs_49 = new JLabel(LBL_BS_51);
+		JLabel lblLblbs_49 = new JLabel(LBL_BST3_51);
 		lblLblbs_49.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_49.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_49);
 
-		JLabel lblLblbs_50 = new JLabel(LBL_BS_52);
+		JLabel lblLblbs_50 = new JLabel(LBL_BST3_52);
 		lblLblbs_50.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_50.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_50);
 
-		JLabel lblLblbs_51 = new JLabel(LBL_BS_53);
+		JLabel lblLblbs_51 = new JLabel(LBL_BST3_53);
 		lblLblbs_51.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_51.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_51);
 
-		JLabel lblLblbs_52 = new JLabel(LBL_BS_54);
+		JLabel lblLblbs_52 = new JLabel(LBL_BST3_54);
 		lblLblbs_52.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_52.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_52);
 
-		JLabel lblLblbs_53 = new JLabel(LBL_BS_55);
+		JLabel lblLblbs_53 = new JLabel(LBL_BST3_55);
 		lblLblbs_53.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_53.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_53);
 
-		JLabel lblLblbs_54 = new JLabel(LBL_BS_56);
+		JLabel lblLblbs_54 = new JLabel(LBL_BST3_56);
 		lblLblbs_54.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_54.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_54);
 
-		JLabel lblLblbs_55 = new JLabel(LBL_BS_57);
+		JLabel lblLblbs_55 = new JLabel(LBL_BST3_57);
 		lblLblbs_55.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_55.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_55);
@@ -1039,62 +970,62 @@ public class B3Template extends JFrame {
 		panel_9.add(panel_23);
 		panel_23.setLayout(new GridLayout(12, 0, 0, 0));
 
-		JLabel lblLblbs_56 = new JLabel(LBL_BS_58);
+		JLabel lblLblbs_56 = new JLabel(LBL_BST3_58);
 		lblLblbs_56.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_56.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_56);
 
-		JLabel lblLblbs_57 = new JLabel(LBL_BS_59);
+		JLabel lblLblbs_57 = new JLabel(LBL_BST3_59);
 		lblLblbs_57.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_57.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_57);
 
-		JLabel lblLblbs_58 = new JLabel(LBL_BS_60);
+		JLabel lblLblbs_58 = new JLabel(LBL_BST3_60);
 		lblLblbs_58.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_58.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_58);
 
-		JLabel lblLblbs_59 = new JLabel(LBL_BS_61);
+		JLabel lblLblbs_59 = new JLabel(LBL_BST3_61);
 		lblLblbs_59.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_59.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_59);
 
-		JLabel lblLblbs_60 = new JLabel(LBL_BS_62);
+		JLabel lblLblbs_60 = new JLabel(LBL_BST3_62);
 		panel_23.add(lblLblbs_60);
 		lblLblbs_60.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_60.setFont(new Font("Arial", Font.PLAIN, 10));
 
-		JLabel lblLblbs_61 = new JLabel(LBL_BS_63);
+		JLabel lblLblbs_61 = new JLabel(LBL_BST3_63);
 		panel_23.add(lblLblbs_61);
 		lblLblbs_61.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_61.setFont(new Font("Arial", Font.PLAIN, 10));
+		
+				JLabel lblLblbs_65 = new JLabel(LBL_BST3_67);
+				lblLblbs_65.setHorizontalAlignment(SwingConstants.RIGHT);
+				lblLblbs_65.setFont(new Font("Arial", Font.PLAIN, 10));
+				panel_23.add(lblLblbs_65);
 
-		JLabel lblLblbs_62 = new JLabel(LBL_BS_64);
+		JLabel lblLblbs_62 = new JLabel(LBL_BST3_64);
 		panel_23.add(lblLblbs_62);
 		lblLblbs_62.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_62.setFont(new Font("Arial", Font.PLAIN, 10));
 
-		JLabel lblLblbs_63 = new JLabel(LBL_BS_65);
+		JLabel lblLblbs_63 = new JLabel(LBL_BST3_65);
 		panel_23.add(lblLblbs_63);
 		lblLblbs_63.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_63.setFont(new Font("Arial", Font.PLAIN, 10));
 
-		JLabel lblLblbs_64 = new JLabel(LBL_BS_66);
+		JLabel lblLblbs_64 = new JLabel(LBL_BST3_66);
 		lblLblbs_64.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_64.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_64);
 
-		JLabel lblLblbs_65 = new JLabel(LBL_BS_67);
-		lblLblbs_65.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_65.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_23.add(lblLblbs_65);
-
-		JLabel lblLblbs_66 = new JLabel(LBL_BS_68);
+		JLabel lblLblbs_66 = new JLabel(LBL_BST3_68);
 		lblLblbs_66.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_66.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_66);
 
-		JLabel lblLblbs_67 = new JLabel(LBL_BS_69);
+		JLabel lblLblbs_67 = new JLabel(LBL_BST3_69);
 		lblLblbs_67.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_67.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_67);
@@ -1389,27 +1320,27 @@ public class B3Template extends JFrame {
 		panel_0.add(panel);
 		panel.setLayout(new GridLayout(5, 0, 0, 0));
 
-		JLabel lblNewLabel = new JLabel(LBL_BS_0);
+		JLabel lblNewLabel = new JLabel(LBL_BST3_0);
 		lblNewLabel.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel.add(lblNewLabel);
 
-		JLabel lblLblbs = new JLabel(LBL_BS_1);
+		JLabel lblLblbs = new JLabel(LBL_BST3_1);
 		lblLblbs.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel.add(lblLblbs);
 
-		JLabel lblLblbs_1 = new JLabel(LBL_BS_2);
+		JLabel lblLblbs_1 = new JLabel(LBL_BST3_2);
 		lblLblbs_1.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel.add(lblLblbs_1);
 
-		JLabel lblLblbs_2 = new JLabel(LBL_BS_3);
+		JLabel lblLblbs_2 = new JLabel(LBL_BST3_3);
 		lblLblbs_2.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_2.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel.add(lblLblbs_2);
 
-		JLabel lblLblbs_3 = new JLabel(LBL_BS_4);
+		JLabel lblLblbs_3 = new JLabel(LBL_BST3_4);
 		lblLblbs_3.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_3.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel.add(lblLblbs_3);
@@ -1496,17 +1427,17 @@ public class B3Template extends JFrame {
 		panel_1.add(panel_15);
 		panel_15.setLayout(new GridLayout(3, 0, 0, 0));
 
-		JLabel lblLblbs_4 = new JLabel(LBL_BS_5);
+		JLabel lblLblbs_4 = new JLabel(LBL_BST3_5);
 		lblLblbs_4.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_4.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_15.add(lblLblbs_4);
 
-		JLabel lblLblbs_5 = new JLabel(LBL_BS_6);
+		JLabel lblLblbs_5 = new JLabel(LBL_BST3_6);
 		lblLblbs_5.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_5.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_15.add(lblLblbs_5);
 
-		JLabel lblLblbs_6 = new JLabel(LBL_BS_7);
+		JLabel lblLblbs_6 = new JLabel(LBL_BST3_7);
 		lblLblbs_6.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_6.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_15.add(lblLblbs_6);
@@ -1664,12 +1595,12 @@ public class B3Template extends JFrame {
 		panel_2.add(panel_16);
 		panel_16.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel lblLblbs_7 = new JLabel(LBL_BS_8);
+		JLabel lblLblbs_7 = new JLabel(LBL_BST3_8);
 		lblLblbs_7.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_7.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_16.add(lblLblbs_7);
 
-		JLabel lblLblbs_8 = new JLabel(LBL_BS_9);
+		JLabel lblLblbs_8 = new JLabel(LBL_BST3_9);
 		lblLblbs_8.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_8.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_16.add(lblLblbs_8);
@@ -1679,7 +1610,7 @@ public class B3Template extends JFrame {
 		panel_2.add(panel_17);
 		panel_17.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_9 = new JLabel(LBL_BS_10);
+		JLabel lblLblbs_9 = new JLabel(LBL_BST3_10);
 		lblLblbs_9.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_9.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_17.add(lblLblbs_9);
@@ -1689,12 +1620,12 @@ public class B3Template extends JFrame {
 		panel_2.add(panel_18);
 		panel_18.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel lblLblbs_10 = new JLabel(LBL_BS_11);
+		JLabel lblLblbs_10 = new JLabel(LBL_BST3_11);
 		lblLblbs_10.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_10.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_18.add(lblLblbs_10);
 
-		JLabel lblLblbs_11 = new JLabel(LBL_BS_12);
+		JLabel lblLblbs_11 = new JLabel(LBL_BST3_12);
 		lblLblbs_11.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_11.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_18.add(lblLblbs_11);
@@ -1704,7 +1635,7 @@ public class B3Template extends JFrame {
 		panel_2.add(panel_19);
 		panel_19.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_12 = new JLabel(LBL_BS_13);
+		JLabel lblLblbs_12 = new JLabel(LBL_BST3_13);
 		lblLblbs_12.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_12.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_19.add(lblLblbs_12);
@@ -1762,7 +1693,7 @@ public class B3Template extends JFrame {
 		panel_3.add(panel_22);
 		panel_22.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_13 = new JLabel(LBL_BS_14);
+		JLabel lblLblbs_13 = new JLabel(LBL_BST3_14);
 		lblLblbs_13.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_13.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_22.add(lblLblbs_13);
@@ -1796,7 +1727,7 @@ public class B3Template extends JFrame {
 		panel_3.add(panel_25);
 		panel_25.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_14 = new JLabel(LBL_BS_15);
+		JLabel lblLblbs_14 = new JLabel(LBL_BST3_15);
 		lblLblbs_14.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_14.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_25.add(lblLblbs_14);
@@ -1844,12 +1775,12 @@ public class B3Template extends JFrame {
 		panel_3.add(panel_28);
 		panel_28.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel lblLblbs_15 = new JLabel(LBL_BS_16);
+		JLabel lblLblbs_15 = new JLabel(LBL_BST3_16);
 		lblLblbs_15.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_15.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_28.add(lblLblbs_15);
 
-		JLabel lblLblbs_16 = new JLabel(LBL_BS_17);
+		JLabel lblLblbs_16 = new JLabel(LBL_BST3_17);
 		lblLblbs_16.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_16.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_28.add(lblLblbs_16);
@@ -1883,7 +1814,7 @@ public class B3Template extends JFrame {
 		panel_3.add(panel_31);
 		panel_31.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_17 = new JLabel(LBL_BS_18);
+		JLabel lblLblbs_17 = new JLabel(LBL_BST3_18);
 		lblLblbs_17.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_17.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_31.add(lblLblbs_17);
@@ -1917,7 +1848,7 @@ public class B3Template extends JFrame {
 		panel_3.add(panel_34);
 		panel_34.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_18 = new JLabel(LBL_BS_19);
+		JLabel lblLblbs_18 = new JLabel(LBL_BST3_19);
 		lblLblbs_18.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_18.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_34.add(lblLblbs_18);
@@ -1927,7 +1858,7 @@ public class B3Template extends JFrame {
 		panel_3.add(panel_37);
 		panel_37.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_20 = new JLabel(LBL_BS_21);
+		JLabel lblLblbs_20 = new JLabel(LBL_BST3_21);
 		lblLblbs_20.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_20.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_37.add(lblLblbs_20);
@@ -1937,11 +1868,10 @@ public class B3Template extends JFrame {
 		panel_3.add(panel_40);
 		panel_40.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel label_6 = new JLabel(
-				"<html><body><p align=right>Kit para conexión de tubería 1/2. (lija pliego, polipega 1/4gal,2 uniones)</p></body></html>");
-		label_6.setHorizontalAlignment(SwingConstants.RIGHT);
-		label_6.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_40.add(label_6);
+		JLabel lblLblbst = new JLabel(LBL_BST3_20);
+		lblLblbst.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLblbst.setFont(new Font("Arial", Font.PLAIN, 10));
+		panel_40.add(lblLblbst);
 
 		JPanel panel_35 = new JPanel();
 		panel_35.setBounds(187, 473, 50, 25);
@@ -2020,7 +1950,7 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_41);
 		panel_41.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_19 = new JLabel(LBL_BS_22);
+		JLabel lblLblbs_19 = new JLabel(LBL_BST3_22);
 		lblLblbs_19.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_19.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_41.add(lblLblbs_19);
@@ -2054,7 +1984,7 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_44);
 		panel_44.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_21 = new JLabel(LBL_BS_23);
+		JLabel lblLblbs_21 = new JLabel(LBL_BST3_23);
 		lblLblbs_21.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_21.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_44.add(lblLblbs_21);
@@ -2088,7 +2018,7 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_47);
 		panel_47.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_24 = new JLabel(LBL_BS_26);
+		JLabel lblLblbs_24 = new JLabel(LBL_BST3_26);
 		lblLblbs_24.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_24.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_47.add(lblLblbs_24);
@@ -2160,12 +2090,12 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_52);
 		panel_52.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel lblLblbs_22 = new JLabel(LBL_BS_24);
+		JLabel lblLblbs_22 = new JLabel(LBL_BST3_24);
 		lblLblbs_22.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_22.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_52.add(lblLblbs_22);
 
-		JLabel lblLblbs_23 = new JLabel(LBL_BS_25);
+		JLabel lblLblbs_23 = new JLabel(LBL_BST3_25);
 		lblLblbs_23.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_23.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_52.add(lblLblbs_23);
@@ -2175,7 +2105,7 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_53);
 		panel_53.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_27 = new JLabel(LBL_BS_29);
+		JLabel lblLblbs_27 = new JLabel(LBL_BST3_29);
 		lblLblbs_27.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_27.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_53.add(lblLblbs_27);
@@ -2247,12 +2177,12 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_58);
 		panel_58.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel lblLblbs_25 = new JLabel(LBL_BS_27);
+		JLabel lblLblbs_25 = new JLabel(LBL_BST3_27);
 		lblLblbs_25.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_25.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_58.add(lblLblbs_25);
 
-		JLabel lblLblbs_26 = new JLabel(LBL_BS_28);
+		JLabel lblLblbs_26 = new JLabel(LBL_BST3_28);
 		lblLblbs_26.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_26.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_58.add(lblLblbs_26);
@@ -2262,7 +2192,7 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_59);
 		panel_59.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_30 = new JLabel(LBL_BS_32);
+		JLabel lblLblbs_30 = new JLabel(LBL_BST3_32);
 		lblLblbs_30.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_30.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_59.add(lblLblbs_30);
@@ -2334,12 +2264,12 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_64);
 		panel_64.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel lblLblbs_28 = new JLabel(LBL_BS_30);
+		JLabel lblLblbs_28 = new JLabel(LBL_BST3_30);
 		lblLblbs_28.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_28.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_64.add(lblLblbs_28);
 
-		JLabel lblLblbs_29 = new JLabel(LBL_BS_31);
+		JLabel lblLblbs_29 = new JLabel(LBL_BST3_31);
 		lblLblbs_29.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_29.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_64.add(lblLblbs_29);
@@ -2349,7 +2279,7 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_65);
 		panel_65.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_31 = new JLabel(LBL_BS_33);
+		JLabel lblLblbs_31 = new JLabel(LBL_BST3_33);
 		lblLblbs_31.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_31.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_65.add(lblLblbs_31);
@@ -2383,7 +2313,7 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_68);
 		panel_68.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_32 = new JLabel(LBL_BS_34);
+		JLabel lblLblbs_32 = new JLabel(LBL_BST3_34);
 		lblLblbs_32.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_32.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_68.add(lblLblbs_32);
