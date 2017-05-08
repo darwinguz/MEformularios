@@ -3,12 +3,15 @@ package com.capa.util;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 import com.capa.datos.TInformacionObligatoria;
 import com.capa.datos.TdetalleFicha;
+import com.capa.presentacion.EmailCliente;
 
 public class Validaciones {
 
@@ -32,6 +35,28 @@ public class Validaciones {
 			return false;
 		}
 		return true;
+	}
+
+	public static boolean isEstructuraEmail(EmailCliente emailCliente) {
+		if (emailCliente.getTxtUser().getText().equals("") || emailCliente.getPwdUser().equals("")
+				|| emailCliente.getTxtPara().getText().equals("") || emailCliente.getTxtAsunto().getText().equals("")
+				|| emailCliente.getTxtContenidoSMS().getText().equals("")
+				|| emailCliente.getTxtPathPDF().getText().equals("")) {
+			return false;
+		}
+		return true;
+	}
+
+	public static boolean isCorrectEmail(String email) {
+		System.out.println(email);
+		boolean valido = false;
+		Pattern patronEmail = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+
+		Matcher mEmail = patronEmail.matcher(email.toLowerCase());
+		if (mEmail.matches()) {
+			valido = true;
+		}
+		return valido;
 	}
 
 	public static boolean registrosValidados(List<TdetalleFicha> detallesFicha) {

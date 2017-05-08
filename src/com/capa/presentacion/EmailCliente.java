@@ -27,6 +27,7 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.negocios.EmailServer;
 import com.capa.util.Utilitarios;
+import com.capa.util.Validaciones;
 
 public class EmailCliente extends JFrame {
 
@@ -87,7 +88,6 @@ public class EmailCliente extends JFrame {
 							JFileChooser path = Utilitarios.getPathPDF();
 							emailCliente.getTxtPathPDF().setText(path.getSelectedFile().getAbsolutePath());
 							emailCliente.setTxtPathNamePDF(path.getSelectedFile().getName());
-
 						}
 					});
 
@@ -113,13 +113,25 @@ public class EmailCliente extends JFrame {
 								multiParte.addBodyPart(partBodyContenido);
 								multiParte.addBodyPart(partBodyAdjunto);
 
-								boolean resultado = emailServer.enviarCorreo(de, clave, para, multiParte, asunto);
+								if (Validaciones.isEstructuraEmail(emailCliente)) {
+									if (Validaciones.isCorrectEmail(de) && Validaciones.isCorrectEmail(para)) {
+										boolean resultado = emailServer.enviarCorreo(de, clave, para, multiParte,
+												asunto);
+										if (resultado) {
+											JOptionPane.showMessageDialog(null, "Enviado exitosamente ", "CONFIRMACIÓN",
+													JOptionPane.INFORMATION_MESSAGE);
+											emailCliente.dispose();
+										}
+									} else {
+										JOptionPane.showMessageDialog(null, "Verificar EMAIL", "ERROR",
+												JOptionPane.ERROR_MESSAGE);
+									}
 
-								if (resultado) {
-									JOptionPane.showMessageDialog(null, "Enviado exitosamente ", "CONFIRMACIÓN",
+								} else {
+									JOptionPane.showMessageDialog(null, "Agregar datos requeridos! ", "ADVERTENCIA",
 											JOptionPane.INFORMATION_MESSAGE);
-									emailCliente.dispose();
 								}
+
 							} catch (MessagingException ex) {
 								JOptionPane.showMessageDialog(null, "Error al enviar el EMAIL " + ex.getMessage(),
 										"ERROR", JOptionPane.ERROR_MESSAGE);
