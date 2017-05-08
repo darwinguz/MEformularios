@@ -341,7 +341,7 @@ public class AeTemplate extends JFrame {
 						HashMap<String, Object> parametros = new HashMap<String, Object>();
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
 						parametros.put("serial_ficha", ficha.getFiSerial());
-						Reporte reporte = new Reporte("Reporte Ex", 280, 10, 850, 750);
+						Reporte reporte = new Reporte("Reporte AE", 280, 10, 850, 750);
 						InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
 						reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 						reporte.setVisible(true);

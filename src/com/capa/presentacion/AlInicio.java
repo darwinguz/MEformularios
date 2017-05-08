@@ -20,9 +20,11 @@ import javax.swing.border.EmptyBorder;
 
 import com.capa.datos.TCabecera;
 import com.capa.negocios.ComponenteCabecera;
+import com.capa.negocios.ComponenteFichaA;
 import com.capa.negocios.Query;
 import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioCabecera;
+import com.capa.negocios.ServicioFichaA;
 import com.capa.util.Utilitarios;
 
 public class AlInicio extends JFrame {
@@ -82,6 +84,8 @@ public class AlInicio extends JFrame {
 		btnAvanceGeneral.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				ServicioFichaA servFichaA = new ComponenteFichaA();
+				servFichaA.eliminar();
 				FichaATemplate fichaA = new FichaATemplate();
 				fichaA.generarDatos();
 

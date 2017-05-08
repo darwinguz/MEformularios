@@ -27,7 +27,7 @@ public class Calculos {
 		double valorEjecutado = 0.0, relacion = 0.0;
 		double sumaCantidadLimite = 0.0, sumaCantidadEjecutada = 0.0;
 		for (int i = 1; i <= ficha.getCantidadTotal(); i++) {
-			try {
+//			try {
 				sumaCantidadLimite = 0.0;
 				sumaCantidadEjecutada = 0.0;
 				objetoFicha = servicioFicha.buscarFormulario(nombreModulo + "-" + i);
@@ -35,24 +35,22 @@ public class Calculos {
 				for (TdetalleFicha detalle : listaDetalles) {
 					sumaCantidadLimite += detalle.getDetCantidadLimite();
 					sumaCantidadEjecutada += detalle.getDetCantidadEjecutada();
-					// System.out.println("Cantidad ejecutada: " +
-					// sumaCantidadEjecutada);
 				}
-				if (nombreModulo.equals("EX")) {
-					for (int k = 15; k <= 21; k++) {
-						sumaCantidadLimite -= listaDetalles.get(k).getDetCantidadLimite();
-						sumaCantidadEjecutada -= listaDetalles.get(k).getDetCantidadEjecutada();
-					}
-				}
-			} catch (Exception e) {
-				// TODO: handle exception
-				objetoFicha = servicioFicha.buscarFormulario("EX-1");
-				listaDetalles = servicioFicha.detallesFicha(gettCabecera(), objetoFicha);
-				for (int j = 15; j <= 21; j++) {
-					sumaCantidadLimite = listaDetalles.get(j).getDetCantidadLimite();
-					sumaCantidadEjecutada = listaDetalles.get(j).getDetCantidadEjecutada();
-				}
-			}
+//				if (nombreModulo.equals("EX")) {
+//					for (int k = 15; k <= 21; k++) {
+//						sumaCantidadLimite -= listaDetalles.get(k).getDetCantidadLimite();
+//						sumaCantidadEjecutada -= listaDetalles.get(k).getDetCantidadEjecutada();
+//					}
+//				}
+//			} catch (Exception e) {
+//				// TODO: handle exception
+//				objetoFicha = servicioFicha.buscarFormulario("EX-1");
+//				listaDetalles = servicioFicha.detallesFicha(gettCabecera(), objetoFicha);
+//				for (int j = 15; j <= 21; j++) {
+//					sumaCantidadLimite = listaDetalles.get(j).getDetCantidadLimite();
+//					sumaCantidadEjecutada = listaDetalles.get(j).getDetCantidadEjecutada();
+//				}
+//			}
 
 			relacion = sumaCantidadEjecutada / sumaCantidadLimite;
 			valorEjecutado += relacion;

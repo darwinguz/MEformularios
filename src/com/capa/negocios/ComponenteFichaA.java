@@ -48,4 +48,11 @@ public class ComponenteFichaA implements ServicioFichaA {
 		return maximo;
 	}
 
+	@Override
+	public void eliminar() {
+		// TODO Auto-generated method stub
+		String query = "DELETE FROM t_ficha_a";
+		Query.eliminar(query);
+	}
+
 }
