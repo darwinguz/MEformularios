@@ -252,33 +252,33 @@ public class B3Template extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					B3Template frame = new B3Template();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// B3Template frame = new B3Template();
+	// frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	/**
 	 * Create the frame.
 	 */
-	public B3Template() {
+	public B3Template(TFicha ficha) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(0, 0, 1318, 740);
 		pnlPrincipal = new JPanel();
 		pnlPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(pnlPrincipal);
 		pnlPrincipal.setLayout(null);
-		// this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
+		this.setTitle(Utilitarios.getNombreFicha() + ficha.getFiNombre());
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		// this.ficha = ficha;
+		this.ficha = ficha;
 
 		cargarCabecera();
 		cargarInformacionObligatoria(new JPinformacionObligatoria(859, 348));
@@ -453,7 +453,8 @@ public class B3Template extends JFrame {
 		panel_5.add(panel_13);
 		panel_13.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel lblLblbs_37 = new JLabel("<html><body><p align=right>Ventanas UPVC con vidrio flotado de 3 mm de 0.45x2 mt (  lateral)</p></body></html>");
+		JLabel lblLblbs_37 = new JLabel(
+				"<html><body><p align=right>Ventanas UPVC con vidrio flotado de 3 mm de 0.45x2 mt (  lateral)</p></body></html>");
 		lblLblbs_37.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_37.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_13.add(lblLblbs_37);
@@ -999,11 +1000,11 @@ public class B3Template extends JFrame {
 		panel_23.add(lblLblbs_61);
 		lblLblbs_61.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_61.setFont(new Font("Arial", Font.PLAIN, 10));
-		
-				JLabel lblLblbs_65 = new JLabel(LBL_BST3_67);
-				lblLblbs_65.setHorizontalAlignment(SwingConstants.RIGHT);
-				lblLblbs_65.setFont(new Font("Arial", Font.PLAIN, 10));
-				panel_23.add(lblLblbs_65);
+
+		JLabel lblLblbs_65 = new JLabel(LBL_BST3_67);
+		lblLblbs_65.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblLblbs_65.setFont(new Font("Arial", Font.PLAIN, 10));
+		panel_23.add(lblLblbs_65);
 
 		JLabel lblLblbs_62 = new JLabel(LBL_BST3_64);
 		panel_23.add(lblLblbs_62);

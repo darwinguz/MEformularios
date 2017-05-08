@@ -596,7 +596,8 @@ public class B1Template extends JFrame {
 		lbltuberaDePvc_3.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_62.add(lbltuberaDePvc_3);
 
-		lbltuberaDePvc_4 = new JLabel(LBL_BS2_39);
+		lbltuberaDePvc_4 = new JLabel(
+				"<html><body><p align=right>Ventanas UPVC con vidrio flotado de 3 mm de 0.45x2 mt (  lateral)</p></body></html>");
 		lbltuberaDePvc_4.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbltuberaDePvc_4.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_62.add(lbltuberaDePvc_4);
@@ -606,12 +607,13 @@ public class B1Template extends JFrame {
 		panel5.add(panel_65);
 		panel_65.setLayout(new GridLayout(2, 0, 0, 0));
 
-		lblLblbs_32 = new JLabel(LBL_BS2_40);
+		lblLblbs_32 = new JLabel("<html><body><p align=right>Perfil metálico sf-12 para ventana</p></body></html>");
 		lblLblbs_32.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_32.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_65.add(lblLblbs_32);
 
-		lblLblbs_33 = new JLabel(LBL_BS2_41);
+		lblLblbs_33 = new JLabel(
+				"<html><body><p align=right>Perfil SF Tipo 12 MA-SF-12 para paneles</p></body></html>");
 		lblLblbs_33.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_33.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_65.add(lblLblbs_33);
@@ -622,7 +624,7 @@ public class B1Template extends JFrame {
 		panel_66.setLayout(new GridLayout(2, 2, 0, 0));
 
 		txtCantidad400 = new JTextField();
-		txtCantidad400.setText("8");
+		txtCantidad400.setText("16");
 		txtCantidad400.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad400.setEditable(false);
 		txtCantidad400.setColumns(10);
@@ -734,17 +736,17 @@ public class B1Template extends JFrame {
 		panel6.add(panel_69);
 		panel_69.setLayout(new GridLayout(3, 0, 0, 0));
 
-		lblLblbs_34 = new JLabel(LBL_BS2_42);
+		lblLblbs_34 = new JLabel("<html><body><p align=right>Paneles EPS pared -   ( 1x3x0,09 m)</p></body></html>");
 		lblLblbs_34.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_34.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_69.add(lblLblbs_34);
 
-		lblLblbs_35 = new JLabel(LBL_BS2_43);
+		lblLblbs_35 = new JLabel("<html><body><p align=right>Paneles EPS pared -   ( 1x0,90x0,90 m)</p></body></html>");
 		lblLblbs_35.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_35.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_69.add(lblLblbs_35);
 
-		lblLblbs_36 = new JLabel(LBL_BS2_44);
+		lblLblbs_36 = new JLabel("<html><body><p align=right>Paneles EPS pared -   ( 1x0,60x0,09 m)</p></body></html>");
 		lblLblbs_36.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_36.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_69.add(lblLblbs_36);
@@ -831,22 +833,26 @@ public class B1Template extends JFrame {
 		panel7.add(panel_73);
 		panel_73.setLayout(new GridLayout(4, 0, 0, 0));
 
-		lblLblbs_37 = new JLabel(LBL_BS2_45);
+		lblLblbs_37 = new JLabel(
+				"<html><body><p align=right>Paneles EPS pared -   ( 1x2,70 x0,90  m)</p></body></html>");
 		lblLblbs_37.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_37.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_73.add(lblLblbs_37);
 
-		lblLblbs_38 = new JLabel(LBL_BS2_46);
+		lblLblbs_38 = new JLabel(
+				"<html><body><p align=right>Paneles EPS pared - ( 0,60x2,70 x0,90  m)</p></body></html>");
 		lblLblbs_38.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_38.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_73.add(lblLblbs_38);
 
-		lblLblbs_39 = new JLabel(LBL_BS2_47);
+		lblLblbs_39 = new JLabel(
+				"<html><body><p align=right>Paneles EPS pared -   ( 1,0x1,80 x0,90  m)</p></body></html>");
 		lblLblbs_39.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_39.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_73.add(lblLblbs_39);
 
-		lblLblbs_40 = new JLabel(LBL_BS2_48);
+		lblLblbs_40 = new JLabel(
+				"<html><body><p align=right>Paneles EPS pared -   ( 1x0,45 x0,90  m)</p></body></html>");
 		lblLblbs_40.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_40.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_73.add(lblLblbs_40);
@@ -975,22 +981,24 @@ public class B1Template extends JFrame {
 		panel8.add(panel_79);
 		panel_79.setLayout(new GridLayout(9, 0, 0, 0));
 
-		lblLblbs_41 = new JLabel(LBL_BS2_49);
+		lblLblbs_41 = new JLabel(
+				"<html><body><p align=right>Panel altura variable – fachada lateral izquierda</p></body></html>");
 		lblLblbs_41.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_41.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_79.add(lblLblbs_41);
 
-		lblLblbs_42 = new JLabel(LBL_BS2_50);
+		lblLblbs_42 = new JLabel(
+				"<html><body><p align=right>Panel altura variable – fachada lateral derecha</p></body></html>");
 		lblLblbs_42.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_42.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_79.add(lblLblbs_42);
 
-		lblLblbs_43 = new JLabel(LBL_BS2_51);
+		lblLblbs_43 = new JLabel("<html><body><p align=right>Paneles TCB piso (4.30x5.70)</p></body></html>");
 		lblLblbs_43.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_43.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_79.add(lblLblbs_43);
 
-		lblLblbs_44 = new JLabel(LBL_BS2_52);
+		lblLblbs_44 = new JLabel("<html><body><p align=right>Paneles EPS para cubierta l=7, a= 1mt</p></body></html>");
 		lblLblbs_44.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_44.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_79.add(lblLblbs_44);
@@ -1000,7 +1008,7 @@ public class B1Template extends JFrame {
 		lblLblbs_45.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_79.add(lblLblbs_45);
 
-		lblLblbs_46 = new JLabel(LBL_BS2_54);
+		lblLblbs_46 = new JLabel("<html><body><p align=right>Paneles divisores Baterías Sanitarias</p></body></html>");
 		lblLblbs_46.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_46.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		panel_79.add(lblLblbs_46);
@@ -1104,7 +1112,7 @@ public class B1Template extends JFrame {
 		panel_82.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtCantidad520 = new JTextField();
-		txtCantidad520.setText("156");
+		txtCantidad520.setText("4");
 		txtCantidad520.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad520.setEditable(false);
 		txtCantidad520.setColumns(10);
@@ -1130,7 +1138,7 @@ public class B1Template extends JFrame {
 		panel_84.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtCantidad530 = new JTextField();
-		txtCantidad530.setText("4");
+		txtCantidad530.setText("1");
 		txtCantidad530.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad530.setEditable(false);
 		txtCantidad530.setColumns(10);
@@ -1156,7 +1164,7 @@ public class B1Template extends JFrame {
 		panel_86.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtCantidad540 = new JTextField();
-		txtCantidad540.setText("1");
+		txtCantidad540.setText("5");
 		txtCantidad540.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad540.setEditable(false);
 		txtCantidad540.setColumns(10);
@@ -1182,7 +1190,7 @@ public class B1Template extends JFrame {
 		panel_88.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtCantidad550 = new JTextField();
-		txtCantidad550.setText("5");
+		txtCantidad550.setText("3");
 		txtCantidad550.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad550.setEditable(false);
 		txtCantidad550.setColumns(10);
@@ -1575,7 +1583,7 @@ public class B1Template extends JFrame {
 		panel_2.setLayout(new GridLayout(5, 2, 0, 0));
 
 		txtCantidad00 = new JTextField();
-		txtCantidad00.setText("6");
+		txtCantidad00.setText("4");
 		txtCantidad00.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad00.setEditable(false);
 		txtCantidad00.setColumns(10);
@@ -1757,7 +1765,7 @@ public class B1Template extends JFrame {
 		panel2.setBounds(10, 272, 414, 283);
 		pnlPestaña1.add(panel2);
 
-		lblKitAgua = new JLabel("KIT AGUA LLUVIA");
+		lblKitAgua = new JLabel("KIT AGUA");
 		lblKitAgua.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblKitAgua.setBounds(3, 1, 211, 14);
 		panel2.add(lblKitAgua);
@@ -2308,7 +2316,7 @@ public class B1Template extends JFrame {
 		panel_36.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtCantidad260 = new JTextField();
-		txtCantidad260.setText("2");
+		txtCantidad260.setText("3");
 		txtCantidad260.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad260.setEditable(false);
 		txtCantidad260.setColumns(10);
@@ -2349,7 +2357,7 @@ public class B1Template extends JFrame {
 		panel_39.setLayout(new GridLayout(2, 2, 0, 0));
 
 		txtCantidad270 = new JTextField();
-		txtCantidad270.setText("2");
+		txtCantidad270.setText("3");
 		txtCantidad270.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad270.setEditable(false);
 		txtCantidad270.setColumns(10);

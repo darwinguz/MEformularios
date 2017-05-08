@@ -20,6 +20,7 @@ import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ServicioFicha;
 import com.capa.presentacion.AeTemplate;
 import com.capa.presentacion.AlInicio;
+import com.capa.presentacion.B3Template;
 import com.capa.presentacion.Bs2Template;
 import com.capa.presentacion.CeTemplate;
 import com.capa.presentacion.ExTemplate;
@@ -102,7 +103,7 @@ public class Menu extends JFrame {
 				"<html><body><p align=\"center\">BS1<br>Bateria<br>Sanitaria<br>EGB-BCH-4</body></html>");
 		btnBS1_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS1-4")).setVisible(true);
+				new B1Template(servicioFicha.buscarFormulario("BS1-4")).setVisible(true);
 				dispose();
 			}
 		});
@@ -115,7 +116,7 @@ public class Menu extends JFrame {
 				"<html><body><p align=\"center\">BS1<br>Bateria<br>Sanitaria<br>EGB-BCH-3</body></html>");
 		btnBS1_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS1-3")).setVisible(true);
+				new B1Template(servicioFicha.buscarFormulario("BS1-3")).setVisible(true);
 				dispose();
 			}
 		});
@@ -573,7 +574,7 @@ public class Menu extends JFrame {
 		btnBS3_1.setBounds(291, 136, 69, 40);
 		btnBS3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS3-1")).setVisible(true);
+				new B3Template(servicioFicha.buscarFormulario("BS3-1")).setVisible(true);
 				dispose();
 
 			}
@@ -586,7 +587,7 @@ public class Menu extends JFrame {
 		btnBS3_2.setBounds(449, 136, 72, 40);
 		btnBS3_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS3-2")).setVisible(true);
+				new B3Template(servicioFicha.buscarFormulario("BS3-2")).setVisible(true);
 				dispose();
 
 			}
@@ -601,20 +602,20 @@ public class Menu extends JFrame {
 				dispose();
 			}
 		});
-		btnMTtecnlogico1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnMTtecnlogico1.setFont(new Font("Tahoma", Font.BOLD, 7));
 		btnMTtecnlogico1.setBackground(new Color(238, 130, 238));
 		btnMTtecnlogico1.setBounds(579, 457, 64, 73);
 		contentPane.add(btnMTtecnlogico1);
 
 		JButton btnMTtecnlogico2 = new JButton(
-				"<html><body><p align=\"left\">MT Lab<br>Tecnólogico<br>1</body></html>");
+				"<html><body><p align=\"center\">MT Lab<br>Tecnólogico<br>1</body></html>");
 		btnMTtecnlogico2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new MtTemplate(servicioFicha.buscarFormulario("MT-2")).setVisible(true);
 				dispose();
 			}
 		});
-		btnMTtecnlogico2.setFont(new Font("Tahoma", Font.BOLD, 6));
+		btnMTtecnlogico2.setFont(new Font("Tahoma", Font.BOLD, 7));
 		btnMTtecnlogico2.setBackground(new Color(238, 130, 238));
 		btnMTtecnlogico2.setBounds(579, 531, 64, 74);
 		contentPane.add(btnMTtecnlogico2);
@@ -651,7 +652,7 @@ public class Menu extends JFrame {
 		btnBS1_1.setBounds(579, 202, 62, 36);
 		btnBS1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS1-1")).setVisible(true);
+				new B1Template(servicioFicha.buscarFormulario("BS1-1")).setVisible(true);
 				dispose();
 
 			}
@@ -681,7 +682,7 @@ public class Menu extends JFrame {
 		});
 		btnMDadmin1.setHorizontalAlignment(SwingConstants.LEFT);
 		btnMDadmin1.setForeground(Color.WHITE);
-		btnMDadmin1.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnMDadmin1.setFont(new Font("Tahoma", Font.BOLD, 7));
 		btnMDadmin1.setBackground(Color.BLACK);
 		btnMDadmin1.setBounds(579, 64, 64, 91);
 		contentPane.add(btnMDadmin1);
