@@ -21,7 +21,6 @@ import com.capa.negocios.ServicioFicha;
 import com.capa.presentacion.AeTemplate;
 import com.capa.presentacion.AlInicio;
 import com.capa.presentacion.B3Template;
-import com.capa.presentacion.Bs2Template;
 import com.capa.presentacion.CeTemplate;
 import com.capa.presentacion.ExTemplate;
 import com.capa.presentacion.HsTemplate;
@@ -503,7 +502,7 @@ public class Menu extends JFrame {
 		btnBS2_1.setBounds(186, 350, 64, 40);
 		btnBS2_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS2-1")).setVisible(true);
+				new B2Template(servicioFicha.buscarFormulario("BS2-1")).setVisible(true);
 				dispose();
 
 			}
@@ -518,7 +517,7 @@ public class Menu extends JFrame {
 		btnBS2_2.setBounds(938, 350, 64, 40);
 		btnBS2_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS2-2")).setVisible(true);
+				new B2Template(servicioFicha.buscarFormulario("BS2-2")).setVisible(true);
 				dispose();
 
 			}
@@ -666,7 +665,7 @@ public class Menu extends JFrame {
 		btnBS1_2.setBounds(579, 242, 62, 36);
 		btnBS1_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Bs2Template(servicioFicha.buscarFormulario("BS1-2")).setVisible(true);
+				new B1Template(servicioFicha.buscarFormulario("BS1-2")).setVisible(true);
 				dispose();
 
 			}

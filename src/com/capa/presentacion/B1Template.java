@@ -8,7 +8,6 @@ import static com.capa.util.Utilitarios.quitarEtiquetasHTML;
 import static com.capa.util.Validaciones.validarDigitos;
 import static com.capa.util.Validaciones.validarInfo;
 
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -439,20 +438,21 @@ public class B1Template extends JFrame {
 	private JTextField txtCantidad691;
 	private JTextField txtCantidad671;
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ServicioFicha servicioFicha = new ComponenteFicha();
-
-					Bs2Template frame = new Bs2Template(servicioFicha.buscarFormulario("BS1-1"));
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// ServicioFicha servicioFicha = new ComponenteFicha();
+	//
+	// Bs2Template frame = new
+	// Bs2Template(servicioFicha.buscarFormulario("BS1-1"));
+	// frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
 
 	public B1Template(TFicha ficha) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

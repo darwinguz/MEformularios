@@ -45,7 +45,7 @@ import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
-import com.capa.negocios.Email;
+import com.capa.negocios.EmailServer;
 import com.capa.negocios.Query;
 import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioCabecera;
@@ -1558,7 +1558,7 @@ public class MaTemplate extends JFrame {
 
 						if (dialog == 0) {
 
-							Email emailServer = new Email();
+							EmailServer emailServer = new EmailServer();
 							EmailCliente emailCliente = new EmailCliente();
 							BodyPart partBodyContenido = new MimeBodyPart();
 							BodyPart partBodyAdjunto = new MimeBodyPart();

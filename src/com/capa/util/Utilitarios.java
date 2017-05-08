@@ -190,6 +190,18 @@ public class Utilitarios {
 		nuevaConstante = nuevaConstante.replaceAll("<br>", "");
 		return nuevaConstante;
 	}
+	
+	public static JFileChooser getPathPDF() {
+		String pathImagen = null;
+		final JFileChooser chooser = new JFileChooser();
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF Images", "jpg", "gif");
+		chooser.setFileFilter(filter);
+		int returnVal = chooser.showOpenDialog(null);
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			pathImagen = chooser.getSelectedFile().getAbsolutePath();
+		}
+		return chooser;
+	}
 
 	public static Map<String, String> mapDistritos() {
 		Map<String, String> distrito = new HashMap<>();
