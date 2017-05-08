@@ -1556,61 +1556,70 @@ public class MaTemplate extends JFrame {
 								"Desea enviar el formulario por correro electrónico?", "Email",
 								JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
-						if (dialog == 0) {
-
-							EmailServer emailServer = new EmailServer();
-							EmailCliente emailCliente = new EmailCliente();
-							BodyPart partBodyContenido = new MimeBodyPart();
-							BodyPart partBodyAdjunto = new MimeBodyPart();
-							MimeMultipart multiParte = new MimeMultipart();
-
-							emailCliente.setVisible(true);
-							emailCliente.setLocationRelativeTo(null);
-
-							emailCliente.getBtnAddArchivo().addActionListener(new ActionListener() {
-								public void actionPerformed(ActionEvent e) {
-									setPathFormularioPDF(Utilitarios.getPathImagen());
-								}
-							});
-
-							emailCliente.getBtnEnviar().addActionListener(new ActionListener() {
-								public void actionPerformed(ActionEvent e) {
-									String de = emailCliente.getTxtUser().getText();
-									String clave = emailCliente.getPwdUser().getSelectedText();
-									String para = emailCliente.getTxtPara().getText();
-									String asunto = emailCliente.getTxtAsunto().getText();
-									String contenidoSMS = emailCliente.getTxtContenidoSMS().getText();
-
-									System.err.println(de + "" + para + "" + asunto);
-
-									try {
-										partBodyContenido.setText(contenidoSMS);
-										partBodyAdjunto.setDataHandler(
-												new DataHandler(new FileDataSource(getPathFormularioPDF())));
-										// partBodyAdjunto.setDataHandler(new
-										// DataHandler(new
-										// FileDataSource("‪C:/Users/FREDDY/Desktop/test.pdf")));
-										// partBodyAdjunto.setFileName("test.pdf");
-
-										multiParte.addBodyPart(partBodyContenido);
-										multiParte.addBodyPart(partBodyAdjunto);
-									} catch (MessagingException e1) {
-										e1.printStackTrace();
-									}
-
-									boolean resultado = emailServer.enviarCorreo(de, clave, para, multiParte, asunto);
-									if (resultado) {
-										System.out.println("Exito!");
-									} else {
-										System.out.println("Fracaso!");
-									}
-
-								}
-							});
-
-						} else {
-							System.out.println("Ingrese los datos correctamente");
-						}
+						// if (dialog == 0) {
+						//
+						// EmailServer emailServer = new EmailServer();
+						// EmailCliente emailCliente = new EmailCliente();
+						// BodyPart partBodyContenido = new MimeBodyPart();
+						// BodyPart partBodyAdjunto = new MimeBodyPart();
+						// MimeMultipart multiParte = new MimeMultipart();
+						//
+						// emailCliente.setVisible(true);
+						// emailCliente.setLocationRelativeTo(null);
+						//
+						// emailCliente.getBtnAddArchivo().addActionListener(new
+						// ActionListener() {
+						// public void actionPerformed(ActionEvent e) {
+						// setPathFormularioPDF(Utilitarios.getPathImagen());
+						// }
+						// });
+						//
+						// emailCliente.getBtnEnviar().addActionListener(new
+						// ActionListener() {
+						// public void actionPerformed(ActionEvent e) {
+						// String de = emailCliente.getTxtUser().getText();
+						// String clave =
+						// emailCliente.getPwdUser().getSelectedText();
+						// String para = emailCliente.getTxtPara().getText();
+						// String asunto =
+						// emailCliente.getTxtAsunto().getText();
+						// String contenidoSMS =
+						// emailCliente.getTxtContenidoSMS().getText();
+						//
+						// System.err.println(de + "" + para + "" + asunto);
+						//
+						// try {
+						// partBodyContenido.setText(contenidoSMS);
+						// partBodyAdjunto.setDataHandler(
+						// new DataHandler(new
+						// FileDataSource(getPathFormularioPDF())));
+						// // partBodyAdjunto.setDataHandler(new
+						// // DataHandler(new
+						// //
+						// FileDataSource("‪C:/Users/FREDDY/Desktop/test.pdf")));
+						// // partBodyAdjunto.setFileName("test.pdf");
+						//
+						// multiParte.addBodyPart(partBodyContenido);
+						// multiParte.addBodyPart(partBodyAdjunto);
+						// } catch (MessagingException e1) {
+						// e1.printStackTrace();
+						// }
+						//
+						// boolean resultado = emailServer.enviarCorreo(de,
+						// clave, para, multiParte, asunto);
+						// if (resultado) {
+						// System.out.println("Exito!");
+						// } else {
+						// System.out.println("Fracaso!");
+						// }
+						//
+						// }
+						// });
+						//
+						// } else {
+						// System.out.println("Ingrese los datos
+						// correctamente");
+						// }
 						new Menu().setVisible(true);
 						dispose();
 					}
