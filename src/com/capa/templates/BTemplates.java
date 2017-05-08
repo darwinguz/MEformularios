@@ -21,7 +21,6 @@ import com.capa.negocios.ComponenteInfoObligatoria;
 import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFicha;
 import com.capa.negocios.ServicioInfoObligatoria;
-import com.capa.presentacion.B2Template;
 import com.capa.presentacion.JPcabecera;
 import com.capa.presentacion.JPinformacionObligatoria;
 import com.capa.util.Utilitarios;
@@ -36,7 +35,7 @@ public class BTemplates extends JFrame {
 	public ServicioInfoObligatoria srvInfoObl = new ComponenteInfoObligatoria();
 	public ServicioCabecera srvTempCabecera = new ComponenteCabecera();
 	public ServicioCabecera srvCabecera = new ComponenteCabecera();
-	
+
 	private JTextField txtCantidad00;
 	private JTextField txtCantidad01;
 	private JTextField txtCantidad10;
@@ -62,7 +61,7 @@ public class BTemplates extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					B2Template frame = new B2Template();
+					BTemplates frame = new BTemplates();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

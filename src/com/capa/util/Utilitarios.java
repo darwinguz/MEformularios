@@ -13,6 +13,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -192,16 +194,28 @@ public class Utilitarios {
 	}
 	
 	public static JFileChooser getPathPDF() {
-		String pathImagen = null;
 		final JFileChooser chooser = new JFileChooser();
 		FileNameExtensionFilter filter = new FileNameExtensionFilter("JPG & GIF Images", "jpg", "gif");
 		chooser.setFileFilter(filter);
 		int returnVal = chooser.showOpenDialog(null);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
-			pathImagen = chooser.getSelectedFile().getAbsolutePath();
+			chooser.getSelectedFile().getAbsolutePath();
+			chooser.getSelectedFile().getName();
 		}
 		return chooser;
 	}
+	
+	public static boolean esEmailCorrecto(String email)
+	  {
+	    boolean valido = false;
+	    Pattern patronEmail = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+	    
+	    Matcher mEmail = patronEmail.matcher(email.toLowerCase());
+	    if (mEmail.matches()) {
+	      valido = true;
+	    }
+	    return valido;
+	  }
 
 	public static Map<String, String> mapDistritos() {
 		Map<String, String> distrito = new HashMap<>();
