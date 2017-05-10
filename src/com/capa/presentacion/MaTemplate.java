@@ -3,10 +3,6 @@ package com.capa.presentacion;
 import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Utilitarios.*;
 import static com.capa.util.Constantes.*;
-import static com.capa.util.Utilitarios.cargarInfoObligatoria;
-import static com.capa.util.Utilitarios.getPathImagen;
-import static com.capa.util.Utilitarios.gettCabecera;
-import static com.capa.util.Utilitarios.llenarCabecera;
 import static com.capa.util.Validaciones.validarInfo;
 
 import java.awt.BorderLayout;
@@ -21,12 +17,6 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.activation.DataHandler;
-import javax.activation.FileDataSource;
-import javax.mail.BodyPart;
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMultipart;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -45,7 +35,6 @@ import com.capa.datos.TdetalleFicha;
 import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteFicha;
 import com.capa.negocios.ComponenteInfoObligatoria;
-import com.capa.negocios.EmailServer;
 import com.capa.negocios.Query;
 import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioCabecera;
@@ -1552,9 +1541,11 @@ public class MaTemplate extends JFrame {
 						reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 						reporte.setVisible(true);
 
-						int dialog = JOptionPane.showConfirmDialog(null,
-								"Desea enviar el formulario por correro electrónico?", "Email",
-								JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+						// int dialog = JOptionPane.showConfirmDialog(null,
+						// "Desea enviar el formulario por correro
+						// electrónico?", "Email",
+						// JOptionPane.YES_NO_OPTION,
+						// JOptionPane.QUESTION_MESSAGE);
 
 						// if (dialog == 0) {
 						//
@@ -1644,12 +1635,16 @@ public class MaTemplate extends JFrame {
 		TCabecera cabecera = srvCabecera.buscarProyecto(gettCabecera().getCNombreProyecto());
 		Integer updateFicha = srvFicha.nActualizacionFicha(gettCabecera(), ficha);
 
-		if (updateFicha == -1) {
-			updateFicha = 0;
-			System.out.println("Ingreso if" + updateFicha);
-		} else {
-			System.out.println("Ingreso else" + updateFicha);
+		// if (updateFicha == -1) {
+		// updateFicha = 0;
+		// } else {
+		// updateFicha++;
+		// }
+
+		if (isFichaC1()) {
 			updateFicha++;
+		} else {
+			updateFicha = -1;
 		}
 
 		List<TdetalleFicha> detallesFicha = new LinkedList<>();
@@ -1907,172 +1902,180 @@ public class MaTemplate extends JFrame {
 	public void setFichaNuevaUpdate() {
 
 		List<TdetalleFicha> listaDetalles = srvFicha.detallesFicha(gettCabecera(), ficha);
-		try {
-			txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
-			txtCantidad11.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
-			txtCantidad21.setText(String.valueOf(listaDetalles.get(2).getDetCantidadEjecutada()));
-			txtCantidad31.setText(String.valueOf(listaDetalles.get(3).getDetCantidadEjecutada()));
-			txtCantidad41.setText(String.valueOf(listaDetalles.get(4).getDetCantidadEjecutada()));
-			txtCantidad51.setText(String.valueOf(listaDetalles.get(5).getDetCantidadEjecutada()));
-			txtCantidad61.setText(String.valueOf(listaDetalles.get(6).getDetCantidadEjecutada()));
-			txtCantidad71.setText(String.valueOf(listaDetalles.get(7).getDetCantidadEjecutada()));
-			txtCantidad81.setText(String.valueOf(listaDetalles.get(8).getDetCantidadEjecutada()));
-			txtCantidad91.setText(String.valueOf(listaDetalles.get(9).getDetCantidadEjecutada()));
-			txtCantidad101.setText(String.valueOf(listaDetalles.get(10).getDetCantidadEjecutada()));
-			txtCantidad111.setText(String.valueOf(listaDetalles.get(11).getDetCantidadEjecutada()));
-			txtCantidad121.setText(String.valueOf(listaDetalles.get(12).getDetCantidadEjecutada()));
-			txtCantidad131.setText(String.valueOf(listaDetalles.get(13).getDetCantidadEjecutada()));
-			txtCantidad141.setText(String.valueOf(listaDetalles.get(14).getDetCantidadEjecutada()));
-			txtCantidad151.setText(String.valueOf(listaDetalles.get(15).getDetCantidadEjecutada()));
-			txtCantidad161.setText(String.valueOf(listaDetalles.get(16).getDetCantidadEjecutada()));
-			txtCantidad171.setText(String.valueOf(listaDetalles.get(17).getDetCantidadEjecutada()));
-			txtCantidad181.setText(String.valueOf(listaDetalles.get(18).getDetCantidadEjecutada()));
-			txtCantidad191.setText(String.valueOf(listaDetalles.get(19).getDetCantidadEjecutada()));
-			txtCantidad201.setText(String.valueOf(listaDetalles.get(20).getDetCantidadEjecutada()));
-			txtCantidad211.setText(String.valueOf(listaDetalles.get(21).getDetCantidadEjecutada()));
-			txtCantidad221.setText(String.valueOf(listaDetalles.get(22).getDetCantidadEjecutada()));
-			txtCantidad231.setText(String.valueOf(listaDetalles.get(23).getDetCantidadEjecutada()));
-			txtCantidad241.setText(String.valueOf(listaDetalles.get(24).getDetCantidadEjecutada()));
-			txtCantidad251.setText(String.valueOf(listaDetalles.get(25).getDetCantidadEjecutada()));
-			txtCantidad261.setText(String.valueOf(listaDetalles.get(26).getDetCantidadEjecutada()));
-			txtCantidad271.setText(String.valueOf(listaDetalles.get(27).getDetCantidadEjecutada()));
-			txtCantidad281.setText(String.valueOf(listaDetalles.get(28).getDetCantidadEjecutada()));
-			txtCantidad291.setText(String.valueOf(listaDetalles.get(29).getDetCantidadEjecutada()));
-			txtCantidad301.setText(String.valueOf(listaDetalles.get(30).getDetCantidadEjecutada()));
-			txtCantidad311.setText(String.valueOf(listaDetalles.get(31).getDetCantidadEjecutada()));
-			txtCantidad321.setText(String.valueOf(listaDetalles.get(32).getDetCantidadEjecutada()));
-			txtCantidad331.setText(String.valueOf(listaDetalles.get(33).getDetCantidadEjecutada()));
-			txtCantidad341.setText(String.valueOf(listaDetalles.get(34).getDetCantidadEjecutada()));
-			txtCantidad351.setText(String.valueOf(listaDetalles.get(35).getDetCantidadEjecutada()));
-			txtCantidad361.setText(String.valueOf(listaDetalles.get(36).getDetCantidadEjecutada()));
-			txtCantidad371.setText(String.valueOf(listaDetalles.get(37).getDetCantidadEjecutada()));
-			txtCantidad381.setText(String.valueOf(listaDetalles.get(38).getDetCantidadEjecutada()));
-			txtCantidad391.setText(String.valueOf(listaDetalles.get(39).getDetCantidadEjecutada()));
+		if (isFichaC1()) {
+			try {
+				txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
+				txtCantidad11.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
+				txtCantidad21.setText(String.valueOf(listaDetalles.get(2).getDetCantidadEjecutada()));
+				txtCantidad31.setText(String.valueOf(listaDetalles.get(3).getDetCantidadEjecutada()));
+				txtCantidad41.setText(String.valueOf(listaDetalles.get(4).getDetCantidadEjecutada()));
+				txtCantidad51.setText(String.valueOf(listaDetalles.get(5).getDetCantidadEjecutada()));
+				txtCantidad61.setText(String.valueOf(listaDetalles.get(6).getDetCantidadEjecutada()));
+				txtCantidad71.setText(String.valueOf(listaDetalles.get(7).getDetCantidadEjecutada()));
+				txtCantidad81.setText(String.valueOf(listaDetalles.get(8).getDetCantidadEjecutada()));
+				txtCantidad91.setText(String.valueOf(listaDetalles.get(9).getDetCantidadEjecutada()));
+				txtCantidad101.setText(String.valueOf(listaDetalles.get(10).getDetCantidadEjecutada()));
+				txtCantidad111.setText(String.valueOf(listaDetalles.get(11).getDetCantidadEjecutada()));
+				txtCantidad121.setText(String.valueOf(listaDetalles.get(12).getDetCantidadEjecutada()));
+				txtCantidad131.setText(String.valueOf(listaDetalles.get(13).getDetCantidadEjecutada()));
+				txtCantidad141.setText(String.valueOf(listaDetalles.get(14).getDetCantidadEjecutada()));
+				txtCantidad151.setText(String.valueOf(listaDetalles.get(15).getDetCantidadEjecutada()));
+				txtCantidad161.setText(String.valueOf(listaDetalles.get(16).getDetCantidadEjecutada()));
+				txtCantidad171.setText(String.valueOf(listaDetalles.get(17).getDetCantidadEjecutada()));
+				txtCantidad181.setText(String.valueOf(listaDetalles.get(18).getDetCantidadEjecutada()));
+				txtCantidad191.setText(String.valueOf(listaDetalles.get(19).getDetCantidadEjecutada()));
+				txtCantidad201.setText(String.valueOf(listaDetalles.get(20).getDetCantidadEjecutada()));
+				txtCantidad211.setText(String.valueOf(listaDetalles.get(21).getDetCantidadEjecutada()));
+				txtCantidad221.setText(String.valueOf(listaDetalles.get(22).getDetCantidadEjecutada()));
+				txtCantidad231.setText(String.valueOf(listaDetalles.get(23).getDetCantidadEjecutada()));
+				txtCantidad241.setText(String.valueOf(listaDetalles.get(24).getDetCantidadEjecutada()));
+				txtCantidad251.setText(String.valueOf(listaDetalles.get(25).getDetCantidadEjecutada()));
+				txtCantidad261.setText(String.valueOf(listaDetalles.get(26).getDetCantidadEjecutada()));
+				txtCantidad271.setText(String.valueOf(listaDetalles.get(27).getDetCantidadEjecutada()));
+				txtCantidad281.setText(String.valueOf(listaDetalles.get(28).getDetCantidadEjecutada()));
+				txtCantidad291.setText(String.valueOf(listaDetalles.get(29).getDetCantidadEjecutada()));
+				txtCantidad301.setText(String.valueOf(listaDetalles.get(30).getDetCantidadEjecutada()));
+				txtCantidad311.setText(String.valueOf(listaDetalles.get(31).getDetCantidadEjecutada()));
+				txtCantidad321.setText(String.valueOf(listaDetalles.get(32).getDetCantidadEjecutada()));
+				txtCantidad331.setText(String.valueOf(listaDetalles.get(33).getDetCantidadEjecutada()));
+				txtCantidad341.setText(String.valueOf(listaDetalles.get(34).getDetCantidadEjecutada()));
+				txtCantidad351.setText(String.valueOf(listaDetalles.get(35).getDetCantidadEjecutada()));
+				txtCantidad361.setText(String.valueOf(listaDetalles.get(36).getDetCantidadEjecutada()));
+				txtCantidad371.setText(String.valueOf(listaDetalles.get(37).getDetCantidadEjecutada()));
+				txtCantidad381.setText(String.valueOf(listaDetalles.get(38).getDetCantidadEjecutada()));
+				txtCantidad391.setText(String.valueOf(listaDetalles.get(39).getDetCantidadEjecutada()));
 
-			txtObs0.setText(listaDetalles.get(0).getDetObsRef());
-			txtObs1.setText(listaDetalles.get(1).getDetObsRef());
-			txtObs2.setText(listaDetalles.get(2).getDetObsRef());
-			txtObs3.setText(listaDetalles.get(3).getDetObsRef());
-			txtObs4.setText(listaDetalles.get(4).getDetObsRef());
-			txtObs5.setText(listaDetalles.get(5).getDetObsRef());
-			txtObs6.setText(listaDetalles.get(6).getDetObsRef());
-			txtObs7.setText(listaDetalles.get(7).getDetObsRef());
-			txtObs8.setText(listaDetalles.get(8).getDetObsRef());
-			txtObs9.setText(listaDetalles.get(9).getDetObsRef());
-			txtObs10.setText(listaDetalles.get(10).getDetObsRef());
-			txtObs11.setText(listaDetalles.get(11).getDetObsRef());
-			txtObs12.setText(listaDetalles.get(12).getDetObsRef());
-			txtObs13.setText(listaDetalles.get(13).getDetObsRef());
-			txtObs14.setText(listaDetalles.get(14).getDetObsRef());
-			txtObs15.setText(listaDetalles.get(15).getDetObsRef());
-			txtObs16.setText(listaDetalles.get(16).getDetObsRef());
-			txtObs17.setText(listaDetalles.get(17).getDetObsRef());
-			txtObs18.setText(listaDetalles.get(18).getDetObsRef());
-			txtObs19.setText(listaDetalles.get(19).getDetObsRef());
-			txtObs20.setText(listaDetalles.get(20).getDetObsRef());
-			txtObs21.setText(listaDetalles.get(21).getDetObsRef());
-			txtObs22.setText(listaDetalles.get(22).getDetObsRef());
-			txtObs23.setText(listaDetalles.get(23).getDetObsRef());
-			txtObs24.setText(listaDetalles.get(24).getDetObsRef());
-			txtObs25.setText(listaDetalles.get(25).getDetObsRef());
-			txtObs26.setText(listaDetalles.get(26).getDetObsRef());
-			txtObs27.setText(listaDetalles.get(27).getDetObsRef());
-			txtObs28.setText(listaDetalles.get(28).getDetObsRef());
-			txtObs29.setText(listaDetalles.get(29).getDetObsRef());
-			txtObs30.setText(listaDetalles.get(30).getDetObsRef());
-			txtObs31.setText(listaDetalles.get(31).getDetObsRef());
-			txtObs32.setText(listaDetalles.get(32).getDetObsRef());
-			txtObs33.setText(listaDetalles.get(33).getDetObsRef());
-			txtObs34.setText(listaDetalles.get(34).getDetObsRef());
-			txtObs35.setText(listaDetalles.get(35).getDetObsRef());
-			txtObs36.setText(listaDetalles.get(36).getDetObsRef());
-			txtObs37.setText(listaDetalles.get(37).getDetObsRef());
-			txtObs38.setText(listaDetalles.get(38).getDetObsRef());
-			txtObs39.setText(listaDetalles.get(39).getDetObsRef());
-		} catch (IndexOutOfBoundsException e) {
-			txtCantidad01.setText(String.valueOf(0));
-			txtCantidad01.setText(String.valueOf(0));
-			txtCantidad11.setText(String.valueOf(0));
-			txtCantidad21.setText(String.valueOf(0));
-			txtCantidad31.setText(String.valueOf(0));
-			txtCantidad41.setText(String.valueOf(0));
-			txtCantidad51.setText(String.valueOf(0));
-			txtCantidad61.setText(String.valueOf(0));
-			txtCantidad71.setText(String.valueOf(0));
-			txtCantidad81.setText(String.valueOf(0));
-			txtCantidad91.setText(String.valueOf(0));
-			txtCantidad101.setText(String.valueOf(0));
-			txtCantidad111.setText(String.valueOf(0));
-			txtCantidad121.setText(String.valueOf(0));
-			txtCantidad131.setText(String.valueOf(0));
-			txtCantidad141.setText(String.valueOf(0));
-			txtCantidad151.setText(String.valueOf(0));
-			txtCantidad161.setText(String.valueOf(0));
-			txtCantidad171.setText(String.valueOf(0));
-			txtCantidad181.setText(String.valueOf(0));
-			txtCantidad191.setText(String.valueOf(0));
-			txtCantidad201.setText(String.valueOf(0));
-			txtCantidad211.setText(String.valueOf(0));
-			txtCantidad221.setText(String.valueOf(0));
-			txtCantidad231.setText(String.valueOf(0));
-			txtCantidad241.setText(String.valueOf(0));
-			txtCantidad251.setText(String.valueOf(0));
-			txtCantidad261.setText(String.valueOf(0));
-			txtCantidad271.setText(String.valueOf(0));
-			txtCantidad281.setText(String.valueOf(0));
-			txtCantidad291.setText(String.valueOf(0));
-			txtCantidad301.setText(String.valueOf(0));
-			txtCantidad311.setText(String.valueOf(0));
-			txtCantidad321.setText(String.valueOf(0));
-			txtCantidad331.setText(String.valueOf(0));
-			txtCantidad341.setText(String.valueOf(0));
-			txtCantidad351.setText(String.valueOf(0));
-			txtCantidad361.setText(String.valueOf(0));
-			txtCantidad371.setText(String.valueOf(0));
-			txtCantidad381.setText(String.valueOf(0));
-			txtCantidad391.setText(String.valueOf(0));
-
-			txtObs0.setText("");
-			txtObs1.setText("");
-			txtObs2.setText("");
-			txtObs3.setText("");
-			txtObs4.setText("");
-			txtObs5.setText("");
-			txtObs6.setText("");
-			txtObs7.setText("");
-			txtObs8.setText("");
-			txtObs9.setText("");
-			txtObs10.setText("");
-			txtObs11.setText("");
-			txtObs12.setText("");
-			txtObs13.setText("");
-			txtObs14.setText("");
-			txtObs15.setText("");
-			txtObs16.setText("");
-			txtObs17.setText("");
-			txtObs18.setText("");
-			txtObs19.setText("");
-			txtObs20.setText("");
-			txtObs21.setText("");
-			txtObs22.setText("");
-			txtObs23.setText("");
-			txtObs24.setText("");
-			txtObs25.setText("");
-			txtObs26.setText("");
-			txtObs27.setText("");
-			txtObs28.setText("");
-			txtObs29.setText("");
-			txtObs30.setText("");
-			txtObs31.setText("");
-			txtObs32.setText("");
-			txtObs33.setText("");
-			txtObs34.setText("");
-			txtObs35.setText("");
-			txtObs36.setText("");
-			txtObs37.setText("");
-			txtObs38.setText("");
-			txtObs39.setText("");
+				txtObs0.setText(listaDetalles.get(0).getDetObsRef());
+				txtObs1.setText(listaDetalles.get(1).getDetObsRef());
+				txtObs2.setText(listaDetalles.get(2).getDetObsRef());
+				txtObs3.setText(listaDetalles.get(3).getDetObsRef());
+				txtObs4.setText(listaDetalles.get(4).getDetObsRef());
+				txtObs5.setText(listaDetalles.get(5).getDetObsRef());
+				txtObs6.setText(listaDetalles.get(6).getDetObsRef());
+				txtObs7.setText(listaDetalles.get(7).getDetObsRef());
+				txtObs8.setText(listaDetalles.get(8).getDetObsRef());
+				txtObs9.setText(listaDetalles.get(9).getDetObsRef());
+				txtObs10.setText(listaDetalles.get(10).getDetObsRef());
+				txtObs11.setText(listaDetalles.get(11).getDetObsRef());
+				txtObs12.setText(listaDetalles.get(12).getDetObsRef());
+				txtObs13.setText(listaDetalles.get(13).getDetObsRef());
+				txtObs14.setText(listaDetalles.get(14).getDetObsRef());
+				txtObs15.setText(listaDetalles.get(15).getDetObsRef());
+				txtObs16.setText(listaDetalles.get(16).getDetObsRef());
+				txtObs17.setText(listaDetalles.get(17).getDetObsRef());
+				txtObs18.setText(listaDetalles.get(18).getDetObsRef());
+				txtObs19.setText(listaDetalles.get(19).getDetObsRef());
+				txtObs20.setText(listaDetalles.get(20).getDetObsRef());
+				txtObs21.setText(listaDetalles.get(21).getDetObsRef());
+				txtObs22.setText(listaDetalles.get(22).getDetObsRef());
+				txtObs23.setText(listaDetalles.get(23).getDetObsRef());
+				txtObs24.setText(listaDetalles.get(24).getDetObsRef());
+				txtObs25.setText(listaDetalles.get(25).getDetObsRef());
+				txtObs26.setText(listaDetalles.get(26).getDetObsRef());
+				txtObs27.setText(listaDetalles.get(27).getDetObsRef());
+				txtObs28.setText(listaDetalles.get(28).getDetObsRef());
+				txtObs29.setText(listaDetalles.get(29).getDetObsRef());
+				txtObs30.setText(listaDetalles.get(30).getDetObsRef());
+				txtObs31.setText(listaDetalles.get(31).getDetObsRef());
+				txtObs32.setText(listaDetalles.get(32).getDetObsRef());
+				txtObs33.setText(listaDetalles.get(33).getDetObsRef());
+				txtObs34.setText(listaDetalles.get(34).getDetObsRef());
+				txtObs35.setText(listaDetalles.get(35).getDetObsRef());
+				txtObs36.setText(listaDetalles.get(36).getDetObsRef());
+				txtObs37.setText(listaDetalles.get(37).getDetObsRef());
+				txtObs38.setText(listaDetalles.get(38).getDetObsRef());
+				txtObs39.setText(listaDetalles.get(39).getDetObsRef());
+			} catch (IndexOutOfBoundsException e) {
+				llenarVacios();
+			}
+		} else {
+			llenarVacios();
 		}
+	}
+
+	public void llenarVacios() {
+		txtCantidad01.setText(String.valueOf(0));
+		txtCantidad01.setText(String.valueOf(0));
+		txtCantidad11.setText(String.valueOf(0));
+		txtCantidad21.setText(String.valueOf(0));
+		txtCantidad31.setText(String.valueOf(0));
+		txtCantidad41.setText(String.valueOf(0));
+		txtCantidad51.setText(String.valueOf(0));
+		txtCantidad61.setText(String.valueOf(0));
+		txtCantidad71.setText(String.valueOf(0));
+		txtCantidad81.setText(String.valueOf(0));
+		txtCantidad91.setText(String.valueOf(0));
+		txtCantidad101.setText(String.valueOf(0));
+		txtCantidad111.setText(String.valueOf(0));
+		txtCantidad121.setText(String.valueOf(0));
+		txtCantidad131.setText(String.valueOf(0));
+		txtCantidad141.setText(String.valueOf(0));
+		txtCantidad151.setText(String.valueOf(0));
+		txtCantidad161.setText(String.valueOf(0));
+		txtCantidad171.setText(String.valueOf(0));
+		txtCantidad181.setText(String.valueOf(0));
+		txtCantidad191.setText(String.valueOf(0));
+		txtCantidad201.setText(String.valueOf(0));
+		txtCantidad211.setText(String.valueOf(0));
+		txtCantidad221.setText(String.valueOf(0));
+		txtCantidad231.setText(String.valueOf(0));
+		txtCantidad241.setText(String.valueOf(0));
+		txtCantidad251.setText(String.valueOf(0));
+		txtCantidad261.setText(String.valueOf(0));
+		txtCantidad271.setText(String.valueOf(0));
+		txtCantidad281.setText(String.valueOf(0));
+		txtCantidad291.setText(String.valueOf(0));
+		txtCantidad301.setText(String.valueOf(0));
+		txtCantidad311.setText(String.valueOf(0));
+		txtCantidad321.setText(String.valueOf(0));
+		txtCantidad331.setText(String.valueOf(0));
+		txtCantidad341.setText(String.valueOf(0));
+		txtCantidad351.setText(String.valueOf(0));
+		txtCantidad361.setText(String.valueOf(0));
+		txtCantidad371.setText(String.valueOf(0));
+		txtCantidad381.setText(String.valueOf(0));
+		txtCantidad391.setText(String.valueOf(0));
+
+		txtObs0.setText("");
+		txtObs1.setText("");
+		txtObs2.setText("");
+		txtObs3.setText("");
+		txtObs4.setText("");
+		txtObs5.setText("");
+		txtObs6.setText("");
+		txtObs7.setText("");
+		txtObs8.setText("");
+		txtObs9.setText("");
+		txtObs10.setText("");
+		txtObs11.setText("");
+		txtObs12.setText("");
+		txtObs13.setText("");
+		txtObs14.setText("");
+		txtObs15.setText("");
+		txtObs16.setText("");
+		txtObs17.setText("");
+		txtObs18.setText("");
+		txtObs19.setText("");
+		txtObs20.setText("");
+		txtObs21.setText("");
+		txtObs22.setText("");
+		txtObs23.setText("");
+		txtObs24.setText("");
+		txtObs25.setText("");
+		txtObs26.setText("");
+		txtObs27.setText("");
+		txtObs28.setText("");
+		txtObs29.setText("");
+		txtObs30.setText("");
+		txtObs31.setText("");
+		txtObs32.setText("");
+		txtObs33.setText("");
+		txtObs34.setText("");
+		txtObs35.setText("");
+		txtObs36.setText("");
+		txtObs37.setText("");
+		txtObs38.setText("");
+		txtObs39.setText("");
 	}
 
 	public String getPathFormularioPDF() {

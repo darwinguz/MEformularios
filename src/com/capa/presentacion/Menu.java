@@ -76,7 +76,7 @@ public class Menu extends JFrame {
 		JButton btnAEkit = new JButton("<html><body><p align=\"center\">AE KIT<br>Alumbrado<br>Exterior</body></html>");
 		btnAEkit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new AeTemplate(servicioFicha.buscarFormulario("AE")).setVisible(true);
+				new AeTemplate(servicioFicha.buscarFormulario("AE-1")).setVisible(true);
 				dispose();
 			}
 		});
