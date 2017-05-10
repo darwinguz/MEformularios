@@ -35,6 +35,7 @@ public class Utilitarios {
 
 	private static TCabecera tCabecera;
 	private static String nombreFicha;
+	private static boolean fichaC1;
 
 	public static ImageIcon getImagenIcon(String path, int base, int altura, int resolucion) {
 		URL url = Utilitarios.class.getResource("/com/capa/imagenes/" + path);
@@ -113,6 +114,14 @@ public class Utilitarios {
 
 	public static void settCabecera(TCabecera tCabecera) {
 		Utilitarios.tCabecera = tCabecera;
+	}
+
+	public static boolean isFichaC1() {
+		return fichaC1;
+	}
+
+	public static void setFichaC1(boolean fichaC1) {
+		Utilitarios.fichaC1 = fichaC1;
 	}
 
 	public static void llenarCabecera(JPcabecera jCabecera) {

@@ -50,7 +50,7 @@ public class AlInicio extends JFrame {
 	public AlInicio() {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 430);
+		setBounds(100, 100, 500, 459);
 		setTitle("DIRECCIÓN NACIONAL DE INFRAESTRUCTURA FÍSICA");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -128,6 +128,7 @@ public class AlInicio extends JFrame {
 					return;
 				}
 				Utilitarios.setNombreFicha("Menú C - Ficha - ");
+				Utilitarios.setFichaC1(false);
 				new Menu().setVisible(true);
 				dispose();
 			}
@@ -145,6 +146,7 @@ public class AlInicio extends JFrame {
 					return;
 				}
 				Utilitarios.setNombreFicha("Menú C.1 - Ficha - ");
+				Utilitarios.setFichaC1(true);
 				new Menu().setVisible(true);
 				dispose();
 			}
@@ -212,6 +214,24 @@ public class AlInicio extends JFrame {
 
 		});
 		contentPane.add(btnLimpiar);
+
+		JButton btnEnviarCorreo = new JButton("ENVIAR CORREO");
+		btnEnviarCorreo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// código para enviar correo
+			}
+		});
+		btnEnviarCorreo.setBounds(128, 391, 144, 23);
+		contentPane.add(btnEnviarCorreo);
+
+		JButton btnSalir = new JButton("SALIR");
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(EXIT_ON_CLOSE);
+			}
+		});
+		btnSalir.setBounds(282, 391, 96, 23);
+		contentPane.add(btnSalir);
 
 		if (Utilitarios.gettCabecera() != null) {
 			txtBuscar.setForeground(Color.BLACK);

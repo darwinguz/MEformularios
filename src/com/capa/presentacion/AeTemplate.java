@@ -15,11 +15,7 @@ import static com.capa.util.Constantes.LBL_EX_18;
 import static com.capa.util.Constantes.LBL_EX_19;
 import static com.capa.util.Constantes.LBL_EX_20;
 import static com.capa.util.Constantes.LBL_EX_21;
-import static com.capa.util.Utilitarios.cargarInfoObligatoria;
-import static com.capa.util.Utilitarios.getPathImagen;
-import static com.capa.util.Utilitarios.gettCabecera;
-import static com.capa.util.Utilitarios.llenarCabecera;
-import static com.capa.util.Utilitarios.quitarEtiquetasHTML;
+import static com.capa.util.Utilitarios.*;
 import static com.capa.util.Validaciones.validarDigitos;
 import static com.capa.util.Validaciones.validarInfo;
 
@@ -371,10 +367,16 @@ public class AeTemplate extends JFrame {
 
 		BigDecimal porcentajeAvance;
 		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
-		if (updateFicha == -1) {
-			updateFicha = 0;
-		} else {
+		// if (updateFicha == -1) {
+		// updateFicha = 0;
+		// } else {
+		// updateFicha++;
+		// }
+
+		if (isFichaC1()) {
 			updateFicha++;
+		} else {
+			updateFicha = -1;
 		}
 
 		TGrupo grupoTmp = servFicha.buscarGrupo("Kit de tableros eléctricos");
