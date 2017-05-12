@@ -121,6 +121,10 @@ public class EmailCliente extends JFrame {
 											JOptionPane.showMessageDialog(null, "Enviado exitosamente ", "CONFIRMACIÓN",
 													JOptionPane.INFORMATION_MESSAGE);
 											emailCliente.dispose();
+										} else {
+											JOptionPane.showMessageDialog(null, "Configurar cliente GMAIL", "ERROR",
+													JOptionPane.ERROR_MESSAGE);
+											emailCliente.dispose();
 										}
 									} else {
 										JOptionPane.showMessageDialog(null, "Verificar EMAIL", "ERROR",
@@ -150,7 +154,7 @@ public class EmailCliente extends JFrame {
 	 */
 	public EmailCliente() {
 		setTitle("Cliente de Mensajería");
-		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 483, 297);
 
 		JPanel pnlPrincipal = new JPanel();
