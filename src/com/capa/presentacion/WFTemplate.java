@@ -641,7 +641,13 @@ public class WFTemplate extends JFrame {
 						parametros.put("serial_ficha", ficha.getFiSerial());
 
 						Reporte reporte = new Reporte("Reporte MB", 280, 10, 850, 750);
-						InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
+						InputStream path;
+
+						if (isFichaC1()) {
+							path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
+						} else {
+							path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA-C.jasper");
+						}
 						reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 						reporte.setVisible(true);
 						new Menu().setVisible(true);
@@ -683,6 +689,7 @@ public class WFTemplate extends JFrame {
 		if (isFichaC1()) {
 			updateFicha++;
 		} else {
+			servFicha.eliminarDatos();
 			updateFicha = -1;
 		}
 

@@ -4,6 +4,7 @@ import static com.capa.negocios.Calculos.calcularPorcentajeAvance;
 import static com.capa.util.Constantes.*;
 import static com.capa.util.Utilitarios.cargarInfoObligatoria;
 import static com.capa.util.Utilitarios.gettCabecera;
+import static com.capa.util.Utilitarios.isFichaC1;
 import static com.capa.util.Utilitarios.quitarEtiquetasHTML;
 import static com.capa.util.Validaciones.validarDigitos;
 import static com.capa.util.Validaciones.validarInfo;
@@ -2753,7 +2754,13 @@ public class Bs2Template extends JFrame {
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
 						parametros.put("serial_ficha", ficha.getFiSerial());
 						Reporte reporte = new Reporte("Reporte Bs", 280, 10, 850, 750);
-						InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
+						InputStream path;
+
+						if (isFichaC1()) {
+							path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
+						} else {
+							path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA-C.jasper");
+						}
 						reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 						reporte.setVisible(true);
 						new Menu().setVisible(true);
@@ -2782,6 +2789,7 @@ public class Bs2Template extends JFrame {
 		if (updateFicha == -1) {
 			updateFicha = 0;
 		} else {
+			srvFicha.eliminarDatos();
 			updateFicha++;
 		}
 

@@ -190,4 +190,10 @@ public class ComponenteFicha implements ServicioFicha {
 		JOptionPane.showMessageDialog(null, mensaje, titulo, tipoMensaje);
 	}
 
+	@Override
+	public void eliminarDatos() {
+		// TODO Auto-generated method stub
+		String query = "delete from t_detalle_ficha where df_actualizacion_n = -1;";
+		Query.eliminar(query);
+	}
 }

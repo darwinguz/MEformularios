@@ -1542,7 +1542,13 @@ public class HsTemplate extends JFrame {
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
 						parametros.put("serial_ficha", ficha.getFiSerial());
 						Reporte reporte = new Reporte("Reporte HS", 280, 10, 850, 750);
-						InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
+						InputStream path;
+
+						if (isFichaC1()) {
+							path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA.jasper");
+						} else {
+							path = AlInicio.class.getResourceAsStream("/com/capa/templates/MA-C.jasper");
+						}
 						reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 						reporte.setVisible(true);
 						new Menu().setVisible(true);
@@ -1581,6 +1587,7 @@ public class HsTemplate extends JFrame {
 		if (isFichaC1()) {
 			updateFicha++;
 		} else {
+			servicioFicha.eliminarDatos();
 			updateFicha = -1;
 		}
 

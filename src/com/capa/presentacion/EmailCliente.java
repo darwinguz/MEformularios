@@ -150,7 +150,7 @@ public class EmailCliente extends JFrame {
 	 */
 	public EmailCliente() {
 		setTitle("Cliente de Mensajería");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 483, 297);
 
 		JPanel pnlPrincipal = new JPanel();

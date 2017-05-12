@@ -7,10 +7,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.InputStream;
 import java.util.HashMap;
 
+import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
+import javax.mail.BodyPart;
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMultipart;
 import javax.swing.JButton;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -21,11 +30,13 @@ import javax.swing.border.EmptyBorder;
 import com.capa.datos.TCabecera;
 import com.capa.negocios.ComponenteCabecera;
 import com.capa.negocios.ComponenteFichaA;
+import com.capa.negocios.EmailServer;
 import com.capa.negocios.Query;
 import com.capa.negocios.Reporte;
 import com.capa.negocios.ServicioCabecera;
 import com.capa.negocios.ServicioFichaA;
 import com.capa.util.Utilitarios;
+import com.capa.util.Validaciones;
 
 public class AlInicio extends JFrame {
 
@@ -218,7 +229,95 @@ public class AlInicio extends JFrame {
 		JButton btnEnviarCorreo = new JButton("ENVIAR CORREO");
 		btnEnviarCorreo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// código para enviar correo
+				if (JOptionPane.showConfirmDialog(null, "Desea enviar el formulario por correro electrónico?", "Email",
+						JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == 0) {
+
+					EmailServer emailServer = new EmailServer();
+					EmailCliente emailCliente = new EmailCliente();
+					emailCliente.addWindowListener(new WindowListener() {
+						public void windowOpened(WindowEvent e) {
+							System.out.println("OPEN>>>");
+						}
+
+						public void windowActivated(WindowEvent e) {
+						}
+
+						public void windowDeactivated(WindowEvent e) {
+						}
+
+						public void windowIconified(WindowEvent e) {
+						}
+
+						public void windowDeiconified(WindowEvent e) {
+						}
+
+						public void windowClosed(WindowEvent e) {
+						}
+
+						public void windowClosing(WindowEvent e) {
+							System.out.println("CLOSE>>>");
+							e.getWindow().dispose();
+						}
+					});
+
+					emailCliente.getBtnAddArchivo().addActionListener(new ActionListener() {
+
+						public void actionPerformed(ActionEvent e) {
+							JFileChooser path = Utilitarios.getPathPDF();
+							emailCliente.getTxtPathPDF().setText(path.getSelectedFile().getAbsolutePath());
+							emailCliente.setTxtPathNamePDF(path.getSelectedFile().getName());
+						}
+					});
+
+					emailCliente.getBtnEnviar().addActionListener(new ActionListener() {
+						public void actionPerformed(ActionEvent e) {
+
+							BodyPart partBodyContenido = new MimeBodyPart();
+							BodyPart partBodyAdjunto = new MimeBodyPart();
+							MimeMultipart multiParte = new MimeMultipart();
+
+							String de = emailCliente.getTxtUser().getText();
+							char aux[] = emailCliente.getPwdUser().getPassword();
+							String clave = new String(aux);
+							String para = emailCliente.getTxtPara().getText();
+							String asunto = emailCliente.getTxtAsunto().getText();
+							String contenidoSMS = emailCliente.getTxtContenidoSMS().getText();
+
+							try {
+								partBodyContenido.setText(contenidoSMS);
+								partBodyAdjunto.setDataHandler(
+										new DataHandler(new FileDataSource(emailCliente.getTxtPathPDF().getText())));
+								partBodyAdjunto.setFileName(emailCliente.getTxtPathNamePDF());
+								multiParte.addBodyPart(partBodyContenido);
+								multiParte.addBodyPart(partBodyAdjunto);
+
+								if (Validaciones.isEstructuraEmail(emailCliente)) {
+									if (Validaciones.isCorrectEmail(de) && Validaciones.isCorrectEmail(para)) {
+										boolean resultado = emailServer.enviarCorreo(de, clave, para, multiParte,
+												asunto);
+										if (resultado) {
+											JOptionPane.showMessageDialog(null, "Enviado exitosamente ", "CONFIRMACIÓN",
+													JOptionPane.INFORMATION_MESSAGE);
+											emailCliente.dispose();
+										}
+									} else {
+										JOptionPane.showMessageDialog(null, "Verificar EMAIL", "ERROR",
+												JOptionPane.ERROR_MESSAGE);
+									}
+
+								} else {
+									JOptionPane.showMessageDialog(null, "Agregar datos requeridos! ", "ADVERTENCIA",
+											JOptionPane.INFORMATION_MESSAGE);
+								}
+
+							} catch (MessagingException ex) {
+								JOptionPane.showMessageDialog(null, "Error al enviar el EMAIL " + ex.getMessage(),
+										"ERROR", JOptionPane.ERROR_MESSAGE);
+							}
+
+						}
+					});
+				}
 			}
 		});
 		btnEnviarCorreo.setBounds(128, 391, 144, 23);
