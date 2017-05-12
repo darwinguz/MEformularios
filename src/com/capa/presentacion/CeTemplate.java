@@ -165,6 +165,7 @@ public class CeTemplate extends JFrame {
 		panel_6.add(txtCantidad00);
 
 		txtCantidad01 = new JTextField();
+		txtCantidad01.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		txtCantidad01.setColumns(10);
 		panel_6.add(txtCantidad01);
 		validarDigitos(txtCantidad01);

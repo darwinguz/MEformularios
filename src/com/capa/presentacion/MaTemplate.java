@@ -946,7 +946,7 @@ public class MaTemplate extends JFrame {
 		JPanel pnlFachadaLateral = new JPanel();
 		pnlFachadaLateral.setLayout(null);
 		pnlFachadaLateral.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlFachadaLateral.setBounds(434, 265, 417, 61);
+		pnlFachadaLateral.setBounds(434, 265, 417, 80);
 		pnlPestaña1.add(pnlFachadaLateral);
 
 		JLabel lblFachadaLateral_1 = new JLabel("FACHADA LATERAL");
@@ -963,7 +963,7 @@ public class MaTemplate extends JFrame {
 		pnlFachadaLateral.add(label_15);
 
 		JPanel pnlEtiquetasFL = new JPanel();
-		pnlEtiquetasFL.setBounds(3, 17, 199, 40);
+		pnlEtiquetasFL.setBounds(3, 17, 199, 52);
 		pnlFachadaLateral.add(pnlEtiquetasFL);
 		pnlEtiquetasFL.setLayout(new GridLayout(2, 0, 0, 0));
 
@@ -978,7 +978,7 @@ public class MaTemplate extends JFrame {
 		pnlEtiquetasFL.add(lblLblma_6);
 
 		JPanel pnlCantidadFL = new JPanel();
-		pnlCantidadFL.setBounds(210, 17, 55, 40);
+		pnlCantidadFL.setBounds(210, 17, 55, 52);
 		pnlFachadaLateral.add(pnlCantidadFL);
 		pnlCantidadFL.setLayout(new GridLayout(2, 2, 0, 0));
 
@@ -1009,7 +1009,7 @@ public class MaTemplate extends JFrame {
 		Validaciones.validarDigitos(txtCantidad231);
 
 		JPanel pnlObsRefFL = new JPanel();
-		pnlObsRefFL.setBounds(267, 17, 143, 40);
+		pnlObsRefFL.setBounds(267, 17, 143, 52);
 		pnlFachadaLateral.add(pnlObsRefFL);
 		pnlObsRefFL.setLayout(new GridLayout(2, 0, 0, 0));
 
@@ -1024,7 +1024,7 @@ public class MaTemplate extends JFrame {
 		JPanel pnlInterior = new JPanel();
 		pnlInterior.setLayout(null);
 		pnlInterior.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlInterior.setBounds(434, 370, 417, 61);
+		pnlInterior.setBounds(434, 370, 417, 80);
 		pnlPestaña1.add(pnlInterior);
 
 		JLabel lblInterior = new JLabel("INTERIOR");
@@ -1041,7 +1041,7 @@ public class MaTemplate extends JFrame {
 		pnlInterior.add(label_18);
 
 		JPanel pnlEtiquetasI = new JPanel();
-		pnlEtiquetasI.setBounds(3, 17, 199, 40);
+		pnlEtiquetasI.setBounds(3, 17, 199, 52);
 		pnlInterior.add(pnlEtiquetasI);
 		pnlEtiquetasI.setLayout(new GridLayout(2, 0, 0, 0));
 
@@ -1056,7 +1056,7 @@ public class MaTemplate extends JFrame {
 		pnlEtiquetasI.add(lblLblma_8);
 
 		JPanel pnlCantidadI = new JPanel();
-		pnlCantidadI.setBounds(210, 17, 55, 40);
+		pnlCantidadI.setBounds(210, 17, 55, 52);
 		pnlInterior.add(pnlCantidadI);
 		pnlCantidadI.setLayout(new GridLayout(2, 2, 0, 0));
 
@@ -1086,7 +1086,7 @@ public class MaTemplate extends JFrame {
 		Validaciones.validarDigitos(txtCantidad251);
 
 		JPanel pnlObsRefI = new JPanel();
-		pnlObsRefI.setBounds(267, 17, 143, 40);
+		pnlObsRefI.setBounds(267, 17, 143, 52);
 		pnlInterior.add(pnlObsRefI);
 		pnlObsRefI.setLayout(new GridLayout(2, 0, 0, 0));
 
@@ -1101,7 +1101,7 @@ public class MaTemplate extends JFrame {
 		JPanel pnlCubierta = new JPanel();
 		pnlCubierta.setLayout(null);
 		pnlCubierta.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		pnlCubierta.setBounds(434, 470, 417, 49);
+		pnlCubierta.setBounds(434, 470, 417, 62);
 		pnlPestaña1.add(pnlCubierta);
 
 		JLabel lblFachadaLateral = new JLabel("CUBIERTA");
@@ -1118,7 +1118,7 @@ public class MaTemplate extends JFrame {
 		pnlCubierta.add(label_14);
 
 		JPanel pnlEtiquetasC = new JPanel();
-		pnlEtiquetasC.setBounds(3, 17, 199, 20);
+		pnlEtiquetasC.setBounds(3, 17, 199, 34);
 		pnlCubierta.add(pnlEtiquetasC);
 		pnlEtiquetasC.setLayout(new GridLayout(1, 0, 0, 0));
 
