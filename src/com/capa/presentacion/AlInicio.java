@@ -299,6 +299,10 @@ public class AlInicio extends JFrame {
 											JOptionPane.showMessageDialog(null, "Enviado exitosamente ", "CONFIRMACIÓN",
 													JOptionPane.INFORMATION_MESSAGE);
 											emailCliente.dispose();
+										} else {
+											JOptionPane.showMessageDialog(null, "Configurar cliente GMAIL", "ERROR",
+													JOptionPane.ERROR_MESSAGE);
+											emailCliente.dispose();
 										}
 									} else {
 										JOptionPane.showMessageDialog(null, "Verificar EMAIL", "ERROR",
@@ -317,7 +321,9 @@ public class AlInicio extends JFrame {
 
 						}
 					});
+
 				}
+
 			}
 		});
 		btnEnviarCorreo.setBounds(128, 391, 144, 23);
