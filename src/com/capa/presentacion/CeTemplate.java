@@ -130,7 +130,7 @@ public class CeTemplate extends JFrame {
 		pnlModuloWPC.setBounds(20, 20, 414, 49);
 		pnlPestaña1.add(pnlModuloWPC);
 
-		JLabel lblModuloWpcTipo = new JLabel("MODULO WPC TIPO A - 180x105 cm");
+		JLabel lblModuloWpcTipo = new JLabel("COMPONENTE ARQUITECTÓNICO");
 		lblModuloWpcTipo.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblModuloWpcTipo.setBounds(3, 1, 176, 14);
 		pnlModuloWPC.add(lblModuloWpcTipo);
@@ -148,7 +148,7 @@ public class CeTemplate extends JFrame {
 		pnlModuloWPC.add(panel_5);
 		panel_5.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblComponenteArquitectnico = new JLabel("COMPONENTE ARQUITECT\u00D3NICO");
+		JLabel lblComponenteArquitectnico = new JLabel("MODULO WPC TIPO A - 180x105 cm");
 		lblComponenteArquitectnico.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_5.add(lblComponenteArquitectnico);
 
@@ -381,7 +381,7 @@ public class CeTemplate extends JFrame {
 			updateFicha = -1;
 		}
 
-		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo A - 180x105");
+		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo A - 180x105 cm");
 		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad00.getText()),
 				Double.parseDouble(txtCantidad01.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_CE_0),

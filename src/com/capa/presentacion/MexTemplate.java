@@ -881,7 +881,7 @@ public class MexTemplate extends JFrame {
 		// infor.setIoSerial(srvInfoObl.serialInfoOblMax());
 
 		BigDecimal porcentajeAvance;
-		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo A - 180x105");
+		TGrupo grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo A - 180x105 cm");
 		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
 		// if (updateFicha == -1) {
 		// updateFicha = 0;
@@ -912,7 +912,7 @@ public class MexTemplate extends JFrame {
 				Integer.parseInt(txtCantidad20.getText()), Integer.parseInt(txtCantidad21.getText()), txtObs2.getText(),
 				updateFicha, porcentajeAvance, ITEM_MEX_2, "UNIDAD"));
 
-		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo B - 250x105");
+		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo B - 250x105 cm");
 		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad30.getText()),
 				Double.parseDouble(txtCantidad31.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_3),
@@ -929,7 +929,7 @@ public class MexTemplate extends JFrame {
 				Integer.parseInt(txtCantidad50.getText()), Integer.parseInt(txtCantidad51.getText()), txtObs5.getText(),
 				updateFicha, porcentajeAvance, ITEM_MEX_5, "UNIDAD"));
 
-		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo C - 240x105");
+		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo C - 240x105 cm");
 		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad60.getText()),
 				Double.parseDouble(txtCantidad61.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_6),
@@ -946,7 +946,7 @@ public class MexTemplate extends JFrame {
 				Integer.parseInt(txtCantidad80.getText()), Integer.parseInt(txtCantidad81.getText()), txtObs8.getText(),
 				updateFicha, porcentajeAvance, ITEM_MEX_8, "UNIDAD"));
 
-		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo D - 135x105");
+		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo D - 135x105 cm");
 		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad90.getText()),
 				Double.parseDouble(txtCantidad91.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_9),
@@ -963,7 +963,7 @@ public class MexTemplate extends JFrame {
 				Integer.parseInt(txtCantidad110.getText()), Integer.parseInt(txtCantidad111.getText()),
 				txtObs11.getText(), updateFicha, porcentajeAvance, ITEM_MEX_11, "UNIDAD"));
 
-		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo E - 204x105");
+		grupoTmp = servFicha.buscarGrupo("Módulo WPC tipo E - 204x105 cm");
 		porcentajeAvance = calcularPorcentajeAvance(Double.parseDouble(txtCantidad120.getText()),
 				Double.parseDouble(txtCantidad121.getText()));
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, quitarEtiquetasHTML(LBL_MEX_12),

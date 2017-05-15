@@ -1823,7 +1823,8 @@ public class B2Template extends JFrame {
 		panel_3.add(panel_22);
 		panel_22.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_13 = new JLabel(LBL_BS_14);
+		JLabel lblLblbs_13 = new JLabel(
+				"<html><body><p align=right>Kit de Accesorios de Conexión Agua Potable(Inodoros)(5  te reducciones 1-1/2  ,  5 neplos,10uniones de 1/2,10 codos de 90°,5 mangueras de abasto,5 llave de paso , 1 rollo teflón, 2 tubos de pasta selladora)</p></body></html>");
 		lblLblbs_13.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_13.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_22.add(lblLblbs_13);
@@ -2590,7 +2591,7 @@ public class B2Template extends JFrame {
 
 		TGrupo grupo1 = srvFicha.buscarGrupo("Kit eléctrico");
 		TGrupo grupo2 = srvFicha.buscarGrupo("Kit hidrosanitario");
-		TGrupo grupo3 = srvFicha.buscarGrupo("Kit agua");
+		TGrupo grupo3 = srvFicha.buscarGrupo("Kit agua lluvia");
 		TGrupo grupo4 = srvFicha.buscarGrupo("Kit agua potable");
 		TGrupo grupo5 = srvFicha.buscarGrupo("Kit agua residual");
 		TGrupo grupo6 = srvFicha.buscarGrupo("Componente arquitectónico");
@@ -2846,7 +2847,7 @@ public class B2Template extends JFrame {
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad400.getText()),
 							Integer.parseInt(txtCantidad401.getText())),
 					ITEM_BS2_40, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha,
 					quitarEtiquetasHTML(LBL_BS2_41), Integer.parseInt(txtCantidad410.getText()),
 					Integer.parseInt(txtCantidad411.getText()), txtObs41.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad410.getText()),
@@ -2864,7 +2865,7 @@ public class B2Template extends JFrame {
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad430.getText()),
 							Integer.parseInt(txtCantidad431.getText())),
 					ITEM_BS2_43, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha,
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo8, ficha,
 					quitarEtiquetasHTML(LBL_BS2_44), Integer.parseInt(txtCantidad440.getText()),
 					Integer.parseInt(txtCantidad441.getText()), txtObs44.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad440.getText()),
@@ -2888,7 +2889,7 @@ public class B2Template extends JFrame {
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad470.getText()),
 							Integer.parseInt(txtCantidad471.getText())),
 					ITEM_BS2_47, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo8, ficha,
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
 					quitarEtiquetasHTML(LBL_BS2_48), Integer.parseInt(txtCantidad480.getText()),
 					Integer.parseInt(txtCantidad481.getText()), txtObs48.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad480.getText()),

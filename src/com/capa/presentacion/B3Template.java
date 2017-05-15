@@ -79,25 +79,25 @@ public class B3Template extends JFrame {
 	private JTextField txtCantidad51;
 	private JTextField txtCantidad60;
 	private JTextField txtCantidad61;
-	private JTextField txtCantidad70;
-	private JTextField txtCantidad71;
 	private JTextField txtObs5;
 	private JTextField txtObs6;
-	private JTextField txtObs7;
+	private JTextField txtCantidad70;
+	private JTextField txtCantidad71;
 	private JTextField txtCantidad80;
 	private JTextField txtCantidad81;
+	private JTextField txtObs7;
+	private JTextField txtObs8;
 	private JTextField txtCantidad90;
 	private JTextField txtCantidad91;
-	private JTextField txtObs8;
 	private JTextField txtObs9;
 	private JTextField txtCantidad100;
 	private JTextField txtCantidad101;
-	private JTextField txtObs10;
 	private JTextField txtCantidad110;
 	private JTextField txtCantidad111;
+	private JTextField txtObs10;
+	private JTextField txtObs11;
 	private JTextField txtCantidad120;
 	private JTextField txtCantidad121;
-	private JTextField txtObs11;
 	private JTextField txtObs12;
 	private JTextField txtCantidad130;
 	private JTextField txtCantidad131;
@@ -107,82 +107,55 @@ public class B3Template extends JFrame {
 	private JTextField txtObs14;
 	private JTextField txtCantidad150;
 	private JTextField txtCantidad151;
-	private JTextField txtObs15;
 	private JTextField txtCantidad160;
 	private JTextField txtCantidad161;
-	private JTextField txtCantidad170;
-	private JTextField txtCantidad171;
+	private JTextField txtObs15;
 	private JTextField txtObs16;
-	private JTextField txtObs17;
-	private JTextField txtCantidad180;
-	private JTextField txtCantidad181;
-	private JTextField txtObs18;
+	private JTextField txtCantidad200;
+	private JTextField txtCantidad201;
+	private JTextField txtObs20;
 	private JTextField txtCantidad190;
 	private JTextField txtCantidad191;
 	private JTextField txtObs19;
 	private JTextField txtCantidad210;
 	private JTextField txtCantidad211;
 	private JTextField txtObs21;
-	private JTextField txtCantidad200;
-	private JTextField txtCantidad201;
-	private JTextField txtObs20;
 	private JTextField txtCantidad220;
 	private JTextField txtCantidad221;
 	private JTextField txtObs22;
+	private JTextField txtCantidad250;
+	private JTextField txtCantidad251;
+	private JTextField txtObs25;
 	private JTextField txtCantidad230;
 	private JTextField txtCantidad231;
+	private JTextField txtCantidad240;
+	private JTextField txtCantidad241;
 	private JTextField txtObs23;
+	private JTextField txtObs24;
 	private JTextField txtCantidad260;
 	private JTextField txtCantidad261;
 	private JTextField txtObs26;
-	private JTextField txtCantidad240;
-	private JTextField txtCantidad241;
-	private JTextField txtCantidad250;
-	private JTextField txtCantidad251;
-	private JTextField txtObs24;
-	private JTextField txtObs25;
-	private JTextField txtCantidad290;
-	private JTextField txtCantidad291;
-	private JTextField txtObs29;
 	private JTextField txtCantidad270;
 	private JTextField txtCantidad271;
+	private JTextField txtObs27;
 	private JTextField txtCantidad280;
 	private JTextField txtCantidad281;
-	private JTextField txtObs27;
 	private JTextField txtObs28;
-	private JTextField txtCantidad320;
-	private JTextField txtCantidad321;
-	private JTextField txtObs32;
+	private JTextField txtCantidad290;
+	private JTextField txtCantidad291;
 	private JTextField txtCantidad300;
 	private JTextField txtCantidad301;
 	private JTextField txtCantidad310;
 	private JTextField txtCantidad311;
+	private JTextField txtObs29;
 	private JTextField txtObs30;
 	private JTextField txtObs31;
+	private JTextField txtCantidad320;
+	private JTextField txtCantidad321;
 	private JTextField txtCantidad330;
 	private JTextField txtCantidad331;
+	private JTextField txtObs32;
 	private JTextField txtObs33;
-	private JTextField txtCantidad340;
-	private JTextField txtCantidad341;
-	private JTextField txtObs34;
-	private JTextField txtCantidad360;
-	private JTextField txtCantidad361;
-	private JTextField txtCantidad370;
-	private JTextField txtCantidad371;
-	private JTextField txtCantidad380;
-	private JTextField txtCantidad381;
-	private JTextField txtObs36;
-	private JTextField txtObs37;
-	private JTextField txtObs38;
-	private JTextField txtCantidad390;
-	private JTextField txtCantidad391;
-	private JTextField txtObs39;
-	private JTextField txtCantidad400;
-	private JTextField txtCantidad401;
-	private JTextField txtCantidad410;
-	private JTextField txtCantidad411;
-	private JTextField txtObs40;
-	private JTextField txtObs41;
 	private JTextField txtCantidad430;
 	private JTextField txtCantidad431;
 	private JTextField txtCantidad440;
@@ -192,60 +165,18 @@ public class B3Template extends JFrame {
 	private JTextField txtObs43;
 	private JTextField txtObs44;
 	private JTextField txtObs45;
-	private JTextField txtCantidad460;
-	private JTextField txtCantidad461;
 	private JTextField txtCantidad470;
 	private JTextField txtCantidad471;
-	private JTextField txtObs48;
-	private JTextField txtObs49;
 	private JTextField txtCantidad480;
 	private JTextField txtCantidad481;
+	private JTextField txtObs49;
+	private JTextField txtObs50;
 	private JTextField txtCantidad490;
 	private JTextField txtCantidad491;
-	private JTextField txtObs46;
-	private JTextField txtObs47;
-	private JTextField txtCantidad590;
-	private JTextField txtCantidad591;
-	private JTextField txtCantidad600;
-	private JTextField txtCantidad601;
-	private JTextField txtCantidad610;
-	private JTextField txtCantidad611;
-	private JTextField txtCantidad620;
-	private JTextField txtCantidad621;
-	private JTextField txtObs59;
-	private JTextField txtObs60;
-	private JTextField txtObs61;
-	private JTextField txtObs62;
-	private JTextField txtCantidad630;
-	private JTextField txtCantidad631;
-	private JTextField txtCantidad640;
-	private JTextField txtCantidad641;
-	private JTextField txtCantidad650;
-	private JTextField txtCantidad651;
-	private JTextField txtCantidad660;
-	private JTextField txtCantidad661;
-	private JTextField txtCantidad670;
-	private JTextField txtCantidad671;
-	private JTextField txtCantidad680;
-	private JTextField txtCantidad681;
-	private JTextField txtCantidad690;
-	private JTextField txtCantidad691;
-	private JTextField txtCantidad700;
-	private JTextField txtCantidad701;
-	private JTextField txtObs63;
-	private JTextField txtObs64;
-	private JTextField txtObs65;
-	private JTextField txtObs66;
-	private JTextField txtObs67;
-	private JTextField txtObs68;
-	private JTextField txtObs69;
-	private JTextField txtObs70;
 	private JTextField txtCantidad500;
 	private JTextField txtCantidad501;
-	private JTextField txtCantidad510;
-	private JTextField txtCantidad511;
-	private JTextField txtCantidad520;
-	private JTextField txtCantidad521;
+	private JTextField txtObs47;
+	private JTextField txtObs48;
 	private JTextField txtCantidad530;
 	private JTextField txtCantidad531;
 	private JTextField txtCantidad540;
@@ -254,23 +185,87 @@ public class B3Template extends JFrame {
 	private JTextField txtCantidad551;
 	private JTextField txtCantidad560;
 	private JTextField txtCantidad561;
-	private JTextField txtCantidad570;
-	private JTextField txtCantidad571;
-	private JTextField txtCantidad580;
-	private JTextField txtCantidad581;
-	private JTextField txtObs50;
-	private JTextField txtObs51;
-	private JTextField txtObs52;
 	private JTextField txtObs53;
 	private JTextField txtObs54;
 	private JTextField txtObs55;
 	private JTextField txtObs56;
+	private JTextField txtCantidad570;
+	private JTextField txtCantidad571;
+	private JTextField txtCantidad580;
+	private JTextField txtCantidad581;
+	private JTextField txtCantidad590;
+	private JTextField txtCantidad591;
+	private JTextField txtCantidad600;
+	private JTextField txtCantidad601;
+	private JTextField txtCantidad610;
+	private JTextField txtCantidad611;
+	private JTextField txtCantidad620;
+	private JTextField txtCantidad621;
+	private JTextField txtCantidad630;
+	private JTextField txtCantidad631;
+	private JTextField txtCantidad640;
+	private JTextField txtCantidad641;
 	private JTextField txtObs57;
 	private JTextField txtObs58;
+	private JTextField txtObs59;
+	private JTextField txtObs60;
+	private JTextField txtObs61;
+	private JTextField txtObs62;
+	private JTextField txtObs63;
+	private JTextField txtObs64;
+	private JTextField txtCantidad510;
+	private JTextField txtCantidad511;
+	private JTextField txtCantidad520;
+	private JTextField txtCantidad521;
+	private JTextField txtObs51;
+	private JTextField txtObs52;
+	private JTextField txtCantidad340;
+	private JTextField txtCantidad341;
+	private JTextField txtObs34;
+	private JPinformacionObligatoria jpIOblig;
+	private JLabel lbltuberaDePvc_1;
+	private JTextField txtObs17;
+	private JTextField txtObs18;
+	private JTextField txtCantidad170;
+	private JTextField txtCantidad171;
+	private JTextField txtCantidad180;
+	private JTextField txtCantidad181;
+	private JLabel lblpanelesTcbPiso;
+	private JLabel lblpanelesVynilPiso;
+	private JLabel lblpanelesEpsPara;
+	private JLabel lblpanelesEpsPara_1;
+	private JLabel lblpanelesDivisoresBat;
+	private JLabel lblpanelesDivisoresPared;
+	private JLabel lblsetPuertasInteriores;
+	private JLabel lblsetMesnPara;
+	private JTextField txtCantidad350;
+	private JTextField txtCantidad351;
+	private JTextField txtCantidad360;
+	private JTextField txtCantidad361;
+	private JTextField txtCantidad370;
+	private JTextField txtCantidad371;
+	private JTextField txtCantidad380;
+	private JTextField txtCantidad381;
+	private JTextField txtCantidad390;
+	private JTextField txtCantidad391;
+	private JTextField txtCantidad400;
+	private JTextField txtCantidad401;
+	private JTextField txtCantidad410;
+	private JTextField txtCantidad411;
 	private JTextField txtCantidad420;
 	private JTextField txtCantidad421;
+	private JTextField txtObs35;
+	private JTextField txtObs36;
+	private JTextField txtObs37;
+	private JTextField txtObs38;
+	private JTextField txtObs39;
+	private JTextField txtObs40;
+	private JTextField txtObs41;
 	private JTextField txtObs42;
-	private JPinformacionObligatoria jpIOblig;
+	private JLabel lblpanelesConCortes;
+	private JTextField txtCantidad460;
+	private JTextField txtCantidad461;
+	private JTextField txtObs46;
 	/**
 	 * Launch the application.
 	 */
@@ -348,7 +343,7 @@ public class B3Template extends JFrame {
 	public void cargarPanelPestaña2(JPanel pnlPestaña2) {
 		JPanel panel_5 = new JPanel();
 		panel_5.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_5.setBounds(10, 11, 410, 237);
+		panel_5.setBounds(10, 11, 410, 508);
 		pnlPestaña2.add(panel_5);
 		panel_5.setLayout(null);
 
@@ -395,99 +390,63 @@ public class B3Template extends JFrame {
 		panel_5.add(panel);
 		panel.setLayout(new GridLayout(3, 2, 0, 0));
 
-		txtCantidad360 = new JTextField();
-		txtCantidad360.setText("2");
-		txtCantidad360.setEditable(false);
-		txtCantidad360.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad360.setColumns(10);
-		panel.add(txtCantidad360);
+		txtCantidad290 = new JTextField();
+		txtCantidad290.setText("2");
+		txtCantidad290.setEditable(false);
+		txtCantidad290.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad290.setColumns(10);
+		panel.add(txtCantidad290);
 
-		txtCantidad361 = new JTextField();
-		txtCantidad361.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad361.setColumns(10);
-		panel.add(txtCantidad361);
+		txtCantidad291 = new JTextField();
+		txtCantidad291.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad291.setColumns(10);
+		panel.add(txtCantidad291);
 
-		txtCantidad370 = new JTextField();
-		txtCantidad370.setText("21");
-		txtCantidad370.setEditable(false);
-		txtCantidad370.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad370.setColumns(10);
-		panel.add(txtCantidad370);
+		txtCantidad300 = new JTextField();
+		txtCantidad300.setText("21");
+		txtCantidad300.setEditable(false);
+		txtCantidad300.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad300.setColumns(10);
+		panel.add(txtCantidad300);
 
-		txtCantidad371 = new JTextField();
-		txtCantidad371.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad371.setColumns(10);
-		panel.add(txtCantidad371);
+		txtCantidad301 = new JTextField();
+		txtCantidad301.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad301.setColumns(10);
+		panel.add(txtCantidad301);
 
-		txtCantidad380 = new JTextField();
-		txtCantidad380.setText("6");
-		txtCantidad380.setEditable(false);
-		txtCantidad380.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad380.setColumns(10);
-		panel.add(txtCantidad380);
+		txtCantidad310 = new JTextField();
+		txtCantidad310.setText("6");
+		txtCantidad310.setEditable(false);
+		txtCantidad310.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad310.setColumns(10);
+		panel.add(txtCantidad310);
 
-		txtCantidad381 = new JTextField();
-		txtCantidad381.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad381.setColumns(10);
-		panel.add(txtCantidad381);
+		txtCantidad311 = new JTextField();
+		txtCantidad311.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad311.setColumns(10);
+		panel.add(txtCantidad311);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(248, 24, 152, 75);
 		panel_5.add(panel_1);
 		panel_1.setLayout(new GridLayout(3, 0, 0, 0));
 
-		txtObs36 = new JTextField();
-		txtObs36.setColumns(10);
-		panel_1.add(txtObs36);
+		txtObs29 = new JTextField();
+		txtObs29.setColumns(10);
+		panel_1.add(txtObs29);
 
-		txtObs37 = new JTextField();
-		txtObs37.setColumns(10);
-		panel_1.add(txtObs37);
+		txtObs30 = new JTextField();
+		txtObs30.setColumns(10);
+		panel_1.add(txtObs30);
 
-		txtObs38 = new JTextField();
-		txtObs38.setColumns(10);
-		panel_1.add(txtObs38);
-
-		JPanel panel_12 = new JPanel();
-		panel_12.setBounds(10, 100, 167, 50);
-		panel_5.add(panel_12);
-		panel_12.setLayout(new GridLayout(1, 0, 0, 0));
-
-		JLabel lblLblbs_36 = new JLabel(LBL_BST3_38);
-		lblLblbs_36.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_36.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_12.add(lblLblbs_36);
-
-		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(188, 112, 50, 25);
-		panel_5.add(panel_3);
-		panel_3.setLayout(new GridLayout(1, 2, 0, 0));
-
-		txtCantidad390 = new JTextField();
-		txtCantidad390.setText("2");
-		txtCantidad390.setEditable(false);
-		txtCantidad390.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad390.setColumns(10);
-		panel_3.add(txtCantidad390);
-
-		txtCantidad391 = new JTextField();
-		txtCantidad391.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad391.setColumns(10);
-		panel_3.add(txtCantidad391);
-
-		JPanel panel_4 = new JPanel();
-		panel_4.setBounds(248, 112, 152, 25);
-		panel_5.add(panel_4);
-		panel_4.setLayout(new GridLayout(1, 0, 0, 0));
-
-		txtObs39 = new JTextField();
-		txtObs39.setColumns(10);
-		panel_4.add(txtObs39);
+		txtObs31 = new JTextField();
+		txtObs31.setColumns(10);
+		panel_1.add(txtObs31);
 
 		JPanel panel_13 = new JPanel();
-		panel_13.setBounds(10, 152, 167, 74);
+		panel_13.setBounds(10, 103, 167, 395);
 		panel_5.add(panel_13);
-		panel_13.setLayout(new GridLayout(3, 0, 0, 0));
+		panel_13.setLayout(new GridLayout(11, 0, 0, 0));
 
 		JLabel lblLblbs_37 = new JLabel(
 				"<html><body><p align=right>Ventanas UPVC con vidrio flotado de 3 mm de 0.45x2 mt (  lateral)</p></body></html>");
@@ -506,38 +465,181 @@ public class B3Template extends JFrame {
 		lblperfilSfTipo.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblperfilSfTipo.setFont(new Font("Arial", Font.PLAIN, 10));
 
+		lblpanelesTcbPiso = new JLabel("<html><body><p align=right>Paneles TCB piso (4.30x5.70)</p></body></html>");
+		panel_13.add(lblpanelesTcbPiso);
+		lblpanelesTcbPiso.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblpanelesTcbPiso.setFont(new Font("Arial", Font.PLAIN, 10));
+
+		lblpanelesVynilPiso = new JLabel(
+				"<html><body><p align=right>Paneles vynil piso (0,15x1,08mts)</p></body></html>");
+		panel_13.add(lblpanelesVynilPiso);
+		lblpanelesVynilPiso.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblpanelesVynilPiso.setFont(new Font("Arial", Font.PLAIN, 10));
+
+		lblpanelesEpsPara = new JLabel(
+				"<html><body><p align=right>Paneles EPS para cubierta l=7, a= 1mt</p></body></html>");
+		panel_13.add(lblpanelesEpsPara);
+		lblpanelesEpsPara.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblpanelesEpsPara.setFont(new Font("Arial", Font.PLAIN, 10));
+
+		lblpanelesEpsPara_1 = new JLabel(
+				"<html><body><p align=right>Paneles EPS para cubierta l=0.60, a= 1mt</p></body></html>");
+		panel_13.add(lblpanelesEpsPara_1);
+		lblpanelesEpsPara_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblpanelesEpsPara_1.setFont(new Font("Arial", Font.PLAIN, 10));
+
+		lblpanelesDivisoresBat = new JLabel(
+				"<html><body><p align=right>Paneles divisores bat. Sanitarias</p></body></html>");
+		panel_13.add(lblpanelesDivisoresBat);
+		lblpanelesDivisoresBat.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblpanelesDivisoresBat.setFont(new Font("Arial", Font.PLAIN, 10));
+
+		lblpanelesDivisoresPared = new JLabel(
+				"<html><body><p align=right>Paneles divisores pared baja a=1,60 mt</p></body></html>");
+		panel_13.add(lblpanelesDivisoresPared);
+		lblpanelesDivisoresPared.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblpanelesDivisoresPared.setFont(new Font("Arial", Font.PLAIN, 10));
+
+		lblsetPuertasInteriores = new JLabel(
+				"<html><body><p align=right>Set puertas interiores baterías sanitarias</p></body></html>");
+		panel_13.add(lblsetPuertasInteriores);
+		lblsetPuertasInteriores.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblsetPuertasInteriores.setFont(new Font("Arial", Font.PLAIN, 10));
+
+		lblsetMesnPara = new JLabel(
+				"<html><body><p align=right>Set mesón para lavamanos (hombre y mujer)</p></body></html>");
+		panel_13.add(lblsetMesnPara);
+		lblsetMesnPara.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblsetMesnPara.setFont(new Font("Arial", Font.PLAIN, 10));
+
 		JPanel panel_10 = new JPanel();
-		panel_10.setBounds(188, 152, 50, 74);
+		panel_10.setBounds(188, 103, 50, 395);
 		panel_5.add(panel_10);
-		panel_10.setLayout(new GridLayout(3, 2, 0, 0));
+		panel_10.setLayout(new GridLayout(11, 2, 0, 0));
+
+		txtCantidad320 = new JTextField();
+		txtCantidad320.setText("2");
+		txtCantidad320.setEditable(false);
+		txtCantidad320.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad320.setColumns(10);
+		panel_10.add(txtCantidad320);
+
+		txtCantidad321 = new JTextField();
+		txtCantidad321.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad321.setColumns(10);
+		panel_10.add(txtCantidad321);
+
+		txtCantidad330 = new JTextField();
+		txtCantidad330.setText("8");
+		txtCantidad330.setEditable(false);
+		txtCantidad330.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad330.setColumns(10);
+		panel_10.add(txtCantidad330);
+
+		txtCantidad331 = new JTextField();
+		txtCantidad331.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad331.setColumns(10);
+		panel_10.add(txtCantidad331);
+
+		txtCantidad340 = new JTextField();
+		panel_10.add(txtCantidad340);
+		txtCantidad340.setText("8");
+		txtCantidad340.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad340.setEditable(false);
+		txtCantidad340.setColumns(10);
+
+		txtCantidad341 = new JTextField();
+		panel_10.add(txtCantidad341);
+		txtCantidad341.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad341.setColumns(10);
+
+		txtCantidad350 = new JTextField();
+		panel_10.add(txtCantidad350);
+		txtCantidad350.setText("1");
+		txtCantidad350.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad350.setEditable(false);
+		txtCantidad350.setColumns(10);
+
+		txtCantidad351 = new JTextField();
+		panel_10.add(txtCantidad351);
+		txtCantidad351.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad351.setColumns(10);
+
+		txtCantidad360 = new JTextField();
+		panel_10.add(txtCantidad360);
+		txtCantidad360.setText("156");
+		txtCantidad360.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad360.setEditable(false);
+		txtCantidad360.setColumns(10);
+
+		txtCantidad361 = new JTextField();
+		panel_10.add(txtCantidad361);
+		txtCantidad361.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad361.setColumns(10);
+
+		txtCantidad370 = new JTextField();
+		panel_10.add(txtCantidad370);
+		txtCantidad370.setText("4");
+		txtCantidad370.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad370.setEditable(false);
+		txtCantidad370.setColumns(10);
+
+		txtCantidad371 = new JTextField();
+		panel_10.add(txtCantidad371);
+		txtCantidad371.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad371.setColumns(10);
+
+		txtCantidad380 = new JTextField();
+		panel_10.add(txtCantidad380);
+		txtCantidad380.setText("1");
+		txtCantidad380.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad380.setEditable(false);
+		txtCantidad380.setColumns(10);
+
+		txtCantidad381 = new JTextField();
+		panel_10.add(txtCantidad381);
+		txtCantidad381.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad381.setColumns(10);
+
+		txtCantidad390 = new JTextField();
+		panel_10.add(txtCantidad390);
+		txtCantidad390.setText("6");
+		txtCantidad390.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad390.setEditable(false);
+		txtCantidad390.setColumns(10);
+
+		txtCantidad391 = new JTextField();
+		panel_10.add(txtCantidad391);
+		txtCantidad391.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad391.setColumns(10);
 
 		txtCantidad400 = new JTextField();
-		txtCantidad400.setText("2");
-		txtCantidad400.setEditable(false);
-		txtCantidad400.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad400.setColumns(10);
 		panel_10.add(txtCantidad400);
+		txtCantidad400.setText("3");
+		txtCantidad400.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad400.setEditable(false);
+		txtCantidad400.setColumns(10);
 
 		txtCantidad401 = new JTextField();
+		panel_10.add(txtCantidad401);
 		txtCantidad401.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad401.setColumns(10);
-		panel_10.add(txtCantidad401);
 
 		txtCantidad410 = new JTextField();
-		txtCantidad410.setText("16");
-		txtCantidad410.setEditable(false);
-		txtCantidad410.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad410.setColumns(10);
 		panel_10.add(txtCantidad410);
+		txtCantidad410.setText("4");
+		txtCantidad410.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad410.setEditable(false);
+		txtCantidad410.setColumns(10);
 
 		txtCantidad411 = new JTextField();
+		panel_10.add(txtCantidad411);
 		txtCantidad411.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad411.setColumns(10);
-		panel_10.add(txtCantidad411);
 
 		txtCantidad420 = new JTextField();
 		panel_10.add(txtCantidad420);
-		txtCantidad420.setText("8");
+		txtCantidad420.setText("2");
 		txtCantidad420.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad420.setEditable(false);
 		txtCantidad420.setColumns(10);
@@ -548,17 +650,49 @@ public class B3Template extends JFrame {
 		txtCantidad421.setColumns(10);
 
 		JPanel panel_11 = new JPanel();
-		panel_11.setBounds(248, 152, 152, 74);
+		panel_11.setBounds(248, 103, 152, 395);
 		panel_5.add(panel_11);
-		panel_11.setLayout(new GridLayout(3, 0, 0, 0));
+		panel_11.setLayout(new GridLayout(11, 0, 0, 0));
+
+		txtObs32 = new JTextField();
+		txtObs32.setColumns(10);
+		panel_11.add(txtObs32);
+
+		txtObs33 = new JTextField();
+		txtObs33.setColumns(10);
+		panel_11.add(txtObs33);
+
+		txtObs34 = new JTextField();
+		panel_11.add(txtObs34);
+		txtObs34.setColumns(10);
+
+		txtObs35 = new JTextField();
+		panel_11.add(txtObs35);
+		txtObs35.setColumns(10);
+
+		txtObs36 = new JTextField();
+		panel_11.add(txtObs36);
+		txtObs36.setColumns(10);
+
+		txtObs37 = new JTextField();
+		panel_11.add(txtObs37);
+		txtObs37.setColumns(10);
+
+		txtObs38 = new JTextField();
+		panel_11.add(txtObs38);
+		txtObs38.setColumns(10);
+
+		txtObs39 = new JTextField();
+		panel_11.add(txtObs39);
+		txtObs39.setColumns(10);
 
 		txtObs40 = new JTextField();
-		txtObs40.setColumns(10);
 		panel_11.add(txtObs40);
+		txtObs40.setColumns(10);
 
 		txtObs41 = new JTextField();
-		txtObs41.setColumns(10);
 		panel_11.add(txtObs41);
+		txtObs41.setColumns(10);
 
 		txtObs42 = new JTextField();
 		panel_11.add(txtObs42);
@@ -566,7 +700,7 @@ public class B3Template extends JFrame {
 
 		JPanel panel_6 = new JPanel();
 		panel_6.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_6.setBounds(10, 254, 410, 105);
+		panel_6.setBounds(430, 11, 410, 154);
 		pnlPestaña2.add(panel_6);
 		panel_6.setLayout(null);
 
@@ -589,32 +723,38 @@ public class B3Template extends JFrame {
 		panel_6.add(label_2);
 
 		JPanel panel_14 = new JPanel();
-		panel_14.setBounds(10, 25, 167, 75);
+		panel_14.setBounds(10, 25, 167, 118);
 		panel_6.add(panel_14);
-		panel_14.setLayout(new GridLayout(3, 0, 0, 0));
+		panel_14.setLayout(new GridLayout(4, 0, 0, 0));
 
 		JLabel lblLblbs_39 = new JLabel(
-				"<html><body><p align=right>Paneles EPS pared -   ( 1x3x0,09 m)</p></body></html>");
+				"<html><body><p align=right>Paneles EPS pared - ( 0,90x3x0,09 m)</p></body></html>");
 		lblLblbs_39.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_39.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_14.add(lblLblbs_39);
 
 		JLabel lblLblbs_40 = new JLabel(
-				"<html><body><p align=right>Paneles EPS pared -   ( 1x0,90x0,90 m)</p></body></html>");
+				"<html><body><p align=right>Paneles EPS pared - ( 0,60x1,80x0,90 m)</p></body></html>");
 		lblLblbs_40.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_40.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_14.add(lblLblbs_40);
 
 		JLabel lblLblbs_41 = new JLabel(
-				"<html><body><p align=right>Paneles EPS pared -   ( 1x0,60x0,09 m)</p></body></html>");
+				"<html><body><p align=right>Paneles EPS pared - ( 0,60x0,75x0,09 m)</p></body></html>");
 		lblLblbs_41.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_41.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_14.add(lblLblbs_41);
 
+		lblpanelesConCortes = new JLabel(
+				"<html><body><p align=right>Paneles con cortes - ( 1x3,00x0,09 m)</p></body></html>");
+		panel_14.add(lblpanelesConCortes);
+		lblpanelesConCortes.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblpanelesConCortes.setFont(new Font("Arial", Font.PLAIN, 10));
+
 		JPanel panel_15 = new JPanel();
-		panel_15.setBounds(188, 25, 50, 75);
+		panel_15.setBounds(188, 25, 50, 118);
 		panel_6.add(panel_15);
-		panel_15.setLayout(new GridLayout(3, 2, 0, 0));
+		panel_15.setLayout(new GridLayout(4, 2, 0, 0));
 
 		txtCantidad430 = new JTextField();
 		txtCantidad430.setText("2");
@@ -629,7 +769,7 @@ public class B3Template extends JFrame {
 		panel_15.add(txtCantidad431);
 
 		txtCantidad440 = new JTextField();
-		txtCantidad440.setText("2");
+		txtCantidad440.setText("1");
 		txtCantidad440.setEditable(false);
 		txtCantidad440.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad440.setColumns(10);
@@ -641,7 +781,7 @@ public class B3Template extends JFrame {
 		panel_15.add(txtCantidad441);
 
 		txtCantidad450 = new JTextField();
-		txtCantidad450.setText("3");
+		txtCantidad450.setText("1");
 		txtCantidad450.setEditable(false);
 		txtCantidad450.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad450.setColumns(10);
@@ -652,10 +792,22 @@ public class B3Template extends JFrame {
 		txtCantidad451.setColumns(10);
 		panel_15.add(txtCantidad451);
 
+		txtCantidad460 = new JTextField();
+		panel_15.add(txtCantidad460);
+		txtCantidad460.setText("2");
+		txtCantidad460.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad460.setEditable(false);
+		txtCantidad460.setColumns(10);
+
+		txtCantidad461 = new JTextField();
+		panel_15.add(txtCantidad461);
+		txtCantidad461.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad461.setColumns(10);
+
 		JPanel panel_16 = new JPanel();
-		panel_16.setBounds(248, 25, 152, 75);
+		panel_16.setBounds(248, 25, 152, 118);
 		panel_6.add(panel_16);
-		panel_16.setLayout(new GridLayout(3, 0, 0, 0));
+		panel_16.setLayout(new GridLayout(4, 0, 0, 0));
 
 		txtObs43 = new JTextField();
 		txtObs43.setColumns(10);
@@ -669,9 +821,13 @@ public class B3Template extends JFrame {
 		txtObs45.setColumns(10);
 		panel_16.add(txtObs45);
 
+		txtObs46 = new JTextField();
+		panel_16.add(txtObs46);
+		txtObs46.setColumns(10);
+
 		JPanel panel_7 = new JPanel();
 		panel_7.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_7.setBounds(10, 363, 410, 169);
+		panel_7.setBounds(430, 176, 410, 169);
 		pnlPestaña2.add(panel_7);
 		panel_7.setLayout(null);
 
@@ -699,25 +855,25 @@ public class B3Template extends JFrame {
 		panel_17.setLayout(new GridLayout(4, 0, 0, 0));
 
 		JLabel lblLblbs_42 = new JLabel(
-				"<html><body><p align=right>Paneles EPS pared - ( 1x2,70 x0,90  m)</p></body></html>");
+				"<html><body><p align=right>Paneles EPS pared -   (0,90x2,70 x0,90  m)</p></body></html>");
 		lblLblbs_42.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_42.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_17.add(lblLblbs_42);
 
 		JLabel lblLblbs_43 = new JLabel(
-				"<html><body><p align=right>Paneles EPS pared - ( 0,60x2,70 x0,90  m)</p></body></html>");
+				"<html><body><p align=right>Paneles EPS pared - ( 0,60x1,80 x0,90  m)</p></body></html>");
 		lblLblbs_43.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_43.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_17.add(lblLblbs_43);
 
 		JLabel lblLblbs_44 = new JLabel(
-				"<html><body><p align=right>Paneles EPS pared - ( 1,0x1,80 x0,90  m)</p></body></html>");
+				"<html><body><p align=right>Paneles EPS pared - ( 0,60x0,45 x0,90  m)</p></body></html>");
 		lblLblbs_44.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_44.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_17.add(lblLblbs_44);
 
 		JLabel lblLblbs_45 = new JLabel(
-				"<html><body><p align=right>Paneles EPS pared - ( 1x0,45 x0,90  m)</p></body></html>");
+				"<html><body><p align=right>Paneles con cortes - ( 1x2,70 x0,90  m)</p></body></html>");
 		lblLblbs_45.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_45.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_17.add(lblLblbs_45);
@@ -727,20 +883,8 @@ public class B3Template extends JFrame {
 		panel_7.add(panel_18);
 		panel_18.setLayout(new GridLayout(4, 2, 0, 0));
 
-		txtCantidad460 = new JTextField();
-		txtCantidad460.setText("2");
-		txtCantidad460.setEditable(false);
-		txtCantidad460.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad460.setColumns(10);
-		panel_18.add(txtCantidad460);
-
-		txtCantidad461 = new JTextField();
-		txtCantidad461.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad461.setColumns(10);
-		panel_18.add(txtCantidad461);
-
 		txtCantidad470 = new JTextField();
-		txtCantidad470.setText("1");
+		txtCantidad470.setText("2");
 		txtCantidad470.setEditable(false);
 		txtCantidad470.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad470.setColumns(10);
@@ -752,19 +896,19 @@ public class B3Template extends JFrame {
 		panel_18.add(txtCantidad471);
 
 		txtCantidad480 = new JTextField();
-		txtCantidad480.setText("2");
+		txtCantidad480.setText("1");
 		txtCantidad480.setEditable(false);
-		panel_18.add(txtCantidad480);
 		txtCantidad480.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad480.setColumns(10);
+		panel_18.add(txtCantidad480);
 
 		txtCantidad481 = new JTextField();
-		panel_18.add(txtCantidad481);
 		txtCantidad481.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad481.setColumns(10);
+		panel_18.add(txtCantidad481);
 
 		txtCantidad490 = new JTextField();
-		txtCantidad490.setText("2");
+		txtCantidad490.setText("1");
 		txtCantidad490.setEditable(false);
 		panel_18.add(txtCantidad490);
 		txtCantidad490.setHorizontalAlignment(SwingConstants.CENTER);
@@ -775,14 +919,22 @@ public class B3Template extends JFrame {
 		txtCantidad491.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad491.setColumns(10);
 
+		txtCantidad500 = new JTextField();
+		txtCantidad500.setText("2");
+		txtCantidad500.setEditable(false);
+		panel_18.add(txtCantidad500);
+		txtCantidad500.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad500.setColumns(10);
+
+		txtCantidad501 = new JTextField();
+		panel_18.add(txtCantidad501);
+		txtCantidad501.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad501.setColumns(10);
+
 		JPanel panel_19 = new JPanel();
 		panel_19.setBounds(248, 46, 152, 100);
 		panel_7.add(panel_19);
 		panel_19.setLayout(new GridLayout(4, 0, 0, 0));
-
-		txtObs46 = new JTextField();
-		txtObs46.setColumns(10);
-		panel_19.add(txtObs46);
 
 		txtObs47 = new JTextField();
 		txtObs47.setColumns(10);
@@ -796,9 +948,13 @@ public class B3Template extends JFrame {
 		txtObs49.setColumns(10);
 		panel_19.add(txtObs49);
 
+		txtObs50 = new JTextField();
+		txtObs50.setColumns(10);
+		panel_19.add(txtObs50);
+
 		JPanel panel_8 = new JPanel();
 		panel_8.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_8.setBounds(430, 11, 410, 334);
+		panel_8.setBounds(430, 369, 410, 95);
 		pnlPestaña2.add(panel_8);
 		panel_8.setLayout(null);
 
@@ -821,77 +977,26 @@ public class B3Template extends JFrame {
 		panel_8.add(label_8);
 
 		JPanel panel_20 = new JPanel();
-		panel_20.setBounds(10, 25, 167, 300);
+		panel_20.setBounds(10, 25, 167, 58);
 		panel_8.add(panel_20);
-		panel_20.setLayout(new GridLayout(9, 0, 0, 0));
+		panel_20.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel lblLblbs_46 = new JLabel("<html><body><p align=right>Panel Hvar- fachada lateral izq</p></body></html>");
+		JLabel lblLblbs_46 = new JLabel(
+				"<html><body><p align=right>Pared altura variable-fachada lateral izq</p></body></html>");
 		lblLblbs_46.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_46.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_46);
 
 		JLabel lblLblbs_47 = new JLabel(
-				"<html><body><p align=right>Panel Hvar- fachada lateral derecha</p></body></html>");
+				"<html><body><p align=right>Pared altura variable-fachada lateral derecha</p></body></html>");
 		lblLblbs_47.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_47.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_20.add(lblLblbs_47);
 
-		JLabel lblLblbs_48 = new JLabel("<html><body><p align=right>Paneles TCB piso (4.30x5.70)</p></body></html>");
-		lblLblbs_48.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_48.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_20.add(lblLblbs_48);
-
-		JLabel lblLblbs_49 = new JLabel(
-				"<html><body><p align=right>Paneles EPS para cubierta l=7, a= 1mt</p></body></html>");
-		lblLblbs_49.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_49.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_20.add(lblLblbs_49);
-
-		JLabel lblLblbs_50 = new JLabel(
-				"<html><body><p align=right>Paneles EPS para cubierta l=0.60, a= 1mt</p></body></html>");
-		lblLblbs_50.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_50.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_20.add(lblLblbs_50);
-
-		JLabel lblLblbs_51 = new JLabel(
-				"<html><body><p align=right>Paneles divisores bat. Sanitarias</p></body></html>");
-		lblLblbs_51.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_51.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_20.add(lblLblbs_51);
-
-		JLabel lblLblbs_52 = new JLabel("<html><body><p align=right>Paneles divisores urinario</p></body></html>");
-		lblLblbs_52.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_52.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_20.add(lblLblbs_52);
-
-		JLabel lblLblbs_53 = new JLabel(
-				"<html><body><p align=right>Set puertas interiores baterías sanitarias</p></body></html>");
-		lblLblbs_53.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_53.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_20.add(lblLblbs_53);
-
-		JLabel lblLblbs_54 = new JLabel(
-				"<html><body><p align=right>Set mesón para lavamanos (hombre y mujer)</p></body></html>");
-		lblLblbs_54.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_54.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_20.add(lblLblbs_54);
-
 		JPanel panel_21 = new JPanel();
-		panel_21.setBounds(188, 25, 50, 300);
+		panel_21.setBounds(188, 25, 50, 58);
 		panel_8.add(panel_21);
-		panel_21.setLayout(new GridLayout(9, 2, 0, 0));
-
-		txtCantidad500 = new JTextField();
-		txtCantidad500.setText("6");
-		txtCantidad500.setEditable(false);
-		txtCantidad500.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad500.setColumns(10);
-		panel_21.add(txtCantidad500);
-
-		txtCantidad501 = new JTextField();
-		txtCantidad501.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad501.setColumns(10);
-		panel_21.add(txtCantidad501);
+		panel_21.setLayout(new GridLayout(2, 2, 0, 0));
 
 		txtCantidad510 = new JTextField();
 		txtCantidad510.setText("6");
@@ -906,7 +1011,7 @@ public class B3Template extends JFrame {
 		panel_21.add(txtCantidad511);
 
 		txtCantidad520 = new JTextField();
-		txtCantidad520.setText("1");
+		txtCantidad520.setText("6");
 		txtCantidad520.setEditable(false);
 		txtCantidad520.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad520.setColumns(10);
@@ -917,86 +1022,10 @@ public class B3Template extends JFrame {
 		txtCantidad521.setColumns(10);
 		panel_21.add(txtCantidad521);
 
-		txtCantidad530 = new JTextField();
-		txtCantidad530.setText("4");
-		txtCantidad530.setEditable(false);
-		txtCantidad530.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad530.setColumns(10);
-		panel_21.add(txtCantidad530);
-
-		txtCantidad531 = new JTextField();
-		txtCantidad531.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad531.setColumns(10);
-		panel_21.add(txtCantidad531);
-
-		txtCantidad540 = new JTextField();
-		txtCantidad540.setText("1");
-		txtCantidad540.setEditable(false);
-		txtCantidad540.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad540.setColumns(10);
-		panel_21.add(txtCantidad540);
-
-		txtCantidad541 = new JTextField();
-		txtCantidad541.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad541.setColumns(10);
-		panel_21.add(txtCantidad541);
-
-		txtCantidad550 = new JTextField();
-		txtCantidad550.setText("5");
-		txtCantidad550.setEditable(false);
-		txtCantidad550.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad550.setColumns(10);
-		panel_21.add(txtCantidad550);
-
-		txtCantidad551 = new JTextField();
-		txtCantidad551.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad551.setColumns(10);
-		panel_21.add(txtCantidad551);
-
-		txtCantidad560 = new JTextField();
-		txtCantidad560.setText("3");
-		txtCantidad560.setEditable(false);
-		txtCantidad560.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad560.setColumns(10);
-		panel_21.add(txtCantidad560);
-
-		txtCantidad561 = new JTextField();
-		txtCantidad561.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad561.setColumns(10);
-		panel_21.add(txtCantidad561);
-
-		txtCantidad570 = new JTextField();
-		txtCantidad570.setText("5");
-		txtCantidad570.setEditable(false);
-		txtCantidad570.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad570.setColumns(10);
-		panel_21.add(txtCantidad570);
-
-		txtCantidad571 = new JTextField();
-		txtCantidad571.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad571.setColumns(10);
-		panel_21.add(txtCantidad571);
-
-		txtCantidad580 = new JTextField();
-		txtCantidad580.setText("2");
-		txtCantidad580.setEditable(false);
-		txtCantidad580.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad580.setColumns(10);
-		panel_21.add(txtCantidad580);
-
-		txtCantidad581 = new JTextField();
-		txtCantidad581.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad581.setColumns(10);
-		panel_21.add(txtCantidad581);
-
 		JPanel panel_22 = new JPanel();
-		panel_22.setBounds(248, 25, 152, 300);
+		panel_22.setBounds(248, 25, 152, 58);
 		panel_8.add(panel_22);
-		panel_22.setLayout(new GridLayout(9, 0, 0, 0));
-
-		txtObs50 = new JTextField();
-		txtObs50.setColumns(10);
-		panel_22.add(txtObs50);
+		panel_22.setLayout(new GridLayout(2, 0, 0, 0));
 
 		txtObs51 = new JTextField();
 		txtObs51.setColumns(10);
@@ -1005,30 +1034,6 @@ public class B3Template extends JFrame {
 		txtObs52 = new JTextField();
 		txtObs52.setColumns(10);
 		panel_22.add(txtObs52);
-
-		txtObs53 = new JTextField();
-		txtObs53.setColumns(10);
-		panel_22.add(txtObs53);
-
-		txtObs54 = new JTextField();
-		txtObs54.setColumns(10);
-		panel_22.add(txtObs54);
-
-		txtObs55 = new JTextField();
-		txtObs55.setColumns(10);
-		panel_22.add(txtObs55);
-
-		txtObs56 = new JTextField();
-		txtObs56.setColumns(10);
-		panel_22.add(txtObs56);
-
-		txtObs57 = new JTextField();
-		txtObs57.setColumns(10);
-		panel_22.add(txtObs57);
-
-		txtObs58 = new JTextField();
-		txtObs58.setColumns(10);
-		panel_22.add(txtObs58);
 
 		JPanel panel_9 = new JPanel();
 		panel_9.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -1064,57 +1069,57 @@ public class B3Template extends JFrame {
 		lblLblbs_56.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_56);
 
-		JLabel lblLblbs_57 = new JLabel(LBL_BST3_59);
+		JLabel lblLblbs_57 = new JLabel("<html><body><p align=right>Perfil SF Tipo 1</p></body></html>");
 		lblLblbs_57.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_57.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_57);
 
-		JLabel lblLblbs_58 = new JLabel(LBL_BST3_60);
+		JLabel lblLblbs_58 = new JLabel("<html><body><p align=right>Perfil SF Tipo 2</p></body></html>");
 		lblLblbs_58.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_58.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_58);
 
-		JLabel lblLblbs_59 = new JLabel(LBL_BST3_61);
+		JLabel lblLblbs_59 = new JLabel("<html><body><p align=right>Perfil SF Tipo 3</p></body></html>");
 		lblLblbs_59.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_59.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_59);
 
-		JLabel lblLblbs_60 = new JLabel(LBL_BST3_62);
+		JLabel lblLblbs_60 = new JLabel("<html><body><p align=right>Perfil SF Tipo 4</p></body></html>");
 		panel_23.add(lblLblbs_60);
 		lblLblbs_60.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_60.setFont(new Font("Arial", Font.PLAIN, 10));
 
-		JLabel lblLblbs_61 = new JLabel(LBL_BST3_63);
+		JLabel lblLblbs_61 = new JLabel("<html><body><p align=right>Perfil SF Tipo 5</p></body></html>");
 		panel_23.add(lblLblbs_61);
 		lblLblbs_61.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_61.setFont(new Font("Arial", Font.PLAIN, 10));
 
-		JLabel lblLblbs_65 = new JLabel("<html><body><p align=right>Perfil SF Tipo 9 MA-SF-6</p></body></html>");
+		JLabel lblLblbs_65 = new JLabel("<html><body><p align=right>Perfil SF Tipo 6</p></body></html>");
 		lblLblbs_65.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_65.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_65);
 
-		JLabel lblLblbs_62 = new JLabel("<html><body><p align=right>Perfil SF Tipo 6 MA-SF-7</p></body></html>");
+		JLabel lblLblbs_62 = new JLabel("<html><body><p align=right>Perfil SF Tipo 7</p></body></html>");
 		panel_23.add(lblLblbs_62);
 		lblLblbs_62.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_62.setFont(new Font("Arial", Font.PLAIN, 10));
 
-		JLabel lblLblbs_63 = new JLabel("<html><body><p align=right>Perfil SF Tipo 7 MA-SF-8</p></body></html>");
+		JLabel lblLblbs_63 = new JLabel("<html><body><p align=right>Perfil SF Tipo 8</p></body></html>");
 		panel_23.add(lblLblbs_63);
 		lblLblbs_63.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_63.setFont(new Font("Arial", Font.PLAIN, 10));
 
-		JLabel lblLblbs_64 = new JLabel("<html><body><p align=right>Perfil SF Tipo 8 MA-SF-9</p></body></html>");
+		JLabel lblLblbs_64 = new JLabel("<html><body><p align=right>Perfil SF Tipo 9</p></body></html>");
 		lblLblbs_64.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_64.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_64);
 
-		JLabel lblLblbs_66 = new JLabel(LBL_BST3_68);
+		JLabel lblLblbs_66 = new JLabel("<html><body><p align=right>Perfil SF Tipo 10</p></body></html>");
 		lblLblbs_66.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_66.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_66);
 
-		JLabel lblLblbs_67 = new JLabel(LBL_BST3_69);
+		JLabel lblLblbs_67 = new JLabel("<html><body><p align=right>Perfil SF Tipo 11</p></body></html>");
 		lblLblbs_67.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_67.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_23.add(lblLblbs_67);
@@ -1124,8 +1129,80 @@ public class B3Template extends JFrame {
 		panel_9.add(panel_24);
 		panel_24.setLayout(new GridLayout(12, 2, 0, 0));
 
+		txtCantidad530 = new JTextField();
+		txtCantidad530.setText("12");
+		txtCantidad530.setEditable(false);
+		txtCantidad530.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad530.setColumns(10);
+		panel_24.add(txtCantidad530);
+
+		txtCantidad531 = new JTextField();
+		txtCantidad531.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad531.setColumns(10);
+		panel_24.add(txtCantidad531);
+
+		txtCantidad540 = new JTextField();
+		txtCantidad540.setText("2");
+		txtCantidad540.setEditable(false);
+		txtCantidad540.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad540.setColumns(10);
+		panel_24.add(txtCantidad540);
+
+		txtCantidad541 = new JTextField();
+		txtCantidad541.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad541.setColumns(10);
+		panel_24.add(txtCantidad541);
+
+		txtCantidad550 = new JTextField();
+		txtCantidad550.setText("2");
+		txtCantidad550.setEditable(false);
+		txtCantidad550.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad550.setColumns(10);
+		panel_24.add(txtCantidad550);
+
+		txtCantidad551 = new JTextField();
+		txtCantidad551.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad551.setColumns(10);
+		panel_24.add(txtCantidad551);
+
+		txtCantidad560 = new JTextField();
+		txtCantidad560.setText("12");
+		txtCantidad560.setEditable(false);
+		txtCantidad560.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad560.setColumns(10);
+		panel_24.add(txtCantidad560);
+
+		txtCantidad561 = new JTextField();
+		txtCantidad561.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad561.setColumns(10);
+		panel_24.add(txtCantidad561);
+
+		txtCantidad570 = new JTextField();
+		txtCantidad570.setText("4");
+		txtCantidad570.setEditable(false);
+		txtCantidad570.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad570.setColumns(10);
+		panel_24.add(txtCantidad570);
+
+		txtCantidad571 = new JTextField();
+		txtCantidad571.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad571.setColumns(10);
+		panel_24.add(txtCantidad571);
+
+		txtCantidad580 = new JTextField();
+		txtCantidad580.setText("30");
+		txtCantidad580.setEditable(false);
+		txtCantidad580.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad580.setColumns(10);
+		panel_24.add(txtCantidad580);
+
+		txtCantidad581 = new JTextField();
+		txtCantidad581.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad581.setColumns(10);
+		panel_24.add(txtCantidad581);
+
 		txtCantidad590 = new JTextField();
-		txtCantidad590.setText("12");
+		txtCantidad590.setText("30");
 		txtCantidad590.setEditable(false);
 		txtCantidad590.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad590.setColumns(10);
@@ -1173,7 +1250,7 @@ public class B3Template extends JFrame {
 		panel_24.add(txtCantidad621);
 
 		txtCantidad630 = new JTextField();
-		txtCantidad630.setText("4");
+		txtCantidad630.setText("6");
 		txtCantidad630.setEditable(false);
 		txtCantidad630.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad630.setColumns(10);
@@ -1196,82 +1273,34 @@ public class B3Template extends JFrame {
 		txtCantidad641.setColumns(10);
 		panel_24.add(txtCantidad641);
 
-		txtCantidad650 = new JTextField();
-		txtCantidad650.setText("30");
-		txtCantidad650.setEditable(false);
-		txtCantidad650.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad650.setColumns(10);
-		panel_24.add(txtCantidad650);
-
-		txtCantidad651 = new JTextField();
-		txtCantidad651.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad651.setColumns(10);
-		panel_24.add(txtCantidad651);
-
-		txtCantidad660 = new JTextField();
-		txtCantidad660.setText("2");
-		txtCantidad660.setEditable(false);
-		txtCantidad660.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad660.setColumns(10);
-		panel_24.add(txtCantidad660);
-
-		txtCantidad661 = new JTextField();
-		txtCantidad661.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad661.setColumns(10);
-		panel_24.add(txtCantidad661);
-
-		txtCantidad670 = new JTextField();
-		txtCantidad670.setText("2");
-		txtCantidad670.setEditable(false);
-		txtCantidad670.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad670.setColumns(10);
-		panel_24.add(txtCantidad670);
-
-		txtCantidad671 = new JTextField();
-		txtCantidad671.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad671.setColumns(10);
-		panel_24.add(txtCantidad671);
-
-		txtCantidad680 = new JTextField();
-		txtCantidad680.setText("12");
-		txtCantidad680.setEditable(false);
-		txtCantidad680.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad680.setColumns(10);
-		panel_24.add(txtCantidad680);
-
-		txtCantidad681 = new JTextField();
-		txtCantidad681.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad681.setColumns(10);
-		panel_24.add(txtCantidad681);
-
-		txtCantidad690 = new JTextField();
-		txtCantidad690.setText("6");
-		txtCantidad690.setEditable(false);
-		txtCantidad690.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad690.setColumns(10);
-		panel_24.add(txtCantidad690);
-
-		txtCantidad691 = new JTextField();
-		txtCantidad691.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad691.setColumns(10);
-		panel_24.add(txtCantidad691);
-
-		txtCantidad700 = new JTextField();
-		txtCantidad700.setText("30");
-		txtCantidad700.setEditable(false);
-		txtCantidad700.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad700.setColumns(10);
-		panel_24.add(txtCantidad700);
-
-		txtCantidad701 = new JTextField();
-		txtCantidad701.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad701.setColumns(10);
-		panel_24.add(txtCantidad701);
-
 		JPanel panel_25 = new JPanel();
 		panel_25.setBounds(248, 25, 152, 300);
 		panel_9.add(panel_25);
 		panel_25.setLayout(new GridLayout(12, 0, 0, 0));
+
+		txtObs53 = new JTextField();
+		txtObs53.setColumns(10);
+		panel_25.add(txtObs53);
+
+		txtObs54 = new JTextField();
+		txtObs54.setColumns(10);
+		panel_25.add(txtObs54);
+
+		txtObs55 = new JTextField();
+		txtObs55.setColumns(10);
+		panel_25.add(txtObs55);
+
+		txtObs56 = new JTextField();
+		txtObs56.setColumns(10);
+		panel_25.add(txtObs56);
+
+		txtObs57 = new JTextField();
+		txtObs57.setColumns(10);
+		panel_25.add(txtObs57);
+
+		txtObs58 = new JTextField();
+		txtObs58.setColumns(10);
+		panel_25.add(txtObs58);
 
 		txtObs59 = new JTextField();
 		txtObs59.setColumns(10);
@@ -1296,30 +1325,6 @@ public class B3Template extends JFrame {
 		txtObs64 = new JTextField();
 		txtObs64.setColumns(10);
 		panel_25.add(txtObs64);
-
-		txtObs65 = new JTextField();
-		txtObs65.setColumns(10);
-		panel_25.add(txtObs65);
-
-		txtObs66 = new JTextField();
-		txtObs66.setColumns(10);
-		panel_25.add(txtObs66);
-
-		txtObs67 = new JTextField();
-		txtObs67.setColumns(10);
-		panel_25.add(txtObs67);
-
-		txtObs68 = new JTextField();
-		txtObs68.setColumns(10);
-		panel_25.add(txtObs68);
-
-		txtObs69 = new JTextField();
-		txtObs69.setColumns(10);
-		panel_25.add(txtObs69);
-
-		txtObs70 = new JTextField();
-		txtObs70.setColumns(10);
-		panel_25.add(txtObs70);
 
 	}
 
@@ -1354,7 +1359,7 @@ public class B3Template extends JFrame {
 		pnlCantidad0.setLayout(new GridLayout(5, 2, 0, 0));
 
 		txtCantidad00 = new JTextField();
-		txtCantidad00.setText("4");
+		txtCantidad00.setText("3");
 		txtCantidad00.setEditable(false);
 		txtCantidad00.setHorizontalAlignment(SwingConstants.CENTER);
 		pnlCantidad0.add(txtCantidad00);
@@ -1378,7 +1383,7 @@ public class B3Template extends JFrame {
 		pnlCantidad0.add(txtCantidad11);
 
 		txtCantidad20 = new JTextField();
-		txtCantidad20.setText("2");
+		txtCantidad20.setText("1");
 		txtCantidad20.setEditable(false);
 		txtCantidad20.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad20.setColumns(10);
@@ -1402,7 +1407,7 @@ public class B3Template extends JFrame {
 		pnlCantidad0.add(txtCantidad31);
 
 		txtCantidad40 = new JTextField();
-		txtCantidad40.setText("2");
+		txtCantidad40.setText("1");
 		txtCantidad40.setEditable(false);
 		txtCantidad40.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad40.setColumns(10);
@@ -1471,7 +1476,7 @@ public class B3Template extends JFrame {
 		JPanel panel_1 = new JPanel();
 		panel_1.setForeground(Color.BLUE);
 		panel_1.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, Color.BLUE));
-		panel_1.setBounds(10, 193, 410, 110);
+		panel_1.setBounds(10, 193, 410, 94);
 		pnlPestaña1.add(panel_1);
 		panel_1.setLayout(null);
 
@@ -1494,12 +1499,12 @@ public class B3Template extends JFrame {
 		panel_1.add(label_5);
 
 		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(188, 27, 50, 75);
+		panel_5.setBounds(188, 27, 50, 52);
 		panel_1.add(panel_5);
-		panel_5.setLayout(new GridLayout(3, 2, 0, 0));
+		panel_5.setLayout(new GridLayout(2, 2, 0, 0));
 
 		txtCantidad50 = new JTextField();
-		txtCantidad50.setText("5");
+		txtCantidad50.setText("4");
 		txtCantidad50.setEditable(false);
 		txtCantidad50.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad50.setColumns(10);
@@ -1511,7 +1516,7 @@ public class B3Template extends JFrame {
 		panel_5.add(txtCantidad51);
 
 		txtCantidad60 = new JTextField();
-		txtCantidad60.setText("2");
+		txtCantidad60.setText("4");
 		txtCantidad60.setEditable(false);
 		txtCantidad60.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad60.setColumns(10);
@@ -1522,22 +1527,10 @@ public class B3Template extends JFrame {
 		txtCantidad61.setColumns(10);
 		panel_5.add(txtCantidad61);
 
-		txtCantidad70 = new JTextField();
-		txtCantidad70.setText("4");
-		txtCantidad70.setEditable(false);
-		txtCantidad70.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad70.setColumns(10);
-		panel_5.add(txtCantidad70);
-
-		txtCantidad71 = new JTextField();
-		txtCantidad71.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad71.setColumns(10);
-		panel_5.add(txtCantidad71);
-
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(248, 27, 152, 75);
+		panel_6.setBounds(248, 27, 152, 52);
 		panel_1.add(panel_6);
-		panel_6.setLayout(new GridLayout(3, 0, 0, 0));
+		panel_6.setLayout(new GridLayout(2, 0, 0, 0));
 
 		txtObs5 = new JTextField();
 		txtObs5.setColumns(10);
@@ -1547,26 +1540,17 @@ public class B3Template extends JFrame {
 		txtObs6.setColumns(10);
 		panel_6.add(txtObs6);
 
-		txtObs7 = new JTextField();
-		txtObs7.setColumns(10);
-		panel_6.add(txtObs7);
-
 		JPanel panel_15 = new JPanel();
-		panel_15.setBounds(10, 27, 167, 75);
+		panel_15.setBounds(10, 27, 167, 52);
 		panel_1.add(panel_15);
-		panel_15.setLayout(new GridLayout(3, 0, 0, 0));
+		panel_15.setLayout(new GridLayout(2, 0, 0, 0));
 
-		JLabel lblLblbs_4 = new JLabel(LBL_BST3_5);
+		JLabel lblLblbs_4 = new JLabel("<html><body><p align=right>Inodoros</p></body></html>");
 		lblLblbs_4.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_4.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_15.add(lblLblbs_4);
 
-		JLabel lblLblbs_5 = new JLabel(LBL_BST3_6);
-		lblLblbs_5.setFont(new Font("Arial", Font.PLAIN, 10));
-		lblLblbs_5.setHorizontalAlignment(SwingConstants.RIGHT);
-		panel_15.add(lblLblbs_5);
-
-		JLabel lblLblbs_6 = new JLabel(LBL_BST3_7);
+		JLabel lblLblbs_6 = new JLabel("<html><body><p align=right>Lavabos</p></body></html>");
 		lblLblbs_6.setFont(new Font("Arial", Font.PLAIN, 10));
 		lblLblbs_6.setHorizontalAlignment(SwingConstants.RIGHT);
 		panel_15.add(lblLblbs_6);
@@ -1600,6 +1584,18 @@ public class B3Template extends JFrame {
 		panel_2.add(panel_7);
 		panel_7.setLayout(new GridLayout(2, 2, 0, 0));
 
+		txtCantidad70 = new JTextField();
+		txtCantidad70.setText("1");
+		txtCantidad70.setEditable(false);
+		txtCantidad70.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad70.setColumns(10);
+		panel_7.add(txtCantidad70);
+
+		txtCantidad71 = new JTextField();
+		txtCantidad71.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad71.setColumns(10);
+		panel_7.add(txtCantidad71);
+
 		txtCantidad80 = new JTextField();
 		txtCantidad80.setText("1");
 		txtCantidad80.setEditable(false);
@@ -1612,61 +1608,61 @@ public class B3Template extends JFrame {
 		txtCantidad81.setColumns(10);
 		panel_7.add(txtCantidad81);
 
-		txtCantidad90 = new JTextField();
-		txtCantidad90.setText("1");
-		txtCantidad90.setEditable(false);
-		txtCantidad90.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad90.setColumns(10);
-		panel_7.add(txtCantidad90);
-
-		txtCantidad91 = new JTextField();
-		txtCantidad91.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad91.setColumns(10);
-		panel_7.add(txtCantidad91);
-
 		JPanel panel_8 = new JPanel();
 		panel_8.setBounds(248, 28, 152, 50);
 		panel_2.add(panel_8);
 		panel_8.setLayout(new GridLayout(2, 0, 0, 0));
 
+		txtObs7 = new JTextField();
+		txtObs7.setColumns(10);
+		panel_8.add(txtObs7);
+
 		txtObs8 = new JTextField();
 		txtObs8.setColumns(10);
 		panel_8.add(txtObs8);
-
-		txtObs9 = new JTextField();
-		txtObs9.setColumns(10);
-		panel_8.add(txtObs9);
 
 		JPanel panel_9 = new JPanel();
 		panel_9.setBounds(188, 95, 50, 25);
 		panel_2.add(panel_9);
 		panel_9.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtCantidad100 = new JTextField();
-		txtCantidad100.setText("2");
-		txtCantidad100.setEditable(false);
-		txtCantidad100.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad100.setColumns(10);
-		panel_9.add(txtCantidad100);
+		txtCantidad90 = new JTextField();
+		txtCantidad90.setText("2");
+		txtCantidad90.setEditable(false);
+		txtCantidad90.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad90.setColumns(10);
+		panel_9.add(txtCantidad90);
 
-		txtCantidad101 = new JTextField();
-		txtCantidad101.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad101.setColumns(10);
-		panel_9.add(txtCantidad101);
+		txtCantidad91 = new JTextField();
+		txtCantidad91.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad91.setColumns(10);
+		panel_9.add(txtCantidad91);
 
 		JPanel panel_10 = new JPanel();
 		panel_10.setBounds(248, 95, 152, 25);
 		panel_2.add(panel_10);
 		panel_10.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtObs10 = new JTextField();
-		txtObs10.setColumns(10);
-		panel_10.add(txtObs10);
+		txtObs9 = new JTextField();
+		txtObs9.setColumns(10);
+		panel_10.add(txtObs9);
 
 		JPanel panel_11 = new JPanel();
 		panel_11.setBounds(188, 133, 50, 50);
 		panel_2.add(panel_11);
 		panel_11.setLayout(new GridLayout(2, 2, 0, 0));
+
+		txtCantidad100 = new JTextField();
+		txtCantidad100.setText("2");
+		txtCantidad100.setEditable(false);
+		txtCantidad100.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad100.setColumns(10);
+		panel_11.add(txtCantidad100);
+
+		txtCantidad101 = new JTextField();
+		txtCantidad101.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad101.setColumns(10);
+		panel_11.add(txtCantidad101);
 
 		txtCantidad110 = new JTextField();
 		txtCantidad110.setText("1");
@@ -1680,56 +1676,44 @@ public class B3Template extends JFrame {
 		txtCantidad111.setColumns(10);
 		panel_11.add(txtCantidad111);
 
-		txtCantidad120 = new JTextField();
-		txtCantidad120.setText("1");
-		txtCantidad120.setEditable(false);
-		txtCantidad120.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad120.setColumns(10);
-		panel_11.add(txtCantidad120);
-
-		txtCantidad121 = new JTextField();
-		txtCantidad121.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad121.setColumns(10);
-		panel_11.add(txtCantidad121);
-
 		JPanel panel_12 = new JPanel();
 		panel_12.setBounds(248, 133, 152, 50);
 		panel_2.add(panel_12);
 		panel_12.setLayout(new GridLayout(2, 0, 0, 0));
 
+		txtObs10 = new JTextField();
+		txtObs10.setColumns(10);
+		panel_12.add(txtObs10);
+
 		txtObs11 = new JTextField();
 		txtObs11.setColumns(10);
 		panel_12.add(txtObs11);
-
-		txtObs12 = new JTextField();
-		txtObs12.setColumns(10);
-		panel_12.add(txtObs12);
 
 		JPanel panel_13 = new JPanel();
 		panel_13.setBounds(188, 202, 50, 25);
 		panel_2.add(panel_13);
 		panel_13.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtCantidad130 = new JTextField();
-		txtCantidad130.setText("1");
-		txtCantidad130.setEditable(false);
-		txtCantidad130.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad130.setColumns(10);
-		panel_13.add(txtCantidad130);
+		txtCantidad120 = new JTextField();
+		txtCantidad120.setText("1");
+		txtCantidad120.setEditable(false);
+		txtCantidad120.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad120.setColumns(10);
+		panel_13.add(txtCantidad120);
 
-		txtCantidad131 = new JTextField();
-		txtCantidad131.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad131.setColumns(10);
-		panel_13.add(txtCantidad131);
+		txtCantidad121 = new JTextField();
+		txtCantidad121.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad121.setColumns(10);
+		panel_13.add(txtCantidad121);
 
 		JPanel panel_14 = new JPanel();
 		panel_14.setBounds(248, 202, 152, 25);
 		panel_2.add(panel_14);
 		panel_14.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtObs13 = new JTextField();
-		txtObs13.setColumns(10);
-		panel_14.add(txtObs13);
+		txtObs12 = new JTextField();
+		txtObs12.setColumns(10);
+		panel_14.add(txtObs12);
 
 		JPanel panel_16 = new JPanel();
 		panel_16.setBounds(10, 28, 167, 50);
@@ -1783,7 +1767,7 @@ public class B3Template extends JFrame {
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_3.setBounds(435, 11, 410, 544);
+		panel_3.setBounds(435, 11, 410, 502);
 		pnlPestaña1.add(panel_3);
 		panel_3.setLayout(null);
 
@@ -1810,33 +1794,34 @@ public class B3Template extends JFrame {
 		panel_3.add(panel_20);
 		panel_20.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtCantidad140 = new JTextField();
-		txtCantidad140.setText("5");
-		txtCantidad140.setEditable(false);
-		txtCantidad140.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad140.setColumns(10);
-		panel_20.add(txtCantidad140);
+		txtCantidad130 = new JTextField();
+		txtCantidad130.setText("4");
+		txtCantidad130.setEditable(false);
+		txtCantidad130.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad130.setColumns(10);
+		panel_20.add(txtCantidad130);
 
-		txtCantidad141 = new JTextField();
-		txtCantidad141.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad141.setColumns(10);
-		panel_20.add(txtCantidad141);
+		txtCantidad131 = new JTextField();
+		txtCantidad131.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad131.setColumns(10);
+		panel_20.add(txtCantidad131);
 
 		JPanel panel_21 = new JPanel();
 		panel_21.setBounds(247, 73, 152, 25);
 		panel_3.add(panel_21);
 		panel_21.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtObs14 = new JTextField();
-		txtObs14.setColumns(10);
-		panel_21.add(txtObs14);
+		txtObs13 = new JTextField();
+		txtObs13.setColumns(10);
+		panel_21.add(txtObs13);
 
 		JPanel panel_22 = new JPanel();
 		panel_22.setBounds(10, 37, 167, 100);
 		panel_3.add(panel_22);
 		panel_22.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_13 = new JLabel(LBL_BST3_14);
+		JLabel lblLblbs_13 = new JLabel(
+				"<html><body><p align=right>Kit de Accesorios de Conexión Agua Potable (Inodoros)(4  te reducciones 3/4-1/2 , 4 neplos, 8 uniones de 1/2, 8 codos de 90°,4 mangueras de abasto, 4 llave de paso , 1 rollo teflón, 2 tubos de pasta selladora)</p></body></html>");
 		lblLblbs_13.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_13.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_22.add(lblLblbs_13);
@@ -1846,41 +1831,54 @@ public class B3Template extends JFrame {
 		panel_3.add(panel_23);
 		panel_23.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtCantidad150 = new JTextField();
-		txtCantidad150.setText("4");
-		txtCantidad150.setEditable(false);
-		txtCantidad150.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad150.setColumns(10);
-		panel_23.add(txtCantidad150);
+		txtCantidad140 = new JTextField();
+		txtCantidad140.setText("4");
+		txtCantidad140.setEditable(false);
+		txtCantidad140.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad140.setColumns(10);
+		panel_23.add(txtCantidad140);
 
-		txtCantidad151 = new JTextField();
-		txtCantidad151.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad151.setColumns(10);
-		panel_23.add(txtCantidad151);
+		txtCantidad141 = new JTextField();
+		txtCantidad141.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad141.setColumns(10);
+		panel_23.add(txtCantidad141);
 
 		JPanel panel_24 = new JPanel();
 		panel_24.setBounds(248, 163, 152, 25);
 		panel_3.add(panel_24);
 		panel_24.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtObs15 = new JTextField();
-		txtObs15.setColumns(10);
-		panel_24.add(txtObs15);
+		txtObs14 = new JTextField();
+		txtObs14.setColumns(10);
+		panel_24.add(txtObs14);
 
 		JPanel panel_25 = new JPanel();
 		panel_25.setBounds(10, 138, 167, 90);
 		panel_3.add(panel_25);
 		panel_25.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_14 = new JLabel(LBL_BST3_15);
+		JLabel lblLblbs_14 = new JLabel(
+				"<html><body><p align=right>Kit de Accesorios de Conexión Agua Potable (Lavabos)(4  te reducciones 3/4-1/2  ,  4 neplos,8 uniones de 1/2,8 codos de 90°,4 mangueras de abasto,4 llave de paso, teflón, pasta selladora)</p></body></html>");
 		lblLblbs_14.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_14.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_25.add(lblLblbs_14);
 
 		JPanel panel_26 = new JPanel();
-		panel_26.setBounds(188, 230, 50, 50);
+		panel_26.setBounds(188, 230, 50, 90);
 		panel_3.add(panel_26);
-		panel_26.setLayout(new GridLayout(2, 2, 0, 0));
+		panel_26.setLayout(new GridLayout(4, 2, 0, 0));
+
+		txtCantidad150 = new JTextField();
+		txtCantidad150.setText("2");
+		txtCantidad150.setEditable(false);
+		txtCantidad150.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad150.setColumns(10);
+		panel_26.add(txtCantidad150);
+
+		txtCantidad151 = new JTextField();
+		txtCantidad151.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad151.setColumns(10);
+		panel_26.add(txtCantidad151);
 
 		txtCantidad160 = new JTextField();
 		txtCantidad160.setText("1");
@@ -1895,195 +1893,152 @@ public class B3Template extends JFrame {
 		panel_26.add(txtCantidad161);
 
 		txtCantidad170 = new JTextField();
-		txtCantidad170.setText("1");
-		txtCantidad170.setEditable(false);
-		txtCantidad170.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad170.setColumns(10);
 		panel_26.add(txtCantidad170);
+		txtCantidad170.setText("2");
+		txtCantidad170.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad170.setEditable(false);
+		txtCantidad170.setColumns(10);
 
 		txtCantidad171 = new JTextField();
+		panel_26.add(txtCantidad171);
 		txtCantidad171.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad171.setColumns(10);
-		panel_26.add(txtCantidad171);
+
+		txtCantidad180 = new JTextField();
+		panel_26.add(txtCantidad180);
+		txtCantidad180.setText("1");
+		txtCantidad180.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad180.setEditable(false);
+		txtCantidad180.setColumns(10);
+
+		txtCantidad181 = new JTextField();
+		panel_26.add(txtCantidad181);
+		txtCantidad181.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad181.setColumns(10);
 
 		JPanel panel_27 = new JPanel();
-		panel_27.setBounds(248, 230, 152, 50);
+		panel_27.setBounds(248, 230, 152, 90);
 		panel_3.add(panel_27);
-		panel_27.setLayout(new GridLayout(2, 0, 0, 0));
+		panel_27.setLayout(new GridLayout(4, 0, 0, 0));
+
+		txtObs15 = new JTextField();
+		txtObs15.setColumns(10);
+		panel_27.add(txtObs15);
 
 		txtObs16 = new JTextField();
 		txtObs16.setColumns(10);
 		panel_27.add(txtObs16);
 
 		txtObs17 = new JTextField();
-		txtObs17.setColumns(10);
 		panel_27.add(txtObs17);
+		txtObs17.setColumns(10);
+
+		txtObs18 = new JTextField();
+		panel_27.add(txtObs18);
+		txtObs18.setColumns(10);
 
 		JPanel panel_28 = new JPanel();
-		panel_28.setBounds(10, 230, 167, 50);
+		panel_28.setBounds(10, 230, 167, 90);
 		panel_3.add(panel_28);
-		panel_28.setLayout(new GridLayout(2, 0, 0, 0));
+		panel_28.setLayout(new GridLayout(4, 0, 0, 0));
 
 		JLabel lblLblbs_15 = new JLabel("<html><body><p align=right>Tubería de PVC 1/2\"  y L=3 m</p></body></html>");
 		lblLblbs_15.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_15.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_28.add(lblLblbs_15);
 
-		JLabel lblLblbs_16 = new JLabel(
-				"<html><body><p align=right>Tubería de PVC 1/2\"  y L=2.65 m</p></body></html>");
+		JLabel lblLblbs_16 = new JLabel("<html><body><p align=right>Tubería de PVC 1/2\"  y L=1.5 m</p></body></html>");
 		lblLblbs_16.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_16.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_28.add(lblLblbs_16);
 
-		JPanel panel_29 = new JPanel();
-		panel_29.setBounds(188, 308, 50, 25);
-		panel_3.add(panel_29);
-		panel_29.setLayout(new GridLayout(1, 2, 0, 0));
+		JLabel lbltuberaDePvc = new JLabel("<html><body><p align=right>Tubería de PVC 3/4\" y L=3m</p></body></html>");
+		panel_28.add(lbltuberaDePvc);
+		lbltuberaDePvc.setHorizontalAlignment(SwingConstants.RIGHT);
+		lbltuberaDePvc.setFont(new Font("Arial", Font.PLAIN, 10));
 
-		txtCantidad180 = new JTextField();
-		txtCantidad180.setText("2");
-		txtCantidad180.setEditable(false);
-		txtCantidad180.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad180.setColumns(10);
-		panel_29.add(txtCantidad180);
-
-		txtCantidad181 = new JTextField();
-		txtCantidad181.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad181.setColumns(10);
-		panel_29.add(txtCantidad181);
-
-		JPanel panel_30 = new JPanel();
-		panel_30.setBounds(248, 308, 152, 25);
-		panel_3.add(panel_30);
-		panel_30.setLayout(new GridLayout(1, 0, 0, 0));
-
-		txtObs18 = new JTextField();
-		txtObs18.setColumns(10);
-		panel_30.add(txtObs18);
-
-		JPanel panel_31 = new JPanel();
-		panel_31.setBounds(10, 283, 167, 90);
-		panel_3.add(panel_31);
-		panel_31.setLayout(new GridLayout(1, 0, 0, 0));
-
-		JLabel lblLblbs_17 = new JLabel(LBL_BST3_18);
-		lblLblbs_17.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_17.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_31.add(lblLblbs_17);
-
-		JPanel panel_32 = new JPanel();
-		panel_32.setBounds(188, 375, 50, 25);
-		panel_3.add(panel_32);
-		panel_32.setLayout(new GridLayout(1, 2, 0, 0));
-
-		txtCantidad190 = new JTextField();
-		txtCantidad190.setText("2");
-		txtCantidad190.setEditable(false);
-		txtCantidad190.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad190.setColumns(10);
-		panel_32.add(txtCantidad190);
-
-		txtCantidad191 = new JTextField();
-		txtCantidad191.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad191.setColumns(10);
-		panel_32.add(txtCantidad191);
-
-		JPanel panel_33 = new JPanel();
-		panel_33.setBounds(248, 375, 152, 25);
-		panel_3.add(panel_33);
-		panel_33.setLayout(new GridLayout(1, 0, 0, 0));
-
-		txtObs19 = new JTextField();
-		txtObs19.setColumns(10);
-		panel_33.add(txtObs19);
-
-		JPanel panel_34 = new JPanel();
-		panel_34.setBounds(10, 375, 167, 25);
-		panel_3.add(panel_34);
-		panel_34.setLayout(new GridLayout(1, 0, 0, 0));
-
-		JLabel lblLblbs_18 = new JLabel("<html><body><p align=right>Tubería de PVC 1\" y L=3 m</p></body></html>");
-		lblLblbs_18.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_18.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_34.add(lblLblbs_18);
+		lbltuberaDePvc_1 = new JLabel("<html><body><p align=right>Tubería de PVC 3/4\" y L=1.5m</p></body></html>");
+		panel_28.add(lbltuberaDePvc_1);
+		lbltuberaDePvc_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		lbltuberaDePvc_1.setFont(new Font("Arial", Font.PLAIN, 10));
 
 		JPanel panel_37 = new JPanel();
-		panel_37.setBounds(10, 463, 167, 50);
+		panel_37.setBounds(10, 427, 167, 50);
 		panel_3.add(panel_37);
 		panel_37.setLayout(new GridLayout(1, 0, 0, 0));
 
 		JLabel lblLblbs_20 = new JLabel(
-				"<html><body><p align=right>Kit para conexión de tubería 1\".(lija pliego,polipega 1/4 gal,2 uniones)</p></body></html>");
+				"<html><body><p align=right>Kit para conexión de tubería 3/4\".(lija pliego,polipega 1/4 gal, 3 uniones)</p></body></html>");
 		lblLblbs_20.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_20.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_37.add(lblLblbs_20);
 
 		JPanel panel_40 = new JPanel();
-		panel_40.setBounds(10, 405, 167, 50);
+		panel_40.setBounds(10, 344, 167, 50);
 		panel_3.add(panel_40);
 		panel_40.setLayout(new GridLayout(1, 0, 0, 0));
 
 		JLabel lblLblbst = new JLabel(
-				"<html><body><p align=right>Kit para conexión de tubería 1/2\".(lija pliego,polipega 1/4 gal,2 uniones)</p></body></html>");
+				"<html><body><p align=right>Kit para conexión de tubería 1/2\".(lija pliego,polipega 1/4 gal,3 uniones)</p></body></html>");
 		lblLblbst.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbst.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_40.add(lblLblbst);
 
 		JPanel panel_35 = new JPanel();
-		panel_35.setBounds(187, 473, 50, 25);
+		panel_35.setBounds(187, 437, 50, 25);
 		panel_3.add(panel_35);
 		panel_35.setLayout(new GridLayout(1, 2, 0, 0));
-
-		txtCantidad210 = new JTextField();
-		txtCantidad210.setText("1");
-		txtCantidad210.setEditable(false);
-		txtCantidad210.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad210.setColumns(10);
-		panel_35.add(txtCantidad210);
-
-		txtCantidad211 = new JTextField();
-		txtCantidad211.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad211.setColumns(10);
-		panel_35.add(txtCantidad211);
-
-		JPanel panel_36 = new JPanel();
-		panel_36.setBounds(247, 473, 152, 25);
-		panel_3.add(panel_36);
-		panel_36.setLayout(new GridLayout(1, 0, 0, 0));
-
-		txtObs21 = new JTextField();
-		txtObs21.setColumns(10);
-		panel_36.add(txtObs21);
-
-		JPanel panel_38 = new JPanel();
-		panel_38.setBounds(187, 418, 50, 25);
-		panel_3.add(panel_38);
-		panel_38.setLayout(new GridLayout(1, 2, 0, 0));
 
 		txtCantidad200 = new JTextField();
 		txtCantidad200.setText("1");
 		txtCantidad200.setEditable(false);
 		txtCantidad200.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad200.setColumns(10);
-		panel_38.add(txtCantidad200);
+		panel_35.add(txtCantidad200);
 
 		txtCantidad201 = new JTextField();
 		txtCantidad201.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad201.setColumns(10);
-		panel_38.add(txtCantidad201);
+		panel_35.add(txtCantidad201);
 
-		JPanel panel_39 = new JPanel();
-		panel_39.setBounds(247, 418, 152, 25);
-		panel_3.add(panel_39);
-		panel_39.setLayout(new GridLayout(1, 0, 0, 0));
+		JPanel panel_36 = new JPanel();
+		panel_36.setBounds(247, 437, 152, 25);
+		panel_3.add(panel_36);
+		panel_36.setLayout(new GridLayout(1, 0, 0, 0));
 
 		txtObs20 = new JTextField();
 		txtObs20.setColumns(10);
-		panel_39.add(txtObs20);
+		panel_36.add(txtObs20);
+
+		JPanel panel_38 = new JPanel();
+		panel_38.setBounds(187, 357, 50, 25);
+		panel_3.add(panel_38);
+		panel_38.setLayout(new GridLayout(1, 2, 0, 0));
+
+		txtCantidad190 = new JTextField();
+		txtCantidad190.setText("1");
+		txtCantidad190.setEditable(false);
+		txtCantidad190.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad190.setColumns(10);
+		panel_38.add(txtCantidad190);
+
+		txtCantidad191 = new JTextField();
+		txtCantidad191.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad191.setColumns(10);
+		panel_38.add(txtCantidad191);
+
+		JPanel panel_39 = new JPanel();
+		panel_39.setBounds(247, 357, 152, 25);
+		panel_3.add(panel_39);
+		panel_39.setLayout(new GridLayout(1, 0, 0, 0));
+
+		txtObs19 = new JTextField();
+		txtObs19.setColumns(10);
+		panel_39.add(txtObs19);
 
 		JPanel panel_4 = new JPanel();
 		panel_4.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_4.setBounds(861, 11, 410, 541);
+		panel_4.setBounds(861, 11, 410, 406);
 		pnlPestaña1.add(panel_4);
 		panel_4.setLayout(null);
 
@@ -2120,26 +2075,26 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_42);
 		panel_42.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtCantidad220 = new JTextField();
-		txtCantidad220.setText("2");
-		txtCantidad220.setEditable(false);
-		txtCantidad220.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad220.setColumns(10);
-		panel_42.add(txtCantidad220);
+		txtCantidad210 = new JTextField();
+		txtCantidad210.setText("2");
+		txtCantidad210.setEditable(false);
+		txtCantidad210.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad210.setColumns(10);
+		panel_42.add(txtCantidad210);
 
-		txtCantidad221 = new JTextField();
-		txtCantidad221.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad221.setColumns(10);
-		panel_42.add(txtCantidad221);
+		txtCantidad211 = new JTextField();
+		txtCantidad211.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad211.setColumns(10);
+		panel_42.add(txtCantidad211);
 
 		JPanel panel_43 = new JPanel();
 		panel_43.setBounds(247, 45, 152, 25);
 		panel_4.add(panel_43);
 		panel_43.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtObs22 = new JTextField();
-		txtObs22.setColumns(10);
-		panel_43.add(txtObs22);
+		txtObs21 = new JTextField();
+		txtObs21.setColumns(10);
+		panel_43.add(txtObs21);
 
 		JPanel panel_44 = new JPanel();
 		panel_44.setBounds(10, 82, 167, 50);
@@ -2156,33 +2111,34 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_45);
 		panel_45.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtCantidad230 = new JTextField();
-		txtCantidad230.setText("4");
-		txtCantidad230.setEditable(false);
-		txtCantidad230.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad230.setColumns(10);
-		panel_45.add(txtCantidad230);
+		txtCantidad220 = new JTextField();
+		txtCantidad220.setText("4");
+		txtCantidad220.setEditable(false);
+		txtCantidad220.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad220.setColumns(10);
+		panel_45.add(txtCantidad220);
 
-		txtCantidad231 = new JTextField();
-		txtCantidad231.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad231.setColumns(10);
-		panel_45.add(txtCantidad231);
+		txtCantidad221 = new JTextField();
+		txtCantidad221.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad221.setColumns(10);
+		panel_45.add(txtCantidad221);
 
 		JPanel panel_46 = new JPanel();
 		panel_46.setBounds(247, 95, 152, 25);
 		panel_4.add(panel_46);
 		panel_46.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtObs23 = new JTextField();
-		txtObs23.setColumns(10);
-		panel_46.add(txtObs23);
+		txtObs22 = new JTextField();
+		txtObs22.setColumns(10);
+		panel_46.add(txtObs22);
 
 		JPanel panel_47 = new JPanel();
 		panel_47.setBounds(10, 182, 167, 50);
 		panel_4.add(panel_47);
 		panel_47.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_24 = new JLabel(LBL_BST3_26);
+		JLabel lblLblbs_24 = new JLabel(
+				"<html><body><p align=right>Kit de Accesorios de Conexión Agua Residual (Inodoros)((2codo 90°, 1/4 gl polipega , 4 yee 110)</p></body></html>");
 		lblLblbs_24.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_24.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_47.add(lblLblbs_24);
@@ -2192,34 +2148,46 @@ public class B3Template extends JFrame {
 		panel_4.add(panel_48);
 		panel_48.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtCantidad260 = new JTextField();
-		txtCantidad260.setText("2");
-		txtCantidad260.setEditable(false);
-		txtCantidad260.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad260.setColumns(10);
-		panel_48.add(txtCantidad260);
+		txtCantidad250 = new JTextField();
+		txtCantidad250.setText("4");
+		txtCantidad250.setEditable(false);
+		txtCantidad250.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad250.setColumns(10);
+		panel_48.add(txtCantidad250);
 
-		txtCantidad261 = new JTextField();
-		txtCantidad261.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad261.setColumns(10);
-		panel_48.add(txtCantidad261);
+		txtCantidad251 = new JTextField();
+		txtCantidad251.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad251.setColumns(10);
+		panel_48.add(txtCantidad251);
 
 		JPanel panel_49 = new JPanel();
 		panel_49.setBounds(247, 195, 152, 25);
 		panel_4.add(panel_49);
 		panel_49.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtObs26 = new JTextField();
-		txtObs26.setColumns(10);
-		panel_49.add(txtObs26);
+		txtObs25 = new JTextField();
+		txtObs25.setColumns(10);
+		panel_49.add(txtObs25);
 
 		JPanel panel_50 = new JPanel();
 		panel_50.setBounds(188, 132, 50, 50);
 		panel_4.add(panel_50);
 		panel_50.setLayout(new GridLayout(2, 2, 0, 0));
 
+		txtCantidad230 = new JTextField();
+		txtCantidad230.setText("3");
+		txtCantidad230.setEditable(false);
+		txtCantidad230.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad230.setColumns(10);
+		panel_50.add(txtCantidad230);
+
+		txtCantidad231 = new JTextField();
+		txtCantidad231.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad231.setColumns(10);
+		panel_50.add(txtCantidad231);
+
 		txtCantidad240 = new JTextField();
-		txtCantidad240.setText("4");
+		txtCantidad240.setText("1");
 		txtCantidad240.setEditable(false);
 		txtCantidad240.setHorizontalAlignment(SwingConstants.CENTER);
 		txtCantidad240.setColumns(10);
@@ -2230,30 +2198,18 @@ public class B3Template extends JFrame {
 		txtCantidad241.setColumns(10);
 		panel_50.add(txtCantidad241);
 
-		txtCantidad250 = new JTextField();
-		txtCantidad250.setText("1");
-		txtCantidad250.setEditable(false);
-		txtCantidad250.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad250.setColumns(10);
-		panel_50.add(txtCantidad250);
-
-		txtCantidad251 = new JTextField();
-		txtCantidad251.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad251.setColumns(10);
-		panel_50.add(txtCantidad251);
-
 		JPanel panel_51 = new JPanel();
 		panel_51.setBounds(248, 132, 152, 50);
 		panel_4.add(panel_51);
 		panel_51.setLayout(new GridLayout(2, 0, 0, 0));
 
+		txtObs23 = new JTextField();
+		txtObs23.setColumns(10);
+		panel_51.add(txtObs23);
+
 		txtObs24 = new JTextField();
 		txtObs24.setColumns(10);
 		panel_51.add(txtObs24);
-
-		txtObs25 = new JTextField();
-		txtObs25.setColumns(10);
-		panel_51.add(txtObs25);
 
 		JPanel panel_52 = new JPanel();
 		panel_52.setBounds(10, 132, 167, 50);
@@ -2265,106 +2221,49 @@ public class B3Template extends JFrame {
 		lblLblbs_22.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_52.add(lblLblbs_22);
 
-		JLabel lblLblbs_23 = new JLabel(LBL_BST3_25);
+		JLabel lblLblbs_23 = new JLabel("<html><body><p align=right>Tubería de 50mm PVC y L=2.6m</p></body></html>");
 		lblLblbs_23.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_23.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_52.add(lblLblbs_23);
 
-		JPanel panel_53 = new JPanel();
-		panel_53.setBounds(9, 282, 167, 50);
-		panel_4.add(panel_53);
-		panel_53.setLayout(new GridLayout(1, 0, 0, 0));
-
-		JLabel lblLblbs_27 = new JLabel(LBL_BST3_29);
-		lblLblbs_27.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_27.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_53.add(lblLblbs_27);
-
-		JPanel panel_54 = new JPanel();
-		panel_54.setBounds(186, 295, 50, 25);
-		panel_4.add(panel_54);
-		panel_54.setLayout(new GridLayout(1, 2, 0, 0));
-
-		txtCantidad290 = new JTextField();
-		txtCantidad290.setText("5");
-		txtCantidad290.setEditable(false);
-		txtCantidad290.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad290.setColumns(10);
-		panel_54.add(txtCantidad290);
-
-		txtCantidad291 = new JTextField();
-		txtCantidad291.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad291.setColumns(10);
-		panel_54.add(txtCantidad291);
-
-		JPanel panel_55 = new JPanel();
-		panel_55.setBounds(246, 295, 152, 25);
-		panel_4.add(panel_55);
-		panel_55.setLayout(new GridLayout(1, 0, 0, 0));
-
-		txtObs29 = new JTextField();
-		txtObs29.setColumns(10);
-		panel_55.add(txtObs29);
-
 		JPanel panel_56 = new JPanel();
-		panel_56.setBounds(187, 232, 50, 50);
+		panel_56.setBounds(187, 232, 50, 25);
 		panel_4.add(panel_56);
-		panel_56.setLayout(new GridLayout(2, 2, 0, 0));
+		panel_56.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtCantidad270 = new JTextField();
-		txtCantidad270.setText("2");
-		txtCantidad270.setEditable(false);
-		txtCantidad270.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad270.setColumns(10);
-		panel_56.add(txtCantidad270);
+		txtCantidad260 = new JTextField();
+		txtCantidad260.setText("5");
+		txtCantidad260.setEditable(false);
+		txtCantidad260.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad260.setColumns(10);
+		panel_56.add(txtCantidad260);
 
-		txtCantidad271 = new JTextField();
-		txtCantidad271.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad271.setColumns(10);
-		panel_56.add(txtCantidad271);
-
-		txtCantidad280 = new JTextField();
-		txtCantidad280.setText("1");
-		txtCantidad280.setEditable(false);
-		txtCantidad280.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad280.setColumns(10);
-		panel_56.add(txtCantidad280);
-
-		txtCantidad281 = new JTextField();
-		txtCantidad281.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad281.setColumns(10);
-		panel_56.add(txtCantidad281);
+		txtCantidad261 = new JTextField();
+		txtCantidad261.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad261.setColumns(10);
+		panel_56.add(txtCantidad261);
 
 		JPanel panel_57 = new JPanel();
-		panel_57.setBounds(247, 232, 152, 50);
+		panel_57.setBounds(247, 232, 152, 25);
 		panel_4.add(panel_57);
-		panel_57.setLayout(new GridLayout(2, 0, 0, 0));
+		panel_57.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtObs27 = new JTextField();
-		txtObs27.setColumns(10);
-		panel_57.add(txtObs27);
-
-		txtObs28 = new JTextField();
-		txtObs28.setColumns(10);
-		panel_57.add(txtObs28);
+		txtObs26 = new JTextField();
+		txtObs26.setColumns(10);
+		panel_57.add(txtObs26);
 
 		JPanel panel_58 = new JPanel();
-		panel_58.setBounds(9, 232, 167, 50);
+		panel_58.setBounds(9, 232, 167, 25);
 		panel_4.add(panel_58);
-		panel_58.setLayout(new GridLayout(2, 0, 0, 0));
+		panel_58.setLayout(new GridLayout(1, 0, 0, 0));
 
-		JLabel lblLblbs_25 = new JLabel(LBL_BST3_27);
+		JLabel lblLblbs_25 = new JLabel("<html><body><p align=right>Tubería de 110mm PVC y L=3m</p></body></html>");
 		lblLblbs_25.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblLblbs_25.setFont(new Font("Arial", Font.PLAIN, 10));
 		panel_58.add(lblLblbs_25);
 
-		JLabel lblLblbs_26 = new JLabel(LBL_BST3_28);
-		lblLblbs_26.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_26.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_58.add(lblLblbs_26);
-
 		JPanel panel_59 = new JPanel();
-		panel_59.setBounds(10, 382, 167, 50);
+		panel_59.setBounds(10, 268, 167, 50);
 		panel_4.add(panel_59);
 		panel_59.setLayout(new GridLayout(1, 0, 0, 0));
 
@@ -2374,126 +2273,33 @@ public class B3Template extends JFrame {
 		panel_59.add(lblLblbs_30);
 
 		JPanel panel_60 = new JPanel();
-		panel_60.setBounds(187, 395, 50, 25);
+		panel_60.setBounds(187, 281, 50, 25);
 		panel_4.add(panel_60);
 		panel_60.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtCantidad320 = new JTextField();
-		txtCantidad320.setText("1");
-		txtCantidad320.setEditable(false);
-		txtCantidad320.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad320.setColumns(10);
-		panel_60.add(txtCantidad320);
+		txtCantidad270 = new JTextField();
+		txtCantidad270.setText("1");
+		txtCantidad270.setEditable(false);
+		txtCantidad270.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad270.setColumns(10);
+		panel_60.add(txtCantidad270);
 
-		txtCantidad321 = new JTextField();
-		txtCantidad321.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad321.setColumns(10);
-		panel_60.add(txtCantidad321);
+		txtCantidad271 = new JTextField();
+		txtCantidad271.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad271.setColumns(10);
+		panel_60.add(txtCantidad271);
 
 		JPanel panel_61 = new JPanel();
-		panel_61.setBounds(247, 395, 152, 25);
+		panel_61.setBounds(247, 281, 152, 25);
 		panel_4.add(panel_61);
 		panel_61.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtObs32 = new JTextField();
-		txtObs32.setColumns(10);
-		panel_61.add(txtObs32);
-
-		JPanel panel_62 = new JPanel();
-		panel_62.setBounds(188, 332, 50, 50);
-		panel_4.add(panel_62);
-		panel_62.setLayout(new GridLayout(2, 2, 0, 0));
-
-		txtCantidad300 = new JTextField();
-		txtCantidad300.setText("7");
-		txtCantidad300.setEditable(false);
-		txtCantidad300.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad300.setColumns(10);
-		panel_62.add(txtCantidad300);
-
-		txtCantidad301 = new JTextField();
-		txtCantidad301.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad301.setColumns(10);
-		panel_62.add(txtCantidad301);
-
-		txtCantidad310 = new JTextField();
-		txtCantidad310.setText("1");
-		txtCantidad310.setEditable(false);
-		txtCantidad310.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad310.setColumns(10);
-		panel_62.add(txtCantidad310);
-
-		txtCantidad311 = new JTextField();
-		txtCantidad311.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad311.setColumns(10);
-		panel_62.add(txtCantidad311);
-
-		JPanel panel_63 = new JPanel();
-		panel_63.setBounds(248, 332, 152, 50);
-		panel_4.add(panel_63);
-		panel_63.setLayout(new GridLayout(2, 0, 0, 0));
-
-		txtObs30 = new JTextField();
-		txtObs30.setColumns(10);
-		panel_63.add(txtObs30);
-
-		txtObs31 = new JTextField();
-		txtObs31.setColumns(10);
-		panel_63.add(txtObs31);
-
-		JPanel panel_64 = new JPanel();
-		panel_64.setBounds(10, 332, 167, 50);
-		panel_4.add(panel_64);
-		panel_64.setLayout(new GridLayout(2, 0, 0, 0));
-
-		JLabel lblLblbs_28 = new JLabel(LBL_BST3_30);
-		lblLblbs_28.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_28.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_64.add(lblLblbs_28);
-
-		JLabel lblLblbs_29 = new JLabel(LBL_BST3_31);
-		lblLblbs_29.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_29.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_64.add(lblLblbs_29);
-
-		JPanel panel_65 = new JPanel();
-		panel_65.setBounds(10, 434, 167, 50);
-		panel_4.add(panel_65);
-		panel_65.setLayout(new GridLayout(1, 0, 0, 0));
-
-		JLabel lblLblbs_31 = new JLabel(LBL_BST3_33);
-		lblLblbs_31.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblLblbs_31.setFont(new Font("Arial", Font.PLAIN, 10));
-		panel_65.add(lblLblbs_31);
-
-		JPanel panel_66 = new JPanel();
-		panel_66.setBounds(187, 445, 50, 25);
-		panel_4.add(panel_66);
-		panel_66.setLayout(new GridLayout(1, 2, 0, 0));
-
-		txtCantidad330 = new JTextField();
-		txtCantidad330.setText("1");
-		txtCantidad330.setEditable(false);
-		txtCantidad330.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad330.setColumns(10);
-		panel_66.add(txtCantidad330);
-
-		txtCantidad331 = new JTextField();
-		txtCantidad331.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad331.setColumns(10);
-		panel_66.add(txtCantidad331);
-
-		JPanel panel_67 = new JPanel();
-		panel_67.setBounds(247, 445, 152, 25);
-		panel_4.add(panel_67);
-		panel_67.setLayout(new GridLayout(1, 0, 0, 0));
-
-		txtObs33 = new JTextField();
-		txtObs33.setColumns(10);
-		panel_67.add(txtObs33);
+		txtObs27 = new JTextField();
+		txtObs27.setColumns(10);
+		panel_61.add(txtObs27);
 
 		JPanel panel_68 = new JPanel();
-		panel_68.setBounds(10, 486, 167, 50);
+		panel_68.setBounds(10, 329, 167, 50);
 		panel_4.add(panel_68);
 		panel_68.setLayout(new GridLayout(1, 0, 0, 0));
 
@@ -2503,30 +2309,30 @@ public class B3Template extends JFrame {
 		panel_68.add(lblLblbs_32);
 
 		JPanel panel_69 = new JPanel();
-		panel_69.setBounds(187, 500, 50, 25);
+		panel_69.setBounds(187, 343, 50, 25);
 		panel_4.add(panel_69);
 		panel_69.setLayout(new GridLayout(1, 2, 0, 0));
 
-		txtCantidad340 = new JTextField();
-		txtCantidad340.setText("1");
-		txtCantidad340.setEditable(false);
-		txtCantidad340.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad340.setColumns(10);
-		panel_69.add(txtCantidad340);
+		txtCantidad280 = new JTextField();
+		txtCantidad280.setText("1");
+		txtCantidad280.setEditable(false);
+		txtCantidad280.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad280.setColumns(10);
+		panel_69.add(txtCantidad280);
 
-		txtCantidad341 = new JTextField();
-		txtCantidad341.setHorizontalAlignment(SwingConstants.CENTER);
-		txtCantidad341.setColumns(10);
-		panel_69.add(txtCantidad341);
+		txtCantidad281 = new JTextField();
+		txtCantidad281.setHorizontalAlignment(SwingConstants.CENTER);
+		txtCantidad281.setColumns(10);
+		panel_69.add(txtCantidad281);
 
 		JPanel panel_70 = new JPanel();
-		panel_70.setBounds(247, 500, 152, 25);
+		panel_70.setBounds(247, 343, 152, 25);
 		panel_4.add(panel_70);
 		panel_70.setLayout(new GridLayout(1, 0, 0, 0));
 
-		txtObs34 = new JTextField();
-		txtObs34.setColumns(10);
-		panel_70.add(txtObs34);
+		txtObs28 = new JTextField();
+		txtObs28.setColumns(10);
+		panel_70.add(txtObs28);
 
 	}
 
@@ -2603,7 +2409,7 @@ public class B3Template extends JFrame {
 
 		TGrupo grupo1 = srvFicha.buscarGrupo("Kit eléctrico");
 		TGrupo grupo2 = srvFicha.buscarGrupo("Kit hidrosanitario");
-		TGrupo grupo3 = srvFicha.buscarGrupo("Kit agua");
+		TGrupo grupo3 = srvFicha.buscarGrupo("Kit agua lluvia");
 		TGrupo grupo4 = srvFicha.buscarGrupo("Kit agua potable");
 		TGrupo grupo5 = srvFicha.buscarGrupo("Kit agua residual");
 		TGrupo grupo6 = srvFicha.buscarGrupo("Componente arquitectónico");
@@ -2614,428 +2420,395 @@ public class B3Template extends JFrame {
 
 		try {
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha,
-					quitarEtiquetasHTML(LBL_BS1_0), Integer.parseInt(txtCantidad00.getText()),
+					quitarEtiquetasHTML(LBL_BS3_0), Integer.parseInt(txtCantidad00.getText()),
 					Integer.parseInt(txtCantidad01.getText()), txtObs0.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad00.getText()),
 							Integer.parseInt(txtCantidad01.getText())),
-					ITEM_BS2_0, "UNIDAD"));
+					ITEM_BS3_0, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha,
-					quitarEtiquetasHTML(LBL_BS1_1), Integer.parseInt(txtCantidad10.getText()),
+					quitarEtiquetasHTML(LBL_BS3_1), Integer.parseInt(txtCantidad10.getText()),
 					Integer.parseInt(txtCantidad11.getText()), txtObs1.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad10.getText()),
 							Integer.parseInt(txtCantidad11.getText())),
-					ITEM_BS2_1, "UNIDAD"));
+					ITEM_BS3_1, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha,
-					quitarEtiquetasHTML(LBL_BS1_2), Integer.parseInt(txtCantidad20.getText()),
+					quitarEtiquetasHTML(LBL_BS3_2), Integer.parseInt(txtCantidad20.getText()),
 					Integer.parseInt(txtCantidad21.getText()), txtObs2.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad20.getText()),
 							Integer.parseInt(txtCantidad21.getText())),
-					ITEM_BS2_2, "UNIDAD"));
+					ITEM_BS3_2, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha,
-					quitarEtiquetasHTML(LBL_BS2_3), Integer.parseInt(txtCantidad30.getText()),
+					quitarEtiquetasHTML(LBL_BS3_3), Integer.parseInt(txtCantidad30.getText()),
 					Integer.parseInt(txtCantidad31.getText()), txtObs3.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad30.getText()),
 							Integer.parseInt(txtCantidad31.getText())),
-					ITEM_BS2_3, "UNIDAD"));
+					ITEM_BS3_3, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo1, ficha,
-					quitarEtiquetasHTML(LBL_BS2_4), Integer.parseInt(txtCantidad40.getText()),
+					quitarEtiquetasHTML(LBL_BS3_4), Integer.parseInt(txtCantidad40.getText()),
 					Integer.parseInt(txtCantidad41.getText()), txtObs4.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad40.getText()),
 							Integer.parseInt(txtCantidad41.getText())),
-					ITEM_BS2_4, "UNIDAD"));
+					ITEM_BS3_4, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha,
-					quitarEtiquetasHTML(LBL_BS2_5), Integer.parseInt(txtCantidad50.getText()),
+					quitarEtiquetasHTML(LBL_BS3_5), Integer.parseInt(txtCantidad50.getText()),
 					Integer.parseInt(txtCantidad51.getText()), txtObs5.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad50.getText()),
 							Integer.parseInt(txtCantidad51.getText())),
-					ITEM_BS2_5, "UNIDAD"));
+					ITEM_BS3_5, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha,
-					quitarEtiquetasHTML(LBL_BS2_6), Integer.parseInt(txtCantidad60.getText()),
+					quitarEtiquetasHTML(LBL_BS3_6), Integer.parseInt(txtCantidad60.getText()),
 					Integer.parseInt(txtCantidad61.getText()), txtObs6.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad60.getText()),
 							Integer.parseInt(txtCantidad61.getText())),
-					ITEM_BS2_6, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo2, ficha,
-					quitarEtiquetasHTML(LBL_BS2_7), Integer.parseInt(txtCantidad70.getText()),
+					ITEM_BS3_6, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
+					quitarEtiquetasHTML(LBL_BS3_7), Integer.parseInt(txtCantidad70.getText()),
 					Integer.parseInt(txtCantidad71.getText()), txtObs7.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad70.getText()),
 							Integer.parseInt(txtCantidad71.getText())),
-					ITEM_BS2_7, "UNIDAD"));
+					ITEM_BS3_7, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
-					quitarEtiquetasHTML(LBL_BS2_8), Integer.parseInt(txtCantidad80.getText()),
+					quitarEtiquetasHTML(LBL_BS3_8), Integer.parseInt(txtCantidad80.getText()),
 					Integer.parseInt(txtCantidad81.getText()), txtObs8.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad80.getText()),
 							Integer.parseInt(txtCantidad81.getText())),
-					ITEM_BS2_8, "UNIDAD"));
+					ITEM_BS3_8, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
-					quitarEtiquetasHTML(LBL_BS2_9), Integer.parseInt(txtCantidad90.getText()),
+					quitarEtiquetasHTML(LBL_BS3_9), Integer.parseInt(txtCantidad90.getText()),
 					Integer.parseInt(txtCantidad91.getText()), txtObs9.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad90.getText()),
 							Integer.parseInt(txtCantidad91.getText())),
-					ITEM_BS2_9, "UNIDAD"));
+					ITEM_BS3_9, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
-					quitarEtiquetasHTML(LBL_BS2_10), Integer.parseInt(txtCantidad100.getText()),
+					quitarEtiquetasHTML(LBL_BS3_10), Integer.parseInt(txtCantidad100.getText()),
 					Integer.parseInt(txtCantidad101.getText()), txtObs10.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad100.getText()),
 							Integer.parseInt(txtCantidad101.getText())),
-					ITEM_BS2_10, "UNIDAD"));
+					ITEM_BS3_10, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
-					quitarEtiquetasHTML(LBL_BS2_11), Integer.parseInt(txtCantidad110.getText()),
+					quitarEtiquetasHTML(LBL_BS3_11), Integer.parseInt(txtCantidad110.getText()),
 					Integer.parseInt(txtCantidad111.getText()), txtObs11.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad110.getText()),
 							Integer.parseInt(txtCantidad111.getText())),
-					ITEM_BS2_11, "UNIDAD"));
+					ITEM_BS3_11, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
-					quitarEtiquetasHTML(LBL_BS2_12), Integer.parseInt(txtCantidad120.getText()),
+					quitarEtiquetasHTML(LBL_BS3_12), Integer.parseInt(txtCantidad120.getText()),
 					Integer.parseInt(txtCantidad121.getText()), txtObs12.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad120.getText()),
 							Integer.parseInt(txtCantidad121.getText())),
-					ITEM_BS2_12, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo3, ficha,
-					quitarEtiquetasHTML(LBL_BS2_13), Integer.parseInt(txtCantidad130.getText()),
+					ITEM_BS3_12, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
+					quitarEtiquetasHTML(LBL_BS3_13), Integer.parseInt(txtCantidad130.getText()),
 					Integer.parseInt(txtCantidad131.getText()), txtObs13.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad130.getText()),
 							Integer.parseInt(txtCantidad131.getText())),
-					ITEM_BS2_13, "UNIDAD"));
+					ITEM_BS3_13, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
-					quitarEtiquetasHTML(LBL_BS2_14), Integer.parseInt(txtCantidad140.getText()),
+					quitarEtiquetasHTML(LBL_BS3_14), Integer.parseInt(txtCantidad140.getText()),
 					Integer.parseInt(txtCantidad141.getText()), txtObs14.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad140.getText()),
 							Integer.parseInt(txtCantidad141.getText())),
-					ITEM_BS2_14, "UNIDAD"));
+					ITEM_BS3_14, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
-					quitarEtiquetasHTML(LBL_BS2_15), Integer.parseInt(txtCantidad150.getText()),
+					quitarEtiquetasHTML(LBL_BS3_15), Integer.parseInt(txtCantidad150.getText()),
 					Integer.parseInt(txtCantidad151.getText()), txtObs15.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad150.getText()),
 							Integer.parseInt(txtCantidad151.getText())),
-					ITEM_BS2_15, "UNIDAD"));
+					ITEM_BS3_15, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
-					quitarEtiquetasHTML(LBL_BS2_16), Integer.parseInt(txtCantidad160.getText()),
+					quitarEtiquetasHTML(LBL_BS3_16), Integer.parseInt(txtCantidad160.getText()),
 					Integer.parseInt(txtCantidad161.getText()), txtObs16.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad160.getText()),
 							Integer.parseInt(txtCantidad161.getText())),
-					ITEM_BS2_16, "UNIDAD"));
+					ITEM_BS3_16, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
-					quitarEtiquetasHTML(LBL_BS2_17), Integer.parseInt(txtCantidad170.getText()),
+					quitarEtiquetasHTML(LBL_BS3_17), Integer.parseInt(txtCantidad170.getText()),
 					Integer.parseInt(txtCantidad171.getText()), txtObs17.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad170.getText()),
 							Integer.parseInt(txtCantidad171.getText())),
-					ITEM_BS2_17, "UNIDAD"));
+					ITEM_BS3_17, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
-					quitarEtiquetasHTML(LBL_BS2_18), Integer.parseInt(txtCantidad180.getText()),
+					quitarEtiquetasHTML(LBL_BS3_18), Integer.parseInt(txtCantidad180.getText()),
 					Integer.parseInt(txtCantidad181.getText()), txtObs18.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad180.getText()),
 							Integer.parseInt(txtCantidad181.getText())),
-					ITEM_BS2_18, "UNIDAD"));
+					ITEM_BS3_18, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
-					quitarEtiquetasHTML(LBL_BS2_19), Integer.parseInt(txtCantidad190.getText()),
+					quitarEtiquetasHTML(LBL_BS3_19), Integer.parseInt(txtCantidad190.getText()),
 					Integer.parseInt(txtCantidad191.getText()), txtObs19.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad190.getText()),
 							Integer.parseInt(txtCantidad191.getText())),
-					ITEM_BS2_19, "UNIDAD"));
+					ITEM_BS3_19, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
-					quitarEtiquetasHTML(LBL_BS2_20), Integer.parseInt(txtCantidad200.getText()),
+					quitarEtiquetasHTML(LBL_BS3_20), Integer.parseInt(txtCantidad200.getText()),
 					Integer.parseInt(txtCantidad201.getText()), txtObs20.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad200.getText()),
 							Integer.parseInt(txtCantidad201.getText())),
-					ITEM_BS2_20, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo4, ficha,
-					quitarEtiquetasHTML(LBL_BS2_21), Integer.parseInt(txtCantidad210.getText()),
+					ITEM_BS3_20, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
+					quitarEtiquetasHTML(LBL_BS3_21), Integer.parseInt(txtCantidad210.getText()),
 					Integer.parseInt(txtCantidad211.getText()), txtObs21.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad210.getText()),
 							Integer.parseInt(txtCantidad211.getText())),
-					ITEM_BS2_21, "UNIDAD"));
+					ITEM_BS3_21, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_22), Integer.parseInt(txtCantidad220.getText()),
+					quitarEtiquetasHTML(LBL_BS3_22), Integer.parseInt(txtCantidad220.getText()),
 					Integer.parseInt(txtCantidad221.getText()), txtObs22.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad220.getText()),
 							Integer.parseInt(txtCantidad221.getText())),
-					ITEM_BS2_22, "UNIDAD"));
+					ITEM_BS3_22, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_23), Integer.parseInt(txtCantidad230.getText()),
+					quitarEtiquetasHTML(LBL_BS3_23), Integer.parseInt(txtCantidad230.getText()),
 					Integer.parseInt(txtCantidad231.getText()), txtObs23.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad230.getText()),
 							Integer.parseInt(txtCantidad231.getText())),
-					ITEM_BS2_23, "UNIDAD"));
+					ITEM_BS3_23, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_24), Integer.parseInt(txtCantidad240.getText()),
+					quitarEtiquetasHTML(LBL_BS3_24), Integer.parseInt(txtCantidad240.getText()),
 					Integer.parseInt(txtCantidad241.getText()), txtObs24.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad240.getText()),
 							Integer.parseInt(txtCantidad241.getText())),
-					ITEM_BS2_24, "UNIDAD"));
+					ITEM_BS3_24, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_25), Integer.parseInt(txtCantidad250.getText()),
+					quitarEtiquetasHTML(LBL_BS3_25), Integer.parseInt(txtCantidad250.getText()),
 					Integer.parseInt(txtCantidad251.getText()), txtObs25.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad250.getText()),
 							Integer.parseInt(txtCantidad251.getText())),
-					ITEM_BS2_25, "UNIDAD"));
+					ITEM_BS3_25, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_26), Integer.parseInt(txtCantidad260.getText()),
+					quitarEtiquetasHTML(LBL_BS3_26), Integer.parseInt(txtCantidad260.getText()),
 					Integer.parseInt(txtCantidad261.getText()), txtObs26.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad260.getText()),
 							Integer.parseInt(txtCantidad261.getText())),
-					ITEM_BS2_26, "UNIDAD"));
+					ITEM_BS3_26, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_27), Integer.parseInt(txtCantidad270.getText()),
+					quitarEtiquetasHTML(LBL_BS3_27), Integer.parseInt(txtCantidad270.getText()),
 					Integer.parseInt(txtCantidad271.getText()), txtObs27.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad270.getText()),
 							Integer.parseInt(txtCantidad271.getText())),
-					ITEM_BS2_27, "UNIDAD"));
+					ITEM_BS3_27, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_28), Integer.parseInt(txtCantidad280.getText()),
+					quitarEtiquetasHTML(LBL_BS3_28), Integer.parseInt(txtCantidad280.getText()),
 					Integer.parseInt(txtCantidad281.getText()), txtObs28.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad280.getText()),
 							Integer.parseInt(txtCantidad281.getText())),
-					ITEM_BS2_28, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_29), Integer.parseInt(txtCantidad290.getText()),
+					ITEM_BS3_28, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
+					quitarEtiquetasHTML(LBL_BS3_29), Integer.parseInt(txtCantidad290.getText()),
 					Integer.parseInt(txtCantidad291.getText()), txtObs29.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad290.getText()),
 							Integer.parseInt(txtCantidad291.getText())),
-					ITEM_BS2_29, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_30), Integer.parseInt(txtCantidad300.getText()),
+					ITEM_BS3_29, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
+					quitarEtiquetasHTML(LBL_BS3_30), Integer.parseInt(txtCantidad300.getText()),
 					Integer.parseInt(txtCantidad301.getText()), txtObs30.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad300.getText()),
 							Integer.parseInt(txtCantidad301.getText())),
-					ITEM_BS2_30, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_31), Integer.parseInt(txtCantidad310.getText()),
+					ITEM_BS3_30, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
+					quitarEtiquetasHTML(LBL_BS3_31), Integer.parseInt(txtCantidad310.getText()),
 					Integer.parseInt(txtCantidad311.getText()), txtObs31.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad310.getText()),
 							Integer.parseInt(txtCantidad311.getText())),
-					ITEM_BS2_31, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_32), Integer.parseInt(txtCantidad320.getText()),
+					ITEM_BS3_31, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
+					quitarEtiquetasHTML(LBL_BS3_32), Integer.parseInt(txtCantidad320.getText()),
 					Integer.parseInt(txtCantidad321.getText()), txtObs32.getText(), updateFicha,
-					calcularPorcentajeAvance(Integer.parseInt(txtCantidad320.getText()),
+					calcularPorcentajeAvance(Integer.parseInt(txtCantidad270.getText()),
 							Integer.parseInt(txtCantidad321.getText())),
-					ITEM_BS2_32, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_33), Integer.parseInt(txtCantidad330.getText()),
+					ITEM_BS3_32, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
+					quitarEtiquetasHTML(LBL_BS3_33), Integer.parseInt(txtCantidad330.getText()),
 					Integer.parseInt(txtCantidad331.getText()), txtObs33.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad330.getText()),
 							Integer.parseInt(txtCantidad331.getText())),
-					ITEM_BS2_33, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo5, ficha,
-					quitarEtiquetasHTML(LBL_BS2_34), Integer.parseInt(txtCantidad340.getText()),
-					Integer.parseInt(txtCantidad341.getText()), txtObs34.getText(), updateFicha,
-					calcularPorcentajeAvance(Integer.parseInt(txtCantidad340.getText()),
-							Integer.parseInt(txtCantidad341.getText())),
-					ITEM_BS2_34, "UNIDAD"));
-			// detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria,
-			// grupo6, ficha,
-			// quitarEtiquetasHTML(LBL_BS2_35),
-			// Integer.parseInt(txtCantidad35.getText()),
-			// Integer.parseInt(txtCantidad351.getText()), txtObs35.getText(),
-			// updateFicha,
-			// calcularPorcentajeAvance(Integer.parseInt(txtCantidad350.getText()),
-			// Integer.parseInt(txtCantidad351.getText())),
-			// ITEM_BS2_35, "UNIDAD"));
+					ITEM_BS3_33, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
-					quitarEtiquetasHTML(LBL_BS2_36), Integer.parseInt(txtCantidad360.getText()),
+					quitarEtiquetasHTML(LBL_BS3_34), Integer.parseInt(txtCantidad340.getText()),
+					Integer.parseInt(txtCantidad341.getText()), txtObs34.getText(), updateFicha,
+					calcularPorcentajeAvance(Integer.parseInt(txtCantidad280.getText()),
+							Integer.parseInt(txtCantidad341.getText())),
+					ITEM_BS3_34, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
+					quitarEtiquetasHTML(LBL_BS3_35), Integer.parseInt(txtCantidad350.getText()),
+					Integer.parseInt(txtCantidad351.getText()), txtObs35.getText(), updateFicha,
+					calcularPorcentajeAvance(Integer.parseInt(txtCantidad350.getText()),
+							Integer.parseInt(txtCantidad351.getText())),
+					ITEM_BS3_35, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
+					quitarEtiquetasHTML(LBL_BS3_36), Integer.parseInt(txtCantidad360.getText()),
 					Integer.parseInt(txtCantidad361.getText()), txtObs36.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad360.getText()),
 							Integer.parseInt(txtCantidad361.getText())),
-					ITEM_BS2_36, "UNIDAD"));
+					ITEM_BS3_36, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
-					quitarEtiquetasHTML(LBL_BS2_37), Integer.parseInt(txtCantidad370.getText()),
+					quitarEtiquetasHTML(LBL_BS3_37), Integer.parseInt(txtCantidad370.getText()),
 					Integer.parseInt(txtCantidad371.getText()), txtObs37.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad370.getText()),
 							Integer.parseInt(txtCantidad371.getText())),
-					ITEM_BS2_37, "UNIDAD"));
+					ITEM_BS3_37, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
-					quitarEtiquetasHTML(LBL_BS2_38), Integer.parseInt(txtCantidad380.getText()),
+					quitarEtiquetasHTML(LBL_BS3_38), Integer.parseInt(txtCantidad380.getText()),
 					Integer.parseInt(txtCantidad381.getText()), txtObs38.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad380.getText()),
 							Integer.parseInt(txtCantidad381.getText())),
-					ITEM_BS2_38, "UNIDAD"));
+					ITEM_BS3_38, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
-					quitarEtiquetasHTML(LBL_BS2_39), Integer.parseInt(txtCantidad390.getText()),
+					quitarEtiquetasHTML(LBL_BS3_39), Integer.parseInt(txtCantidad390.getText()),
 					Integer.parseInt(txtCantidad391.getText()), txtObs39.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad390.getText()),
 							Integer.parseInt(txtCantidad391.getText())),
-					ITEM_BS2_39, "UNIDAD"));
+					ITEM_BS3_39, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
-					quitarEtiquetasHTML(LBL_BS2_40), Integer.parseInt(txtCantidad400.getText()),
+					quitarEtiquetasHTML(LBL_BS3_40), Integer.parseInt(txtCantidad400.getText()),
 					Integer.parseInt(txtCantidad401.getText()), txtObs40.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad400.getText()),
 							Integer.parseInt(txtCantidad401.getText())),
-					ITEM_BS2_40, "UNIDAD"));
+					ITEM_BS3_40, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
-					quitarEtiquetasHTML(LBL_BS2_41), Integer.parseInt(txtCantidad410.getText()),
+					quitarEtiquetasHTML(LBL_BS3_41), Integer.parseInt(txtCantidad410.getText()),
 					Integer.parseInt(txtCantidad411.getText()), txtObs41.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad410.getText()),
 							Integer.parseInt(txtCantidad411.getText())),
-					ITEM_BS2_41, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha,
-					quitarEtiquetasHTML(LBL_BS2_42), Integer.parseInt(txtCantidad420.getText()),
+					ITEM_BS3_41, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
+					quitarEtiquetasHTML(LBL_BS3_42), Integer.parseInt(txtCantidad420.getText()),
 					Integer.parseInt(txtCantidad421.getText()), txtObs42.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad420.getText()),
 							Integer.parseInt(txtCantidad421.getText())),
-					ITEM_BS2_42, "UNIDAD"));
+					ITEM_BS3_42, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha,
-					quitarEtiquetasHTML(LBL_BS2_43), Integer.parseInt(txtCantidad430.getText()),
+					quitarEtiquetasHTML(LBL_BS3_43), Integer.parseInt(txtCantidad430.getText()),
 					Integer.parseInt(txtCantidad431.getText()), txtObs43.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad430.getText()),
 							Integer.parseInt(txtCantidad431.getText())),
-					ITEM_BS2_43, "UNIDAD"));
+					ITEM_BS3_43, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha,
-					quitarEtiquetasHTML(LBL_BS2_44), Integer.parseInt(txtCantidad440.getText()),
+					quitarEtiquetasHTML(LBL_BS3_44), Integer.parseInt(txtCantidad440.getText()),
 					Integer.parseInt(txtCantidad441.getText()), txtObs44.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad440.getText()),
 							Integer.parseInt(txtCantidad441.getText())),
-					ITEM_BS2_44, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo8, ficha,
-					quitarEtiquetasHTML(LBL_BS2_45), Integer.parseInt(txtCantidad450.getText()),
+					ITEM_BS3_44, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha,
+					quitarEtiquetasHTML(LBL_BS3_45), Integer.parseInt(txtCantidad450.getText()),
 					Integer.parseInt(txtCantidad451.getText()), txtObs45.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad450.getText()),
 							Integer.parseInt(txtCantidad451.getText())),
-					ITEM_BS2_45, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo8, ficha,
-					quitarEtiquetasHTML(LBL_BS2_46), Integer.parseInt(txtCantidad460.getText()),
+					ITEM_BS3_45, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo7, ficha,
+					quitarEtiquetasHTML(LBL_BS3_46), Integer.parseInt(txtCantidad460.getText()),
 					Integer.parseInt(txtCantidad461.getText()), txtObs46.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad460.getText()),
 							Integer.parseInt(txtCantidad461.getText())),
-					ITEM_BS2_46, "UNIDAD"));
+					ITEM_BS3_46, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo8, ficha,
-					quitarEtiquetasHTML(LBL_BS2_47), Integer.parseInt(txtCantidad470.getText()),
+					quitarEtiquetasHTML(LBL_BS3_47), Integer.parseInt(txtCantidad470.getText()),
 					Integer.parseInt(txtCantidad471.getText()), txtObs47.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad470.getText()),
 							Integer.parseInt(txtCantidad471.getText())),
-					ITEM_BS2_47, "UNIDAD"));
+					ITEM_BS3_47, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo8, ficha,
-					quitarEtiquetasHTML(LBL_BS2_48), Integer.parseInt(txtCantidad480.getText()),
+					quitarEtiquetasHTML(LBL_BS3_48), Integer.parseInt(txtCantidad480.getText()),
 					Integer.parseInt(txtCantidad481.getText()), txtObs48.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad480.getText()),
 							Integer.parseInt(txtCantidad481.getText())),
-					ITEM_BS2_48, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
-					quitarEtiquetasHTML(LBL_BS2_49), Integer.parseInt(txtCantidad490.getText()),
+					ITEM_BS3_48, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo8, ficha,
+					quitarEtiquetasHTML(LBL_BS3_49), Integer.parseInt(txtCantidad490.getText()),
 					Integer.parseInt(txtCantidad491.getText()), txtObs49.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad490.getText()),
 							Integer.parseInt(txtCantidad491.getText())),
-					ITEM_BS2_49, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
-					quitarEtiquetasHTML(LBL_BS2_50), Integer.parseInt(txtCantidad500.getText()),
+					ITEM_BS3_49, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo8, ficha,
+					quitarEtiquetasHTML(LBL_BS3_50), Integer.parseInt(txtCantidad500.getText()),
 					Integer.parseInt(txtCantidad501.getText()), txtObs50.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad500.getText()),
 							Integer.parseInt(txtCantidad501.getText())),
-					ITEM_BS2_50, "UNIDAD"));
+					ITEM_BS3_50, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
-					quitarEtiquetasHTML(LBL_BS2_51), Integer.parseInt(txtCantidad510.getText()),
+					quitarEtiquetasHTML(LBL_BS3_51), Integer.parseInt(txtCantidad510.getText()),
 					Integer.parseInt(txtCantidad511.getText()), txtObs51.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad510.getText()),
 							Integer.parseInt(txtCantidad511.getText())),
-					ITEM_BS2_51, "UNIDAD"));
+					ITEM_BS3_51, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
-					quitarEtiquetasHTML(LBL_BS2_52), Integer.parseInt(txtCantidad520.getText()),
+					quitarEtiquetasHTML(LBL_BS3_52), Integer.parseInt(txtCantidad520.getText()),
 					Integer.parseInt(txtCantidad521.getText()), txtObs52.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad520.getText()),
 							Integer.parseInt(txtCantidad521.getText())),
-					ITEM_BS2_52, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
-					quitarEtiquetasHTML(LBL_BS2_53), Integer.parseInt(txtCantidad530.getText()),
+					ITEM_BS3_52, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
+					quitarEtiquetasHTML(LBL_BS3_53), Integer.parseInt(txtCantidad530.getText()),
 					Integer.parseInt(txtCantidad531.getText()), txtObs53.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad530.getText()),
 							Integer.parseInt(txtCantidad531.getText())),
-					ITEM_BS2_53, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
-					quitarEtiquetasHTML(LBL_BS2_54), Integer.parseInt(txtCantidad540.getText()),
+					ITEM_BS3_53, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
+					quitarEtiquetasHTML(LBL_BS3_54), Integer.parseInt(txtCantidad540.getText()),
 					Integer.parseInt(txtCantidad541.getText()), txtObs54.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad540.getText()),
 							Integer.parseInt(txtCantidad541.getText())),
-					ITEM_BS2_54, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
-					quitarEtiquetasHTML(LBL_BS2_55), Integer.parseInt(txtCantidad550.getText()),
+					ITEM_BS3_54, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
+					quitarEtiquetasHTML(LBL_BS3_55), Integer.parseInt(txtCantidad550.getText()),
 					Integer.parseInt(txtCantidad551.getText()), txtObs55.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad550.getText()),
 							Integer.parseInt(txtCantidad551.getText())),
-					ITEM_BS2_55, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
-					quitarEtiquetasHTML(LBL_BS2_56), Integer.parseInt(txtCantidad560.getText()),
+					ITEM_BS3_55, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
+					quitarEtiquetasHTML(LBL_BS3_56), Integer.parseInt(txtCantidad560.getText()),
 					Integer.parseInt(txtCantidad561.getText()), txtObs56.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad560.getText()),
 							Integer.parseInt(txtCantidad561.getText())),
-					ITEM_BS2_56, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo9, ficha,
-					quitarEtiquetasHTML(LBL_BS2_57), Integer.parseInt(txtCantidad570.getText()),
+					ITEM_BS3_56, "UNIDAD"));
+			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
+					quitarEtiquetasHTML(LBL_BS3_57), Integer.parseInt(txtCantidad570.getText()),
 					Integer.parseInt(txtCantidad571.getText()), txtObs57.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad570.getText()),
 							Integer.parseInt(txtCantidad571.getText())),
-					ITEM_BS2_57, "UNIDAD"));
+					ITEM_BS3_57, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_58), Integer.parseInt(txtCantidad580.getText()),
+					quitarEtiquetasHTML(LBL_BS3_58), Integer.parseInt(txtCantidad580.getText()),
 					Integer.parseInt(txtCantidad581.getText()), txtObs58.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad580.getText()),
 							Integer.parseInt(txtCantidad581.getText())),
-					ITEM_BS2_58, "UNIDAD"));
+					ITEM_BS3_58, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_59), Integer.parseInt(txtCantidad590.getText()),
+					quitarEtiquetasHTML(LBL_BS3_59), Integer.parseInt(txtCantidad590.getText()),
 					Integer.parseInt(txtCantidad591.getText()), txtObs59.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad590.getText()),
 							Integer.parseInt(txtCantidad591.getText())),
-					ITEM_BS2_59, "UNIDAD"));
+					ITEM_BS3_59, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_60), Integer.parseInt(txtCantidad600.getText()),
+					quitarEtiquetasHTML(LBL_BS3_60), Integer.parseInt(txtCantidad600.getText()),
 					Integer.parseInt(txtCantidad601.getText()), txtObs60.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad600.getText()),
 							Integer.parseInt(txtCantidad601.getText())),
-					ITEM_BS2_60, "UNIDAD"));
+					ITEM_BS3_60, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_61), Integer.parseInt(txtCantidad610.getText()),
+					quitarEtiquetasHTML(LBL_BS3_61), Integer.parseInt(txtCantidad610.getText()),
 					Integer.parseInt(txtCantidad611.getText()), txtObs61.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad610.getText()),
 							Integer.parseInt(txtCantidad611.getText())),
-					ITEM_BS2_61, "UNIDAD"));
+					ITEM_BS3_61, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_62), Integer.parseInt(txtCantidad620.getText()),
+					quitarEtiquetasHTML(LBL_BS3_62), Integer.parseInt(txtCantidad620.getText()),
 					Integer.parseInt(txtCantidad621.getText()), txtObs62.getText(), updateFicha,
-					calcularPorcentajeAvance(Integer.parseInt(txtCantidad620.getText()),
+					calcularPorcentajeAvance(Integer.parseInt(txtCantidad560.getText()),
 							Integer.parseInt(txtCantidad621.getText())),
-					ITEM_BS2_62, "UNIDAD"));
+					ITEM_BS3_62, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_63), Integer.parseInt(txtCantidad630.getText()),
+					quitarEtiquetasHTML(LBL_BS3_63), Integer.parseInt(txtCantidad630.getText()),
 					Integer.parseInt(txtCantidad631.getText()), txtObs63.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad630.getText()),
 							Integer.parseInt(txtCantidad631.getText())),
-					ITEM_BS2_63, "UNIDAD"));
+					ITEM_BS3_63, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_64), Integer.parseInt(txtCantidad640.getText()),
+					quitarEtiquetasHTML(LBL_BS3_64), Integer.parseInt(txtCantidad640.getText()),
 					Integer.parseInt(txtCantidad641.getText()), txtObs64.getText(), updateFicha,
 					calcularPorcentajeAvance(Integer.parseInt(txtCantidad640.getText()),
 							Integer.parseInt(txtCantidad641.getText())),
-					ITEM_BS2_64, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_65), Integer.parseInt(txtCantidad650.getText()),
-					Integer.parseInt(txtCantidad651.getText()), txtObs65.getText(), updateFicha,
-					calcularPorcentajeAvance(Integer.parseInt(txtCantidad650.getText()),
-							Integer.parseInt(txtCantidad651.getText())),
-					ITEM_BS2_65, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_66), Integer.parseInt(txtCantidad660.getText()),
-					Integer.parseInt(txtCantidad661.getText()), txtObs66.getText(), updateFicha,
-					calcularPorcentajeAvance(Integer.parseInt(txtCantidad660.getText()),
-							Integer.parseInt(txtCantidad661.getText())),
-					ITEM_BS2_66, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_67), Integer.parseInt(txtCantidad670.getText()),
-					Integer.parseInt(txtCantidad671.getText()), txtObs67.getText(), updateFicha,
-					calcularPorcentajeAvance(Integer.parseInt(txtCantidad670.getText()),
-							Integer.parseInt(txtCantidad671.getText())),
-					ITEM_BS2_67, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_68), Integer.parseInt(txtCantidad680.getText()),
-					Integer.parseInt(txtCantidad681.getText()), txtObs68.getText(), updateFicha,
-					calcularPorcentajeAvance(Integer.parseInt(txtCantidad680.getText()),
-							Integer.parseInt(txtCantidad681.getText())),
-					ITEM_BS2_68, "UNIDAD"));
-			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo10, ficha,
-					quitarEtiquetasHTML(LBL_BS2_69), Integer.parseInt(txtCantidad690.getText()),
-					Integer.parseInt(txtCantidad691.getText()), txtObs69.getText(), updateFicha,
-					calcularPorcentajeAvance(Integer.parseInt(txtCantidad690.getText()),
-							Integer.parseInt(txtCantidad691.getText())),
-					ITEM_BS2_69, "UNIDAD"));
+					ITEM_BS3_64, "UNIDAD"));
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
@@ -3081,7 +2854,7 @@ public class B3Template extends JFrame {
 				txtCantidad321.setText(String.valueOf(listaDetalles.get(32).getDetCantidadEjecutada()));
 				txtCantidad331.setText(String.valueOf(listaDetalles.get(33).getDetCantidadEjecutada()));
 				txtCantidad341.setText(String.valueOf(listaDetalles.get(34).getDetCantidadEjecutada()));
-				// txtCantidad351.setText(String.valueOf(listaDetalles.get(35).getDetCantidadEjecutada()));
+				txtCantidad351.setText(String.valueOf(listaDetalles.get(35).getDetCantidadEjecutada()));
 				txtCantidad361.setText(String.valueOf(listaDetalles.get(36).getDetCantidadEjecutada()));
 				txtCantidad371.setText(String.valueOf(listaDetalles.get(37).getDetCantidadEjecutada()));
 				txtCantidad381.setText(String.valueOf(listaDetalles.get(38).getDetCantidadEjecutada()));
@@ -3111,11 +2884,6 @@ public class B3Template extends JFrame {
 				txtCantidad621.setText(String.valueOf(listaDetalles.get(62).getDetCantidadEjecutada()));
 				txtCantidad631.setText(String.valueOf(listaDetalles.get(63).getDetCantidadEjecutada()));
 				txtCantidad641.setText(String.valueOf(listaDetalles.get(64).getDetCantidadEjecutada()));
-				txtCantidad651.setText(String.valueOf(listaDetalles.get(65).getDetCantidadEjecutada()));
-				txtCantidad661.setText(String.valueOf(listaDetalles.get(66).getDetCantidadEjecutada()));
-				txtCantidad671.setText(String.valueOf(listaDetalles.get(67).getDetCantidadEjecutada()));
-				txtCantidad681.setText(String.valueOf(listaDetalles.get(68).getDetCantidadEjecutada()));
-				txtCantidad691.setText(String.valueOf(listaDetalles.get(69).getDetCantidadEjecutada()));
 
 				txtObs0.setText(listaDetalles.get(0).getDetObsRef());
 				txtObs1.setText(listaDetalles.get(1).getDetObsRef());
@@ -3152,7 +2920,7 @@ public class B3Template extends JFrame {
 				txtObs32.setText(listaDetalles.get(32).getDetObsRef());
 				txtObs33.setText(listaDetalles.get(33).getDetObsRef());
 				txtObs34.setText(listaDetalles.get(34).getDetObsRef());
-				// txtObs35.setText(listaDetalles.get(35).getDetObsRef());
+				txtObs35.setText(listaDetalles.get(35).getDetObsRef());
 				txtObs36.setText(listaDetalles.get(36).getDetObsRef());
 				txtObs37.setText(listaDetalles.get(37).getDetObsRef());
 				txtObs38.setText(listaDetalles.get(38).getDetObsRef());
@@ -3182,11 +2950,6 @@ public class B3Template extends JFrame {
 				txtObs62.setText(listaDetalles.get(62).getDetObsRef());
 				txtObs63.setText(listaDetalles.get(63).getDetObsRef());
 				txtObs64.setText(listaDetalles.get(64).getDetObsRef());
-				txtObs65.setText(listaDetalles.get(65).getDetObsRef());
-				txtObs66.setText(listaDetalles.get(66).getDetObsRef());
-				txtObs67.setText(listaDetalles.get(67).getDetObsRef());
-				txtObs68.setText(listaDetalles.get(68).getDetObsRef());
-				txtObs69.setText(listaDetalles.get(69).getDetObsRef());
 
 			} catch (IndexOutOfBoundsException e) {
 				llenarVacios();
@@ -3232,7 +2995,7 @@ public class B3Template extends JFrame {
 		txtCantidad321.setText(String.valueOf(0));
 		txtCantidad331.setText(String.valueOf(0));
 		txtCantidad341.setText(String.valueOf(0));
-		// txtCantidad351.setText(String.valueOf(0));
+		txtCantidad351.setText(String.valueOf(0));
 		txtCantidad361.setText(String.valueOf(0));
 		txtCantidad371.setText(String.valueOf(0));
 		txtCantidad381.setText(String.valueOf(0));
@@ -3262,11 +3025,6 @@ public class B3Template extends JFrame {
 		txtCantidad621.setText(String.valueOf(0));
 		txtCantidad631.setText(String.valueOf(0));
 		txtCantidad641.setText(String.valueOf(0));
-		txtCantidad651.setText(String.valueOf(0));
-		txtCantidad661.setText(String.valueOf(0));
-		txtCantidad671.setText(String.valueOf(0));
-		txtCantidad681.setText(String.valueOf(0));
-		txtCantidad691.setText(String.valueOf(0));
 
 		txtObs0.setText("");
 		txtObs1.setText("");
@@ -3303,7 +3061,7 @@ public class B3Template extends JFrame {
 		txtObs32.setText("");
 		txtObs33.setText("");
 		txtObs34.setText("");
-		// txtObs35.setText("");
+		txtObs35.setText("");
 		txtObs36.setText("");
 		txtObs37.setText("");
 		txtObs38.setText("");
@@ -3333,10 +3091,5 @@ public class B3Template extends JFrame {
 		txtObs62.setText("");
 		txtObs63.setText("");
 		txtObs64.setText("");
-		txtObs65.setText("");
-		txtObs66.setText("");
-		txtObs67.setText("");
-		txtObs68.setText("");
-		txtObs69.setText("");
 	}
 }
