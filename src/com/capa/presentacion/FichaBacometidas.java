@@ -194,13 +194,13 @@ public class FichaBacometidas extends JFrame {
 		panel_3.setLayout(null);
 		panel_3.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"),
 				"Tuber\u00EDas PVC aguas servidas", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_3.setBounds(10, 268, 249, 61);
+		panel_3.setBounds(10, 268, 249, 110);
 		contentPane.add(panel_3);
 
 		JLabel lbllaTuberaInstalada = new JLabel(
-				"<html><body><p align justify>La tubería instalada sirve para  alcantarillado, desalojo de aguas servidas y aguas lluvias.</body></html>");
+				"<html><body><p align justify>La tubería PVC reforzada para uso sanitario cumple con las especificaciones INEN 1374: Tubería plástica, tubería de PVC reforzada para alcantarillado.\r\n\r\nLa tubería instalada sirve para alcantarillado, desalojo de aguas servidas y aguas lluvias.</body></html>");
 		lbllaTuberaInstalada.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		lbllaTuberaInstalada.setBounds(10, 13, 235, 45);
+		lbllaTuberaInstalada.setBounds(10, 13, 235, 86);
 		panel_3.add(lbllaTuberaInstalada);
 
 		JPanel panel_4 = new JPanel();
@@ -244,7 +244,7 @@ public class FichaBacometidas extends JFrame {
 		JPanel panel_5 = new JPanel();
 		panel_5.setLayout(null);
 		panel_5.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_5.setBounds(269, 271, 139, 58);
+		panel_5.setBounds(269, 301, 139, 58);
 		contentPane.add(panel_5);
 
 		JLabel label_5 = new JLabel("Observación/Referencia");
@@ -283,7 +283,7 @@ public class FichaBacometidas extends JFrame {
 		panel_6.setLayout(null);
 		panel_6.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Voz y Datos",
 				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_6.setBounds(10, 340, 249, 214);
+		panel_6.setBounds(10, 389, 249, 214);
 		contentPane.add(panel_6);
 
 		JLabel lblDescVoz = new JLabel();
@@ -301,7 +301,7 @@ public class FichaBacometidas extends JFrame {
 		JPanel panel_7 = new JPanel();
 		panel_7.setLayout(null);
 		panel_7.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel_7.setBounds(269, 340, 139, 58);
+		panel_7.setBounds(269, 389, 139, 58);
 		contentPane.add(panel_7);
 
 		JLabel label_11 = new JLabel("Observación/Referencia");
