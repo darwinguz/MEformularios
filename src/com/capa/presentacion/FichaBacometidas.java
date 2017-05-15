@@ -582,7 +582,7 @@ public class FichaBacometidas extends JFrame {
 
 	public List<TdetalleFicha> cargarFicha() {
 		List<TdetalleFicha> listaDetalles = new LinkedList<>();
-		TGrupo grupoTmp = servFicha.buscarGrupo("Dimensiones");
+		TGrupo grupoTmp = servFicha.buscarGrupo("Tubería de PVC");
 		String observacion, desicion = "";
 		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
 		if (updateFicha == -1) {
@@ -599,7 +599,7 @@ public class FichaBacometidas extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BA_0)));
 
-		grupoTmp = servFicha.buscarGrupo("Piezas sanitarias");
+		grupoTmp = servFicha.buscarGrupo("Agua potable");
 		observacion = txtObs1.getText();
 		if (rdBtn10.isSelected()) {
 			desicion = "SI";
@@ -609,7 +609,7 @@ public class FichaBacometidas extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BA_1)));
 
-		grupoTmp = servFicha.buscarGrupo("Bases prefabricadas");
+		grupoTmp = servFicha.buscarGrupo("Tuberías PVC aguas servidas");
 		observacion = txtObs2.getText();
 		if (rdBtn20.isSelected()) {
 			desicion = "SI";
@@ -619,7 +619,7 @@ public class FichaBacometidas extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BA_2)));
 
-		grupoTmp = servFicha.buscarGrupo("Estructura metálica Steel");
+		grupoTmp = servFicha.buscarGrupo("Voz y Datos");
 		observacion = txtObs3.getText();
 		if (rdBtn30.isSelected()) {
 			desicion = "SI";
@@ -629,7 +629,7 @@ public class FichaBacometidas extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BA_3)));
 
-		grupoTmp = servFicha.buscarGrupo("Paneles de pared con alma de EPS");
+		grupoTmp = servFicha.buscarGrupo("Cableado Eléctrico");
 		observacion = txtObs4.getText();
 		if (rdBtn40.isSelected()) {
 			desicion = "SI";
@@ -639,7 +639,7 @@ public class FichaBacometidas extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BA_4)));
 
-		grupoTmp = servFicha.buscarGrupo("Ventana de UPVC");
+		grupoTmp = servFicha.buscarGrupo("Poste eléctrico metálico de 6 m");
 		observacion = txtObs5.getText();
 		if (rdBtn50.isSelected()) {
 			desicion = "SI";
@@ -649,7 +649,7 @@ public class FichaBacometidas extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BA_5)));
 
-		grupoTmp = servFicha.buscarGrupo("Panel de cubierta con EPS");
+		grupoTmp = servFicha.buscarGrupo("Transformador");
 		observacion = txtObs6.getText();
 		if (rdBtn60.isSelected()) {
 			desicion = "SI";
@@ -659,7 +659,7 @@ public class FichaBacometidas extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BA_6)));
 
-		grupoTmp = servFicha.buscarGrupo("Compuesto de madera y plástico");
+		grupoTmp = servFicha.buscarGrupo("Iluminación exterior");
 		observacion = txtObs7.getText();
 		if (rdBtn70.isSelected()) {
 			desicion = "SI";
@@ -667,7 +667,7 @@ public class FichaBacometidas extends JFrame {
 			desicion = "NO";
 		}
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
-				quitarEtiquetasHTML(LBL_BA_6)));
+				quitarEtiquetasHTML(LBL_BA_7)));
 
 		return listaDetalles;
 	}

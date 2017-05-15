@@ -100,7 +100,7 @@ public class FichaBrecreacionExteriores extends JFrame {
 		panelPrincipal.add(tabbedPane);
 
 		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("1.- Ficha Recreaci�n-Exteriores", null, pnlPestaña1, null);
+		tabbedPane.addTab("1.- Ficha Recreaci\u00F3n-Exteriores", null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
 
 		JPcabecera cabecera = new JPcabecera();
@@ -124,7 +124,7 @@ public class FichaBrecreacionExteriores extends JFrame {
 		pnlPestaña1.add(panel_0);
 
 		JLabel lbl_1 = new JLabel(
-				"<html>\r\n<body>\r\n<p align=\"justify\">\r\nEl material aplicado en la superficie de las canchas es de tipo EPDM TERPOL\u00CDMERO ETILENO PROPILENO (DIENO),  una combicaci\u00F3n de gr\u00E1nulos y una capa de acolchonamiento de caucho reciclado utilizando un pol\u00EDmero espolvoreado en sitio que provee una superficie que brinde una alta protecci\u00F3n contra ca\u00EDdas cr\u00EDticas en sitios de juegos infantiles.\r\n<br>Dimensiones m\u00EDnimas e instalaci\u00F3n:<br>La superficie granular para juegos en canchas deportivas:\r\n<br>Es colococada sobre un contrapiso de al menos 7 cm.\r\n<br>El asfalto sint\u00E9tico termo fundido se aplica con una capa m\u00EDnima de SBR de 8 mm en la base y sobre esta la capa de EPDM con el color de la superficie de al menos de 5 mm de espesor.\r\n<br>Es resistente al calor, libre de materiales t\u00F3xicos, resistente a los rayos UV, no cristalizarse y con un durabilidad garantizada de al menos 10 a\u00F1os.\r\n</p>\r\n</body>\r\n</html>");
+				"<html>\r\n<body>\r\n<p align=\"justify\">\r\nEl material aplicado en la superficie de las canchas es de tipo EPDM TERPOL\u00CDMERO ETILENO PROPILENO (DIENO),  una combinaci\u00F3n de gr\u00E1nulos y una capa de acolchonamiento de caucho reciclado utilizando un pol\u00EDmero espolvoreado en sitio que provee una superficie que brinde una alta protecci\u00F3n contra ca\u00EDdas cr\u00EDticas en sitios de juegos infantiles.\r\n<br>Dimensiones m\u00EDnimas e instalaci\u00F3n:<br>La superficie granular para juegos en canchas deportivas:\r\n<br>Es colococada sobre un contrapiso de al menos 7 cm.\r\n<br>El asfalto sint\u00E9tico termo fundido se aplica con una capa m\u00EDnima de SBR de 8 mm en la base y sobre esta la capa de EPDM con el color de la superficie de al menos de 5 mm de espesor.\r\n<br>Es resistente al calor, libre de materiales t\u00F3xicos, resistente a los rayos UV, no cristalizarse y con un durabilidad garantizada de al menos 10 a\u00F1os.\r\n</p>\r\n</body>\r\n</html>");
 		lbl_1.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lbl_1.setBounds(10, 13, 235, 336);
 		panel_0.add(lbl_1);

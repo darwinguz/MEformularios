@@ -150,22 +150,22 @@ public class Constantes {
 	public static final String LBL_BRE_0 = "<html><body><p align=right>Materiales: El material aplicado en la superficie de las canchas es "
 			+ "de tipo EPDM TERPOLÍMERO ETILENO PROPILENO (DIENO),  una combicación de gránulos y una capa de acolchonamiento de "
 			+ "caucho reciclado utilizando un polímero espolvoreado en sitio que provee una superficie que brinde una alta protección "
-			+ "contra caídas críticas en sitios de juegos infantiles. Dimensiones mínimas e instalación: La superficie granular para "
+			+ "contra caídas críticas en sitios de juegos infantiles.\n Dimensiones mínimas e instalación: La superficie granular para "
 			+ "juegos en canchas deportivas: Es colococada sobre un contrapiso de al menos 7 cm. El asfalto sintético termo fundido se "
 			+ "aplica con una capa mínima de SBR de 8 mm en la base y sobre esta la capa de EPDM con el color de la superficie de al "
 			+ "menos de 5 mm de espesor. Es resistente al calor, libre de materiales tóxicos, resistente a los rayos UV, no cristalizarse y "
 			+ "con un durabilidad garantizada de al menos 10 años.</p></body></html>";
 	public static final String LBL_BRE_1 = "<html><body><p align=right>Materiales: Paneles prefabricados a a base de fibras plásticas "
 			+ "conformadas por tablones WPC (madera y plástico) , resistentes a rayos ultravioletas y asegurar una durabilidad mínima de "
-			+ "15 años. El material utilizado no contiene productos químicos dañinos. Dimensiones mínimas e instalación: El cerramiento "
+			+ "15 años. El material utilizado no contiene productos químicos dañinos.\n Dimensiones mínimas e instalación: El cerramiento "
 			+ "perimetral tiene una longitud mínima de 360 m, y está conformado por paneles prefabricados a base de fibras plásticas "
 			+ "conformadas por tablones WPC (madera y plástico) de 0,15 X 0,01 X 2,91 mts. Las dimensiones mínimas de los paneles son: "
 			+ "3,08 X 2,50 metros. Se considera una altura de 2,50 m. La instalación se realiza por medio de perfiles de anclaje "
 			+ "laterales a modo de columnas verticales. El espaciamiento entre apoyos es distribuido de tal manera que se asegura rigidez "
 			+ "lateral, seguridad y estabilidad.</p></body></html>";
-	public static final String LBL_BRE_2 = "<html><body><p align=right>Materiales:  Paneles prefabricados  WPC (compuesto de plástico y madera) "
+	public static final String LBL_BRE_2 = "<html><body><p align=right>Materiales: Paneles prefabricados  WPC (compuesto de plástico y madera) "
 			+ "a base de fibras plásticas, resistentes a rayos ultravioletas y asegurar una durabilidad mínima de 15 años. "
-			+ "El material utilizado no contiene productos químicos dañinos. Dimensiones mínimas e instalación: La caminería "
+			+ "El material utilizado no contiene productos químicos dañinos.\n Dimensiones mínimas e instalación: La caminería "
 			+ "se conforma con paneles prefabricados WPC (compuesto de plástico y madera) a base de fibras plásticas y utilizadas como "
 			+ "piso exterior. La instalación es ejecutada por medio de perfiles de anclaje plásticos. El perfil compuesto del panel es "
 			+ "hueco fabricado por extrusión. El panel tiene tiene dimensiones mínimas de 150mm de ancho X 28 mm de espesor. "
@@ -174,126 +174,123 @@ public class Constantes {
 	/*
 	 * Labels Baterías sanitarias
 	 */
-	public static final String LBL_BBS_0 = "<html><body><p align=right>Largo del aula: 6,00 m Ancho del aula: 4,60 m Altura del aula:  "
+	public static final String LBL_BBS_0 = "<html><body><p align=right>Largo del aula: 6,00 m\n Ancho del aula: 4,60 m\n Altura del aula:  "
 			+ "Mínima: 2,70 m, Máxima: 3,00 m </p></body></html>";
-	public static final String LBL_BBS_1 = "<html><body><p align=right>6 Baterías: MUJERES: 3 inodoros - 2 lavamanos HOMBRES: 2 inodoros - "
-			+ "2 urinarios - 2 lavamanos 1 Baño administrativo:  MUJERES: 2 inodoros - 1 lavamanos HOMBRES: 1 inodoro - 1 urinario - "
-			+ "1 lavamanos 2 Baterías Educación Inicial:  MUJERES: 2 inodoros - 2 lavamanos HOMBRES: 2 inodoro - 2 lavamanos </p></body></html>";
-	public static final String LBL_BBS_2 = "<html><body><p align=right>Material: Los elementos de base son prefabricados, con hormigón "
-			+ "premezclado con una resisitencia mínima de 210 kg/cm2. Plano de referencia:  No. E1</p></body></html>";
-	public static final String LBL_BBS_3 = "<html><body><p align=right>Materiales:  Estructura metálica Steel Framing (sistema "
+	public static final String LBL_BBS_1 = "<html><body><p align=right>6 Baterías:\n MUJERES: 3 inodoros - 2 lavamanos\n HOMBRES: 2 inodoros - "
+			+ "2 urinarios - 2 lavamanos\n 1 Baño administrativo:\n  MUJERES: 2 inodoros - 1 lavamanos\n HOMBRES: 1 inodoro - 1 urinario - "
+			+ "1 lavamanos\n 2 Baterías Educación Inicial:\n  MUJERES: 2 inodoros - 2 lavamanos\n HOMBRES: 2 inodoro - 2 lavamanos </p></body></html>";
+	public static final String LBL_BBS_2 = "<html><body><p align=right>Material:\n Los elementos de base son prefabricados, con hormigón "
+			+ "premezclado con una resisitencia mínima de 210 kg/cm2.\n Plano de referencia: No. E6</p></body></html>";
+	public static final String LBL_BBS_3 = "<html><body><p align=right>Materiales:\n Estructura metálica Steel Framing (sistema "
 			+ "prefabricado de armado para la cubierta y contrapiso), perfiles metalicos galvanizados, laminados en frio normados "
-			+ "por los estándares del Instituto Americano de Hierro y Acero AISI (por sus siglas en inglés). Dimensiones mínimas: "
+			+ "por los estándares del Instituto Americano de Hierro y Acero AISI (por sus siglas en inglés).\n Dimensiones mínimas: "
 			+ "Cada estructura metálica está conformada por perfiles tipo G con dimensiones variables de 100 mm a 200 mm de alto, "
 			+ "40 mm de ala y 17 mm de aleta (mínimo) y perfiles tipo U de 100 mm a 200 mm de altura, 35 mm de alma (mínimo) con "
 			+ "espesores de placa  entre 0,93 - 1,64 mm, laminados en frio, los cuales están utilizados en función del elemento a "
 			+ "soportar y se ensamblan entre sí utilizando su respectiva tuerca y perno galvanizado. El proceso de ensamblado es "
-			+ "realizado en sitio y es agrupado dependiendo de la función de la estructura y su acoplamiento.  Normativa: La estructura es "
-			+ "capaz de soportar acciones horizontales y verticales de acuerdo a lo señalado en la Norma Técnica Ecuatoriana (NEC14). "
+			+ "realizado en sitio y es agrupado dependiendo de la función de la estructura y su acoplamiento.\n  Normativa: La estructura es "
+			+ "capaz de soportar acciones horizontales y verticales de acuerdo a lo señalado en la Norma Técnica Ecuatoriana (NEC14).\n "
 			+ "Plano de referencia:  No. E1</p></body></html>";
 	public static final String LBL_BBS_4 = "<html><body><p align=right>Materiales: Acero galvanizado pre pintado de acuerdo a diseño "
-			+ "arquitectónico en 0,5 mm de grosor según norma ASTM. EPS: Poliestireno expandido con retardante al fuego tipo F. Las paredes "
+			+ "arquitectónico en 0,5 mm de grosor según norma ASTM.\n EPS: Poliestireno expandido con retardante al fuego tipo F.\n Las paredes "
 			+ "son conformadas por un panel sándwich formado por un núcleo aislante térmico de espuma rígida de poliestireno expandido (EPS) "
-			+ "con retardante de fuego, además de un recubrimiento en ambas caras de plancha metálica. Dimensiones mínimas:  Los paneles "
-			+ "de EPS son de medidas mínimo de: 1,00 - 1,20 mts de ancho y de espesor de 100 mm, con una densidad entre 18 - 20 kg/m3. "
-			+ "Composición: Los paneles son termo acústicos, auto portantes, durables, inoxidables. Normativa: Los paneles para paredes "
-			+ "tienen la capacidad de resisitrir acciones horizontales y verticales de acuerdo a lo señalado en el NEC2014. Plano de "
-			+ "referencia:  No. E1</p></body></html>";
+			+ "con retardante de fuego, además de un recubrimiento en ambas caras de plancha metálica.\n Dimensiones mínimas:  Los paneles "
+			+ "de EPS son de medidas mínimo de: 1,00 - 1,20 mts de ancho y de espesor de 100 mm, con una densidad entre 18 - 20 kg/m3.\n "
+			+ "Composición: Los paneles son termo acústicos, auto portantes, durables, inoxidables.\n Normativa: Los paneles para paredes "
+			+ "tienen la capacidad de resisitrir acciones horizontales y verticales de acuerdo a lo señalado en el NEC2014.\n Plano de "
+			+ "referencia:  No. E6</p></body></html>";
 	public static final String LBL_BBS_5 = "<html><body><p align=right>Materiales:  UPVC (Policloruro de vinilo sin plastificar). "
-			+ "Dimensiones mínimas: Las ventanas en los módulos de baños son de 0,45 X 2 mts y/o de 0,45 X 1 mt. Composición:  La "
+			+ "\nDimensiones mínimas: Las ventanas en los módulos de baños son de 0,45 X 2 mts y/o de 0,45 X 1 mt.\n Composición:  La "
 			+ "ventanearía de los módulos es corrediza en perfiles de UPVC, con todos los sistemas de fijación, anclaje y seguridad que "
 			+ "se requiere. El marco de la ventana es elaborada con canal C metálico galvanizado laminado en frio, Steel Framing bajo "
 			+ "los estándares del Instituto americano de Hierro y Acero AISI.  El anclaje es realizado con tornillos autorroscantes "
-			+ "directamente al panel EPS. Normativa: Instituto americano de Hierro y Acero AISI. Plano de referencia:  No. E1</p></body></html>";
-	public static final String LBL_BBS_6 = "<html><body><p align=right>Materiales: El panel consta de materiales: Acero: Acero galvanizado "
+			+ "directamente al panel EPS.\n Normativa: Instituto americano de Hierro y Acero AISI. Plano de referencia:  No. E1</p></body></html>";
+	public static final String LBL_BBS_6 = "<html><body><p align=right>Materiales: El panel consta de materiales:\n Acero: Acero galvanizado "
 			+ "pre pintado de acuerdo a diseño arquitectónico y disponibilidad de colores de acuerdo, en  0,5 mm de grosor según "
-			+ "norma ASTM. EPS: Poliestireno expandido con retardante al fuego tipo F. Dimensiones mínimas:  El panel de "
+			+ "norma ASTM. EPS: Poliestireno expandido con retardante al fuego tipo F.\n Dimensiones mínimas:  El panel de "
 			+ "cubierta EPS (panel prefabricado de poliestireno con retardante al fuego) está compuesto por módulos de 1,00 a 1,20 mts de "
-			+ "ancho y de espesor mínimo de 100 mm, con una densidad entre 18-20 kg/m3. Composición:  Los paneles son termocústicos, auto "
-			+ "portantes, durables, inoxidables. Normativa: Los paneles de cubierta tienen la capacidad de resisitrir acciones horizontales "
-			+ "y verticales de acuerdo a lo señalado en el NEC2014. Plano de referencia:  No. E1</p></body></html>";
+			+ "ancho y de espesor mínimo de 100 mm, con una densidad entre 18-20 kg/m3.\n Composición:  Los paneles son termocústicos, auto "
+			+ "portantes, durables, inoxidables.\n Normativa: Los paneles de cubierta tienen la capacidad de resisitrir acciones horizontales "
+			+ "y verticales de acuerdo a lo señalado en el NEC2014.\n Plano de referencia:  No. E6</p></body></html>";
 	public static final String LBL_BBS_7 = "<html><body><p align=right>Materiales:  Módulos conformados por paneles compuestos de madera y "
-			+ "plástico (WPC). Características:   Es impermeable y presenta una superficie antideslizante, resistente a deformaciones y "
+			+ "plástico (WPC).\n Características: Es impermeable y presenta una superficie antideslizante, resistente a deformaciones y "
 			+ "ralladuras. Es resistente al ataque de insectos y hongos, y es 100% reciclable. El ensamblado es de tipo machiembrado con "
-			+ "click de ancastre. Normativa: Soporta las cargas vivas máximas de diseño señalado en el NEC2014 para su uso.. Plano de "
-			+ "referencia:  PE-08</p></body></html>";
-	public static final String LBL_BBS_8 = "<html><body><p align=right>Materiales: Luminarias tipo LED. Características:  Luminarias tipo "
-			+ "LED de al menos 60 W y 5000 lúmenes. Composición:  Los conductores de iluminación son de calibre mínimo No. 14AWG THHN "
+			+ "click de ancastre.\n Normativa: Soporta las cargas vivas máximas de diseño señalado en el NEC2014 para su uso.. </p></body></html>";
+	public static final String LBL_BBS_8 = "<html><body><p align=right>Materiales: Luminarias tipo LED.\n Características:  Luminarias tipo "
+			+ "LED de al menos 60 W y 5000 lúmenes.\n Composición:  Los conductores de iluminación son de calibre mínimo No. 14AWG THHN "
 			+ "flexible y adicionalmente tienen un cable desnudo a tierra del mismo calibre, colocados en el interior de manguera flexible "
-			+ "anillada metálica, con el espaciamiento de reserva y ventilación acorde a norma. Normativa: La instalación se realiza acorde "
-			+ "a los establecido a la norma NEC 384-6 (Código Eléctrico Ecuatoriano). Plano de referencia:  PE-08</p></body></html>";
+			+ "anillada metálica, con el espaciamiento de reserva y ventilación acorde a norma.\n Normativa: La instalación se realiza acorde "
+			+ "a los establecido a la norma NEC 384-6 (Código Eléctrico Ecuatoriano).\n Plano de referencia: PE-08</p></body></html>";
 	public static final String LBL_BBS_9 = "<html><body><p align=right>Características:  Los inodoros cumplen con las especificaciones de "
 			+ "la norma NTE INEN 1571: Artefectos sanitarios.La grifería cumpe con las normas NTE INEN: 602, 950, 967, 968, 969 y las "
-			+ "establecidas ASTM en las referidas normas. Normativa:  NTE INEN 1571: Artefactos sanitarios, NTE INEN:602, 950, 967, 968, "
-			+ "969 y las establecidas ASTM en las referidas normas. Plano de referencia: PE-05</p></body></html>";
+			+ "establecidas ASTM en las referidas normas.\n Normativa:  NTE INEN 1571: Artefactos sanitarios, NTE INEN:602, 950, 967, 968, "
+			+ "969 y las establecidas ASTM en las referidas normas.\n Plano de referencia: DET-03</p></body></html>";
 	public static final String LBL_BBS_10 = "<html><body><p align=right>Características:  Los urinarios cumplen con las especificaciones "
 			+ "de la norma NTE INEN 1571: Artefectos sanitarios.La grifería cumpe con las normas NTE INEN: 602, 950, 967, 968, 969 y las "
-			+ "establecidas ASTM en las referidas normas.Normativa:  NTE INEN 1571: Artefactos sanitarios, NTE INEN:602, 950, 967, 968, "
-			+ "969 y las establecidas ASTM en las referidas normas. Plano de referencia: PE-05</p></body></html>";
+			+ "establecidas ASTM en las referidas normas.\nNormativa: NTE INEN 1571: Artefactos sanitarios, NTE INEN:602, 950, 967, 968, "
+			+ "969 y las establecidas ASTM en las referidas normas.\n Plano de referencia: DET-UR-01</p></body></html>";
 
-	public static final String LBL_BR_0 = "<html><body><p align=right>Largo del aula: 9,00 m Ancho del aula: 6,00 m Altura del aula: "
+	public static final String LBL_BR_0 = "<html><body><p align=right>Largo del aula: 9,00 m \nAncho del aula: 6,00 m\n Altura del aula: "
 			+ "Mínima: 2,70 m, Máxima: 3,00 m</p></body></html>";
 	public static final String LBL_BR_1 = "<html><body><p align=right>Material: Hormigón premezclado con resistencia mínima de 210 kg/cm2 "
-			+ "Cantidad:   De acuerdo a la referencia en el Plano No. E1</p></body></html>";
+			+ "\nCantidad: De acuerdo a la referencia en el Plano No. E1</p></body></html>";
 	public static final String LBL_BR_2 = "<html><body><p align=right>Material: La estructura metálica Steel Framing es el sistema "
 			+ "prefabricado de armado para la cubierta y contrapiso, conformado por perfiles metálicos galvanizados, laminados en "
-			+ "frío normada por los estándares del Instituto Americano de Hierro y Acero AISI. Composición:  Cada estructura metálica "
+			+ "frío normada por los estándares del Instituto Americano de Hierro y Acero AISI. \nComposición:  Cada estructura metálica "
 			+ "está conformada por perfiles tipo G con dimensiones variables de 100mm a 200mm de alto, 40mm de ala y 17 mm de aleta "
 			+ "(mínimo) y perfiles tipo U de 100mm a 200mm de altura, 35 mm de alma (mínimo) con espesores de placa entre 0,93 – 1,64 mm, "
 			+ "laminados en frio, los cuales deberán ser utilizados en función del elemento a soportar y se ensamblarán entre sí utilizando "
-			+ "su respectiva tuerca y perno galvanizado. Normativa: La estructura soporta acciones horizontales y verticales de acuerdo a "
-			+ "lo señalado en la Norma Técnica Ecuatoriana (NEC2014). Plano de referencia:  No. E1</p></body></html>";
+			+ "su respectiva tuerca y perno galvanizado. \nNormativa: La estructura soporta acciones horizontales y verticales de acuerdo a "
+			+ "lo señalado en la Norma Técnica Ecuatoriana (NEC2014).\n Plano de referencia:  No. E1</p></body></html>";
 	public static final String LBL_BR_3 = "<html><body><p align=right>Materiales: Acero: galvanizado pre pintado de acuerdo a diseño "
 			+ "arquitectónico y disponibilidad de colores de acuerdo a producción del material, en 0,5 mm de grosor según norma ASTM. EPS: "
-			+ "Poliestireno expandido con retardante al fuego tipo F. Dimensiones mínimas: 1,00 - 1,20 mts de ancho y de espesor de 100 mm, "
-			+ "con una densidad entre 18 - 20 kg/m3. Composición: Las paredes están conformadas por un panel sándwich formado por un núcleo "
+			+ "Poliestireno expandido con retardante al fuego tipo F.\n Dimensiones mínimas: 1,00 - 1,20 mts de ancho y de espesor de 100 mm, "
+			+ "con una densidad entre 18 - 20 kg/m3.\n Composición: Las paredes están conformadas por un panel sándwich formado por un núcleo "
 			+ "aislante térmico de espuma rígida de poliestireno expandido (EPS) con retardante de fuego, además de un recubrimiento en "
-			+ "ambas caras de plancha metálica. Las paredes son termo acústicos, auto portantes, durables, inoxidables. Normativa: "
+			+ "ambas caras de plancha metálica. Las paredes son termo acústicos, auto portantes, durables, inoxidables. \nNormativa: "
 			+ "Los paneles tienen la capacidad de resisitrir acciones horizontales y verticales de acuerdo a lo señalado en el NEC2014. "
-			+ "Plano de referencia:  No. E1 </p></body></html>";
-	public static final String LBL_BR_4 = "<html><body><p align=right>Materiales: UPVC (Policloruro de vinilo sin plastificar).Dimensiones "
-			+ "mínimas: Las ventanas en los módulos de aulas son de 3,0 X 1,10 mts.Composición:  La ventanearía de los módulos es corrediza "
+			+ "\nPlano de referencia:  No. E1 </p></body></html>";
+	public static final String LBL_BR_4 = "<html><body><p align=right>Materiales: UPVC (Policloruro de vinilo sin plastificar).\nDimensiones "
+			+ "mínimas: Las ventanas en los módulos de aulas son de 3,0 X 1,10 mts.\nComposición:  La ventanearía de los módulos es corrediza "
 			+ "compuesta de tres hojas y dos carriles, perfiles de UPVC, con todos los sistemas de fijación, anclaje y seguridad que se "
 			+ "requiere.El marco de la ventana es elaborado con canal C metálico galvanizado laminado en frio, Steel Framing bajo los "
 			+ "estándares del Instituto americano de Hierro y Acero AISI.  El anclaje es realizado con tornillos autorroscantes "
-			+ "directamente al marco de la ventana en todos sus lados. Normativa: Instituto americano de Hierro y Acero AISI. Plano de "
+			+ "directamente al marco de la ventana en todos sus lados.\n Normativa: Instituto americano de Hierro y Acero AISI. Plano de "
 			+ "referencia:  No. E1</p></body></html>";
 	public static final String LBL_BR_5 = "<html><body><p align=right>Materiales: EPS (Poliestireno expandido con retardante al fuego), "
-			+ "en la que se incluye el marco y tapa marcos respectivo . Dimensiones mínimas: De acuerdo a planos constructivos. "
-			+ "Composición: La hoja de la puerta es de panel sánduche 50 mm de espesor, con un marco y un contramarco de canal C metálico "
+			+ "en la que se incluye el marco y tapa marcos respectivo. \nDimensiones mínimas: De acuerdo a planos constructivos. "
+			+ "\nComposición: La hoja de la puerta es de panel sánduche 50 mm de espesor, con un marco y un contramarco de canal C metálico "
 			+ "galvanizado laminado en frío Steel Framing bajo los estándares del Instituto Americano de Hierro y Acero. Se usan bisagras "
 			+ "de 3 y cerradura con llave, tipo industrial instalada en hendidura de puerta o similar con reforzamiento de platina "
 			+ "metálica en el donde se instala la cerradura. El anclaje de la puerta se realiza con tres (3) bisagras atornilladas y "
-			+ "apernadas al contramarco con al menos 8 tornillos. Normativa: Instituto americano de Hierro y Acero AISI. Plano de referencia:  "
-			+ "No. E1</p></body></html>";
+			+ "apernadas al contramarco con al menos 8 tornillos.\n Normativa: Instituto americano de Hierro y Acero AISI</p></body></html>";
 	public static final String LBL_BR_6 = "<html><body><p align=right>Materiales: El panel consta de materiales: Acero: Acero galvanizado "
 			+ "pre pintado de acuerdo a diseño arquitectónico y disponibilidad de colores de acuerdo, en  0,5 mm de grosor según norma ASTM. "
-			+ "EPS: Poliestireno expandido con retardante al fuego tipo F. Dimensiones mínimas:  El panel de cubierta EPS "
+			+ "EPS: Poliestireno expandido con retardante al fuego tipo F. \nDimensiones mínimas:  El panel de cubierta EPS "
 			+ "(panel prefabricado de poliestireno con retardante al fuego) está compuesto por módulos de 1,00 a 1,20 mts de ancho y de "
-			+ "espesor mínimo de 100 mm,con una densidad entre 18-20 kg/m3. Composición:  Los paneles son termocústicos, auto portantes, "
-			+ "durables, inoxidables.Normativa: Los paneles de cubierta tienen la capacidad de resisitrir acciones horizontales y verticales "
-			+ "de acuerdo a lo señalado en el NEC2014. Plano de referencia:  No. E1</p></body></html>";
-	public static final String LBL_BR_7 = "<html><body><p align=right>Materiales: Luminarias tipo LED. Características:  Luminarias tipo LED "
-			+ "de al menos 60 W y 5000 lúmenes. Composición:  Los conductores de iluminación son de calibre mínimo No. 14AWG THHN flexible, "
+			+ "espesor mínimo de 100 mm,con una densidad entre 18-20 kg/m3.\n Composición:  Los paneles son termocústicos, auto portantes, "
+			+ "durables, inoxidables.\nNormativa: Los paneles de cubierta tienen la capacidad de resisitrir acciones horizontales y verticales "
+			+ "de acuerdo a lo señalado en el NEC2014.\n Plano de referencia:  No. E1</p></body></html>";
+	public static final String LBL_BR_7 = "<html><body><p align=right>Materiales: Luminarias tipo LED. \nCaracterísticas:  Luminarias tipo LED "
+			+ "de al menos 60 W y 5000 lúmenes.\n Composición:  Los conductores de iluminación son de calibre mínimo No. 14AWG THHN flexible, "
 			+ "colocados en el interior de manguera flexible anillada metálica, con el espaciamiento de reserva y ventilación acorde a norma. "
-			+ "Normativa: La instalación se realiza acorde a los establecido a la norma NEC 384-6 (Código Eléctrico Ecuatoriano). Plano de "
+			+ "\nNormativa: La instalación se realiza acorde a los establecido a la norma NEC 384-6 (Código Eléctrico Ecuatoriano). \nPlano de "
 			+ "referencia:  PE-08</p></body></html>";
 	public static final String LBL_BR_8 = "<html><body><p align=right>Materiales:  Tomacorrientes tipo doble polarizados, con placas "
 			+ "decorativas color blanco del mismo color de la pieza del tomacorriente respectivo. Conductores rígidos revestido de calibres "
-			+ "12 y 14 AWG de tipo THHN. Características: Sistema de fuerza 110V. Composición:  El sistema de fuerza inicia su cableado en "
+			+ "12 y 14 AWG de tipo THHN. \nCaracterísticas: Sistema de fuerza 110V.\n Composición:  El sistema de fuerza inicia su cableado en "
 			+ "el centro de carga de cada área, el cableado y se lo realiza con conductor rígido revestido de calibre N.- 12 AWG THHN para "
 			+ "la fase y el neutro  calibre  N.- 12 AWG THHN, y cable desnudo a tierra #14, mínimo. Los conductores están ubicados dentro "
 			+ "de manguera flexible anillada metálica, con el espaciamiento de reserva y ventilación acorde a norma (Código Eléctrico "
 			+ "Ecuatoriano, NEC 384-6). Las derivaciones para los demás tomacorrientes, se realizan dentro de cajas de paso dentro del "
 			+ "cajetín rectangular profundo que aloja el accesorio del tomacorriente con capacidad de coducción de 15 amperios. Los "
 			+ "tomacorrientes tipo doble polarizados, con placas decorativas color blanco del mismo color de la pieza del tomacorriente "
-			+ "respectivo. Normativa: La instalación se realiza acorde a los establecido a la norma NEC 384-6 (Código Eléctrico Ecuatoriano). "
-			+ "Plano de referencia: PE-05</p></body></html>";
+			+ "respectivo. \nNormativa: La instalación se realiza acorde a los establecido a la norma NEC 384-6 (Código Eléctrico Ecuatoriano). "
+			+ "\nPlano de referencia: PE-05</p></body></html>";
 	public static final String LBL_BR_9 = "<html><body><p align=right>Materiales: Módulos conformados por paneles compuestos de madera y "
-			+ "plástico (WPC). Características:  Soporta las cargas vivas máximas de diseño señaldo en el NEC para su uso. Es impermeable, "
+			+ "plástico (WPC).\n Características:  Soporta las cargas vivas máximas de diseño señaldo en el NEC para su uso. Es impermeable, "
 			+ "con una superficie antideslizante, resistente a deformaciones y ralladuras. Es resistente al ataque de insectos y hongos, y "
-			+ "ser 100% reciclable. El ensamblado es de tipo machiembrado con click de ancastre. Normativa: Norma NEC 3. Plano de referencia:  "
-			+ "PE-08</p></body></html>";
+			+ "ser 100% reciclable. El ensamblado es de tipo machiembrado con click de ancastre. \nNormativa: Norma NEC 3</p></body></html>";
 
 	/*
 	 * Labels Acometidas
@@ -311,8 +308,8 @@ public class Constantes {
 			+ "SHIELDED para evitar interferencia electromagnética.Se coloca al menos 1 router wireless Tipo N de 10/100/100 MB, y un "
 			+ "Access point por laboratorio y módulo de administración. El rack es ubicado en uno de los laboratorios de tecnología, y "
 			+ "se provee de un conversor de media. Se consideran cajas de conexión de 60X60X70 y tubería PVC y patch cord de FO.</p></body></html>";
-	public static final String LBL_BA_4 = "<html><body><p align=right>En el cableado eléctrico se utilizan calibres: - THHN #8, #10, #12, "
-			+ "#14 - Cable AWG #14desnudo Los conductores cumplen con las normas de fabricación NEMA ASTM-B3, ASTM-B8, UL62, UL83 y la "
+	public static final String LBL_BA_4 = "<html><body><p align=right>En el cableado eléctrico se utilizan calibres:\n - THHN #8, #10, #12, "
+			+ "#14\n - Cable AWG #14desnudo\n Los conductores cumplen con las normas de fabricación NEMA ASTM-B3, ASTM-B8, UL62, UL83 y la "
 			+ "UL-1581 y aprobados según el sistema de calidad del cable. Aislamiento: Cloruro de polietileno (PVC) de 90°C (194°F) "
 			+ "resistente a la humedad, no propaga llama, voltaje de servicio 600V, el color de cada cable es de acuerdo a las "
 			+ "especificaciones aprobadas en nuestro medio. El tendido exterior se considera con tubería soterrada de PVC de 3 (75 mm) "

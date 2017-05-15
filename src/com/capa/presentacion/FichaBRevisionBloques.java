@@ -123,7 +123,7 @@ public class FichaBRevisionBloques extends JFrame {
 		Utilitarios.llenarCabecera(cabecera);
 
 		JPanel pnlPestaña1 = new JPanel();
-		tabbedPane.addTab("1.- Ficha Revisión Bloques", null, pnlPestaña1, null);
+		tabbedPane.addTab("1.- Ficha Revisi\u00F3n Bloques", null, pnlPestaña1, null);
 		pnlPestaña1.setLayout(null);
 
 		JPanel pnlDimensiones = new JPanel();
@@ -135,7 +135,7 @@ public class FichaBRevisionBloques extends JFrame {
 
 		JLabel lblDCaracteristicas = new JLabel(
 				"<html><body>Largo del aula: 9,00 m<br>Ancho del aula: 6,00 m<br>Altura del aula: "
-						+ "Mñnima: 2,70 m, Máxima: 3,00 m</body></html>");
+						+ "M\u00EDnima: 2,70 m, Máxima: 3,00 m</body></html>");
 		lblDCaracteristicas.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblDCaracteristicas.setBounds(10, 13, 235, 48);
 		pnlDimensiones.add(lblDCaracteristicas);
@@ -184,7 +184,7 @@ public class FichaBRevisionBloques extends JFrame {
 		pnlPestaña1.add(pnlBasesPrefabricadas);
 
 		JLabel lblBPCaracteristicas = new JLabel(
-				"<html><body>Material: Hormigñn premezclado con resistencia mñnima de 210 kg/cm2<br>Cantidad:   "
+				"<html><body>Material: Hormig\u00F3n premezclado con resistencia m\u00EDnima de 210 kg/cm2<br>Cantidad:   "
 						+ "De acuerdo a la referencia en el Plano No. E1</body></html>");
 		lblBPCaracteristicas.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblBPCaracteristicas.setBounds(10, 13, 235, 56);
@@ -235,15 +235,15 @@ public class FichaBRevisionBloques extends JFrame {
 		pnlPestaña1.add(pnlEstrMetalica);
 
 		JLabel lblEMCaracteristicas = new JLabel(
-				"<html><body>Material: La estructura metñlica Steel Framing es el sistema prefabricado de armado para la cubierta "
+				"<html><body>Material: La estructura met\u00E1lica Steel Framing es el sistema prefabricado de armado para la cubierta "
 						+ "y contrapiso, conformado por perfiles metñlicos galvanizados, laminados en frño normada por "
-						+ "los estñndares del Instituto Americano de Hierro y Acero AISI. Composiciñn:  Cada estructura "
-						+ "metñlica estñ conformada por perfiles tipo G con dimensiones variables de 100mm a 200mm de alto, "
-						+ "40mm de ala y 17 mm de aleta (mñnimo) y perfiles tipo U de 100mm a 200mm de altura, 35 mm de alma "
-						+ "(mñnimo) con espesores de placa entre 0,93 ñ 1,64 mm, laminados en frio, los cuales deberñn ser "
-						+ "utilizados en funciñn del elemento a soportar y se ensamblarñn entre sñ utilizando su respectiva "
+						+ "los estándares del Instituto Americano de Hierro y Acero AISI. Composición:  Cada estructura "
+						+ "metálica está conformada por perfiles tipo G con dimensiones variables de 100mm a 200mm de alto, "
+						+ "40mm de ala y 17 mm de aleta (mínimo) y perfiles tipo U de 100mm a 200mm de altura, 35 mm de alma "
+						+ "(mínimo) con espesores de placa entre 0,93 - 1,64 mm, laminados en frío, los cuales deberán ser "
+						+ "utilizados en función del elemento a soportar y se ensamblarán entre sí utilizando su respectiva "
 						+ "tuerca y perno galvanizado. Normativa: La estructura soporta acciones horizontales y verticales "
-						+ "de acuerdo a lo señalado en la Norma Tñcnica Ecuatoriana (NEC2014). "
+						+ "de acuerdo a lo señalado en la Norma Técnica Ecuatoriana (NEC2014). "
 						+ "Plano de referencia:  No. E1</body></html>");
 		lblEMCaracteristicas.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		lblEMCaracteristicas.setBounds(10, 17, 235, 274);
@@ -287,20 +287,20 @@ public class FichaBRevisionBloques extends JFrame {
 
 		JPanel pnlPPA = new JPanel();
 		pnlPPA.setLayout(null);
-		pnlPPA.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Paneles de Pared con Alma",
-				TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		pnlPPA.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"),
+				"Paneles de Pared con alma de EPS", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		pnlPPA.setBounds(426, 11, 249, 252);
 		pnlPestaña1.add(pnlPPA);
 
 		JLabel lblPPACaracteristicas = new JLabel(
-				"<html><body>Materiales:<br>" + "Acero: galvanizado pre pintado de acuerdo a diseño arquitectñnico y "
-						+ "disponibilidad de colores de acuerdo a producciñn del material, en 0,5 mm de grosor segñn norma ASTM.<br>"
+				"<html><body>Materiales:<br>" + "Acero: galvanizado pre pintado de acuerdo a diseño arquitectónico y "
+						+ "disponibilidad de colores de acuerdo a producción del material, en 0,5 mm de grosor según norma ASTM.<br>"
 						+ "EPS: Poliestireno expandido con retardante al fuego tipo F.<br>"
-						+ "Dimensiones mñnimas: 1,00 - 1,20 mts de ancho y de espesor de 100 mm, con una densidad entre 18 - 20 kg/m3.<br>"
-						+ "Composiciñn:<br>"
-						+ "Las paredes estñn conformadas por un panel sñndwich formado por un nñcleo aislante tñrmico de espuma rñgida "
-						+ "de poliestireno expandido (EPS) con retardante de fuego, ademñs de un recubrimiento en ambas caras de plancha metñlica."
-						+ "Las paredes son termo acñsticos, auto portantes, durables, inoxidables.<br>"
+						+ "Dimensiones mínimas: 1,00 - 1,20 mts de ancho y de espesor de 100 mm, con una densidad entre 18 - 20 kg/m3.<br>"
+						+ "Composición:<br>"
+						+ "Las paredes están conformadas por un panel sándwich formado por un núcleo aislante térmico de espuma rígida "
+						+ "de poliestireno expandido (EPS) con retardante de fuego, además de un recubrimiento en ambas caras de plancha metálica."
+						+ "Las paredes son termo acústicos, auto portantes, durables, inoxidables.<br>"
 						+ "Normativa: Los paneles tienen la capacidad de resisitrir acciones horizontales y verticales de acuerdo a lo señalado en el NEC2014."
 						+ "Plano de referencia:  No. E1</body></html>");
 		lblPPACaracteristicas.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -352,11 +352,11 @@ public class FichaBRevisionBloques extends JFrame {
 
 		JLabel lblV_UPVCCaracteristicas = new JLabel("<html><body>Materiales:"
 				+ "UPVC (Policloruro de vinilo sin plastificar)."
-				+ "Dimensiones mñnimas: Las ventanas en los mñdulos de aulas son de 3,0 X 1,10 mts."
-				+ "Composiciñn:  La ventanearña de los mñdulos es corrediza compuesta de tres hojas y dos carriles, "
-				+ "perfiles de UPVC, con todos los sistemas de fijaciñn, anclaje y seguridad que se requiere."
-				+ "El marco de la ventana es elaborado con canal C metñlico galvanizado laminado en frio, Steel "
-				+ "Framing bajo los estñndares del Instituto americano de Hierro y Acero AISI."
+				+ "Dimensiones mínimas: Las ventanas en los módulos de aulas son de 3,0 X 1,10 mts."
+				+ "Composición:  La ventanearía de los módulos es corrediza compuesta de tres hojas y dos carriles, "
+				+ "perfiles de UPVC, con todos los sistemas de fijación, anclaje y seguridad que se requiere."
+				+ "El marco de la ventana es elaborado con canal C metálico galvanizado laminado en frío, Steel "
+				+ "Framing bajo los estándares del Instituto americano de Hierro y Acero AISI."
 				+ "El anclaje es realizado con tornillos autorroscantes directamente al marco de la ventana en todos sus lados. "
 				+ "Normativa: Instituto americano de Hierro y Acero AISI. Plano de referencia:  No. E1</body></html>");
 		lblV_UPVCCaracteristicas.setFont(new Font("Tahoma", Font.PLAIN, 9));
@@ -408,11 +408,11 @@ public class FichaBRevisionBloques extends JFrame {
 
 		JLabel lblPTPCaracteristicas = new JLabel("<html><body>Materiales:<br>"
 				+ "EPS (Poliestireno expandido con retardante al fuego), en la que se incluye el marco y tapa marcos respectivo.<br>"
-				+ "Dimensiones mñnimas: De acuerdo a planos constructivos.<br>Composiciñn:"
-				+ "La hoja de la puerta es de panel sñnduche 50 mm de espesor, con un marco y un contramarco de canal C "
-				+ "metñlico galvanizado laminado en frño Steel Framing bajo los estñndares del Instituto Americano de Hierro y Acero.<br>"
+				+ "Dimensiones mínimas: De acuerdo a planos constructivos.<br>Composiciñn:"
+				+ "La hoja de la puerta es de panel sánduche 50 mm de espesor, con un marco y un contramarco de canal C "
+				+ "metálico galvanizado laminado en frío Steel Framing bajo los estándares del Instituto Americano de Hierro y Acero.<br>"
 				+ "Se usan bisagras de 3 y cerradura con llave, tipo industrial instalada en hendidura de puerta o similar con reforzamiento "
-				+ "de platina metñlica en el donde se instala la cerradura.<br>"
+				+ "de platina metálica en el donde se instala la cerradura.<br>"
 				+ "El anclaje de la puerta se realiza con tres (3) bisagras atornilladas y apernadas al contramarco con al menos 8 tornillos.<br>"
 				+ "Normativa: Instituto americano de Hierro y Acero AISI. "
 				+ "Plano de referencia:  No. E1</body></html>");
@@ -464,13 +464,13 @@ public class FichaBRevisionBloques extends JFrame {
 		pnlPestaña1.add(pnlPC);
 
 		JLabel lblPCCaracteristicas = new JLabel("<html><body>Materiales:<br>El panel consta de materiales:<br>"
-				+ "Acero: Acero galvanizado pre pintado de acuerdo a diseño arquitectñnico y disponibilidad de "
-				+ "colores de acuerdo, en  0,5 mm de grosor segñn norma ASTM."
+				+ "Acero: Acero galvanizado pre pintado de acuerdo a diseño arquitectónico y disponibilidad de "
+				+ "colores de acuerdo, en  0,5 mm de grosor según norma ASTM."
 				+ "EPS: Poliestireno expandido con retardante al fuego tipo F.<br>"
-				+ "Dimensiones mñnimas:  El panel de cubierta EPS (panel prefabricado de poliestireno con "
-				+ "retardante al fuego) estñ compuesto por mñdulos de 1,00 a 1,20 mts de ancho y de espesor "
-				+ "mñnimo de 100 mm, con una densidad entre 18-20 kg/m3."
-				+ "Composiciñn:  Los paneles son termocñsticos, auto portantes, durables, inoxidables."
+				+ "Dimensiones mínimas:  El panel de cubierta EPS (panel prefabricado de poliestireno con "
+				+ "retardante al fuego) está compuesto por módulos de 1,00 a 1,20 mts de ancho y de espesor "
+				+ "mínimo de 100 mm, con una densidad entre 18-20 kg/m3."
+				+ "Composición:  Los paneles son termocústicos, auto portantes, durables, inoxidables."
 				+ "	Normativa: Los paneles de cubierta tienen la capacidad de resisitrir acciones "
 				+ "horizontales y verticales de acuerdo a lo señalado en el NEC2014. Plano de referencia:  No. E1"
 				+ "</body></html>");
@@ -515,7 +515,7 @@ public class FichaBRevisionBloques extends JFrame {
 		pnlPCObsRef.add(txtObs6);
 
 		JPanel pnlPestaña2 = new JPanel();
-		tabbedPane.addTab("2.- Ficha Revisiñn Bloques", null, pnlPestaña2, null);
+		tabbedPane.addTab("2.- Ficha Revisión Bloques", null, pnlPestaña2, null);
 		pnlPestaña2.setLayout(null);
 
 		JPanel pnlIluminacion = new JPanel();
@@ -526,12 +526,12 @@ public class FichaBRevisionBloques extends JFrame {
 		pnlPestaña2.add(pnlIluminacion);
 
 		JLabel lblICaracteristicas = new JLabel(
-				"<html><body>Materiales:<br>Luminarias tipo LED.<br>Caracterñsticas:<br>Luminarias tipo "
-						+ "LED de al menos 60 W y 5000 lñmenes.<br>Composiciñn:<br>Los conductores de iluminaciñn "
-						+ "son de calibre mñnimo No. 14AWG THHN flexible, colocados en el interior de manguera "
-						+ "flexible anillada metñlica, con el espaciamiento de reserva y ventilaciñn acorde a norma.<br>"
-						+ "Normativa:<br>La instalaciñn se realiza acorde a los establecido a la norma NEC 384-6 "
-						+ "(Cñdigo Elñctrico Ecuatoriano).<br>Plano de referencia:  PE-08</body></html>");
+				"<html><body>Materiales:<br>Luminarias tipo LED.<br>Características:<br>Luminarias tipo "
+						+ "LED de al menos 60 W y 5000 lúmenes.<br>Composiciñn:<br>Los conductores de iluminación "
+						+ "son de calibre mínimo No. 14AWG THHN flexible, colocados en el interior de manguera "
+						+ "flexible anillada metálica, con el espaciamiento de reserva y ventilación acorde a norma.<br>"
+						+ "Normativa:<br>La instalación se realiza acorde a los establecido a la norma NEC 384-6 "
+						+ "(Código Eléctrico Ecuatoriano).<br>Plano de referencia:  PE-08</body></html>");
 		lblICaracteristicas.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		lblICaracteristicas.setBounds(10, 17, 351, 128);
 		pnlIluminacion.add(lblICaracteristicas);
@@ -581,18 +581,18 @@ public class FichaBRevisionBloques extends JFrame {
 
 		JLabel lblSFCaracteristicas = new JLabel(
 				"<html><body>Materiales:<br>Tomacorrientes tipo doble polarizados, con placas decorativas "
-						+ "color blanco del mismo color de la pieza del tomacorriente respectivo. Conductores rñgidos "
-						+ "revestido de calibres 12 y 14 AWG de tipo THHN. <br>Caracterñsticas:<br>Sistema de fuerza 110V."
-						+ "<br>Composiciñn:<br>El sistema de fuerza inicia su cableado en el centro de carga de cada ñrea, "
-						+ "el cableado y se lo realiza con conductor rñgido revestido de calibre N.- 12 AWG THHN para la fase "
-						+ "y el neutro  calibre  N.- 12 AWG THHN, y cable desnudo a tierra #14, mñnimo.<br>Los conductores"
-						+ " estñn ubicados dentro de manguera flexible anillada metñlica, con el espaciamiento de reserva y "
-						+ "ventilaciñn acorde a norma (Cñdigo Elñctrico Ecuatoriano, NEC 384-6).<br>Las derivaciones para los "
-						+ "demñs tomacorrientes, se realizan dentro de cajas de paso dentro del cajetñn rectangular profundo "
-						+ "que aloja el accesorio del tomacorriente con capacidad de coducciñn de 15 amperios. Los "
+						+ "color blanco del mismo color de la pieza del tomacorriente respectivo. Conductores rígidos "
+						+ "revestido de calibres 12 y 14 AWG de tipo THHN. <br>Características:<br>Sistema de fuerza 110V."
+						+ "<br>Composición:<br>El sistema de fuerza inicia su cableado en el centro de carga de cada área, "
+						+ "el cableado y se lo realiza con conductor rígido revestido de calibre N.- 12 AWG THHN para la fase "
+						+ "y el neutro  calibre  N.- 12 AWG THHN, y cable desnudo a tierra #14, mínimo.<br>Los conductores"
+						+ " están ubicados dentro de manguera flexible anillada metálica, con el espaciamiento de reserva y "
+						+ "ventilación acorde a norma (Código Eléctrico Ecuatoriano, NEC 384-6).<br>Las derivaciones para los "
+						+ "demás tomacorrientes, se realizan dentro de cajas de paso dentro del cajetín rectangular profundo "
+						+ "que aloja el accesorio del tomacorriente con capacidad de coducción de 15 amperios. Los "
 						+ "tomacorrientes tipo doble polarizados, con placas decorativas color blanco del mismo color de la "
-						+ "pieza del tomacorriente respectivo.<br>Normativa:<br>La instalaciñn se realiza acorde a los "
-						+ "establecido a la norma NEC 384-6 (Cñdigo Elñctrico Ecuatoriano).<br>Plano de referencia:PE-05</body></html>");
+						+ "pieza del tomacorriente respectivo.<br>Normativa:<br>La instalación se realiza acorde a los "
+						+ "establecido a la norma NEC 384-6 (Código Eléctrico Ecuatoriano).<br>Plano de referencia:PE-05</body></html>");
 		lblSFCaracteristicas.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		lblSFCaracteristicas.setBounds(10, 13, 351, 265);
 		pnlSistFuerza.add(lblSFCaracteristicas);
@@ -642,8 +642,8 @@ public class FichaBRevisionBloques extends JFrame {
 		pnlPestaña2.add(pnlWPC);
 
 		JLabel lblWPCCaracteristicas = new JLabel(
-				"<html><body>Materiales:<br>Mñdulos conformados por paneles compuestos de madera y plñstico (WPC)."
-						+ "<br>Caracterñsticas:<br>Soporta las cargas vivas mñximas de diseño señaldo en el NEC para su uso. "
+				"<html><body>Materiales:<br>Módulos conformados por paneles compuestos de madera y plástico (WPC)."
+						+ "<br>Características:<br>Soporta las cargas vivas máximas de diseño señaldo en el NEC para su uso. "
 						+ "Es impermeable, con una superficie antideslizante, resistente a deformaciones y ralladuras. "
 						+ "Es resistente al ataque de insectos y hongos, y ser 100% reciclable. El ensamblado es de tipo "
 						+ "machiembrado con click de ancastre.<br>Normativa:<br>Norma NEC 3.<br>"
@@ -741,8 +741,8 @@ public class FichaBRevisionBloques extends JFrame {
 
 	public List<TdetalleFicha> cargarFicha() {
 		List<TdetalleFicha> listaDetalles = new LinkedList<>();
-		TGrupo grupoTmp = servFicha.buscarGrupo("Dimensiones");
-		String observacion, desicion = "";
+		TGrupo grupoTmp = servFicha.buscarGrupo("");
+		String observacion, desicion = "Dimensiones";
 		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
 		if (updateFicha == -1) {
 			updateFicha = 0;
@@ -758,7 +758,7 @@ public class FichaBRevisionBloques extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BR_0)));
 
-		grupoTmp = servFicha.buscarGrupo("Piezas sanitarias");
+		grupoTmp = servFicha.buscarGrupo("Bases Prefabricadas");
 		observacion = txtObs1.getText();
 		if (rdBtn10.isSelected()) {
 			desicion = "SI";
@@ -768,7 +768,7 @@ public class FichaBRevisionBloques extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BR_1)));
 
-		grupoTmp = servFicha.buscarGrupo("Bases prefabricadas");
+		grupoTmp = servFicha.buscarGrupo("Estructura Metálica Steel Framing");
 		observacion = txtObs2.getText();
 		if (rdBtn20.isSelected()) {
 			desicion = "SI";
@@ -778,7 +778,7 @@ public class FichaBRevisionBloques extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BR_2)));
 
-		grupoTmp = servFicha.buscarGrupo("Estructura metálica Steel");
+		grupoTmp = servFicha.buscarGrupo("Paneles de pared con alma de EPS");
 		observacion = txtObs3.getText();
 		if (rdBtn30.isSelected()) {
 			desicion = "SI";
@@ -788,7 +788,7 @@ public class FichaBRevisionBloques extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BR_3)));
 
-		grupoTmp = servFicha.buscarGrupo("Paneles de pared con alma de EPS");
+		grupoTmp = servFicha.buscarGrupo("Ventanas de UPVC");
 		observacion = txtObs4.getText();
 		if (rdBtn40.isSelected()) {
 			desicion = "SI";
@@ -798,7 +798,7 @@ public class FichaBRevisionBloques extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BR_4)));
 
-		grupoTmp = servFicha.buscarGrupo("Ventana de UPVC");
+		grupoTmp = servFicha.buscarGrupo("Puerta tipo panel EPS");
 		observacion = txtObs5.getText();
 		if (rdBtn50.isSelected()) {
 			desicion = "SI";
@@ -818,7 +818,7 @@ public class FichaBRevisionBloques extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BR_6)));
 
-		grupoTmp = servFicha.buscarGrupo("Compuesto de madera y plástico");
+		grupoTmp = servFicha.buscarGrupo("Iluminación");
 		observacion = txtObs7.getText();
 		if (rdBtn70.isSelected()) {
 			desicion = "SI";
@@ -828,7 +828,7 @@ public class FichaBRevisionBloques extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BR_7)));
 
-		grupoTmp = servFicha.buscarGrupo("Iluminación");
+		grupoTmp = servFicha.buscarGrupo("Sistema de Fuerza 110V");
 		observacion = txtObs8.getText();
 		if (rdBtn80.isSelected()) {
 			desicion = "SI";
@@ -838,7 +838,7 @@ public class FichaBRevisionBloques extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BR_8)));
 
-		grupoTmp = servFicha.buscarGrupo("Inodoro");
+		grupoTmp = servFicha.buscarGrupo("Compuesto de madera y plástico (WPC) para piso de módulos");
 		observacion = txtObs9.getText();
 		if (rdBtn90.isSelected()) {
 			desicion = "SI";
