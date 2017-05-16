@@ -179,6 +179,7 @@ public class EmailCliente extends JFrame {
 		txtUser.setColumns(10);
 
 		txtPara = new JTextField();
+		txtPara.setText("proyecto.s21@educacion.gob.ec");
 		txtPara.setColumns(10);
 		txtPara.setBounds(60, 33, 166, 20);
 
