@@ -154,8 +154,9 @@ public class EmailCliente extends JFrame {
 	 */
 	public EmailCliente() {
 		setTitle("Cliente de Mensajería");
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 483, 297);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 600, 297);
+		this.setResizable(false);
 
 		JPanel pnlPrincipal = new JPanel();
 		pnlPrincipal.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -171,47 +172,47 @@ public class EmailCliente extends JFrame {
 
 		JLabel lblContrasea = new JLabel("Clave: ");
 		lblContrasea.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblContrasea.setBounds(236, 11, 63, 14);
+		lblContrasea.setBounds(285, 11, 63, 14);
 
 		txtUser = new JTextField();
-		txtUser.setBounds(60, 8, 166, 20);
+		txtUser.setBounds(60, 8, 199, 20);
 
 		txtUser.setColumns(10);
 
 		txtPara = new JTextField();
 		txtPara.setText("proyecto.s21@educacion.gob.ec");
 		txtPara.setColumns(10);
-		txtPara.setBounds(60, 33, 166, 20);
+		txtPara.setBounds(60, 33, 199, 20);
 
 		txtAsunto = new JTextField();
 		txtAsunto.setColumns(10);
-		txtAsunto.setBounds(60, 58, 301, 20);
+		txtAsunto.setBounds(120, 67, 301, 20);
 
 		JLabel lblAsunto = new JLabel("Asunto: ");
 		lblAsunto.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblAsunto.setBounds(10, 61, 51, 14);
+		lblAsunto.setBounds(70, 70, 51, 14);
 
 		pwdUser = new JPasswordField();
-		pwdUser.setBounds(307, 8, 153, 20);
+		pwdUser.setBounds(356, 8, 134, 20);
 
 		txtContenidoSMS = new JTextArea();
-		txtContenidoSMS.setBounds(10, 86, 450, 162);
+		txtContenidoSMS.setBounds(70, 95, 450, 162);
 
 		JLabel lblAdjunto = new JLabel("Adjunto: ");
 		lblAdjunto.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblAdjunto.setBounds(236, 36, 63, 14);
+		lblAdjunto.setBounds(285, 36, 63, 14);
 
 		txtPathPDF = new JTextField();
 		txtPathPDF.setEditable(false);
-		txtPathPDF.setBounds(307, 33, 122, 20);
+		txtPathPDF.setBounds(356, 33, 182, 20);
 		txtPathPDF.setColumns(10);
 
 		btnAddArchivo = new JButton();
-		btnAddArchivo.setBounds(433, 32, 27, 23);
+		btnAddArchivo.setBounds(543, 32, 27, 23);
 		btnAddArchivo.setIcon(new ImageIcon(Utilitarios.getImagen("pdf_adjuntar.png", 20, 20, 100)));
 
 		btnEnviar = new JButton("Enviar");
-		btnEnviar.setBounds(371, 57, 89, 23);
+		btnEnviar.setBounds(431, 66, 89, 23);
 
 		setContentPane(pnlPrincipal);
 

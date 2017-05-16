@@ -62,11 +62,12 @@ public class Calculos {
 
 			relacion = sumaCantidadEjecutada / sumaCantidadLimite;
 			valorEjecutado += relacion;
-			System.out.println("Ficha " + objetoFicha.getFiNombre());
-			System.out.println("Relacion " + relacion);
-			System.out.println("Cantidad ejecutada " + sumaCantidadEjecutada);
-			System.out.println("Cantidad limite " + sumaCantidadLimite);
-			System.out.println("Valor ejecutado " + valorEjecutado);
+			// System.out.println("Ficha " + objetoFicha.getFiNombre());
+			// System.out.println("Relacion " + relacion);
+			// System.out.println("Cantidad ejecutada " +
+			// sumaCantidadEjecutada);
+			// System.out.println("Cantidad limite " + sumaCantidadLimite);
+			// System.out.println("Valor ejecutado " + valorEjecutado);
 		}
 		return valorEjecutado;
 	}
