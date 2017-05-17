@@ -93,13 +93,25 @@ public class ComponenteFicha implements ServicioFicha {
 	@Override
 	public List<TdetalleFicha> detallesFicha(TCabecera serialC, TFicha serialF) {
 		List<TdetalleFicha> detallesFicha = new ArrayList<>();
-		String query = "SELECT * FROM t_detalle_ficha WHERE fi_serial = " + serialF.getFiSerial() + " and c_serial = "
-				+ serialC.getCSerial()
-				+ " and df_actualizacion_n = (select max(df_actualizacion_n) from t_detalle_ficha where fi_serial = "
-				+ serialF.getFiSerial() + " and c_serial = " + serialC.getCSerial() + ");";
+
+		StringBuilder query = new StringBuilder();
+
+		query.append(" SELECT * FROM t_detalle_ficha ");
+		query.append(" WHERE fi_serial = " + serialF.getFiSerial());
+		query.append(" AND c_serial = " + serialC.getCSerial());
+		query.append(" AND df_actualizacion_n = ");
+		
+
+		if (Utilitarios.isFichaC1()) {
+			query.append(" (SELECT MAX(df_actualizacion_n)");
+			query.append(" FROM t_detalle_ficha WHERE fi_serial = " + serialF.getFiSerial());
+			query.append(" AND c_serial = " + serialC.getCSerial() + ");");
+		} else {
+			query.append(" -1");
+		}
 
 		try {
-			ResultSet rs = Query.seleccionar(query);
+			ResultSet rs = Query.seleccionar(query.toString());
 			while (rs.next()) {
 
 				detallesFicha.add(new TdetalleFicha(new Integer(rs.getInt(1)), new TCabecera(rs.getInt(2)),
