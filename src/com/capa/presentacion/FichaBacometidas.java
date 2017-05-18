@@ -559,7 +559,7 @@ public class FichaBacometidas extends JFrame {
 					parametros.put("serial_ficha", ficha.getFiSerial());
 					Reporte reporte = new Reporte("Reporte Acometidas", 280, 10, 850, 750);
 					InputStream path = AlInicio.class
-							.getResourceAsStream("/com/capa/templates/BateriasSanitarias.jasper");
+							.getResourceAsStream("/com/capa/templates/Acometidas.jasper");
 					reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 					reporte.setVisible(true);
 					new FichaB().setVisible(true);
