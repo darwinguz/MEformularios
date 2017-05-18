@@ -2789,7 +2789,7 @@ public class Bs2Template extends JFrame {
 		if (updateFicha == -1) {
 			updateFicha = 0;
 		} else {
-			srvFicha.eliminarDatos();
+			srvFicha.eliminarDatos(ficha);
 			updateFicha++;
 		}
 

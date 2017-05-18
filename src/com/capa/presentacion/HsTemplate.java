@@ -1587,7 +1587,7 @@ public class HsTemplate extends JFrame {
 		if (isFichaC1()) {
 			updateFicha++;
 		} else {
-			servicioFicha.eliminarDatos();
+			servicioFicha.eliminarDatos(ficha);
 			updateFicha = -1;
 		}
 

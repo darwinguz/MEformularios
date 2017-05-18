@@ -100,7 +100,6 @@ public class ComponenteFicha implements ServicioFicha {
 		query.append(" WHERE fi_serial = " + serialF.getFiSerial());
 		query.append(" AND c_serial = " + serialC.getCSerial());
 		query.append(" AND df_actualizacion_n = ");
-		
 
 		if (Utilitarios.isFichaC1()) {
 			query.append(" (SELECT MAX(df_actualizacion_n)");
@@ -203,9 +202,10 @@ public class ComponenteFicha implements ServicioFicha {
 	}
 
 	@Override
-	public void eliminarDatos() {
+	public void eliminarDatos(TFicha ficha) {
 		// TODO Auto-generated method stub
-		String query = "delete from t_detalle_ficha where df_actualizacion_n = -1;";
+		String query = "delete from t_detalle_ficha where df_actualizacion_n = -1 and fi_serial = '"
+				+ ficha.getFiSerial() + "';";
 		Query.eliminar(query);
 	}
 }

@@ -892,7 +892,7 @@ public class MexTemplate extends JFrame {
 		if (isFichaC1()) {
 			updateFicha++;
 		} else {
-			servFicha.eliminarDatos();
+			servFicha.eliminarDatos(ficha);
 			updateFicha = -1;
 		}
 

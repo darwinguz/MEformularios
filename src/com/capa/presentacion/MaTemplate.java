@@ -1650,7 +1650,7 @@ public class MaTemplate extends JFrame {
 		if (isFichaC1()) {
 			updateFicha++;
 		} else {
-			srvFicha.eliminarDatos();
+			srvFicha.eliminarDatos(ficha);
 			updateFicha = -1;
 		}
 

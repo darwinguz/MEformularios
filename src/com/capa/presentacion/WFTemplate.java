@@ -640,7 +640,7 @@ public class WFTemplate extends JFrame {
 						parametros.put("serial_cabecera", Utilitarios.gettCabecera().getCSerial());
 						parametros.put("serial_ficha", ficha.getFiSerial());
 
-						Reporte reporte = new Reporte("Reporte MB", 280, 10, 850, 750);
+						Reporte reporte = new Reporte("Reporte WF", 280, 10, 850, 750);
 						InputStream path;
 
 						if (isFichaC1()) {
@@ -687,9 +687,12 @@ public class WFTemplate extends JFrame {
 		// }
 
 		if (isFichaC1()) {
+			if (updateFicha == -1) {
+				updateFicha = 0;
+			}
 			updateFicha++;
 		} else {
-			servFicha.eliminarDatos();
+			servFicha.eliminarDatos(ficha);
 			updateFicha = -1;
 		}
 
