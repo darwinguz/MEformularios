@@ -104,7 +104,7 @@ public class ComponenteFicha implements ServicioFicha {
 		if (Utilitarios.isFichaC1()) {
 			query.append(" (SELECT MAX(df_actualizacion_n)");
 			query.append(" FROM t_detalle_ficha WHERE fi_serial = " + serialF.getFiSerial());
-			query.append(" AND c_serial = " + serialC.getCSerial() + ");");
+			query.append(" AND c_serial = " + serialC.getCSerial() + " AND df_actualizacion_n <> -1);");
 		} else {
 			query.append(" -1");
 		}
