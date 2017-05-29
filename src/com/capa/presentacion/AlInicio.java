@@ -95,6 +95,15 @@ public class AlInicio extends JFrame {
 		btnAvanceGeneral.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				if (tCabecera == null) {
+					JOptionPane.showMessageDialog(null, "ERROR: Proyecto no ingresado", "Mensaje de Error",
+							JOptionPane.ERROR_MESSAGE);
+					return;
+				}
+				OpcionFichaA opFichaA = new OpcionFichaA();
+				opFichaA.setModal(true);
+				opFichaA.setVisible(true);
+				// System.out.println("Ficha " + Utilitarios.isFichaC1());
 				ServicioFichaA servFichaA = new ComponenteFichaA();
 				servFichaA.eliminar();
 				FichaATemplate fichaA = new FichaATemplate();
@@ -182,7 +191,7 @@ public class AlInicio extends JFrame {
 		pnlBotones.add(btnReporteInsp);
 
 		txtBuscar = new JTextField();
-		txtBuscar.setBounds(105, 27, 199, 21);
+		txtBuscar.setBounds(37, 27, 361, 21);
 		txtBuscar.setText("Buscar proyecto");
 		txtBuscar.setHorizontalAlignment(SwingConstants.CENTER);
 		txtBuscar.setForeground(Color.LIGHT_GRAY);
@@ -214,8 +223,8 @@ public class AlInicio extends JFrame {
 			}
 		});
 
-		JButton btnLimpiar = new JButton("Reset");
-		btnLimpiar.setBounds(322, 27, 70, 20);
+		JButton btnLimpiar = new JButton("Limpiar");
+		btnLimpiar.setBounds(401, 27, 83, 20);
 		btnLimpiar.addActionListener(new ActionListener() {
 
 			@Override

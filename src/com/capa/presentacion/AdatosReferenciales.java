@@ -86,6 +86,7 @@ public class AdatosReferenciales extends JFrame {
 		panelPrincipal.setLayout(null);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
+		this.setTitle("DATOS REFERENCIALES");
 
 		JLabel lbl_logo_msp = new JLabel(Utilitarios.getImagenIcon("logoMinEdu.png", 150, 60, 100));
 		lbl_logo_msp.setHorizontalAlignment(SwingConstants.CENTER);
