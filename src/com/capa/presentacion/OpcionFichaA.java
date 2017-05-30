@@ -56,11 +56,11 @@ public class OpcionFichaA extends JDialog {
 
 		ButtonGroup grupoRadios = new ButtonGroup();
 
-		JRadioButton rdbtnModuloC = new JRadioButton("Usando Módulo C");
+		JRadioButton rdbtnModuloC = new JRadioButton("Ficha C");
 		rdbtnModuloC.setBounds(33, 7, 132, 23);
 		panel.add(rdbtnModuloC);
 
-		JRadioButton rdbtnModuloC_1 = new JRadioButton("Usando Módulo C1");
+		JRadioButton rdbtnModuloC_1 = new JRadioButton("Ficha C1");
 		rdbtnModuloC_1.setBounds(33, 33, 132, 23);
 		grupoRadios.add(rdbtnModuloC);
 		grupoRadios.add(rdbtnModuloC_1);
