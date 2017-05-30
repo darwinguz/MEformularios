@@ -419,7 +419,7 @@ public class CeTemplate extends JFrame {
 
 	public void llenarFicha() {
 		List<TdetalleFicha> listaDetalles = servFicha.detallesFicha(gettCabecera(), ficha);
-		if (isFichaC1()) {
+//		if (isFichaC1()) {
 			try {
 				txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
 				txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
@@ -439,9 +439,9 @@ public class CeTemplate extends JFrame {
 				// TODO: handle exception
 				llenarVacios();
 			}
-		} else {
-			llenarVacios();
-		}
+//		} else {
+//			llenarVacios();
+//		}
 	}
 
 	public void llenarVacios() {

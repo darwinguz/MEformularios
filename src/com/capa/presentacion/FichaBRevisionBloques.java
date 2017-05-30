@@ -715,8 +715,7 @@ public class FichaBRevisionBloques extends JFrame {
 					parametros.put("serial_ficha", ficha.getFiSerial());
 
 					Reporte reporte = new Reporte("Reporte Revisión Bloques", 280, 10, 850, 750);
-					InputStream path = AlInicio.class
-							.getResourceAsStream("/com/capa/templates/RevisionBloques.jasper");
+					InputStream path = AlInicio.class.getResourceAsStream("/com/capa/templates/RevisionBloques.jasper");
 					reporte.cargarReporte(path, parametros, Query.getMysql().getConexion());
 					reporte.setVisible(true);
 					new FichaB().setVisible(true);
@@ -741,8 +740,8 @@ public class FichaBRevisionBloques extends JFrame {
 
 	public List<TdetalleFicha> cargarFicha() {
 		List<TdetalleFicha> listaDetalles = new LinkedList<>();
-		TGrupo grupoTmp = servFicha.buscarGrupo("");
-		String observacion, desicion = "Dimensiones";
+		TGrupo grupoTmp = servFicha.buscarGrupo("Dimensiones");
+		String observacion, desicion = "";
 		Integer updateFicha = servFicha.nActualizacionFicha(gettCabecera(), ficha);
 		if (updateFicha == -1) {
 			updateFicha = 0;
@@ -788,7 +787,7 @@ public class FichaBRevisionBloques extends JFrame {
 		listaDetalles.add(new TdetalleFicha(gettCabecera(), infor, grupoTmp, ficha, updateFicha, observacion, desicion,
 				quitarEtiquetasHTML(LBL_BR_3)));
 
-		grupoTmp = servFicha.buscarGrupo("Ventanas de UPVC");
+		grupoTmp = servFicha.buscarGrupo("Ventana de UPVC");
 		observacion = txtObs4.getText();
 		if (rdBtn40.isSelected()) {
 			desicion = "SI";

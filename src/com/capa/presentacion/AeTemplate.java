@@ -433,7 +433,7 @@ public class AeTemplate extends JFrame {
 	public void llenarFicha() {
 		List<TdetalleFicha> listaDetalles = servFicha.detallesFicha(gettCabecera(), ficha);
 
-		if (isFichaC1()) {
+//		if (isFichaC1()) {
 			try {
 				txtCantidad151.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
 				txtCantidad161.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
@@ -452,9 +452,9 @@ public class AeTemplate extends JFrame {
 			} catch (IndexOutOfBoundsException e) {
 				llenarVacios();
 			}
-		} else {
-			llenarVacios();
-		}
+//		} else {
+//			llenarVacios();
+//		}
 	}
 
 	public void llenarVacios() {

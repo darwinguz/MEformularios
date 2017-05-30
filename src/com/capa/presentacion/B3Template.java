@@ -2614,7 +2614,7 @@ public class B3Template extends JFrame {
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
 					quitarEtiquetasHTML(LBL_BS3_32), Integer.parseInt(txtCantidad320.getText()),
 					Integer.parseInt(txtCantidad321.getText()), txtObs32.getText(), updateFicha,
-					calcularPorcentajeAvance(Integer.parseInt(txtCantidad270.getText()),
+					calcularPorcentajeAvance(Integer.parseInt(txtCantidad320.getText()),
 							Integer.parseInt(txtCantidad321.getText())),
 					ITEM_BS3_32, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
@@ -2626,7 +2626,7 @@ public class B3Template extends JFrame {
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
 					quitarEtiquetasHTML(LBL_BS3_34), Integer.parseInt(txtCantidad340.getText()),
 					Integer.parseInt(txtCantidad341.getText()), txtObs34.getText(), updateFicha,
-					calcularPorcentajeAvance(Integer.parseInt(txtCantidad280.getText()),
+					calcularPorcentajeAvance(Integer.parseInt(txtCantidad340.getText()),
 							Integer.parseInt(txtCantidad341.getText())),
 					ITEM_BS3_34, "UNIDAD"));
 			detallesFicha.add(new TdetalleFicha(cabecera, infoObligatoria, grupo6, ficha,
@@ -2817,7 +2817,7 @@ public class B3Template extends JFrame {
 
 	public void setFichaNuevaUpdate() {
 		List<TdetalleFicha> listaDetalles = srvFicha.detallesFicha(gettCabecera(), ficha);
-		if (isFichaC1()) {
+//		if (isFichaC1()) {
 			try {
 				txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
 				txtCantidad11.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
@@ -2954,9 +2954,9 @@ public class B3Template extends JFrame {
 			} catch (IndexOutOfBoundsException e) {
 				llenarVacios();
 			}
-		} else {
-			llenarVacios();
-		}
+//		} else {
+//			llenarVacios();
+//		}
 	}
 
 	public void llenarVacios() {

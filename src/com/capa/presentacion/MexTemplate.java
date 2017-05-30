@@ -1004,7 +1004,7 @@ public class MexTemplate extends JFrame {
 
 	public void llenarFicha() {
 		List<TdetalleFicha> listaDetalles = servFicha.detallesFicha(gettCabecera(), ficha);
-		if (isFichaC1()) {
+//		if (isFichaC1()) {
 			try {
 				txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
 				txtCantidad11.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
@@ -1047,9 +1047,9 @@ public class MexTemplate extends JFrame {
 				// TODO: handle exception
 				llenarVacios();
 			}
-		} else {
-			llenarVacios();
-		}
+//		} else {
+//			llenarVacios();
+//		}
 	}
 
 	public void llenarVacios() {
