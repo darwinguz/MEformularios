@@ -375,6 +375,9 @@ public class CeTemplate extends JFrame {
 		// }
 
 		if (isFichaC1()) {
+			if (updateFicha == -1) {
+				updateFicha = 0;
+			}
 			updateFicha++;
 		} else {
 			servFicha.eliminarDatos(ficha);

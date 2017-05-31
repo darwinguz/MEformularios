@@ -382,6 +382,9 @@ public class AeTemplate extends JFrame {
 		// }
 
 		if (isFichaC1()) {
+			if (updateFicha == -1) {
+				updateFicha = 0;
+			}
 			updateFicha++;
 		} else {
 			servFicha.eliminarDatos(ficha);
@@ -433,28 +436,28 @@ public class AeTemplate extends JFrame {
 	public void llenarFicha() {
 		List<TdetalleFicha> listaDetalles = servFicha.detallesFicha(gettCabecera(), ficha);
 
-//		if (isFichaC1()) {
-			try {
-				txtCantidad151.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
-				txtCantidad161.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
-				txtCantidad171.setText(String.valueOf(listaDetalles.get(2).getDetCantidadEjecutada()));
-				txtCantidad181.setText(String.valueOf(listaDetalles.get(3).getDetCantidadEjecutada()));
-				txtCantidad191.setText(String.valueOf(listaDetalles.get(4).getDetCantidadEjecutada()));
-				txtCantidad201.setText(String.valueOf(listaDetalles.get(5).getDetCantidadEjecutada()));
-				txtCantidad211.setText(String.valueOf(listaDetalles.get(6).getDetCantidadEjecutada()));
-				txtObs15.setText(listaDetalles.get(0).getDetObsRef());
-				txtObs16.setText(listaDetalles.get(1).getDetObsRef());
-				txtObs17.setText(listaDetalles.get(2).getDetObsRef());
-				txtObs18.setText(listaDetalles.get(3).getDetObsRef());
-				txtObs19.setText(listaDetalles.get(4).getDetObsRef());
-				txtObs20.setText(listaDetalles.get(5).getDetObsRef());
-				txtObs21.setText(listaDetalles.get(6).getDetObsRef());
-			} catch (IndexOutOfBoundsException e) {
-				llenarVacios();
-			}
-//		} else {
-//			llenarVacios();
-//		}
+		// if (isFichaC1()) {
+		try {
+			txtCantidad151.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
+			txtCantidad161.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
+			txtCantidad171.setText(String.valueOf(listaDetalles.get(2).getDetCantidadEjecutada()));
+			txtCantidad181.setText(String.valueOf(listaDetalles.get(3).getDetCantidadEjecutada()));
+			txtCantidad191.setText(String.valueOf(listaDetalles.get(4).getDetCantidadEjecutada()));
+			txtCantidad201.setText(String.valueOf(listaDetalles.get(5).getDetCantidadEjecutada()));
+			txtCantidad211.setText(String.valueOf(listaDetalles.get(6).getDetCantidadEjecutada()));
+			txtObs15.setText(listaDetalles.get(0).getDetObsRef());
+			txtObs16.setText(listaDetalles.get(1).getDetObsRef());
+			txtObs17.setText(listaDetalles.get(2).getDetObsRef());
+			txtObs18.setText(listaDetalles.get(3).getDetObsRef());
+			txtObs19.setText(listaDetalles.get(4).getDetObsRef());
+			txtObs20.setText(listaDetalles.get(5).getDetObsRef());
+			txtObs21.setText(listaDetalles.get(6).getDetObsRef());
+		} catch (IndexOutOfBoundsException e) {
+			llenarVacios();
+		}
+		// } else {
+		// llenarVacios();
+		// }
 	}
 
 	public void llenarVacios() {

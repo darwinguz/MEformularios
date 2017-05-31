@@ -890,6 +890,9 @@ public class MexTemplate extends JFrame {
 		// }
 
 		if (isFichaC1()) {
+			if (updateFicha == -1) {
+				updateFicha = 0;
+			}
 			updateFicha++;
 		} else {
 			servFicha.eliminarDatos(ficha);
@@ -1004,52 +1007,52 @@ public class MexTemplate extends JFrame {
 
 	public void llenarFicha() {
 		List<TdetalleFicha> listaDetalles = servFicha.detallesFicha(gettCabecera(), ficha);
-//		if (isFichaC1()) {
-			try {
-				txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
-				txtCantidad11.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
-				txtCantidad21.setText(String.valueOf(listaDetalles.get(2).getDetCantidadEjecutada()));
-				txtCantidad31.setText(String.valueOf(listaDetalles.get(3).getDetCantidadEjecutada()));
-				txtCantidad41.setText(String.valueOf(listaDetalles.get(4).getDetCantidadEjecutada()));
-				txtCantidad51.setText(String.valueOf(listaDetalles.get(5).getDetCantidadEjecutada()));
-				txtCantidad61.setText(String.valueOf(listaDetalles.get(6).getDetCantidadEjecutada()));
-				txtCantidad71.setText(String.valueOf(listaDetalles.get(7).getDetCantidadEjecutada()));
-				txtCantidad81.setText(String.valueOf(listaDetalles.get(8).getDetCantidadEjecutada()));
-				txtCantidad91.setText(String.valueOf(listaDetalles.get(9).getDetCantidadEjecutada()));
-				txtCantidad101.setText(String.valueOf(listaDetalles.get(10).getDetCantidadEjecutada()));
-				txtCantidad111.setText(String.valueOf(listaDetalles.get(11).getDetCantidadEjecutada()));
-				txtCantidad121.setText(String.valueOf(listaDetalles.get(12).getDetCantidadEjecutada()));
-				txtCantidad131.setText(String.valueOf(listaDetalles.get(13).getDetCantidadEjecutada()));
-				txtCantidad141.setText(String.valueOf(listaDetalles.get(14).getDetCantidadEjecutada()));
-				txtCantidad151.setText(String.valueOf(listaDetalles.get(15).getDetCantidadEjecutada()));
-				txtCantidad161.setText(String.valueOf(listaDetalles.get(16).getDetCantidadEjecutada()));
-				txtCantidad171.setText(String.valueOf(listaDetalles.get(17).getDetCantidadEjecutada()));
+		// if (isFichaC1()) {
+		try {
+			txtCantidad01.setText(String.valueOf(listaDetalles.get(0).getDetCantidadEjecutada()));
+			txtCantidad11.setText(String.valueOf(listaDetalles.get(1).getDetCantidadEjecutada()));
+			txtCantidad21.setText(String.valueOf(listaDetalles.get(2).getDetCantidadEjecutada()));
+			txtCantidad31.setText(String.valueOf(listaDetalles.get(3).getDetCantidadEjecutada()));
+			txtCantidad41.setText(String.valueOf(listaDetalles.get(4).getDetCantidadEjecutada()));
+			txtCantidad51.setText(String.valueOf(listaDetalles.get(5).getDetCantidadEjecutada()));
+			txtCantidad61.setText(String.valueOf(listaDetalles.get(6).getDetCantidadEjecutada()));
+			txtCantidad71.setText(String.valueOf(listaDetalles.get(7).getDetCantidadEjecutada()));
+			txtCantidad81.setText(String.valueOf(listaDetalles.get(8).getDetCantidadEjecutada()));
+			txtCantidad91.setText(String.valueOf(listaDetalles.get(9).getDetCantidadEjecutada()));
+			txtCantidad101.setText(String.valueOf(listaDetalles.get(10).getDetCantidadEjecutada()));
+			txtCantidad111.setText(String.valueOf(listaDetalles.get(11).getDetCantidadEjecutada()));
+			txtCantidad121.setText(String.valueOf(listaDetalles.get(12).getDetCantidadEjecutada()));
+			txtCantidad131.setText(String.valueOf(listaDetalles.get(13).getDetCantidadEjecutada()));
+			txtCantidad141.setText(String.valueOf(listaDetalles.get(14).getDetCantidadEjecutada()));
+			txtCantidad151.setText(String.valueOf(listaDetalles.get(15).getDetCantidadEjecutada()));
+			txtCantidad161.setText(String.valueOf(listaDetalles.get(16).getDetCantidadEjecutada()));
+			txtCantidad171.setText(String.valueOf(listaDetalles.get(17).getDetCantidadEjecutada()));
 
-				txtObs0.setText(listaDetalles.get(0).getDetObsRef());
-				txtObs1.setText(listaDetalles.get(1).getDetObsRef());
-				txtObs2.setText(listaDetalles.get(2).getDetObsRef());
-				txtObs3.setText(listaDetalles.get(3).getDetObsRef());
-				txtObs4.setText(listaDetalles.get(4).getDetObsRef());
-				txtObs5.setText(listaDetalles.get(5).getDetObsRef());
-				txtObs6.setText(listaDetalles.get(6).getDetObsRef());
-				txtObs7.setText(listaDetalles.get(7).getDetObsRef());
-				txtObs8.setText(listaDetalles.get(8).getDetObsRef());
-				txtObs9.setText(listaDetalles.get(9).getDetObsRef());
-				txtObs10.setText(listaDetalles.get(10).getDetObsRef());
-				txtObs11.setText(listaDetalles.get(11).getDetObsRef());
-				txtObs12.setText(listaDetalles.get(12).getDetObsRef());
-				txtObs13.setText(listaDetalles.get(13).getDetObsRef());
-				txtObs14.setText(listaDetalles.get(14).getDetObsRef());
-				txtObs15.setText(listaDetalles.get(15).getDetObsRef());
-				txtObs16.setText(listaDetalles.get(16).getDetObsRef());
-				txtObs17.setText(listaDetalles.get(17).getDetObsRef());
-			} catch (IndexOutOfBoundsException e) {
-				// TODO: handle exception
-				llenarVacios();
-			}
-//		} else {
-//			llenarVacios();
-//		}
+			txtObs0.setText(listaDetalles.get(0).getDetObsRef());
+			txtObs1.setText(listaDetalles.get(1).getDetObsRef());
+			txtObs2.setText(listaDetalles.get(2).getDetObsRef());
+			txtObs3.setText(listaDetalles.get(3).getDetObsRef());
+			txtObs4.setText(listaDetalles.get(4).getDetObsRef());
+			txtObs5.setText(listaDetalles.get(5).getDetObsRef());
+			txtObs6.setText(listaDetalles.get(6).getDetObsRef());
+			txtObs7.setText(listaDetalles.get(7).getDetObsRef());
+			txtObs8.setText(listaDetalles.get(8).getDetObsRef());
+			txtObs9.setText(listaDetalles.get(9).getDetObsRef());
+			txtObs10.setText(listaDetalles.get(10).getDetObsRef());
+			txtObs11.setText(listaDetalles.get(11).getDetObsRef());
+			txtObs12.setText(listaDetalles.get(12).getDetObsRef());
+			txtObs13.setText(listaDetalles.get(13).getDetObsRef());
+			txtObs14.setText(listaDetalles.get(14).getDetObsRef());
+			txtObs15.setText(listaDetalles.get(15).getDetObsRef());
+			txtObs16.setText(listaDetalles.get(16).getDetObsRef());
+			txtObs17.setText(listaDetalles.get(17).getDetObsRef());
+		} catch (IndexOutOfBoundsException e) {
+			// TODO: handle exception
+			llenarVacios();
+		}
+		// } else {
+		// llenarVacios();
+		// }
 	}
 
 	public void llenarVacios() {
